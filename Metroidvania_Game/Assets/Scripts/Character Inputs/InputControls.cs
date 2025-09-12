@@ -20,6 +20,8 @@ public class InputControls : MonoBehaviour
     //Dash variables
     [SerializeField]
     private float dashSpeed;
+    private float dashFactor = 2f;
+    public float dashTimer = 0.5f;
     private bool canDash = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -67,8 +69,9 @@ public class InputControls : MonoBehaviour
             isSprinting = false;
         }
 
-        rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
+        rb2D.linearVelocity = new Vector2(xVelocity, rb2D.linearVelocity.y);
     }
+
 
     private void OnDrawGizmosSelected()
     {
