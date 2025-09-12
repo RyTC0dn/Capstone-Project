@@ -332,7 +332,6 @@ MonoBehaviour:
   sprintFactor: 1.5
   sprintDuration: 2
   sprintTimer: 0
-  dashSpeed: 0
 --- !u!114 &264179493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +601,7 @@ Transform:
   m_GameObject: {fileID: 1155066807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: -0.5, z: 0}
+  m_LocalPosition: {x: 19, y: 0, z: 0}
   m_LocalScale: {x: 27, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
