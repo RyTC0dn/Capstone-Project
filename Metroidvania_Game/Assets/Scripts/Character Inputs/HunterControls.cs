@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class InputControls : MonoBehaviour
+public class HunterControls : MonoBehaviour
 {
     //General inputs
     [SerializeField] 
@@ -21,14 +21,18 @@ public class InputControls : MonoBehaviour
     [SerializeField]
     private float dashSpeed;
     private float dashFactor = 2f;
-    public float dashTimer = 0.5f;
-    private bool canDash = false;
+    private float dashTimer = 0.5f;
+    public float dashTime;
+    private bool isDashing = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //Initialize the rigidbody variables
         rb2D = GetComponent<Rigidbody2D>();
+
+        //Setting the dash time to timer
+        dashTime = dashTimer;
     }
 
     // Update is called once per frame
@@ -48,6 +52,9 @@ public class InputControls : MonoBehaviour
 
         //Set the movement function
         Move(h);
+
+        //Set dash function
+        Dash(h);
     }
 
     private void Move(float hSpeed)
@@ -72,31 +79,22 @@ public class InputControls : MonoBehaviour
         rb2D.linearVelocity = new Vector2(xVelocity, rb2D.linearVelocity.y);
     }
 
+    private void Dash(float hSpeed)
+    {
+        Vector2 dashVector = new Vector2(dashSpeed * dashFactor, 0);
+
+        //Assigning dash function to C key
+        isDashing = Input.GetKey(KeyCode.C);
+
+        //If player is moving in the positive (1) or negative (-1) direction and presses dash
+        //Apply dash speed
+        if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; }
+        else if (hSpeed < 0 && isDashing ) { rb2D.linearVelocity = -dashVector; }
+    }
+
 
     private void OnDrawGizmosSelected()
     {
         Debug.DrawRay(transform.position, Vector2.down, Color.blue);
     }
-
-    //private void DashInputs()
-    //{
-    //    Vector3 dash = new Vector3(dashSpeed, 0);
-    //    if(Input.GetKey(KeyCode.LeftShift))
-    //    {
-    //        transform.Translate(dash);
-    //    }
-    //}
-
-    //private IEnumerator Dash()
-    //{
-    //    canDash = false;
-    //    isDashing = true;
-    //    float originalGravity = rb2D.gravityScale;
-    //    rb2D.gravityScale = 0;
-    //    rb2D.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0);
-    //    yield return new WaitForSeconds(dashTime);
-    //    rb2D.gravityScale = originalGravity;
-    //    isDashing = false;
-    //    canDash = true;
-    //}
 }
