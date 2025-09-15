@@ -3,7 +3,7 @@ using UnityEngine;
 public class BasicEnemyControls : MonoBehaviour
 {
     BasicEnemyPatrolState enemyPatrolState;
-
+    public int currentWaypointIndex = 0; //Indec of current waypoint
     public Transform[] waypoints;
 
     [SerializeField]
