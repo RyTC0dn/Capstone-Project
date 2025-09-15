@@ -15,7 +15,7 @@ public class BasicEnemyControls : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyPatrolState = FindAnyObjectByType<BasicEnemyPatrolState>();
+        enemyPatrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         
     }
