@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class HunterControls : MonoBehaviour
+public class PlayerMovementControls : MonoBehaviour
 {
     //General inputs
     [SerializeField] 
