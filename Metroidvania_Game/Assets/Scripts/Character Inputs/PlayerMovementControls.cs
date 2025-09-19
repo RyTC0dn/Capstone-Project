@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementControls : MonoBehaviour
 {
-    //General inputs
+    [Header("General input variables")]
+
     [SerializeField] 
     private float playerSpeed;
     private Rigidbody2D rb2D;
@@ -17,7 +18,8 @@ public class PlayerMovementControls : MonoBehaviour
 
     private float horizontalMove = 0;
 
-    //Dash variables
+    [Header("Dash Settings")]
+
     [SerializeField]
     private float dashSpeed;
     private float dashFactor = 2f;
@@ -48,7 +50,7 @@ public class PlayerMovementControls : MonoBehaviour
     {
         //Float variable to store horizontal input
         //Horizontal can be -1, 0, or 1
-        float h = Input.GetAxis("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
         Move(h);
@@ -76,7 +78,7 @@ public class PlayerMovementControls : MonoBehaviour
             isSprinting = false;
         }
 
-        rb2D.linearVelocity = new Vector2(xVelocity, rb2D.linearVelocity.y);
+        rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
     }
 
     private void Dash(float hSpeed)

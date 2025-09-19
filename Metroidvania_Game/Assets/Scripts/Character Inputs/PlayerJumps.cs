@@ -7,6 +7,7 @@ public class PlayerJumps : MonoBehaviour
     public float fallMultiplier = 2.5f;     //How muc to increase gravity scale when falling 
     public float lowJumpMultiplier = 2f;   //Factor for small jumps
     public LayerMask groundLayer;         //Layer for the ground
+    [SerializeField]private float gravityScale = 4f;
 
     ////Variable for the animator
     //private Animator jumpSP;
@@ -30,6 +31,8 @@ public class PlayerJumps : MonoBehaviour
         //jumpSP = GetComponent<Animator>();
 
         coyoteTime = coyoteTimeMax; //Set coyote time to the max
+
+        rb2d.gravityScale = gravityScale;
     }
 
     // Update is called once per frame
@@ -72,6 +75,7 @@ public class PlayerJumps : MonoBehaviour
         }
         else
         {
+            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, rb2d.linearVelocity.y);
             coyoteTime -= Time.deltaTime;
         }
 

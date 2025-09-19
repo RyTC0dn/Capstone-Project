@@ -745,12 +745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d587f2df176e0c24d914087d956a37b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  jumpForce: 15
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  gravityScale: 4
   isGrounded: 0
   coyoteTime: 0
   coyoteTimeMax: 0.2
@@ -15278,7 +15279,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992159092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 042a56841b2d74348ac965d2c9688391, type: 3}
   m_Name: 
