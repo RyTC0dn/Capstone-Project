@@ -15,10 +15,8 @@ public class BasicEnemyPatrolState : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyControls = FindAnyObjectByType<BasicEnemyControls>();
-        int randomWaypoint = Random.Range(0, enemyControls.waypoints.Length);
-
-        
+        enemyControls = GetComponent<BasicEnemyControls>();
+        int randomWaypoint = Random.Range(0, enemyControls.waypoints.Length);        
     }
 
     // Update is called once per frame
