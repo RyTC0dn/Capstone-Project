@@ -37,7 +37,6 @@ public class BasicEnemyPatrolState : MonoBehaviour
         if (Vector3.Distance(enemyPos, waypointPos) < 1f)
         {
             enemyControls.currentWaypointIndex = (enemyControls.currentWaypointIndex + 1) % enemyControls.waypoints.Length;
-            Debug.Log("Moving to next point");
         }
     }
 }

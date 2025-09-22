@@ -5,9 +5,11 @@ public class PrototypePlayerAttack : MonoBehaviour
     private Transform spawnPos; //Storing the position of the spawnpoint of weapon
     public GameObject weapon; //Variable storing weapon object
     [SerializeField]
-    private float activeTimer = 1.0f;
+    private float activeTimer = 0.5f;
 
     private bool isUnsheathed = false;
+
+    BasicEnemyHealth enemyHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
