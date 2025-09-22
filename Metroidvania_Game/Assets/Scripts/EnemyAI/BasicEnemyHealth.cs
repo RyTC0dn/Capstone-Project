@@ -4,8 +4,8 @@ using UnityEngine;
 public class BasicEnemyHealth : MonoBehaviour
 {
     public int enemyHealth = 2;
-    public TextMeshProUGUI healthTrackerText;
-    public GameObject healthTrackerPrefab;
+    //public TextMeshProUGUI healthTrackerText;
+    //public GameObject healthTrackerPrefab;
     private float textOffset = 1;
 
 
@@ -19,7 +19,7 @@ public class BasicEnemyHealth : MonoBehaviour
     void Update()
     {
         OnDeath();
-        DisplayHitTracker();
+        //DisplayHitTracker();
     }
 
     private void OnDeath()
@@ -30,11 +30,11 @@ public class BasicEnemyHealth : MonoBehaviour
         }
     }
 
-    private void DisplayHitTracker()
-    {
-        healthTrackerText.text = enemyHealth.ToString();
-        healthTrackerPrefab.transform.position = transform.position * textOffset;
-    }
+    //private void DisplayHitTracker()
+    //{
+    //    healthTrackerText.text = enemyHealth.ToString();
+    //    healthTrackerPrefab.transform.position = transform.position * textOffset;
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

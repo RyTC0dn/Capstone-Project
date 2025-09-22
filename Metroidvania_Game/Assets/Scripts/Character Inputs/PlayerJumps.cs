@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerJumps : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerJumps : MonoBehaviour
     //Coyote time 
     public float coyoteTime;
     public float coyoteTimeMax = 0.2f;
+    private float raycastLength = 2/0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,7 @@ public class PlayerJumps : MonoBehaviour
         //Raycasts are lines that check for collisions. They return a true or false 
         //Minimum parameters are astarting point, direction, and size
         //The additional parameter is the layermask, "which layer?"
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
 
         //Jump input 
         if (Input.GetKeyDown(KeyCode.Space) && coyoteTime > 0)
@@ -87,6 +89,6 @@ public class PlayerJumps : MonoBehaviour
     //On draw gizmos selected will show gizmos when you select the game object
     private void OnDrawGizmosSelected()
     {
-        Debug.DrawRay(transform.position, Vector2.down, Color.blue);
+        Debug.DrawRay(transform.position, Vector2.down * raycastLength, Color.blue);
     }
 }
