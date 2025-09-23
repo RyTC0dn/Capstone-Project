@@ -2,47 +2,85 @@ using UnityEngine;
 
 public class PrototypePlayerAttack : MonoBehaviour
 {
-    private Transform spawnPos; //Storing the position of the spawnpoint of weapon
-    public GameObject weapon; //Variable storing weapon object
+    [Header("Weapon Setup")]
+    public Transform spawnPosRight; //Storing the position of the spawnpoint of weapon
+    public Transform spawnPosLeft;
+    public GameObject weaponPrefab; //Variable storing weapon object
+    private int currentSpawn = 0;
+
     [SerializeField]
     private float activeTimer = 0.5f;
 
-    private bool isUnsheathed = false;
+    private float unsheathTime;
+    private bool isUnsheathed = false; //Checks if the player has pressed attack input
 
-    BasicEnemyHealth enemyHealth;
+    PlayerMovementControls playerController;
+
+    private GameObject currentWeapon; //Track spawned weapon
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spawnPos = GetComponent<Transform>();
-        spawnPos.position = transform.position;
+        playerController = GetComponentInParent<PlayerMovementControls>();
 
-        weapon.SetActive(false);
+        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time
     }
 
     // Update is called once per frame
     void Update()
     {
-        WeaponUnsheath();
+        WeaponUnsheath();        
     }
 
     private void WeaponUnsheath()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0) && (playerController.isFacingRight || !playerController.isFacingRight))
         {
-            weapon.SetActive(true);
-            isUnsheathed = true;
+            //Choose which spawn point based on players direction
+            Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
+
+            //if (playerController.isFacingRight) { Debug.Log("Facing right"); }
+            //else if(!playerController.isFacingRight) { Debug.Log("Facing Left"); }
+            //if(spawnPoint == false) { Debug.LogWarning("Weapon not able to spawn left, check code!"); }
+
+            //Spawn weapon
+            currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+            isUnsheathed=true;
+
+            activeTimer = unsheathTime;
         }
-        else if(isUnsheathed)
+        else if (isUnsheathed)
         {
             activeTimer -= Time.deltaTime;
+            if(activeTimer <= 0)
+            {
+                if (currentWeapon != null) { Destroy(currentWeapon); }
+                isUnsheathed = false;
+                activeTimer = unsheathTime;
+            }
         }
-        if(activeTimer <= 0)
-        {
-            weapon.SetActive(false );
-            isUnsheathed=false;
-            activeTimer = 2;    
-        }
+        //if (Input.GetMouseButton(0) && playerController.isFacingRight)
+        //{
+        //    Instantiate(weapon, );
+        //    isUnsheathed = true;
+
+        //    //Reset time every time players hit the input
+        //    activeTimer = unsheathTime;
+        //}
+        //else if(isUnsheathed)
+        //{
+        //    activeTimer -= Time.deltaTime;
+        //    if (activeTimer <= 0)
+        //    {
+        //        Destroy(weapon);
+        //        isUnsheathed = false;
+
+        //        //Extra reset precautions so the timer is ready for next input
+        //        activeTimer = unsheathTime;
+        //    }
+        //}
+
 
     }
 }

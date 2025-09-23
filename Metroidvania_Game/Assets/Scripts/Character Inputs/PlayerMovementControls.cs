@@ -27,6 +27,11 @@ public class PlayerMovementControls : MonoBehaviour
     public float dashTime;
     private bool isDashing = false;
 
+    [Header("Sprite Settings")]
+    
+    private SpriteRenderer knightSP;
+    [HideInInspector] public bool isFacingRight = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +40,9 @@ public class PlayerMovementControls : MonoBehaviour
 
         //Setting the dash time to timer
         dashTime = dashTimer;
+
+        //Initialize the spriterenderer for the player
+        knightSP = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -61,6 +69,12 @@ public class PlayerMovementControls : MonoBehaviour
 
     private void Move(float hSpeed)
     {
+        //Assigning booleans to the key inputs
+        bool movingLeft = Input.GetAxisRaw("Horizontal") <= -1;
+        bool movingRight = Input.GetAxisRaw("Horizontal") >= 1;
+
+        float movement = Input.GetAxisRaw("Horizontal");
+
         //Ternary if statement
         //is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
         //if it is false (:) multiply hspeed by playerspeed
@@ -79,6 +93,17 @@ public class PlayerMovementControls : MonoBehaviour
         }
 
         rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
+
+        if(movement < 0 )
+        {
+            isFacingRight = false;
+            knightSP.flipX = false;           
+        }
+        if(movement > 0 )
+        {
+            isFacingRight = true;
+            knightSP.flipX = true;
+        }
     }
 
     private void Dash(float hSpeed)
