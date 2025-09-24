@@ -146,7 +146,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253066347139419439}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -208,5 +208,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 2
-  healthTrackerText: {fileID: 0}
-  healthTrackerPrefab: {fileID: 0}
+  coin: {fileID: 8463999451434080462, guid: e37d34e875d701e4ea968de9dfdff982, type: 3}
