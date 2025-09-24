@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PrototypePlayerAttack : MonoBehaviour
 {
@@ -29,37 +30,21 @@ public class PrototypePlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WeaponUnsheath();        
-    }
-
-    private void WeaponUnsheath()
-    {
-        if (Input.GetMouseButtonDown(0) && (playerController.isFacingRight || !playerController.isFacingRight))
-        {
-            //Choose which spawn point based on players direction
-            Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
-
-            //if (playerController.isFacingRight) { Debug.Log("Facing right"); }
-            //else if(!playerController.isFacingRight) { Debug.Log("Facing Left"); }
-            //if(spawnPoint == false) { Debug.LogWarning("Weapon not able to spawn left, check code!"); }
-
-            //Spawn weapon
-            currentWeapon = Instantiate(weaponPrefab, spawnPoint);
-
-            isUnsheathed=true;
-
-            activeTimer = unsheathTime;
-        }
-        else if (isUnsheathed)
+        if (isUnsheathed)
         {
             activeTimer -= Time.deltaTime;
-            if(activeTimer <= 0)
+            if (activeTimer <= 0)
             {
                 if (currentWeapon != null) { Destroy(currentWeapon); }
                 isUnsheathed = false;
                 activeTimer = unsheathTime;
             }
         }
+    }
+
+    private void WeaponUnsheath()
+    {
+        
         //if (Input.GetMouseButton(0) && playerController.isFacingRight)
         //{
         //    Instantiate(weapon, );
@@ -82,5 +67,22 @@ public class PrototypePlayerAttack : MonoBehaviour
         //}
 
 
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        
+        if ((context.performed) && (playerController.isFacingRight || !playerController.isFacingRight))
+        {
+            //Choose which spawn point based on players direction
+            Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
+
+            //Spawn weapon
+            currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+            isUnsheathed = true;
+
+            activeTimer = unsheathTime;
+        }
     }
 }

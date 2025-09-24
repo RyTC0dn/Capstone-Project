@@ -1,3 +1,4 @@
+using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -57,7 +58,7 @@ public class PlayerJumps : MonoBehaviour
             //and then scale by delta time to account for frame jitter
             rb2d.linearVelocity += (Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
         }
-        else if (rb2d.linearVelocity.y > 0 && !Keyboard.current.spaceKey.isPressed && !Gamepad.current.buttonSouth.isPressed)
+        else if (rb2d.linearVelocity.y > 0)
         {
             rb2d.linearVelocity += (Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
         }
@@ -80,7 +81,7 @@ public class PlayerJumps : MonoBehaviour
     {       
 
         //Jump input 
-        if (callbackContext.performed && coyoteTime > 0)
+        if ((callbackContext.performed) && coyoteTime > 0)
         {
             //Set the rigidbody's velocity to whatever its current velocity is on x
             //and jump force on y
