@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerJumps : MonoBehaviour
 {
@@ -46,14 +48,6 @@ public class PlayerJumps : MonoBehaviour
         //The additional parameter is the layermask, "which layer?"
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
 
-        //Jump input 
-        if (Input.GetKeyDown(KeyCode.Space) && coyoteTime > 0)
-        {
-            //Set the rigidbody's velocity to whatever its current velocity is on x
-            //and jump force on y
-            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
-        }
-
         //Gravity modifications 
         //If the player is falling, increase gravity factor
         if (rb2d.linearVelocity.y < 0)
@@ -63,7 +57,7 @@ public class PlayerJumps : MonoBehaviour
             //and then scale by delta time to account for frame jitter
             rb2d.linearVelocity += (Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
         }
-        else if (rb2d.linearVelocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        else if (rb2d.linearVelocity.y > 0 && !Keyboard.current.spaceKey.isPressed && !Gamepad.current.buttonSouth.isPressed)
         {
             rb2d.linearVelocity += (Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
         }
@@ -80,9 +74,20 @@ public class PlayerJumps : MonoBehaviour
             rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, rb2d.linearVelocity.y);
             coyoteTime -= Time.deltaTime;
         }
+    }
 
-        ////Set the animator variable is jumping to the opposite of is grounded
-        //jumpSP.SetBool("isJumping", !isGrounded);
+    public void OnJump(InputAction.CallbackContext callbackContext)
+    {       
+
+        //Jump input 
+        if (callbackContext.performed && coyoteTime > 0)
+        {
+            //Set the rigidbody's velocity to whatever its current velocity is on x
+            //and jump force on y
+            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
+        }
+
+        
     }
 
     //Special function to make gizmos visible 
