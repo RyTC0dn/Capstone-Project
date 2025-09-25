@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    SceneController instance;
+    public SceneController instance;
     public void Awake()
     {
         if (instance == null)
@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour
 
     public void EnterTower()
     {
-        SceneManager.LoadScene("Level 1 (Block-out)");
+        SceneManager.LoadScene(1);
     }
 
 }

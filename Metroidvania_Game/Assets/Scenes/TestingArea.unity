@@ -1051,6 +1051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011673192}
   - component: {fileID: 1011673191}
+  - component: {fileID: 1011673193}
   m_Layer: 0
   m_Name: EnterTowerTrigger
   m_TagString: Untagged
@@ -1119,6 +1120,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011673193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011673190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ac8717ef8863a42b3644a0224e60b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1239660440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1609705363}
+  - component: {fileID: 1609705364}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -1324,6 +1338,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1609705364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609705362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc312a28da4da2c4e9a1f375cf956fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instance: {fileID: 1609705364}
 --- !u!1 &1691424584
 GameObject:
   m_ObjectHideFlags: 0
