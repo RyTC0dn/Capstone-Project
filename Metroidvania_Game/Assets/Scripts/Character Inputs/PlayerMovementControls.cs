@@ -27,11 +27,11 @@ public class PlayerMovementControls : MonoBehaviour
     public float dashTime;
     private bool isDashing = false;
 
-    [Header("Sprite Settings")]
-    
+    [Header("Sprite Settings")]    
     private SpriteRenderer knightSP;
     [HideInInspector] public bool isFacingRight = true;
 
+    [Header("UI Settings")]
     public int coinTracker = 0;
 
     UIManager ui;
