@@ -32,6 +32,10 @@ public class PlayerMovementControls : MonoBehaviour
     private SpriteRenderer knightSP;
     [HideInInspector] public bool isFacingRight = true;
 
+    public int coinTracker = 0;
+
+    UIManager ui;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +47,9 @@ public class PlayerMovementControls : MonoBehaviour
 
         //Initialize the spriterenderer for the player
         knightSP = GetComponent<SpriteRenderer>();
+
+        //Initilize the UI manager
+        ui = FindAnyObjectByType<UIManager>();
     }
 
     // Update is called once per frame
@@ -117,6 +124,15 @@ public class PlayerMovementControls : MonoBehaviour
         //Apply dash speed
         if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; }
         else if (hSpeed < 0 && isDashing ) { rb2D.linearVelocity = -dashVector; }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Currency"))
+        {
+            ui.CoinsCollected();
+            Destroy(collision.gameObject);
+        }
     }
 
 
