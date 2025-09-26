@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementControls : MonoBehaviour
 {
-    //General inputs
+    [Header("General input variables")]
+
     [SerializeField] 
     private float playerSpeed;
     private Rigidbody2D rb2D;
@@ -17,13 +18,23 @@ public class PlayerMovementControls : MonoBehaviour
 
     private float horizontalMove = 0;
 
-    //Dash variables
+    [Header("Dash Settings")]
+
     [SerializeField]
     private float dashSpeed;
     private float dashFactor = 2f;
     private float dashTimer = 0.5f;
     public float dashTime;
     private bool isDashing = false;
+
+    [Header("Sprite Settings")]    
+    private SpriteRenderer knightSP;
+    [HideInInspector] public bool isFacingRight = true;
+
+    [Header("UI Settings")]
+    public int coinTracker = 0;
+
+    UIManager ui;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +44,12 @@ public class PlayerMovementControls : MonoBehaviour
 
         //Setting the dash time to timer
         dashTime = dashTimer;
+
+        //Initialize the spriterenderer for the player
+        knightSP = GetComponent<SpriteRenderer>();
+
+        //Initilize the UI manager
+        ui = FindAnyObjectByType<UIManager>();
     }
 
     // Update is called once per frame
@@ -48,7 +65,7 @@ public class PlayerMovementControls : MonoBehaviour
     {
         //Float variable to store horizontal input
         //Horizontal can be -1, 0, or 1
-        float h = Input.GetAxis("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
         Move(h);
@@ -59,6 +76,12 @@ public class PlayerMovementControls : MonoBehaviour
 
     private void Move(float hSpeed)
     {
+        //Assigning booleans to the key inputs
+        bool movingLeft = Input.GetAxisRaw("Horizontal") <= -1;
+        bool movingRight = Input.GetAxisRaw("Horizontal") >= 1;
+
+        float movement = Input.GetAxisRaw("Horizontal");
+
         //Ternary if statement
         //is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
         //if it is false (:) multiply hspeed by playerspeed
@@ -76,7 +99,18 @@ public class PlayerMovementControls : MonoBehaviour
             isSprinting = false;
         }
 
-        rb2D.linearVelocity = new Vector2(xVelocity, rb2D.linearVelocity.y);
+        rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
+
+        if(movement < 0 )
+        {
+            isFacingRight = false;
+            knightSP.flipX = false;           
+        }
+        if(movement > 0 )
+        {
+            isFacingRight = true;
+            knightSP.flipX = true;
+        }
     }
 
     private void Dash(float hSpeed)
@@ -90,6 +124,15 @@ public class PlayerMovementControls : MonoBehaviour
         //Apply dash speed
         if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; }
         else if (hSpeed < 0 && isDashing ) { rb2D.linearVelocity = -dashVector; }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Currency"))
+        {
+            ui.CoinsCollected();
+            Destroy(collision.gameObject);
+        }
     }
 
 

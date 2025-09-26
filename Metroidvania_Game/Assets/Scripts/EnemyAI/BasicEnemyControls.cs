@@ -20,20 +20,24 @@ public class BasicEnemyControls : MonoBehaviour
 
     private bool isAtWaypoint = false;
 
-    public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
+    BasicEnemyAttackState attackState;
+
+    //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyPatrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
+        attackState = GetComponent<BasicEnemyAttackState>();
 
-        patrolWaypoints.Add(waypoints[currentWaypointIndex], currentWaypointIndex);
+        //patrolWaypoints.Add(waypoints[currentWaypointIndex], currentWaypointIndex);
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemyPatrolState.Patrol(gameObject.transform, enemySpeed);
+        enemyPatrolState.Patrol(gameObject.transform, waypoints[currentWaypointIndex].position, enemySpeed);
+        //attackState.AttackPlayer(enemyRB2D, enemySpeed);
     }
 }
