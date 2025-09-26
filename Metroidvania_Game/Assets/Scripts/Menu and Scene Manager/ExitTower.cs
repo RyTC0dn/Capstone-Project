@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnterTower : MonoBehaviour
+public class ExitTower : MonoBehaviour
 {
     SceneController controller;
 
@@ -11,9 +11,9 @@ public class EnterTower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) 
+        if (collision.CompareTag("Player"))
         {
-            controller.EnterTower();
+            controller.ExitTower();
         }
     }
 }

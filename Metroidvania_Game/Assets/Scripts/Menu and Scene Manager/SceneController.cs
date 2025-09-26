@@ -22,4 +22,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ExitTower()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
