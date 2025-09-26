@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - Environment
   - Enemy
+  - LevelExit
+  - LevelEnter
   layers:
   - Default
   - TransparentFX
