@@ -14,12 +14,12 @@ public class UIManager : MonoBehaviour
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
 
-    PlayerMovementControls playerControls;
+    PrototypePlayerMovementControls playerControls;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerControls = FindAnyObjectByType<PlayerMovementControls>();
+        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
         coinCount = startingCoins;
 

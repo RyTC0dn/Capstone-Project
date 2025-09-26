@@ -1,8 +1,9 @@
 using System.Collections;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerMovementControls : MonoBehaviour
+public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
 
@@ -20,10 +21,9 @@ public class PlayerMovementControls : MonoBehaviour
 
     [Header("Dash Settings")]
 
-    [SerializeField]
     private float dashSpeed;
     private float dashFactor = 2f;
-    private float dashTimer = 0.5f;
+    [SerializeField]private float dashTimer = 0.5f;
     public float dashTime;
     private bool isDashing = false;
 
@@ -35,6 +35,8 @@ public class PlayerMovementControls : MonoBehaviour
     public int coinTracker = 0;
 
     UIManager ui;
+
+    PrototypeShop shop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,13 +52,25 @@ public class PlayerMovementControls : MonoBehaviour
 
         //Initilize the UI manager
         ui = FindAnyObjectByType<UIManager>();
+
+        shop = FindAnyObjectByType<PrototypeShop>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Inputs();
-        //DashInputs();    
+        //DashInputs();
+
+        if(Keyboard.current.eKey.isPressed)
+        {
+            shop.BuyFunction();
+            if(shop.gotWeapon)
+            {
+                //Checking to make sure that the buy function works
+                Debug.Log("Got a new weapon!");
+            }
+        }
+
     }
 
     //FixedUpdate runs every frame at a set interval 
@@ -70,8 +84,12 @@ public class PlayerMovementControls : MonoBehaviour
         //Set the movement function
         Move(h);
 
-        //Set dash function
-        Dash(h);
+        if(dashTime > 0)
+        {
+            //Set dash function
+            Dash(h);
+        }
+       
     }
 
     private void Move(float hSpeed)
@@ -82,22 +100,22 @@ public class PlayerMovementControls : MonoBehaviour
 
         float movement = Input.GetAxisRaw("Horizontal");
 
-        //Ternary if statement
-        //is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
-        //if it is false (:) multiply hspeed by playerspeed
-        float xVelocity = isSprinting ? hSpeed * playerSpeed * sprintFactor : hSpeed * playerSpeed;
+        ////Ternary if statement
+        ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
+        ////if it is false (:) multiply hspeed by playerspeed
+        //float xVelocity = isSprinting ? hSpeed * playerSpeed * sprintFactor : hSpeed * playerSpeed;
 
-        //Assign the left shift key to sprinting
-        isSprinting = Input.GetKey(KeyCode.LeftShift);
+        ////Assign the left shift key to sprinting
+        //isSprinting = Input.GetKey(KeyCode.LeftShift);
 
-        //What to do if the player is sprinting
-        if (isSprinting) { sprintTimer -= Time.deltaTime; } //Subtract 1 second by delta time
-        else { sprintTimer = sprintDuration; } //If player is not sprinting, reset the timer
+        ////What to do if the player is sprinting
+        //if (isSprinting) { sprintTimer -= Time.deltaTime; } //Subtract 1 second by delta time
+        //else { sprintTimer = sprintDuration; } //If player is not sprinting, reset the timer
 
-        //Check to make sure the timer hasn't elapsed
-        if(sprintTimer <= 0) { sprintTimer = 0;
-            isSprinting = false;
-        }
+        ////Check to make sure the timer hasn't elapsed
+        //if(sprintTimer <= 0) { sprintTimer = 0;
+        //    isSprinting = false;
+        //}
 
         rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
 
@@ -115,15 +133,19 @@ public class PlayerMovementControls : MonoBehaviour
 
     private void Dash(float hSpeed)
     {
-        Vector2 dashVector = new Vector2(dashSpeed * dashFactor, 0);
+        while(dashTime > 0)
+        {
+            dashSpeed = playerSpeed;
+            Vector2 dashVector = new Vector2(dashSpeed * dashFactor, 0);
 
-        //Assigning dash function to C key
-        isDashing = Input.GetKey(KeyCode.C);
+            //Assigning dash function to C key
+            isDashing = Keyboard.current.leftShiftKey.isPressed;
 
-        //If player is moving in the positive (1) or negative (-1) direction and presses dash
-        //Apply dash speed
-        if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; }
-        else if (hSpeed < 0 && isDashing ) { rb2D.linearVelocity = -dashVector; }
+            //If player is moving in the positive (1) or negative (-1) direction and presses dash
+            //Apply dash speed
+            if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; dashTime -= Time.deltaTime; }
+            else if (hSpeed < 0 && isDashing) { rb2D.linearVelocity = -dashVector; dashTime -= Time.deltaTime; }
+        }       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

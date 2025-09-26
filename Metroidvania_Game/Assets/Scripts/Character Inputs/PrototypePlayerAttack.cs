@@ -15,14 +15,14 @@ public class PrototypePlayerAttack : MonoBehaviour
     private float unsheathTime;
     private bool isUnsheathed = false; //Checks if the player has pressed attack input
 
-    PlayerMovementControls playerController;
+    PrototypePlayerMovementControls playerController;
 
     private GameObject currentWeapon; //Track spawned weapon
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerController = GetComponentInParent<PlayerMovementControls>();
+        playerController = GetComponentInParent<PrototypePlayerMovementControls>();
 
         unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time
     }
