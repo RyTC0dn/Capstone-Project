@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Currency
   - Shop
+  - LevelExit
+  - LevelEnter
   layers:
   - Default
   - TransparentFX
