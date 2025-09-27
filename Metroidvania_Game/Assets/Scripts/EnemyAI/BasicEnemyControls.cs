@@ -5,22 +5,20 @@ public enum States
 {
     Patrol, 
     Attack, 
-    Death
 }
 
 public class BasicEnemyControls : MonoBehaviour
 {
+    [Header ("Enemy States")]
     BasicEnemyPatrolState enemyPatrolState;
-    public int currentWaypointIndex = 0; //Index of current waypoint
-    public Transform[] waypoints;
+    BasicEnemyAttackState attackState;
 
-    [SerializeField]
-    private float enemySpeed;
+    public float enemySpeed;
     private Rigidbody2D enemyRB2D;
 
     private bool isAtWaypoint = false;
 
-    BasicEnemyAttackState attackState;
+   
 
     //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
 
@@ -31,13 +29,14 @@ public class BasicEnemyControls : MonoBehaviour
         enemyRB2D = GetComponent<Rigidbody2D>();
         attackState = GetComponent<BasicEnemyAttackState>();
 
+
         //patrolWaypoints.Add(waypoints[currentWaypointIndex], currentWaypointIndex);
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemyPatrolState.Patrol(gameObject.transform, waypoints[currentWaypointIndex].position, enemySpeed);
+        //enemyPatrolState.Patrol(gameObject.transform, waypoints[currentWaypointIndex].position, enemySpeed);
         //attackState.AttackPlayer(enemyRB2D, enemySpeed);
     }
 }

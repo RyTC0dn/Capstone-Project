@@ -33,7 +33,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     [Header("UI Settings")]
     public int coinTracker = 0;
-
+    public int playerLives = 3;
     UIManager ui;
 
     PrototypeShop shop;
@@ -154,6 +154,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             ui.CoinsCollected();
             Destroy(collision.gameObject);
+        }
+        if(collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
+        {
+            ui.PlayerLives();
         }
     }
 

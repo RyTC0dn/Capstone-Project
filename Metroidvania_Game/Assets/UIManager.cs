@@ -10,9 +10,11 @@ public class UIManager : MonoBehaviour
     //Game Variables
     public int startingCoins = 0;
     private int coinCount;
+    private int lifeTracker;
 
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
+    public TextMeshProUGUI playerHealthText;
 
     PrototypePlayerMovementControls playerControls;
 
@@ -22,6 +24,8 @@ public class UIManager : MonoBehaviour
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
         coinCount = startingCoins;
+
+        lifeTracker = playerControls.playerLives;
 
         UpdateUI();
     }
@@ -35,6 +39,13 @@ public class UIManager : MonoBehaviour
     public void UpdateUI()
     {
         coinText.text = "Coins: " + coinCount.ToString();
+        playerHealthText.text = "Player Lives: " + lifeTracker.ToString();
+    }
+
+    public void PlayerLives()
+    {
+        lifeTracker--;
+        UpdateUI();
     }
 
     public void CoinsCollected()

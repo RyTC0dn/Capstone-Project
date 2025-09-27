@@ -10,24 +10,26 @@ public class BasicEnemyPatrolState : MonoBehaviour
 
     BasicEnemyControls enemyControls;
 
-    private bool isWaiting = false; 
+    private bool isWaiting = false;
+
+    public int currentWaypointIndex = 0; //Index of current waypoint
+    public Transform[] waypoints;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyControls = GetComponent<BasicEnemyControls>();
-        int randomWaypoint = Random.Range(0, enemyControls.waypoints.Length);        
+        enemyControls = GetComponent<BasicEnemyControls>();       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Patrol(transform, waypoints[currentWaypointIndex].position, enemyControls.enemySpeed);
     }
 
     public void Patrol(Transform currentPos, Vector3 waypoint, float speed)
     {
-        destPos = enemyControls.waypoints[enemyControls.currentWaypointIndex].position;
+        destPos = waypoints[currentWaypointIndex].position;
         //waypoint = new Vector3(destPos.x, 0, 0);
         currentPos.position = Vector3.MoveTowards(currentPos.position, waypoint, speed * Time.deltaTime);
 
@@ -36,7 +38,7 @@ public class BasicEnemyPatrolState : MonoBehaviour
 
         if (Vector3.Distance(enemyPos, waypointPos) < 1f)
         {
-            enemyControls.currentWaypointIndex = (enemyControls.currentWaypointIndex + 1) % enemyControls.waypoints.Length;
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
     }
 }
