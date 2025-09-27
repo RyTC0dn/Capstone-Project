@@ -5,14 +5,14 @@ public class SceneChanger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "LevelExit")
+        if (other.tag == "Player" && gameObject.tag == "LevelExit")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Town");
         }
 
-        if (other.tag == "LevelEnter")
+        if (other.tag == "Player" && gameObject.tag == "LevelEnter")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Level 1 - RyanTestZone");
         }
     }
 }

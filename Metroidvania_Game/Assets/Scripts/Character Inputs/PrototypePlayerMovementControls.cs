@@ -84,11 +84,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Set the movement function
         Move(h);
 
-        if(dashTime > 0)
-        {
-            //Set dash function
-            Dash(h);
-        }
+        //if(dashTime > 0)
+        //{
+        //    //Set dash function
+        //    Dash(h);
+        //}
        
     }
 
