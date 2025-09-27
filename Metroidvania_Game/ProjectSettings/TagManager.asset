@@ -7,11 +7,12 @@ TagManager:
   - Waypoint
   - Weapon
   - Environment
-  - Enemy
   - Currency
   - Shop
   - LevelExit
   - LevelEnter
+  - GroundEnemy
+  - FlyingEnemy
   layers:
   - Default
   - TransparentFX
