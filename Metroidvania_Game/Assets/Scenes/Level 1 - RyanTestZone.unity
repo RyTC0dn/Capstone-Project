@@ -5759,6 +5759,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5845898335328023294, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: currentEnemyState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8072791704070279469, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: waypoints.Array.size
       value: 1
@@ -5897,6 +5901,10 @@ PrefabInstance:
     - target: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Name
       value: GroundEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1994623804695009132, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_LocalPosition.x

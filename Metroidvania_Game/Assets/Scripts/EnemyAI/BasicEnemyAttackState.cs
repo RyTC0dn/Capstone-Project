@@ -4,6 +4,9 @@ public class BasicEnemyAttackState : MonoBehaviour
 {
     private GameObject playerPos;
     private Rigidbody2D rb2D;
+    [SerializeField]private bool isGrounded;
+    private float raycastLength = 2;
+    public LayerMask groundLayer;
 
     private enum enemyTypes { ground, flying}
     enemyTypes currentEnemyType;
@@ -42,12 +45,17 @@ public class BasicEnemyAttackState : MonoBehaviour
         transform.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
 
         float jumpForce = 5;
+        isGrounded = Physics.Raycast(transform.position, Vector2.down, raycastLength * 2, groundLayer);
         //If the player is above the y position of enemy 
         if (playerPos.transform.position.y  > transform.position.y)
-        {            
-            //Jump
-            rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            Debug.Log("Player is above enemy!");
+        {  
+            if(isGrounded)
+            {
+                //Jump
+                rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                Debug.Log("Enemy is jumping!");
+            }
+
         }
     }
 

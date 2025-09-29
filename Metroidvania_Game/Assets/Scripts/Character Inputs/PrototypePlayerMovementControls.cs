@@ -66,11 +66,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if(Keyboard.current.eKey.isPressed)
         {
             shop.BuyFunction();
-            if(shop.gotWeapon)
-            {
-                //Checking to make sure that the buy function works
-                Debug.Log("Got a new weapon!");
-            }
         }
 
         if(playerLives == 0)

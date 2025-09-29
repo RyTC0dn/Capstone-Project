@@ -10,14 +10,13 @@ public class PrototypeShop : MonoBehaviour
 
     private int price = 2;
 
-    [SerializeField]private bool isNearShop = false;
-    public bool gotWeapon = false;
+    [SerializeField]private bool isNearShop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-              
+    {              
         playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
+        isNearShop = false;
     }
 
     private void Update()
@@ -33,7 +32,6 @@ public class PrototypeShop : MonoBehaviour
         if(weapon != null && isNearShop && playerMovementControls.coinTracker > 0)
         {
             playerMovementControls.coinTracker -= price;
-            gotWeapon = true;
             Destroy(weapon);
         }
        
@@ -46,16 +44,12 @@ public class PrototypeShop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        isNearShop = collision.CompareTag("Player");
+        if (isNearShop)
         {
             interactText.enabled = true;
-            isNearShop = true;
             string text = "Press E to Buy";
             Display(text);
-        }
-        else
-        {
-            isNearShop = false;
         }
     }
 }
