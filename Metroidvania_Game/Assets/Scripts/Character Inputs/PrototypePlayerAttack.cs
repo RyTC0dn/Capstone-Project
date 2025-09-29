@@ -42,33 +42,6 @@ public class PrototypePlayerAttack : MonoBehaviour
         }
     }
 
-    private void WeaponUnsheath()
-    {
-        
-        //if (Input.GetMouseButton(0) && playerController.isFacingRight)
-        //{
-        //    Instantiate(weapon, );
-        //    isUnsheathed = true;
-
-        //    //Reset time every time players hit the input
-        //    activeTimer = unsheathTime;
-        //}
-        //else if(isUnsheathed)
-        //{
-        //    activeTimer -= Time.deltaTime;
-        //    if (activeTimer <= 0)
-        //    {
-        //        Destroy(weapon);
-        //        isUnsheathed = false;
-
-        //        //Extra reset precautions so the timer is ready for next input
-        //        activeTimer = unsheathTime;
-        //    }
-        //}
-
-
-    }
-
     public void OnAttack(InputAction.CallbackContext context)
     {
         

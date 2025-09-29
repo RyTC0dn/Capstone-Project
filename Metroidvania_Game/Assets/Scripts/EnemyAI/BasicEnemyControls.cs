@@ -12,13 +12,13 @@ public class BasicEnemyControls : MonoBehaviour
     [Header ("Enemy States")]
     BasicEnemyPatrolState enemyPatrolState;
     BasicEnemyAttackState attackState;
+    public States currentEnemyState;
 
     public float enemySpeed;
+    public float playerDistance;
     private Rigidbody2D enemyRB2D;
-
-    private bool isAtWaypoint = false;
-
-   
+    public PrototypePlayerMovementControls playerControls;
+    UIManager ui;
 
     //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
 
@@ -28,15 +28,55 @@ public class BasicEnemyControls : MonoBehaviour
         enemyPatrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         attackState = GetComponent<BasicEnemyAttackState>();
-
-
-        //patrolWaypoints.Add(waypoints[currentWaypointIndex], currentWaypointIndex);
+        ui = FindFirstObjectByType<UIManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //enemyPatrolState.Patrol(gameObject.transform, waypoints[currentWaypointIndex].position, enemySpeed);
-        //attackState.AttackPlayer(enemyRB2D, enemySpeed);
+        StateSwitch();
+    }
+
+    public void StateSwitch()
+    {
+        switch (currentEnemyState)
+        {
+            case States.Attack:
+                attackState.enabled = true;
+                enemyPatrolState.enabled = false;
+                break;
+            case States.Patrol:
+                enemyPatrolState.enabled = true;
+                attackState.enabled = false;
+                break;
+        }        
+
+        ////Setting up the conditions for state change
+        //Vector2 playerVector = new Vector2(playerControls.transform.position.x, playerControls.transform.position.y);
+        //Vector2 enemyVector = new Vector2(transform.position.x, transform.position.y);
+  
+        //if(Vector2.Distance(enemyVector, playerVector) <= playerDistance) //If the distance between enemy and player is less than 0.5
+        //{
+        //    currentEnemyState = States.Attack;
+        //    Debug.Log("Attack State");
+        //}
+        //else
+        //{
+        //    currentEnemyState= States.Patrol;
+        //    Debug.Log("Patrol State");
+        //}
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            ui.PlayerLives();
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, Vector2.down * playerDistance, Color.blue);
     }
 }

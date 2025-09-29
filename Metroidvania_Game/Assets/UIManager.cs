@@ -46,6 +46,8 @@ public class UIManager : MonoBehaviour
     {
         lifeTracker--;
         UpdateUI();
+
+        playerControls.gameObject.transform.position = playerControls.playerSpawnPoint.position;
     }
 
     public void CoinsCollected()

@@ -10,6 +10,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [SerializeField] 
     private float playerSpeed;
     private Rigidbody2D rb2D;
+    public Transform playerSpawnPoint;
 
     [SerializeField]
     private float sprintFactor = 1.5f;
@@ -155,10 +156,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             ui.CoinsCollected();
             Destroy(collision.gameObject);
         }
-        if(collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
-        {
-            ui.PlayerLives();
-        }
+        //if(collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
+        //{
+        //    ui.PlayerLives();
+        //}
     }
 
 

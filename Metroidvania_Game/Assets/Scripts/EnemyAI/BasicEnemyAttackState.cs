@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BasicEnemyAttackState : MonoBehaviour
 {
-    public GameObject playerPos;
+    private GameObject playerPos;
     private Rigidbody2D rb2D;
 
     private enum enemyTypes { ground, flying}
@@ -12,11 +12,14 @@ public class BasicEnemyAttackState : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+
+        playerPos = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        float speed = GetComponent<BasicEnemyControls>().enemySpeed;
         switch (currentEnemyType)
         {
             case enemyTypes.ground:
@@ -33,14 +36,14 @@ public class BasicEnemyAttackState : MonoBehaviour
 
     public void GroundEnemy()
     {
-        float speed = GetComponent<BasicEnemyControls>().enemySpeed;
+        float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         Vector2 playerPosX = new Vector2(playerPos.transform.position.x, transform.position.y);
- 
-        transform.position = Vector2.MoveTowards(rb2D.position, playerPosX, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
     }
 
     public void FlyingEnemy()
     {
-
+        float flyingEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
+        transform.position = Vector2.MoveTowards(rb2D.position, playerPos.transform.position, flyingEnemySpeed * Time.deltaTime);
     }
 }

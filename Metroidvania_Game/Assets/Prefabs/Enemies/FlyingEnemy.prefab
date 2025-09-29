@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8152913360889862364}
   - component: {fileID: 5845898335328023294}
   - component: {fileID: 8072791704070279469}
+  - component: {fileID: 8789652016206958642}
   - component: {fileID: 3394514973362909769}
   m_Layer: 0
   m_Name: FlyingEnemy
@@ -178,11 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f2e58a9c1885b4ba382a77426caa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWaypointIndex: 0
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
   enemySpeed: 5
+  playerDistance: 0
+  playerControls: {fileID: 5563131911607302948, guid: e247b74a165014d4687099a71894859d, type: 3}
 --- !u!114 &8072791704070279469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +195,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 2
+  currentWaypointIndex: 0
+  waypoints: []
+--- !u!114 &8789652016206958642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253066347139419439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dd14d33a1033d418279ae9bcf719ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {fileID: 1739781893144977248, guid: e247b74a165014d4687099a71894859d, type: 3}
 --- !u!114 &3394514973362909769
 MonoBehaviour:
   m_ObjectHideFlags: 0

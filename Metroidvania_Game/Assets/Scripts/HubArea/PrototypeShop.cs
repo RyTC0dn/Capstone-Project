@@ -16,12 +16,16 @@ public class PrototypeShop : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+              
+        playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
+    }
+
+    private void Update()
+    {
         if (!isNearShop)
         {
             interactText.enabled = false;
         }
-        
-        playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
     }
 
     public void BuyFunction()
