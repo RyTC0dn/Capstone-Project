@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     UIManager ui;
 
     PrototypeShop shop;
+    public SceneChanger sceneChanger;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,7 +62,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //DashInputs();
 
         if(Keyboard.current.eKey.isPressed)
         {
@@ -70,6 +71,16 @@ public class PrototypePlayerMovementControls : MonoBehaviour
                 //Checking to make sure that the buy function works
                 Debug.Log("Got a new weapon!");
             }
+        }
+
+        if(playerLives == 0)
+        {
+            Debug.Log("Player lost all lives");
+            sceneChanger.Death();
+        }
+        else if(sceneChanger == null)
+        {
+            Debug.LogWarning("Scene changer script is null!");
         }
 
     }
@@ -131,6 +142,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             knightSP.flipX = true;
         }
     }
+
+    //Only call this function when the player lives equal 0
+    
 
     private void Dash(float hSpeed)
     {

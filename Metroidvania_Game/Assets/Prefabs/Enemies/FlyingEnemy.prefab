@@ -179,7 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f2e58a9c1885b4ba382a77426caa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 5
+  currentEnemyState: 0
+  enemySpeed: 3.5
   playerDistance: 0
   playerControls: {fileID: 5563131911607302948, guid: e247b74a165014d4687099a71894859d, type: 3}
 --- !u!114 &8072791704070279469
@@ -209,7 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14dd14d33a1033d418279ae9bcf719ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 1739781893144977248, guid: e247b74a165014d4687099a71894859d, type: 3}
 --- !u!114 &3394514973362909769
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,4 +15,12 @@ public class SceneChanger : MonoBehaviour
             SceneManager.LoadScene("Level 1 - RyanTestZone");
         }
     }
+
+    ///Ryan's added functions 
+    ///
+    public void Death()//Only call this function when player loses all lives
+    {
+        SceneManager.LoadScene("Town");
+    }
+
 }

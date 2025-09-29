@@ -37,8 +37,18 @@ public class BasicEnemyAttackState : MonoBehaviour
     public void GroundEnemy()
     {
         float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
+        
         Vector2 playerPosX = new Vector2(playerPos.transform.position.x, transform.position.y);
         transform.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
+
+        float jumpForce = 5;
+        //If the player is above the y position of enemy 
+        if (playerPos.transform.position.y  > transform.position.y)
+        {            
+            //Jump
+            rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Debug.Log("Player is above enemy!");
+        }
     }
 
     public void FlyingEnemy()

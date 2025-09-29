@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEnemyState: 0
-  enemySpeed: 5
+  enemySpeed: 3.5
   playerDistance: 0
   playerControls: {fileID: 5563131911607302948, guid: e247b74a165014d4687099a71894859d, type: 3}
 --- !u!114 &8072791704070279469

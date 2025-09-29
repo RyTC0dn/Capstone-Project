@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     //Game Variables
     public int startingCoins = 0;
     private int coinCount;
-    private int lifeTracker;
 
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
@@ -25,8 +24,6 @@ public class UIManager : MonoBehaviour
 
         coinCount = startingCoins;
 
-        lifeTracker = playerControls.playerLives;
-
         UpdateUI();
     }
 
@@ -39,12 +36,12 @@ public class UIManager : MonoBehaviour
     public void UpdateUI()
     {
         coinText.text = "Coins: " + coinCount.ToString();
-        playerHealthText.text = "Player Lives: " + lifeTracker.ToString();
+        playerHealthText.text = "Player Lives: " + playerControls.playerLives.ToString();
     }
 
     public void PlayerLives()
     {
-        lifeTracker--;
+        playerControls.playerLives--;
         UpdateUI();
 
         playerControls.gameObject.transform.position = playerControls.playerSpawnPoint.position;
