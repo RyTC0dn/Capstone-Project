@@ -62,7 +62,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        ///Currently have the shop being called in the player controller script, may move elsewhere
         if(Keyboard.current.eKey.isPressed && shop.isNearShop)
         {
             shop.EnableShop();

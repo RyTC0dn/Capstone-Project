@@ -8,7 +8,7 @@ public class PrototypeShop : MonoBehaviour
     public TextMeshProUGUI interactText;
     PrototypePlayerMovementControls playerMovementControls;
     public GameObject shopUI;
-    public static GameManager gm;
+    public static GameManager gm; //Adding the game manager here so that I can use a pause states on the game
 
     private int price = 8;
 
@@ -21,7 +21,7 @@ public class PrototypeShop : MonoBehaviour
         isNearShop = false;
         shopUI.SetActive(false);
 
-        gm = GameManager.instance;
+        gm = GameManager.instance; //Calling the gamemanager 
     }
 
     private void Update()
@@ -32,14 +32,15 @@ public class PrototypeShop : MonoBehaviour
         }
     }
 
+    //This function is being called by the player movement controls script
     public void EnableShop() ///This is for general shopping interactions 
     {
         //Set the shop ui object to active when function is called
         shopUI.SetActive(true);
-        gm.state = GameStates.Pause;
+        gm.state = GameStates.Pause; //The game will pause but the player can still "Attack" during it
     }
 
-    public void BuyFunction()
+    public void BuyFunction() //This function is currently being called by a button 
     {
         Debug.Log("Bought Weapon!");
         playerMovementControls.coinTracker -= price;
