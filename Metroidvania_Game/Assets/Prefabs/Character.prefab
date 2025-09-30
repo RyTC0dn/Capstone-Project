@@ -222,6 +222,7 @@ MonoBehaviour:
   isFacingRight: 1
   coinTracker: 2
   playerLives: 3
+  sceneChanger: {fileID: 0}
 --- !u!114 &1460689156289267312
 MonoBehaviour:
   m_ObjectHideFlags: 0

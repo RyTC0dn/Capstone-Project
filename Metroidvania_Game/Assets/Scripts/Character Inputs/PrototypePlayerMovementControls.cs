@@ -34,7 +34,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [HideInInspector] public bool isFacingRight = true;
 
     [Header("UI Settings")]
-    public int coinTracker = 0;
+    public int coinTracker;
     public int playerLives = 3;
     UIManager ui;
 
@@ -63,9 +63,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     void Update()
     {
 
-        if(Keyboard.current.eKey.isPressed)
+        if(Keyboard.current.eKey.isPressed && shop.isNearShop)
         {
-            shop.BuyFunction();
+            shop.EnableShop();
         }
 
         if(playerLives == 0)
@@ -165,10 +165,14 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             ui.CoinsCollected();
             Destroy(collision.gameObject);
         }
-        //if(collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
-        //{
-        //    ui.PlayerLives();
-        //}
+
+        shop.isNearShop = collision.CompareTag("Shop");
+        if (shop.isNearShop)
+        {
+            shop.interactText.gameObject.SetActive(true);
+            string text = "Press E to Interact";
+            shop.Display(text);
+        }
     }
 
 

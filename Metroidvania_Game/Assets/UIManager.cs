@@ -8,7 +8,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     //Game Variables
-    public int startingCoins = 0;
+    public int startingCoins;
     private int coinCount;
 
     //Text mesh pro variables
@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     {
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
-        coinCount = startingCoins;
+        coinCount = playerControls.coinTracker;
 
         UpdateUI();
     }
