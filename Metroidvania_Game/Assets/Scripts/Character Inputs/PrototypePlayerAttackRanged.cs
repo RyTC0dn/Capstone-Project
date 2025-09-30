@@ -10,10 +10,13 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
 
 
 
+    PrototypePlayerMovementControls playerController;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerController = GetComponentInParent<PrototypePlayerMovementControls>();
     }
 
     // Update is called once per frame
@@ -21,7 +24,14 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire2"))
         {
-
+            Shoot();
         }
+    }
+
+    void Shoot()
+    {
+        //Instantiate ProjectilePrefab
+        Instantiate(projectilePrefab,firepointPosRight.position, firepointPosRight.rotation);
+
     }
 }
