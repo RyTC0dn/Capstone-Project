@@ -4,58 +4,56 @@ using UnityEngine.InputSystem;
 public class PrototypePlayerAttack : MonoBehaviour
 {
     [Header("Weapon Setup")]
-    public Transform spawnPosRight; //Storing the position of the spawnpoint of weapon
-    public Transform spawnPosLeft;
-    public GameObject weaponPrefab; //Variable storing weapon object
+    //public Transform spawnPosRight; //Storing the position of the spawnpoint of weapon
+    //public Transform spawnPosLeft;
+    //public GameObject weaponPrefab; //Variable storing weapon object
     private int spawnLimit = 1;
 
-    [SerializeField]
-    private float activeTimer = 0.5f;
-
-    private float unsheathTime;
-    private bool isUnsheathed = false; //Checks if the player has pressed attack input
+    private Vector2 positionRight;
+    private Vector2 positionLeft;
+    private float positionOffset = 1;
 
     PrototypePlayerMovementControls playerController;
 
-    private GameObject currentWeapon; //Track spawned weapon
+    [Header("Animation")]
+    public Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
-
-        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time
+        animator = GetComponent<Animator>();   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isUnsheathed)
+        //Depending on the direction of the player, determines the position of the weapon
+        float directionOffset = playerController.isFacingRight ? positionOffset : -positionOffset;
+        Vector2 weaponPosition = new Vector2(playerController.transform.position.x + directionOffset, playerController.transform.position.y);
+
+        if(gameObject != null)
         {
-            activeTimer -= Time.deltaTime;
-            if (activeTimer <= 0)
-            {
-                if (currentWeapon != null) { Destroy(currentWeapon); }
-                isUnsheathed = false;
-                activeTimer = unsheathTime;
-            }
+            transform.position = weaponPosition;
         }
+
+       
+
     }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        
-        if ((context.performed) && (playerController.isFacingRight || !playerController.isFacingRight))
+        animator.SetBool("AttackRight", playerController.isFacingRight);
+        animator.SetBool("AttackLeft", !playerController.isFacingRight);
+        //If player is facing right and presses input
+        if (context.performed && playerController.isFacingRight)
         {
-            //Choose which spawn point based on players direction
-            Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
+            animator.enabled = true;
+        }
 
-            //Spawn weapon
-            currentWeapon = Instantiate(weaponPrefab, spawnPoint);
-
-            isUnsheathed = true;
-
-            activeTimer = unsheathTime;
+        if(context.performed && !playerController.isFacingRight)
+        {
+            animator.enabled = true;
         }
     }
 }

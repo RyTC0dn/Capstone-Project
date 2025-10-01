@@ -48,11 +48,12 @@ public class BasicEnemyAttackState : MonoBehaviour
         isGrounded = Physics.Raycast(transform.position, Vector2.down, raycastLength * 2, groundLayer);
         //If the player is above the y position of enemy 
         if (playerPos.transform.position.y  > transform.position.y)
-        {  
-            if(isGrounded)
+        {
+            rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if (isGrounded)
             {
                 //Jump
-                rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                
                 Debug.Log("Enemy is jumping!");
             }
 

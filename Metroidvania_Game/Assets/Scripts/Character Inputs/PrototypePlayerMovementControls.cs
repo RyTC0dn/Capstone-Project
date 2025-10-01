@@ -166,9 +166,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        shop.isNearShop = collision.CompareTag("Shop");
-        if (shop.isNearShop)
+        if (collision.CompareTag("Shop"))
         {
+            shop.isNearShop = true;
             shop.interactText.gameObject.SetActive(true);
             string text = "Press E to Interact";
             shop.Display(text);
