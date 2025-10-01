@@ -15,9 +15,21 @@ public class AxeLogic : MonoBehaviour
         rb2D.linearVelocity = (transform.right * vSpeed) + (transform.up *hSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("GroundEnemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("FlyingEnemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Environment")) { Destroy(gameObject); }
+
     }
+
 }
