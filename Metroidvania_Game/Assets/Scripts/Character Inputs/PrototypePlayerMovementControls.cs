@@ -165,14 +165,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             ui.CoinsCollected();
             Destroy(collision.gameObject);
         }
-
-        if (collision.CompareTag("Shop"))
-        {
-            shop.isNearShop = true;
-            shop.interactText.gameObject.SetActive(true);
-            string text = "Press E to Interact";
-            shop.Display(text);
-        }
     }
 
 

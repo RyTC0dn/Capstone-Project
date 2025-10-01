@@ -7,18 +7,22 @@ public class PrototypeShop : MonoBehaviour
 {
     public TextMeshProUGUI interactText;
     PrototypePlayerMovementControls playerMovementControls;
+    PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
+    private UIManager uiManager;
     public static GameManager gm; //Adding the game manager here so that I can use a pause states on the game
 
-    private int price = 8;
+    private int upgradePrice = 8;
 
-    public bool isNearShop;
+    public bool isNearShop = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
         playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
-        isNearShop = false;
+        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        uiManager = FindAnyObjectByType<UIManager>();
+        interactText.enabled = isNearShop;
         shopUI.SetActive(false);
 
         gm = GameManager.instance; //Calling the gamemanager 
@@ -26,10 +30,7 @@ public class PrototypeShop : MonoBehaviour
 
     private void Update()
     {
-        if (!isNearShop)
-        {
-            interactText.gameObject.SetActive(false);
-        }
+        
     }
 
     //This function is being called by the player movement controls script
@@ -40,10 +41,14 @@ public class PrototypeShop : MonoBehaviour
         gm.state = GameStates.Pause; //The game will pause but the player can still "Attack" during it
     }
 
-    public void BuyFunction() //This function is currently being called by a button 
+    public void BuySwordUpgrade()
     {
-        Debug.Log("Bought Weapon!");
-        playerMovementControls.coinTracker -= price;
+        if(playerMovementControls.coinTracker >= 8)
+        {
+            uiManager.Upgrade();
+            playerMovementControls.coinTracker -= upgradePrice;
+            Debug.Log("Bought Upgrade");
+        }        
     }
 
     public void Display(string hoverText)
@@ -57,13 +62,16 @@ public class PrototypeShop : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //isNearShop = collision.CompareTag("Player");
-        //if (isNearShop)
-        //{
-        //    interactText.enabled = true;
-        //    string text = "Press E to Interact";
-        //    Display(text);
-        //}
+    { 
+        if (collision.CompareTag("Player"))
+        {  
+            isNearShop = true;
+            if(isNearShop)
+            {
+                string text = "Press E to Interact";
+                Display(text);
+            }
+ 
+        }
     }
 }

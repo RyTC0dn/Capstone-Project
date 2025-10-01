@@ -8,6 +8,8 @@ public class PrototypePlayerAttack : MonoBehaviour
     //public Transform spawnPosLeft;
     //public GameObject weaponPrefab; //Variable storing weapon object
     private int spawnLimit = 1;
+    public int attackValue = 1;
+    public int upgradeValue = 0;
 
     private Vector2 positionRight;
     private Vector2 positionLeft;
