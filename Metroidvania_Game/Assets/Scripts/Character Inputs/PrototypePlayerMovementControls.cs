@@ -42,6 +42,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     PrototypeShop shop;
     public SceneChanger sceneChanger;
+    GameManager gm;
+    PrototypePlayerAttack playerAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -59,6 +61,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         ui = FindAnyObjectByType<UIManager>();
 
         shop = FindAnyObjectByType<PrototypeShop>();
+
+        gm = FindAnyObjectByType<GameManager>();
+
+        playerAttack = GetComponent<PrototypePlayerAttack>();
     }
 
     // Update is called once per frame
@@ -68,18 +74,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if(Keyboard.current.eKey.isPressed && shop.isNearShop)
         {
             shop.EnableShop();
+            gm.StateSwitch(GameStates.Pause);
+            playerAttack.enabled = false;
         }
-
-        if(playerLives == 0)
-        {
-            Debug.Log("Player lost all lives");
-            sceneChanger.Death();
-        }
-        else if(sceneChanger == null)
-        {
-            Debug.LogWarning("Scene changer script is null!");
-        }
-
     }
 
     //FixedUpdate runs every frame at a set interval 
@@ -162,10 +159,20 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Check if the player walks into a coin
         if (collision.CompareTag("Currency"))
         {
             ui.CoinsCollected();
+            gm.PlayCoinAudio();
             Destroy(collision.gameObject);
+        }
+
+        //Check if the player walks into trap obkects
+        if (collision.CompareTag("Traps"))
+        {
+            playerLives--;
+            ui.UpdateUI();
+            transform.position = playerSpawnPoint.position;
         }
     }
 

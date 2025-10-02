@@ -49,11 +49,11 @@ public class BasicEnemyAttackState : MonoBehaviour
         //If the player is above the y position of enemy 
         if (playerPos.transform.position.y  > transform.position.y)
         {
-            rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            
             if (isGrounded)
             {
                 //Jump
-                
+                rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 Debug.Log("Enemy is jumping!");
             }
 

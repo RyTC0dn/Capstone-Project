@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     PrototypePlayerMovementControls playerControls;
     PrototypePlayerAttack playerAttack;
-    public GameObject pauseMenu;
+    //public GameObject pauseMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

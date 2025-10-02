@@ -20,6 +20,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     PrototypePlayerMovementControls playerController;
 
     private GameObject currentWeapon; //Track spawned weapon
+    private AudioSource swordSlashAudio;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +28,7 @@ public class PrototypePlayerAttack : MonoBehaviour
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
 
         unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time        
+        swordSlashAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,6 +60,9 @@ public class PrototypePlayerAttack : MonoBehaviour
 
             //Spawn weapon
             currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+            //Play audio file for sword slash
+            swordSlashAudio.Play();
 
             isUnsheathed = true;
 

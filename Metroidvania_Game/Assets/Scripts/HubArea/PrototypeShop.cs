@@ -24,6 +24,7 @@ public class PrototypeShop : MonoBehaviour
         playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
+        gm = FindAnyObjectByType<GameManager>();    
         interactText.enabled = isNearShop;
         shopUI.SetActive(false);
     }
@@ -67,6 +68,8 @@ public class PrototypeShop : MonoBehaviour
     public void CloseShop()
     {
         shopUI.SetActive(false);
+        gm.StateSwitch(GameStates.Play);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

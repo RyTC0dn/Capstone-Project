@@ -24,7 +24,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2") && shop.boughtAxe == true)
+        if(Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
         {
             Shoot();
         }
