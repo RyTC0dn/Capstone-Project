@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 8b85414a38ea700499e9cc8e95638133
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8672525962791736543
+    second: AxeProjAnimSheet_0
+  - first:
+      213: 4843501943300853438
+    second: AxeProjAnimSheet_1
+  - first:
+      213: -7981719100633859944
+    second: AxeProjAnimSheet_2
+  - first:
+      213: 4429108365171387050
+    second: AxeProjAnimSheet_3
+  - first:
+      213: 7951557380382654756
+    second: AxeProjAnimSheet_4
+  - first:
+      213: -7115894957209162187
+    second: AxeProjAnimSheet_5
+  - first:
+      213: -7679082112209660713
+    second: AxeProjAnimSheet_6
+  - first:
+      213: 5619034639054463368
+    second: AxeProjAnimSheet_7
+  - first:
+      213: 5303940800106818068
+    second: AxeProjAnimSheet_8
+  - first:
+      213: -6631784648027739749
+    second: AxeProjAnimSheet_9
+  - first:
+      213: 2679021452722348356
+    second: AxeProjAnimSheet_10
+  - first:
+      213: -5988032025754023286
+    second: AxeProjAnimSheet_11
+  - first:
+      213: -1058919982769781425
+    second: AxeProjAnimSheet_12
+  - first:
+      213: 855949131892057325
+    second: AxeProjAnimSheet_13
+  - first:
+      213: -7237382224154759729
+    second: AxeProjAnimSheet_14
+  - first:
+      213: 1812173522682912523
+    second: AxeProjAnimSheet_15
+  - first:
+      213: 5448759245325666901
+    second: AxeProjAnimSheet_16
+  - first:
+      213: -7766272568457956018
+    second: AxeProjAnimSheet_17
+  - first:
+      213: 1798023299974628457
+    second: AxeProjAnimSheet_18
+  - first:
+      213: 2220626912444136891
+    second: AxeProjAnimSheet_19
+  - first:
+      213: 5342424616937930888
+    second: AxeProjAnimSheet_20
+  - first:
+      213: -7648447162724946781
+    second: AxeProjAnimSheet_21
+  - first:
+      213: -3683889579861763717
+    second: AxeProjAnimSheet_22
+  - first:
+      213: 863268952162380593
+    second: AxeProjAnimSheet_23
+  - first:
+      213: -5237525833513855562
+    second: AxeProjAnimSheet_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 774
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4dd850a600b5870800000000000000
+      internalID: 8672525962791736543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 774
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe8c5ffa53973340800000000000000
+      internalID: 4843501943300853438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 774
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898b4c554cc3b3190800000000000000
+      internalID: -7981719100633859944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_3
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 775
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa60c9779a577d30800000000000000
+      internalID: 4429108365171387050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_4
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 775
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42108dcee4b995e60800000000000000
+      internalID: 7951557380382654756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_5
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 775
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53eed80fc334f3d90800000000000000
+      internalID: -7115894957209162187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_6
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 775
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4dfa4218b6e6590800000000000000
+      internalID: -7679082112209660713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_7
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 774
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881e479bb32dafd40800000000000000
+      internalID: 5619034639054463368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 672
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a61146e026b9940800000000000000
+      internalID: 5303940800106818068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_9
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 670
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99ea63dffa27f3a0800000000000000
+      internalID: -6631784648027739749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_10
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 668
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441aa2331dbcd2520800000000000000
+      internalID: 2679021452722348356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_11
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 666
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ac449399c36eca0800000000000000
+      internalID: -5988032025754023286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_12
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 664
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45c175d2e5fd41f0800000000000000
+      internalID: -1058919982769781425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_13
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 663
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4ea305331f0eb00800000000000000
+      internalID: 855949131892057325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_14
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 662
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd67816637af8b90800000000000000
+      internalID: -7237382224154759729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_15
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 661
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f12e2b732262910800000000000000
+      internalID: 1812173522682912523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_16
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 561
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a03443aa1ed9b40800000000000000
+      internalID: 5448759245325666901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_17
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 562
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45f3381f38a83490800000000000000
+      internalID: -7766272568457956018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_18
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 564
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9640ddc3aacd3f810800000000000000
+      internalID: 1798023299974628457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_19
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 567
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdb7e6596041de10800000000000000
+      internalID: 2220626912444136891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_20
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 571
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88043eb32ea142a40800000000000000
+      internalID: 5342424616937930888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_21
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 574
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac6f6624d14bd590800000000000000
+      internalID: -7648447162724946781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_22
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 574
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b799398f1f130ecc0800000000000000
+      internalID: -3683889579861763717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_23
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 574
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b2347c982fafb00800000000000000
+      internalID: 863268952162380593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeProjAnimSheet_24
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 474
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5997701029057b0800000000000000
+      internalID: -5237525833513855562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AxeProjAnimSheet_0: 8672525962791736543
+      AxeProjAnimSheet_1: 4843501943300853438
+      AxeProjAnimSheet_10: 2679021452722348356
+      AxeProjAnimSheet_11: -5988032025754023286
+      AxeProjAnimSheet_12: -1058919982769781425
+      AxeProjAnimSheet_13: 855949131892057325
+      AxeProjAnimSheet_14: -7237382224154759729
+      AxeProjAnimSheet_15: 1812173522682912523
+      AxeProjAnimSheet_16: 5448759245325666901
+      AxeProjAnimSheet_17: -7766272568457956018
+      AxeProjAnimSheet_18: 1798023299974628457
+      AxeProjAnimSheet_19: 2220626912444136891
+      AxeProjAnimSheet_2: -7981719100633859944
+      AxeProjAnimSheet_20: 5342424616937930888
+      AxeProjAnimSheet_21: -7648447162724946781
+      AxeProjAnimSheet_22: -3683889579861763717
+      AxeProjAnimSheet_23: 863268952162380593
+      AxeProjAnimSheet_24: -5237525833513855562
+      AxeProjAnimSheet_3: 4429108365171387050
+      AxeProjAnimSheet_4: 7951557380382654756
+      AxeProjAnimSheet_5: -7115894957209162187
+      AxeProjAnimSheet_6: -7679082112209660713
+      AxeProjAnimSheet_7: 5619034639054463368
+      AxeProjAnimSheet_8: 5303940800106818068
+      AxeProjAnimSheet_9: -6631784648027739749
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

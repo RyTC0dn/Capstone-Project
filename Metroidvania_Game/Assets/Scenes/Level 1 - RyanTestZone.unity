@@ -5799,6 +5799,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2117249631}
     m_Modifications:
+    - target: {fileID: -8035741294316753290, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6956142423278018503, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Name
       value: GroundEnemy
@@ -5853,6 +5861,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394514973362909769, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795670456911352837, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4691452424493672730, guid: 6659cc78a1ad1644895749b3aaa95dc3, type: 3}
+    - target: {fileID: 5795670456911352837, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795670456911352837, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795670456911352837, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5845898335328023294, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
