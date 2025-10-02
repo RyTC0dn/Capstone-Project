@@ -13,6 +13,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private Rigidbody2D rb2D;
     public Transform playerSpawnPoint;
 
+    public float h;
+
     [SerializeField]
     private float sprintFactor = 1.5f;
     public float sprintDuration = 2f;
@@ -86,7 +88,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         //Float variable to store horizontal input
         //Horizontal can be -1, 0, or 1
-        float h = Input.GetAxisRaw("Horizontal");
+        h = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
         Move(h);

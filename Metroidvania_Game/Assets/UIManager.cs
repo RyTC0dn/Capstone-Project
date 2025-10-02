@@ -51,15 +51,16 @@ public class UIManager : MonoBehaviour
         playerControls.gameObject.transform.position = playerControls.playerSpawnPoint.position;
     }
 
-    public void Upgrade()
+    public void Upgrade(int price)
     {
         playerAttack.upgradeValue++;
+        playerControls.coinTracker -= price;
         UpdateUI();
     }
 
     public void CoinsCollected()
     {
-        coinCount++;
+        playerControls.coinTracker++;
         UpdateUI();
     }
 }

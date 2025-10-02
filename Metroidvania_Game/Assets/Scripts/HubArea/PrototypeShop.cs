@@ -10,9 +10,11 @@ public class PrototypeShop : MonoBehaviour
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
-    public static GameManager gm; //Adding the game manager here so that I can use a pause states on the game
+    GameManager gm; //Adding the game manager here so that I can use a pause states on the game
+    public bool boughtAxe = false;
 
     private int upgradePrice = 8;
+    private int weaponPrice = 20;
 
     public bool isNearShop = false;
 
@@ -24,8 +26,6 @@ public class PrototypeShop : MonoBehaviour
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = isNearShop;
         shopUI.SetActive(false);
-
-        gm = GameManager.instance; //Calling the gamemanager 
     }
 
     private void Update()
@@ -38,17 +38,25 @@ public class PrototypeShop : MonoBehaviour
     {
         //Set the shop ui object to active when function is called
         shopUI.SetActive(true);
-        gm.state = GameStates.Pause; //The game will pause but the player can still "Attack" during it
     }
 
     public void BuySwordUpgrade()
     {
-        if(playerMovementControls.coinTracker >= 8)
+        if(playerMovementControls.coinTracker >= upgradePrice)
         {
-            uiManager.Upgrade();
-            playerMovementControls.coinTracker -= upgradePrice;
-            Debug.Log("Bought Upgrade");
+            uiManager.Upgrade(upgradePrice);
         }        
+    }
+
+    public void BuyAxe()
+    {
+        if(playerMovementControls.coinTracker >= weaponPrice)
+        {
+            playerMovementControls.coinTracker -= weaponPrice;
+            boughtAxe = true;
+            Debug.Log($"Bought Axe is {boughtAxe}");
+            uiManager.UpdateUI();
+        }
     }
 
     public void Display(string hoverText)
