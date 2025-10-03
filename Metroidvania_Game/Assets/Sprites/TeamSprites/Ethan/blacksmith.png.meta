@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,10 +87,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,10 +120,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 341
-        height: 301
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 340
+        height: 310
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: blacksmith_1
       rect:
         serializedVersion: 2
-        x: 342
+        x: 343
         y: 0
-        width: 342
-        height: 301
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 340
+        height: 310
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: blacksmith_2
       rect:
         serializedVersion: 2
-        x: 685
+        x: 686
         y: 0
-        width: 342
-        height: 302
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 340
+        height: 310
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: blacksmith_3
       rect:
         serializedVersion: 2
-        x: 1028
+        x: 1029
         y: 0
-        width: 342
+        width: 340
         height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: blacksmith_4
       rect:
         serializedVersion: 2
-        x: 1371
+        x: 1372
         y: 0
-        width: 342
+        width: 340
         height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: blacksmith_5
       rect:
         serializedVersion: 2
-        x: 1714
+        x: 1715
         y: 0
-        width: 341
+        width: 340
         height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cca5010f733e0e44da7feee8e9379791
     internalID: 0
     vertices: []
     indices: 
