@@ -8,6 +8,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
 
+    public static PrototypePlayerMovementControls Instance { get; private set; }
+
     [SerializeField] 
     private float playerSpeed;
     private Rigidbody2D rb2D;
@@ -36,14 +38,17 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [HideInInspector] public bool isFacingRight = true;
 
     [Header("UI Settings")]
-    public int coinTracker;
-    public int playerLives = 3;
     UIManager ui;
 
     PrototypeShop shop;
     public SceneChanger sceneChanger;
     GameManager gm;
     PrototypePlayerAttack playerAttack;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -101,9 +106,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private void Move(float hSpeed)
     {
         //Assigning booleans to the key inputs
-        bool movingLeft = Input.GetAxisRaw("Horizontal") <= -1;
-        bool movingRight = Input.GetAxisRaw("Horizontal") >= 1;
-
         float movement = Input.GetAxisRaw("Horizontal");
 
         ////Ternary if statement
@@ -162,6 +164,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Check if the player walks into a coin
         if (collision.CompareTag("Currency"))
         {
+            GameManager.instance.coinTracker++;
             ui.CoinsCollected();
             gm.PlayCoinAudio();
             Destroy(collision.gameObject);
@@ -170,7 +173,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Check if the player walks into trap obkects
         if (collision.CompareTag("Traps"))
         {
-            playerLives--;
+            GameManager.instance.playerLives--;
             ui.UpdateUI();
             transform.position = playerSpawnPoint.position;
         }

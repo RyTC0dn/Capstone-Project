@@ -5,16 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PrototypeShop : MonoBehaviour
 {
+    [Header("General Shop Setup")]
     public TextMeshProUGUI interactText;
     PrototypePlayerMovementControls playerMovementControls;
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
-    GameManager gm; //Adding the game manager here so that I can use a pause states on the game
     public bool boughtAxe = false;
 
-    private int upgradePrice = 8;
-    private int weaponPrice = 20;
+    [Header("Shop Prices")]
+    ///Shop prices
+    ///May turn to using arrays to store prices as to not clutter too much
+    public int upgradePrice = 8;
+    public int weaponPrice = 20;
 
     public bool isNearShop = false;
 
@@ -23,8 +26,7 @@ public class PrototypeShop : MonoBehaviour
     {              
         playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
-        uiManager = FindAnyObjectByType<UIManager>();
-        gm = FindAnyObjectByType<GameManager>();    
+        uiManager = FindAnyObjectByType<UIManager>();   
         interactText.enabled = isNearShop;
         shopUI.SetActive(false);
     }
@@ -43,17 +45,18 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        if(playerMovementControls.coinTracker >= upgradePrice)
+        if(GameManager.instance.coinTracker >= upgradePrice)
         {
             uiManager.Upgrade(upgradePrice);
         }        
     }
 
-    public void BuyAxe()
+    public void BuyAxe() //Function for buying the axe
     {
-        if(playerMovementControls.coinTracker >= weaponPrice)
+        //If the player has enough coins to  
+        if(GameManager.instance.coinTracker >= weaponPrice)
         {
-            playerMovementControls.coinTracker -= weaponPrice;
+            GameManager.instance.coinTracker -= weaponPrice;
             boughtAxe = true;
             Debug.Log($"Bought Axe is {boughtAxe}");
             uiManager.UpdateUI();
@@ -68,7 +71,7 @@ public class PrototypeShop : MonoBehaviour
     public void CloseShop()
     {
         shopUI.SetActive(false);
-        gm.StateSwitch(GameStates.Play);
+        GameManager.instance.StateSwitch(GameStates.Play);
 
     }
 

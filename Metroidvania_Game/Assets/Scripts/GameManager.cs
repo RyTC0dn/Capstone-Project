@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -11,11 +12,32 @@ public enum GameStates
 public class GameManager : MonoBehaviour
 {
     public GameStates state;
-    public static GameManager instance { get; set; }
+    public static GameManager instance { get; private set; }
+
+    public int coinTracker;
+    public int playerLives = 3;
 
     PrototypePlayerMovementControls playerMovementControls;
     UIManager ui;
     private AudioSource coinPing;
+
+    public Sprite[] sprites;
+    public SpriteRenderer shopRender;
+    private int currentIndex;
+    private bool spriteTimer = false;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,13 +45,13 @@ public class GameManager : MonoBehaviour
         //Initializing scripts within the game manager
         playerMovementControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
         ui = FindAnyObjectByType<UIManager>();  
-        coinPing = GetComponent<AudioSource>();
+        coinPing = GetComponent<AudioSource>();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerMovementControls.playerLives <= 0)
+        if(playerLives <= 0)
         {
             OnDeath();
         }
@@ -55,6 +77,14 @@ public class GameManager : MonoBehaviour
             case GameStates.Play:
                 Time.timeScale = 1;
                 break;
+        }
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            StateSwitch(GameStates.Pause);
+            Debug.Log("Game is paused");
         }
     }
 }

@@ -122,6 +122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2211345191218373637, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_Mass
+      value: 3.7133102
+      objectReference: {fileID: 0}
     - target: {fileID: 2904885096339127086, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -135,12 +139,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 9142475198678846441}
     - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3834808667088926466, guid: e0882e1a4bd07754ca8d5535fc777dfc, type: 3}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471255527870239560, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7188429523771431191, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: coinTracker
@@ -153,6 +185,14 @@ PrefabInstance:
     - target: {fileID: 7375695981624038011, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777134683346931671, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777134683346931671, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7777134683346931671, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_LocalPosition.x
