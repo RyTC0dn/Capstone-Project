@@ -9,6 +9,7 @@ public class BasicEnemyHealth : MonoBehaviour
     private float textOffset = 1;
     private float deathTimer = 1;
 
+
     public GameObject coin; //For the prototype, the item drops will be tied to the enemey health
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +30,7 @@ public class BasicEnemyHealth : MonoBehaviour
         if(enemyHealth <= 0)
         {
             if(coin != null) { Instantiate(coin, transform.position, Quaternion.identity); }
+           
             Destroy(gameObject);
 
             //IN CASE WE NEED A TIMER TILL DEATH
