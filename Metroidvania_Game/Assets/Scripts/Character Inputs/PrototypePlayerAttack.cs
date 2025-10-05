@@ -8,6 +8,8 @@ public class PrototypePlayerAttack : MonoBehaviour
     public Transform spawnPosLeft;
     public GameObject weaponPrefab; //Variable storing weapon object
     private int spawnLimit = 1;
+    public int attackValue = 1;
+    public int upgradeValue = 0;
 
     [SerializeField]
     private float activeTimer = 0.5f;
@@ -18,13 +20,15 @@ public class PrototypePlayerAttack : MonoBehaviour
     PrototypePlayerMovementControls playerController;
 
     private GameObject currentWeapon; //Track spawned weapon
+    private AudioSource swordSlashAudio;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
 
-        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time
+        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time        
+        swordSlashAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,16 +39,20 @@ public class PrototypePlayerAttack : MonoBehaviour
             activeTimer -= Time.deltaTime;
             if (activeTimer <= 0)
             {
-                if (currentWeapon != null) { Destroy(currentWeapon); }
+                if (currentWeapon != null) { Destroy(currentWeapon, 1); }
                 isUnsheathed = false;
                 activeTimer = unsheathTime;
             }
         }
     }
 
+    /// <summary>
+    /// This is the main attack function that is called within Unity on the player input component
+    /// </summary>
+    /// <param name="context"></param>
     public void OnAttack(InputAction.CallbackContext context)
     {
-        
+        //If player is facing left or right and is pressing the left mouse button
         if ((context.performed) && (playerController.isFacingRight || !playerController.isFacingRight))
         {
             //Choose which spawn point based on players direction
@@ -52,6 +60,9 @@ public class PrototypePlayerAttack : MonoBehaviour
 
             //Spawn weapon
             currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+            //Play audio file for sword slash
+            swordSlashAudio.Play();
 
             isUnsheathed = true;
 
