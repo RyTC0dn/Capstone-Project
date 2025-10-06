@@ -26,8 +26,8 @@ public class PrototypeShop : MonoBehaviour
     {              
         playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
-        uiManager = FindAnyObjectByType<UIManager>();   
-        interactText.enabled = isNearShop;
+        uiManager = FindAnyObjectByType<UIManager>();
+        interactText.enabled = false;
         shopUI.SetActive(false);
     }
 
@@ -41,6 +41,7 @@ public class PrototypeShop : MonoBehaviour
     {
         //Set the shop ui object to active when function is called
         shopUI.SetActive(true);
+        interactText.enabled = false;
     }
 
     public void BuySwordUpgrade()
@@ -82,10 +83,24 @@ public class PrototypeShop : MonoBehaviour
             isNearShop = true;
             if(isNearShop)
             {
+                interactText.enabled = true;
                 string text = "Press E to Interact";
                 Display(text);
             }
  
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isNearShop = false;
+            if (!isNearShop)
+            {
+                interactText.enabled = false;
+            }
+
         }
     }
 }
