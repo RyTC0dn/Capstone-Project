@@ -6,7 +6,7 @@ public class Shield : MonoBehaviour
 
     //public bool shieldIsUp;
     public Transform shieldPoint;
-    public float sheildRange = 1.0f;
+    public float shieldRange = 1.0f;
     public LayerMask attackLayer;
 
     //private void Awake()
@@ -16,7 +16,7 @@ public class Shield : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ActivateShield();
         }
@@ -24,7 +24,7 @@ public class Shield : MonoBehaviour
 
     private void ActivateShield()
     {
-        Collider2D[] blockAttack = Physics2D.OverlapCircleAll(shieldPoint.position, sheildRange, attackLayer);
+        Collider2D[] blockAttack = Physics2D.OverlapCircleAll(shieldPoint.position, shieldRange, attackLayer);
 
         foreach (Collider2D attack in blockAttack)
         {
@@ -34,7 +34,7 @@ public class Shield : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(shieldPoint.position, sheildRange);
+        Gizmos.DrawWireSphere(shieldPoint.position, shieldRange);
     }
 
 
