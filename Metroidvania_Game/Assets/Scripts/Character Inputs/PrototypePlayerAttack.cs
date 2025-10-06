@@ -8,9 +8,6 @@ public class PrototypePlayerAttack : MonoBehaviour
     public Transform spawnPosRight; //Storing the position of the spawnpoint of weapon
     public Transform spawnPosLeft;
     public GameObject weaponPrefab; //Variable storing weapon object
-    private int spawnLimit = 1;
-    public int attackValue = 1;
-    public int upgradeValue = 0;
 
     [SerializeField]
     private float activeTimer = 0.5f;

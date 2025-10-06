@@ -1386,6 +1386,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop_Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 7442034547716605648, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2103954720}
+    - target: {fileID: 7442034547716605648, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuySwordUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688641352442258889, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2103954720}
+    - target: {fileID: 8688641352442258889, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyAxe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1818,6 +1834,10 @@ PrefabInstance:
     - target: {fileID: 3794924728446527808, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924246881036709205, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8237,6 +8257,10 @@ PrefabInstance:
     - target: {fileID: 2652501374289222702, guid: e0882e1a4bd07754ca8d5535fc777dfc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834808667088926466, guid: e0882e1a4bd07754ca8d5535fc777dfc, type: 3}
+      propertyPath: coinTracker
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

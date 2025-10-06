@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
     {
         coinText.text = "Coins: " + GameManager.instance.coinTracker.ToString();
         playerHealthText.text = "Player Lives: " + GameManager.instance.playerLives.ToString();
-        swordAttackStatText.text = "+" + playerAttack.upgradeValue.ToString();
+        swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
     }
 
     public void PlayerLives()
@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
 
     public void Upgrade(int price)
     {
-        playerAttack.upgradeValue++;
+        GameManager.instance.upgradeValue++;
         GameManager.instance.coinTracker -= price;
         UpdateUI();
     }

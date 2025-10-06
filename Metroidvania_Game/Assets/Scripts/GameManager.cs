@@ -14,8 +14,11 @@ public class GameManager : MonoBehaviour
     public GameStates state;
     public static GameManager instance { get; private set; }
 
+    [Header("Player UI Stats")]
     public int coinTracker;
     public int playerLives = 3;
+    public int attackValue = 1;
+    public int upgradeValue = 0;
 
     PrototypePlayerMovementControls playerMovementControls;
     UIManager ui;

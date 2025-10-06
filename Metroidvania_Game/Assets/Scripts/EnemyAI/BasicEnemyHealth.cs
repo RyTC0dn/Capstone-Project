@@ -50,7 +50,7 @@ public class BasicEnemyHealth : MonoBehaviour
     {
         if (collision.CompareTag("Weapon"))
         {
-            int damage = playerAttack.attackValue + playerAttack.upgradeValue;
+            int damage = GameManager.instance.attackValue + GameManager.instance.upgradeValue;
             enemyHealth -= damage;
             Debug.Log("Enemy hit!!!");
         }
