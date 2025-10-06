@@ -1,22 +1,42 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shield : MonoBehaviour
 {
-    private bool isShieldUp;
 
-    public GameObject shieldCollider;
+    //public bool shieldIsUp;
+    public Transform shieldPoint;
+    public float sheildRange = 1.0f;
+    public LayerMask attackLayer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //private void Awake()
+    //{
+    //    shieldIsUp = false;
+    //}
+
+    private void Update()
     {
-        isShieldUp = false;
-        
+        if (Input.GetKey(KeyCode.R))
+        {
+            ActivateShield();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ActivateShield()
     {
+        Collider2D[] blockAttack = Physics2D.OverlapCircleAll(shieldPoint.position, sheildRange, attackLayer);
 
-        
+        foreach (Collider2D attack in blockAttack)
+        {
+            Debug.Log("Blocked" +  attack.name);
+        }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(shieldPoint.position, sheildRange);
+    }
+
+
+
 }
