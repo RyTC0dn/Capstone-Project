@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,14 +37,21 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         if (isUnsheathed)
         {
-            activeTimer -= Time.deltaTime;
-            if (activeTimer <= 0)
-            {
-                if (currentWeapon != null) { Destroy(currentWeapon, 1); }
-                isUnsheathed = false;
-                activeTimer = unsheathTime;
-            }
+            StartCoroutine(DestroyWeapon());
+           
         }
+    }
+
+    /// <summary>
+    /// This  function is not only to ensure that there is a timer that gets rid of the weapon prefab
+    /// but also ensure that no more than one can be spawned at a time to avoid any bugs
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator DestroyWeapon() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        isUnsheathed = false;
+        Destroy(currentWeapon);
     }
 
     /// <summary>
@@ -52,14 +60,24 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// <param name="context"></param>
     public void OnAttack(InputAction.CallbackContext context)
     {
-        //If player is facing left or right and is pressing the left mouse button
-        if ((context.performed) && (playerController.isFacingRight || !playerController.isFacingRight))
+        //If player is facing left or right, pressing input and the weapon hasn't been instantiated yet
+        if (context.performed && (playerController.isFacingRight || !playerController.isFacingRight) && !isUnsheathed)
         {
             //Choose which spawn point based on players direction
             Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
 
             //Spawn weapon
             currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+            //Weapon Sprite 
+            if(playerController.isFacingRight)
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX=true;
+            }
 
             //Play audio file for sword slash
             swordSlashAudio.Play();
