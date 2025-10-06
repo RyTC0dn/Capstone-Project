@@ -234,6 +234,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9064239888554853207, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8422393607203141707, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
     m_RemovedGameObjects:
@@ -276,8 +280,6 @@ MonoBehaviour:
   spawnPosRight: {fileID: 238540832393440368}
   spawnPosLeft: {fileID: 115240339566500117}
   weaponPrefab: {fileID: 6289581941158984639, guid: 308d18f994a74324c82c4cd8e4e9e55a, type: 3}
-  attackValue: 1
-  upgradeValue: 0
   activeTimer: 0.5
 --- !u!114 &1788550987098466561
 MonoBehaviour:

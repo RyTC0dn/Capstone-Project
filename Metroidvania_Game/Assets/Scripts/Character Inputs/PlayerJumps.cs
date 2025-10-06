@@ -24,7 +24,7 @@ public class PlayerJumps : MonoBehaviour
     //Coyote time 
     public float coyoteTime;
     public float coyoteTimeMax = 0.2f;
-    private float raycastLength = 2/0.5f;
+    private float raycastLength = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +86,8 @@ public class PlayerJumps : MonoBehaviour
             //Set the rigidbody's velocity to whatever its current velocity is on x
             //and jump force on y
             rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
+            coyoteTime = 0;
+            isGrounded = false;
         }
 
         
