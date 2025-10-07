@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,6 @@ public class PrototypePlayerAttack : MonoBehaviour
     public Transform spawnPosRight; //Storing the position of the spawnpoint of weapon
     public Transform spawnPosLeft;
     public GameObject weaponPrefab; //Variable storing weapon object
-    private int spawnLimit = 1;
 
     [SerializeField]
     private float activeTimer = 0.5f;
@@ -18,13 +18,15 @@ public class PrototypePlayerAttack : MonoBehaviour
     PrototypePlayerMovementControls playerController;
 
     private GameObject currentWeapon; //Track spawned weapon
+    private AudioSource swordSlashAudio;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
 
-        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time
+        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time        
+        swordSlashAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,26 +34,50 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         if (isUnsheathed)
         {
-            activeTimer -= Time.deltaTime;
-            if (activeTimer <= 0)
-            {
-                if (currentWeapon != null) { Destroy(currentWeapon); }
-                isUnsheathed = false;
-                activeTimer = unsheathTime;
-            }
+            StartCoroutine(DestroyWeapon());
+           
         }
     }
 
+    /// <summary>
+    /// This  function is not only to ensure that there is a timer that gets rid of the weapon prefab
+    /// but also ensure that no more than one can be spawned at a time to avoid any bugs
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator DestroyWeapon() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        isUnsheathed = false;
+        Destroy(currentWeapon);
+    }
+
+    /// <summary>
+    /// This is the main attack function that is called within Unity on the player input component
+    /// </summary>
+    /// <param name="context"></param>
     public void OnAttack(InputAction.CallbackContext context)
     {
-        
-        if ((context.performed) && (playerController.isFacingRight || !playerController.isFacingRight))
+        //If player is facing left or right, pressing input and the weapon hasn't been instantiated yet
+        if (context.performed && (playerController.isFacingRight || !playerController.isFacingRight) && !isUnsheathed)
         {
             //Choose which spawn point based on players direction
             Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
 
             //Spawn weapon
             currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+            //Weapon Sprite 
+            if(playerController.isFacingRight)
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX=true;
+            }
+
+            //Play audio file for sword slash
+            swordSlashAudio.Play();
 
             isUnsheathed = true;
 
