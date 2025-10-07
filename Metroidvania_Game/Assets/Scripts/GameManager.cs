@@ -24,11 +24,6 @@ public class GameManager : MonoBehaviour
     UIManager ui;
     private AudioSource coinPing;
 
-    [Header("Elevator Settings")]
-    public Transform[] elevatorPos;
-    [SerializeField] private int currentPos;
-    public bool isNearElevator;
-
     private void Awake()
     {
         if(instance == null)
@@ -63,6 +58,7 @@ public class GameManager : MonoBehaviour
     public void OnDeath()
     {
         SceneManager.LoadScene("Town");
+        playerLives = 3;
     }
 
     public void PlayCoinAudio() //Call this function when player collides with coin

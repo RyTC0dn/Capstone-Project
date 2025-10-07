@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ElevatorFunction : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class ElevatorFunction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) {
+        if (collision.CompareTag("Player"))
+        {
             playerMovementControls.transform.position = exitDoor.position;
         }
     }
