@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// I just created this script to give some basic UI updating for the coin tracker
@@ -8,21 +10,39 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     //Game Variables
-    public int startingCoins = 0;
     private int coinCount;
+    public static UIManager instance;
 
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI playerHealthText;
+    public TextMeshProUGUI swordAttackStatText;
 
     PrototypePlayerMovementControls playerControls;
+    PrototypePlayerAttack playerAttack;
+    //public GameObject pauseMenu;
+
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
 
-        coinCount = startingCoins;
+        coinCount = GameManager.instance.coinTracker;
 
         UpdateUI();
     }
@@ -33,23 +53,56 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void UpdateUI()
+    /// <summary>
+    /// This function is to store variables into text form and update 
+    /// the UI respectively to each UI elements
+    /// *This may get changed slightly with more finalized UI
+    /// </summary>
+    public void UpdateUI() 
     {
-        coinText.text = "Coins: " + coinCount.ToString();
-        playerHealthText.text = "Player Lives: " + playerControls.playerLives.ToString();
+        coinText.text = "Coins: " + GameManager.instance.coinTracker.ToString();
+        playerHealthText.text = "Player Lives: " + GameManager.instance.playerLives.ToString();
+        swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
     }
 
     public void PlayerLives()
     {
-        playerControls.playerLives--;
+        GameManager.instance.playerLives--;
         UpdateUI();
+        PrototypePlayerMovementControls.Instance.gotHit = true;
+    }
 
-        playerControls.gameObject.transform.position = playerControls.playerSpawnPoint.position;
+    public void Upgrade(int price)
+    {
+        GameManager.instance.upgradeValue++;
+        GameManager.instance.coinTracker -= price;
+        UpdateUI();
     }
 
     public void CoinsCollected()
     {
-        coinCount++;
+        GameManager.instance.coinTracker++;
         UpdateUI();
     }
+
+    /// <summary>
+    /// This portion of the code will be dedicated to the start menu 
+    /// </summary>
+    public void CloseGame() //This will be called in the start menu screen
+    {
+        Application.Quit(); //*Will only be in effect during builds*
+    }
+
+    public void StartGame() //This will be called in the Start menu screen
+    {
+        SceneManager.LoadScene("Town");
+    }
+
+    //public void PauseMenu() //This function will work to 
+    //{
+    //    if(Keyboard.current.escapeKey.isPressed)
+    //    {
+    //        GameManager.instance.OnPause();
+    //    }
+    //}
 }
