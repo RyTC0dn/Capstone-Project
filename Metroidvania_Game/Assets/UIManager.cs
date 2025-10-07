@@ -69,7 +69,6 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.playerLives--;
         UpdateUI();
-        PrototypePlayerMovementControls.Instance.gotHit = true;
     }
 
     public void Upgrade(int price)

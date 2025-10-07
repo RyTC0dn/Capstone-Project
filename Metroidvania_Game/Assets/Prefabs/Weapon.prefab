@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 97000097508807112}
   - component: {fileID: 4381362866892299701}
-  - component: {fileID: 2630699347741089091}
   - component: {fileID: 1196622729118592834}
+  - component: {fileID: 8388859219034922786}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Weapon
@@ -89,8 +89,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2630699347741089091
-BoxCollider2D:
+--- !u!95 &1196622729118592834
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289581941158984639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fb8392ea0416dc41aac24f886479dc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &8388859219034922786
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,27 +155,42 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!95 &1196622729118592834
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289581941158984639}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1fb8392ea0416dc41aac24f886479dc8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.81, y: -2.9399998}
+      - {x: 4.0699997, y: -2.2}
+      - {x: 3.75, y: -1.8299999}
+      - {x: 3.75, y: -1.5}
+      - {x: 4.46, y: -0.74}
+      - {x: 4.46, y: 0.37}
+      - {x: 4.44, y: 0.39}
+      - {x: 3.6999998, y: 0.39}
+      - {x: 3.6799998, y: 0.37}
+      - {x: 2.62, y: -0.29}
+      - {x: -1.8499999, y: 4.0899997}
+      - {x: -2.1399999, y: 4.47}
+      - {x: -3.31, y: 5.6}
+      - {x: -4.04, y: 5.92}
+      - {x: -5.92, y: 5.92}
+      - {x: -5.92, y: 4.02}
+      - {x: -5.56, y: 3.3}
+      - {x: -4.81, y: 2.57}
+      - {x: -4.46, y: 2.57}
+      - {x: -4.46, y: 2.22}
+      - {x: -0.37, y: -1.87}
+      - {x: 0.29, y: -2.9299998}
+      - {x: -0.39, y: -3.6999998}
+      - {x: -0.39, y: -4.44}
+      - {x: -0.37, y: -4.46}
+      - {x: 0.74, y: -4.46}
+      - {x: 1.13, y: -4.0699997}
+      - {x: 1.5, y: -3.75}
+      - {x: 1.77, y: -3.73}
+      - {x: 2.9399998, y: -4.8599997}
+      - {x: 3.31, y: -5.5499997}
+      - {x: 3.6799998, y: -5.92}
+      - {x: 5.5699997, y: -5.92}
+      - {x: 5.92, y: -5.5699997}
+      - {x: 5.92, y: -3.6799998}
+      - {x: 5.5499997, y: -3.31}
+  m_UseDelaunayMesh: 0
