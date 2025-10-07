@@ -8,14 +8,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
 
-    public static PrototypePlayerMovementControls Instance { get; private set; }
-
     [SerializeField] 
     private float playerSpeed;
     private Rigidbody2D rb2D;
     public Transform playerSpawnPoint;
-
-    public float h;
 
     [SerializeField]
     private float sprintFactor = 1.5f;
@@ -38,17 +34,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [HideInInspector] public bool isFacingRight = true;
 
     [Header("UI Settings")]
+    public int coinTracker = 0;
+    public int playerLives = 3;
     UIManager ui;
 
     PrototypeShop shop;
     public SceneChanger sceneChanger;
-    GameManager gm;
-    PrototypePlayerAttack playerAttack;
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,22 +57,27 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         ui = FindAnyObjectByType<UIManager>();
 
         shop = FindAnyObjectByType<PrototypeShop>();
-
-        gm = FindAnyObjectByType<GameManager>();
-
-        playerAttack = GetComponent<PrototypePlayerAttack>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ///Currently have the shop being called in the player controller script, may move elsewhere
-        if(Keyboard.current.eKey.isPressed && shop.isNearShop)
+
+        if(Keyboard.current.eKey.isPressed)
         {
-            shop.EnableShop();
-            gm.StateSwitch(GameStates.Pause);
-            playerAttack.enabled = false;
+            shop.BuyFunction();
         }
+
+        if(playerLives == 0)
+        {
+            Debug.Log("Player lost all lives");
+            sceneChanger.Death();
+        }
+        else if(sceneChanger == null)
+        {
+            Debug.LogWarning("Scene changer script is null!");
+        }
+
     }
 
     //FixedUpdate runs every frame at a set interval 
@@ -90,7 +86,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         //Float variable to store horizontal input
         //Horizontal can be -1, 0, or 1
-        h = Input.GetAxisRaw("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
         Move(h);
@@ -106,6 +102,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private void Move(float hSpeed)
     {
         //Assigning booleans to the key inputs
+        bool movingLeft = Input.GetAxisRaw("Horizontal") <= -1;
+        bool movingRight = Input.GetAxisRaw("Horizontal") >= 1;
+
         float movement = Input.GetAxisRaw("Horizontal");
 
         ////Ternary if statement
@@ -161,22 +160,15 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Check if the player walks into a coin
         if (collision.CompareTag("Currency"))
         {
-            GameManager.instance.coinTracker++;
             ui.CoinsCollected();
-            gm.PlayCoinAudio();
             Destroy(collision.gameObject);
         }
-
-        //Check if the player walks into trap obkects
-        if (collision.CompareTag("Traps"))
-        {
-            GameManager.instance.playerLives--;
-            ui.UpdateUI();
-            transform.position = playerSpawnPoint.position;
-        }
+        //if(collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
+        //{
+        //    ui.PlayerLives();
+        //}
     }
 
 

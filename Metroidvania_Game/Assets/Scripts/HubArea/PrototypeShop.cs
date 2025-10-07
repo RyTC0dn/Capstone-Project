@@ -1,67 +1,40 @@
 using TMPro;
-using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PrototypeShop : MonoBehaviour
 {
-    [Header("General Shop Setup")]
     public TextMeshProUGUI interactText;
     PrototypePlayerMovementControls playerMovementControls;
-    PrototypePlayerAttack playerAttack;
-    public GameObject shopUI;
-    private UIManager uiManager;
-    public bool boughtAxe = false;
+    public GameObject weapon;
 
-    [Header("Shop Prices")]
-    ///Shop prices
-    ///May turn to using arrays to store prices as to not clutter too much
-    public int upgradePrice = 8;
-    public int weaponPrice = 20;
+    private int price = 2;
 
-    public bool isNearShop = false;
+    [SerializeField]private bool isNearShop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
         playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
-        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
-        uiManager = FindAnyObjectByType<UIManager>();
-        interactText.enabled = false;
-        shopUI.SetActive(false);
+        isNearShop = false;
     }
 
     private void Update()
     {
-        
-    }
-
-    //This function is being called by the player movement controls script
-    public void EnableShop() ///This is for general shopping interactions 
-    {
-        //Set the shop ui object to active when function is called
-        shopUI.SetActive(true);
-        interactText.enabled = false;
-    }
-
-    public void BuySwordUpgrade()
-    {
-        if(GameManager.instance.coinTracker >= upgradePrice)
+        if (!isNearShop)
         {
-            uiManager.Upgrade(upgradePrice);
-        }        
-    }
-
-    public void BuyAxe() //Function for buying the axe
-    {
-        //If the player has enough coins to  
-        if(GameManager.instance.coinTracker >= weaponPrice)
-        {
-            GameManager.instance.coinTracker -= weaponPrice;
-            boughtAxe = true;
-            Debug.Log($"Bought Axe is {boughtAxe}");
-            uiManager.UpdateUI();
+            interactText.enabled = false;
         }
+    }
+
+    public void BuyFunction()
+    {
+        if(weapon != null && isNearShop && playerMovementControls.coinTracker > 0)
+        {
+            playerMovementControls.coinTracker -= price;
+            Destroy(weapon);
+        }
+       
     }
 
     public void Display(string hoverText)
@@ -69,38 +42,14 @@ public class PrototypeShop : MonoBehaviour
         interactText.text = hoverText;
     }
 
-    public void CloseShop()
-    {
-        shopUI.SetActive(false);
-        GameManager.instance.StateSwitch(GameStates.Play);
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
-        if (collision.CompareTag("Player"))
-        {  
-            isNearShop = true;
-            if(isNearShop)
-            {
-                interactText.enabled = true;
-                string text = "Press E to Interact";
-                Display(text);
-            }
- 
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        isNearShop = collision.CompareTag("Player");
+        if (isNearShop)
         {
-            isNearShop = false;
-            if (!isNearShop)
-            {
-                interactText.enabled = false;
-            }
-
+            interactText.enabled = true;
+            string text = "Press E to Buy";
+            Display(text);
         }
     }
 }

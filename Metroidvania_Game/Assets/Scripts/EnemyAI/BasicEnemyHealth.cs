@@ -11,12 +11,11 @@ public class BasicEnemyHealth : MonoBehaviour
 
 
     public GameObject coin; //For the prototype, the item drops will be tied to the enemey health
-    PrototypePlayerAttack playerAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+      
     }
 
     // Update is called once per frame
@@ -50,8 +49,7 @@ public class BasicEnemyHealth : MonoBehaviour
     {
         if (collision.CompareTag("Weapon"))
         {
-            int damage = GameManager.instance.attackValue + GameManager.instance.upgradeValue;
-            enemyHealth -= damage;
+            enemyHealth--;
             Debug.Log("Enemy hit!!!");
         }
     }

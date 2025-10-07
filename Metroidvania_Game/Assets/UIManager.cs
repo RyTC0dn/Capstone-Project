@@ -8,39 +8,21 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     //Game Variables
+    public int startingCoins = 0;
     private int coinCount;
-    public static UIManager instance;
 
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI playerHealthText;
-    public TextMeshProUGUI swordAttackStatText;
 
     PrototypePlayerMovementControls playerControls;
-    PrototypePlayerAttack playerAttack;
-    //public GameObject pauseMenu;
-
-
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
-        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
 
-        coinCount = GameManager.instance.coinTracker;
+        coinCount = startingCoins;
 
         UpdateUI();
     }
@@ -51,36 +33,23 @@ public class UIManager : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// This function is to store variables into text form and update 
-    /// the UI respectively to each UI elements
-    /// *This may get changed slightly with more finalized UI
-    /// </summary>
-    public void UpdateUI() 
+    public void UpdateUI()
     {
-        coinText.text = "Coins: " + GameManager.instance.coinTracker.ToString();
-        playerHealthText.text = "Player Lives: " + GameManager.instance.playerLives.ToString();
-        swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
+        coinText.text = "Coins: " + coinCount.ToString();
+        playerHealthText.text = "Player Lives: " + playerControls.playerLives.ToString();
     }
 
     public void PlayerLives()
     {
-        GameManager.instance.playerLives--;
+        playerControls.playerLives--;
         UpdateUI();
 
-        GameManager.instance.gameObject.transform.position = playerControls.playerSpawnPoint.position;
-    }
-
-    public void Upgrade(int price)
-    {
-        GameManager.instance.upgradeValue++;
-        GameManager.instance.coinTracker -= price;
-        UpdateUI();
+        playerControls.gameObject.transform.position = playerControls.playerSpawnPoint.position;
     }
 
     public void CoinsCollected()
     {
-        GameManager.instance.coinTracker++;
+        coinCount++;
         UpdateUI();
     }
 }
