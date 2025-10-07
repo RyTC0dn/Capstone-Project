@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 {
     //Game Variables
     private int coinCount;
-    public static UIManager instance;
+    public static UIManager instance {  get; private set; }
 
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
@@ -69,7 +69,6 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.playerLives--;
         UpdateUI();
-        PrototypePlayerMovementControls.Instance.gotHit = true;
     }
 
     public void Upgrade(int price)
@@ -81,7 +80,7 @@ public class UIManager : MonoBehaviour
 
     public void CoinsCollected()
     {
-        GameManager.instance.coinTracker++;
+        GameManager.instance.coinTracker+= 1;
         UpdateUI();
     }
 
