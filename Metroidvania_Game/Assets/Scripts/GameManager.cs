@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     UIManager ui;
     private AudioSource coinPing;
 
+    private GameObject pauseMenu;
+
     private void Awake()
     {
         if(instance == null)

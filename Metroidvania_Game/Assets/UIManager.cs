@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// I just created this script to give some basic UI updating for the coin tracker
@@ -81,5 +82,15 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.coinTracker++;
         UpdateUI();
+    }
+
+    public void CloseGame() //This will be called in the start menu screen
+    {
+        Application.Quit(); //*Will only be in effect during builds*
+    }
+
+    public void StartGame() //This will be called in the Start menu screen
+    {
+        SceneManager.LoadScene("Town");
     }
 }
