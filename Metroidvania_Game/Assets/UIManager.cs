@@ -67,8 +67,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.playerLives--;
         UpdateUI();
-
-        GameManager.instance.gameObject.transform.position = playerControls.playerSpawnPoint.position;
+        PrototypePlayerMovementControls.Instance.gotHit = true;
     }
 
     public void Upgrade(int price)

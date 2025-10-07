@@ -24,10 +24,10 @@ public class GameManager : MonoBehaviour
     UIManager ui;
     private AudioSource coinPing;
 
-    public Sprite[] sprites;
-    public SpriteRenderer shopRender;
-    private int currentIndex;
-    private bool spriteTimer = false;
+    [Header("Elevator Settings")]
+    public Transform[] elevatorPos;
+    [SerializeField] private int currentPos;
+    public bool isNearElevator;
 
     private void Awake()
     {
