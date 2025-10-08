@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AxeLogic : MonoBehaviour
 {
+    PrototypePlayerMovementControls playerControls;
 
     [SerializeField]
     float vSpeed = 1.0f;
@@ -12,7 +13,17 @@ public class AxeLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb2D.linearVelocity = (transform.right * vSpeed) + (transform.up *hSpeed);
+        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+
+        if (playerControls.isFacingRight)
+        {
+            rb2D.linearVelocity = (transform.right * vSpeed) + (transform.up * hSpeed);
+        }
+        else if (!playerControls.isFacingRight)
+        {
+            rb2D.linearVelocity = (transform.right * -vSpeed) + (transform.up * hSpeed);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 
 

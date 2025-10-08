@@ -32,8 +32,10 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
 
     void Shoot()
     {
+        Transform firingPoint = playerController.isFacingRight ? firepointPosRight : firepointPosLeft;
+
         //Instantiate ProjectilePrefab
-        Instantiate(projectilePrefab,firepointPosRight.position, firepointPosRight.rotation);
+        Instantiate(projectilePrefab,firingPoint.position, firingPoint.rotation);
 
     }
 }
