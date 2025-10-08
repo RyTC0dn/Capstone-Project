@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4976827087568352504}
   - component: {fileID: 616889191924744933}
   - component: {fileID: -3145663015832420718}
+  - component: {fileID: 962744032168825721}
   m_Layer: 0
   m_Name: Currency
   m_TagString: Currency
@@ -261,3 +262,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &962744032168825721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463999451434080462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2f0ef124cbd4743ae4e4d5e63d55e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -10,7 +11,7 @@ public class UIManager : MonoBehaviour
 {
     //Game Variables
     private int coinCount;
-    public static UIManager instance;
+    public static UIManager instance {  get; private set; }
 
     //Text mesh pro variables
     public TextMeshProUGUI coinText;
@@ -68,7 +69,6 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.playerLives--;
         UpdateUI();
-        PrototypePlayerMovementControls.Instance.gotHit = true;
     }
 
     public void Upgrade(int price)
@@ -80,10 +80,13 @@ public class UIManager : MonoBehaviour
 
     public void CoinsCollected()
     {
-        GameManager.instance.coinTracker++;
+        GameManager.instance.coinTracker+= 1;
         UpdateUI();
     }
 
+    /// <summary>
+    /// This portion of the code will be dedicated to the start menu 
+    /// </summary>
     public void CloseGame() //This will be called in the start menu screen
     {
         Application.Quit(); //*Will only be in effect during builds*
@@ -93,4 +96,12 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Town");
     }
+
+    //public void PauseMenu() //This function will work to 
+    //{
+    //    if(Keyboard.current.escapeKey.isPressed)
+    //    {
+    //        GameManager.instance.OnPause();
+    //    }
+    //}
 }
