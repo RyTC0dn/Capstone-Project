@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd635ee4ea84724479a98f466f94e6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vSpeed: 3
-  hSpeed: 8.5
+  vSpeed: 5
+  hSpeed: 6.5
   rb2D: {fileID: 3059488857777073397}
 --- !u!95 &3847949637887119250
 Animator:

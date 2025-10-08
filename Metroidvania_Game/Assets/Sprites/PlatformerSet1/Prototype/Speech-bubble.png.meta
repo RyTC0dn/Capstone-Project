@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: a9c5973e95934ff43b0194e2e288d21b
+guid: 19d388ae47b78bf42b00e4a8e69f41cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5517041466510417860
-    second: ClockTower_0
+      213: 6995379358305928571
+    second: blank-speech-bubble-for-text-pixel-speech-bubble-pixel-art-icon-png_0
+  - first:
+      213: 3716850717799222056
+    second: blank-speech-bubble-for-text-pixel-speech-bubble-pixel-art-icon-png_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClockTower_0
+      name: blank-speech-bubble-for-text-pixel-speech-bubble-pixel-art-icon-png_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 0
-        width: 316
-        height: 960
+        x: 0
+        y: 71
+        width: 980
+        height: 804
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cf1476bbf7709c40800000000000000
-      internalID: 5517041466510417860
+      spriteID: b75cce89674941160800000000000000
+      internalID: 6995379358305928571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blank-speech-bubble-for-text-pixel-speech-bubble-pixel-art-icon-png_1
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 79
+        width: 41
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b049df808e49330800000000000000
+      internalID: 3716850717799222056
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ClockTower_0: 5517041466510417860
+      blank-speech-bubble-for-text-pixel-speech-bubble-pixel-art-icon-png_0: 6995379358305928571
+      blank-speech-bubble-for-text-pixel-speech-bubble-pixel-art-icon-png_1: 3716850717799222056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

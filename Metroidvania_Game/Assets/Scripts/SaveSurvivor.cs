@@ -5,10 +5,16 @@ public class SaveSurvivor : MonoBehaviour
 {
     [SerializeField]private bool playerIsNear = false;
 
+    public NPC npc;
+    public Dialogue conversation;
+
+    private SpriteRenderer npcSP;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        npcSP = GetComponent<SpriteRenderer>();
+        npcSP.sprite = npc.npcSprite;
     }
 
     // Update is called once per frame
