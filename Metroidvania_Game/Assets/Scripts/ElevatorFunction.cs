@@ -18,14 +18,26 @@ public class ElevatorFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isNearElevator)
+        {
+            float speed = 5 * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, exitDoor.position, speed);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerMovementControls.transform.position = exitDoor.position;
+            isNearElevator = true;           
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (Vector2.Distance(transform.position, exitDoor.position) <= 0.1f)
+        {
+            isNearElevator = false;
         }
     }
 }

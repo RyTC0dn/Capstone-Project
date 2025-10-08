@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 97000097508807112}
   - component: {fileID: 4381362866892299701}
   - component: {fileID: 1196622729118592834}
-  - component: {fileID: 4325215048108691228}
+  - component: {fileID: 2838455349575315290}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Weapon
@@ -111,8 +111,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &4325215048108691228
-BoxCollider2D:
+--- !u!60 &2838455349575315290
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,5 +155,42 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.84, y: 11.84}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.81, y: -2.9399998}
+      - {x: 4.0699997, y: -2.2}
+      - {x: 3.75, y: -1.8299999}
+      - {x: 3.75, y: -1.5}
+      - {x: 4.46, y: -0.74}
+      - {x: 4.46, y: 0.37}
+      - {x: 4.44, y: 0.39}
+      - {x: 3.6999998, y: 0.39}
+      - {x: 3.6799998, y: 0.37}
+      - {x: 2.62, y: -0.29}
+      - {x: -1.8499999, y: 4.0899997}
+      - {x: -2.1399999, y: 4.47}
+      - {x: -3.31, y: 5.6}
+      - {x: -4.04, y: 5.92}
+      - {x: -5.92, y: 5.92}
+      - {x: -5.92, y: 4.02}
+      - {x: -5.56, y: 3.3}
+      - {x: -4.81, y: 2.57}
+      - {x: -4.46, y: 2.57}
+      - {x: -4.46, y: 2.22}
+      - {x: -0.37, y: -1.87}
+      - {x: 0.29, y: -2.9299998}
+      - {x: -0.39, y: -3.6999998}
+      - {x: -0.39, y: -4.44}
+      - {x: -0.37, y: -4.46}
+      - {x: 0.74, y: -4.46}
+      - {x: 1.13, y: -4.0699997}
+      - {x: 1.5, y: -3.75}
+      - {x: 1.77, y: -3.73}
+      - {x: 2.9399998, y: -4.8599997}
+      - {x: 3.31, y: -5.5499997}
+      - {x: 3.6799998, y: -5.92}
+      - {x: 5.5699997, y: -5.92}
+      - {x: 5.92, y: -5.5699997}
+      - {x: 5.92, y: -3.6799998}
+      - {x: 5.5499997, y: -3.31}
+  m_UseDelaunayMesh: 0
