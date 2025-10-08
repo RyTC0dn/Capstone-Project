@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3542951604396862579}
   - component: {fileID: 4849990185906700182}
   - component: {fileID: 6513991651269901807}
+  - component: {fileID: 5447317750877297827}
   m_Layer: 0
   m_Name: Blacksmith
   m_TagString: Untagged
@@ -337,6 +338,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 5.7, y: 1}
   m_Direction: 0
+--- !u!114 &5447317750877297827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275503575992522268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daea76e958ac8ab45bb53bff3b17684e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIsNear: 0
 --- !u!1 &6716711295408385193
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
 
     PrototypePlayerMovementControls playerMovementControls;
     UIManager ui;
-    private AudioSource coinPing;
+    public AudioSource coinPickup;
+    public AudioSource coinPouch;
+    private float timer = 5;
 
     private GameObject pauseMenu;
 
@@ -44,8 +46,7 @@ public class GameManager : MonoBehaviour
     {
         //Initializing scripts within the game manager
         playerMovementControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
-        ui = FindAnyObjectByType<UIManager>();  
-        coinPing = GetComponent<AudioSource>();        
+        ui = FindAnyObjectByType<UIManager>();        
     }
 
     // Update is called once per frame
@@ -65,7 +66,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayCoinAudio() //Call this function when player collides with coin
     {
-        coinPing.Play();    
+        coinPickup.Play();
+        StartCoroutine(AudioDelay());
+        if(timer <= 0)
+            coinPouch.Play();
+    }
+
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        timer--;
     }
 
     public void StateSwitch(GameStates state)
