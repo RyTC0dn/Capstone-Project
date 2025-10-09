@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: NPCSurvivor-Blacksmith
   m_EditorClassIdentifier: 
   textLines:
-  - npc: {fileID: 0}
+  - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
     text: Thank the gods!!!
-  - npc: {fileID: 0}
-    text: I had got my
+  - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
+    text: 'Thought nobody was coming for me. '
+  - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
+    text: 'Thought nobody was coming for me. '

@@ -13,6 +13,5 @@ public struct Line
 [CreateAssetMenu(fileName = "Dialogue", menuName = "Scriptable Objects/Dialogue/Tower")]
 public class Dialogue : ScriptableObject
 {
-    public GameObject textBubble;
     public Line[] textLines;
 }
