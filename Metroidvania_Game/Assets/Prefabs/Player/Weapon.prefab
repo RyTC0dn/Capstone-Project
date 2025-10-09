@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 97000097508807112}
   - component: {fileID: 4381362866892299701}
   - component: {fileID: 1196622729118592834}
-  - component: {fileID: 2205490363792383346}
+  - component: {fileID: 2838455349575315290}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Weapon
@@ -111,7 +111,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &2205490363792383346
+--- !u!60 &2838455349575315290
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

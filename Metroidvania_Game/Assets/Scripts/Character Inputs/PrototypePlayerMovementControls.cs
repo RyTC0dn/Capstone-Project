@@ -15,7 +15,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private Rigidbody2D rb2D;
     public Transform playerSpawnPoint;
 
-    public float h;
+    public float hSpeed;
 
     [SerializeField]
     private float sprintFactor = 1.5f;
@@ -24,6 +24,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private bool isSprinting = false;
 
     private float horizontalMove = 0;
+
+    public bool gotHit;
 
     [Header("Dash Settings")]
 
@@ -90,10 +92,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         //Float variable to store horizontal input
         //Horizontal can be -1, 0, or 1
-        h = Input.GetAxisRaw("Horizontal");
+        hSpeed = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
-        Move(h);
+        Move(hSpeed);
 
         //if(dashTime > 0)
         //{
@@ -129,13 +131,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         if(movement > 0 )
         {
-            isFacingRight = false;
-            knightSP.flipX = false;           
+            isFacingRight = true;
+            knightSP.flipX = true;           
         }
         if(movement < 0 )
         {
-            isFacingRight = true;
-            knightSP.flipX = true;
+            isFacingRight = false;
+            knightSP.flipX = false;
         }
     }
 
