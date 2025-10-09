@@ -129,13 +129,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         if(movement > 0 )
         {
-            isFacingRight = false;
-            knightSP.flipX = false;           
+            isFacingRight = true;
+            knightSP.flipX = true;           
         }
         if(movement < 0 )
         {
-            isFacingRight = true;
-            knightSP.flipX = true;
+            isFacingRight = false;
+            knightSP.flipX = false;
         }
     }
 
