@@ -24,11 +24,6 @@ public class GameManager : MonoBehaviour
     UIManager ui;
     private AudioSource coinPing;
 
-    public Sprite[] sprites;
-    public SpriteRenderer shopRender;
-    private int currentIndex;
-    private bool spriteTimer = false;
-
     private void Awake()
     {
         if(instance == null)
