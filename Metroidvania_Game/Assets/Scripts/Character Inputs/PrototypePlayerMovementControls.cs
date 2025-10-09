@@ -127,12 +127,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
 
-        if(movement < 0 )
+        if(movement > 0 )
         {
             isFacingRight = false;
             knightSP.flipX = false;           
         }
-        if(movement > 0 )
+        if(movement < 0 )
         {
             isFacingRight = true;
             knightSP.flipX = true;
