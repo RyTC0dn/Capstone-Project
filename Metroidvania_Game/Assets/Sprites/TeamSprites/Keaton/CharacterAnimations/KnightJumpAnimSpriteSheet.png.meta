@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: 72c50cce9dbf62b468b652f6071fefed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3838559198277551920
+    second: KnightJumpAnimSpriteSheet_0
+  - first:
+      213: 534458098102759396
+    second: KnightJumpAnimSpriteSheet_1
+  - first:
+      213: -2654395660184182706
+    second: KnightJumpAnimSpriteSheet_2
+  - first:
+      213: -6158144584019837560
+    second: KnightJumpAnimSpriteSheet_3
+  - first:
+      213: -302028583038711316
+    second: KnightJumpAnimSpriteSheet_4
+  - first:
+      213: 1649919209513884383
+    second: KnightJumpAnimSpriteSheet_5
+  - first:
+      213: 9079452778926160974
+    second: KnightJumpAnimSpriteSheet_6
+  - first:
+      213: -2529197627224100803
+    second: KnightJumpAnimSpriteSheet_7
+  - first:
+      213: -8746874979251806168
+    second: KnightJumpAnimSpriteSheet_8
+  - first:
+      213: 7480403913161452399
+    second: KnightJumpAnimSpriteSheet_9
+  - first:
+      213: 1139338438145345209
+    second: KnightJumpAnimSpriteSheet_10
+  - first:
+      213: 1297332850781678390
+    second: KnightJumpAnimSpriteSheet_11
+  - first:
+      213: 1308949445894087946
+    second: KnightJumpAnimSpriteSheet_12
+  - first:
+      213: -5852824487364577969
+    second: KnightJumpAnimSpriteSheet_13
+  - first:
+      213: -5693495142006101061
+    second: KnightJumpAnimSpriteSheet_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 747
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03744a6d04d454530800000000000000
+      internalID: 3838559198277551920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 747
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4efeebcfec6ca6700800000000000000
+      internalID: 534458098102759396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 748
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40226de531b92bd0800000000000000
+      internalID: -2654395660184182706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 748
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d700ac020e98aa0800000000000000
+      internalID: -6158144584019837560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 748
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce986fb9a9afecbf0800000000000000
+      internalID: -302028583038711316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 750
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda1b2787c0b5e610800000000000000
+      internalID: 1649919209513884383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 752
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4cb3da8232b00e70800000000000000
+      internalID: 9079452778926160974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 754
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30fb86882c76ecd0800000000000000
+      internalID: -2529197627224100803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 655
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820a1fe9c8bdc9680800000000000000
+      internalID: -8746874979251806168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 657
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b2e64e9bbbfc760800000000000000
+      internalID: 7480403913161452399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 655
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b60a94e54ebfcf00800000000000000
+      internalID: 1139338438145345209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 653
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b694eaa5d010210800000000000000
+      internalID: 1297332850781678390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 651
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05267ff5925a2210800000000000000
+      internalID: 1308949445894087946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 649
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f453de9632796cea0800000000000000
+      internalID: -5852824487364577969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightJumpAnimSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 647
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb60527554acf0b0800000000000000
+      internalID: -5693495142006101061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
