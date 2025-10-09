@@ -42,6 +42,7 @@ public class PrototypeShop : MonoBehaviour
         //Set the shop ui object to active when function is called
         shopUI.SetActive(true);
         interactText.enabled = false;
+        playerAttack.enabled = false;
     }
 
     public void BuySwordUpgrade()
