@@ -14,4 +14,5 @@ public struct Line
 public class Dialogue : ScriptableObject
 {
     public Line[] textLines;
+    public AudioClip[] audioVoice;
 }

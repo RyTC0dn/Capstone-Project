@@ -9,5 +9,4 @@ public class NPC : ScriptableObject
     /// quickly apply to any object in the scene
     /// </summary>
     public string npcName;
-    public Sprite npcSprite;
 }

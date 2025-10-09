@@ -1,49 +1,51 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
-public class SaveSurvivor : MonoBehaviour
+public class TownNPCDialog : MonoBehaviour
 {
-    [SerializeField]private bool playerIsNear = false;
-
-    public NPC survivor;
+    public NPC villager;
     public Dialogue conversation;
     public GameObject textBubble;
 
+    [Header("Dialogue Settings")]
     public TextMeshProUGUI survivorName;
     public TextMeshProUGUI dialog;
+    public AudioSource audioPlayer;
 
     private int activeLineIndex = 0;
     private bool conversationActive = false;
     private bool hasSurvivorBeenSaved = false;
     private bool firstLineShown = false;
+    [SerializeField] private bool playerIsNear = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textBubble.SetActive(false);
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!conversationActive || conversation.textLines.Length == 0) { return; }
+        if (!conversationActive || conversation.textLines.Length == 0) { return; }
 
-       
+
 
         dialog.text = conversation.textLines[activeLineIndex].text;
-        survivorName.text = survivor.npcName;
+        survivorName.text = villager.npcName;
         if (Keyboard.current.eKey.wasPressedThisFrame && playerIsNear)
-        { 
-            if(!firstLineShown)
+        {
+            if (!firstLineShown)
             {
                 textBubble.SetActive(true);
                 firstLineShown = true;
+
+                PlayAudio(activeLineIndex);
                 return; //Don't advance on first first press
             }
-            
+
             AdvanceDialog();
             if (hasSurvivorBeenSaved) { Destroy(gameObject); }
         }
@@ -59,17 +61,26 @@ public class SaveSurvivor : MonoBehaviour
         {
             activeLineIndex = 0;
             conversationActive = false;
-            textBubble.SetActive(false );
+            textBubble.SetActive(false);
             hasSurvivorBeenSaved = true;
             return;
         }
 
-        //dialog.text = conversation.textLines[activeLineIndex].text;
+        PlayAudio(activeLineIndex);
+    }
+
+    void PlayAudio(int index)
+    {
+        if(conversation.audioVoice != null && index < conversation.textLines.Length)
+        {
+            audioPlayer.clip = conversation.audioVoice[index];
+            audioPlayer.Play();
+        }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {       
+    {
 
         if (collision.CompareTag("Player"))
         {
