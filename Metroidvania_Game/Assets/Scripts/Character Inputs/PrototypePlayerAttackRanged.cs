@@ -7,7 +7,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     public Transform firepointPosRight;
     public Transform firepointPosLeft;
     public GameObject projectilePrefab;
-
+    [SerializeField] private Animator animator;
 
 
     PrototypePlayerMovementControls playerController;
@@ -24,10 +24,13 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
+        if (Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
         {
             Shoot();
+            animator.SetBool("isThrowing", true);
+
         }
+
     }
 
     void Shoot()
@@ -35,7 +38,9 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
         Transform firingPoint = playerController.isFacingRight ? firepointPosRight : firepointPosLeft;
 
         //Instantiate ProjectilePrefab
-        Instantiate(projectilePrefab,firingPoint.position, firingPoint.rotation);
+        Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
 
     }
+
+
 }

@@ -1,37 +1,34 @@
 fileFormatVersion: 2
-guid: 6d52ef8fe0eef694483d2b1c38700f97
+guid: e214ce3972b4c5e43a6c0f46ad090902
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6975504600218483681
-    second: KnightAxeAnimSpriteSheet_0
+      213: -2958991660307842748
+    second: TempleSpriteSheet_0
   - first:
-      213: 684711971305814857
-    second: KnightAxeAnimSpriteSheet_1
+      213: -976499666919139341
+    second: TempleSpriteSheet_1
   - first:
-      213: 5297405217815881970
-    second: KnightAxeAnimSpriteSheet_2
+      213: 820896835704361351
+    second: TempleSpriteSheet_2
   - first:
-      213: -66874405423958755
-    second: KnightAxeAnimSpriteSheet_3
+      213: 6152075487112493327
+    second: TempleSpriteSheet_3
   - first:
-      213: 7884704765626147081
-    second: KnightAxeAnimSpriteSheet_4
+      213: -873066909872474583
+    second: TempleSpriteSheet_4
   - first:
-      213: -1224243578662693710
-    second: KnightAxeAnimSpriteSheet_5
+      213: 4799620487149590742
+    second: TempleSpriteSheet_5
   - first:
-      213: -4565068345892537590
-    second: KnightAxeAnimSpriteSheet_6
+      213: 6348039153371002042
+    second: TempleSpriteSheet_6
   - first:
-      213: 512441340823840672
-    second: KnightAxeAnimSpriteSheet_7
+      213: 704383159324023938
+    second: TempleSpriteSheet_7
   - first:
-      213: -204456188355910086
-    second: KnightAxeAnimSpriteSheet_8
-  - first:
-      213: -2507983148560426862
-    second: KnightAxeAnimSpriteSheet_9
+      213: 2695223622894096792
+    second: TempleSpriteSheet_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 6
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_0
+      name: TempleSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 748
-        width: 23
-        height: 43
+        x: 13
+        y: 684
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f14cfde1687023f90800000000000000
-      internalID: -6975504600218483681
+      spriteID: 449f10a23cc8fe6d0800000000000000
+      internalID: -2958991660307842748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_1
+      name: TempleSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 142
-        y: 748
-        width: 20
-        height: 43
+        x: 415
+        y: 684
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94bf32ff8e5908900800000000000000
-      internalID: 684711971305814857
+      spriteID: 3f75ff50ab6c272f0800000000000000
+      internalID: -976499666919139341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_2
+      name: TempleSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 244
-        y: 748
-        width: 18
-        height: 43
+        x: 817
+        y: 684
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f8673f8af9248940800000000000000
-      internalID: 5297405217815881970
+      spriteID: 7819661a259646b00800000000000000
+      internalID: 820896835704361351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_3
+      name: TempleSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 343
-        y: 748
-        width: 19
-        height: 42
+        x: 13
+        y: 342
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d15b324251a621ff0800000000000000
-      internalID: -66874405423958755
+      spriteID: f097ab87f00906550800000000000000
+      internalID: 6152075487112493327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_4
+      name: TempleSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 442
-        y: 748
-        width: 20
-        height: 45
+        x: 415
+        y: 342
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 901e9f995391c6d60800000000000000
-      internalID: 7884704765626147081
+      spriteID: 92637eb654e32e3f0800000000000000
+      internalID: -873066909872474583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_5
+      name: TempleSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 543
-        y: 748
-        width: 19
-        height: 42
+        x: 817
+        y: 342
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b4d14793fc920fe0800000000000000
-      internalID: -1224243578662693710
+      spriteID: 6d81d31576dab9240800000000000000
+      internalID: 4799620487149590742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_6
+      name: TempleSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 643
-        y: 748
-        width: 19
-        height: 42
+        x: 13
+        y: 0
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0bf1b3b68e95a0c0800000000000000
-      internalID: -4565068345892537590
+      spriteID: ab433f40af3c81850800000000000000
+      internalID: 6348039153371002042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_7
+      name: TempleSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 743
-        y: 748
-        width: 19
-        height: 43
+        x: 415
+        y: 0
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a7a7083fae8c1700800000000000000
-      internalID: 512441340823840672
+      spriteID: 28c964d50c876c900800000000000000
+      internalID: 704383159324023938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_8
+      name: TempleSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 42
-        y: 648
-        width: 20
-        height: 43
+        x: 817
+        y: 0
+        width: 374
+        height: 331
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,30 +315,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a366ae01e20a92df0800000000000000
-      internalID: -204456188355910086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnightAxeAnimSpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 648
-        width: 23
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 298d36f3d9ad13dd0800000000000000
-      internalID: -2507983148560426862
+      spriteID: 89118d8ea9b576520800000000000000
+      internalID: 2695223622894096792
       vertices: []
       indices: 
       edges: []
@@ -350,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d5d83be9ad417c0498ab30c40ce132df
+    spriteID: 032c059f4ddfbcd44b62aba00eefbcbd
     internalID: 0
     vertices: []
     indices: 
@@ -360,16 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KnightAxeAnimSpriteSheet_0: -6975504600218483681
-      KnightAxeAnimSpriteSheet_1: 684711971305814857
-      KnightAxeAnimSpriteSheet_2: 5297405217815881970
-      KnightAxeAnimSpriteSheet_3: -66874405423958755
-      KnightAxeAnimSpriteSheet_4: 7884704765626147081
-      KnightAxeAnimSpriteSheet_5: -1224243578662693710
-      KnightAxeAnimSpriteSheet_6: -4565068345892537590
-      KnightAxeAnimSpriteSheet_7: 512441340823840672
-      KnightAxeAnimSpriteSheet_8: -204456188355910086
-      KnightAxeAnimSpriteSheet_9: -2507983148560426862
+      TempleSpriteSheet_0: -2958991660307842748
+      TempleSpriteSheet_1: -976499666919139341
+      TempleSpriteSheet_2: 820896835704361351
+      TempleSpriteSheet_3: 6152075487112493327
+      TempleSpriteSheet_4: -873066909872474583
+      TempleSpriteSheet_5: 4799620487149590742
+      TempleSpriteSheet_6: 6348039153371002042
+      TempleSpriteSheet_7: 704383159324023938
+      TempleSpriteSheet_8: 2695223622894096792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
