@@ -45,7 +45,7 @@ public class SaveSurvivor : MonoBehaviour
             }
             
             AdvanceDialog();
-            if (hasSurvivorBeenSaved) { Destroy(gameObject); }
+            if (hasSurvivorBeenSaved) { GameManager.instance.hasSavedBlacksmith = true; Destroy(gameObject); }
         }
     }
 

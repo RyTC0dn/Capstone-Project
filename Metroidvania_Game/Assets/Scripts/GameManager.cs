@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     private GameObject pauseMenu;
 
+    public bool hasSavedBlacksmith = false;
+
     private void Awake()
     {
         if(instance == null)
