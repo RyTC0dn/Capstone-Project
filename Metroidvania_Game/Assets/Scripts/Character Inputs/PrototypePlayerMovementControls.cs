@@ -97,12 +97,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Set the movement function
         Move(hSpeed);
 
-        //if(dashTime > 0)
-        //{
-        //    //Set dash function
-        //    Dash(h);
-        //}
-       
+        if (dashTime > 0)
+        {
+            //Set dash function
+            Dash(hSpeed);
+        }
+
     }
 
     private void Move(float hSpeed)
@@ -110,24 +110,26 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Assigning booleans to the key inputs
         float movement = Input.GetAxisRaw("Horizontal");
 
-        ////Ternary if statement
-        ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
-        ////if it is false (:) multiply hspeed by playerspeed
-        //float xVelocity = isSprinting ? hSpeed * playerSpeed * sprintFactor : hSpeed * playerSpeed;
+        //Ternary if statement
+        //is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
+        //if it is false (:) multiply hspeed by playerspeed
+        float xVelocity = isSprinting ? hSpeed * playerSpeed * sprintFactor : hSpeed * playerSpeed;
 
-        ////Assign the left shift key to sprinting
-        //isSprinting = Input.GetKey(KeyCode.LeftShift);
+        //Assign the left shift key to sprinting
+        isSprinting = Keyboard.current.leftShiftKey.isPressed;
 
-        ////What to do if the player is sprinting
-        //if (isSprinting) { sprintTimer -= Time.deltaTime; } //Subtract 1 second by delta time
-        //else { sprintTimer = sprintDuration; } //If player is not sprinting, reset the timer
+        //What to do if the player is sprinting
+        if (isSprinting) { sprintTimer -= Time.deltaTime; } //Subtract 1 second by delta time
+        else { sprintTimer = sprintDuration; } //If player is not sprinting, reset the timer
 
-        ////Check to make sure the timer hasn't elapsed
-        //if(sprintTimer <= 0) { sprintTimer = 0;
-        //    isSprinting = false;
-        //}
+        //Check to make sure the timer hasn't elapsed
+        if (sprintTimer <= 0)
+        {
+            sprintTimer = 0;
+            isSprinting = false;
+        }
 
-        rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
+        rb2D.linearVelocity = new Vector2(xVelocity, rb2D.linearVelocity.y);
 
         if(movement > 0 )
         {
