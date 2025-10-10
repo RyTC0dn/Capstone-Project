@@ -10,19 +10,22 @@ public class ElevatorFunction : MonoBehaviour
     private bool savedNPC;
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
         savedNPC = GameManager.instance.hasSavedBlacksmith;
+        if (savedNPC && Keyboard.current.eKey.isPressed && isNearElevator)
+        {
+            //Move the player to the exit door position
+            Transform playerPos = PrototypePlayerMovementControls.Instance.transform;
+            playerPos.position = exitDoor.transform.position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {        
         if (collision.CompareTag("Player") && !isNearElevator)
         {
-            isNearElevator = true;
-
-            if(savedNPC)
-            {
-                //Move the player to the exit door position
-                Transform playerPos = PrototypePlayerMovementControls.Instance.transform;
-                playerPos.position = exitDoor.transform.position;
-            }          
+            isNearElevator = true;                 
         }
     }
 
