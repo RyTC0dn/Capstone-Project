@@ -19,7 +19,7 @@ public class PrototypePlayerAttack : MonoBehaviour
 
     private GameObject currentWeapon; //Track spawned weapon
     private AudioSource swordSlashAudio;
-
+    [SerializeField] private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -66,22 +66,38 @@ public class PrototypePlayerAttack : MonoBehaviour
             //Spawn weapon
             currentWeapon = Instantiate(weaponPrefab, spawnPoint);
 
+
+            animator.SetBool("isSlashing", true); //switch to slashing animation
+
             //Weapon Sprite 
-            if(playerController.isFacingRight)
+            if (playerController.isFacingRight)
             {
                 weaponPrefab.GetComponent<SpriteRenderer>().flipX = false;
             }
             else
             {
-                weaponPrefab.GetComponent<SpriteRenderer>().flipX=true;
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX = true;
             }
 
-            //Play audio file for sword slash
-            swordSlashAudio.Play();
 
-            isUnsheathed = true;
 
-            activeTimer = unsheathTime;
+
+
         }
+        //Play audio file for sword slash
+        swordSlashAudio.Play();
+
+        isUnsheathed = true;
+
+        activeTimer = unsheathTime;
+
+        //if (unsheathTime == 0)
+         //   {          
+         //       animator.SetBool("isSlashing", false); //if the unsheath time is out switch animations
+         //   }
+        }
+
     }
-}
+
+    
+
