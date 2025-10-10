@@ -30,7 +30,7 @@ public class ElevatorFunction : MonoBehaviour
             {
                 isNearElevator=false;
 
-                
+                //
                 if(player != null)
                 {
                     player.SetParent(null);
@@ -59,19 +59,19 @@ public class ElevatorFunction : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isNearElevator = true;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player"))
+    //    {
+    //        isNearElevator = true;           
+    //    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (Vector2.Distance(transform.position, exitDoor.position) <= 0.1f)
-        {
-            isNearElevator = false;
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (Vector2.Distance(transform.position, exitDoor.position) <= 0.1f)
+    //    {
+    //        isNearElevator = false;
+    //    }
+    //}
 }

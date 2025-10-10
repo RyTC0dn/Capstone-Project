@@ -18,7 +18,6 @@ public class PlayerJumps : MonoBehaviour
 
     //Boolean to store if the player is on the ground or not
     public bool isGrounded = false;
-    private bool hasJumped;
 
     private Rigidbody2D rb2d;
 
@@ -70,7 +69,6 @@ public class PlayerJumps : MonoBehaviour
         if (isGrounded)
         {
             coyoteTime = coyoteTimeMax;
-            hasJumped = false;
         }
         else
         {
@@ -83,13 +81,13 @@ public class PlayerJumps : MonoBehaviour
     {       
 
         //Jump input 
-        if ((callbackContext.performed) && coyoteTime > 0 && !hasJumped)
+        if ((callbackContext.performed) && coyoteTime > 0)
         {
             //Set the rigidbody's velocity to whatever its current velocity is on x
             //and jump force on y
             rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
             coyoteTime = 0;
-            hasJumped = true;
+            isGrounded = false;
         }
 
         
