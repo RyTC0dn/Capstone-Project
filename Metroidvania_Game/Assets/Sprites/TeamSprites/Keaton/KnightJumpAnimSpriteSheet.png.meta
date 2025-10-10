@@ -93,7 +93,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -145,12 +145,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 700
-        width: 100
-        height: 100
+        x: 40
+        y: 748
+        width: 23
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 700
-        width: 100
-        height: 100
+        x: 140
+        y: 748
+        width: 23
+        height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 700
-        width: 100
-        height: 100
+        x: 240
+        y: 749
+        width: 23
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,12 +211,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 300
-        y: 700
-        width: 100
-        height: 100
+        x: 340
+        y: 749
+        width: 23
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,12 +233,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 700
-        width: 100
-        height: 100
+        x: 440
+        y: 749
+        width: 23
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 500
-        y: 700
-        width: 100
-        height: 100
+        x: 540
+        y: 751
+        width: 23
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 600
-        y: 700
-        width: 100
-        height: 100
+        x: 640
+        y: 753
+        width: 23
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 700
-        y: 700
-        width: 100
-        height: 100
+        x: 740
+        y: 755
+        width: 23
+        height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 600
-        width: 100
-        height: 100
+        x: 39
+        y: 656
+        width: 25
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 100
-        y: 600
-        width: 100
-        height: 100
+        x: 139
+        y: 658
+        width: 25
+        height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 200
-        y: 600
-        width: 100
-        height: 100
+        x: 239
+        y: 656
+        width: 25
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +387,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 300
-        y: 600
-        width: 100
-        height: 100
+        x: 339
+        y: 654
+        width: 25
+        height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 400
-        y: 600
-        width: 100
-        height: 100
+        x: 440
+        y: 652
+        width: 23
+        height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -431,12 +431,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_13
       rect:
         serializedVersion: 2
-        x: 500
-        y: 600
-        width: 100
-        height: 100
+        x: 540
+        y: 650
+        width: 23
+        height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -453,12 +453,12 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_14
       rect:
         serializedVersion: 2
-        x: 600
-        y: 600
-        width: 100
-        height: 100
+        x: 640
+        y: 648
+        width: 23
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

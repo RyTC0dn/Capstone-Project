@@ -14,7 +14,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private float playerSpeed;
     private Rigidbody2D rb2D;
     public Transform playerSpawnPoint;
-
+    [SerializeField] private Animator animator;
     public float hSpeed;
 
     [SerializeField]
@@ -140,13 +140,24 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if(movement > 0 )
         {
             isFacingRight = true;
-            knightSP.flipX = true;           
+            knightSP.flipX = false;
+         
         }
         if(movement < 0 )
         {
             isFacingRight = false;
-            knightSP.flipX = false;
+            knightSP.flipX = true;
+           
         }
+
+       if (movement != 0) //if the player is moving set running else idle animation
+      {
+           animator.SetBool("isRunning", true);
+       }
+       else
+       {
+            animator.SetBool("isRunning", false);
+       }
     }
 
     //Only call this function when the player lives equal 0
