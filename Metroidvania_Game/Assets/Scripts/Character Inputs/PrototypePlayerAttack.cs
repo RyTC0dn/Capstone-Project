@@ -20,9 +20,6 @@ public class PrototypePlayerAttack : MonoBehaviour
     private GameObject currentWeapon; //Track spawned weapon
     private AudioSource swordSlashAudio;
     [SerializeField] private Animator animator;
-    private bool isAnimatorOn;
-
-    public int animationTimer = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +27,6 @@ public class PrototypePlayerAttack : MonoBehaviour
 
         unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time        
         swordSlashAudio = GetComponent<AudioSource>();
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -61,44 +57,33 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// <param name="context"></param>
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        //If player is facing left or right, pressing input and the weapon hasn't been instantiated yet
+        if (context.performed && (playerController.isFacingRight || !playerController.isFacingRight) && !isUnsheathed)
         {
+            //Choose which spawn point based on players direction
+            Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
+
+            //Spawn weapon
+            currentWeapon = Instantiate(weaponPrefab, spawnPoint);
+
+
             animator.SetBool("isSlashing", true); //switch to slashing animation
-            isAnimatorOn = true;
-            
+
+            //Weapon Sprite 
+            if (playerController.isFacingRight)
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+
+
+
+
         }
-        if (isAnimatorOn)
-        {
-            animationTimer--;
-        }
-
-        else if(animationTimer <= 0)
-        {
-            animator.SetBool("isSlashing", false); //switch to idle animation
-        }
-        ////If player is facing left or right, pressing input and the weapon hasn't been instantiated yet
-        //if (context.performed && (playerController.isFacingRight || !playerController.isFacingRight) && !isUnsheathed)
-        //{
-        //    //Choose which spawn point based on players direction
-        //    Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
-
-        //    //Spawn weapon
-        //    currentWeapon = Instantiate(weaponPrefab, spawnPoint);
-
-
-        //    //Weapon Sprite 
-        //    if (playerController.isFacingRight)
-        //    {
-        //        weaponPrefab.GetComponent<SpriteRenderer>().flipX = false;
-        //    }
-        //    else
-        //    {
-        //        weaponPrefab.GetComponent<SpriteRenderer>().flipX = true;
-        //    }
-
-        //    //animator.SetBool("isSlashing", true); //switch to slashing animation
-
-        //}
         //Play audio file for sword slash
         swordSlashAudio.Play();
 

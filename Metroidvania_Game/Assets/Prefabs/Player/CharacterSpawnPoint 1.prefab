@@ -280,7 +280,7 @@ MonoBehaviour:
   spawnPosLeft: {fileID: 4492383643913782165}
   weaponPrefab: {fileID: 6289581941158984639, guid: 308d18f994a74324c82c4cd8e4e9e55a, type: 3}
   activeTimer: 0.5
-  animator: {fileID: 7369698106582860745}
+  animator: {fileID: 0}
 --- !u!114 &7107651034627942265
 MonoBehaviour:
   m_ObjectHideFlags: 0
