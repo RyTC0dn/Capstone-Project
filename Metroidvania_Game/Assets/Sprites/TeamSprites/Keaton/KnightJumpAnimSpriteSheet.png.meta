@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72c50cce9dbf62b468b652f6071fefed
+guid: 2d3161eacb473e74eaf2f1ef066ae28a
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -79,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -145,10 +145,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 747
-        width: 25
-        height: 45
+        x: 0
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,10 +167,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 747
-        width: 25
-        height: 44
+        x: 100
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 239
-        y: 748
-        width: 25
-        height: 42
+        x: 200
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,10 +211,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 339
-        y: 748
-        width: 25
-        height: 40
+        x: 300
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 439
-        y: 748
-        width: 25
-        height: 38
+        x: 400
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +255,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 539
-        y: 750
-        width: 25
-        height: 40
+        x: 500
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 639
-        y: 752
-        width: 25
-        height: 40
+        x: 600
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +299,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 739
-        y: 754
-        width: 25
-        height: 41
+        x: 700
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 38
-        y: 655
-        width: 27
-        height: 42
+        x: 0
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +343,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 138
-        y: 657
-        width: 27
-        height: 41
+        x: 100
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 238
-        y: 655
-        width: 27
-        height: 42
+        x: 200
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,10 +387,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 338
-        y: 653
-        width: 27
-        height: 43
+        x: 300
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +409,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 439
-        y: 651
-        width: 25
-        height: 43
+        x: 400
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,10 +431,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_13
       rect:
         serializedVersion: 2
-        x: 539
-        y: 649
-        width: 25
-        height: 44
+        x: 500
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,10 +453,10 @@ TextureImporter:
       name: KnightJumpAnimSpriteSheet_14
       rect:
         serializedVersion: 2
-        x: 639
-        y: 647
-        width: 25
-        height: 45
+        x: 600
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d35f8c25eec22024f856c314169d885b
     internalID: 0
     vertices: []
     indices: 
