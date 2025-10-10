@@ -112,7 +112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211345191218373637, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_Mass
-      value: 7.3133106
+      value: 6.5605507
       objectReference: {fileID: 0}
     - target: {fileID: 2211345191218373637, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_CollisionDetection
@@ -280,6 +280,7 @@ MonoBehaviour:
   spawnPosLeft: {fileID: 4492383643913782165}
   weaponPrefab: {fileID: 6289581941158984639, guid: 308d18f994a74324c82c4cd8e4e9e55a, type: 3}
   activeTimer: 0.5
+  animator: {fileID: 0}
 --- !u!114 &7107651034627942265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +296,7 @@ MonoBehaviour:
   firepointPosRight: {fileID: 4251701759019919007}
   firepointPosLeft: {fileID: 4492383643913782165}
   projectilePrefab: {fileID: 4895757740315594668, guid: ddc61152c13ad834789c5b99afb38597, type: 3}
+  animator: {fileID: 7369698106582860745}
 --- !u!82 &3645702212388590397
 AudioSource:
   m_ObjectHideFlags: 0
@@ -392,3 +394,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7369698106582860745 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4309067893665549555, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+  m_PrefabInstance: {fileID: 6740357067745546042}
+  m_PrefabAsset: {fileID: 0}

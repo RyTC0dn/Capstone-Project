@@ -441,6 +441,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &278918353
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2275503575992522268, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_Name
+      value: Blacksmith
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857283924619203346, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: states
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066470293721948882, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3843616808909635964, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,7 +4007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625030223114448369, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -1043.8
       objectReference: {fileID: 0}
     - target: {fileID: 4625030223114448369, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3981,7 +4043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625030223114448369, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: -521.9
       objectReference: {fileID: 0}
     - target: {fileID: 4625030223114448369, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4005,7 +4067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189949307562301281, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7442034547716605648, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -19527,6 +19589,7 @@ SceneRoots:
   - {fileID: 2078281608}
   - {fileID: 1578399050}
   - {fileID: 1071246352}
+  - {fileID: 278918353}
   - {fileID: 2103954719}
   - {fileID: 956401273}
   - {fileID: 1011673192}
