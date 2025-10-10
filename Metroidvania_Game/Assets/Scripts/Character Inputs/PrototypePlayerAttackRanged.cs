@@ -13,6 +13,9 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     PrototypePlayerMovementControls playerController;
     PrototypeShop shop;
 
+    private int animationTimer = 5;
+    private bool animationOn = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +31,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
         {
             Shoot();
             animator.SetBool("isThrowing", true);
-
+                       
         }
 
     }
