@@ -27,7 +27,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
         if (Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
         {
             Shoot();
-            animator.SetBool("isThrowing", true);
+            //animator.SetBool("isThrowing", true);
 
         }
 

@@ -14,6 +14,7 @@ public class SaveSurvivor : MonoBehaviour
 
     public TextMeshProUGUI survivorName;
     public TextMeshProUGUI dialog;
+    public GameObject EndText;
 
     private int activeLineIndex = 0;
     private bool conversationActive = false;
@@ -24,6 +25,7 @@ public class SaveSurvivor : MonoBehaviour
     void Start()
     {
         textBubble.SetActive(false);
+        EndText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,7 +47,8 @@ public class SaveSurvivor : MonoBehaviour
             }
             
             AdvanceDialog();
-            if (hasSurvivorBeenSaved) { GameManager.instance.hasSavedBlacksmith = true; Destroy(gameObject); }
+            if (hasSurvivorBeenSaved) { GameManager.instance.hasSavedBlacksmith = true; EndText.SetActive(true);
+                Destroy(gameObject); }
         }
     }
 

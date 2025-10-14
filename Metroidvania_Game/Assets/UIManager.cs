@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
     public void PlayerLives()
     {
         GameManager.instance.playerLives--;
+        PrototypePlayerMovementControls.Instance.transform.position = PrototypePlayerMovementControls.Instance.playerSpawnPoint.position;
         UpdateUI();
     }
 

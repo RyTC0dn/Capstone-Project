@@ -67,7 +67,7 @@ public class PrototypePlayerAttack : MonoBehaviour
             currentWeapon = Instantiate(weaponPrefab, spawnPoint);
 
 
-            animator.SetBool("isSlashing", true); //switch to slashing animation
+            //animator.SetBool("isSlashing", true); //switch to slashing animation
 
             //Weapon Sprite 
             if (playerController.isFacingRight)
