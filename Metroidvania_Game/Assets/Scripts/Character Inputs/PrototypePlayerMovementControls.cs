@@ -19,15 +19,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [SerializeField] private Animator animator;
     public float hSpeed;
 
+    public Quaternion playerRot;
+
     [SerializeField]
     private float sprintFactor = 1.5f;
     public float sprintDuration = 2f;
     public float sprintTimer;
     private bool isSprinting = false;
-
-    private float horizontalMove = 0;
-
-    public bool gotHit;
 
     [Header("Dash Settings")]
 
@@ -75,6 +73,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     void Update()
     {
         ///Currently have the shop being called in the player controller script, may move elsewhere
+        ///WILL MOVE THIS TO ITS OWN EVENT INTERACTION SCRIPT
         if(Keyboard.current.eKey.isPressed && shop.isNearShop)
         {
             shop.EnableShop();
@@ -126,17 +125,19 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
 
-        if(movement > 0 )
+        ///The entire object is flipped based on direction
+        ///to ensure that the attack collider will always be in front of the player
+        if (movement > 0 )
         {
             isFacingRight = true;
-            knightSP.flipX = false;
-         
+            playerRot = Quaternion.Euler(0, 0, 0);  
+            transform.rotation = playerRot;
         }
         if(movement < 0 )
         {
             isFacingRight = false;
-            knightSP.flipX = true;
-           
+            playerRot = Quaternion.Euler(0, 180, 0);
+            transform.rotation = playerRot;
         }
 
        if (movement != 0) //if the player is moving set running else idle animation

@@ -9,16 +9,8 @@ using UnityEngine.InputSystem;
 public class PrototypePlayerAttack : MonoBehaviour
 {
     [Header("Weapon Setup")]
-    public Transform spawnPosRight; //Storing the position of the spawnpoint of weapon
-    public Transform spawnPosLeft;
     public GameObject weaponPrefab; //Variable storing weapon object
     private bool attackDirection;
-
-    [SerializeField]
-    private float activeTimer = 0.5f;
-
-    private float unsheathTime;
-    private bool isUnsheathed = false; //Checks if the player has pressed attack input
 
     PrototypePlayerMovementControls playerController;
 
@@ -28,8 +20,6 @@ public class PrototypePlayerAttack : MonoBehaviour
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
-
-        unsheathTime = activeTimer; //Make the active timer the default saved by unsheath time        
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
@@ -37,7 +27,15 @@ public class PrototypePlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        attackDirection = playerController.isFacingRight;
+        if(attackDirection )
+        {
+            weaponPrefab.transform.position = weaponPrefab.transform.position;
+        }
+        if(!attackDirection )
+        {
+            weaponPrefab.transform.position = -weaponPrefab.transform.position;
+        }
     }
 
 
@@ -50,7 +48,9 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         if(context.performed)
         {
+            weaponPrefab.SetActive(true);
             animator.SetTrigger("isSlashing");
+            swordSlashAudio.Play();
         }
     }
 
