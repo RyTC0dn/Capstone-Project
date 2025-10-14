@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script is in need of revision
+/// </summary>
 public enum GameStates
 {
     Play, 

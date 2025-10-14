@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script is in need of revision
+/// </summary>
+
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
-
-    public static PrototypePlayerMovementControls Instance { get; private set; }
 
     [SerializeField] 
     private float playerSpeed;
@@ -46,19 +48,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     public SceneChanger sceneChanger;
     GameManager gm;
     PrototypePlayerAttack playerAttack;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

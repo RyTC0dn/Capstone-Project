@@ -7,8 +7,15 @@ public class ElevatorFunction : MonoBehaviour
     public Transform exitDoor;
     [SerializeField] private bool isNearElevator = false;
 
+    PrototypePlayerMovementControls playerControls;
+
     private bool savedNPC;
 
+
+    private void Start()
+    {
+        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+    }
 
     private void Update()
     {
@@ -16,7 +23,7 @@ public class ElevatorFunction : MonoBehaviour
         if (savedNPC && Keyboard.current.eKey.isPressed && isNearElevator)
         {
             //Move the player to the exit door position
-            Transform playerPos = PrototypePlayerMovementControls.Instance.transform;
+            Transform playerPos = playerControls.transform;
             playerPos.position = exitDoor.transform.position;
         }
     }

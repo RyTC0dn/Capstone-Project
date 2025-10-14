@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// This script may need revision
+/// </summary>
+
 public class SaveSurvivor : MonoBehaviour
 {
     [SerializeField]private bool playerIsNear = false;

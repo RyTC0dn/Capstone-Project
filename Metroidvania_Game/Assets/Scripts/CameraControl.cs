@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// This script is in need of revision
+/// </summary>
+
 public enum Rooms
 {
     Entrance,
