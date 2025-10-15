@@ -45,8 +45,6 @@ public class UIManager : MonoBehaviour
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
 
-        coinCount = GameManager.instance.coinTracker;
-
         UpdateUI();
     }
 
@@ -63,28 +61,15 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void UpdateUI() 
     {
-        coinText.text = "Coins: " + GameManager.instance.coinTracker.ToString();
-        playerHealthText.text = "Player Lives: " + GameManager.instance.playerLives.ToString();
+        coinText.text = "Coins: " + GameManager.instance.currentCoins.ToString();
+        playerHealthText.text = "Player Lives: " + GameManager.instance.currentLives.ToString();
         swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
-    }
-
-    public void PlayerLives()
-    {
-        GameManager.instance.playerLives--;
-        playerControls.transform.position = playerControls.playerSpawnPoint.transform.position;
-        UpdateUI();
     }
 
     public void Upgrade(int price)
     {
         GameManager.instance.upgradeValue++;
-        GameManager.instance.coinTracker -= price;
-        UpdateUI();
-    }
-
-    public void CoinsCollected()
-    {
-        GameManager.instance.coinTracker+= 1;
+        GameManager.instance.currentCoins -= price;
         UpdateUI();
     }
 

@@ -1,19 +1,42 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthDamage : MonoBehaviour
 {
-    public int playerHealth;
-    public int enemyHealth;
+    public int enemyHealth = 2;
+    public GameObject coinDrop;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    PrototypePlayerAttack playerAttack;
+
+    private void Start()
     {
-        
+        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        EnemyDeath();
+    }
+
+    public void EnemyDamage()
+    {        
+        enemyHealth-= playerAttack.damageValue;
+    }
+
+    public void EnemyDeath()
+    {
+        if(enemyHealth <= 0)
+        {
+            Instantiate(coinDrop, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Weapon"))
+        {
+            EnemyDamage();
+        }
     }
 }

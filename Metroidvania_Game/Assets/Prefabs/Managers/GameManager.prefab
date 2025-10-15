@@ -47,12 +47,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  coinTracker: 8
+  coinTracker: 0
   playerLives: 3
-  attackValue: 1
+  currentLives: 0
   upgradeValue: 0
   coinPickup: {fileID: 0}
   coinPouch: {fileID: 0}
+  hasSavedBlacksmith: 0
 --- !u!82 &7672356728645152245
 AudioSource:
   m_ObjectHideFlags: 0

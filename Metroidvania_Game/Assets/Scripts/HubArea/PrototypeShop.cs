@@ -47,7 +47,7 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        if(GameManager.instance.coinTracker >= upgradePrice)
+        if(GameManager.instance.currentCoins >= upgradePrice)
         {
             uiManager.Upgrade(upgradePrice);
         }        
@@ -56,9 +56,9 @@ public class PrototypeShop : MonoBehaviour
     public void BuyAxe() //Function for buying the axe
     {
         //If the player has enough coins to  
-        if(GameManager.instance.coinTracker >= weaponPrice)
+        if(GameManager.instance.currentCoins >= weaponPrice)
         {
-            GameManager.instance.coinTracker -= weaponPrice;
+            GameManager.instance.currentCoins -= weaponPrice;
             boughtAxe = true;
             Debug.Log($"Bought Axe is {boughtAxe}");
             uiManager.UpdateUI();

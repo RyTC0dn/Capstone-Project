@@ -5,14 +5,22 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// This script is in need of revision
 /// </summary>
+/// 
+
+public enum PlayerCharacter
+{
+    Knight, 
+    Priest
+}
 
 public class PrototypePlayerAttack : MonoBehaviour
 {
     [Header("Weapon Setup")]
     public GameObject weaponPrefab; //Variable storing weapon object
-    private bool attackDirection;
+    public int damageValue = 1;
 
     PrototypePlayerMovementControls playerController;
+    public PlayerCharacter character;
 
     private AudioSource swordSlashAudio;
     /*[SerializeField] */private Animator animator;
@@ -22,20 +30,15 @@ public class PrototypePlayerAttack : MonoBehaviour
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+
+        weaponPrefab = GetComponentInChildren<GameObject>();
+        weaponPrefab.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        attackDirection = playerController.isFacingRight;
-        if(attackDirection )
-        {
-            weaponPrefab.transform.position = weaponPrefab.transform.position;
-        }
-        if(!attackDirection )
-        {
-            weaponPrefab.transform.position = -weaponPrefab.transform.position;
-        }
+        
     }
 
 
@@ -48,33 +51,29 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         if(context.performed)
         {
-            weaponPrefab.SetActive(true);
-            animator.SetTrigger("isSlashing");
-            swordSlashAudio.Play();
+            switch (character)
+            {
+                case PlayerCharacter.Knight:
+                    KnightStandardAttack();
+                    break;
+                case PlayerCharacter.Priest:
+                    PriestStandardAttack();
+                    break;
+            }           
         }
     }
 
-    //public void OnAttack(InputAction.CallbackContext context)
-    //{
-    //    //If player is facing left or right, pressing input and the weapon hasn't been instantiated yet
-    //    if (context.performed && (playerController.isFacingRight || !playerController.isFacingRight) && !isUnsheathed)
-    //    {
-    //        //Choose which spawn point based on players direction
-    //        Transform spawnPoint = playerController.isFacingRight ? spawnPosRight : spawnPosLeft;
+    private void KnightStandardAttack()//This function is to store what the knight does when they attack
+    {
+        
+        animator.SetTrigger("isSlashing");
+        swordSlashAudio.Play();
+    }
 
+    private void PriestStandardAttack()//This function is to store what the priest does when they attack
+    {
 
-    //        //animator.SetBool("isSlashing", true); //switch to slashing animation
-
-    //    }
-    //    //Play audio file for sword slash
-    //    swordSlashAudio.Play();
-
-    //    isUnsheathed = true;
-
-    //    activeTimer = unsheathTime;
-
-    //    }
-
+    }
 }
 
     

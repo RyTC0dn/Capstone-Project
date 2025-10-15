@@ -18,7 +18,6 @@ public class BasicEnemyControls : MonoBehaviour
     public float enemySpeed;
     public float playerDistance;
     private Rigidbody2D enemyRB2D;
-    public PrototypePlayerMovementControls playerControls;
     UIManager ui;
 
     //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
@@ -70,14 +69,6 @@ public class BasicEnemyControls : MonoBehaviour
         //    currentEnemyState= States.Patrol;
         //    Debug.Log("Patrol State");
         //}
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            ui.PlayerLives();
-        }
     }
 
     private void OnDrawGizmos()
