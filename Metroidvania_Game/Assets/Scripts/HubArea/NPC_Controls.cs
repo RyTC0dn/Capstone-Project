@@ -11,6 +11,7 @@ public class NPC_Controls : MonoBehaviour
     [Header("NPC State Settings")]
     public NPCStates states;
     SaveSurvivor towerSC;
+    NPCTown townSC;
     PrototypeShop townShop;
 
     public GameObject towerUI;
@@ -23,6 +24,7 @@ public class NPC_Controls : MonoBehaviour
     {
         towerSC = GetComponent<SaveSurvivor>();    
         townShop = GetComponent<PrototypeShop>();
+        townSC = GetComponent<NPCTown>();
     }
 
     // Update is called once per frame
@@ -31,15 +33,8 @@ public class NPC_Controls : MonoBehaviour
         switch (states)
         {
             case NPCStates.Tower:
-                townUI.SetActive(false);
-                townShop.enabled = false;
                 towerSC.enabled = true;
-                towerUI.SetActive(true);
-                break;
-            case NPCStates.Town:
-                townUI.SetActive(true);
-                towerSC.enabled = false;
-                towerUI.SetActive(false);
+                townSC.enabled = false;
                 break;
 
         }
