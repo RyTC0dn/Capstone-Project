@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
     private GameObject pauseMenu;
 
     public bool hasSavedBlacksmith = false;
+
+    [Header("SpawnPoint Settings")]
+    public string nextSpawnPointName; //Storing the name of the different spawn points
+
+    public Dictionary<string, bool> npcSaved = new Dictionary<string, bool>();
 
     private void Awake()
     {
@@ -95,6 +101,17 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public bool IsNPCSaved(string npcName)
+    {
+        return npcSaved.ContainsKey(npcName) && npcSaved[npcName];
+    }
+
+    public void SetNPCSaved(string npcName, bool saved)
+    {
+        npcSaved[npcName] = saved;
+    }
+
     public void OnPause(InputAction.CallbackContext context)
     {
         if(context.performed)

@@ -15,15 +15,7 @@ public class AxeLogic : MonoBehaviour
     {
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
-        if (playerControls.isFacingRight)
-        {
-            rb2D.linearVelocity = (transform.right * vSpeed) + (transform.up * hSpeed);
-        }
-        else if (!playerControls.isFacingRight)
-        {
-            rb2D.linearVelocity = (transform.right * -vSpeed) + (transform.up * hSpeed);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
+        rb2D.linearVelocity = (transform.right * vSpeed) + (transform.up * hSpeed);
     }
 
 

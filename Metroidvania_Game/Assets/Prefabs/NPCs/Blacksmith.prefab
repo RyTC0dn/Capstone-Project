@@ -253,6 +253,7 @@ MonoBehaviour:
   states: 0
   towerUI: {fileID: 6716711295408385193}
   townUI: {fileID: 4693179618937513234}
+  npc: {fileID: 0}
 --- !u!114 &5447317750877297827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +272,7 @@ MonoBehaviour:
   textBubble: {fileID: 4561570211683278273}
   survivorName: {fileID: 6675707338388425735}
   dialog: {fileID: 2371641411543858727}
+  EndText: {fileID: 0}
 --- !u!95 &1118965640621728543
 Animator:
   serializedVersion: 7

@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 public class PrototypePlayerAttackRanged : MonoBehaviour
 {
     [Header("Ranged Weapon Setup")]
-    public Transform firepointPosRight;
-    public Transform firepointPosLeft;
+    public Transform firePoint;
     public GameObject projectilePrefab;
     [SerializeField] private Animator animator;
 
@@ -35,7 +34,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
 
     void Shoot()
     {
-        Transform firingPoint = playerController.isFacingRight ? firepointPosRight : firepointPosLeft;
+        Transform firingPoint = firePoint;
 
         //Instantiate ProjectilePrefab
         Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);

@@ -3,16 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public string sceneDestination;
+    [SerializeField]private string spawnPointDestination;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" && gameObject.tag == "LevelExit")
         {
-            SceneManager.LoadScene("Town");
+            SceneManager.LoadScene(sceneDestination);
         }
 
         if (other.tag == "Player" && gameObject.tag == "LevelEnter")
         {
-            SceneManager.LoadScene("Level 1 - RyanTestZone");
+            GameManager.instance.nextSpawnPointName = spawnPointDestination;
+            SceneManager.LoadScene(sceneDestination);
         }
     }
 
