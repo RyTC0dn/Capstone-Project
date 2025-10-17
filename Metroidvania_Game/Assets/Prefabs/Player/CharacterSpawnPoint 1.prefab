@@ -32,6 +32,37 @@ Transform:
   - {fileID: 3920209480344125677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566670625057057414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651058080151035908}
+  m_Layer: 0
+  m_Name: FiringPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1651058080151035908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566670625057057414}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.73, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3920209480344125677}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4702761146865412749
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +289,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7777134683346931671, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8475318975202460840}
+    - targetCorrespondingSourceObject: {fileID: 7777134683346931671, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1651058080151035908}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7375695981624038011, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       insertIndex: 4
@@ -312,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a057c644dd381845b328e1a4bd735d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 8475318975202460840}
+  firePoint: {fileID: 1651058080151035908}
   projectilePrefab: {fileID: 4895757740315594668, guid: ddc61152c13ad834789c5b99afb38597, type: 3}
   animator: {fileID: 7369698106582860745}
 --- !u!82 &3645702212388590397
