@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
 
-    public Dictionary<string, bool> npcSaved = new Dictionary<string, bool>();
+    public bool isNPCSaved = false;
 
     private void Awake()
     {
@@ -100,16 +100,6 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 break;
         }
-    }
-
-    public bool IsNPCSaved(string npcName)
-    {
-        return npcSaved.ContainsKey(npcName) && npcSaved[npcName];
-    }
-
-    public void SetNPCSaved(string npcName, bool saved)
-    {
-        npcSaved[npcName] = saved;
     }
 
     public void OnPause(InputAction.CallbackContext context)

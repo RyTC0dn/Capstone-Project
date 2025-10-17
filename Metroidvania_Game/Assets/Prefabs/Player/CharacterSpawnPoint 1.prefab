@@ -128,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211345191218373637, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_Mass
-      value: 2.5587504
+      value: 1.7053727
       objectReference: {fileID: 0}
     - target: {fileID: 2211345191218373637, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       propertyPath: m_CollisionDetection
@@ -270,10 +270,10 @@ PrefabInstance:
       addedObject: {fileID: 3645702212388590397}
     - targetCorrespondingSourceObject: {fileID: 7375695981624038011, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7725370301268454043}
+      addedObject: {fileID: 193285290721728657}
     - targetCorrespondingSourceObject: {fileID: 7375695981624038011, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 193285290721728657}
+      addedObject: {fileID: 6608766438289354306}
   m_SourcePrefab: {fileID: 100100000, guid: b068cfc81ea98384abbb8852e887564a, type: 3}
 --- !u!4 &3920209480344125677 stripped
 Transform:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042a56841b2d74348ac965d2c9688391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 4702761146865412749}
+  weaponCollider: {fileID: 7028389014063851639}
   damageValue: 1
   character: 0
 --- !u!114 &7107651034627942265
@@ -412,8 +412,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!60 &7725370301268454043
-PolygonCollider2D:
+--- !u!114 &193285290721728657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310282806883147073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fbedce8a3a1dc41955af1786d3b966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &6608766438289354306
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -446,42 +458,9 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.1, y: 8.09}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.16666667, y: 3.6666667}
-      - {x: -1.6666667, y: 3.6666667}
-      - {x: -2, y: 3.5}
-      - {x: -2.1666667, y: 3.1666667}
-      - {x: -2.1666667, y: -2.5}
-      - {x: -2, y: -3.5}
-      - {x: -1.6666667, y: -3.6666667}
-      - {x: 2, y: -3.6666667}
-      - {x: 2, y: -1.5}
-      - {x: 2.1666667, y: -1}
-      - {x: 2.1666667, y: 1.3333334}
-  m_UseDelaunayMesh: 0
---- !u!114 &193285290721728657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4310282806883147073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76fbedce8a3a1dc41955af1786d3b966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Offset: {x: 0.37, y: 0}
+  m_Size: {x: 3, y: 6.96}
+  m_Direction: 0
 --- !u!95 &7369698106582860745 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4309067893665549555, guid: b068cfc81ea98384abbb8852e887564a, type: 3}

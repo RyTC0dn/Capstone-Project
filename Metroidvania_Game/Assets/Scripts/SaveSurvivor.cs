@@ -29,9 +29,6 @@ public class SaveSurvivor : MonoBehaviour
     {
         textBubble.SetActive(false);
         EndText.SetActive(false);
-
-        bool saved = GameManager.instance.IsNPCSaved(npcData.npcName);
-        conversationActive = saved;
     }
 
     // Update is called once per frame
@@ -68,7 +65,8 @@ public class SaveSurvivor : MonoBehaviour
             activeLineIndex = 0;
             conversationActive = false;
             textBubble.SetActive(false );
-            GameManager.instance.SetNPCSaved(npcData.npcName, true);
+            GameManager.instance.isNPCSaved = true;
+            Destroy(gameObject);
             return;
         }
 

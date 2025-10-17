@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum NPCStates
 {
@@ -15,7 +16,6 @@ public class NPC_Controls : MonoBehaviour
     PrototypeShop townShop;
 
     public GameObject towerUI;
-    public GameObject townUI;
     
     
 
@@ -25,18 +25,20 @@ public class NPC_Controls : MonoBehaviour
         towerSC = GetComponent<SaveSurvivor>();    
         townShop = GetComponent<PrototypeShop>();
         townSC = GetComponent<NPCTown>();
-    }
+        townSC.enabled = false;
+        towerSC.enabled = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        switch (states)
+        string sceneCheckName = SceneManager.GetActiveScene().name;
+
+        if(sceneCheckName == "Town")
         {
-            case NPCStates.Tower:
-                towerSC.enabled = true;
-                townSC.enabled = false;
-                break;
-
+            townSC.enabled = true;
+            towerSC.enabled = true;
+        }
+        if(sceneCheckName == "Level 1 - RyanTestZone")
+        {
+            townSC.enabled = false;
+            towerSC.enabled = true;
         }
     }
 }

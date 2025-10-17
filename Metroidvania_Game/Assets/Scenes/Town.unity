@@ -449,6 +449,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2182528330061687907, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+      propertyPath: states
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2275503575992522268, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
       propertyPath: m_Name
       value: Blacksmith
@@ -503,6 +507,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8204bcb72903874449b21cfa178dc94c, type: 3}
+--- !u!61 &390839924 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7028389014063851639, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
+  m_PrefabInstance: {fileID: 2040937920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -19344,6 +19353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterSpawnPoint 1
       objectReference: {fileID: 0}
+    - target: {fileID: 64161980520556196, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3354469628397561362, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.88
@@ -19383,6 +19396,14 @@ PrefabInstance:
     - target: {fileID: 3354469628397561362, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077340711379492333, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
+      propertyPath: weaponCollider
+      value: 
+      objectReference: {fileID: 390839924}
+    - target: {fileID: 4844406135866960703, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
+      propertyPath: m_Mass
+      value: 1.7053727
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

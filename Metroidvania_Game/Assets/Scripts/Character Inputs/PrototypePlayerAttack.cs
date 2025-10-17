@@ -16,7 +16,7 @@ public enum PlayerCharacter
 public class PrototypePlayerAttack : MonoBehaviour
 {
     [Header("Weapon Setup")]
-    public GameObject weaponPrefab; //Variable storing weapon object
+    public Collider2D weaponCollider;
     public int damageValue = 1;
 
     PrototypePlayerMovementControls playerController;
@@ -31,8 +31,7 @@ public class PrototypePlayerAttack : MonoBehaviour
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        weaponPrefab = GetComponentInChildren<GameObject>();
-        weaponPrefab.SetActive(false);
+        weaponCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -54,6 +53,7 @@ public class PrototypePlayerAttack : MonoBehaviour
             switch (character)
             {
                 case PlayerCharacter.Knight:
+                    weaponCollider.enabled = true;
                     KnightStandardAttack();
                     break;
                 case PlayerCharacter.Priest:
@@ -64,8 +64,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     }
 
     private void KnightStandardAttack()//This function is to store what the knight does when they attack
-    {
-        
+    {        
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
     }
