@@ -20,6 +20,7 @@ public class PrototypeShop : MonoBehaviour
     public int weaponPrice = 20;
 
     public bool isNearShop = false;
+    private bool isShopping = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,12 +29,20 @@ public class PrototypeShop : MonoBehaviour
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = false;
-        shopUI.SetActive(false);
+
+        shopUI = GetComponentInChildren<GameObject>();
+        shopUI.SetActive(isShopping);
     }
 
     private void Update()
     {
-        
+        bool saved = GameManager.instance.isNPCSaved;
+        if (Keyboard.current.eKey.isPressed && isNearShop && saved)
+        {
+            EnableShop();
+            GameManager.instance.StateSwitch(GameStates.Pause);
+            playerAttack.enabled = false;
+        }
     }
 
     //This function is being called by the player movement controls script

@@ -2,11 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/// <summary>
-/// This script is in need of revision
-/// </summary>
-/// 
-
 public enum PlayerCharacter
 {
     Knight, 
@@ -53,7 +48,6 @@ public class PrototypePlayerAttack : MonoBehaviour
             switch (character)
             {
                 case PlayerCharacter.Knight:
-                    weaponCollider.enabled = true;
                     KnightStandardAttack();
                     break;
                 case PlayerCharacter.Priest:
@@ -64,9 +58,18 @@ public class PrototypePlayerAttack : MonoBehaviour
     }
 
     private void KnightStandardAttack()//This function is to store what the knight does when they attack
-    {        
+    {
+        weaponCollider.enabled = true;
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
+
+        StartCoroutine(ResetWeapon());
+    }
+
+    private IEnumerator ResetWeapon()
+    {
+        yield return new WaitForSeconds(0.6f);
+        weaponCollider.enabled = false;
     }
 
     private void PriestStandardAttack()//This function is to store what the priest does when they attack

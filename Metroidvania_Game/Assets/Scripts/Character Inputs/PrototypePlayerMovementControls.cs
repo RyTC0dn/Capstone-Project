@@ -62,14 +62,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ///Currently have the shop being called in the player controller script, may move elsewhere
-        ///WILL MOVE THIS TO ITS OWN EVENT INTERACTION SCRIPT
-        if(Keyboard.current.eKey.isPressed && shop.isNearShop)
-        {
-            shop.EnableShop();
-            GameManager.instance.StateSwitch(GameStates.Pause);
-            playerAttack.enabled = false;
-        }
+       
     }
 
     //FixedUpdate runs every frame at a set interval 

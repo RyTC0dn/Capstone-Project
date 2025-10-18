@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6513991651269901807}
   - component: {fileID: 5447317750877297827}
   - component: {fileID: 1118965640621728543}
-  - component: {fileID: 3843616808909635964}
   - component: {fileID: 3008990628810217717}
   - component: {fileID: 6015091663670702732}
   m_Layer: 0
@@ -200,24 +199,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3843616808909635964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275503575992522268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 026cee0424452b341886afa471ad491e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 0}
-  shopUI: {fileID: 5189949307562301281, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
-  boughtAxe: 0
-  upgradePrice: 8
-  weaponPrice: 20
-  isNearShop: 0
 --- !u!82 &3008990628810217717
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,17 +12,23 @@ public class DoorOpen : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        doorAnimator = GetComponentInParent<Animator>();
+        doorAnimator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        StartCoroutine(CloseDoor());
     }
 
     public void OnChildTriggered()
     {
-        doorAnimator.SetBool("isOpen", true);
+        doorAnimator.SetTrigger("DoorOpening");
     }
 
-    public void CloseDoor()
+    private IEnumerator CloseDoor()
     {
-        doorAnimator.SetBool("isOpen", false);
+        yield return new WaitForSeconds(1);
+        doorAnimator.SetBool("isNextRoom", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,14 +36,6 @@ public class DoorOpen : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             OnChildTriggered();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            CloseDoor();
         }
     }
 }
