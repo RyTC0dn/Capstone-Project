@@ -3,10 +3,11 @@ using UnityEngine;
 public class BasicEnemyAttackState : MonoBehaviour
 {
     private GameObject playerPos;
+    PrototypePlayerMovementControls playerControls;
     private Rigidbody2D rb2D;
     [SerializeField]private bool isGrounded;
     private float raycastLength = 2;
-    public LayerMask groundLayer;
+    public int damage = 1;
 
     private enum enemyTypes { ground, flying}
     enemyTypes currentEnemyType;
@@ -17,6 +18,8 @@ public class BasicEnemyAttackState : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
 
         playerPos = GameObject.FindGameObjectWithTag("Player");
+
+        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
     }
 
     // Update is called once per frame
@@ -45,24 +48,23 @@ public class BasicEnemyAttackState : MonoBehaviour
         transform.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
 
         float jumpForce = 5;
-        isGrounded = Physics.Raycast(transform.position, Vector2.down, raycastLength * 2, groundLayer);
-        //If the player is above the y position of enemy 
-        if (playerPos.transform.position.y  > transform.position.y)
-        {
-            
-            if (isGrounded)
-            {
-                //Jump
-                rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                Debug.Log("Enemy is jumping!");
-            }
 
-        }
+        //Jump
+        rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     public void FlyingEnemy()
     {
         float flyingEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         transform.position = Vector2.MoveTowards(rb2D.position, playerPos.transform.position, flyingEnemySpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            GameManager.instance.PlayerDamaged(damage);
+            playerControls.gameObject.transform.position = playerControls.playerSpawnPoint.position;
+        }
     }
 }

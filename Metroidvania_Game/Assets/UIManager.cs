@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 /// I just created this script to give some basic UI updating for the coin tracker
 /// If you want to make any additional changes then please go ahead
 /// </summary>
+/// 
+
+///This script is in need of revision
 public class UIManager : MonoBehaviour
 {
     //Game Variables
@@ -42,8 +45,6 @@ public class UIManager : MonoBehaviour
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
 
-        coinCount = GameManager.instance.coinTracker;
-
         UpdateUI();
     }
 
@@ -60,27 +61,15 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void UpdateUI() 
     {
-        coinText.text = "Coins: " + GameManager.instance.coinTracker.ToString();
-        playerHealthText.text = "Player Lives: " + GameManager.instance.playerLives.ToString();
+        coinText.text = "Coins: " + GameManager.instance.currentCoins.ToString();
+        playerHealthText.text = "Player Lives: " + GameManager.instance.currentLives.ToString();
         swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
-    }
-
-    public void PlayerLives()
-    {
-        GameManager.instance.playerLives--;
-        UpdateUI();
     }
 
     public void Upgrade(int price)
     {
         GameManager.instance.upgradeValue++;
-        GameManager.instance.coinTracker -= price;
-        UpdateUI();
-    }
-
-    public void CoinsCollected()
-    {
-        GameManager.instance.coinTracker+= 1;
+        GameManager.instance.currentCoins -= price;
         UpdateUI();
     }
 

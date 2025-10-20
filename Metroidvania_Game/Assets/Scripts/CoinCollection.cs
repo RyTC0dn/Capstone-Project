@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class CoinCollection : MonoBehaviour
 {
+    public int coinValue;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //Check if the player walks into a coin
-        if (other.CompareTag("Player") && !other.CompareTag("Weapon"))
+        if (collision.CompareTag("Player"))
         {
-            GameManager.instance.coinTracker++;
-            if(UIManager.instance != null )
-                UIManager.instance.CoinsCollected();
-            GameManager.instance.PlayCoinAudio();
+            Debug.Log("Coin Collected");
+            GameManager.instance.CoinCollection(coinValue);
             Destroy(gameObject);
         }
     }

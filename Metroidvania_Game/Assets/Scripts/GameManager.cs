@@ -1,8 +1,12 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script is in need of revision
+/// </summary>
 public enum GameStates
 {
     Play, 
@@ -15,18 +19,25 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     [Header("Player UI Stats")]
-    public int coinTracker;
-    public int playerLives = 3;
-    public int attackValue = 1;
+    private int coinTracker = 0;
+    public int currentCoins;
+    private int playerLives = 3;
+    public int currentLives;
     public int upgradeValue = 0;
 
-    PrototypePlayerMovementControls playerMovementControls;
     UIManager ui;
     public AudioSource coinPickup;
     public AudioSource coinPouch;
     private float timer = 5;
 
     private GameObject pauseMenu;
+
+    public bool hasSavedBlacksmith = false;
+
+    [Header("SpawnPoint Settings")]
+    public string nextSpawnPointName; //Storing the name of the different spawn points
+
+    public bool isNPCSaved = false;
 
     private void Awake()
     {
@@ -45,14 +56,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Initializing scripts within the game manager
-        playerMovementControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
-        ui = FindAnyObjectByType<UIManager>();        
+        ui = FindAnyObjectByType<UIManager>();  
+
+        currentLives = playerLives;
+        currentCoins = coinTracker;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerLives <= 0)
+        if(currentLives <= 0)
         {
             OnDeath();
         }
@@ -61,21 +74,19 @@ public class GameManager : MonoBehaviour
     public void OnDeath()
     {
         SceneManager.LoadScene("Town");
-        playerLives = 3;
+        currentLives = playerLives;
     }
 
-    public void PlayCoinAudio() //Call this function when player collides with coin
+    public void PlayerDamaged(int enemyDamage)
     {
-        coinPickup.Play();
-        StartCoroutine(AudioDelay());
-        if(timer <= 0)
-            coinPouch.Play();
+        currentLives -= enemyDamage;
+        ui.UpdateUI();
     }
 
-    IEnumerator AudioDelay()
+    public void CoinCollection(int gainAmount)
     {
-        yield return new WaitForSeconds(0.5f);
-        timer--;
+        currentCoins += gainAmount;
+        ui.UpdateUI();
     }
 
     public void StateSwitch(GameStates state)
@@ -90,6 +101,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
     public void OnPause(InputAction.CallbackContext context)
     {
         if(context.performed)

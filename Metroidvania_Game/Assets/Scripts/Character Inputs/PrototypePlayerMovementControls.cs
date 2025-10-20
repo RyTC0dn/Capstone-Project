@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script is in need of revision
+/// </summary>
+
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
-
-    public static PrototypePlayerMovementControls Instance { get; private set; }
 
     [SerializeField] 
     private float playerSpeed;
@@ -17,15 +19,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [SerializeField] private Animator animator;
     public float hSpeed;
 
+    public Quaternion playerRot; //For rotating the whole object instead of the sprite
+
     [SerializeField]
     private float sprintFactor = 1.5f;
     public float sprintDuration = 2f;
     public float sprintTimer;
     private bool isSprinting = false;
-
-    private float horizontalMove = 0;
-
-    public bool gotHit;
 
     [Header("Dash Settings")]
 
@@ -36,21 +36,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private bool isDashing = false;
 
     [Header("Sprite Settings")]    
-    private SpriteRenderer knightSP;
     [HideInInspector] public bool isFacingRight = true;
 
     [Header("UI Settings")]
-    UIManager ui;
-
     PrototypeShop shop;
-    public SceneChanger sceneChanger;
-    GameManager gm;
     PrototypePlayerAttack playerAttack;
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    BasicEnemyAttackState enemyAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,29 +52,17 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Setting the dash time to timer
         dashTime = dashTimer;
 
-        //Initialize the spriterenderer for the player
-        knightSP = GetComponent<SpriteRenderer>();
-
-        //Initilize the UI manager
-        ui = FindAnyObjectByType<UIManager>();
-
         shop = FindAnyObjectByType<PrototypeShop>();
 
-        gm = FindAnyObjectByType<GameManager>();
-
         playerAttack = GetComponent<PrototypePlayerAttack>();
+
+        enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ///Currently have the shop being called in the player controller script, may move elsewhere
-        if(Keyboard.current.eKey.isPressed && shop.isNearShop)
-        {
-            shop.EnableShop();
-            gm.StateSwitch(GameStates.Pause);
-            playerAttack.enabled = false;
-        }
+       
     }
 
     //FixedUpdate runs every frame at a set interval 
@@ -100,7 +79,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //if(dashTime > 0)
         //{
         //    //Set dash function
-        //    Dash(h);
+        //    Dash(hSpeed);
         //}
        
     }
@@ -129,17 +108,19 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
 
-        if(movement > 0 )
+        ///The entire object is flipped based on direction
+        ///to ensure that the attack collider will always be in front of the player
+        if (movement > 0 )
         {
             isFacingRight = true;
-            knightSP.flipX = false;
-         
+            playerRot = Quaternion.Euler(0, 0, 0);  
+            transform.rotation = playerRot;
         }
         if(movement < 0 )
         {
             isFacingRight = false;
-            knightSP.flipX = true;
-           
+            playerRot = Quaternion.Euler(0, 180, 0);
+            transform.rotation = playerRot;
         }
 
        if (movement != 0) //if the player is moving set running else idle animation
@@ -171,27 +152,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             else if (hSpeed < 0 && isDashing) { rb2D.linearVelocity = -dashVector; dashTime -= Time.deltaTime; }
         }       
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Check if the player walks into a coin
-        if (collision.CompareTag("Currency"))
-        {
-            GameManager.instance.coinTracker++;
-            ui.CoinsCollected();
-            gm.PlayCoinAudio();
-            Destroy(collision.gameObject);
-        }
-
-        //Check if the player walks into trap obkects
-        if (collision.CompareTag("Traps"))
-        {
-            GameManager.instance.playerLives--;
-            ui.UpdateUI();
-            transform.position = playerSpawnPoint.position;
-        }
-    }
-
 
     private void OnDrawGizmosSelected()
     {
