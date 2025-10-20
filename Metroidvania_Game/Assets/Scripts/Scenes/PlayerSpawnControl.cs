@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSpawnControl : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class PlayerSpawnControl : MonoBehaviour
     /// Will be further developed
     /// </summary>
 
+    [SerializeField]private bool isNearElevator = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //This section is dedicated to the spawning points of the player within the town hub area
         string spawnName = GameManager.instance.nextSpawnPointName;
 
         SpawnPoint[] spawnPoints = FindObjectsOfType<SpawnPoint>();
@@ -28,9 +31,28 @@ public class PlayerSpawnControl : MonoBehaviour
         Debug.LogWarning($"SpawnPoint {spawnName} has not been found in scene");
     }
 
-    // Update is called once per frame
-    void Update()
+    //This section is to test the elevator teleportation script
+    private void Update()
     {
-        
+        if (isNearElevator && Keyboard.current.eKey.isPressed)
+        {
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Elevator"))
+        {
+            isNearElevator=true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Elevator"))
+        {
+            isNearElevator = false;
+        }
     }
 }
