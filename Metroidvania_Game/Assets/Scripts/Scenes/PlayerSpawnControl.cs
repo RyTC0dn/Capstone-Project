@@ -11,8 +11,6 @@ public class PlayerSpawnControl : MonoBehaviour
     /// Will be further developed
     /// </summary>
 
-    [SerializeField]private bool isNearElevator = false;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,25 +32,10 @@ public class PlayerSpawnControl : MonoBehaviour
     //This section is to test the elevator teleportation script
     private void Update()
     {
-        if (isNearElevator && Keyboard.current.eKey.isPressed)
+        bool near = ElevatorManager.instance.isNearElevator;
+        if (near && Input.GetKey(KeyCode.E))
         {
-            
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Elevator"))
-        {
-            isNearElevator=true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Elevator"))
-        {
-            isNearElevator = false;
+            ElevatorManager.instance.isActive = true;
         }
     }
 }

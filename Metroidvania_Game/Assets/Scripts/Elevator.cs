@@ -8,27 +8,39 @@ public class Elevator : MonoBehaviour
 
     [Header("UI Setup")]
     public GameObject buttonPrefab;
-    public Transform parentPanel;
+    public GameObject parentPanel;
     public GameObject player;
+
+    public float buttonSpacing = -50f;
 
     private void Start()
     {        
         ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list
 
-        
-
-        GenerateButton("Elevator_Entrance", parentPanel);
-        GenerateButton("Elevator_A2", parentPanel);
+        GenerateButton("Elevator_Entrance", 1);
+        GenerateButton("Elevator_A2", 4);
+        parentPanel.SetActive(false);
     }
 
     private void Update()
     {
+        if (ElevatorManager.instance.isActive)
+        {
+            parentPanel.SetActive(true);
+        }
+        else
+        {
+            parentPanel.SetActive(false);
+        }
         
     }
 
-    void GenerateButton(string destinationName, Transform position)
+    void GenerateButton(string destinationName, int index)
     {
-        GameObject newButton = Instantiate(buttonPrefab, position);
+        GameObject newButton = Instantiate(buttonPrefab, parentPanel.transform);
+
+        RectTransform rect = newButton.GetComponent<RectTransform>();
+        rect.anchoredPosition = new Vector2(0, index * buttonSpacing);
 
         newButton.name = "Floor Button";
 
@@ -51,7 +63,7 @@ public class Elevator : MonoBehaviour
         if(ElevatorManager.instance.elevators.ContainsKey(destinationName))
         {
             ElevatorManager.instance.TeleportPlayer(destinationName, player.transform);
-            Debug.Log("Teleported");
+            ElevatorManager.instance.isActive = false;
         }
     }
 

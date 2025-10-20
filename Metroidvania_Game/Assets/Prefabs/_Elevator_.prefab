@@ -177,10 +177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elevatorLocationName: 
-  isNearElevator: 0
   buttonPrefab: {fileID: 3081688810251628998, guid: 0a78cd2253c2d284b899178df0d46e60, type: 3}
-  parentPanel: {fileID: 1585902612331623640}
+  parentPanel: {fileID: 9134521829925681758}
   player: {fileID: 64161980520556196, guid: df2de2a2bf029b743bad35b64aca26e6, type: 3}
+  buttonSpacing: -50
 --- !u!1 &3768638884607094141
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class ElevatorManager : MonoBehaviour
     public Dictionary<string, Elevator> elevators = new Dictionary<string, Elevator>();
     private Elevator currentElevator;
     public bool isNearElevator = false;
+    public bool isActive = false;
 
     private void Awake()
     {
