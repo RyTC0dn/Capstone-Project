@@ -29,8 +29,10 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
+    //When the player is colliding with the platform, they will become a child
+    // of the platform so that they will move with it
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -38,6 +40,9 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
+
+    //When the player stops colliding with the platform, they will no longer be a child
+    // of the platform
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
