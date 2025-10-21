@@ -15,10 +15,11 @@ public class BasicEnemyControls : MonoBehaviour
     BasicEnemyAttackState attackState;
     public States currentEnemyState;
 
+    [Header("Enemy Setup")]
     public float enemySpeed;
     public float playerDistance;
     private Rigidbody2D enemyRB2D;
-    UIManager ui;
+    public int enemyHealth = 2;
 
     //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
 
@@ -28,7 +29,6 @@ public class BasicEnemyControls : MonoBehaviour
         enemyPatrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         attackState = GetComponent<BasicEnemyAttackState>();
-        ui = FindFirstObjectByType<UIManager>();
     }
 
     // Update is called once per frame

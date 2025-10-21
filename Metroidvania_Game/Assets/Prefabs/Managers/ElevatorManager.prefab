@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713239722069683807}
   - component: {fileID: 3077018685051948028}
+  - component: {fileID: 7894648691422304671}
   m_Layer: 0
   m_Name: ElevatorManager
   m_TagString: Untagged
@@ -44,3 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f8a3b17e3129d48aa0af7ec7650d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNearElevator: 0
+  isActive: 0
+--- !u!320 &7894648691422304671
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129461176902035618}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 42163a3e7dd210c479ecddc3cd152687, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []

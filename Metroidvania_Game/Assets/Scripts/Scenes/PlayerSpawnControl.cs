@@ -32,7 +32,18 @@ public class PlayerSpawnControl : MonoBehaviour
     //This section is to test the elevator teleportation script
     private void Update()
     {
+        bool isElevatorInScene = GameObject.Find("ElevatorManager"); //Checks if the elevator manager is in scene
+        if(isElevatorInScene)
+        {
+            ElevatorInteraction();
+        }
+
+    }
+
+    void ElevatorInteraction()
+    {
         bool near = ElevatorManager.instance.isNearElevator;
+        
         if (near && Input.GetKey(KeyCode.E))
         {
             ElevatorManager.instance.isActive = true;
