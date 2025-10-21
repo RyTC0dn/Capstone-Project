@@ -9,6 +9,10 @@ public enum Rooms
     Entrance,
     Room_A1,
     Room_A2,
+    Room_A3,
+    Room_A4,
+    Room_A5,
+    Room_A6,
 }
 
 public class CameraControl : MonoBehaviour
