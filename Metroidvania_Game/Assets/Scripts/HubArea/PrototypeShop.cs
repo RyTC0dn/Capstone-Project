@@ -86,12 +86,14 @@ public class PrototypeShop : MonoBehaviour
 
     }
 
+    //Check if the player is close to display the interact text 
+    //telling the player what button to open the shop
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         if (collision.CompareTag("Player"))
         {  
             isNearShop = true;
-            if(isNearShop)
+            if(isNearShop && GameManager.instance.isNPCSaved) //Also check to see if the npc has been saved
             {
                 interactText.enabled = true;
                 string text = "Press E to Interact";
@@ -103,6 +105,7 @@ public class PrototypeShop : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Player"))
         {
             isNearShop = false;

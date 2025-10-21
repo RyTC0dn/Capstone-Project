@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Elevator : MonoBehaviour
 {
     public string elevatorLocationName;
+    private Animator elevatorAnimation;
 
     [Header("UI Setup")]
     public GameObject buttonPrefab;
@@ -16,6 +17,7 @@ public class Elevator : MonoBehaviour
     private void Start()
     {        
         ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list
+        elevatorAnimation = GetComponent<Animator>();
 
         GenerateButton("Elevator_Entrance", 1);
         GenerateButton("Elevator_A2", 4);
@@ -26,6 +28,7 @@ public class Elevator : MonoBehaviour
     {
         if (ElevatorManager.instance.isActive)
         {
+            elevatorAnimation.SetTrigger("inOperation");
             parentPanel.SetActive(true);
         }
         else

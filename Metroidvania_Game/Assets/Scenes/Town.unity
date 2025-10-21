@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026cee0424452b341886afa471ad491e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: {fileID: 0}
+  interactText: {fileID: 1484281077}
   shopUI: {fileID: 33535039}
   boughtAxe: 0
   upgradePrice: 8
@@ -9158,7 +9158,7 @@ GameObject:
   - component: {fileID: 1484281078}
   - component: {fileID: 1484281077}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: InteractText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
