@@ -1,11 +1,17 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class Elevator : MonoBehaviour
 {
     public string elevatorLocationName;
+
+    [Header("Elevator Animations")]
     private Animator elevatorAnimation;
+    public PlayableDirector elevatorTimeline;
+    private bool isSequencing = false;
 
     [Header("UI Setup")]
     public GameObject buttonPrefab;
@@ -26,12 +32,12 @@ public class Elevator : MonoBehaviour
 
     private void Update()
     {
-        if (ElevatorManager.instance.isActive)
+        if (ElevatorManager.instance.isActive && !isSequencing)
         {
-            elevatorAnimation.SetTrigger("inOperation");
+            elevatorAnimation.SetTrigger("OpenDoor");
             parentPanel.SetActive(true);
         }
-        else
+        else if(!ElevatorManager.instance.isActive && !isSequencing)
         {
             parentPanel.SetActive(false);
         }
@@ -68,6 +74,31 @@ public class Elevator : MonoBehaviour
             ElevatorManager.instance.TeleportPlayer(destinationName, player.transform);
             ElevatorManager.instance.isActive = false;
         }
+    }
+
+    private IEnumerator PlayElevatorSequence(string destinationName)
+    {
+        isSequencing = true;
+        ElevatorManager.instance.DisablePlayerControl();
+
+        //Play door close animation
+        elevatorAnimation.SetTrigger("CloseDoor");
+        yield return new WaitForSeconds(1);
+
+        //Play the elevator timeline sequence
+        elevatorTimeline.Play();
+        yield return new WaitForSeconds((float)elevatorTimeline.duration);
+
+        //Teleport the player
+        ElevatorManager.instance.TeleportPlayer(destinationName, player.transform);
+
+        //Elevator doors open after teleport
+        elevatorAnimation.SetTrigger("OpenDoor");
+        yield return new WaitForSeconds(1f);
+
+        ElevatorManager.instance.EnablePlayerControl();
+        isSequencing = false;
+        ElevatorManager.instance.isActive = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

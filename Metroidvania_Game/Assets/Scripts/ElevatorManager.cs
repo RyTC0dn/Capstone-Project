@@ -39,4 +39,14 @@ public class ElevatorManager : MonoBehaviour
     {
         player.position = elevators[destinationName].transform.position;
     }
+
+    public void DisablePlayerControl()
+    {
+
+    }
+
+    public void EnablePlayerControl()
+    {
+
+    }
 }
