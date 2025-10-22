@@ -24,7 +24,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
+        if (Input.GetButtonDown("Fire2") && shop.boughtAxe == true)
         {
             Shoot();                       
         }
@@ -33,10 +33,17 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     void Shoot()
     {
         Transform firingPoint = firePoint;
-
+        animator.SetBool("isThrowing", true);
         //Instantiate ProjectilePrefab
         Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
-        animator.SetBool("isThrowing", true);
+        
+        StartCoroutine(ResetWeapon());
+    }
+
+    IEnumerator ResetWeapon()
+    {
+        yield return new WaitForSeconds(1);
+        animator.SetBool("isThrowing", false);
     }
 
 

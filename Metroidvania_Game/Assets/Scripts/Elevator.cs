@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class Elevator : MonoBehaviour
 {
+    /// <summary>
+    /// The main way that the elevator works in tandem with the elevator manager and player spawn control scripts.
+    /// To summarize, you define which location you want the player to go to, elevator location name equals the name of the game object.
+    /// Give the generate button function the name of the elevator you want players to move to. 
+    /// Then the script will compare the name of the button to the name of the gameobject/elevatorlocationname, if they match then
+    /// move the player to that location.
+    /// </summary>
     public string elevatorLocationName;
 
     [Header("Elevator Animations")]
@@ -69,10 +76,12 @@ public class Elevator : MonoBehaviour
 
     void OnButtonClicked(string destinationName)
     {
+        
         if(ElevatorManager.instance.elevators.ContainsKey(destinationName))
         {
             ElevatorManager.instance.TeleportPlayer(destinationName, player.transform);
             ElevatorManager.instance.isActive = false;
+            elevatorAnimation.SetTrigger("CloseDoor");
         }
     }
 

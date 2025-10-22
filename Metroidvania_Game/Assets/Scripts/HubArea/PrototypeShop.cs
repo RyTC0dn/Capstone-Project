@@ -17,6 +17,7 @@ public class PrototypeShop : MonoBehaviour
     ///Shop prices
     ///May turn to using arrays to store prices as to not clutter too much
     public int upgradePrice = 8;
+    public int weaponUpgradeValue = 1;
     public int weaponPrice = 20;
 
     public bool isNearShop = false;
