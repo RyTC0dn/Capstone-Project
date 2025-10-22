@@ -12,12 +12,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
 
-    [SerializeField] 
-    private float playerSpeed;
+     
+    public float playerSpeed;
+    [HideInInspector] public float horizontalSpeed;
     private Rigidbody2D rb2D;
-    public Transform playerSpawnPoint;
     [SerializeField] private Animator animator;
-    public float hSpeed;
 
     public Quaternion playerRot; //For rotating the whole object instead of the sprite
 
@@ -71,7 +70,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         //Float variable to store horizontal input
         //Horizontal can be -1, 0, or 1
-        hSpeed = Input.GetAxisRaw("Horizontal");
+        float hSpeed = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
         Move(hSpeed);
