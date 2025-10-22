@@ -30,7 +30,7 @@ public class PrototypeShield : MonoBehaviour
             shieldEnabled = true;
             playerMovement.horizontalSpeed = playerMovement.playerSpeed / 2;
         }
-        else if (shieldDuration <= 0)
+        else
         {
             shieldCollider.SetActive(false);
             playerMovement.horizontalSpeed = playerMovement.playerSpeed;

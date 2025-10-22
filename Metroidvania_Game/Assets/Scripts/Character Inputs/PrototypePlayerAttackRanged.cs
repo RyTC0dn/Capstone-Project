@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,11 +26,8 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
         {
-            Shoot();
-            //animator.SetBool("isThrowing", true);
-
+            Shoot();                       
         }
-
     }
 
     void Shoot()
@@ -38,7 +36,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
 
         //Instantiate ProjectilePrefab
         Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
-
+        animator.SetBool("isThrowing", true);
     }
 
 
