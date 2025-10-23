@@ -17,20 +17,18 @@ public class Elevator : MonoBehaviour
 
     [Header("Elevator Animations")]
     private Animator elevatorAnimation;
-    public PlayableDirector elevatorTimeline;
-    private bool isSequencing = false;
 
     [Header("UI Setup")]
     public GameObject buttonPrefab;
     public GameObject parentPanel;
-    public GameObject player;
+    PrototypePlayerMovementControls playerControls;
 
     public float buttonSpacing = -50f;
 
     private void Start()
-    {        
-        ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list
+    {         
         elevatorAnimation = GetComponent<Animator>();
+        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
         GenerateButton("Elevator_Entrance", 1);
         GenerateButton("Elevator_A2", 4);
@@ -39,12 +37,13 @@ public class Elevator : MonoBehaviour
 
     private void Update()
     {
-        if (ElevatorManager.instance.isActive && !isSequencing)
+        ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list
+        if (ElevatorManager.instance.isActive)
         {
             elevatorAnimation.SetTrigger("OpenDoor");
             parentPanel.SetActive(true);
         }
-        else if(!ElevatorManager.instance.isActive && !isSequencing)
+        else if(!ElevatorManager.instance.isActive)
         {
             parentPanel.SetActive(false);
         }
@@ -76,38 +75,13 @@ public class Elevator : MonoBehaviour
 
     void OnButtonClicked(string destinationName)
     {
-        
-        if(ElevatorManager.instance.elevators.ContainsKey(destinationName))
-        {
-            ElevatorManager.instance.TeleportPlayer(destinationName, player.transform);
-            ElevatorManager.instance.isActive = false;
-            elevatorAnimation.SetTrigger("CloseDoor");
-        }
-    }
-
-    private IEnumerator PlayElevatorSequence(string destinationName)
-    {
-        isSequencing = true;
-        ElevatorManager.instance.DisablePlayerControl();
-
-        //Play door close animation
-        elevatorAnimation.SetTrigger("CloseDoor");
-        yield return new WaitForSeconds(1);
-
-        //Play the elevator timeline sequence
-        elevatorTimeline.Play();
-        yield return new WaitForSeconds((float)elevatorTimeline.duration);
-
-        //Teleport the player
-        ElevatorManager.instance.TeleportPlayer(destinationName, player.transform);
-
-        //Elevator doors open after teleport
-        elevatorAnimation.SetTrigger("OpenDoor");
-        yield return new WaitForSeconds(1f);
-
-        ElevatorManager.instance.EnablePlayerControl();
-        isSequencing = false;
+        ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
         ElevatorManager.instance.isActive = false;
+        elevatorAnimation.SetTrigger("CloseDoor");
+        if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
+        {
+           
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

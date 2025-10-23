@@ -37,7 +37,20 @@ public class ElevatorManager : MonoBehaviour
 
     public void TeleportPlayer(string destinationName, Transform player)
     {
-        player.position = elevators[destinationName].transform.position;
+        if (elevators.ContainsKey(destinationName))
+        {
+            Vector3 targetPos = elevators[destinationName].transform.position;
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if(rb != null)
+                rb.position = targetPos;
+            else
+                player.position = targetPos;
+            Debug.Log("Has Teleported");
+        }
+        else
+        {
+            Debug.LogWarning($"Destination {destinationName} not found");
+        }
     }
 
     public void DisablePlayerControl()

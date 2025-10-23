@@ -21,6 +21,9 @@ public class BasicEnemyControls : MonoBehaviour
     private Rigidbody2D enemyRB2D;
     public int enemyHealth = 2;
 
+    public LayerMask playerLayer; //
+    private bool playerDetected = false; //Track if the player was hit by raycast
+
     //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +38,8 @@ public class BasicEnemyControls : MonoBehaviour
     void Update()
     {
         StateSwitch();
+
+      
     }
 
     public void StateSwitch()

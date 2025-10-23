@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003631c6b300964ea4a35f458a79c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorLocationName: Elevator
+  elevatorLocationName: 
   buttonPrefab: {fileID: 3081688810251628998, guid: 0a78cd2253c2d284b899178df0d46e60, type: 3}
   parentPanel: {fileID: 7934425359997460790}
   player: {fileID: 5958576740038597133, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
