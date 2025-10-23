@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5845898335328023294}
   - component: {fileID: 8072791704070279469}
   - component: {fileID: 8789652016206958642}
+  - component: {fileID: 3655159408340829999}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: FlyingEnemy
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 4691452424493672730, guid: 6659cc78a1ad1644895749b3aaa95dc3, type: 3}
-  m_Color: {r: 1, g: 0.53507835, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -172,6 +173,9 @@ MonoBehaviour:
   enemySpeed: 3.5
   playerDistance: 0
   enemyHealth: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8072791704070279469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +205,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   damage: 1
+--- !u!95 &3655159408340829999
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253066347139419439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acd6beed95a996d49a551a7f92e84bb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
