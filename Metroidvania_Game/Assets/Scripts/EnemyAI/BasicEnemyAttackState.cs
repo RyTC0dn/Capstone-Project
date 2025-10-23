@@ -10,6 +10,9 @@ public class BasicEnemyAttackState : MonoBehaviour
     public int damage = 1;
     private float attackRange = 10f;
 
+    public GameObject idlePoint;
+    private Vector2 startingPos;
+
     RaycastHit2D hit;
 
     private enum EnemyTypes { ground, flying}
@@ -26,6 +29,8 @@ public class BasicEnemyAttackState : MonoBehaviour
 
         if(CompareTag("GroundEnemy")) currentEnemyType = EnemyTypes.ground;
         else if(CompareTag("FlyingEnemy")) currentEnemyType= EnemyTypes.flying;
+
+        startingPos = new Vector2(transform.position.x, transform.position.y);
     }
 
     // Update is called once per frame
@@ -70,8 +75,8 @@ public class BasicEnemyAttackState : MonoBehaviour
 
     public void Idle()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y);
-
+        float enemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
+        transform.position = Vector2.MoveTowards(transform.position, startingPos, enemySpeed * Time.deltaTime);        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
