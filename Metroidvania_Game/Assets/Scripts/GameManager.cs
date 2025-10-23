@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     public void CoinCollection(int gainAmount)
     {
         currentCoins += gainAmount;
+        coinPickup.Play();
         ui.UpdateUI();
     }
 

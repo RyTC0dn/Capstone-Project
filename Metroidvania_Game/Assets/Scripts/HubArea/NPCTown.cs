@@ -14,7 +14,6 @@ public class NPCTown : MonoBehaviour
         if (checkSceneName == "Town")
         {
             gameObject.SetActive(npcSaved);
-            npcState.enabled = false;
         }
         if(checkSceneName == "Level 1 - RyanTestZone")
         {

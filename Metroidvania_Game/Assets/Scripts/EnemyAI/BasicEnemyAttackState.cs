@@ -4,13 +4,16 @@ public class BasicEnemyAttackState : MonoBehaviour
 {
     private GameObject playerPos;
     PrototypePlayerMovementControls playerControls;
+    [SerializeField] private LayerMask playerLayer;
     private Rigidbody2D rb2D;
     [SerializeField]private bool isGrounded;
-    private float raycastLength = 2;
     public int damage = 1;
+    private float attackRange = 10f;
 
-    private enum enemyTypes { ground, flying}
-    enemyTypes currentEnemyType;
+    RaycastHit2D hit;
+
+    private enum EnemyTypes { ground, flying}
+    EnemyTypes currentEnemyType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,24 +23,30 @@ public class BasicEnemyAttackState : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player");
 
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+
+        if(CompareTag("GroundEnemy")) currentEnemyType = EnemyTypes.ground;
+        else if(CompareTag("FlyingEnemy")) currentEnemyType= EnemyTypes.flying;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float speed = GetComponent<BasicEnemyControls>().enemySpeed;
+        float distanceToPlayer = Vector2.Distance(transform.position, playerPos.transform.position);
         switch (currentEnemyType)
         {
-            case enemyTypes.ground:
-                GroundEnemy();
+            case EnemyTypes.ground:
+                if (distanceToPlayer <= attackRange)
+                    GroundEnemy();
+                else
+                    Idle();
                 break;
-            case enemyTypes.flying:
-                FlyingEnemy();
+            case EnemyTypes.flying:
+                if (distanceToPlayer <= attackRange)
+                    FlyingEnemy();                    
+                else
+                    Idle();
                 break;
         }
-
-        if (gameObject.tag == "GroundEnemy") { currentEnemyType = enemyTypes.ground; }
-        if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
     }
 
     public void GroundEnemy()
@@ -57,6 +66,12 @@ public class BasicEnemyAttackState : MonoBehaviour
     {
         float flyingEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         transform.position = Vector2.MoveTowards(rb2D.position, playerPos.transform.position, flyingEnemySpeed * Time.deltaTime);
+    }
+
+    public void Idle()
+    {
+        transform.position = new Vector2(transform.position.x, transform.position.y);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
