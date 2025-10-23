@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,22 +24,26 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2") /*&& shop.boughtAxe == true*/)
+        if (Input.GetButtonDown("Fire2") && shop.boughtAxe == true)
         {
-            Shoot();
-            //animator.SetBool("isThrowing", true);
-
+            Shoot();                       
         }
-
     }
 
     void Shoot()
     {
         Transform firingPoint = firePoint;
-
+        animator.SetBool("isThrowing", true);
         //Instantiate ProjectilePrefab
         Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
+        
+        StartCoroutine(ResetWeapon());
+    }
 
+    IEnumerator ResetWeapon()
+    {
+        yield return new WaitForSeconds(1);
+        animator.SetBool("isThrowing", false);
     }
 
 
