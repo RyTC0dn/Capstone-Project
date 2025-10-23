@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 446dc15e884c2d145a61e884b3d58bb6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6776158232401657123
+    second: GroundEnemyWalk_0
+  - first:
+      213: -9052911236272420588
+    second: GroundEnemyWalk_1
+  - first:
+      213: -4322447853186204547
+    second: GroundEnemyWalk_2
+  - first:
+      213: -6792585861348583964
+    second: GroundEnemyWalk_3
+  - first:
+      213: -4718275227155023065
+    second: GroundEnemyWalk_4
+  - first:
+      213: -5597070473968495327
+    second: GroundEnemyWalk_5
+  - first:
+      213: -5931604993450249461
+    second: GroundEnemyWalk_6
+  - first:
+      213: -6416196825928643471
+    second: GroundEnemyWalk_7
+  - first:
+      213: 5790435017142563602
+    second: GroundEnemyWalk_8
+  - first:
+      213: -221853890093458940
+    second: GroundEnemyWalk_9
+  - first:
+      213: 3649581426303897677
+    second: GroundEnemyWalk_10
+  - first:
+      213: 524073380749182993
+    second: GroundEnemyWalk_11
+  - first:
+      213: 669039635854602482
+    second: GroundEnemyWalk_12
+  - first:
+      213: 5749508972926386583
+    second: GroundEnemyWalk_13
+  - first:
+      213: 3477478034411417528
+    second: GroundEnemyWalk_14
+  - first:
+      213: -2341597661507877137
+    second: GroundEnemyWalk_15
+  - first:
+      213: 7896568530986504958
+    second: GroundEnemyWalk_16
+  - first:
+      213: -3884972236856137729
+    second: GroundEnemyWalk_17
+  - first:
+      213: 3251361339909434385
+    second: GroundEnemyWalk_18
+  - first:
+      213: -7983339171131756955
+    second: GroundEnemyWalk_19
+  - first:
+      213: -2264065844848103102
+    second: GroundEnemyWalk_20
+  - first:
+      213: 1254934962998176544
+    second: GroundEnemyWalk_21
+  - first:
+      213: 656107518691090093
+    second: GroundEnemyWalk_22
+  - first:
+      213: -1186566760704375158
+    second: GroundEnemyWalk_23
+  - first:
+      213: 2509883168799127992
+    second: GroundEnemyWalk_24
+  - first:
+      213: 1658698431657028450
+    second: GroundEnemyWalk_25
+  - first:
+      213: 589044649566944793
+    second: GroundEnemyWalk_26
+  - first:
+      213: -615486687927431699
+    second: GroundEnemyWalk_27
+  - first:
+      213: -6197856013327233080
+    second: GroundEnemyWalk_28
+  - first:
+      213: -3305514088322783948
+    second: GroundEnemyWalk_29
+  - first:
+      213: -1219934886341919855
+    second: GroundEnemyWalk_30
+  - first:
+      213: -4763336221755430617
+    second: GroundEnemyWalk_31
+  - first:
+      213: -7055244654792217209
+    second: GroundEnemyWalk_32
+  - first:
+      213: 7825641206755645617
+    second: GroundEnemyWalk_33
+  - first:
+      213: 5575258622322871487
+    second: GroundEnemyWalk_34
+  - first:
+      213: -4674372398472405102
+    second: GroundEnemyWalk_35
+  - first:
+      213: 5974857291609083235
+    second: GroundEnemyWalk_36
+  - first:
+      213: 1965521196482237780
+    second: GroundEnemyWalk_37
+  - first:
+      213: 217579040964054083
+    second: GroundEnemyWalk_38
+  - first:
+      213: 2387694015850552241
+    second: GroundEnemyWalk_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroundEnemyWalk_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1921
+        width: 163
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32db320c200c90e50800000000000000
+      internalID: 6776158232401657123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1921
+        width: 163
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41907dae1399d5280800000000000000
+      internalID: -9052911236272420588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_2
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1921
+        width: 164
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cbfae24949304c0800000000000000
+      internalID: -4322447853186204547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1921
+        width: 164
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e51af3d523ebb1a0800000000000000
+      internalID: -6792585861348583964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1921
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b36eceda1558eb0800000000000000
+      internalID: -4718275227155023065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1921
+        width: 163
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125d748fe063352b0800000000000000
+      internalID: -5597070473968495327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_6
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 1922
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b03f6797fa4beada0800000000000000
+      internalID: -5931604993450249461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_7
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1924
+        width: 161
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17cc8853bf615f6a0800000000000000
+      internalID: -6416196825928643471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1669
+        width: 160
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 213f3c318f1cb5050800000000000000
+      internalID: 5790435017142563602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_9
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1671
+        width: 160
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ad0f8ff01dbecf0800000000000000
+      internalID: -221853890093458940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_10
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1669
+        width: 160
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4015bd88fae5a230800000000000000
+      internalID: 3649581426303897677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_11
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1668
+        width: 160
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1180bcf86f1e54700800000000000000
+      internalID: 524073380749182993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_12
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 1667
+        width: 161
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f035cb0108e84900800000000000000
+      internalID: 669039635854602482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_13
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1666
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791c23cd2fb5acf40800000000000000
+      internalID: 5749508972926386583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_14
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 1665
+        width: 162
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfe05b09db724030800000000000000
+      internalID: 3477478034411417528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_15
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1665
+        width: 162
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe600fa4559f08fd0800000000000000
+      internalID: -2341597661507877137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_16
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1409
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef29af9bd3f369d60800000000000000
+      internalID: 7896568530986504958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_17
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 1409
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff76fe3855ec51ac0800000000000000
+      internalID: -3884972236856137729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1409
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c6db589e72f1d20800000000000000
+      internalID: 3251361339909434385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_19
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1409
+        width: 163
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56eea37425b753190800000000000000
+      internalID: -7983339171131756955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_20
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1408
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241fbb11c1c6490e0800000000000000
+      internalID: -2264065844848103102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_21
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1407
+        width: 163
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b69bd23bc6a6110800000000000000
+      internalID: 1254934962998176544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_22
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1407
+        width: 163
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dae9b02ef46fa1900800000000000000
+      internalID: 656107518691090093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_23
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1407
+        width: 163
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a860eed51d7788fe0800000000000000
+      internalID: -1186566760704375158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1151
+        width: 163
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b9f000b175e4d220800000000000000
+      internalID: 2509883168799127992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1151
+        width: 163
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b2a687f61e40710800000000000000
+      internalID: 1658698431657028450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_26
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1152
+        width: 163
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e3846ecf4bc2800800000000000000
+      internalID: 589044649566944793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_27
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1153
+        width: 164
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded8a1a4e1a5577f0800000000000000
+      internalID: -615486687927431699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_28
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1154
+        width: 164
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf8c942bcaccf9a0800000000000000
+      internalID: -6197856013327233080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_29
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1155
+        width: 164
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435a87533747022d0800000000000000
+      internalID: -3305514088322783948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_30
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1154
+        width: 164
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bbb723fabe11fe0800000000000000
+      internalID: -1219934886341919855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_31
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1153
+        width: 164
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729248c81fa35edb0800000000000000
+      internalID: -4763336221755430617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_32
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 896
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78de2a3ed5cb61e90800000000000000
+      internalID: -7055244654792217209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_33
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 896
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8545c27334a9c60800000000000000
+      internalID: 7825641206755645617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_34
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 895
+        width: 164
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc0d729d2c4f5d40800000000000000
+      internalID: 5575258622322871487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_35
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 895
+        width: 164
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f5929c11b412fb0800000000000000
+      internalID: -4674372398472405102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_36
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 895
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d0302fc05fae250800000000000000
+      internalID: 5974857291609083235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_37
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 895
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45513da4d1fe64b10800000000000000
+      internalID: 1965521196482237780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_38
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 895
+        width: 165
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c8b372cfef40300800000000000000
+      internalID: 217579040964054083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyWalk_39
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 897
+        width: 163
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb191f8e0bc22120800000000000000
+      internalID: 2387694015850552241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fcb138deb6f9f494ca866fdcff31689f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GroundEnemyWalk_0: 6776158232401657123
+      GroundEnemyWalk_1: -9052911236272420588
+      GroundEnemyWalk_10: 3649581426303897677
+      GroundEnemyWalk_11: 524073380749182993
+      GroundEnemyWalk_12: 669039635854602482
+      GroundEnemyWalk_13: 5749508972926386583
+      GroundEnemyWalk_14: 3477478034411417528
+      GroundEnemyWalk_15: -2341597661507877137
+      GroundEnemyWalk_16: 7896568530986504958
+      GroundEnemyWalk_17: -3884972236856137729
+      GroundEnemyWalk_18: 3251361339909434385
+      GroundEnemyWalk_19: -7983339171131756955
+      GroundEnemyWalk_2: -4322447853186204547
+      GroundEnemyWalk_20: -2264065844848103102
+      GroundEnemyWalk_21: 1254934962998176544
+      GroundEnemyWalk_22: 656107518691090093
+      GroundEnemyWalk_23: -1186566760704375158
+      GroundEnemyWalk_24: 2509883168799127992
+      GroundEnemyWalk_25: 1658698431657028450
+      GroundEnemyWalk_26: 589044649566944793
+      GroundEnemyWalk_27: -615486687927431699
+      GroundEnemyWalk_28: -6197856013327233080
+      GroundEnemyWalk_29: -3305514088322783948
+      GroundEnemyWalk_3: -6792585861348583964
+      GroundEnemyWalk_30: -1219934886341919855
+      GroundEnemyWalk_31: -4763336221755430617
+      GroundEnemyWalk_32: -7055244654792217209
+      GroundEnemyWalk_33: 7825641206755645617
+      GroundEnemyWalk_34: 5575258622322871487
+      GroundEnemyWalk_35: -4674372398472405102
+      GroundEnemyWalk_36: 5974857291609083235
+      GroundEnemyWalk_37: 1965521196482237780
+      GroundEnemyWalk_38: 217579040964054083
+      GroundEnemyWalk_39: 2387694015850552241
+      GroundEnemyWalk_4: -4718275227155023065
+      GroundEnemyWalk_5: -5597070473968495327
+      GroundEnemyWalk_6: -5931604993450249461
+      GroundEnemyWalk_7: -6416196825928643471
+      GroundEnemyWalk_8: 5790435017142563602
+      GroundEnemyWalk_9: -221853890093458940
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

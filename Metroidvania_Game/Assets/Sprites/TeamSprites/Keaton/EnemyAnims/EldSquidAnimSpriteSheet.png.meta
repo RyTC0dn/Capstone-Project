@@ -1,0 +1,1027 @@
+fileFormatVersion: 2
+guid: 6659cc78a1ad1644895749b3aaa95dc3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4691452424493672730
+    second: EldSquidAnimSpriteSheet_0
+  - first:
+      213: -9022956333833103897
+    second: EldSquidAnimSpriteSheet_1
+  - first:
+      213: 3760708501210316568
+    second: EldSquidAnimSpriteSheet_2
+  - first:
+      213: 1869647012066104004
+    second: EldSquidAnimSpriteSheet_3
+  - first:
+      213: -346761138147393910
+    second: EldSquidAnimSpriteSheet_4
+  - first:
+      213: 5935418914730694697
+    second: EldSquidAnimSpriteSheet_5
+  - first:
+      213: -252286981797215091
+    second: EldSquidAnimSpriteSheet_6
+  - first:
+      213: -3778714681026029598
+    second: EldSquidAnimSpriteSheet_7
+  - first:
+      213: -5095302119874755736
+    second: EldSquidAnimSpriteSheet_8
+  - first:
+      213: 2415152351011536796
+    second: EldSquidAnimSpriteSheet_9
+  - first:
+      213: 1721446078412114220
+    second: EldSquidAnimSpriteSheet_10
+  - first:
+      213: 5437733024356940909
+    second: EldSquidAnimSpriteSheet_11
+  - first:
+      213: -4211632674504312033
+    second: EldSquidAnimSpriteSheet_12
+  - first:
+      213: 3961129995212406876
+    second: EldSquidAnimSpriteSheet_13
+  - first:
+      213: -6240423086701497675
+    second: EldSquidAnimSpriteSheet_14
+  - first:
+      213: 7269246299465762249
+    second: EldSquidAnimSpriteSheet_15
+  - first:
+      213: 8031507218897203230
+    second: EldSquidAnimSpriteSheet_16
+  - first:
+      213: 5849434830293252928
+    second: EldSquidAnimSpriteSheet_17
+  - first:
+      213: -4765568040708242124
+    second: EldSquidAnimSpriteSheet_18
+  - first:
+      213: 1832531496439066317
+    second: EldSquidAnimSpriteSheet_19
+  - first:
+      213: 3049786022119170983
+    second: EldSquidAnimSpriteSheet_20
+  - first:
+      213: 7205021309866919509
+    second: EldSquidAnimSpriteSheet_21
+  - first:
+      213: -8693127332508382378
+    second: EldSquidAnimSpriteSheet_22
+  - first:
+      213: 1316981220830488065
+    second: EldSquidAnimSpriteSheet_23
+  - first:
+      213: 1593973030057841047
+    second: EldSquidAnimSpriteSheet_24
+  - first:
+      213: 2264653451030732484
+    second: EldSquidAnimSpriteSheet_25
+  - first:
+      213: 2192298304838404983
+    second: EldSquidAnimSpriteSheet_26
+  - first:
+      213: 8846759368606479048
+    second: EldSquidAnimSpriteSheet_27
+  - first:
+      213: 4903359160323052761
+    second: EldSquidAnimSpriteSheet_28
+  - first:
+      213: 3694382987899584205
+    second: EldSquidAnimSpriteSheet_29
+  - first:
+      213: 4279529853596817684
+    second: EldSquidAnimSpriteSheet_30
+  - first:
+      213: -1235290911662214267
+    second: EldSquidAnimSpriteSheet_31
+  - first:
+      213: -6520819304589216736
+    second: EldSquidAnimSpriteSheet_32
+  - first:
+      213: 9151217094618713989
+    second: EldSquidAnimSpriteSheet_33
+  - first:
+      213: -7612185900218234509
+    second: EldSquidAnimSpriteSheet_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 656
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19279aaf136b1140800000000000000
+      internalID: 4691452424493672730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 656
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e55402250508c280800000000000000
+      internalID: -9022956333833103897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 656
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81fbe6ee478b03430800000000000000
+      internalID: 3760708501210316568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 655
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c212993d0252f910800000000000000
+      internalID: 1869647012066104004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 655
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e70d2059e003bf0800000000000000
+      internalID: -346761138147393910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 655
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92858a54e08de5250800000000000000
+      internalID: 5935418914730694697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 655
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d848584a352bf7cf0800000000000000
+      internalID: -252286981797215091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 655
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7d3e1a40f4f8bc0800000000000000
+      internalID: -3778714681026029598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 568
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8630291d7b9d949b0800000000000000
+      internalID: -5095302119874755736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 568
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ffd786448548120800000000000000
+      internalID: 2415152351011536796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 568
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c294eb3761ec3e710800000000000000
+      internalID: 1721446078412114220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 568
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cb4341065b67b40800000000000000
+      internalID: 5437733024356940909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 569
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1bfdbf85664d85c0800000000000000
+      internalID: -4211632674504312033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 569
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50c7c16eb2c8f630800000000000000
+      internalID: 3961129995212406876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 569
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2b20d04409569a0800000000000000
+      internalID: -6240423086701497675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 570
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5ca78cefc81e460800000000000000
+      internalID: 7269246299465762249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 483
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e107a594345a57f60800000000000000
+      internalID: 8031507218897203230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 483
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b3d6c8cfd5d2150800000000000000
+      internalID: 5849434830293252928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 483
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43581a4bd1d4dddb0800000000000000
+      internalID: -4765568040708242124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 483
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce27f4dfa57e6910800000000000000
+      internalID: 1832531496439066317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 483
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a36d598a34035a20800000000000000
+      internalID: 3049786022119170983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 483
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556ccbd15b06df360800000000000000
+      internalID: 7205021309866919509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 483
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b499ecfbecb5780800000000000000
+      internalID: -8693127332508382378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 483
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1062673517bd64210800000000000000
+      internalID: 1316981220830488065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791962e860eee1610800000000000000
+      internalID: 1593973030057841047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce9c08a05aad6f10800000000000000
+      internalID: 2264653451030732484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b859561bb9c6e10800000000000000
+      internalID: 2192298304838404983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2f52b06c006ca70800000000000000
+      internalID: 8846759368606479048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4963d5d2b3c0440800000000000000
+      internalID: 4903359160323052761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce300af0c5154330800000000000000
+      internalID: 3694382987899584205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 396
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41951595ab1f36b30800000000000000
+      internalID: 4279529853596817684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 395
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583fa10f57d5bdee0800000000000000
+      internalID: -1235290911662214267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 308
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024337924656185a0800000000000000
+      internalID: -6520819304589216736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 308
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f0b3b5677affe70800000000000000
+      internalID: 9151217094618713989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EldSquidAnimSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 308
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 379414d31451c5690800000000000000
+      internalID: -7612185900218234509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EldSquidAnimSpriteSheet_0: 4691452424493672730
+      EldSquidAnimSpriteSheet_1: -9022956333833103897
+      EldSquidAnimSpriteSheet_10: 1721446078412114220
+      EldSquidAnimSpriteSheet_11: 5437733024356940909
+      EldSquidAnimSpriteSheet_12: -4211632674504312033
+      EldSquidAnimSpriteSheet_13: 3961129995212406876
+      EldSquidAnimSpriteSheet_14: -6240423086701497675
+      EldSquidAnimSpriteSheet_15: 7269246299465762249
+      EldSquidAnimSpriteSheet_16: 8031507218897203230
+      EldSquidAnimSpriteSheet_17: 5849434830293252928
+      EldSquidAnimSpriteSheet_18: -4765568040708242124
+      EldSquidAnimSpriteSheet_19: 1832531496439066317
+      EldSquidAnimSpriteSheet_2: 3760708501210316568
+      EldSquidAnimSpriteSheet_20: 3049786022119170983
+      EldSquidAnimSpriteSheet_21: 7205021309866919509
+      EldSquidAnimSpriteSheet_22: -8693127332508382378
+      EldSquidAnimSpriteSheet_23: 1316981220830488065
+      EldSquidAnimSpriteSheet_24: 1593973030057841047
+      EldSquidAnimSpriteSheet_25: 2264653451030732484
+      EldSquidAnimSpriteSheet_26: 2192298304838404983
+      EldSquidAnimSpriteSheet_27: 8846759368606479048
+      EldSquidAnimSpriteSheet_28: 4903359160323052761
+      EldSquidAnimSpriteSheet_29: 3694382987899584205
+      EldSquidAnimSpriteSheet_3: 1869647012066104004
+      EldSquidAnimSpriteSheet_30: 4279529853596817684
+      EldSquidAnimSpriteSheet_31: -1235290911662214267
+      EldSquidAnimSpriteSheet_32: -6520819304589216736
+      EldSquidAnimSpriteSheet_33: 9151217094618713989
+      EldSquidAnimSpriteSheet_34: -7612185900218234509
+      EldSquidAnimSpriteSheet_4: -346761138147393910
+      EldSquidAnimSpriteSheet_5: 5935418914730694697
+      EldSquidAnimSpriteSheet_6: -252286981797215091
+      EldSquidAnimSpriteSheet_7: -3778714681026029598
+      EldSquidAnimSpriteSheet_8: -5095302119874755736
+      EldSquidAnimSpriteSheet_9: 2415152351011536796
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
