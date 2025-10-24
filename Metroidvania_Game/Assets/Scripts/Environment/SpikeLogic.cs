@@ -16,7 +16,7 @@ public class SpikeLogic : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.instance.PlayerDamaged(damage);
+            //Add player health change
             playerControls.gameObject.transform.position = GameManager.instance.playerSpawnPoint.transform.position;
         }
 

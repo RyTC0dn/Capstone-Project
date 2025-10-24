@@ -21,10 +21,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI playerHealthText;
     public TextMeshProUGUI swordAttackStatText;
 
-    PrototypePlayerMovementControls playerControls;
-    PrototypePlayerAttack playerAttack;
-    //public GameObject pauseMenu;
-
 
     private void Awake()
     {
@@ -37,14 +33,12 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SetPlayerHealth(4);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
-        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
-
         UpdateUI();
     }
 
@@ -62,9 +56,24 @@ public class UIManager : MonoBehaviour
     public void UpdateUI() 
     {
         coinText.text = "Coins: " + GameManager.instance.currentCoins.ToString();
-        playerHealthText.text = "Player Lives: " + GameManager.instance.currentLives.ToString();
+        //Add text here to update when player health changes
         swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
     }
+
+    private void SetPlayerHealth(int health)
+    {
+        playerHealthText.text = "Player Lives: " + health.ToString();
+    }
+
+    public void UpdatePlayerHealth(Component sender, object data)
+    {
+        //If (sender is PlayerHealth)
+        if(data is int)
+        {
+            int amount = (int)data;
+            SetPlayerHealth(amount);
+        }        
+    } 
 
     public void Upgrade(int price)
     {

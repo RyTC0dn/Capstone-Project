@@ -63,7 +63,7 @@ public class BasicEnemyAttackState : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.instance.PlayerDamaged(damage);
+            //Call when attacking player
             playerControls.gameObject.transform.position = GameManager.instance.playerSpawnPoint.transform.position;
         }
     }

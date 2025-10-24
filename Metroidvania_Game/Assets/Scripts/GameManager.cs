@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     [Header("Player UI Stats")]
     private int coinTracker = 0;
     public int currentCoins;
-    private int playerLives = 3;
-    public int currentLives;
     public int upgradeValue = 0;
 
     UIManager ui;
@@ -58,30 +56,13 @@ public class GameManager : MonoBehaviour
     {
         //Initializing scripts within the game manager
         ui = FindAnyObjectByType<UIManager>();  
-
-        currentLives = playerLives;
         currentCoins = coinTracker;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentLives <= 0)
-        {
-            OnDeath();
-        }
-    }
-
-    public void OnDeath()
-    {
-        SceneManager.LoadScene("Town");
-        currentLives = playerLives;
-    }
-
-    public void PlayerDamaged(int enemyDamage)
-    {
-        currentLives -= enemyDamage;
-        ui.UpdateUI();
+       
     }
 
     public void CoinCollection(int gainAmount)
