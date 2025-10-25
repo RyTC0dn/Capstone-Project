@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7402571240219324013, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: onAttackEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
     - target: {fileID: 8072791704070279469, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -333,5 +337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3707780e1cbb23d4e9b23170a8ee4994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 2
+  totalHealth: 2
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
+  enemyHealthChanged: {fileID: 11400000, guid: 2c4e69920e841d24194ed31a4adf759d, type: 2}

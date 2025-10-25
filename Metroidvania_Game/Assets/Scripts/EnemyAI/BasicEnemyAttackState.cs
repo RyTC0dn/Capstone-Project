@@ -12,6 +12,8 @@ public class BasicEnemyAttackState : MonoBehaviour
     private enum enemyTypes { ground, flying}
     enemyTypes currentEnemyType;
 
+    public GameEvent onAttackEvent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,12 +22,7 @@ public class BasicEnemyAttackState : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player");
 
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float speed = GetComponent<BasicEnemyControls>().enemySpeed;
         switch (currentEnemyType)
         {
             case enemyTypes.ground:
@@ -40,8 +37,16 @@ public class BasicEnemyAttackState : MonoBehaviour
         if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
     }
 
+    // Update is called once per frame
+    void Update()
+    {    
+
+        
+    }
+
     public void GroundEnemy()
     {
+        //Move towards player
         float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         
         Vector2 playerPosX = new Vector2(playerPos.transform.position.x, transform.position.y);
@@ -60,11 +65,11 @@ public class BasicEnemyAttackState : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {        
         if (collision.CompareTag("Player"))
         {
-            //Call when attacking player
-            playerControls.gameObject.transform.position = GameManager.instance.playerSpawnPoint.transform.position;
+            //Raise a global event to attack player
+            onAttackEvent.Raise(this, damage);
         }
     }
 }
