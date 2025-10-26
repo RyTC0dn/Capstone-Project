@@ -3,13 +3,23 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Health Stats")]
     public int totalHealth = 4;
     private int currentHealth;
-    private bool isInvulnerable = false; //We want to prevent multiple hits on the player
+    [SerializeField]private bool isInvulnerable = false; //We want to prevent multiple hits on the player
     [SerializeField]private float invulnerableTimer = 2;
 
     private SpriteRenderer sprite;
     public GameEvent playerHealthChanged;
+
+    [Header("Knockback")]
+    public float kbForce = 10f;
+    public float kbDuration = 0.2f;
+
+    private Rigidbody2D rb;
+    [SerializeField]private bool isKnockedBack = false;
+
+    PrototypePlayerMovementControls playerControls;
 
     private void Awake()
     {
@@ -19,8 +29,17 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        playerControls = GetComponent<PrototypePlayerMovementControls>();
+        sprite = GetComponent<SpriteRenderer>();    
         currentHealth = totalHealth;
     }
+
+    /// <summary>
+    /// Called by GameEventListener when the enemy attack event is raised
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="data"></param>
 
     public void OnEnemyAttack(Component sender, object data)
     {
@@ -28,30 +47,65 @@ public class PlayerHealth : MonoBehaviour
         //and if the sent out data was an integer variable
         if(sender is BasicEnemyAttackState && data is int damage)
         {
-            TakeDamage(damage);
+            TakeDamage(damage, sender as BasicEnemyAttackState);
         }
     }
 
     //These functions are to define how damage to the player works
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, BasicEnemyAttackState enemy)
     {
         if (isInvulnerable) { return; }
-        StartCoroutine(DamagerRoutine(damageAmount));
+        StartCoroutine(DamagerRoutine(damageAmount, enemy));
     }
 
-    IEnumerator DamagerRoutine(int damageAmount)
+    IEnumerator DamagerRoutine(int damageAmount, BasicEnemyAttackState enemy)
     {
         currentHealth -= damageAmount; //How much health is lost
 
         playerHealthChanged.Raise(this, currentHealth);//Raise the player health event after change
 
+        //Invulnerability function
         isInvulnerable = true;
-        if (isInvulnerable)
+
+        //Knockback function
+        Vector2 direction = (transform.position - enemy.transform.position).normalized;
+        StartCoroutine(Knockback(direction));
+
+        if (sprite != null)
         {
-            invulnerableTimer--;
-            yield return new WaitForSeconds(invulnerableTimer);
-            isInvulnerable = false;
+            Color color = sprite.color;
+            float elapsed = 0f;
+
+            while (elapsed < invulnerableTimer)
+            {
+                elapsed += Time.deltaTime;
+                float alpha = Mathf.PingPong(Time.time * 4f, 0.5f) + 0.5f; // oscillates between 0.5–1
+                sprite.color = new Color(color.r, color.g, color.b, alpha); //Flashing transparency
+                yield return null;
+            }
+
+            sprite.color = new Color(color.r, color.g, color.b, 1f);
         }
-        
+        else
+        {
+            yield return new WaitForSeconds(invulnerableTimer);
+        }
+        isInvulnerable = false;
+    }
+
+    IEnumerator Knockback(Vector2 direction)
+    {
+        isKnockedBack = true;
+        playerControls.enabled = false;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(direction * kbForce, ForceMode2D.Impulse);
+        Debug.Log("Player knocked back");
+
+        yield return new WaitForSeconds(kbDuration);
+
+        rb.linearVelocity = Vector2.zero;
+        playerControls.enabled = true;
+        isKnockedBack = false;
     }
 }

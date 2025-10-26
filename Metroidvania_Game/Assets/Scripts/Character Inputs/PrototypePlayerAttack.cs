@@ -15,19 +15,20 @@ public class PrototypePlayerAttack : MonoBehaviour
     public int damageValue = 1;
 
     PrototypePlayerMovementControls playerController;
-    BasicEnemyControls enemyController;
     public PlayerCharacter character;
 
     private AudioSource swordSlashAudio;
     /*[SerializeField] */private Animator animator;
+
+    [Header("Game Event")]
+    public GameEvent onPlayerAttack;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-
-        enemyController = FindAnyObjectByType<BasicEnemyControls>();
 
         weaponCollider.enabled = false;
     }
@@ -95,6 +96,14 @@ public class PrototypePlayerAttack : MonoBehaviour
 
         StartCoroutine(ResetWeapon());
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("GroundEnemy"))
+    //    {
+    //        onPlayerAttack.Raise(this, damageValue);
+    //    }
+    //}
 }
 
     

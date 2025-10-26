@@ -42,6 +42,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     PrototypePlayerAttack playerAttack;
     BasicEnemyAttackState enemyAttack;
 
+    [Header("Knockback")]
+    public float kbForce = 10f;
+    public float kbDuration = 0.2f;
+    private bool isKnockedBack = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
