@@ -10,18 +10,19 @@ public enum PlayerCharacter
 
 public class PrototypePlayerAttack : MonoBehaviour
 {
+    /// <summary>
+    /// This script will be for activating animation and control for the attack 
+    /// but the actual damage function will be on PlayerWeapon
+    /// </summary>
+
     [Header("Weapon Setup")]
     public Collider2D weaponCollider;
-    public int damageValue = 1;
 
     PrototypePlayerMovementControls playerController;
     public PlayerCharacter character;
 
     private AudioSource swordSlashAudio;
     /*[SerializeField] */private Animator animator;
-
-    [Header("Game Event")]
-    public GameEvent onPlayerAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -96,14 +97,6 @@ public class PrototypePlayerAttack : MonoBehaviour
 
         StartCoroutine(ResetWeapon());
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("GroundEnemy"))
-    //    {
-    //        onPlayerAttack.Raise(this, damageValue);
-    //    }
-    //}
 }
 
     

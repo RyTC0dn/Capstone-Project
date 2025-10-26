@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Weapon Stats")]
+    public int damageValue = 1;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Game Event")]
+    public GameEvent onPlayerAttack;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("GroundEnemy"))
+        {
+            onPlayerAttack.Raise(this, damageValue);
+        }
     }
 }
