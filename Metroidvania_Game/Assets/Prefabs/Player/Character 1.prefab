@@ -665,6 +665,8 @@ MonoBehaviour:
   isInvulnerable: 0
   invulnerableTimer: 2
   playerHealthChanged: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
+  playerBackToStart: {fileID: 11400000, guid: 5d22a3de9227ea843a1ab7ffe03e7043, type: 2}
+  playerDeath: {fileID: 11400000, guid: 3080337d67e433a4fb693fee7716ae74, type: 2}
   kbForce: 10
   kbDuration: 0.2
   isKnockedBack: 0
@@ -710,6 +712,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthText: {fileID: 9192130171430869557}
   coinText: {fileID: 6377705871176392039}
+  clockIcons:
+  - {fileID: 1616763695370509815}
+  - {fileID: 1155872476471832455}
+  fullClockSprite: {fileID: 1077252281, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
+  brokenClockSprite: {fileID: 1297207775, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
 --- !u!114 &3667328185078059184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +935,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
+--- !u!114 &1155872476471832455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4480501826358153911, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
+  m_PrefabInstance: {fileID: 3325779994181909808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1616763695370509815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4055611635050389703, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
+  m_PrefabInstance: {fileID: 3325779994181909808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6377705871176392039 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8549418669626908759, guid: 337b046f41323d6488934ec64b8d7630, type: 3}

@@ -21,7 +21,18 @@ public class SceneChanger : MonoBehaviour
     }
 
     ///Ryan's added functions 
-    ///
+    /// <summary>
+    /// Ryan's added functions 
+    /// </summary>
+    /// 
+    public void OnPlayerDeath(Component sender, object data)
+    {
+        if (sender is PlayerHealth)
+        {
+            GameManager.instance.nextSpawnPointName = spawnPointDestination;
+            SceneManager.LoadScene(sceneDestination);
+        }
+    }
     public void Death()//Only call this function when player loses all lives
     {
         SceneManager.LoadScene("Town");

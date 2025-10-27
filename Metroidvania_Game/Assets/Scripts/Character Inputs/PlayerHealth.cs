@@ -5,19 +5,20 @@ public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Stats")]
     public int totalHealth = 4;
-    private int currentHealth;
-    [SerializeField]private bool isInvulnerable = false; //We want to prevent multiple hits on the player
+    [SerializeField]private int currentHealth;
+    private bool isInvulnerable = false; //We want to prevent multiple hits on the player
     [SerializeField]private float invulnerableTimer = 2;
 
     private SpriteRenderer sprite;
     public GameEvent playerHealthChanged;
+    public GameEvent playerDeath;
 
     [Header("Knockback")]
     public float kbForce = 10f;
     public float kbDuration = 0.2f;
 
     private Rigidbody2D rb;
-    [SerializeField]private bool isKnockedBack = false;
+    private bool isKnockedBack = false;
 
     PrototypePlayerMovementControls playerControls;
 
@@ -56,16 +57,30 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvulnerable) { return; }
         StartCoroutine(DamagerRoutine(damageAmount, enemy));
+
     }
 
     IEnumerator DamagerRoutine(int damageAmount, BasicEnemyAttackState enemy)
     {
         currentHealth -= damageAmount; //How much health is lost
 
+        //Notify UI on health change
         playerHealthChanged.Raise(this, currentHealth);//Raise the player health event after change
 
         //Invulnerability function
         isInvulnerable = true;
+
+        //Death & send to start function
+        if (currentHealth == 2)
+        {
+            Transform newPos = transform;
+            playerHealthChanged.Raise(this, newPos);
+        }
+        else if (currentHealth <= 0)
+        {
+            Transform deathPos = transform;
+            playerDeath.Raise(this, deathPos);
+        }
 
         //Knockback function
         Vector2 direction = (transform.position - enemy.transform.position).normalized;

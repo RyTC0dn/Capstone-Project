@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// This script is in need of revision
@@ -63,6 +64,22 @@ public class GameManager : MonoBehaviour
     void Update()
     {
        
+    }
+
+    //When player loses 2 hp
+    public void SendPlayerToStart(Component sender, object data)
+    {
+        if (data is Transform && playerSpawnPoint != null && sender is PlayerHealth)
+        {
+            //GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Transform player = (Transform)data;
+            if (player)
+            {
+                Debug.Log("Teleport player");
+                player.transform.position = playerSpawnPoint.transform.position;
+            }
+            
+        }
     }
 
     public void CoinCollection(int gainAmount)
