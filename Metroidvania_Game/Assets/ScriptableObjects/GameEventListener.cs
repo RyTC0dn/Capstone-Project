@@ -6,9 +6,11 @@ public class CustomGameEvent : UnityEvent<Component, object> { }
 
 public class GameEventListener : MonoBehaviour
 {
-    public GameEvent gameEvent;
+    public string eventDescription; //Just to help explain what each game listener is listening for
 
-    public CustomGameEvent response;
+    public GameEvent gameEvent; //The game event that you want the specific object to be looking out for
+
+    public CustomGameEvent response; //The function that is called when game event is recieved
 
     private void OnEnable()
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum States
 {
-    None,
+    Idle,
     Patrol, 
     Attack, 
 }
@@ -54,7 +54,7 @@ public class BasicEnemyControls : MonoBehaviour
                 enemyPatrolState.enabled = true;
                 attackState.enabled = false;
                 break;
-            case States.None:
+            case States.Idle:
                 enemyPatrolState.enabled = false;
                 attackState.enabled = false;
                 break;

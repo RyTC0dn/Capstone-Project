@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventDescription: When player attacks enemy, deplete health
   gameEvent: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
   response:
     m_PersistentCalls:

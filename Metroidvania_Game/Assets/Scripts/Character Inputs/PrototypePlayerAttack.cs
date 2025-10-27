@@ -78,11 +78,6 @@ public class PrototypePlayerAttack : MonoBehaviour
         StartCoroutine(ResetWeapon());
     }
 
-    public void SwordDamage()
-    {
-
-    }
-
     private IEnumerator ResetWeapon()
     {
         yield return new WaitForSeconds(0.6f);

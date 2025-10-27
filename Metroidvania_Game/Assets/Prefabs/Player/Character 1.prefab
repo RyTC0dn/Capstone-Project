@@ -681,6 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventDescription: If enemy attacks player, deplete HP
   gameEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
   response:
     m_PersistentCalls:
@@ -728,6 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventDescription: Update UI when player HP changes
   gameEvent: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
   response:
     m_PersistentCalls:
@@ -756,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventDescription: Update UI when coin amount changes
   gameEvent: {fileID: 11400000, guid: ddc47c283e2827c4eb3c46d47d97f4db, type: 2}
   response:
     m_PersistentCalls:

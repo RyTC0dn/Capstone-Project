@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5845898335328023294}
   - component: {fileID: 8072791704070279469}
   - component: {fileID: 8789652016206958642}
+  - component: {fileID: -2676361756894015011}
+  - component: {fileID: -5814837572841073523}
   - component: {fileID: 3655159408340829999}
   m_Layer: 0
   m_Name: FlyingEnemy
@@ -205,6 +207,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   damage: 1
+  onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+--- !u!114 &-2676361756894015011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253066347139419439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3707780e1cbb23d4e9b23170a8ee4994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 2
+  coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
+  enemyHealthChanged: {fileID: 11400000, guid: 2c4e69920e841d24194ed31a4adf759d, type: 2}
+  kbForce: 100
+  kbDuration: 0.2
+--- !u!114 &-5814837572841073523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253066347139419439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2676361756894015011}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: OnPlayerAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &3655159408340829999
 Animator:
   serializedVersion: 7

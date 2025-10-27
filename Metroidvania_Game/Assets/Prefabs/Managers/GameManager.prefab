@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventDescription: If player is at 2 HP, send to start of level
   gameEvent: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
   response:
     m_PersistentCalls:
