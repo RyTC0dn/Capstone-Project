@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 1738102152285120063}
   - component: {fileID: 6882289011308714259}
   - component: {fileID: 3667328185078059184}
+  - component: {fileID: -7026798499587039841}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player
@@ -662,14 +663,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 4
-  isInvulnerable: 0
+  currentHealth: 0
   invulnerableTimer: 2
   playerHealthChanged: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
-  playerBackToStart: {fileID: 11400000, guid: 5d22a3de9227ea843a1ab7ffe03e7043, type: 2}
   playerDeath: {fileID: 11400000, guid: 3080337d67e433a4fb693fee7716ae74, type: 2}
   kbForce: 10
   kbDuration: 0.2
-  isKnockedBack: 0
 --- !u!114 &1738102152285120063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +735,34 @@ MonoBehaviour:
       - m_Target: {fileID: 6882289011308714259}
         m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
         m_MethodName: UpdateHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-7026798499587039841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ddc47c283e2827c4eb3c46d47d97f4db, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6882289011308714259}
+        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
+        m_MethodName: UpdateCoins
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

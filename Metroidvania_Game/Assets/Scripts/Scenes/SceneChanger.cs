@@ -24,7 +24,7 @@ public class SceneChanger : MonoBehaviour
     /// <summary>
     /// Ryan's added functions 
     /// </summary>
-    /// 
+    /// If player has 0 hp 
     public void OnPlayerDeath(Component sender, object data)
     {
         if (sender is PlayerHealth)

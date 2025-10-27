@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2f0ef124cbd4743ae4e4d5e63d55e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
+  coinsCollected: 0
+  coinCollection: {fileID: 11400000, guid: ddc47c283e2827c4eb3c46d47d97f4db, type: 2}
 --- !u!95 &-1381410457892553643
 Animator:
   serializedVersion: 7

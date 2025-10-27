@@ -15,8 +15,10 @@ public class Elevator : MonoBehaviour
     /// </summary>
     public string elevatorLocationName;
 
-    [Header("Elevator Animations")]
+    [Header("Elevator Setup")]
     private Animator elevatorAnimation;
+    [SerializeField]private bool isNear;
+    public GameEvent teleportPlayer;
 
     [Header("UI Setup")]
     public GameObject buttonPrefab;
@@ -33,6 +35,8 @@ public class Elevator : MonoBehaviour
         GenerateButton("Elevator_Entrance", 1);
         GenerateButton("Elevator_A2", 4);
         parentPanel.SetActive(false);
+
+        isNear = ElevatorManager.instance.isNearElevator;
     }
 
     private void Update()
@@ -48,6 +52,15 @@ public class Elevator : MonoBehaviour
             parentPanel.SetActive(false);
         }
         
+    }
+
+    public void OnTeleportUp(Transform pos, Collider2D collision)
+    {
+        if (isNear && collision.CompareTag("Player"))
+        {
+            collision.transform.position = pos.position;
+            teleportPlayer.Raise(this, pos);
+        }
     }
 
     void GenerateButton(string destinationName, int index)
@@ -78,17 +91,14 @@ public class Elevator : MonoBehaviour
         ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
         ElevatorManager.instance.isActive = false;
         elevatorAnimation.SetTrigger("CloseDoor");
-        if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
-        {
-           
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            ElevatorManager.instance.isNearElevator = true;
+            isNear = true;
+            ElevatorManager.instance.SetElevator(this);
         }       
     }
 
@@ -96,7 +106,7 @@ public class Elevator : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ElevatorManager.instance.isNearElevator = false;
+            isNear = false;
         }        
     }
 }
