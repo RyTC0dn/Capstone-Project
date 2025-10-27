@@ -9,6 +9,12 @@ public class AxeLogic : MonoBehaviour
     [SerializeField]
     float hSpeed = 1.0f;
     [SerializeField]
+    float attackRate = 1.0f;
+
+
+    private float nextTimeToAttack;
+
+    [SerializeField]
     Rigidbody2D rb2D;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
