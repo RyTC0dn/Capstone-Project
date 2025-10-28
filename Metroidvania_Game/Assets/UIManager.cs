@@ -23,7 +23,9 @@ public class UIManager : MonoBehaviour
 
     PrototypePlayerMovementControls playerControls;
     PrototypePlayerAttack playerAttack;
-    //public GameObject pauseMenu;
+
+    public GameObject pauseMenu;
+    public static bool isGamePaused = false;
 
 
     private void Awake()
@@ -51,7 +53,17 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGamePaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 
     /// <summary>
@@ -93,4 +105,21 @@ public class UIManager : MonoBehaviour
     //        GameManager.instance.OnPause();
     //    }
     //}
+
+
+    void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isGamePaused = false;
+    }
+
+    void Pause()
+    {
+        pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        isGamePaused = true;
+    }
+
+
 }
