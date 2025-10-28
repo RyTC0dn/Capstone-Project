@@ -27,7 +27,7 @@ public class EnemyTurret : MonoBehaviour
     {
         if(firingCooldown <= 0)
         {
-            Instantiate(bullet, firingPoint.transform.position, Quaternion.identity);
+            Instantiate(bullet, firingPoint.transform.position, transform.rotation);
             firingCooldown = 1f / firingRate;
         }
         firingCooldown -= Time.deltaTime;        

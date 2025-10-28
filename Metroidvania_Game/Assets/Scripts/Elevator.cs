@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System;
 
 public class Elevator : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class Elevator : MonoBehaviour
     [Header("Elevator Setup")]
     private Animator elevatorAnimation;
     [SerializeField]private bool isNear = false;
-    [SerializeField]private bool isActive;
+    [SerializeField]private bool isCurrentElevator;
     public GameEvent teleportPlayer;
 
     [Header("UI Setup")]
@@ -33,53 +35,66 @@ public class Elevator : MonoBehaviour
         elevatorAnimation = GetComponent<Animator>();
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
-        GenerateButton("Elevator_Entrance", 1);
-        GenerateButton("Elevator_A2", 4);
         parentPanel.SetActive(false);
     }
 
     private void Update()
     {
-        ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list
-        if (isActive)
+        if (ElevatorManager.instance.elevators.Count >= 0)
         {
-            elevatorAnimation.SetTrigger("OpenDoor");
-            parentPanel.SetActive(true);
-        }
-        else if(!isActive)
-        {
-            parentPanel.SetActive(false);
-        }
-        
+
+        }            
     }
 
-    public void OnPlayerInteract(Component sender, object data)
+    public void OnInteract(Component sender, object data)
     {
-        if (data is bool && sender is PrototypePlayerMovementControls)
+        if (data is bool interact && interact && isNear)
         {
-           
-            
+           if(ElevatorManager.instance.ElevatorCount > 1)
+            {
+                elevatorAnimation.SetTrigger("OpenDoor");
+                ElevatorManager.instance.SetElevator(this);
+                GenerateButtons();
+                parentPanel.SetActive(true);
+                Debug.Log("Event recieved");
+            }
         }
     }
 
-    void GenerateButton(string destinationName, int index)
+    void GenerateButtons()
+    {
+        //Clear existing buttons
+        foreach (Transform child in parentPanel.transform)
+            Destroy(child.gameObject);
+
+        Elevator upElevator = ElevatorManager.instance.GetNextElevator(this, true);
+        Elevator downElevator = ElevatorManager.instance.GetNextElevator(this, false);
+
+        int index = 0;
+        if(upElevator != null)
+        {
+            CreateButton("UP", upElevator.elevatorLocationName, index++);
+        }
+
+        if (downElevator != null)
+            CreateButton("DOWN", downElevator.elevatorLocationName, index++);
+    }
+    private void CreateButton(string labelText, string destinationName, int index)
     {
         GameObject newButton = Instantiate(buttonPrefab, parentPanel.transform);
 
         RectTransform rect = newButton.GetComponent<RectTransform>();
         rect.anchoredPosition = new Vector2(0, index * buttonSpacing);
 
-        newButton.name = "Floor Button";
-
         TextMeshProUGUI label = newButton.GetComponentInChildren<TextMeshProUGUI>();
-        if (label != null )
+        if (label != null)
         {
-            label.text = destinationName;
+            label.text = labelText;
         }
-       
+
 
         Button buttonComponent = newButton.GetComponent<Button>();
-        if( buttonComponent != null )
+        if (buttonComponent != null)
         {
             buttonComponent.onClick.AddListener(() => OnButtonClicked(destinationName));
         }
@@ -87,9 +102,10 @@ public class Elevator : MonoBehaviour
 
     void OnButtonClicked(string destinationName)
     {
+
         ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
-        isActive = false;
         elevatorAnimation.SetTrigger("CloseDoor");
+        parentPanel.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -97,7 +113,12 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = true;
-            ElevatorManager.instance.SetElevator(this);
+            ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list   
+            foreach (string key in ElevatorManager.instance.elevators.Keys)
+            {
+                Debug.Log($"Elevator" + key);
+            }
+           
         }       
     }
 

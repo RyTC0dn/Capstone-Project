@@ -18,7 +18,6 @@ public class SaveSurvivor : MonoBehaviour
 
     public TextMeshProUGUI npcName;
     public TextMeshProUGUI dialogueText;
-    public GameObject EndText;
 
     private int activeLineIndex = 0;
     private bool conversationActive = false;
@@ -28,7 +27,6 @@ public class SaveSurvivor : MonoBehaviour
     void Start()
     {
         textBubble.SetActive(false);
-        EndText.SetActive(false);
     }
 
     // Update is called once per frame

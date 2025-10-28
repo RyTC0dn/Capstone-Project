@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using System.Linq;
+using Unity.VisualScripting;
 
 public class ElevatorManager : MonoBehaviour
 {
     public static ElevatorManager instance {  get; private set; }
 
+    private readonly List<Elevator> elevatorList = new List<Elevator>();
     public Dictionary<string, Elevator> elevators = new Dictionary<string, Elevator>();
     private Elevator currentElevator;
     public bool isNearElevator = false;
@@ -27,7 +30,8 @@ public class ElevatorManager : MonoBehaviour
     {
         if(!elevators.ContainsKey(elevator.elevatorLocationName))
         {
-            elevators.Add(elevator.elevatorLocationName, elevator);            
+            elevators.Add(elevator.elevatorLocationName, elevator);
+            elevatorList.Add(elevator);
         }
     }
 
@@ -35,7 +39,6 @@ public class ElevatorManager : MonoBehaviour
     {
         currentElevator = elevator;
     }
-
     public void TeleportPlayer(string destinationName, Transform player)
     {
         if (elevators.ContainsKey(destinationName))
@@ -54,13 +57,20 @@ public class ElevatorManager : MonoBehaviour
         }
     }
 
-    public void DisablePlayerControl()
+    //Get the elevator above or below based on the order in which they were registered
+    public Elevator GetNextElevator(Elevator current, bool goingUp)
     {
+        int currentIndex = elevatorList.IndexOf(current);
+        if (currentIndex < 0) return null;
 
+        if(goingUp && currentIndex < elevatorList.Count - 1)
+            return elevatorList[currentIndex + 1];
+        if (!goingUp && currentIndex > 0)
+            return elevatorList[currentIndex - 1];
+
+        return null; //No elevator in that direction
     }
 
-    public void EnablePlayerControl()
-    {
+    public int ElevatorCount => elevatorList.Count;
 
-    }
 }

@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213439436960719431}
   - component: {fileID: 6202914246014620635}
-  - component: {fileID: 8529787102480037723}
+  - component: {fileID: -7619205860605305217}
   - component: {fileID: 6737378917719057375}
   - component: {fileID: 927398534323250630}
   - component: {fileID: 6363153760429775754}
@@ -140,11 +140,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elevatorLocationName: 
   isNear: 0
+  isActive: 0
   teleportPlayer: {fileID: 11400000, guid: 230ad68fe92e39f479b82ede584c6a0e, type: 2}
   buttonPrefab: {fileID: 3081688810251628998, guid: 0a78cd2253c2d284b899178df0d46e60, type: 3}
   parentPanel: {fileID: 7934425359997460790}
-  buttonSpacing: -50
---- !u!114 &8529787102480037723
+  buttonSpacing: 0
+--- !u!114 &-7619205860605305217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +164,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6202914246014620635}
         m_TargetAssemblyTypeName: Elevator, Assembly-CSharp
-        m_MethodName: OnPlayerInteract
+        m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

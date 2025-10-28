@@ -63,18 +63,19 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
     }
 
-    public void InteractEvent(bool isPressed)
+    public void InteractEvent()
     {
+        //Activate interact event 
         bool pressKey = Keyboard.current.eKey.isPressed;
-        bool pressButton = Gamepad.current.xButton.isPressed;
+        bool pressButton = Gamepad.current?.xButton.isPressed ?? false;
 
-        isPressed = pressKey || pressButton;
+        bool isPressed = pressKey || pressButton;
+
         //If either the ekey or xButton is pressed
         if (isPressed )
         {
             //Send the interact event out
             interactEvent.Raise(this, isPressed);
-            Debug.Log("Interact event raised");
         }
     }
 
@@ -94,6 +95,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //    //Set dash function
         //    Dash(hSpeed);
         //}
+
+
+        InteractEvent();
     }
 
     private void Move(float hSpeed)
