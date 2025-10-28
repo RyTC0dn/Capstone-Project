@@ -177,6 +177,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
@@ -199,7 +203,7 @@ PrefabInstance:
       addedObject: {fileID: 1906923991335954127}
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 705458177777446636}
+      addedObject: {fileID: -1007506165360875067}
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5342541874613903044}
@@ -328,7 +332,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &705458177777446636
+--- !u!114 &-1007506165360875067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,7 +366,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 705458177777446636}
+      - m_Target: {fileID: -1007506165360875067}
         m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
         m_MethodName: OnPlayerAttack
         m_Mode: 0

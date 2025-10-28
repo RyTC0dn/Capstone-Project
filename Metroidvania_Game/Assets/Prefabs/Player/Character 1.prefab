@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4795f3eadadc174fbbf199f658bffde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactEvent: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
   playerSpeed: 10
   horizontalSpeed: 0
   animator: {fileID: 8842708863280125052}

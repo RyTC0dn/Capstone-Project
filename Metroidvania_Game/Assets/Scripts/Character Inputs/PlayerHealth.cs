@@ -46,21 +46,21 @@ public class PlayerHealth : MonoBehaviour
     {
         //This function will check if the enemy sent out attack event 
         //and if the sent out data was an integer variable
-        if(sender is BasicEnemyAttackState && data is int damage)
+        if(data is int damage)
         {
-            TakeDamage(damage, sender as BasicEnemyAttackState);
+            TakeDamage(damage, sender);
         }
     }
 
     //These functions are to define how damage to the player works
-    public void TakeDamage(int damageAmount, BasicEnemyAttackState enemy)
+    public void TakeDamage(int damageAmount, Component source = null)
     {
         if (isInvulnerable) { return; }
-        StartCoroutine(DamagerRoutine(damageAmount, enemy));
+        StartCoroutine(DamagerRoutine(damageAmount, source));
 
     }
 
-    IEnumerator DamagerRoutine(int damageAmount, BasicEnemyAttackState enemy)
+    IEnumerator DamagerRoutine(int damageAmount, Component source)
     {
         currentHealth -= damageAmount; //How much health is lost
 
@@ -83,7 +83,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         //Knockback function
-        Vector2 direction = (transform.position - enemy.transform.position).normalized;
+        Vector2 direction = (transform.position - source.transform.position).normalized;
         StartCoroutine(Knockback(direction));
 
         if (sprite != null)

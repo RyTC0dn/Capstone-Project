@@ -9,7 +9,6 @@ public class ElevatorManager : MonoBehaviour
     public Dictionary<string, Elevator> elevators = new Dictionary<string, Elevator>();
     private Elevator currentElevator;
     public bool isNearElevator = false;
-    public bool isActive = false;
 
     [SerializeField]private string currentElevatorName;
 
@@ -52,31 +51,6 @@ public class ElevatorManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"Destination {destinationName} not found");
-        }
-    }
-
-    public void OnTeleportUp(Component sender, object data)
-    {
-        if (sender is not Elevator)
-        {
-            Debug.LogWarning("Teleport event is being called by non elevator sender");
-            return;
-        }
-
-        foreach (var kvp in elevators)
-        {
-            //Find the next elevator destination in the dictionary
-            if (kvp.Value == currentElevator)
-            {
-                continue;
-            }
-
-            Vector3 targetPos = kvp.Value.transform.position;
-            Transform player = (Transform)data;
-            player.position = targetPos;
-            Debug.Log("Has Teleported");
-
-            break;
         }
     }
 

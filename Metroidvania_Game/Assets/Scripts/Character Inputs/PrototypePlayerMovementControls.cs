@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
-
+    public GameEvent interactEvent;
      
     public float playerSpeed;
     [HideInInspector] public float horizontalSpeed;
@@ -63,10 +63,19 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InteractEvent(bool isPressed)
     {
-       
+        bool pressKey = Keyboard.current.eKey.isPressed;
+        bool pressButton = Gamepad.current.xButton.isPressed;
+
+        isPressed = pressKey || pressButton;
+        //If either the ekey or xButton is pressed
+        if (isPressed )
+        {
+            //Send the interact event out
+            interactEvent.Raise(this, isPressed);
+            Debug.Log("Interact event raised");
+        }
     }
 
     //FixedUpdate runs every frame at a set interval 
@@ -85,7 +94,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //    //Set dash function
         //    Dash(hSpeed);
         //}
-       
     }
 
     private void Move(float hSpeed)
