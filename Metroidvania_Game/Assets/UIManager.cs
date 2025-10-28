@@ -98,6 +98,15 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Town");
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isGamePaused = false;
+
+    }
+
     //public void PauseMenu() //This function will work to 
     //{
     //    if(Keyboard.current.escapeKey.isPressed)
@@ -107,7 +116,7 @@ public class UIManager : MonoBehaviour
     //}
 
 
-    void Resume()
+    public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -120,6 +129,4 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         isGamePaused = true;
     }
-
-
 }
