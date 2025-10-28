@@ -1236,6 +1236,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7547074649022990986, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
   m_PrefabInstance: {fileID: 798822220}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &798822222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 13001518588789888, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 798822220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &798822223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7254659452413158627, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 798822220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &798822224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3423771825553767354, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 798822220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &798822225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 617140855126539496, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 798822220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &818285781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,9 +4342,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9104788137208622746, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 798822225}
+    - target: {fileID: 9104788137208622746, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
       propertyPath: coinCount
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9104788137208622746, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 798822222}
+    - target: {fileID: 9104788137208622746, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
+      propertyPath: playerHealthText
+      value: 
+      objectReference: {fileID: 798822224}
+    - target: {fileID: 9104788137208622746, guid: c46447ad8eac06a4a88757100bd088f0, type: 3}
+      propertyPath: swordAttackStatText
+      value: 
+      objectReference: {fileID: 798822223}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
