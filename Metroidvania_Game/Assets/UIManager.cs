@@ -66,14 +66,12 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void UpdateUI() 
     {
-        coinText.text = "Coins: " + GameManager.instance.currentCoins.ToString();
-        //Add text here to update when player health changes
-        swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
+
     }
 
     private void SetPlayerHealth(int health)
     {
-        playerHealthText.text = "Player Lives: " + health.ToString();
+
     }
 
     public void UpdatePlayerHealth(Component sender, object data)
