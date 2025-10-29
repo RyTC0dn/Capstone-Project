@@ -16,10 +16,11 @@ public class UIManager : MonoBehaviour
     private int coinCount;
     public static UIManager instance {  get; private set; }
 
-    //Text mesh pro variables
-    public TextMeshProUGUI coinText;
-    public TextMeshProUGUI playerHealthText;
-    public TextMeshProUGUI swordAttackStatText;
+    PrototypePlayerMovementControls playerControls;
+    PrototypePlayerAttack playerAttack;
+
+    public GameObject pauseMenu;
+    public static bool isGamePaused = false;
 
 
     private void Awake()
@@ -45,42 +46,19 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    /// <summary>
-    /// This function is to store variables into text form and update 
-    /// the UI respectively to each UI elements
-    /// *This may get changed slightly with more finalized UI
-    /// </summary>
-    public void UpdateUI() 
-    {
-        coinText.text = "Coins: " + GameManager.instance.currentCoins.ToString();
-        //Add text here to update when player health changes
-        swordAttackStatText.text = "+" + GameManager.instance.upgradeValue.ToString();
-    }
-
-    private void SetPlayerHealth(int health)
-    {
-        playerHealthText.text = "Player Lives: " + health.ToString();
-    }
-
-    public void UpdatePlayerHealth(Component sender, object data)
-    {
-        //If (sender is PlayerHealth)
-        if(data is int)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            int amount = (int)data;
-            SetPlayerHealth(amount);
-        }        
-    } 
-
-    public void Upgrade(int price)
-    {
-        GameManager.instance.upgradeValue++;
-        GameManager.instance.currentCoins -= price;
-        UpdateUI();
+            if (isGamePaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
+
 
     /// <summary>
     /// This portion of the code will be dedicated to the start menu 
@@ -95,6 +73,15 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Town");
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isGamePaused = false;
+
+    }
+
     //public void PauseMenu() //This function will work to 
     //{
     //    if(Keyboard.current.escapeKey.isPressed)
@@ -102,4 +89,19 @@ public class UIManager : MonoBehaviour
     //        GameManager.instance.OnPause();
     //    }
     //}
+
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isGamePaused = false;
+    }
+
+    void Pause()
+    {
+        pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        isGamePaused = true;
+    }
 }

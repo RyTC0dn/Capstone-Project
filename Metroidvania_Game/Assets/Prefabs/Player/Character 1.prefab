@@ -186,11 +186,6 @@ GameObject:
   - component: {fileID: 7047053321633390745}
   - component: {fileID: 2498357903997023080}
   - component: {fileID: 7230040857322067965}
-  - component: {fileID: 3847019986680353522}
-  - component: {fileID: 1738102152285120063}
-  - component: {fileID: 6882289011308714259}
-  - component: {fileID: 3667328185078059184}
-  - component: {fileID: -7026798499587039841}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player
@@ -214,7 +209,7 @@ Transform:
   - {fileID: 1315659585227152191}
   - {fileID: 4675273244458121808}
   - {fileID: 4976545575644392218}
-  - {fileID: 6523988455173610639}
+  - {fileID: 764331051610389760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7411665141688049481
@@ -288,7 +283,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: ed44bf8e69b2d274d91c8cadefaed251, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -311,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4795f3eadadc174fbbf199f658bffde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactEvent: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
   playerSpeed: 10
   horizontalSpeed: 0
   animator: {fileID: 8842708863280125052}
@@ -322,8 +316,6 @@ MonoBehaviour:
   dashTimer: 0.5
   dashTime: 0
   isFacingRight: 1
-  kbForce: 10
-  kbDuration: 0.2
 --- !u!114 &2249839468151686403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 2114391638023403610}
+  damageValue: 1
   character: 0
 --- !u!114 &2684591189990701646
 MonoBehaviour:
@@ -610,7 +603,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ed44bf8e69b2d274d91c8cadefaed251, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -651,131 +644,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldCollider: {fileID: 2070233484509633412}
   shieldDuration: 0
---- !u!114 &3847019986680353522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ca97281455d69445a8c2d02c4b89d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalHealth: 4
-  currentHealth: 0
-  invulnerableTimer: 2
-  playerHealthChanged: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
-  playerDeath: {fileID: 11400000, guid: 3080337d67e433a4fb693fee7716ae74, type: 2}
-  kbForce: 10
-  kbDuration: 0.2
---- !u!114 &1738102152285120063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: If enemy attacks player, deplete HP
-  gameEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3847019986680353522}
-        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
-        m_MethodName: OnEnemyAttack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6882289011308714259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f3c730a61489a429ba356b31393497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthText: {fileID: 9192130171430869557}
-  coinText: {fileID: 6377705871176392039}
-  clockIcons:
-  - {fileID: 1616763695370509815}
-  - {fileID: 1155872476471832455}
-  fullClockSprite: {fileID: 1077252281, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
-  brokenClockSprite: {fileID: 1297207775, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
---- !u!114 &3667328185078059184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: Update UI when player HP changes
-  gameEvent: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6882289011308714259}
-        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
-        m_MethodName: UpdateHealth
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-7026798499587039841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: Update UI when coin amount changes
-  gameEvent: {fileID: 11400000, guid: ddc47c283e2827c4eb3c46d47d97f4db, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6882289011308714259}
-        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
-        m_MethodName: UpdateCoins
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6740129528520037912
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +654,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1315659585227152191}
   - component: {fileID: 2114391638023403610}
-  - component: {fileID: 5628919377077740465}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Weapon
@@ -853,23 +720,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.9618382, y: 2.82}
+  m_Size: {x: 6.9618382, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5628919377077740465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740129528520037912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e93d72c2eb13f94fa083a416865925d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 1
-  onPlayerAttack: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
---- !u!1001 &3325779994181909808
+--- !u!1001 &9094215348815060159
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -880,18 +733,6 @@ PrefabInstance:
     - target: {fileID: 3525228626060762247, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
       propertyPath: m_Name
       value: PlayerUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093772207626003749, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093772207626003749, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093772207626003749, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8407753931384381887, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
       propertyPath: m_Pivot.x
@@ -978,52 +819,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
---- !u!114 &1155872476471832455 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4480501826358153911, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-  m_PrefabInstance: {fileID: 3325779994181909808}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1616763695370509815 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055611635050389703, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-  m_PrefabInstance: {fileID: 3325779994181909808}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6377705871176392039 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8549418669626908759, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-  m_PrefabInstance: {fileID: 3325779994181909808}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &6523988455173610639 stripped
+--- !u!224 &764331051610389760 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8407753931384381887, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-  m_PrefabInstance: {fileID: 3325779994181909808}
+  m_PrefabInstance: {fileID: 9094215348815060159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9192130171430869557 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5888046364601460485, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
-  m_PrefabInstance: {fileID: 3325779994181909808}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
