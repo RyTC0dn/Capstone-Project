@@ -11,7 +11,7 @@ public enum States
 public class BasicEnemyControls : MonoBehaviour
 {
     [Header ("Enemy States")]
-    BasicEnemyPatrolState enemyPatrolState;
+    BasicEnemyPatrolState patrolState;
     BasicEnemyAttackState attackState;
     public States currentEnemyState;
 
@@ -29,7 +29,7 @@ public class BasicEnemyControls : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyPatrolState = GetComponent<BasicEnemyPatrolState>();
+        patrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         attackState = GetComponent<BasicEnemyAttackState>();
     }
@@ -48,14 +48,14 @@ public class BasicEnemyControls : MonoBehaviour
         {
             case States.Attack:
                 attackState.enabled = true;
-                enemyPatrolState.enabled = false;
+                patrolState.enabled = false;
                 break;
             case States.Patrol:
-                enemyPatrolState.enabled = true;
+                patrolState.enabled = true;
                 attackState.enabled = false;
                 break;
             case States.Idle:
-                enemyPatrolState.enabled = false;
+                patrolState.enabled = false;
                 attackState.enabled = false;
                 break;
         }        

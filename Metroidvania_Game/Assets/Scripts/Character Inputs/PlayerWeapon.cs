@@ -12,7 +12,19 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (collision.CompareTag("GroundEnemy"))
         {
-            onPlayerAttack.Raise(this, damageValue);
+            onPlayerAttack.Raise(this, new AttackData(collision.gameObject, damageValue));
         }
+    }
+}
+
+public class AttackData
+{
+    public GameObject target;
+    public int damage; 
+
+    public AttackData(GameObject target, int damage)
+    {
+        this.target = target;
+        this.damage = damage;
     }
 }

@@ -71,6 +71,11 @@ public class ElevatorManager : MonoBehaviour
         return null; //No elevator in that direction
     }
 
+    public List<Elevator> GetElevatorList()
+    {
+        return new List<Elevator>(elevators.Values);
+    }
+
     public int ElevatorCount => elevatorList.Count;
 
 }

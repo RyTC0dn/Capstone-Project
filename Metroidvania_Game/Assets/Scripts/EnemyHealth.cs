@@ -6,10 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Enemy Stats")]
     public int totalHealth = 2;
-    private int enemyHealth;
+    [SerializeField]private int enemyHealth;
     public GameObject coinDrop;
-
-    public GameEvent enemyHealthChanged;
 
     [Header("Knockback")]
     public float kbForce = 100f;
@@ -36,9 +34,13 @@ public class EnemyHealth : MonoBehaviour
 
     public void OnPlayerAttack(Component sender, object data)
     {
-        if(sender is PlayerWeapon && data is int damage)
+        if(data is AttackData attack)
         {
-            EnemyDamage(damage);
+            if (attack.target == this.gameObject)
+            {
+                EnemyDamage(attack.damage);
+                Debug.Log("Recieved attack");
+            }
         }
     }
 
@@ -46,10 +48,9 @@ public class EnemyHealth : MonoBehaviour
     {        
        enemyHealth -= damage;
         Debug.Log("Enemy hit");
-        enemyHealthChanged.Raise(this, enemyHealth);
 
         //Knockback function
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("Weapon");
         if(player != null)
         {
             Vector2 direction = (transform.position - player.transform.position).normalized;

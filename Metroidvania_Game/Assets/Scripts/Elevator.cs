@@ -67,17 +67,31 @@ public class Elevator : MonoBehaviour
         foreach (Transform child in parentPanel.transform)
             Destroy(child.gameObject);
 
-        Elevator upElevator = ElevatorManager.instance.GetNextElevator(this, true);
-        Elevator downElevator = ElevatorManager.instance.GetNextElevator(this, false);
+        List<Elevator> elevators = ElevatorManager.instance.GetElevatorList();
+        int currentIndex = elevators.IndexOf(this);
+
+        if (currentIndex == -1)
+        {
+            Debug.LogWarning("Elevator not found in list");
+            return;
+        }
 
         int index = 0;
-        if(upElevator != null)
+
+        //If this is not the first elevator, create up button
+        if (currentIndex > 0)
         {
+            Elevator upElevator = elevators[currentIndex - 1];
             CreateButton("UP", upElevator.elevatorLocationName, index++);
         }
 
-        if (downElevator != null)
+        //If this is not te last elevator, create down button
+        if (currentIndex < elevators.Count - 1)
+        {
+            Elevator downElevator = elevators[currentIndex + 1];
             CreateButton("DOWN", downElevator.elevatorLocationName, index++);
+        }
+     
     }
     private void CreateButton(string labelText, string destinationName, int index)
     {
