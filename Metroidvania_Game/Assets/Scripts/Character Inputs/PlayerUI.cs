@@ -8,21 +8,29 @@ public class PlayerUI : MonoBehaviour
     [Header("UI Text")]
     public TextMeshProUGUI playerHealthText;
     public TextMeshProUGUI coinText;
+    public TextMeshProUGUI weaponUpgradeText;
 
     [Header("HP Icon")]
     public List<Image> clockIcons = new List<Image>(); //Drag each UI Clock image in order
     public Sprite fullClockSprite;
     public Sprite brokenClockSprite;
 
-    private int totalHealth = 4;
-    private int totalCoin = 0;
-    public int currentCoin;
+    [SerializeField]private int totalHealth = 4;
+    public int totalCoin = 0;
+    [SerializeField]private int currentCoin;
+    private int totalUpgradeLevel = 0;
+    public int currentUpgrade;
+    private int upgradeValue = 1;
 
     private void Awake()
     {
+        //Setting the current UI values with the total values
         currentCoin = totalCoin;
+        currentUpgrade = totalUpgradeLevel;
+
         SetHealth(totalHealth);
         SetCoin(currentCoin);
+        SetUpgrade(currentUpgrade);
     }
 
     private void SetHealth(int health)
@@ -94,6 +102,25 @@ public class PlayerUI : MonoBehaviour
                 SetCoin(currentCoin);
             }
             
+        }
+    }
+
+    private void SetUpgrade(int upgrade)
+    {
+        weaponUpgradeText.text = "+"+upgrade.ToString();
+    }
+
+    public void UpgradeUpdate(Component sender, object data)
+    {
+        if (data is bool bought)
+        {
+            Debug.Log($"{bought}");
+            if (currentCoin > 0)
+            {
+                currentUpgrade += upgradeValue;
+                SetUpgrade(currentUpgrade);
+                Debug.Log($"{bought}");
+            }
         }
     }
 

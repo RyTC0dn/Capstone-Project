@@ -12,28 +12,29 @@ public class PrototypeShop : MonoBehaviour
 
     [Header("General Shop Setup")]
     public TextMeshProUGUI interactText;
-    PrototypePlayerMovementControls playerMovementControls;
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
-    public bool boughtAxe = false;
 
     public GameEvent buyEvent; //For whenever the player buys something
+    public GameEvent axeBoughtEvent; //
+    public GameEvent upgradeBoughtEvent; //Checking if upgrade bought to update UI
 
     [Header("Shop Prices")]
     ///Shop prices
     ///May turn to using arrays to store prices as to not clutter too much
     public int upgradePrice = 8;
-    public int weaponUpgradeValue = 1;
     public int axePrice = 2;
 
     public bool isNearShop = false;
     private bool isShopping = false;
 
+    [SerializeField]private bool boughtAxe = false;
+    [SerializeField]private bool boughtUpgrade = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
-        playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = false;
@@ -65,12 +66,16 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        buyEvent.Raise(this, upgradePrice);        
+        buyEvent.Raise(this, upgradePrice); 
+        boughtUpgrade = true;
+        upgradeBoughtEvent.Raise(this, boughtUpgrade);
     }
 
     public void BuyAxe() //Function for buying the axe
     {
         buyEvent.Raise(this, axePrice);
+        boughtAxe = true;
+        axeBoughtEvent.Raise(this, boughtAxe);
     }
 
     public void Display(string hoverText)
@@ -82,7 +87,6 @@ public class PrototypeShop : MonoBehaviour
     {
         shopUI.SetActive(false);
         GameManager.instance.StateSwitch(GameStates.Play);
-
     }
 
     //Check if the player is close to display the interact text 

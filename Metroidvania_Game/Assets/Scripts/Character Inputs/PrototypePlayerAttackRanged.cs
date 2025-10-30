@@ -8,6 +8,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     public Transform firePoint;
     public GameObject projectilePrefab;
     [SerializeField] private Animator animator;
+    [SerializeField] private bool isAxeBought = false;
 
 
     PrototypePlayerMovementControls playerController;
@@ -24,9 +25,20 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2") && shop.boughtAxe == true)
+        if (Input.GetButtonDown("Fire2") && isAxeBought)
         {
-            Shoot();                       
+            Shoot();
+        }
+    }
+
+    public void AxeEvent(Component sender, object data)
+    {
+        if(data is bool boughtAxe)
+        {
+            if (boughtAxe)
+            {
+                isAxeBought = true;
+            }           
         }
     }
 

@@ -189,9 +189,10 @@ GameObject:
   - component: {fileID: 7230040857322067965}
   - component: {fileID: 7303601509363141473}
   - component: {fileID: 7255461258010286579}
+  - component: {fileID: -6722716307112760053}
+  - component: {fileID: -1422051152360517390}
   - component: {fileID: -9122513460649579465}
   - component: {fileID: 3152163559832396325}
-  - component: {fileID: -6722716307112760053}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player
@@ -696,12 +697,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthText: {fileID: 3423771825553767354}
   coinText: {fileID: 617140855126539496}
+  weaponUpgradeText: {fileID: 7254659452413158627}
   clockIcons:
   - {fileID: 5894209440874701067}
   - {fileID: 7167940721002120130}
   fullClockSprite: {fileID: 1077252281, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
   brokenClockSprite: {fileID: 1297207775, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
+  totalHealth: 4
   currentCoin: 0
+  currentUpgrade: 0
 --- !u!114 &7255461258010286579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,6 +726,64 @@ MonoBehaviour:
       - m_Target: {fileID: 7303601509363141473}
         m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
         m_MethodName: UpdateHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-6722716307112760053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventDescription: When player buys from shop
+  gameEvent: {fileID: 11400000, guid: 383ae84e9bfb9fd4ea28bba633cf2886, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7303601509363141473}
+        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
+        m_MethodName: UpdateCoins
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-1422051152360517390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventDescription: 'Change the upgrade multiplier '
+  gameEvent: {fileID: 11400000, guid: a1edae8d05a9ad14a8bee6aa050eb024, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7303601509363141473}
+        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
+        m_MethodName: UpgradeUpdate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -770,35 +832,6 @@ MonoBehaviour:
       - m_Target: {fileID: -9122513460649579465}
         m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
         m_MethodName: OnEnemyAttack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-6722716307112760053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: When player buys from shop
-  gameEvent: {fileID: 11400000, guid: 383ae84e9bfb9fd4ea28bba633cf2886, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7303601509363141473}
-        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
-        m_MethodName: UpdateCoins
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1087,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -33.84005
       objectReference: {fileID: 0}
+    - target: {fileID: 4962516116174032323, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8407753931384381887, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1167,6 +1204,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8566230445447172364, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
+      propertyPath: m_Name
+      value: UpgradeText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1210,3 +1251,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4818663613130555865, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
   m_PrefabInstance: {fileID: 9094215348815060159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7254659452413158627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1916456433638111324, guid: 337b046f41323d6488934ec64b8d7630, type: 3}
+  m_PrefabInstance: {fileID: 9094215348815060159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

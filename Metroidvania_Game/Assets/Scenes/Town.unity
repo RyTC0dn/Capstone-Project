@@ -1179,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7303601509363141473, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+      propertyPath: totalCoin
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7547074649022990986, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -1485,12 +1489,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 1484281077}
   shopUI: {fileID: 33535039}
-  boughtAxe: 0
   buyEvent: {fileID: 11400000, guid: 383ae84e9bfb9fd4ea28bba633cf2886, type: 2}
+  axeBoughtEvent: {fileID: 11400000, guid: c38366c6ae30e1945b89a55dabad712a, type: 2}
+  upgradeBoughtEvent: {fileID: 11400000, guid: a1edae8d05a9ad14a8bee6aa050eb024, type: 2}
   upgradePrice: 8
-  weaponUpgradeValue: 1
   axePrice: 2
   isNearShop: 0
+  boughtAxe: 0
+  boughtUpgrade: 0
 --- !u!58 &872061090
 CircleCollider2D:
   m_ObjectHideFlags: 0
