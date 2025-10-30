@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PrototypeShop : MonoBehaviour
 {
+    /// <summary>
+    /// All UI stuff that pertains to the player UI such as, coin, weapon upgrades, buying axe 
+    /// these will be changed for the playtest tomorrow
+    /// </summary>
+
     [Header("General Shop Setup")]
     public TextMeshProUGUI interactText;
     PrototypePlayerMovementControls playerMovementControls;
@@ -57,22 +62,24 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        if(GameManager.instance.currentCoins >= upgradePrice)
-        {
-            uiManager.Upgrade(upgradePrice);
-        }        
+        //Coin UI will be managed by playerUI
+        //if(GameManager.instance.currentCoins >= upgradePrice)
+        //{
+        //    //Will be switched with another peace of code for player UI
+        //}        
     }
 
     public void BuyAxe() //Function for buying the axe
     {
-        //If the player has enough coins to  
-        if(GameManager.instance.currentCoins >= weaponPrice)
-        {
-            GameManager.instance.currentCoins -= weaponPrice;
-            boughtAxe = true;
-            Debug.Log($"Bought Axe is {boughtAxe}");
-            uiManager.UpdateUI();
-        }
+        //Same with this function will have a new event 
+        ////If the player has enough coins to  
+        //if(GameManager.instance.currentCoins >= weaponPrice)
+        //{
+        //    GameManager.instance.currentCoins -= weaponPrice;
+        //    boughtAxe = true;
+        //    Debug.Log($"Bought Axe is {boughtAxe}");
+        //    //Will be replaced by code that will update the player UI
+        //}
     }
 
     public void Display(string hoverText)

@@ -12,10 +12,13 @@ public class BasicEnemyPatrolState : MonoBehaviour
 
     private bool isWaiting = false;
 
-    public int currentWaypointIndex = 0; //Index of current waypoint
+    [SerializeField]private int currentWaypointIndex = 0; //Index of current waypoint
+
+    [Tooltip("Choose how far in the x axis direction you want enemies to move: Ground & Flying")]
     public int positionOffsetX;
+    [Tooltip("Choose how far in the y axis direction you want enemies to move: Only Flying")]
     public int positionOffsetY;
-    private Vector3 startingPos;
+    private Vector3 startingPos; //Whever you set the enemy in scene
     private Vector3[] waypoints;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

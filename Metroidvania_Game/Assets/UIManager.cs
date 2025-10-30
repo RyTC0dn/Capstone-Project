@@ -34,13 +34,12 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        SetPlayerHealth(4);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UpdateUI();
+
     }
 
     // Update is called once per frame

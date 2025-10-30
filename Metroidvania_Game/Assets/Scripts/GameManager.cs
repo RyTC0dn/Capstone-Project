@@ -19,15 +19,12 @@ public class GameManager : MonoBehaviour
     public GameStates state;
     public static GameManager instance { get; private set; }
 
-    [Header("Player UI Stats")]
-    private int coinTracker = 0;
-    public int currentCoins;
-    public int upgradeValue = 0;
-
+    [Header("Audio")]
     UIManager ui;
     public AudioSource coinPickup;
     public AudioSource coinPouch;
     private float timer = 5;
+
 
     private GameObject pauseMenu;
 
@@ -57,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         //Initializing scripts within the game manager
         ui = FindAnyObjectByType<UIManager>();  
-        currentCoins = coinTracker;
+        //coin stuff moved to playerUI
     }
 
     // Update is called once per frame
@@ -82,11 +79,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CoinCollection(int gainAmount)
-    {
-        currentCoins += gainAmount;
-        ui.UpdateUI();
-    }
+    //Coin collection function will be moved over to player UI script
 
     public void StateSwitch(GameStates state)
     {
