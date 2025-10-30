@@ -18,11 +18,6 @@ public class UIManager : MonoBehaviour
 
     PrototypePlayerMovementControls playerControls;
     PrototypePlayerAttack playerAttack;
-
-    public GameObject pauseMenu;
-    public static bool isGamePaused = false;
-
-
     private void Awake()
     {
         if(instance == null)
@@ -42,23 +37,6 @@ public class UIManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isGamePaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
-    }
-
-
     /// <summary>
     /// This portion of the code will be dedicated to the start menu 
     /// </summary>
@@ -72,14 +50,6 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Town");
     }
 
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene("StartMenu");
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isGamePaused = false;
-
-    }
 
     //public void PauseMenu() //This function will work to 
     //{
@@ -90,17 +60,7 @@ public class UIManager : MonoBehaviour
     //}
 
 
-    public void Resume()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isGamePaused = false;
-    }
 
-    void Pause()
-    {
-        pauseMenu.gameObject.SetActive(true);
-        Time.timeScale = 0f;
-        isGamePaused = true;
-    }
+
+
 }

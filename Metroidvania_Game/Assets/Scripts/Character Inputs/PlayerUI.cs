@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerUI : MonoBehaviour
     public int currentUpgrade;
     private int upgradeValue = 1;
 
+    [Header("Pause Menu")]
+    public GameObject pauseMenu;
+    public static bool isGamePaused = false;
+
     private void Awake()
     {
         //Setting the current UI values with the total values
@@ -31,6 +36,22 @@ public class PlayerUI : MonoBehaviour
         SetHealth(totalHealth);
         SetCoin(currentCoin);
         SetUpgrade(currentUpgrade);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGamePaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 
     private void SetHealth(int health)
@@ -122,6 +143,30 @@ public class PlayerUI : MonoBehaviour
                 Debug.Log($"{bought}");
             }
         }
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isGamePaused = false;
+    }
+
+    void Pause()
+    {
+        pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        isGamePaused = true;
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
+
+    public void QuitGameInPause()
+    {
+        Application.Quit();
     }
 
 }
