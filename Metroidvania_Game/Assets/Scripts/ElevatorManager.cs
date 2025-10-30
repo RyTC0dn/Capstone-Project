@@ -1,23 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using System.Linq;
-using Unity.VisualScripting;
 
 public class ElevatorManager : MonoBehaviour
 {
-    public static ElevatorManager instance {  get; private set; }
+    public static ElevatorManager instance { get; private set; }
 
-    private readonly List<Elevator> elevatorList = new List<Elevator>();
     public Dictionary<string, Elevator> elevators = new Dictionary<string, Elevator>();
     private Elevator currentElevator;
     public bool isNearElevator = false;
-
-    [SerializeField]private string currentElevatorName;
+    public bool isActive = false;
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
@@ -28,10 +24,10 @@ public class ElevatorManager : MonoBehaviour
 
     public void RegisterElevator(Elevator elevator)
     {
-        if(!elevators.ContainsKey(elevator.elevatorLocationName))
+        if (!elevators.ContainsKey(elevator.elevatorLocationName))
         {
             elevators.Add(elevator.elevatorLocationName, elevator);
-            elevatorList.Add(elevator);
+            Debug.Log($"Registered elevator: {elevator.elevatorLocationName}");
         }
     }
 
@@ -39,13 +35,14 @@ public class ElevatorManager : MonoBehaviour
     {
         currentElevator = elevator;
     }
+
     public void TeleportPlayer(string destinationName, Transform player)
     {
         if (elevators.ContainsKey(destinationName))
         {
             Vector3 targetPos = elevators[destinationName].transform.position;
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            if(rb != null)
+            if (rb != null)
                 rb.position = targetPos;
             else
                 player.position = targetPos;
@@ -56,26 +53,4 @@ public class ElevatorManager : MonoBehaviour
             Debug.LogWarning($"Destination {destinationName} not found");
         }
     }
-
-    //Get the elevator above or below based on the order in which they were registered
-    public Elevator GetNextElevator(Elevator current, bool goingUp)
-    {
-        int currentIndex = elevatorList.IndexOf(current);
-        if (currentIndex < 0) return null;
-
-        if(goingUp && currentIndex < elevatorList.Count - 1)
-            return elevatorList[currentIndex + 1];
-        if (!goingUp && currentIndex > 0)
-            return elevatorList[currentIndex - 1];
-
-        return null; //No elevator in that direction
-    }
-
-    public List<Elevator> GetElevatorList()
-    {
-        return new List<Elevator>(elevators.Values);
-    }
-
-    public int ElevatorCount => elevatorList.Count;
-
 }

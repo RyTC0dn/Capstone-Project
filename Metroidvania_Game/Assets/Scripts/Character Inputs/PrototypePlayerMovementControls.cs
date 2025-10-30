@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
-    public GameEvent interactEvent;
+    public GameEvent playerInteract;
      
     public float playerSpeed;
     [HideInInspector] public float horizontalSpeed;
@@ -75,7 +75,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if (isPressed )
         {
             //Send the interact event out
-            interactEvent.Raise(this, isPressed);
+            playerInteract.Raise(this, isPressed);
         }
     }
 

@@ -12,26 +12,29 @@ public class PrototypeShop : MonoBehaviour
 
     [Header("General Shop Setup")]
     public TextMeshProUGUI interactText;
-    PrototypePlayerMovementControls playerMovementControls;
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
-    public bool boughtAxe = false;
+
+    public GameEvent buyEvent; //For whenever the player buys something
+    public GameEvent axeBoughtEvent; //
+    public GameEvent upgradeBoughtEvent; //Checking if upgrade bought to update UI
 
     [Header("Shop Prices")]
     ///Shop prices
     ///May turn to using arrays to store prices as to not clutter too much
     public int upgradePrice = 8;
-    public int weaponUpgradeValue = 1;
-    public int weaponPrice = 20;
+    public int axePrice = 2;
 
     public bool isNearShop = false;
     private bool isShopping = false;
 
+    [SerializeField]private bool boughtAxe = false;
+    [SerializeField]private bool boughtUpgrade = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
-        playerMovementControls = FindFirstObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = false;
@@ -42,44 +45,37 @@ public class PrototypeShop : MonoBehaviour
 
     private void Update()
     {
-        bool saved = GameManager.instance.isNPCSaved;
-        if (Keyboard.current.eKey.isPressed && isNearShop && saved)
-        {
-            EnableShop();
-            GameManager.instance.StateSwitch(GameStates.Pause);
-            playerAttack.enabled = false;
-        }
+
     }
 
     //This function is being called by the player movement controls script
-    public void EnableShop() ///This is for general shopping interactions 
+    public void EnableShop(Component sender, object data) ///This is for general shopping interactions 
     {
-        //Set the shop ui object to active when function is called
-        shopUI.SetActive(true);
-        interactText.enabled = false;
-        playerAttack.enabled = false;
+        if (data is bool isPressed)
+        {
+            if(isPressed && isNearShop && GameManager.instance.isNPCSaved)
+            {
+                //Set the shop ui object to active when function is called
+                shopUI.SetActive(true);
+                interactText.enabled = false;
+                playerAttack.enabled = false;
+                GameManager.instance.StateSwitch(GameStates.Pause);
+            }
+        }      
     }
 
     public void BuySwordUpgrade()
     {
-        //Coin UI will be managed by playerUI
-        //if(GameManager.instance.currentCoins >= upgradePrice)
-        //{
-        //    //Will be switched with another peace of code for player UI
-        //}        
+        buyEvent.Raise(this, upgradePrice); 
+        boughtUpgrade = true;
+        upgradeBoughtEvent.Raise(this, boughtUpgrade);
     }
 
     public void BuyAxe() //Function for buying the axe
     {
-        //Same with this function will have a new event 
-        ////If the player has enough coins to  
-        //if(GameManager.instance.currentCoins >= weaponPrice)
-        //{
-        //    GameManager.instance.currentCoins -= weaponPrice;
-        //    boughtAxe = true;
-        //    Debug.Log($"Bought Axe is {boughtAxe}");
-        //    //Will be replaced by code that will update the player UI
-        //}
+        buyEvent.Raise(this, axePrice);
+        boughtAxe = true;
+        axeBoughtEvent.Raise(this, boughtAxe);
     }
 
     public void Display(string hoverText)
@@ -91,7 +87,6 @@ public class PrototypeShop : MonoBehaviour
     {
         shopUI.SetActive(false);
         GameManager.instance.StateSwitch(GameStates.Play);
-
     }
 
     //Check if the player is close to display the interact text 

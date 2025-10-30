@@ -71,6 +71,7 @@ public class PrototypePlayerAttack : MonoBehaviour
         //When function is called, activate collider for weapon collider
         //Trigger the attack animation to start and play audio attached
         //Start coroutine function that turns off collider after animation stops
+        StartCoroutine(Delay());
         weaponCollider.enabled = true;
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
@@ -82,6 +83,11 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         weaponCollider.enabled = false;
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.6f);
     }
 
     private void PriestStandardAttack()//This function is to store what the priest does when they attack

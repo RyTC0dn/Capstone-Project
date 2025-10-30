@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 0b59598477de664479aa6f2120230a21
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5152940324785135848
+    second: KnighBlockAnim_0
+  - first:
+      213: 2817147904399520518
+    second: KnighBlockAnim_1
+  - first:
+      213: 4340559556395562768
+    second: KnighBlockAnim_2
+  - first:
+      213: 1288855882163884928
+    second: KnighBlockAnim_3
+  - first:
+      213: 5465670259908478124
+    second: KnighBlockAnim_4
+  - first:
+      213: -562114810385988720
+    second: KnighBlockAnim_5
+  - first:
+      213: 5301435740410187704
+    second: KnighBlockAnim_6
+  - first:
+      213: 5470160676854317764
+    second: KnighBlockAnim_7
+  - first:
+      213: -7433425207877318471
+    second: KnighBlockAnim_8
+  - first:
+      213: -970153992771764373
+    second: KnighBlockAnim_9
+  - first:
+      213: 4604069352475071945
+    second: KnighBlockAnim_10
+  - first:
+      213: 7505540041324404174
+    second: KnighBlockAnim_11
+  - first:
+      213: 3480496767103133637
+    second: KnighBlockAnim_12
+  - first:
+      213: 7441406050170245865
+    second: KnighBlockAnim_13
+  - first:
+      213: 1905227342265159883
+    second: KnighBlockAnim_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KnighBlockAnim_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1920
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0aa978cebe28740800000000000000
+      internalID: 5152940324785135848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_1
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1919
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6033879d715881720800000000000000
+      internalID: 2817147904399520518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_2
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1918
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01772655be3cc3c30800000000000000
+      internalID: 4340559556395562768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_3
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1918
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0831d0f989fe2e110800000000000000
+      internalID: 1288855882163884928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 1917
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4034d9426f9db40800000000000000
+      internalID: 5465670259908478124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_5
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1917
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09305f3ee87f238f0800000000000000
+      internalID: -562114810385988720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_6
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 1916
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf85bab7bb729940800000000000000
+      internalID: 5301435740410187704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_7
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 1916
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c24638472ae9eb40800000000000000
+      internalID: 5470160676854317764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_8
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1660
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8c90c482b27d890800000000000000
+      internalID: -7433425207877318471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_9
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1660
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f796b65125982f0800000000000000
+      internalID: -970153992771764373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_10
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1660
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c51a83cea0f4ef30800000000000000
+      internalID: 4604069352475071945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_11
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1660
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd9c9ac6e8092860800000000000000
+      internalID: 7505540041324404174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_12
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 1660
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7e3158e553d4030800000000000000
+      internalID: 3480496767103133637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_13
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1661
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e217d9506f254760800000000000000
+      internalID: 7441406050170245865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnighBlockAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 1661
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc093186c2ab07a10800000000000000
+      internalID: 1905227342265159883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KnighBlockAnim_0: 5152940324785135848
+      KnighBlockAnim_1: 2817147904399520518
+      KnighBlockAnim_10: 4604069352475071945
+      KnighBlockAnim_11: 7505540041324404174
+      KnighBlockAnim_12: 3480496767103133637
+      KnighBlockAnim_13: 7441406050170245865
+      KnighBlockAnim_14: 1905227342265159883
+      KnighBlockAnim_2: 4340559556395562768
+      KnighBlockAnim_3: 1288855882163884928
+      KnighBlockAnim_4: 5465670259908478124
+      KnighBlockAnim_5: -562114810385988720
+      KnighBlockAnim_6: 5301435740410187704
+      KnighBlockAnim_7: 5470160676854317764
+      KnighBlockAnim_8: -7433425207877318471
+      KnighBlockAnim_9: -970153992771764373
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
