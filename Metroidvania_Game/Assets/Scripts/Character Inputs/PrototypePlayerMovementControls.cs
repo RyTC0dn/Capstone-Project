@@ -169,14 +169,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         }       
     }
 
-    public void OnTeleportPlayer(Component sender, object data)
-    {
-        if (data is string elevatorName)
-        {
-            ElevatorManager.instance.TeleportPlayer(elevatorName, transform);
-        }
-    }
-
     private void OnDrawGizmosSelected()
     {
         Debug.DrawRay(transform.position, Vector2.down, Color.blue);

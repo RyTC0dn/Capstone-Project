@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class NPCTown : MonoBehaviour
 {
     public NPC npcData;
-    private SaveSurvivor npcState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,7 +13,6 @@ public class NPCTown : MonoBehaviour
         if (checkSceneName == "Town")
         {
             gameObject.SetActive(npcSaved);
-            npcState.enabled = false;
         }
         if(checkSceneName == "Level 1 - RyanTestZone")
         {

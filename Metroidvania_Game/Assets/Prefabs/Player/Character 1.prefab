@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 7255461258010286579}
   - component: {fileID: -9122513460649579465}
   - component: {fileID: 3152163559832396325}
+  - component: {fileID: -6722716307112760053}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player
@@ -680,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldCollider: {fileID: 2070233484509633412}
   shieldDuration: 10
+  shieldTimer: 0
 --- !u!114 &7303601509363141473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,6 +701,7 @@ MonoBehaviour:
   - {fileID: 7167940721002120130}
   fullClockSprite: {fileID: 1077252281, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
   brokenClockSprite: {fileID: 1297207775, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
+  currentCoin: 0
 --- !u!114 &7255461258010286579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +770,35 @@ MonoBehaviour:
       - m_Target: {fileID: -9122513460649579465}
         m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
         m_MethodName: OnEnemyAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-6722716307112760053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventDescription: When player buys from shop
+  gameEvent: {fileID: 11400000, guid: 383ae84e9bfb9fd4ea28bba633cf2886, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7303601509363141473}
+        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
+        m_MethodName: UpdateCoins
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

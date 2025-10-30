@@ -15,11 +15,14 @@ public class PlayerUI : MonoBehaviour
     public Sprite brokenClockSprite;
 
     private int totalHealth = 4;
+    private int totalCoin = 0;
+    public int currentCoin;
 
     private void Awake()
     {
+        currentCoin = totalCoin;
         SetHealth(totalHealth);
-        SetCoin(0);
+        SetCoin(currentCoin);
     }
 
     private void SetHealth(int health)
@@ -85,7 +88,12 @@ public class PlayerUI : MonoBehaviour
         if (data is int)
         {
             int amount = (int)data;
-            SetCoin(amount);
+            if (currentCoin > 0)
+            {
+                currentCoin -= amount;
+                SetCoin(currentCoin);
+            }
+            
         }
     }
 
