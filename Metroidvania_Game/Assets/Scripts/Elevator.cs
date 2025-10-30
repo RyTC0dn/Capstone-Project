@@ -3,8 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using System;
 
 public class Elevator : MonoBehaviour
 {
@@ -16,124 +14,85 @@ public class Elevator : MonoBehaviour
     /// move the player to that location.
     /// </summary>
     public string elevatorLocationName;
-
-    [Header("Elevator Setup")]
-    private Animator elevatorAnimation;
-    [SerializeField]private bool isNear = false;
-    [SerializeField]private bool isCurrentElevator;
     public GameEvent teleportPlayer;
 
+    [Header("Elevator Animations")]
+    private Animator elevatorAnimation;
+
+
     [Header("UI Setup")]
-    public GameObject buttonPrefab;
     public GameObject parentPanel;
     PrototypePlayerMovementControls playerControls;
+    public Button[] elevatorButtons; //Assign manually in the editor
 
     public float buttonSpacing = -50f;
+    private bool isNear = false;
 
     private void Start()
-    {         
+    {
         elevatorAnimation = GetComponent<Animator>();
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+
+        //Disable all buttons at start
+        foreach (Button button in elevatorButtons)
+        {
+            button.interactable = false;
+        }
 
         parentPanel.SetActive(false);
     }
 
     private void Update()
     {
-        if (ElevatorManager.instance.elevators.Count >= 0)
+        //Check every frame if elevators have been registered
+        foreach (Button button in elevatorButtons)
         {
+            string destinationName = button.name;
 
-        }            
+            if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
+            {
+                button.interactable = true;
+
+                //Ensure that listener is only added once
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() => OnButtonClicked(destinationName));
+            }
+        }
+
     }
-
     public void OnInteract(Component sender, object data)
     {
         if (data is bool interact && interact && isNear)
         {
-           if(ElevatorManager.instance.ElevatorCount > 1)
+            if (ElevatorManager.instance.elevators.Count > 1)
             {
                 elevatorAnimation.SetTrigger("OpenDoor");
-                ElevatorManager.instance.SetElevator(this);
-                GenerateButtons();
                 parentPanel.SetActive(true);
                 Debug.Log("Event recieved");
             }
         }
     }
 
-    void GenerateButtons()
+    public void OnButtonClicked(string destinationName)
     {
-        //Clear existing buttons
-        foreach (Transform child in parentPanel.transform)
-            Destroy(child.gameObject);
-
-        List<Elevator> elevators = ElevatorManager.instance.GetElevatorList();
-        int currentIndex = elevators.IndexOf(this);
-
-        if (currentIndex == -1)
-        {
-            Debug.LogWarning("Elevator not found in list");
-            return;
-        }
-
-        int index = 0;
-
-        //If this is not the first elevator, create up button
-        if (currentIndex > 0)
-        {
-            Elevator upElevator = elevators[currentIndex - 1];
-            CreateButton("UP", upElevator.elevatorLocationName, index++);
-        }
-
-        //If this is not te last elevator, create down button
-        if (currentIndex < elevators.Count - 1)
-        {
-            Elevator downElevator = elevators[currentIndex + 1];
-            CreateButton("DOWN", downElevator.elevatorLocationName, index++);
-        }
-     
-    }
-    private void CreateButton(string labelText, string destinationName, int index)
-    {
-        GameObject newButton = Instantiate(buttonPrefab, parentPanel.transform);
-
-        RectTransform rect = newButton.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(0, index * buttonSpacing);
-
-        TextMeshProUGUI label = newButton.GetComponentInChildren<TextMeshProUGUI>();
-        if (label != null)
-        {
-            label.text = labelText;
-        }
-
-
-        Button buttonComponent = newButton.GetComponent<Button>();
-        if (buttonComponent != null)
-        {
-            buttonComponent.onClick.AddListener(() => OnButtonClicked(destinationName));
-        }
-    }
-
-    void OnButtonClicked(string destinationName)
-    {
-
         ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
-        elevatorAnimation.SetTrigger("CloseDoor");
         parentPanel.SetActive(false);
+        elevatorAnimation.SetTrigger("CloseDoor");
     }
+  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isNear = true;
-            ElevatorManager.instance.RegisterElevator(this);//Assigning this elevator object in elevator list   
-            foreach (string key in ElevatorManager.instance.elevators.Keys)
-            {
-                Debug.Log($"Elevator" + key);
-            }
-           
-        }       
+            ElevatorManager.instance.RegisterElevator(this);
+        }
+    }
+
+    public void CloseUI()//Close UI on button click
+    {
+        parentPanel.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -141,6 +100,6 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = false;
-        }        
+        }
     }
 }

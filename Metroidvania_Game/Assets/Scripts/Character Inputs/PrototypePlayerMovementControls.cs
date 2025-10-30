@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
-    public GameEvent interactEvent;
+    public GameEvent playerInteract;
      
     public float playerSpeed;
     [HideInInspector] public float horizontalSpeed;
@@ -75,7 +75,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if (isPressed )
         {
             //Send the interact event out
-            interactEvent.Raise(this, isPressed);
+            playerInteract.Raise(this, isPressed);
         }
     }
 
@@ -167,6 +167,14 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; dashTime -= Time.deltaTime; }
             else if (hSpeed < 0 && isDashing) { rb2D.linearVelocity = -dashVector; dashTime -= Time.deltaTime; }
         }       
+    }
+
+    public void OnTeleportPlayer(Component sender, object data)
+    {
+        if (data is string elevatorName)
+        {
+            ElevatorManager.instance.TeleportPlayer(elevatorName, transform);
+        }
     }
 
     private void OnDrawGizmosSelected()
