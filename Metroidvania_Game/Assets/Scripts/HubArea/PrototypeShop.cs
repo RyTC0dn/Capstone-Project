@@ -1,7 +1,7 @@
 using TMPro;
-using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PrototypeShop : MonoBehaviour
 {
@@ -28,9 +28,10 @@ public class PrototypeShop : MonoBehaviour
 
     public bool isNearShop = false;
     private bool isShopping = false;
-
     [SerializeField]private bool boughtAxe = false;
     [SerializeField]private bool boughtUpgrade = false;
+
+    public Button axeButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +46,10 @@ public class PrototypeShop : MonoBehaviour
 
     private void Update()
     {
-
+        if (boughtAxe)
+        {
+           axeButton.interactable = false;
+        }
     }
 
     //This function is being called by the player movement controls script
