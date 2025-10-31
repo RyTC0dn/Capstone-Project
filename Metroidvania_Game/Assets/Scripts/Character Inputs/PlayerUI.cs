@@ -17,7 +17,7 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField]private int totalHealth = 4;
     public int totalCoin = 0;
-    [SerializeField]private int currentCoin;
+    [HideInInspector]public int currentCoin;
     private int totalUpgradeLevel = 0;
     public int currentUpgrade;
     private int upgradeValue = 1;
@@ -114,8 +114,7 @@ public class PlayerUI : MonoBehaviour
     {
         if (data is bool bought)
         {
-            Debug.Log($"{bought}");
-            if (currentCoin > 0)
+            if (bought)
             {
                 currentUpgrade += upgradeValue;
                 SetUpgrade(currentUpgrade);

@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 2249839468151686403}
   - component: {fileID: 2684591189990701646}
   - component: {fileID: 7002829267281125606}
+  - component: {fileID: 2791710261131852306}
   - component: {fileID: 1892630965472275289}
   - component: {fileID: 8842708863280125052}
   - component: {fileID: 5587350823930368243}
@@ -406,6 +407,36 @@ MonoBehaviour:
   firePoint: {fileID: 4675273244458121808}
   projectilePrefab: {fileID: 4895757740315594668, guid: ddc61152c13ad834789c5b99afb38597, type: 3}
   animator: {fileID: 8842708863280125052}
+  isAxeBought: 0
+--- !u!114 &2791710261131852306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventDescription: Checks to see if axe is bought
+  gameEvent: {fileID: 11400000, guid: c38366c6ae30e1945b89a55dabad712a, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7002829267281125606}
+        m_TargetAssemblyTypeName: PrototypePlayerAttackRanged, Assembly-CSharp
+        m_MethodName: AxeEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1892630965472275289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,6 +735,7 @@ MonoBehaviour:
   fullClockSprite: {fileID: 1077252281, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
   brokenClockSprite: {fileID: 1297207775, guid: bbeb4e90a4f05a74392987081f7bfe93, type: 3}
   totalHealth: 4
+  totalCoin: 0
   currentCoin: 0
   currentUpgrade: 0
 --- !u!114 &7255461258010286579

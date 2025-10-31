@@ -66,16 +66,31 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        buyEvent.Raise(this, upgradePrice); 
-        boughtUpgrade = true;
-        upgradeBoughtEvent.Raise(this, boughtUpgrade);
+        //Check if the player has enough coins before buying
+        PlayerUI playerUI = FindFirstObjectByType<PlayerUI>();
+        if(playerUI != null && playerUI.currentCoin >= upgradePrice)
+        {
+            buyEvent.Raise(this, upgradePrice);
+            boughtUpgrade = true;
+            upgradeBoughtEvent.Raise(this, boughtUpgrade);
+        }
+        else
+        {
+            Debug.Log("Not enough coins");
+            //Can have an audio play here
+        }
+      
     }
 
     public void BuyAxe() //Function for buying the axe
     {
-        buyEvent.Raise(this, axePrice);
-        boughtAxe = true;
-        axeBoughtEvent.Raise(this, boughtAxe);
+        PlayerUI playerUI = FindFirstObjectByType<PlayerUI>();
+        if (playerUI != null && playerUI.currentCoin >= axePrice)
+        {
+            buyEvent.Raise(this, axePrice);
+            boughtAxe = true;
+            axeBoughtEvent.Raise(this, true);
+        }
     }
 
     public void Display(string hoverText)
