@@ -23,6 +23,7 @@ public class BasicEnemyControls : MonoBehaviour
 
     public LayerMask playerLayer; //
     private bool playerDetected = false; //Track if the player was hit by raycast
+    public GameObject player;
 
     //public Dictionary<Transform, int> patrolWaypoints = new Dictionary<Transform, int>();
 
@@ -32,19 +33,26 @@ public class BasicEnemyControls : MonoBehaviour
         patrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         attackState = GetComponent<BasicEnemyAttackState>();
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        StateSwitch();
-
-      
+        
+        if (Vector2.Distance(transform.position, player.transform.position) < 5f)
+        {
+            StateSwitch(States.Attack);
+        }
+        else
+        {
+            StateSwitch(States.Patrol);
+        }      
     }
 
-    public void StateSwitch()
+    public void StateSwitch(States states)
     {
-        switch (currentEnemyState)
+        switch (states)
         {
             case States.Attack:
                 attackState.enabled = true;
