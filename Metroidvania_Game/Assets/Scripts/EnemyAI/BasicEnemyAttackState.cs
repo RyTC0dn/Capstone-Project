@@ -37,13 +37,6 @@ public class BasicEnemyAttackState : MonoBehaviour
         if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
     }
 
-    // Update is called once per frame
-    void Update()
-    {    
-
-        
-    }
-
     public void GroundEnemy()
     {
         //Move towards player

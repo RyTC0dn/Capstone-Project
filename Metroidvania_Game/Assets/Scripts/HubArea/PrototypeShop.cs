@@ -1,7 +1,7 @@
 using TMPro;
-using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PrototypeShop : MonoBehaviour
 {
@@ -28,9 +28,10 @@ public class PrototypeShop : MonoBehaviour
 
     public bool isNearShop = false;
     private bool isShopping = false;
-
     [SerializeField]private bool boughtAxe = false;
     [SerializeField]private bool boughtUpgrade = false;
+
+    public Button axeButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +46,10 @@ public class PrototypeShop : MonoBehaviour
 
     private void Update()
     {
-
+        if (boughtAxe)
+        {
+           axeButton.interactable = false;
+        }
     }
 
     //This function is being called by the player movement controls script
@@ -66,16 +70,31 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        buyEvent.Raise(this, upgradePrice); 
-        boughtUpgrade = true;
-        upgradeBoughtEvent.Raise(this, boughtUpgrade);
+        //Check if the player has enough coins before buying
+        PlayerUI playerUI = FindFirstObjectByType<PlayerUI>();
+        if(playerUI != null && playerUI.currentCoin >= upgradePrice)
+        {
+            buyEvent.Raise(this, upgradePrice);
+            boughtUpgrade = true;
+            upgradeBoughtEvent.Raise(this, boughtUpgrade);
+        }
+        else
+        {
+            Debug.Log("Not enough coins");
+            //Can have an audio play here
+        }
+      
     }
 
     public void BuyAxe() //Function for buying the axe
     {
-        buyEvent.Raise(this, axePrice);
-        boughtAxe = true;
-        axeBoughtEvent.Raise(this, boughtAxe);
+        PlayerUI playerUI = FindFirstObjectByType<PlayerUI>();
+        if (playerUI != null && playerUI.currentCoin >= axePrice)
+        {
+            buyEvent.Raise(this, axePrice);
+            boughtAxe = true;
+            axeBoughtEvent.Raise(this, true);
+        }
     }
 
     public void Display(string hoverText)
