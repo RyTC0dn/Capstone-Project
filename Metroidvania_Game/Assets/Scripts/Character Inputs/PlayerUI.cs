@@ -93,7 +93,7 @@ public class PlayerUI : MonoBehaviour
     }
     public void UpdateCoins(Component sender, object data)
     {
-        if (data is int)
+        if (data is int && sender is PrototypeShop)
         {
             int amount = (int)data;
             if (currentCoin > 0)
@@ -102,6 +102,14 @@ public class PlayerUI : MonoBehaviour
                 SetCoin(currentCoin);
             }
             
+        }
+
+        //Check for coin collection script event to add to coin count
+        if(data is int && sender is CoinCollection)
+        {
+            int amount = (int)data;
+            currentCoin += amount;
+            SetCoin(currentCoin);
         }
     }
 

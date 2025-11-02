@@ -49,9 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  currentCoins: 0
-  upgradeValue: 0
-  coinPickup: {fileID: 0}
+  coinPickup: {fileID: 7672356728645152245}
   coinPouch: {fileID: 0}
   hasSavedBlacksmith: 0
   nextSpawnPointName: 

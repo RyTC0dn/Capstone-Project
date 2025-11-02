@@ -19,13 +19,6 @@ public class GameManager : MonoBehaviour
     public GameStates state;
     public static GameManager instance { get; private set; }
 
-    [Header("Audio")]
-    UIManager ui;
-    public AudioSource coinPickup;
-    public AudioSource coinPouch;
-    private float timer = 5;
-
-
     private GameObject pauseMenu;
 
     public bool hasSavedBlacksmith = false;
@@ -52,8 +45,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Initializing scripts within the game manager
-        ui = FindAnyObjectByType<UIManager>();  
+        //Initializing scripts within the game manager 
         //coin stuff moved to playerUI
     }
 

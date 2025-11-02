@@ -21,9 +21,9 @@ public class Elevator : MonoBehaviour
 
 
     [Header("UI Setup")]
-    public GameObject parentPanel;
+    public GameObject parentPanel; [Tooltip("Manually assign from ElevatorManager prefab")]
     PrototypePlayerMovementControls playerControls;
-    public Button[] elevatorButtons; //Assign manually in the editor
+    public Button[] elevatorButtons; [Tooltip("Manually assign each elevator button from the panel")]
 
     public float buttonSpacing = -50f;
     private bool isNear = false;
