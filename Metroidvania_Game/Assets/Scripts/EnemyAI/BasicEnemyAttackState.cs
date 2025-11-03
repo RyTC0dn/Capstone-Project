@@ -22,7 +22,10 @@ public class BasicEnemyAttackState : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player");
 
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+    }
 
+    private void Update()
+    {
         switch (currentEnemyType)
         {
             case enemyTypes.ground:
@@ -38,7 +41,7 @@ public class BasicEnemyAttackState : MonoBehaviour
     }
 
     public void GroundEnemy()
-    {
+    {        
         //Move towards player
         float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         

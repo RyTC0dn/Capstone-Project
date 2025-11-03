@@ -25,15 +25,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -80,14 +72,6 @@ public class UIManager : MonoBehaviour
         isGamePaused = false;
 
     }
-
-    //public void PauseMenu() //This function will work to 
-    //{
-    //    if(Keyboard.current.escapeKey.isPressed)
-    //    {
-    //        GameManager.instance.OnPause();
-    //    }
-    //}
 
 
     public void Resume()

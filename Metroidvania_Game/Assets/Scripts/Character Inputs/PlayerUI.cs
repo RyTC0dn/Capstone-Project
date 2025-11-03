@@ -7,8 +7,6 @@ public class PlayerUI : MonoBehaviour
 {
     [Header("UI Text")]
     public TextMeshProUGUI playerHealthText;
-    public TextMeshProUGUI coinText;
-    public TextMeshProUGUI weaponUpgradeText;
 
     [Header("HP Icon")]
     public List<Image> clockIcons = new List<Image>(); //Drag each UI Clock image in order
@@ -16,21 +14,11 @@ public class PlayerUI : MonoBehaviour
     public Sprite brokenClockSprite;
 
     [SerializeField]private int totalHealth = 4;
-    public int totalCoin = 0;
-    [HideInInspector]public int currentCoin;
-    private int totalUpgradeLevel = 0;
-    public int currentUpgrade;
-    private int upgradeValue = 1;
+
 
     private void Awake()
     {
-        //Setting the current UI values with the total values
-        currentCoin = totalCoin;
-        currentUpgrade = totalUpgradeLevel;
-
         SetHealth(totalHealth);
-        SetCoin(currentCoin);
-        SetUpgrade(currentUpgrade);
     }
 
     private void SetHealth(int health)
@@ -86,49 +74,4 @@ public class PlayerUI : MonoBehaviour
             Debug.Log($"Update health by {amount}");
         }        
     }
-
-    private void SetCoin(int coin)
-    {
-        coinText.text = "Coins: " + coin.ToString();
-    }
-    public void UpdateCoins(Component sender, object data)
-    {
-        if (data is int && sender is PrototypeShop)
-        {
-            int amount = (int)data;
-            if (currentCoin > 0)
-            {
-                currentCoin -= amount;
-                SetCoin(currentCoin);
-            }
-            
-        }
-
-        //Check for coin collection script event to add to coin count
-        if(data is int && sender is CoinCollection)
-        {
-            int amount = (int)data;
-            currentCoin += amount;
-            SetCoin(currentCoin);
-        }
-    }
-
-    private void SetUpgrade(int upgrade)
-    {
-        weaponUpgradeText.text = "+"+upgrade.ToString();
-    }
-
-    public void UpgradeUpdate(Component sender, object data)
-    {
-        if (data is bool bought)
-        {
-            if (bought)
-            {
-                currentUpgrade += upgradeValue;
-                SetUpgrade(currentUpgrade);
-                Debug.Log($"{bought}");
-            }
-        }
-    }
-
 }
