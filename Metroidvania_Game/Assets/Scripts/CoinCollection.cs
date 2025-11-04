@@ -5,14 +5,12 @@ public class CoinCollection : MonoBehaviour
     public int coinsCollected;
     private bool playerDetected = false;
     public GameEvent coinCollection;
+    private int coinValue = 1;
 
     private void CoinCollect(int amount)
     {
-        if (playerDetected)
-        {
-            coinsCollected += amount;
-            coinCollection.Raise(this, amount);
-        }       
+        coinsCollected += amount;
+        coinCollection.Raise(this, amount);      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,9 +19,8 @@ public class CoinCollection : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Coin Collected");
-            playerDetected = true;
 
-            CoinCollect(1);
+            CoinCollect(coinValue);
 
             Destroy(gameObject);
         }

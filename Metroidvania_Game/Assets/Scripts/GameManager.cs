@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -19,13 +20,6 @@ public class GameManager : MonoBehaviour
     public GameStates state;
     public static GameManager instance { get; private set; }
 
-    [Header("Audio")]
-    UIManager ui;
-    public AudioSource coinPickup;
-    public AudioSource coinPouch;
-    private float timer = 5;
-
-
     private GameObject pauseMenu;
 
     public bool hasSavedBlacksmith = false;
@@ -35,6 +29,16 @@ public class GameManager : MonoBehaviour
     public GameObject playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
     public bool isNPCSaved = false;
+
+    [Header("Player UI Components")]
+    public TextMeshProUGUI coinText;
+    public TextMeshProUGUI weaponUpgradeText;
+
+    public int totalCoin = 0;
+    [HideInInspector] public int currentCoin;
+    private int totalUpgradeLevel = 0;
+    public int currentUpgrade;
+    private int upgradeValue = 1;
 
     private void Awake()
     {
@@ -47,20 +51,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //Initializing scripts within the game manager
-        ui = FindAnyObjectByType<UIManager>();  
-        //coin stuff moved to playerUI
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 
     //When player loses 2 hp
@@ -101,5 +91,74 @@ public class GameManager : MonoBehaviour
             StateSwitch(GameStates.Pause);
             Debug.Log("Game is paused");
         }
+    }
+
+    /// <summary>
+    /// All functions below are meant for the player UI
+    /// </summary>
+    /// <param name="coin"></param>
+    private void SetCoin(int coin)
+    {
+        coinText.text = "Coins: " + coin.ToString();
+    }
+    public void UpdateCoins(Component sender, object data)
+    {
+        if (data is int && sender is PrototypeShop)
+        {
+            int amount = (int)data;
+            if (currentCoin > 0)
+            {
+                currentCoin -= amount;
+                SetCoin(currentCoin);
+            }
+
+        }
+
+        //Check for coin collection script event to add to coin count
+        if (data is int && sender is CoinCollection)
+        {
+            int amount = (int)data;
+            currentCoin += amount;
+            SetCoin(currentCoin);
+        }
+    }
+
+    private void SetUpgrade(int upgrade)
+    {
+        weaponUpgradeText.text = "+" + upgrade.ToString();
+    }
+
+    public void UpgradeUpdate(Component sender, object data)
+    {
+        if (data is bool bought)
+        {
+            if (bought)
+            {
+                currentUpgrade += upgradeValue;
+                SetUpgrade(currentUpgrade);
+                Debug.Log($"{bought}");
+            }
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Look for the UI objects by tag or name each time a scene loads
+        coinText = GameObject.Find("CoinText")?.GetComponent<TextMeshProUGUI>();
+        weaponUpgradeText = GameObject.Find("WeaponUpgradeText")?.GetComponent<TextMeshProUGUI>();
+
+        // Refresh UI with current values
+        if (coinText != null) SetCoin(currentCoin);
+        if (weaponUpgradeText != null) SetUpgrade(currentUpgrade);
     }
 }

@@ -7,7 +7,8 @@ public class PrototypeShield : MonoBehaviour
     public GameObject shieldCollider;
     public float shieldDuration;
     [SerializeField]private float shieldTimer;
-    private bool shieldEnabled = false;
+    [SerializeField]private bool shieldEnabled = false; //activates shield when pressing input
+    private bool shieldPickedUp = false; //checks if the shield item has been picked up in scene
     PrototypePlayerMovementControls playerMovement;
 
     private void Start()
@@ -24,9 +25,8 @@ public class PrototypeShield : MonoBehaviour
         {
             shieldTimer -= Time.deltaTime;
         }
-        else if(shieldTimer <= 0) 
+        else if(shieldTimer <= 0 || !shieldEnabled) 
         {
-            shieldEnabled = false;
             shieldTimer = shieldDuration;
         }
     }
@@ -39,11 +39,14 @@ public class PrototypeShield : MonoBehaviour
             shieldCollider.SetActive(true);
             shieldEnabled = true;
             playerMovement.horizontalSpeed = playerMovement.playerSpeed / 2;
+            animator.SetBool("isBlocking", true);
         }
         else
         {
             shieldCollider.SetActive(false);
+            shieldEnabled = false;
             playerMovement.horizontalSpeed = playerMovement.playerSpeed;
+            animator.SetBool("isBlocking", false);
         }
     }
 }

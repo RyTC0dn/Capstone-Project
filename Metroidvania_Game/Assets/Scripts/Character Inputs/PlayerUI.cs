@@ -1,15 +1,12 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerUI : MonoBehaviour
 {
     [Header("UI Text")]
     public TextMeshProUGUI playerHealthText;
-    public TextMeshProUGUI coinText;
-    public TextMeshProUGUI weaponUpgradeText;
 
     [Header("HP Icon")]
     public List<Image> clockIcons = new List<Image>(); //Drag each UI Clock image in order
@@ -17,41 +14,11 @@ public class PlayerUI : MonoBehaviour
     public Sprite brokenClockSprite;
 
     [SerializeField]private int totalHealth = 4;
-    public int totalCoin = 0;
-    [HideInInspector]public int currentCoin;
-    private int totalUpgradeLevel = 0;
-    public int currentUpgrade;
-    private int upgradeValue = 1;
 
-    [Header("Pause Menu")]
-    public GameObject pauseMenu;
-    public static bool isGamePaused = false;
 
     private void Awake()
     {
-        //Setting the current UI values with the total values
-        currentCoin = totalCoin;
-        currentUpgrade = totalUpgradeLevel;
-
         SetHealth(totalHealth);
-        SetCoin(currentCoin);
-        SetUpgrade(currentUpgrade);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isGamePaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
     }
 
     private void SetHealth(int health)
@@ -107,65 +74,4 @@ public class PlayerUI : MonoBehaviour
             Debug.Log($"Update health by {amount}");
         }        
     }
-
-    private void SetCoin(int coin)
-    {
-        coinText.text = "Coins: " + coin.ToString();
-    }
-    public void UpdateCoins(Component sender, object data)
-    {
-        if (data is int)
-        {
-            int amount = (int)data;
-            if (currentCoin > 0)
-            {
-                currentCoin -= amount;
-                SetCoin(currentCoin);
-            }
-            
-        }
-    }
-
-    private void SetUpgrade(int upgrade)
-    {
-        weaponUpgradeText.text = "+"+upgrade.ToString();
-    }
-
-    public void UpgradeUpdate(Component sender, object data)
-    {
-        if (data is bool bought)
-        {
-            if (bought)
-            {
-                currentUpgrade += upgradeValue;
-                SetUpgrade(currentUpgrade);
-                Debug.Log($"{bought}");
-            }
-        }
-    }
-
-    public void Resume()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isGamePaused = false;
-    }
-
-    void Pause()
-    {
-        pauseMenu.gameObject.SetActive(true);
-        Time.timeScale = 0f;
-        isGamePaused = true;
-    }
-
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene("StartMenu");
-    }
-
-    public void QuitGameInPause()
-    {
-        Application.Quit();
-    }
-
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -33,6 +32,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [SerializeField]private float dashTimer = 0.5f;
     public float dashTime;
     private bool isDashing = false;
+    private bool isInvincible = false;
 
     [Header("Sprite Settings")]    
     [HideInInspector] public bool isFacingRight = true;
@@ -90,7 +90,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Set the movement function
         Move(hSpeed);
 
-        //if(dashTime > 0)
+        //if (dashTime > 0)
         //{
         //    //Set dash function
         //    Dash(hSpeed);
@@ -153,8 +153,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     
 
     private void Dash(float hSpeed)
-    {
-        while(dashTime > 0)
+    { 
+        if(dashTime > 0)
         {
             dashSpeed = playerSpeed;
             Vector2 dashVector = new Vector2(dashSpeed * dashFactor, 0);
@@ -166,7 +166,15 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             //Apply dash speed
             if (hSpeed > 0 && isDashing) { rb2D.linearVelocity = dashVector; dashTime -= Time.deltaTime; }
             else if (hSpeed < 0 && isDashing) { rb2D.linearVelocity = -dashVector; dashTime -= Time.deltaTime; }
-        }       
+
+            PlayerHealth hp = GetComponent<PlayerHealth>();
+            hp.isInvulnerable = true;
+        }
+        else
+        {
+            PlayerHealth hp = GetComponent<PlayerHealth>();
+            hp.isInvulnerable = false;
+        }
     }
 
     private void OnDrawGizmosSelected()

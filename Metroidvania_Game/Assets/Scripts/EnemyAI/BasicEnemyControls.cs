@@ -40,7 +40,7 @@ public class BasicEnemyControls : MonoBehaviour
     void Update()
     {
         
-        if (Vector2.Distance(transform.position, player.transform.position) < 5f)
+        if (Vector2.Distance(transform.position, player.transform.position) < 10f)
         {
             StateSwitch(States.Attack);
         }

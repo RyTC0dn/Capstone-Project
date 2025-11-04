@@ -178,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_BodyType
@@ -345,9 +345,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 2
+  enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
-  enemyHealthChanged: {fileID: 11400000, guid: 2c4e69920e841d24194ed31a4adf759d, type: 2}
-  kbForce: 100
+  kbForce: 10000
   kbDuration: 0.2
 --- !u!114 &5342541874613903044
 MonoBehaviour:
