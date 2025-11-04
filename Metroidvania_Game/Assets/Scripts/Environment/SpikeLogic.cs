@@ -6,6 +6,8 @@ public class SpikeLogic : MonoBehaviour
     [SerializeField] int damage = 1;
     PrototypePlayerMovementControls playerControls;
 
+    public GameEvent onDamaged;
+
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class SpikeLogic : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Add player health change
-            playerControls.gameObject.transform.position = GameManager.instance.playerSpawnPoint.transform.position;
+            onDamaged.Raise(this, damage);
         }
 
     }
