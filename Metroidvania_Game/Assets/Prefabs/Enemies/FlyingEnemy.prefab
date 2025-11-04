@@ -178,6 +178,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
+  player: {fileID: 0}
 --- !u!114 &8072791704070279469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 2
   currentWaypointIndex: 0
-  waypoints: []
+  positionOffsetX: 0
+  positionOffsetY: 0
 --- !u!114 &8789652016206958642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 2
+  enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
-  enemyHealthChanged: {fileID: 11400000, guid: 2c4e69920e841d24194ed31a4adf759d, type: 2}
   kbForce: 100
   kbDuration: 0.2
 --- !u!114 &-5814837572841073523
@@ -237,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventDescription: When Player hits the enemy
   gameEvent: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
   response:
     m_PersistentCalls:

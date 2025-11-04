@@ -11,6 +11,8 @@ public class ElevatorManager : MonoBehaviour
     public bool isNearElevator = false;
     public bool isActive = false;
 
+    public GameObject parentPanel;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -19,7 +21,12 @@ public class ElevatorManager : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+    }
+
+    public void CloseUI()//Close UI on button click
+    {
+        parentPanel.SetActive(false);
     }
 
     public void RegisterElevator(Elevator elevator)

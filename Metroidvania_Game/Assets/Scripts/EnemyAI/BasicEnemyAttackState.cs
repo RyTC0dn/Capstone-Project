@@ -22,7 +22,10 @@ public class BasicEnemyAttackState : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player");
 
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+    }
 
+    private void Update()
+    {
         switch (currentEnemyType)
         {
             case enemyTypes.ground:
@@ -37,15 +40,8 @@ public class BasicEnemyAttackState : MonoBehaviour
         if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
     }
 
-    // Update is called once per frame
-    void Update()
-    {    
-
-        
-    }
-
     public void GroundEnemy()
-    {
+    {        
         //Move towards player
         float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         

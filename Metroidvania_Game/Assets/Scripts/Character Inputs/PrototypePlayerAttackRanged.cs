@@ -38,7 +38,6 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
         if(data is bool)
         {
             bool bought = (bool)data;
-            Debug.Log($"Bought event is {bought}");
             if (bought)
             {
                 isAxeBought=true;

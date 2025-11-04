@@ -71,8 +71,8 @@ public class PrototypeShop : MonoBehaviour
     public void BuySwordUpgrade()
     {
         //Check if the player has enough coins before buying
-        PlayerUI playerUI = FindFirstObjectByType<PlayerUI>();
-        if(playerUI != null && playerUI.currentCoin >= upgradePrice)
+        int amount = GameManager.instance.currentCoin;
+        if(amount >= upgradePrice)
         {
             buyEvent.Raise(this, upgradePrice);
             boughtUpgrade = true;
@@ -88,8 +88,8 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuyAxe() //Function for buying the axe
     {
-        PlayerUI playerUI = FindFirstObjectByType<PlayerUI>();
-        if (playerUI != null && playerUI.currentCoin >= axePrice)
+        int amount = GameManager.instance.currentCoin;
+        if (amount >= axePrice)
         {
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;

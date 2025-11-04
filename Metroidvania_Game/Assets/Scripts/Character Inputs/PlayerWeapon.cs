@@ -10,7 +10,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("GroundEnemy"))
+        if (collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
         {
             onPlayerAttack.Raise(this, new AttackData(collision.gameObject, damageValue));
         }

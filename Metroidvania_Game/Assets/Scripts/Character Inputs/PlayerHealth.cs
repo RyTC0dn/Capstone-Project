@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health Stats")]
     public int totalHealth = 4;
     [SerializeField]private int currentHealth;
-    private bool isInvulnerable = false; //We want to prevent multiple hits on the player
+    public bool isInvulnerable = false; //We want to prevent multiple hits on the player
     [SerializeField]private float invulnerableTimer = 2;
 
     private SpriteRenderer sprite;
