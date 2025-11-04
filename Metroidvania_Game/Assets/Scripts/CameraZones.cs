@@ -5,6 +5,8 @@ public class CameraZones : MonoBehaviour
 {
     public Rooms roomType;
     public float minX, minY, maxX, maxY;
+    public GameObject playerSpawnPoint;
+    public Vector2 spawnpointPos;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
