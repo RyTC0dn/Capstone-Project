@@ -25,7 +25,9 @@ public class Elevator : MonoBehaviour
     public GameObject parentPanel; [Tooltip("Manually assign from ElevatorManager prefab")]
     PrototypePlayerMovementControls playerControls;
     [Tooltip("Manually assign each elevator button from the panel on ElevatorManager")]
-    public Button[] elevatorButtons; 
+    public Button[] elevatorButtons;
+
+    public TextMeshProUGUI inputText;
 
     public float buttonSpacing = -50f;
     private bool isNear = false;
@@ -60,8 +62,16 @@ public class Elevator : MonoBehaviour
                 button.onClick.AddListener(() => OnButtonClicked(destinationName));
             }
         }
-
+        TextColor();
     }
+
+    void TextColor()
+    {
+        Color color = inputText.color;
+        float gradient = Mathf.PingPong(Time.time * 4f, 1f) + 1f;
+        inputText.color = new Color(gradient, color.g, color.b);
+    }
+
     public void OnInteract(Component sender, object data)
     {
         if (data is bool interact && interact && isNear)

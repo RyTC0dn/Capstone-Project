@@ -3,10 +3,21 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class CameraZones : MonoBehaviour
 {
+    [Tooltip("Set what room the boundary is for")]
     public Rooms roomType;
+    [Tooltip("Set the boundary the camera moves in")]
     public float minX, minY, maxX, maxY;
+    [Tooltip("Set the spawnpoint position within each room")]
+    public float spawnPointX, spawnPointY;
     public GameObject playerSpawnPoint;
-    public Vector2 spawnpointPos;
+    private Vector2 spawnpointPos;
+
+
+    void SetSpawnPoint()
+    {
+        spawnpointPos = new Vector2(spawnPointX, spawnPointY);
+        playerSpawnPoint.transform.position = spawnpointPos;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +27,7 @@ public class CameraZones : MonoBehaviour
             if (cam != null)
             {
                 cam.SetBounds(minX, maxX, minY, maxY, roomType);
+                SetSpawnPoint();
             }
         }
     }
