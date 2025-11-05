@@ -6,7 +6,7 @@ public class SpikeLogic : MonoBehaviour
     [SerializeField] int damage = 1;
     PrototypePlayerMovementControls playerControls;
 
-    public GameEvent onDamaged;
+    public GameEvent onDamaged; //Call an event that will entity health
 
 
     private void Start()

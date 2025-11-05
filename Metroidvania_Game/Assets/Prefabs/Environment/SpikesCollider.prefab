@@ -92,4 +92,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  onDamaged: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+  onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}

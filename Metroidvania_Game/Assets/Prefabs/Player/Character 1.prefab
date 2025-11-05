@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 5587350823930368243}
   - component: {fileID: 7047053321633390745}
   - component: {fileID: 7230040857322067965}
+  - component: {fileID: -2314640459181212252}
   - component: {fileID: 7303601509363141473}
   - component: {fileID: 576395403489532635}
   - component: {fileID: 7255461258010286579}
@@ -454,19 +455,7 @@ MonoBehaviour:
     m_ActionId: 758ffb34-48ad-4832-b6b2-55e7b681adeb
     m_ActionName: Gameplay/Pause
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7230040857322067965}
-        m_TargetAssemblyTypeName: PrototypeShield, Assembly-CSharp
-        m_MethodName: OnShield
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 72c1152d-636f-4b31-a4f7-6ba0b1a46550
     m_ActionName: 'Gameplay/Block[/Keyboard/q]'
   - m_PersistentCalls:
@@ -637,6 +626,35 @@ MonoBehaviour:
   shieldDuration: 10
   shieldTimer: 0
   shieldEnabled: 0
+--- !u!114 &-2314640459181212252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventDescription: Activate shield when picked up
+  gameEvent: {fileID: 11400000, guid: 98921c4b8c5f39440988f4f8c1b47c7d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7230040857322067965}
+        m_TargetAssemblyTypeName: PrototypeShield, Assembly-CSharp
+        m_MethodName: OnShieldPickUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7303601509363141473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +815,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.28}
   m_Size: {x: 1.43, y: 2.6875}
   m_Direction: 0
 --- !u!1 &6480653630386055973

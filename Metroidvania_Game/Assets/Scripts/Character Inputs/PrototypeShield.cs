@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
+
 public class PrototypeShield : MonoBehaviour
 {
     private Animator animator;
+    private Slider shieldBar;
 
     public GameObject shieldCollider;
     public float shieldDuration;
@@ -13,9 +16,13 @@ public class PrototypeShield : MonoBehaviour
 
     private void Start()
     {
-        shieldCollider.SetActive(false);
+        //Initializing script components        
         playerMovement = GetComponent<PrototypePlayerMovementControls>();
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();        
+        shieldBar = GetComponentInChildren<Slider>();
+
+        //Setting game object components 
+        shieldCollider.SetActive(false);
         shieldTimer = shieldDuration;
     }
 
@@ -24,29 +31,61 @@ public class PrototypeShield : MonoBehaviour
         if (shieldEnabled)
         {
             shieldTimer -= Time.deltaTime;
+            if (shieldTimer <= 0)
+            {
+                DisableShield();
+            }
         }
-        else if(shieldTimer <= 0 || !shieldEnabled) 
-        {
-            shieldTimer = shieldDuration;
-        }
+
+        OnBlock();
     }
 
-    public void OnShield(InputAction.CallbackContext context)
+    public void OnBlockAnimationEnd()
     {
+        //Freeze animation on last frame
+        animator.speed = 0f;
+    }
+
+    public void OnBlock()
+    {
+        bool playerKey = Keyboard.current.qKey.isPressed;
+        bool playerButton = Gamepad.current.leftTrigger.isPressed;
         //If the player holds the shield input = Q key (keyboard) or left trigger (controller)
-        if (context.performed && shieldTimer > 0)
+        if ((playerKey || playerButton) && shieldTimer > 0)
         {
-            shieldCollider.SetActive(true);
-            shieldEnabled = true;
-            playerMovement.horizontalSpeed = playerMovement.playerSpeed / 2;
-            animator.SetBool("isBlocking", true);
+            EnableShield();
         }
         else
         {
-            shieldCollider.SetActive(false);
-            shieldEnabled = false;
-            playerMovement.horizontalSpeed = playerMovement.playerSpeed;
-            animator.SetBool("isBlocking", false);
+            DisableShield();
         }
+    }
+
+    public void OnShieldPickUp(Component sender, object data)
+    {
+        if(data is bool pickedUp)
+        {
+            if(pickedUp == true)
+            {
+                shieldPickedUp = true;
+            }           
+        }        
+    }
+
+    private void EnableShield()
+    {
+        shieldCollider.SetActive(true);
+        shieldEnabled = true;
+        playerMovement.horizontalSpeed = playerMovement.playerSpeed / 2;
+        animator.SetBool("isBlocking", true);
+    }
+
+    private void DisableShield()
+    {
+        shieldCollider.SetActive(false);
+        shieldEnabled = false;
+        playerMovement.horizontalSpeed = playerMovement.playerSpeed;
+        animator.SetBool("isBlocking", false);
+        shieldTimer = shieldDuration;        
     }
 }
