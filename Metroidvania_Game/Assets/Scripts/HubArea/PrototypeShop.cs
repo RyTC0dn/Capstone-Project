@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PrototypeShop : MonoBehaviour
@@ -33,6 +34,9 @@ public class PrototypeShop : MonoBehaviour
 
     public Button axeButton;
 
+    [Header("Prototype End Screen")]
+    public GameObject prototypeEnd;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
@@ -42,6 +46,7 @@ public class PrototypeShop : MonoBehaviour
 
         shopUI = GetComponentInChildren<GameObject>();
         shopUI.SetActive(isShopping);
+        prototypeEnd.SetActive(false);
     }
 
     private void Update()
@@ -70,6 +75,8 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
+        prototypeEnd.SetActive(true);
+        GameManager.instance.StateSwitch(GameStates.Pause);
         //Check if the player has enough coins before buying
         int amount = GameManager.instance.currentCoin;
         if(amount >= upgradePrice)
@@ -88,6 +95,8 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuyAxe() //Function for buying the axe
     {
+        prototypeEnd.SetActive(true);
+        GameManager.instance.StateSwitch(GameStates.Pause);
         int amount = GameManager.instance.currentCoin;
         if (amount >= axePrice)
         {
@@ -137,5 +146,18 @@ public class PrototypeShop : MonoBehaviour
             }
 
         }
+    }
+
+    //Functions past this point are specifically for the end of the prototype 
+    //when players buy something from the shop after saving the blacksmith
+    public void ClosePanel()
+    {
+        prototypeEnd.SetActive(false);
+        GameManager.instance.StateSwitch(GameStates.Play);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }

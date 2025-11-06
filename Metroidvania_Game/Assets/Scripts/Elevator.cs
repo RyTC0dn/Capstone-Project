@@ -44,6 +44,7 @@ public class Elevator : MonoBehaviour
         }
 
         parentPanel.SetActive(false);
+        inputText.enabled = false;
     }
 
     private void Update()
@@ -81,6 +82,8 @@ public class Elevator : MonoBehaviour
                 elevatorAnimation.SetTrigger("OpenDoor");
                 parentPanel.SetActive(true);
                 Debug.Log("Event recieved");
+                PrototypePlayerAttack playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+                playerAttack.enabled = false;
             }
         }
     }
@@ -91,6 +94,13 @@ public class Elevator : MonoBehaviour
         parentPanel.SetActive(false);
         elevatorAnimation.SetTrigger("CloseDoor");
     }
+
+    //IEnumerator DisableAttack()
+    //{
+       
+    //    yield return new WaitForSeconds(2);
+    //    playerAttack.enabled = true;
+    //}
   
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -99,6 +109,7 @@ public class Elevator : MonoBehaviour
         {
             isNear = true;
             ElevatorManager.instance.RegisterElevator(this);
+            inputText.enabled = true;
         }
     }
 

@@ -75,6 +75,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if (isPressed )
         {
             //Send the interact event out
+            playerAttack.enabled = false;
             playerInteract.Raise(this, isPressed);
         }
     }
