@@ -57,5 +57,7 @@ public class CameraZones : MonoBehaviour
         Vector2 rightTop = new Vector2(maxX, maxY);
         Vector2 rightBottom = new Vector2(maxX, minY);
         Gizmos.DrawLine(rightTop, rightBottom);
+
+        Gizmos.DrawSphere(new Vector3(spawnPointX, spawnPointY), 0.5f);
     }
 }
