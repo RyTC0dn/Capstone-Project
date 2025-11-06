@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 public class PrototypeShield : MonoBehaviour
 {
     private Animator animator;
-    private Slider shieldBar;
 
     public GameObject shieldCollider;
     public float shieldDuration;
@@ -19,7 +18,6 @@ public class PrototypeShield : MonoBehaviour
         //Initializing script components        
         playerMovement = GetComponent<PrototypePlayerMovementControls>();
         animator = GetComponent<Animator>();        
-        shieldBar = GetComponentInChildren<Slider>();
 
         //Setting game object components 
         shieldCollider.SetActive(false);
@@ -49,9 +47,11 @@ public class PrototypeShield : MonoBehaviour
     public void OnBlock()
     {
         bool playerKey = Keyboard.current.qKey.isPressed;
-        bool playerButton = Gamepad.current.leftTrigger.isPressed;
+        bool playerButton = Gamepad.current?.leftTrigger.isPressed ?? false;
+
+        bool isPressed = playerKey || playerButton;
         //If the player holds the shield input = Q key (keyboard) or left trigger (controller)
-        if ((playerKey || playerButton) && shieldTimer > 0)
+        if (isPressed && shieldTimer > 0 && shieldPickedUp)
         {
             EnableShield();
         }
@@ -63,12 +63,19 @@ public class PrototypeShield : MonoBehaviour
 
     public void OnShieldPickUp(Component sender, object data)
     {
-        if(data is bool pickedUp)
+        if(data is bool && sender.gameObject == GameObject.Find("ShieldPickup"))
         {
+            bool pickedUp = (bool)data;
             if(pickedUp == true)
             {
                 shieldPickedUp = true;
-            }           
+                Debug.Log("Shield is picked up");
+            }
+            else
+            {
+                Debug.LogError("bool is false for picking up shield");
+                return;
+            }
         }        
     }
 
@@ -86,6 +93,7 @@ public class PrototypeShield : MonoBehaviour
         shieldEnabled = false;
         playerMovement.horizontalSpeed = playerMovement.playerSpeed;
         animator.SetBool("isBlocking", false);
-        shieldTimer = shieldDuration;        
+        shieldTimer = shieldDuration;
+        animator.speed = 1f;
     }
 }

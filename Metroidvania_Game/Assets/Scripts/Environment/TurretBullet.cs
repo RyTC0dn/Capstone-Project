@@ -21,7 +21,7 @@ public class TurretBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * bulletSpeed * Time.deltaTime);
+        transform.Translate(Vector2.down * bulletSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
