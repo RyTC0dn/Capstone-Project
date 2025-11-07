@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject pauseMenu;
 
-    public bool hasSavedBlacksmith = false;
-
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
     public GameObject playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene

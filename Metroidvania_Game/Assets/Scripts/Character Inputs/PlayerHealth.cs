@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -34,6 +35,14 @@ public class PlayerHealth : MonoBehaviour
         playerControls = GetComponent<PrototypePlayerMovementControls>();
         sprite = GetComponent<SpriteRenderer>();    
         currentHealth = totalHealth;
+    }
+
+    private void Update()
+    {
+        if(currentHealth <= 0)
+        {
+            SendToSTart();
+        }
     }
 
     /// <summary>
@@ -122,5 +131,10 @@ public class PlayerHealth : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         playerControls.enabled = true;
         isKnockedBack = false;
+    }
+
+    void SendToSTart()
+    {
+        SceneManager.LoadScene("Town");
     }
 }

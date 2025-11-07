@@ -44,8 +44,7 @@ public class PrototypeShop : MonoBehaviour
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = false;
 
-        shopUI = GetComponentInChildren<GameObject>();
-        shopUI.SetActive(isShopping);
+        shopUI.SetActive(false);
         prototypeEnd.SetActive(false);
     }
 

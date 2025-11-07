@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ItemPickup : MonoBehaviour
 {
-    public GameEvent shieldPickup;
+    public GameEvent abilityPickup;
     private bool hasPickedUpShield = false;
     private bool hasPickedUpWallBreak = false;
 
@@ -12,13 +12,13 @@ public class ItemPickup : MonoBehaviour
         if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && gameObject.name == "ShieldPickup")
         {
             hasPickedUpShield = true;
-            shieldPickup.Raise(this, hasPickedUpShield);
+            abilityPickup.Raise(this, hasPickedUpShield);
             Destroy(gameObject);
         }
         if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && gameObject.name == "WallBreakPickup")
         {
             hasPickedUpWallBreak = true;
-            shieldPickup.Raise(this, hasPickedUpWallBreak);
+            abilityPickup.Raise(this, hasPickedUpWallBreak);
             Destroy(gameObject);
         }
     }
