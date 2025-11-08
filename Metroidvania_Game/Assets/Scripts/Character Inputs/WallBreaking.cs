@@ -15,9 +15,12 @@ public class WallBreaking : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Ability"))
+        string weapon = "Weapon";
+        string ability = "AbilityPickup";
+
+        if (collision.gameObject.CompareTag(ability))
         {
             StartCoroutine(Break());
         }
