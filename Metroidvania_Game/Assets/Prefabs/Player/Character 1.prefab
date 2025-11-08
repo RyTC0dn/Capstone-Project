@@ -1359,6 +1359,7 @@ MonoBehaviour:
   maxCharge: 1.5
   isCharging: 0
   chargeFill: {fileID: 8322047894532967043}
+  chargeCanvas: {fileID: 663570219876286703}
 --- !u!114 &9070547331616899129
 MonoBehaviour:
   m_ObjectHideFlags: 0

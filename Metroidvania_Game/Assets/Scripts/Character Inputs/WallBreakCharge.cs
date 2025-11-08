@@ -16,6 +16,8 @@ public class WallBreakCharge : MonoBehaviour
 
     public Image chargeFill;
 
+    public Canvas chargeCanvas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +25,8 @@ public class WallBreakCharge : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         playerMove = GetComponent<PrototypePlayerMovementControls>();
         chargeFill.fillAmount = chargeTime / maxCharge;
+
+        chargeCanvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -37,17 +41,22 @@ public class WallBreakCharge : MonoBehaviour
 
     void ChargeMechanic()
     {
+        
+
         bool chargeKey = Keyboard.current.rKey.isPressed;
         bool chargeButton = Gamepad.current?.leftTrigger.isPressed ?? false;
         bool isPressed = chargeKey || chargeButton;
 
         if (isPressed)
         {
+            chargeCanvas.enabled = true; //ReEnable charge fill bar
             chargeTime += Time.deltaTime; //When inputs is held down 
             isCharging = true;
         }
         if(!isPressed && chargeTime > maxCharge)
         {
+            chargeCanvas.enabled = false;
+
             isCharging = false;
 
             playerMove.enabled = false;
@@ -63,6 +72,7 @@ public class WallBreakCharge : MonoBehaviour
         }
         if(!isPressed && chargeTime < maxCharge)
         {
+            chargeCanvas.enabled = false;
             chargeTime = 0;
             isCharging = false;
         }
