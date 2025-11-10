@@ -20,6 +20,7 @@ public class PlayerJumps : MonoBehaviour
     public bool isGrounded = false;
 
     private Rigidbody2D rb2d;
+    private Animator animator;
 
     //Coyote time 
     public float coyoteTime;
@@ -38,6 +39,10 @@ public class PlayerJumps : MonoBehaviour
         coyoteTime = coyoteTimeMax; //Set coyote time to the max
 
         rb2d.gravityScale = gravityScale;
+
+        animator = GetComponent<Animator>();
+
+        
     }
 
     // Update is called once per frame
@@ -48,6 +53,7 @@ public class PlayerJumps : MonoBehaviour
         //Minimum parameters are astarting point, direction, and size
         //The additional parameter is the layermask, "which layer?"
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
+        animator.SetBool("onGround", isGrounded);
 
         //Gravity modifications 
         //If the player is falling, increase gravity factor
