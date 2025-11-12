@@ -16,7 +16,10 @@ public class PrototypeShop : MonoBehaviour
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
+    public AudioSource devonAudio;
 
+
+    [Header("Game Events")]
     public GameEvent buyEvent; //For whenever the player buys something
     public GameEvent axeBoughtEvent; //
     public GameEvent upgradeBoughtEvent; //Checking if upgrade bought to update UI
@@ -40,10 +43,13 @@ public class PrototypeShop : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
+        //Initialize the components
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = false;
+        devonAudio = gameObject.GetComponent<AudioSource>();
 
+        //Setting UI components to false on start
         shopUI.SetActive(false);
         prototypeEnd.SetActive(false);
     }
@@ -68,6 +74,7 @@ public class PrototypeShop : MonoBehaviour
                 interactText.enabled = false;
                 playerAttack.enabled = false;
                 GameManager.instance.StateSwitch(GameStates.Pause);
+                devonAudio.Play();
             }
         }      
     }
