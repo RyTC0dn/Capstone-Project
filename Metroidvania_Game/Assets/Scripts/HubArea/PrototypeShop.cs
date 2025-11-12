@@ -67,7 +67,7 @@ public class PrototypeShop : MonoBehaviour
     {
         if (data is bool isPressed)
         {
-            if(isPressed && isNearShop && GameManager.instance.isNPCSaved)
+            if(isPressed && isNearShop && GameManager.instance.isBlacksmithSaved)
             {
                 //Set the shop ui object to active when function is called
                 shopUI.SetActive(true);
@@ -130,7 +130,7 @@ public class PrototypeShop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {  
             isNearShop = true;
-            if(isNearShop && GameManager.instance.isNPCSaved) //Also check to see if the npc has been saved
+            if(isNearShop && GameManager.instance.isBlacksmithSaved) //Also check to see if the npc has been saved
             {
                 interactText.enabled = true;
                 string text = "Press E to Interact";

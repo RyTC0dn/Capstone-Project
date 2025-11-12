@@ -26,7 +26,10 @@ public class GameManager : MonoBehaviour
     public string nextSpawnPointName; //Storing the name of the different spawn points
     public GameObject playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
-    public bool isNPCSaved = false;
+    //Checking if npcs are saved
+    public bool isBlacksmithSaved = false;
+    public bool isPotionMakerSaved = false;
+    public bool isHealerSaved = false;
 
     [Header("Player UI Components")]
     public TextMeshProUGUI coinText;

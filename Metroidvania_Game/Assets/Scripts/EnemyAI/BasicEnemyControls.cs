@@ -4,14 +4,12 @@ using UnityEngine;
 public enum States
 {
     Idle,
-    Patrol, 
     Attack, 
 }
 
 public class BasicEnemyControls : MonoBehaviour
 {
     [Header ("Enemy States")]
-    BasicEnemyPatrolState patrolState;
     BasicEnemyAttackState attackState;
     public States currentEnemyState;
 
@@ -30,7 +28,6 @@ public class BasicEnemyControls : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        patrolState = GetComponent<BasicEnemyPatrolState>();
         enemyRB2D = GetComponent<Rigidbody2D>();
         attackState = GetComponent<BasicEnemyAttackState>();
         player = GameObject.FindWithTag("Player");
@@ -46,8 +43,8 @@ public class BasicEnemyControls : MonoBehaviour
         }
         else
         {
-            StateSwitch(States.Patrol);
-        }      
+            StateSwitch(States.Idle);
+        }
     }
 
     public void StateSwitch(States states)
@@ -56,14 +53,8 @@ public class BasicEnemyControls : MonoBehaviour
         {
             case States.Attack:
                 attackState.enabled = true;
-                patrolState.enabled = false;
-                break;
-            case States.Patrol:
-                patrolState.enabled = true;
-                attackState.enabled = false;
                 break;
             case States.Idle:
-                patrolState.enabled = false;
                 attackState.enabled = false;
                 break;
         }        

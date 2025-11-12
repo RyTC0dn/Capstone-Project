@@ -63,7 +63,7 @@ public class SaveSurvivor : MonoBehaviour
             activeLineIndex = 0;
             conversationActive = false;
             textBubble.SetActive(false );
-            GameManager.instance.isNPCSaved = true;
+            GameManager.instance.isBlacksmithSaved = true;
             Destroy(gameObject);
             return;
         }
