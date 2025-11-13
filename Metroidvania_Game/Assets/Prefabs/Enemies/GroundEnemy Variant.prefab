@@ -189,9 +189,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -8035741294316753290, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
-    - {fileID: -6956142423278018503, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
     - {fileID: 0}
+    - {fileID: 8072791704070279469, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -207,6 +206,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5342541874613903044}
+    - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6518034331848133559}
   m_SourcePrefab: {fileID: 100100000, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
 --- !u!1 &2902811957173728584 stripped
 GameObject:
@@ -378,3 +380,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6518034331848133559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902811957173728584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Graph: {fileID: -6906630766578118330, guid: 00e773d2f9e52a84e8b458eb8c7ee5b9, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 6744760853488468356
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 6744760853488468356
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 2902811957173728584}
