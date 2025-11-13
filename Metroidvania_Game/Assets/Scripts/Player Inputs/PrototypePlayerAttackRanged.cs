@@ -20,7 +20,7 @@ public class PrototypePlayerAttackRanged : MonoBehaviour
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
         shop = FindAnyObjectByType<PrototypeShop>();
-        isAxeBought = false;
+        isAxeBought = PlayerPrefs.GetInt("AxeBought", 0) == 1;
     }
 
     // Update is called once per frame

@@ -10,6 +10,10 @@ public class AxeLogic : MonoBehaviour
     float hSpeed = 1.0f;
     [SerializeField]
     float attackRate = 1.0f;
+    [SerializeField]
+    float damage = 1.0f;
+
+    public GameEvent attackEnemyEvent;
 
 
     private float nextTimeToAttack;
@@ -29,12 +33,14 @@ public class AxeLogic : MonoBehaviour
     {
         if (collision.CompareTag("GroundEnemy"))
         {
-            Destroy(gameObject);
+            attackEnemyEvent.Raise(this, damage);
+            Destroy(gameObject);            
         }
 
         if (collision.CompareTag("FlyingEnemy"))
         {
-            Destroy(gameObject);
+            attackEnemyEvent.Raise(this, damage);
+            Destroy(gameObject);            
         }
 
         if (collision.CompareTag("Environment")) { Destroy(gameObject); }

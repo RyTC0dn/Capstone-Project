@@ -23,9 +23,19 @@ public class SaveSurvivor : MonoBehaviour
     private bool conversationActive = false;
     private bool firstLineShown = false;
 
+    public string sceneName;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //Check if this NPC should be destroyed based on save data and current scene
+        if(PlayerPrefs.GetInt("BlacksmithSaved", 0) == 1 && 
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == sceneName)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         textBubble.SetActive(false);
     }
 
@@ -64,6 +74,8 @@ public class SaveSurvivor : MonoBehaviour
             conversationActive = false;
             textBubble.SetActive(false );
             GameManager.instance.isBlacksmithSaved = true;
+            PlayerPrefs.SetInt("BlacksmithSaved", 1);
+            PlayerPrefs.Save();
             Destroy(gameObject);
             return;
         }

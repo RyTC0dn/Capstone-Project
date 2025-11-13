@@ -109,6 +109,8 @@ public class PrototypeShop : MonoBehaviour
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             axeBoughtEvent.Raise(this, true);
+            PlayerPrefs.SetInt("AxeBought", 1);
+            PlayerPrefs.Save();
         }
     }
 
