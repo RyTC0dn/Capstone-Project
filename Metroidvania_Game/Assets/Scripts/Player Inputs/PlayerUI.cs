@@ -2,16 +2,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerUI : MonoBehaviour
 {
     [Header("UI Text")]
-    public TextMeshProUGUI playerHealthText;
 
     [Header("HP Icon")]
     public List<Image> clockIcons = new List<Image>(); //Drag each UI Clock image in order
     public Sprite fullClockSprite;
     public Sprite brokenClockSprite;
+    public List<Animator> clockAnimations = new List<Animator>(); //Drag Each clock animator in order  
+    public GameObject damageFrame;
 
     [SerializeField]private int totalHealth = 4;
 
@@ -19,11 +21,16 @@ public class PlayerUI : MonoBehaviour
     private void Awake()
     {
         SetHealth(totalHealth);
+        for (int i = 0; i < clockIcons.Count; i++)
+        {
+            var animator = clockAnimations[i].GetComponent<Animator>();
+            animator.enabled = false;
+        }
+        damageFrame.SetActive(false);
     }
 
     private void SetHealth(int health)
     {
-        playerHealthText.text = "Player HP: ";
 
         //Each clock will represent 2 HP
         int remainingHealth = health;
@@ -34,6 +41,7 @@ public class PlayerUI : MonoBehaviour
             //are using sprite renderers or UI image components
             var image = clockIcons[i] as Image;
             var spriteRenderer = clockIcons[i].GetComponent<SpriteRenderer>();
+            var animator = clockAnimations[i].GetComponent<Animator>();
 
             if(remainingHealth >= 2)
             {
@@ -42,7 +50,11 @@ public class PlayerUI : MonoBehaviour
                 if(spriteRenderer) spriteRenderer.sprite = fullClockSprite;
                 if (image) image.enabled = true;
                 if (spriteRenderer) spriteRenderer.enabled = true;
-                
+
+                //Initiate damage animation for player ui
+                damageFrame.SetActive(true);
+                StartCoroutine(DelayAnimation(damageFrame, 1.5f));
+
                 remainingHealth -= 2;
             }
             else if (remainingHealth == 1)
@@ -53,15 +65,32 @@ public class PlayerUI : MonoBehaviour
                 if (image) image.enabled = true;
                 if (spriteRenderer) spriteRenderer.enabled = true;
 
+                damageFrame.SetActive(true);
+                StartCoroutine(DelayAnimation(damageFrame, 1.5f));
+
                 remainingHealth -= 1;
             }
             else
             {
                 //When no health left > hide icon
-                if(image) image.enabled = false;
-                if(spriteRenderer) spriteRenderer.enabled = false;
+                animator.enabled = true;
+                animator.Play("ClockBreak");
+                StartCoroutine(Delay(image, spriteRenderer, 1.5f));                
             }
         }
+    }
+
+    private IEnumerator DelayAnimation(GameObject frames, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        frames.SetActive(false);
+    }
+
+    private IEnumerator Delay(Image image, SpriteRenderer spriteRenderer, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (image) image.enabled = false;
+        if (spriteRenderer) spriteRenderer.enabled = false;        
     }
 
     public void UpdateHealth(Component sender, object data)

@@ -54,6 +54,7 @@ public class PrototypePlayerAttack : MonoBehaviour
 
         if(context.performed)
         {
+            StartCoroutine(Delay());
             switch (character)
             {
                 case PlayerCharacter.Knight:
@@ -71,7 +72,6 @@ public class PrototypePlayerAttack : MonoBehaviour
         //When function is called, activate collider for weapon collider
         //Trigger the attack animation to start and play audio attached
         //Start coroutine function that turns off collider after animation stops
-        StartCoroutine(Delay());
         weaponCollider.enabled = true;
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();

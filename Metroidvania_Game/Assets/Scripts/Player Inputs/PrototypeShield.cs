@@ -13,6 +13,8 @@ public class PrototypeShield : MonoBehaviour
     private bool shieldPickedUp = false; //checks if the shield item has been picked up in scene
     PrototypePlayerMovementControls playerMovement;
 
+    public GameObject shieldIcon;
+
     private void Start()
     {
         //Initializing script components        
@@ -22,6 +24,7 @@ public class PrototypeShield : MonoBehaviour
         //Setting game object components 
         shieldCollider.SetActive(false);
         shieldTimer = shieldDuration;
+        shieldIcon.SetActive(false);
     }
 
     private void Update()
@@ -40,6 +43,7 @@ public class PrototypeShield : MonoBehaviour
         if(shieldPickedUp)
         {
             //Change idle animation 
+            shieldIcon.SetActive(true);
             animator.SetBool("ShieldPickedUp", true);
         }
     }

@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
     /// <param name="coin"></param>
     private void SetCoin(int coin)
     {
-        coinText.text = "Coins: " + coin.ToString();
+        coinText.text = coin.ToString();
     }
     public void UpdateCoins(Component sender, object data)
     {
