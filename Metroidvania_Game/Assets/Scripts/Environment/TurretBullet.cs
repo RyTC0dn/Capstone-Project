@@ -31,6 +31,11 @@ public class TurretBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.CompareTag("AbilityPickup"))
+        {
+            Destroy(gameObject);
+        }
+
         if (collision.CompareTag("Player"))
         {
             //Raise event to damage player
