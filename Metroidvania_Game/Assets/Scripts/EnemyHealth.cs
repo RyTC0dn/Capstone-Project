@@ -36,10 +36,19 @@ public class EnemyHealth : MonoBehaviour
     {
         if(data is AttackData attack)
         {
+           
             if (attack.target == this.gameObject)
             {
                 EnemyDamage(attack.damage);
                 Debug.Log("Recieved attack");
+            }
+        }
+        if (data is AttackDataAxe axeAttack)
+        {
+            if(axeAttack.target == this.gameObject)
+            {
+                EnemyDamage(axeAttack.damage);
+                Debug.Log("Recieved axe damage");
             }
         }
     }
