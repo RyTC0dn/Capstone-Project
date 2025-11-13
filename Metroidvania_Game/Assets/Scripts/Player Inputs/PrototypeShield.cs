@@ -52,7 +52,7 @@ public class PrototypeShield : MonoBehaviour
 
     public void OnBlock()
     {
-        bool playerKey = Keyboard.current.qKey.isPressed;
+        bool playerKey = Mouse.current.rightButton.isPressed;
         bool playerButton = Gamepad.current?.leftTrigger.isPressed ?? false;
 
         bool isPressed = playerKey || playerButton;

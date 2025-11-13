@@ -73,8 +73,8 @@ public class PrototypeShop : MonoBehaviour
                 shopUI.SetActive(true);
                 interactText.enabled = false;
                 playerAttack.enabled = false;
-                GameManager.instance.StateSwitch(GameStates.Pause);
                 devonAudio.Play();
+                GameManager.instance.StateSwitch(GameStates.Pause);                
             }
         }      
     }
