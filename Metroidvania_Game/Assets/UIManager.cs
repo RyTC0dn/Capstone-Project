@@ -56,12 +56,6 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void CloseGame() //This will be called in the start menu screen
     {
-        //Delete all saved data on close
-        PlayerPrefs.DeleteAll();
-
-        //Make sure changes are saved to disk
-        PlayerPrefs.Save();
-
         Application.Quit(); //*Will only be in effect during builds*
     }
 

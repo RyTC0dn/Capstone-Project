@@ -16,10 +16,7 @@ public class PrototypeShop : MonoBehaviour
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
-    public AudioSource devonAudio;
 
-
-    [Header("Game Events")]
     public GameEvent buyEvent; //For whenever the player buys something
     public GameEvent axeBoughtEvent; //
     public GameEvent upgradeBoughtEvent; //Checking if upgrade bought to update UI
@@ -43,14 +40,12 @@ public class PrototypeShop : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {              
-        //Initialize the components
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
         interactText.enabled = false;
-        devonAudio = gameObject.GetComponent<AudioSource>();
 
-        //Setting UI components to false on start
-        shopUI.SetActive(false);
+        shopUI = GetComponentInChildren<GameObject>();
+        shopUI.SetActive(isShopping);
         prototypeEnd.SetActive(false);
     }
 
@@ -67,14 +62,13 @@ public class PrototypeShop : MonoBehaviour
     {
         if (data is bool isPressed)
         {
-            if(isPressed && isNearShop && GameManager.instance.isBlacksmithSaved)
+            if(isPressed && isNearShop && GameManager.instance.isNPCSaved)
             {
                 //Set the shop ui object to active when function is called
                 shopUI.SetActive(true);
                 interactText.enabled = false;
                 playerAttack.enabled = false;
-                devonAudio.Play();
-                GameManager.instance.StateSwitch(GameStates.Pause);                
+                GameManager.instance.StateSwitch(GameStates.Pause);
             }
         }      
     }
@@ -109,8 +103,6 @@ public class PrototypeShop : MonoBehaviour
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             axeBoughtEvent.Raise(this, true);
-            PlayerPrefs.SetInt("AxeBought", 1);
-            PlayerPrefs.Save();
         }
     }
 
@@ -132,7 +124,7 @@ public class PrototypeShop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {  
             isNearShop = true;
-            if(isNearShop && GameManager.instance.isBlacksmithSaved) //Also check to see if the npc has been saved
+            if(isNearShop && GameManager.instance.isNPCSaved) //Also check to see if the npc has been saved
             {
                 interactText.enabled = true;
                 string text = "Press E to Interact";

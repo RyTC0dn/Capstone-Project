@@ -169,9 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vSpeed: 5
   hSpeed: 6.5
-  attackRate: 1
-  damage: 1
-  attackEnemyEvent: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
   rb2D: {fileID: 3059488857777073397}
 --- !u!95 &3847949637887119250
 Animator:

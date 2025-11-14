@@ -145,12 +145,12 @@ TextureImporter:
       name: KnighBlockAnim_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1921
-        width: 27
-        height: 38
+        x: 118
+        y: 1920
+        width: 29
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: KnighBlockAnim_1
       rect:
         serializedVersion: 2
-        x: 375
-        y: 1920
-        width: 28
-        height: 39
+        x: 374
+        y: 1919
+        width: 30
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: KnighBlockAnim_2
       rect:
         serializedVersion: 2
-        x: 631
-        y: 1920
-        width: 28
-        height: 38
+        x: 623
+        y: 1918
+        width: 37
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,12 +211,12 @@ TextureImporter:
       name: KnighBlockAnim_3
       rect:
         serializedVersion: 2
-        x: 887
-        y: 1919
-        width: 28
-        height: 39
+        x: 886
+        y: 1918
+        width: 30
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,12 +233,12 @@ TextureImporter:
       name: KnighBlockAnim_4
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 1918
-        width: 28
-        height: 39
+        x: 1142
+        y: 1917
+        width: 30
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: KnighBlockAnim_5
       rect:
         serializedVersion: 2
-        x: 1399
-        y: 1918
-        width: 28
-        height: 39
+        x: 1398
+        y: 1917
+        width: 30
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: KnighBlockAnim_6
       rect:
         serializedVersion: 2
-        x: 1655
-        y: 1917
-        width: 28
-        height: 40
+        x: 1654
+        y: 1916
+        width: 30
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: KnighBlockAnim_7
       rect:
         serializedVersion: 2
-        x: 1911
-        y: 1917
-        width: 28
-        height: 39
+        x: 1910
+        y: 1916
+        width: 30
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: KnighBlockAnim_8
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1661
-        width: 28
-        height: 39
+        x: 118
+        y: 1660
+        width: 30
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: KnighBlockAnim_9
       rect:
         serializedVersion: 2
-        x: 375
-        y: 1661
-        width: 28
-        height: 38
+        x: 374
+        y: 1660
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: KnighBlockAnim_10
       rect:
         serializedVersion: 2
-        x: 631
-        y: 1661
-        width: 28
-        height: 38
+        x: 630
+        y: 1660
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +387,12 @@ TextureImporter:
       name: KnighBlockAnim_11
       rect:
         serializedVersion: 2
-        x: 887
-        y: 1661
-        width: 28
-        height: 37
+        x: 886
+        y: 1660
+        width: 30
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: KnighBlockAnim_12
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 1661
-        width: 29
-        height: 37
+        x: 1142
+        y: 1660
+        width: 31
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -431,12 +431,12 @@ TextureImporter:
       name: KnighBlockAnim_13
       rect:
         serializedVersion: 2
-        x: 1399
-        y: 1662
-        width: 29
-        height: 35
+        x: 1398
+        y: 1661
+        width: 31
+        height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -453,12 +453,12 @@ TextureImporter:
       name: KnighBlockAnim_14
       rect:
         serializedVersion: 2
-        x: 1655
-        y: 1662
-        width: 29
-        height: 35
+        x: 1654
+        y: 1661
+        width: 31
+        height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -475,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0d73207ca03f65e4d80be33acf5de879
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -492,7 +492,6 @@ TextureImporter:
       KnighBlockAnim_12: 3480496767103133637
       KnighBlockAnim_13: 7441406050170245865
       KnighBlockAnim_14: 1905227342265159883
-      KnighBlockAnim_15: -1009001146
       KnighBlockAnim_2: 4340559556395562768
       KnighBlockAnim_3: 1288855882163884928
       KnighBlockAnim_4: 5465670259908478124
