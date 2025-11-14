@@ -622,7 +622,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 4b86aa817036c404ebc3afd0992df544, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7283019, g: 0.7283019, b: 0.7283019, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2cd91b25620a946a37e73c027e5e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactor: 0.8
+  parallaxFactor: 0.7
 --- !u!212 &572236959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5093,7 +5093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2cd91b25620a946a37e73c027e5e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactor: 0.8
+  parallaxFactor: 0.7
 --- !u!212 &1015108285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5194,7 +5194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2cd91b25620a946a37e73c027e5e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactor: 0.8
+  parallaxFactor: 0.7
 --- !u!212 &1035842816
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5352,7 +5352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2cd91b25620a946a37e73c027e5e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactor: 0.8
+  parallaxFactor: 0.7
 --- !u!212 &1135710121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15892,7 +15892,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 4b86aa817036c404ebc3afd0992df544, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7283019, g: 0.7283019, b: 0.7283019, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -15993,7 +15993,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 4b86aa817036c404ebc3afd0992df544, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7283019, g: 0.7283019, b: 0.7283019, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -21730,7 +21730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2cd91b25620a946a37e73c027e5e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactor: 0.8
+  parallaxFactor: 0.7
 --- !u!212 &2072155583
 SpriteRenderer:
   m_ObjectHideFlags: 0
