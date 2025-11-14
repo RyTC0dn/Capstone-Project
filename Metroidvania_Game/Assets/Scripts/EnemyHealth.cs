@@ -96,10 +96,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "AbilityPickup")
+        if (collision.tag == "Shield")
         {
             //Have the enemy get knocked back but not damaged when colliding with shield
-            GameObject shield = GameObject.FindGameObjectWithTag("AbilityPickup");
+            GameObject shield = GameObject.FindGameObjectWithTag("Shield");
             Vector2 direction = (transform.position - shield.transform.position).normalized;
             StartCoroutine(Knockback(direction));
         }
