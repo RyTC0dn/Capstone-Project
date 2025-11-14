@@ -22,13 +22,14 @@ public class GameManager : MonoBehaviour
 
     private GameObject pauseMenu;
 
-    public bool hasSavedBlacksmith = false;
-
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
     public GameObject playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
-    public bool isNPCSaved = false;
+    //Checking if npcs are saved
+    public bool isBlacksmithSaved = false;
+    public bool isPotionMakerSaved = false;
+    public bool isHealerSaved = false;
 
     [Header("Player UI Components")]
     public TextMeshProUGUI coinText;
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
     /// <param name="coin"></param>
     private void SetCoin(int coin)
     {
-        coinText.text = "Coins: " + coin.ToString();
+        coinText.text = coin.ToString();
     }
     public void UpdateCoins(Component sender, object data)
     {
