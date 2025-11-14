@@ -6,6 +6,7 @@ using UnityEngine;
 
 public enum Rooms
 {
+    Town,
     Entrance,
     Room_A1,
     Room_A2,

@@ -8,7 +8,7 @@ public class NPCTown : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        bool npcSaved = GameManager.instance.isNPCSaved;
+        bool npcSaved = GameManager.instance.isBlacksmithSaved;
         string checkSceneName = SceneManager.GetActiveScene().name;
         if (checkSceneName == "Town")
         {
