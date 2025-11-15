@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// I just created this script to give some basic UI updating for the coin tracker
@@ -20,8 +21,13 @@ public class UIManager : MonoBehaviour
     PrototypePlayerAttack playerAttack;
 
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     public static bool isGamePaused = false;
 
+    [Header("First Selected Option")]
+    [SerializeField]private EventSystem events;
+    [SerializeField] private GameObject menuFirst;
+    [SerializeField] private GameObject settingsMenuFirst;
 
     private void Awake()
     {
@@ -37,7 +43,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && this != null)
+        if (InputManager.Instance.MenuOpenCloseInput)
         {
             if (isGamePaused)
             {
@@ -83,14 +89,48 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
+
+        playerControls.enabled = true;
+        playerAttack.enabled = true;
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     void Pause()
     {
         pauseMenu.gameObject.SetActive(true);
+        settingsMenu.gameObject.SetActive(false);
         Time.timeScale = 0f;
         isGamePaused = true;
+
+        //Deactivate player controls
+        playerAttack.enabled = false;
+        playerControls.enabled = false;
+
+        EventSystem.current.SetSelectedGameObject(menuFirst);
     }
+
+    void OpenSettingsMenuHandle()
+    {
+        settingsMenu.gameObject.SetActive(true);
+        pauseMenu.gameObject.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
+    }
+
+    #region Main Menu Button Actions
+    public void OnSettingsPress()
+    {
+        OpenSettingsMenuHandle();
+    }
+
+    public void OnSettingsBackPress()
+    {
+        Pause();
+    }
+
+    #endregion
 }
