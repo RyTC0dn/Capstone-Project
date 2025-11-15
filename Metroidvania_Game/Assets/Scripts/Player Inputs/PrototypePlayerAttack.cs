@@ -37,7 +37,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        OnAttack();
     }
 
 
@@ -48,11 +48,11 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// </summary>
     /// <param name="context"></param>
     /// 
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnAttack()
     {
         ///Attack function is being managed by 
 
-        if(context.performed)
+        if(Mouse.current.leftButton.wasPressedThisFrame)
         {
             StartCoroutine(Delay());
             switch (character)
