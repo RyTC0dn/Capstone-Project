@@ -12,6 +12,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("General input variables")]
     public GameEvent playerInteract;
 
+    Player_Controller playerController;
     [HideInInspector] public Vector2 moveInput;
      
     public float playerSpeed;
@@ -47,6 +48,15 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     public float kbDuration = 0.2f;
     private bool isKnockedBack = false;
 
+    private void Awake()
+    {
+        playerController = new Player_Controller();
+        playerController.Enable();
+
+        playerController.Gameplay.Movement.performed += OnMove;
+        playerController.Gameplay.Movement.canceled += OnMove;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,6 +71,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         playerAttack = GetComponent<PrototypePlayerAttack>();
 
         enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
+    }
+
+    private void OnDestroy()
+    {
+        playerController.Gameplay.Movement.performed -= OnMove;
+        playerController.Gameplay.Movement.canceled -= OnMove;
     }
 
     public void InteractEvent()
@@ -101,9 +117,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         rb2D.linearVelocity = new Vector2(h * playerSpeed, rb2D.linearVelocity.y);
 
-        ///The entire object is flipped based on direction
+         ///The entire object is flipped based on direction
         ///to ensure that the attack collider will always be in front of the player
-        if (h > 0)
+        if(h > 0)
         {
             isFacingRight = true;
             transform.rotation = Quaternion.Euler(0, 0, 0);

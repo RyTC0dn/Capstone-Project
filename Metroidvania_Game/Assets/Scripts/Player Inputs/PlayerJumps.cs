@@ -27,6 +27,23 @@ public class PlayerJumps : MonoBehaviour
     public float coyoteTimeMax = 0.2f;
     private float raycastLength = 2;
 
+    Player_Controller controller;
+
+    private void Awake()
+    {
+        controller = new Player_Controller();
+        controller.Enable();
+
+        controller.Gameplay.Jump.performed += OnJump;
+        controller.Gameplay.Jump.canceled += OnJump;
+    }
+
+    private void OnDestroy()
+    {
+        controller.Gameplay.Jump.performed -= OnJump;
+        controller.Gameplay.Jump.canceled -= OnJump;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

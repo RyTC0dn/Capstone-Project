@@ -24,6 +24,23 @@ public class PrototypePlayerAttack : MonoBehaviour
     private AudioSource swordSlashAudio;
     /*[SerializeField] */private Animator animator;
 
+    Player_Controller playerControl;
+
+    private void Awake()
+    {
+        playerControl = new Player_Controller();
+        playerControl.Enable();
+
+        playerControl.Gameplay.Melee.performed += OnAttack;
+        playerControl.Gameplay.Melee.canceled += OnAttack;
+    }
+
+    private void OnDestroy()
+    {
+        playerControl.Gameplay.Melee.performed -= OnAttack;
+        playerControl.Gameplay.Melee.canceled -= OnAttack;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,7 +54,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnAttack();
+
     }
 
 
@@ -48,11 +65,11 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// </summary>
     /// <param name="context"></param>
     /// 
-    public void OnAttack()
+    public void OnAttack(InputAction.CallbackContext context)
     {
         ///Attack function is being managed by 
 
-        if(Mouse.current.leftButton.wasPressedThisFrame)
+        if(context.performed)
         {
             StartCoroutine(Delay());
             switch (character)

@@ -25,12 +25,21 @@
                 },
                 {
                     "name": "Movement",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "6f6c3083-b703-4cd4-b229-524bd6c230e5",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Melee",
+                    "type": "Button",
+                    "id": "4ec93a1d-8bdc-4706-9d88-3c045db23c05",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -40,7 +49,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -51,7 +60,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -81,7 +90,7 @@
                 {
                     "name": "WASD",
                     "id": "e4d420ce-64e0-490e-903e-b5436ba87eff",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -95,7 +104,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -106,7 +115,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -117,7 +126,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -128,7 +137,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -136,7 +145,7 @@
                 {
                     "name": "LeftStick",
                     "id": "ee4e9a64-36a2-47e1-9e00-773316431385",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -150,7 +159,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -161,7 +170,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -172,7 +181,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -183,10 +192,32 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "01014a83-b1a1-4c85-9850-3f4944107944",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Melee",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bab5fb0a-8df7-4df7-8a4b-cc20a4685cb4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Melee",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

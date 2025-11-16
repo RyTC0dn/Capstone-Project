@@ -1055,10 +1055,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInteract: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
+  moveInput: {x: 0, y: 0}
   playerSpeed: 10
   horizontalSpeed: 0
   animator: {fileID: 8842708863280125052}
-  playerRot: {x: 0, y: 0, z: 0, w: 0}
   sprintFactor: 1.5
   sprintDuration: 2
   sprintTimer: 0
@@ -1219,6 +1219,30 @@ MonoBehaviour:
     m_ActionId: 74f0c4ba-09a5-469a-b9f2-538dac90e993
     m_ActionName: 'Gameplay/Jump[/Keyboard/space]'
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 72c1152d-636f-4b31-a4f7-6ba0b1a46550
+    m_ActionName: 'Gameplay/Block[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e4338427-6d95-4ea4-871f-980cbb6b1926
+    m_ActionName: UI/Left
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1052429430747177008}
+        m_TargetAssemblyTypeName: PrototypePlayerMovementControls, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6f6c3083-b703-4cd4-b229-524bd6c230e5
+    m_ActionName: 'Gameplay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2249839468151686403}
         m_TargetAssemblyTypeName: PrototypePlayerAttack, Assembly-CSharp
@@ -1232,48 +1256,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b20814f0-dbb6-4a94-85c3-7cd49827023c
-    m_ActionName: 'Gameplay/Attack[/Mouse/leftButton]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3834808667088926466, guid: e0882e1a4bd07754ca8d5535fc777dfc, type: 3}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnPause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 758ffb34-48ad-4832-b6b2-55e7b681adeb
-    m_ActionName: Gameplay/Pause
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 72c1152d-636f-4b31-a4f7-6ba0b1a46550
-    m_ActionName: 'Gameplay/Block[/Keyboard/q]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e4338427-6d95-4ea4-871f-980cbb6b1926
-    m_ActionName: UI/Left
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 92bceb08-508f-43d8-a885-01a49cd69144
-    m_ActionName: UI/Right
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 886ddf64-d58f-4114-a50b-f9db2dba128a
-    m_ActionName: UI/Up
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 25306969-9c19-44b6-99e6-e66697a94212
-    m_ActionName: UI/Down
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6f6c3083-b703-4cd4-b229-524bd6c230e5
-    m_ActionName: 'Gameplay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+    m_ActionId: 4ec93a1d-8bdc-4706-9d88-3c045db23c05
+    m_ActionName: 'Gameplay/Melee[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
