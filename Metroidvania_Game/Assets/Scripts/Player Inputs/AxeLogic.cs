@@ -11,7 +11,7 @@ public class AxeLogic : MonoBehaviour
     [SerializeField]
     float attackRate = 1.0f;
     [SerializeField]
-    float damage = 1.0f;
+    int damage = 1;
 
     public GameEvent attackEnemyEvent;
 
@@ -33,13 +33,13 @@ public class AxeLogic : MonoBehaviour
     {
         if (collision.CompareTag("GroundEnemy"))
         {
-            attackEnemyEvent.Raise(this, damage);
+            attackEnemyEvent.Raise(this, new AttackDataAxe(collision.gameObject, damage));
             Destroy(gameObject);            
         }
 
         if (collision.CompareTag("FlyingEnemy"))
         {
-            attackEnemyEvent.Raise(this, damage);
+            attackEnemyEvent.Raise(this, new AttackDataAxe(collision.gameObject, damage));
             Destroy(gameObject);            
         }
 
@@ -47,4 +47,16 @@ public class AxeLogic : MonoBehaviour
 
     }
 
+}
+
+public class AttackDataAxe //Just for setting the data that will damage enemies
+{
+    public GameObject target;
+    public int damage;
+
+    public AttackDataAxe(GameObject target, int damage)
+    {
+        this.target = target;
+        this.damage = damage;
+    }
 }
