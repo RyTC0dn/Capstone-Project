@@ -11,13 +11,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
     public GameEvent playerInteract;
+
+    [HideInInspector] public Vector2 moveInput;
      
     public float playerSpeed;
     [HideInInspector] public float horizontalSpeed;
     private Rigidbody2D rb2D;
     [SerializeField] private Animator animator;
-
-    public Quaternion playerRot; //For rotating the whole object instead of the sprite
 
     [SerializeField]
     private float sprintFactor = 1.5f;
@@ -84,27 +84,37 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     //Is good for physics calculations
     private void FixedUpdate()
     {
-        //Float variable to store horizontal input
-        //Horizontal can be -1, 0, or 1
-        float hSpeed = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
-        Move(hSpeed);
-
-        //if (dashTime > 0)
-        //{
-        //    //Set dash function
-        //    Dash(hSpeed);
-        //}
-
-
+        Move();
         InteractEvent();
     }
 
-    private void Move(float hSpeed)
+    public void OnMove(InputAction.CallbackContext ctx)
     {
-        //Assigning booleans to the key inputs
-        float movement = Input.GetAxisRaw("Horizontal");
+        moveInput = ctx.ReadValue<Vector2>();
+    }
+
+    private void Move()
+    {
+        float h = moveInput.x;
+
+        rb2D.linearVelocity = new Vector2(h * playerSpeed, rb2D.linearVelocity.y);
+
+        ///The entire object is flipped based on direction
+        ///to ensure that the attack collider will always be in front of the player
+        if (h > 0)
+        {
+            isFacingRight = true;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if(h < 0)
+        {
+            isFacingRight = false;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        animator.SetBool("isRunning", h != 0);
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
@@ -122,32 +132,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //if(sprintTimer <= 0) { sprintTimer = 0;
         //    isSprinting = false;
         //}
-
-        rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
-
-        ///The entire object is flipped based on direction
-        ///to ensure that the attack collider will always be in front of the player
-        if (movement > 0 )
-        {
-            isFacingRight = true;
-            playerRot = Quaternion.Euler(0, 0, 0);  
-            transform.rotation = playerRot;
-        }
-        if(movement < 0 )
-        {
-            isFacingRight = false;
-            playerRot = Quaternion.Euler(0, 180, 0);
-            transform.rotation = playerRot;
-        }
-
-       if (movement != 0) //if the player is moving set running else idle animation
-      {
-           animator.SetBool("isRunning", true);
-       }
-       else
-       {
-            animator.SetBool("isRunning", false);
-       }
     }
 
     //Only call this function when the player lives equal 0

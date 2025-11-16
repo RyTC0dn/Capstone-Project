@@ -15,23 +15,24 @@ public class UIManager : MonoBehaviour
 {
     //Game Variables
     private int coinCount;
-    public static UIManager instance {  get; private set; }
+    public static UIManager instance { get; private set; }
 
     PrototypePlayerMovementControls playerControls;
     PrototypePlayerAttack playerAttack;
+    public GameObject player;
 
     public GameObject pauseMenu;
     public GameObject settingsMenu;
     public static bool isGamePaused = false;
 
     [Header("First Selected Option")]
-    [SerializeField]private EventSystem events;
     [SerializeField] private GameObject menuFirst;
     [SerializeField] private GameObject settingsMenuFirst;
 
     private void Awake()
     {
-        
+        playerControls = GameObject.Find(player.name).GetComponent<PrototypePlayerMovementControls>();
+        playerAttack = GameObject.Find(player.name).GetComponent<PrototypePlayerAttack>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -93,10 +94,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         isGamePaused = false;
 
+        EventSystem.current.SetSelectedGameObject(null);
+
         playerControls.enabled = true;
         playerAttack.enabled = true;
-
-        EventSystem.current.SetSelectedGameObject(null);
     }
 
     void Pause()
@@ -106,11 +107,13 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         isGamePaused = true;
 
+        EventSystem.current.SetSelectedGameObject(menuFirst);
+
         //Deactivate player controls
         playerAttack.enabled = false;
         playerControls.enabled = false;
 
-        EventSystem.current.SetSelectedGameObject(menuFirst);
+
     }
 
     void OpenSettingsMenuHandle()
