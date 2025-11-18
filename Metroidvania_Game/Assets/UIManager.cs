@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 /// <summary>
 /// I just created this script to give some basic UI updating for the coin tracker
@@ -28,17 +29,26 @@ public class UIManager : MonoBehaviour
     [Header("First Selected Option")]
     [SerializeField] private GameObject menuFirst;
     [SerializeField] private GameObject settingsMenuFirst;
+    [SerializeField] private GameObject startMenuFirst;
+    [SerializeField] private GameObject elevatorFirst;
 
     private void Awake()
     {
-        playerControls = GameObject.Find(player.name).GetComponent<PrototypePlayerMovementControls>();
-        playerAttack = GameObject.Find(player.name).GetComponent<PrototypePlayerAttack>();
-    }
+        string checkSceneName = SceneManager.GetActiveScene().name;
+        if(checkSceneName != "StartMenu")
+        {
+            playerControls = GameObject.Find(player.name).GetComponent<PrototypePlayerMovementControls>();
+            playerAttack = GameObject.Find(player.name).GetComponent<PrototypePlayerAttack>();
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(startMenuFirst);
+        }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
+        if(checkSceneName == "Level 1 - RyanTestZone")
+        {
+            elevatorFirst = GameObject.Find("Elevator_Entrance").GetComponent<GameObject>();
+        }
     }
 
     // Update is called once per frame
@@ -74,6 +84,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame() //This will be called in the Start menu screen
     {
+        EventSystem.current.SetSelectedGameObject(null);
         SceneManager.LoadScene("Town");
     }
 
@@ -133,6 +144,34 @@ public class UIManager : MonoBehaviour
     public void OnSettingsBackPress()
     {
         Pause();
+    }
+
+    #endregion
+
+    #region Elevator Button Actions
+    public void OnElevatorInteract(Component sender, object data)
+    {
+        bool isNear = ElevatorManager.instance.isNearElevator;
+        if(data is bool pressed && pressed && isNear)
+        {
+            EventSystem.current.SetSelectedGameObject(elevatorFirst);
+
+            //Deactivate player controls
+            playerAttack.enabled = false;
+            playerControls.enabled = false;
+            Debug.Log("UIManager: Interact event recieved");
+        }
+    }
+
+    public void CloseElevatorMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public IEnumerator SetFirstElevatorSelected()
+    {
+        yield return new WaitForSeconds(1f);
+        EventSystem.current.SetSelectedGameObject(elevatorFirst);
     }
 
     #endregion

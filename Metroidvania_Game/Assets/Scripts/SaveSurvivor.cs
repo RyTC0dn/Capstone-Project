@@ -11,9 +11,11 @@ using UnityEngine.UIElements;
 public class SaveSurvivor : MonoBehaviour
 {
     [SerializeField]private bool playerIsNear = false;
+    private bool hasBeenSaved = false;
 
     public NPC npcData;
-    public Dialogue activeDialogue;
+    public Dialogue beforeSavingDialogue;
+    public Dialogue afterSavingDialogue;
     public GameObject textBubble;
 
     public TextMeshProUGUI npcName;
@@ -24,6 +26,8 @@ public class SaveSurvivor : MonoBehaviour
     private bool firstLineShown = false;
 
     public string sceneName;
+
+    public GameObject buttonPrompt;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,27 +41,33 @@ public class SaveSurvivor : MonoBehaviour
         }
 
         textBubble.SetActive(false);
+        buttonPrompt.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!conversationActive || activeDialogue.textLines.Length == 0) { return; }
+        BeforeSavedDialogue();
+    }
 
-       
+    private void BeforeSavedDialogue()
+    {
+        if (!conversationActive || beforeSavingDialogue.textLines.Length == 0) { return; }
 
-        dialogueText.text = activeDialogue.textLines[activeLineIndex].text;
+        Dialogue currentDialogue = hasBeenSaved ? afterSavingDialogue : beforeSavingDialogue;
+
+        dialogueText.text = currentDialogue.textLines[activeLineIndex].text;
         npcName.text = npcData.npcName;
 
         if (Keyboard.current.eKey.wasPressedThisFrame && playerIsNear)
-        { 
-            if(!firstLineShown)
+        {
+            if (!firstLineShown)
             {
                 textBubble.SetActive(true);
                 firstLineShown = true;
                 return; //Don't advance on first first press
             }
-            
+
             AdvanceDialog();
         }
     }
@@ -68,19 +78,25 @@ public class SaveSurvivor : MonoBehaviour
 
         //If the active index variable stays less than
         //the amount of text lines generated
-        if (activeLineIndex >= activeDialogue.textLines.Length)
+        if (activeLineIndex >= beforeSavingDialogue.textLines.Length)
         {
             activeLineIndex = 0;
             conversationActive = false;
             textBubble.SetActive(false );
-            GameManager.instance.isBlacksmithSaved = true;
-            PlayerPrefs.SetInt("BlacksmithSaved", 1);
-            PlayerPrefs.Save();
-            Destroy(gameObject);
+            firstLineShown = false;
+            //GameManager.instance.isBlacksmithSaved = true;
+            //PlayerPrefs.SetInt("BlacksmithSaved", 1);
+            //PlayerPrefs.Save();
+            //Destroy(gameObject);
             return;
         }
 
         //dialog.text = conversation.textLines[activeLineIndex].text;
+    }
+
+    public void OnSave(Component sender, object data)
+    {
+
     }
 
 
@@ -91,6 +107,7 @@ public class SaveSurvivor : MonoBehaviour
         {
             playerIsNear = true;
             conversationActive = true;
+            buttonPrompt.SetActive(true);
         }
     }
 
@@ -99,6 +116,7 @@ public class SaveSurvivor : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIsNear = false;
+            buttonPrompt.SetActive(false);
         }
     }
 }

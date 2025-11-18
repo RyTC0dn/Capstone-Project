@@ -81,6 +81,9 @@ public class Elevator : MonoBehaviour
             {
                 elevatorAnimation.SetTrigger("OpenDoor");
                 parentPanel.SetActive(true);
+
+                StartCoroutine(UIManager.instance.SetFirstElevatorSelected());
+
                 Debug.Log("Event recieved");
                 PrototypePlayerAttack playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
                 playerAttack.enabled = false;

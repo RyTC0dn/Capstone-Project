@@ -53,8 +53,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         playerController = new Player_Controller();
         playerController.Enable();
 
+        //Subscribing to the move event
         playerController.Gameplay.Movement.performed += OnMove;
         playerController.Gameplay.Movement.canceled += OnMove;
+        playerController.Gameplay.Interact.performed += InteractEvent;
+        playerController.Gameplay.Interact.canceled += InteractEvent;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -68,7 +71,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         shop = FindAnyObjectByType<PrototypeShop>();
 
-        playerAttack = GetComponent<PrototypePlayerAttack>();
+        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
 
         enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
     }
@@ -77,22 +80,18 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         playerController.Gameplay.Movement.performed -= OnMove;
         playerController.Gameplay.Movement.canceled -= OnMove;
+        playerController.Gameplay.Interact.performed -= InteractEvent;
+        playerController.Gameplay.Interact.canceled -= InteractEvent;
     }
 
-    public void InteractEvent()
+    public void InteractEvent(InputAction.CallbackContext context)
     {
-        //Activate interact event 
-        bool pressKey = Keyboard.current.eKey.isPressed;
-        bool pressButton = Gamepad.current?.xButton.isPressed ?? false;
-
-        bool isPressed = pressKey || pressButton;
-
         //If either the ekey or xButton is pressed
-        if (isPressed )
+        if (context.performed)
         {
             //Send the interact event out
             playerAttack.enabled = false;
-            playerInteract.Raise(this, isPressed);
+            playerInteract.Raise(this, context.performed);
         }
     }
 
@@ -103,7 +102,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         //Set the movement function
         Move();
-        InteractEvent();
+
+        if(Keyboard.current.rKey.isPressed)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext ctx)

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 266ee5624740d8b43b24e535e8e2b780, type: 3}
-  m_Name: NPCSurvivor-Blacksmith
+  m_Name: NPCSurvivor-BlacksmithAfter
   m_EditorClassIdentifier: 
   textLines:
   - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: Took you long enough!!!
+    text: Finally!
   - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: I'll make it worth your while.
+    text: Was taken ya ages to get back.
   - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: Just get me out of here!
+    text: Meet me back at town and I'll see what I can scrounge up for ya.

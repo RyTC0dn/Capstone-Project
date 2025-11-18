@@ -62,6 +62,15 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""01e52cfa-8066-4ecf-9b35-f11783549581"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +249,28 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
                     ""action"": ""Melee"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ecaa6e7-4a10-4609-9785-5cca9ae2f7a2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9f8415f-a890-440b-8d83-bc0f2aab0605"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -314,6 +345,7 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
         m_Gameplay_Block = m_Gameplay.FindAction("Block", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_Melee = m_Gameplay.FindAction("Melee", throwIfNotFound: true);
+        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MenuOpenClose = m_UI.FindAction("MenuOpenClose", throwIfNotFound: true);
@@ -388,6 +420,7 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Block;
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_Melee;
+    private readonly InputAction m_Gameplay_Interact;
     public struct GameplayActions
     {
         private @Player_Controller m_Wrapper;
@@ -396,6 +429,7 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
         public InputAction @Block => m_Wrapper.m_Gameplay_Block;
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @Melee => m_Wrapper.m_Gameplay_Melee;
+        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -417,6 +451,9 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
             @Melee.started += instance.OnMelee;
             @Melee.performed += instance.OnMelee;
             @Melee.canceled += instance.OnMelee;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -433,6 +470,9 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
             @Melee.started -= instance.OnMelee;
             @Melee.performed -= instance.OnMelee;
             @Melee.canceled -= instance.OnMelee;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -520,6 +560,7 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
         void OnBlock(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

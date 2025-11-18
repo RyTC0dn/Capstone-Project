@@ -113,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3794924728446527808}
   - component: {fileID: 9104788137208622746}
+  - component: {fileID: 3640277695205136326}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -151,8 +152,40 @@ MonoBehaviour:
   player: {fileID: 5958576740038597133, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
   pauseMenu: {fileID: 6382773331495177979}
   settingsMenu: {fileID: 4944404079579940485}
+  elevatorMenu: {fileID: 0}
   menuFirst: {fileID: 5321011546005831658}
   settingsMenuFirst: {fileID: 2868649371806225900}
+  startMenuFirst: {fileID: 0}
+  elevatorFirst: {fileID: 0}
+--- !u!114 &3640277695205136326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440800507089316385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventDescription: When Player Interacts with Elevator
+  gameEvent: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9104788137208622746}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnElevatorInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5118712548450620643
 PrefabInstance:
   m_ObjectHideFlags: 0
