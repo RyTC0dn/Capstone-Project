@@ -26,6 +26,8 @@ public class PrototypePlayerAttack : MonoBehaviour
 
     Player_Controller playerControl;
 
+    public ParticleSystem slashVFX;
+
     private void Awake()
     {
         playerControl = new Player_Controller();
@@ -98,6 +100,8 @@ public class PrototypePlayerAttack : MonoBehaviour
 
     private IEnumerator ResetWeapon()
     {
+        slashVFX.Play();
+
         yield return new WaitForSeconds(0.6f);
         weaponCollider.enabled = false;
     }
