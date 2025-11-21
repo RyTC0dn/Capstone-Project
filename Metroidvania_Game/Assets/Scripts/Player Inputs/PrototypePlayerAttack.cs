@@ -95,15 +95,17 @@ public class PrototypePlayerAttack : MonoBehaviour
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
 
+        slashVFX.Play();
+        slashVFX.Clear();
+
         StartCoroutine(ResetWeapon());
     }
 
     private IEnumerator ResetWeapon()
     {
-        slashVFX.Play();
-
         yield return new WaitForSeconds(0.6f);
         weaponCollider.enabled = false;
+        Debug.Log("Weapon activated");
     }
 
     private IEnumerator Delay()

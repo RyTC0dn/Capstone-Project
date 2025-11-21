@@ -16,6 +16,7 @@ public class Elevator : MonoBehaviour
     /// </summary>
     public string elevatorLocationName;
     public GameEvent teleportPlayer;
+    public GameEvent UIActive;
 
     [Header("Elevator Animations")]
     private Animator elevatorAnimation;
@@ -58,6 +59,8 @@ public class Elevator : MonoBehaviour
             {
                 button.interactable = true;
 
+                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
+
                 //Ensure that listener is only added once
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => OnButtonClicked(destinationName));
@@ -82,7 +85,7 @@ public class Elevator : MonoBehaviour
                 elevatorAnimation.SetTrigger("OpenDoor");
                 parentPanel.SetActive(true);
 
-                StartCoroutine(UIManager.instance.SetFirstElevatorSelected());
+                UIActive.Raise(this, true);
 
                 Debug.Log("Event recieved");
                 PrototypePlayerAttack playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();

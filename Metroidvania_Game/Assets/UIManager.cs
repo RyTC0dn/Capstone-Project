@@ -152,7 +152,7 @@ public class UIManager : MonoBehaviour
     public void OnElevatorInteract(Component sender, object data)
     {
         bool isNear = ElevatorManager.instance.isNearElevator;
-        if(data is bool pressed && pressed && isNear)
+        if(data is bool active && active && sender is Elevator)
         {
             EventSystem.current.SetSelectedGameObject(elevatorFirst);
 
@@ -166,6 +166,8 @@ public class UIManager : MonoBehaviour
     public void CloseElevatorMenu()
     {
         EventSystem.current.SetSelectedGameObject(null);
+        playerAttack.enabled = true;
+        playerControls.enabled = true;
     }
 
     public IEnumerator SetFirstElevatorSelected()

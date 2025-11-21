@@ -2,6 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
+public class ElevatorSaveData
+{
+    public List<string> registeredElevators = new List<string>();
+}
+
 public class ElevatorManager : MonoBehaviour
 {
     public static ElevatorManager instance { get; private set; }
@@ -12,6 +17,8 @@ public class ElevatorManager : MonoBehaviour
     public bool isActive = false;
 
     public GameObject parentPanel;
+
+    private ElevatorSaveData saveData = new ElevatorSaveData();
 
     private void Awake()
     {
@@ -26,6 +33,7 @@ public class ElevatorManager : MonoBehaviour
 
     public void CloseUI()//Close UI on button click
     {
+        UIManager.instance.CloseElevatorMenu();//Deactivate Event system
         parentPanel.SetActive(false);
     }
 
@@ -34,6 +42,13 @@ public class ElevatorManager : MonoBehaviour
         if (!elevators.ContainsKey(elevator.elevatorLocationName))
         {
             elevators.Add(elevator.elevatorLocationName, elevator);
+
+            saveData.registeredElevators.Add(elevator.elevatorLocationName);
+
+            string json = JsonUtility.ToJson(saveData);
+            PlayerPrefs.SetString("ElevatorRegistered", json);
+            PlayerPrefs.Save();
+
             Debug.Log($"Registered elevator: {elevator.elevatorLocationName}");
         }
     }
