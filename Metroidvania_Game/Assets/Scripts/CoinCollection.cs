@@ -6,6 +6,7 @@ public class CoinCollection : MonoBehaviour
     private bool playerDetected = false;
     public GameEvent coinCollection;
     private int coinValue = 1;
+    private AudioSource coinCollect;
 
     private void CoinCollect(int amount)
     {
@@ -15,12 +16,16 @@ public class CoinCollection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        coinCollect = GetComponent<AudioSource>();
+
         //Check if the player walks into a coin
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Coin Collected");
 
             CoinCollect(coinValue);
+
+            coinCollect.Play();
 
             Destroy(gameObject);
         }

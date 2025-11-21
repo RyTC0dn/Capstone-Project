@@ -11,13 +11,14 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
     public GameEvent playerInteract;
+
+    Player_Controller playerController;
+    [HideInInspector] public Vector2 moveInput;
      
     public float playerSpeed;
     [HideInInspector] public float horizontalSpeed;
     private Rigidbody2D rb2D;
     [SerializeField] private Animator animator;
-
-    public Quaternion playerRot; //For rotating the whole object instead of the sprite
 
     [SerializeField]
     private float sprintFactor = 1.5f;
@@ -47,6 +48,18 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     public float kbDuration = 0.2f;
     private bool isKnockedBack = false;
 
+    private void Awake()
+    {
+        playerController = new Player_Controller();
+        playerController.Enable();
+
+        //Subscribing to the move event
+        playerController.Gameplay.Movement.performed += OnMove;
+        playerController.Gameplay.Movement.canceled += OnMove;
+        playerController.Gameplay.Interact.performed += InteractEvent;
+        playerController.Gameplay.Interact.canceled += InteractEvent;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,25 +71,28 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         shop = FindAnyObjectByType<PrototypeShop>();
 
-        playerAttack = GetComponent<PrototypePlayerAttack>();
+        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
 
         enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
     }
 
-    public void InteractEvent()
+    private void OnDestroy()
     {
-        //Activate interact event 
-        bool pressKey = Keyboard.current.eKey.isPressed;
-        bool pressButton = Gamepad.current?.xButton.isPressed ?? false;
+        playerController.Gameplay.Movement.performed -= OnMove;
+        playerController.Gameplay.Movement.canceled -= OnMove;
+        playerController.Gameplay.Interact.performed -= InteractEvent;
+        playerController.Gameplay.Interact.canceled -= InteractEvent;
+    }
 
-        bool isPressed = pressKey || pressButton;
-
+    public void InteractEvent(InputAction.CallbackContext context)
+    {
         //If either the ekey or xButton is pressed
-        if (isPressed )
+        if (context.performed)
         {
             //Send the interact event out
             playerAttack.enabled = false;
-            playerInteract.Raise(this, isPressed);
+            playerInteract.Raise(this, context.performed);
+            Debug.Log(context.performed);
         }
     }
 
@@ -84,27 +100,43 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     //Is good for physics calculations
     private void FixedUpdate()
     {
-        //Float variable to store horizontal input
-        //Horizontal can be -1, 0, or 1
-        float hSpeed = Input.GetAxisRaw("Horizontal");
 
         //Set the movement function
-        Move(hSpeed);
+        Move();
 
-        //if (dashTime > 0)
-        //{
-        //    //Set dash function
-        //    Dash(hSpeed);
-        //}
-
-
-        InteractEvent();
+        if(Keyboard.current.rKey.isPressed)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+        }
     }
 
-    private void Move(float hSpeed)
+    public void OnMove(InputAction.CallbackContext ctx)
     {
-        //Assigning booleans to the key inputs
-        float movement = Input.GetAxisRaw("Horizontal");
+        moveInput = ctx.ReadValue<Vector2>();
+    }
+
+    private void Move()
+    {
+        float h = moveInput.x;
+
+        rb2D.linearVelocity = new Vector2(h * playerSpeed, rb2D.linearVelocity.y);
+
+         ///The entire object is flipped based on direction
+        ///to ensure that the attack collider will always be in front of the player
+        if(h > 0)
+        {
+            isFacingRight = true;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if(h < 0)
+        {
+            isFacingRight = false;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        //animator.SetBool("isRunning", h != 0);
+        animator.SetFloat("Velocity", Mathf.Abs(h));
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
@@ -122,32 +154,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //if(sprintTimer <= 0) { sprintTimer = 0;
         //    isSprinting = false;
         //}
-
-        rb2D.linearVelocity = new Vector2(hSpeed * playerSpeed, rb2D.linearVelocity.y);
-
-        ///The entire object is flipped based on direction
-        ///to ensure that the attack collider will always be in front of the player
-        if (movement > 0 )
-        {
-            isFacingRight = true;
-            playerRot = Quaternion.Euler(0, 0, 0);  
-            transform.rotation = playerRot;
-        }
-        if(movement < 0 )
-        {
-            isFacingRight = false;
-            playerRot = Quaternion.Euler(0, 180, 0);
-            transform.rotation = playerRot;
-        }
-
-       if (movement != 0) //if the player is moving set running else idle animation
-      {
-           animator.SetBool("isRunning", true);
-       }
-       else
-       {
-            animator.SetBool("isRunning", false);
-       }
     }
 
     //Only call this function when the player lives equal 0
