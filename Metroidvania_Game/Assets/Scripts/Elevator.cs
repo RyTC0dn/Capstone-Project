@@ -46,6 +46,13 @@ public class Elevator : MonoBehaviour
 
         parentPanel.SetActive(false);
         inputText.enabled = false;
+
+        //If this elevator name exists in the save data, register it automatically
+        if (ElevatorManager.instance.saveData.
+            registeredElevators.Contains(elevatorLocationName))
+        {
+            ElevatorManager.instance.RegisterElevator(this);
+        }
     }
 
     private void Update()
@@ -67,6 +74,9 @@ public class Elevator : MonoBehaviour
             }
         }
         TextColor();
+
+        if (ElevatorManager.instance.elevators.ContainsKey(elevatorLocationName))
+            inputText.enabled = true;
     }
 
     void TextColor()

@@ -38,13 +38,15 @@ public class SaveSurvivor : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        //Check if this NPC should be destroyed based on save data and current scene
-        if (PlayerPrefs.GetInt("BlacksmithSaved", 0) == 1 && 
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == sceneName)
+
+        //Check if the blacksmith has been saved
+        if (GameManager.instance.isBlacksmithSaved)
         {
+            //If so then destroy the black smith in level 
             Destroy(gameObject);
             return;
         }
+
 
         textBubble.SetActive(false);
         buttonPrompt.SetActive(false);
@@ -59,12 +61,14 @@ public class SaveSurvivor : MonoBehaviour
     {
         if (hasBeenSaved)
         {
-            BeforeSavedDialogue();
+            buttonPrompt.SetActive(true);
+            
+            conversationActive = true;
         }
         
     }
 
-    private void BeforeSavedDialogue()
+    public void OnPlayerInteract(Component sender, object data)
     {
         if (!conversationActive || beforeSavingDialogue.textLines.Length == 0) { return; }
 
@@ -73,7 +77,7 @@ public class SaveSurvivor : MonoBehaviour
         dialogueText.text = currentDialogue.textLines[activeLineIndex].text;
         npcName.text = npcData.npcName;
 
-        if (Keyboard.current.eKey.wasPressedThisFrame && playerIsNear)
+        if (sender is PrototypePlayerMovementControls && conversationActive)
         {
             if (!firstLineShown)
             {
@@ -123,8 +127,6 @@ public class SaveSurvivor : MonoBehaviour
             if(hasBeenSaved)
             {
                 playerIsNear = true;
-                conversationActive = true;
-                buttonPrompt.SetActive(true);
             }            
         }
         if (collision.CompareTag("Weapon"))

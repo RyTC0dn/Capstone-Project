@@ -60,6 +60,10 @@ public class PrototypeShop : MonoBehaviour
         {
            axeButton.interactable = false;
         }
+        if(isShopping)
+        {
+            devonAudio.Play();
+        }
     }
 
     //This function is being called by the player movement controls script
@@ -73,7 +77,7 @@ public class PrototypeShop : MonoBehaviour
                 shopUI.SetActive(true);
                 promptButton.SetActive(false);
                 playerAttack.enabled = false;
-                devonAudio.Play();
+                isShopping = true;               
                 GameManager.instance.StateSwitch(GameStates.Pause);                
             }
         }      

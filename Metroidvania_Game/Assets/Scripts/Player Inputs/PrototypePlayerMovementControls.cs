@@ -92,6 +92,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             //Send the interact event out
             playerAttack.enabled = false;
             playerInteract.Raise(this, context.performed);
+            Debug.Log(context.performed);
         }
     }
 
@@ -134,7 +135,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
-        animator.SetBool("isRunning", h != 0);
+        //animator.SetBool("isRunning", h != 0);
+        animator.SetFloat("Velocity", Mathf.Abs(h));
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor

@@ -18,7 +18,7 @@ public class ElevatorManager : MonoBehaviour
 
     public GameObject parentPanel;
 
-    private ElevatorSaveData saveData = new ElevatorSaveData();
+    public ElevatorSaveData saveData = new ElevatorSaveData();
 
     private void Awake()
     {
@@ -29,6 +29,12 @@ public class ElevatorManager : MonoBehaviour
         }
         instance = this;
         //DontDestroyOnLoad(gameObject);
+
+        if (PlayerPrefs.HasKey("ElevatorRegistered"))
+        {
+            string json = PlayerPrefs.GetString("ElevatorRegistered");
+            saveData = JsonUtility.FromJson<ElevatorSaveData>(json);
+        }
     }
 
     public void CloseUI()//Close UI on button click

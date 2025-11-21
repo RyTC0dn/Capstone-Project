@@ -52,9 +52,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
     }
 
     //When player loses 2 hp
