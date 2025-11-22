@@ -60,10 +60,6 @@ public class PrototypeShop : MonoBehaviour
         {
            axeButton.interactable = false;
         }
-        if(isShopping)
-        {
-            devonAudio.Play();
-        }
     }
 
     //This function is being called by the player movement controls script
@@ -74,10 +70,12 @@ public class PrototypeShop : MonoBehaviour
             if(isPressed && isNearShop && GameManager.instance.isBlacksmithSaved)
             {
                 //Set the shop ui object to active when function is called
+                devonAudio.Play();
+
                 shopUI.SetActive(true);
                 promptButton.SetActive(false);
                 playerAttack.enabled = false;
-                isShopping = true;               
+                isShopping = true;
                 GameManager.instance.StateSwitch(GameStates.Pause);                
             }
         }      
