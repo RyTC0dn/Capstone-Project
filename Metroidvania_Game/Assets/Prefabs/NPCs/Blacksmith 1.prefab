@@ -688,7 +688,6 @@ GameObject:
   - component: {fileID: 8185659968478772252}
   - component: {fileID: 4020196587750293799}
   - component: {fileID: 2290177499615324340}
-  - component: {fileID: 3628652863643631320}
   - component: {fileID: 862895010000645107}
   - component: {fileID: 8915612375021893606}
   - component: {fileID: 2237365976252304545}
@@ -858,23 +857,6 @@ MonoBehaviour:
   dialogueText: {fileID: 1168976836184661395}
   sceneName: Level 1 - RyanTestZone
   buttonPrompt: {fileID: 3041088372839659987}
---- !u!114 &3628652863643631320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9021047022510109762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: When Player uses interact input
-  gameEvent: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!95 &862895010000645107
 Animator:
   serializedVersion: 7

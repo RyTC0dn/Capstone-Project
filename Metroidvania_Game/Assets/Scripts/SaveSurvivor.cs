@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 
 public class SaveSurvivor : MonoBehaviour
 {
-    [SerializeField]private bool playerIsNear = false;
+    [SerializeField] private bool playerIsNear = false;
     private bool hasBeenSaved = false;
     private bool blacksmithFreed = false;
 
@@ -38,15 +38,12 @@ public class SaveSurvivor : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-
-        //Check if the blacksmith has been saved
-        if (GameManager.instance.isBlacksmithSaved)
+        //Check if this NPC should be destroyed based on save data and current scene
+        if(GameManager.instance.isBlacksmithSaved )
         {
-            //If so then destroy the black smith in level 
             Destroy(gameObject);
             return;
         }
-
 
         textBubble.SetActive(false);
         buttonPrompt.SetActive(false);
@@ -62,13 +59,13 @@ public class SaveSurvivor : MonoBehaviour
         if (hasBeenSaved)
         {
             buttonPrompt.SetActive(true);
-            
             conversationActive = true;
+            BeforeSavedDialogue();
         }
-        
+
     }
 
-    public void OnPlayerInteract(Component sender, object data)
+    private void BeforeSavedDialogue()
     {
         if (!conversationActive || beforeSavingDialogue.textLines.Length == 0) { return; }
 
@@ -77,7 +74,12 @@ public class SaveSurvivor : MonoBehaviour
         dialogueText.text = currentDialogue.textLines[activeLineIndex].text;
         npcName.text = npcData.npcName;
 
-        if (sender is PrototypePlayerMovementControls && conversationActive)
+        //Calling inputs in booleans require ? after current
+        //and ?? as to say it is currently not pressed 
+        bool keyInput = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+        bool buttonInput = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
+
+        if ((keyInput||buttonInput) && playerIsNear)
         {
             if (!firstLineShown)
             {
@@ -101,7 +103,7 @@ public class SaveSurvivor : MonoBehaviour
         {
             activeLineIndex = 0;
             conversationActive = false;
-            textBubble.SetActive(false );
+            textBubble.SetActive(false);
             firstLineShown = false;
             GameManager.instance.isBlacksmithSaved = true;
             PlayerPrefs.SetInt("BlacksmithSaved", 1);
@@ -113,21 +115,13 @@ public class SaveSurvivor : MonoBehaviour
         //dialog.text = conversation.textLines[activeLineIndex].text;
     }
 
-    public void OnSave(Component sender, object data)
-    {
-
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {       
+    {
 
         if (collision.CompareTag("Player"))
         {
-            if(hasBeenSaved)
-            {
-                playerIsNear = true;
-            }            
+            playerIsNear = true;
         }
         if (collision.CompareTag("Weapon"))
         {
@@ -141,17 +135,17 @@ public class SaveSurvivor : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        if(hitsLeft == 2)
+        if (hitsLeft == 2)
         {
             Color firstHit = new Color(255, 215, 0, 0.5f);
             bubbleSp.color = firstHit;
         }
-        else if(hitsLeft == 1)
+        else if (hitsLeft == 1)
         {
             Color secondHit = new Color(255, 25, 0, 0.5f);
             bubbleSp.color = secondHit;
         }
-        else if(hitsLeft <= 0)
+        else if (hitsLeft <= 0)
         {
             bubbleSp.gameObject.SetActive(false);
             numberOfHits = 3;
@@ -172,3 +166,4 @@ public class SaveSurvivor : MonoBehaviour
 
 
 }
+

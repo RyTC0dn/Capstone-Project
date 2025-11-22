@@ -90,9 +90,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         if (context.performed)
         {
             //Send the interact event out
-            playerAttack.enabled = false;
             playerInteract.Raise(this, context.performed);
-            Debug.Log(context.performed);
         }
     }
 

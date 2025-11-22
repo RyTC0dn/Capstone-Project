@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d587f2df176e0c24d914087d956a37b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 17
+  jumpForce: 12.5
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   groundLayer:

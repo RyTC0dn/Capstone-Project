@@ -14,10 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLines:
   - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: Hey you!
-  - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: I can help equip you with new gear, but ya gotta get me outta here.
-  - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: Last saw some rat taking a key away and it was a big one.
-  - npc: {fileID: 11400000, guid: cdd0c4348f2ede141a0f76936c33513a, type: 2}
-    text: Now hurry up and go find it.
+    text: ...
