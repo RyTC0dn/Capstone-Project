@@ -12,7 +12,7 @@ public class PrototypeShop : MonoBehaviour
     /// </summary>
 
     [Header("General Shop Setup")]
-    public TextMeshProUGUI interactText;
+    public GameObject promptButton;
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
@@ -46,7 +46,7 @@ public class PrototypeShop : MonoBehaviour
         //Initialize the components
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
-        interactText.enabled = false;
+        promptButton.SetActive(false);
         devonAudio = gameObject.GetComponent<AudioSource>();
 
         //Setting UI components to false on start
@@ -60,6 +60,10 @@ public class PrototypeShop : MonoBehaviour
         {
            axeButton.interactable = false;
         }
+        if(isShopping)
+        {
+            devonAudio.Play();
+        }
     }
 
     //This function is being called by the player movement controls script
@@ -71,9 +75,9 @@ public class PrototypeShop : MonoBehaviour
             {
                 //Set the shop ui object to active when function is called
                 shopUI.SetActive(true);
-                interactText.enabled = false;
+                promptButton.SetActive(false);
                 playerAttack.enabled = false;
-                devonAudio.Play();
+                isShopping = true;               
                 GameManager.instance.StateSwitch(GameStates.Pause);                
             }
         }      
@@ -114,11 +118,6 @@ public class PrototypeShop : MonoBehaviour
         }
     }
 
-    public void Display(string hoverText)
-    {
-        interactText.text = hoverText;
-    }
-
     public void CloseShop()
     {
         shopUI.SetActive(false);
@@ -134,9 +133,7 @@ public class PrototypeShop : MonoBehaviour
             isNearShop = true;
             if(isNearShop && GameManager.instance.isBlacksmithSaved) //Also check to see if the npc has been saved
             {
-                interactText.enabled = true;
-                string text = "Press E to Interact";
-                Display(text);
+                promptButton.SetActive(true);
             }
  
         }
@@ -150,7 +147,7 @@ public class PrototypeShop : MonoBehaviour
             isNearShop = false;
             if (!isNearShop)
             {
-                interactText.enabled = false;
+                promptButton.SetActive(true);
             }
 
         }

@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 /// <summary>
 /// I just created this script to give some basic UI updating for the coin tracker
@@ -14,30 +16,45 @@ public class UIManager : MonoBehaviour
 {
     //Game Variables
     private int coinCount;
-    public static UIManager instance {  get; private set; }
+    public static UIManager instance { get; private set; }
 
     PrototypePlayerMovementControls playerControls;
     PrototypePlayerAttack playerAttack;
+    public GameObject player;
 
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     public static bool isGamePaused = false;
 
+    [Header("First Selected Option")]
+    [SerializeField] private GameObject menuFirst;
+    [SerializeField] private GameObject settingsMenuFirst;
+    [SerializeField] private GameObject startMenuFirst;
+    [SerializeField] private GameObject elevatorFirst;
 
     private void Awake()
     {
-        
-    }
+        string checkSceneName = SceneManager.GetActiveScene().name;
+        if(checkSceneName != "StartMenu")
+        {
+            playerControls = GameObject.Find(player.name).GetComponent<PrototypePlayerMovementControls>();
+            playerAttack = GameObject.Find(player.name).GetComponent<PrototypePlayerAttack>();
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(startMenuFirst);
+        }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
+        if(checkSceneName == "Level 1 - RyanTestZone")
+        {
+            elevatorFirst = GameObject.Find("Elevator_Entrance").GetComponent<GameObject>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && this != null)
+        if (InputManager.Instance.MenuOpenCloseInput)
         {
             if (isGamePaused)
             {
@@ -67,6 +84,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame() //This will be called in the Start menu screen
     {
+        EventSystem.current.SetSelectedGameObject(null);
         SceneManager.LoadScene("Town");
     }
 
@@ -83,14 +101,80 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
+
+        EventSystem.current.SetSelectedGameObject(null);
+
+        playerControls.enabled = true;
+        playerAttack.enabled = true;
     }
 
     void Pause()
     {
         pauseMenu.gameObject.SetActive(true);
+        settingsMenu.gameObject.SetActive(false);
         Time.timeScale = 0f;
         isGamePaused = true;
+
+        EventSystem.current.SetSelectedGameObject(menuFirst);
+
+        //Deactivate player controls
+        playerAttack.enabled = false;
+        playerControls.enabled = false;
+
+
     }
+
+    void OpenSettingsMenuHandle()
+    {
+        settingsMenu.gameObject.SetActive(true);
+        pauseMenu.gameObject.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
+    }
+
+    #region Main Menu Button Actions
+    public void OnSettingsPress()
+    {
+        OpenSettingsMenuHandle();
+    }
+
+    public void OnSettingsBackPress()
+    {
+        Pause();
+    }
+
+    #endregion
+
+    #region Elevator Button Actions
+    public void OnElevatorInteract(Component sender, object data)
+    {
+        bool isNear = ElevatorManager.instance.isNearElevator;
+        if(data is bool active && active && sender is Elevator)
+        {
+            EventSystem.current.SetSelectedGameObject(elevatorFirst);
+
+            //Deactivate player controls
+            playerAttack.enabled = false;
+            playerControls.enabled = false;
+            Debug.Log("UIManager: Interact event recieved");
+        }
+    }
+
+    public void CloseElevatorMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        playerAttack.enabled = true;
+        playerControls.enabled = true;
+    }
+
+    public IEnumerator SetFirstElevatorSelected()
+    {
+        yield return new WaitForSeconds(1f);
+        EventSystem.current.SetSelectedGameObject(elevatorFirst);
+    }
+
+    #endregion
 }

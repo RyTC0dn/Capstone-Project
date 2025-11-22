@@ -16,6 +16,7 @@ public class Elevator : MonoBehaviour
     /// </summary>
     public string elevatorLocationName;
     public GameEvent teleportPlayer;
+    public GameEvent UIActive;
 
     [Header("Elevator Animations")]
     private Animator elevatorAnimation;
@@ -45,6 +46,13 @@ public class Elevator : MonoBehaviour
 
         parentPanel.SetActive(false);
         inputText.enabled = false;
+
+        //If this elevator name exists in the save data, register it automatically
+        if (ElevatorManager.instance.saveData.
+            registeredElevators.Contains(elevatorLocationName))
+        {
+            ElevatorManager.instance.RegisterElevator(this);
+        }
     }
 
     private void Update()
@@ -58,12 +66,17 @@ public class Elevator : MonoBehaviour
             {
                 button.interactable = true;
 
+                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
+
                 //Ensure that listener is only added once
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => OnButtonClicked(destinationName));
             }
         }
         TextColor();
+
+        if (ElevatorManager.instance.elevators.ContainsKey(elevatorLocationName))
+            inputText.enabled = true;
     }
 
     void TextColor()
@@ -81,6 +94,9 @@ public class Elevator : MonoBehaviour
             {
                 elevatorAnimation.SetTrigger("OpenDoor");
                 parentPanel.SetActive(true);
+
+                UIActive.Raise(this, true);
+
                 Debug.Log("Event recieved");
                 PrototypePlayerAttack playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
                 playerAttack.enabled = false;
