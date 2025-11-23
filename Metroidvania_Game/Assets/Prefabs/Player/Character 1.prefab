@@ -1321,8 +1321,6 @@ MonoBehaviour:
   dashTimer: 0.5
   dashTime: 0
   isFacingRight: 1
-  kbForce: 10
-  kbDuration: 0.2
 --- !u!114 &3919217711980766130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,7 +1780,7 @@ MonoBehaviour:
   invulnerableTimer: 2
   playerHealthChanged: {fileID: 11400000, guid: cd7298a7d9a8a0741b89a8a5df33aca6, type: 2}
   playerDeath: {fileID: 11400000, guid: 3080337d67e433a4fb693fee7716ae74, type: 2}
-  kbForce: 10
+  kbForce: 50
   kbDuration: 0.2
 --- !u!114 &3152163559832396325
 MonoBehaviour:

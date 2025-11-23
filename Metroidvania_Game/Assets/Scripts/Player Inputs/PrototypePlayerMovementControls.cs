@@ -43,11 +43,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     PrototypePlayerAttack playerAttack;
     BasicEnemyAttackState enemyAttack;
 
-    [Header("Knockback")]
-    public float kbForce = 10f;
-    public float kbDuration = 0.2f;
-    private bool isKnockedBack = false;
-
     private void Awake()
     {
         playerController = new Player_Controller();
