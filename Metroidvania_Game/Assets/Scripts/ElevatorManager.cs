@@ -39,8 +39,8 @@ public class ElevatorManager : MonoBehaviour
 
     public void CloseUI()//Close UI on button click
     {
-        UIManager.instance.CloseElevatorMenu();//Deactivate Event system
         parentPanel.SetActive(false);
+        UIManager.instance.CloseElevatorMenu();//Deactivate Event system
     }
 
     public void RegisterElevator(Elevator elevator)
