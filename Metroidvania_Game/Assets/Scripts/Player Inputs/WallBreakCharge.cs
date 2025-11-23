@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Timers;
 using Unity.AppUI.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -67,11 +69,12 @@ public class WallBreakCharge : MonoBehaviour
             gameObject.tag = "AbilityPickup";
 
             Vector2 direction = playerMove.isFacingRight ? Vector2.right : Vector2.left;
-            rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
+            StartCoroutine(ChargeDash(direction));
+            //rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
             chargeTime = 0;
             Debug.Log("Charge!");
 
-            Invoke(nameof(ReEnableMovement), 0.3f);
+            //Invoke(nameof(ReEnableMovement), 0.3f);
         }
         if(!isPressed && chargeTime < maxCharge)
         {
@@ -79,6 +82,36 @@ public class WallBreakCharge : MonoBehaviour
             chargeTime = 0;
             isCharging = false;
         }
+    }
+
+    private IEnumerator ChargeDash(Vector2 direction)
+    {
+        float dashDuration = 0.3f;
+        float elapsed = 0f;
+
+        //Disable gravity + drag so it feels clean
+        float originalGravity = rb2D.gravityScale;
+        rb2D.gravityScale = 0;
+
+        //Freeze movement
+        playerMove.enabled = false;
+
+        while (elapsed < dashDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            //Lerp velocity for smooth acceleration
+            rb2D.linearVelocity = direction * Mathf.Lerp(0, chargeDistance * chargeMultiplier, elapsed/dashDuration);
+
+            yield return null;
+        }
+
+        rb2D.linearVelocity = Vector2.zero;
+        rb2D.gravityScale = originalGravity;
+
+        //Restore control
+        playerMove.enabled = true;
+        gameObject.tag = "Player";
     }
 
     void ReEnableMovement()
