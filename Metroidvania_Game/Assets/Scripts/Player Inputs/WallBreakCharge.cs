@@ -14,6 +14,9 @@ public class WallBreakCharge : MonoBehaviour
 
     private PrototypePlayerMovementControls playerMove;
 
+    [SerializeField]private float chargeDistance;
+    [SerializeField] private float chargeMultiplier;
+
     public Image chargeFill;
 
     public Canvas chargeCanvas;
@@ -64,7 +67,7 @@ public class WallBreakCharge : MonoBehaviour
             gameObject.tag = "AbilityPickup";
 
             Vector2 direction = playerMove.isFacingRight ? Vector2.right : Vector2.left;
-            rb2D.linearVelocity = direction * playerMove.playerSpeed * 10f;
+            rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
             chargeTime = 0;
             Debug.Log("Charge!");
 
