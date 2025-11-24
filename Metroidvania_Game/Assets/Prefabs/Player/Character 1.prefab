@@ -1749,6 +1749,7 @@ MonoBehaviour:
   shieldTimer: 0
   shieldEnabled: 0
   shieldIcon: {fileID: 8436586750304657708}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!114 &-2314640459181212252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,6 +1933,7 @@ MonoBehaviour:
   isCharging: 0
   chargeDistance: 10
   chargeMultiplier: 3.5
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   chargeFill: {fileID: 8322047894532967043}
   chargeCanvas: {fileID: 663570219876286703}
   dashTrail: {fileID: 5955177133110927976}

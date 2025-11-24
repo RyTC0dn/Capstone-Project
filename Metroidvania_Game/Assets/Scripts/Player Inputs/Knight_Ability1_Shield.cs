@@ -15,6 +15,8 @@ public class Knight_Ability1_Shield : MonoBehaviour
 
     public GameObject shieldIcon;
 
+    public SceneInfo sceneInfo;
+
     private void Start()
     {
         //Initializing script components        
@@ -40,7 +42,7 @@ public class Knight_Ability1_Shield : MonoBehaviour
 
         OnBlock();
 
-        if(shieldPickedUp)
+        if(sceneInfo.isShieldPickedUp)
         {
             //Change idle animation 
             shieldIcon.SetActive(true);
@@ -56,12 +58,12 @@ public class Knight_Ability1_Shield : MonoBehaviour
 
     public void OnBlock()
     {
-        bool playerKey = Keyboard.current?.cKey.isPressed ?? false;
+        bool playerKey = Keyboard.current.cKey.isPressed;
         bool playerButton = Gamepad.current?.leftTrigger.isPressed ?? false;
 
         bool isPressed = playerKey || playerButton;
         //If the player holds the shield input = Q key (keyboard) or left trigger (controller)
-        if (isPressed && shieldTimer > 0 && shieldPickedUp)
+        if (isPressed && shieldTimer > 0 && sceneInfo.isShieldPickedUp)
         {
             EnableShield();
         }
@@ -79,6 +81,7 @@ public class Knight_Ability1_Shield : MonoBehaviour
             if(pickedUp == true)
             {
                 shieldPickedUp = true;
+                sceneInfo.isShieldPickedUp = shieldPickedUp;
                 Debug.Log("Shield is picked up");
             }
             else

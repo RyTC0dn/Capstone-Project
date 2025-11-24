@@ -12,12 +12,13 @@ public class WallBreakCharge : MonoBehaviour
     public float maxCharge;
     private Rigidbody2D rb2D;
     [SerializeField]private bool isCharging = false;
-    private bool wallBreakPickedUp = false; //Checks if the wall break upgrade is picked up
+    [SerializeField]private bool wallBreakPickedUp = false; //Checks if the wall break upgrade is picked up
 
     private PrototypePlayerMovementControls playerMove;
 
     [SerializeField]private float chargeDistance;
     [SerializeField] private float chargeMultiplier;
+    public SceneInfo sceneInfo;
 
     public Image chargeFill;
 
@@ -35,21 +36,22 @@ public class WallBreakCharge : MonoBehaviour
 
         chargeCanvas.enabled = false;
         dashTrail.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(wallBreakPickedUp)
+        if(sceneInfo.isWallBreakPickedUp)
         {
             ChargeMechanic();
-        }        
+        }
+        Debug.Log(sceneInfo.isWallBreakPickedUp);
         chargeFill.fillAmount = chargeTime / maxCharge;
     }
 
     void ChargeMechanic()
-    {
-        
+    {       
 
         bool chargeKey = Keyboard.current.rKey.isPressed;
         bool chargeButton = Gamepad.current?.leftTrigger.isPressed ?? false;
@@ -125,12 +127,6 @@ public class WallBreakCharge : MonoBehaviour
         gameObject.tag = "Player";
     }
 
-    void ReEnableMovement()
-    {
-        playerMove.enabled = true;
-        gameObject.tag = "Player";
-    }
-
     public void OnWallBreakPickup(Component sender, object data)
     {
         if (data is bool && sender.gameObject == GameObject.Find("WallBreakPickup"))
@@ -139,6 +135,7 @@ public class WallBreakCharge : MonoBehaviour
             if (pickedUp)
             {
                 wallBreakPickedUp = true;
+                sceneInfo.isWallBreakPickedUp = wallBreakPickedUp;
                 Debug.Log("Wall Break Ability Ready!");
             }
             else
