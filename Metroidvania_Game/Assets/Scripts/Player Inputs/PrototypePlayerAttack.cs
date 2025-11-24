@@ -24,6 +24,25 @@ public class PrototypePlayerAttack : MonoBehaviour
     private AudioSource swordSlashAudio;
     /*[SerializeField] */private Animator animator;
 
+    Player_Controller playerControl;
+
+    public ParticleSystem slashVFX;
+
+    private void Awake()
+    {
+        playerControl = new Player_Controller();
+        playerControl.Enable();
+
+        playerControl.Gameplay.Melee.performed += OnAttack;
+        playerControl.Gameplay.Melee.canceled += OnAttack;
+    }
+
+    private void OnDestroy()
+    {
+        playerControl.Gameplay.Melee.performed -= OnAttack;
+        playerControl.Gameplay.Melee.canceled -= OnAttack;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,7 +56,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -76,6 +95,9 @@ public class PrototypePlayerAttack : MonoBehaviour
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
 
+        slashVFX.Play();
+        slashVFX.Clear();
+
         StartCoroutine(ResetWeapon());
     }
 
@@ -83,6 +105,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         weaponCollider.enabled = false;
+        Debug.Log("Weapon activated");
     }
 
     private IEnumerator Delay()

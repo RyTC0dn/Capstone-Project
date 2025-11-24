@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 2a8e79e262bf0d148964d146f115aad6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1640108189430272123
+    second: blcksmithidle_0
+  - first:
+      213: -5663704802438986333
+    second: blcksmithidle_1
+  - first:
+      213: 7421470847210152529
+    second: blcksmithidle_2
+  - first:
+      213: 2089121924130268682
+    second: blcksmithidle_3
+  - first:
+      213: 2271350694455376392
+    second: blcksmithidle_4
+  - first:
+      213: 4744172196282944719
+    second: blcksmithidle_5
+  - first:
+      213: 7079365211662587153
+    second: blcksmithidle_6
+  - first:
+      213: -2496177224906693233
+    second: blcksmithidle_7
+  - first:
+      213: 9010710043612705282
+    second: blcksmithidle_8
+  - first:
+      213: 8585666739950189167
+    second: blcksmithidle_9
+  - first:
+      213: 3400336021483631633
+    second: blcksmithidle_10
+  - first:
+      213: 1271347144282523628
+    second: blcksmithidle_11
+  - first:
+      213: -3181317602150724631
+    second: blcksmithidle_12
+  - first:
+      213: -4642755118222942436
+    second: blcksmithidle_13
+  - first:
+      213: -8883504126410903735
+    second: blcksmithidle_14
+  - first:
+      213: 3013979073254204074
+    second: blcksmithidle_15
+  - first:
+      213: -5629475271692805138
+    second: blcksmithidle_16
+  - first:
+      213: -6654880959998171864
+    second: blcksmithidle_17
+  - first:
+      213: 1992753666849441203
+    second: blcksmithidle_18
+  - first:
+      213: 4937868711647765165
+    second: blcksmithidle_19
+  - first:
+      213: 6655544085932008749
+    second: blcksmithidle_20
+  - first:
+      213: 8581233780612009347
+    second: blcksmithidle_21
+  - first:
+      213: -3708529631050197735
+    second: blcksmithidle_22
+  - first:
+      213: 5240085659780121287
+    second: blcksmithidle_23
+  - first:
+      213: -205280048675555157
+    second: blcksmithidle_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 55
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blcksmithidle_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1918
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58facc79a4a2d39e0800000000000000
+      internalID: -1640108189430272123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_1
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1918
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a543f16d7a7661b0800000000000000
+      internalID: -5663704802438986333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_2
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 1918
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152e0e63a6c5ef660800000000000000
+      internalID: 7421470847210152529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_3
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1917
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06e344425d0efc10800000000000000
+      internalID: 2089121924130268682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_4
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 1917
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a79572c65758f10800000000000000
+      internalID: 2271350694455376392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_5
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 1917
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcccab01a7fa6d140800000000000000
+      internalID: 4744172196282944719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_6
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 1917
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1151864e625fe3260800000000000000
+      internalID: 7079365211662587153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_7
+      rect:
+        serializedVersion: 2
+        x: 1895
+        y: 1917
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85240d0a0ccb5dd0800000000000000
+      internalID: -2496177224906693233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1660
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 202749b3b097c0d70800000000000000
+      internalID: 9010710043612705282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_9
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1660
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6afd92496a662770800000000000000
+      internalID: 8585666739950189167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_10
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1660
+        width: 62
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1143f75889b603f20800000000000000
+      internalID: 3400336021483631633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_11
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1660
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce7ca29ed7bb4a110800000000000000
+      internalID: 1271347144282523628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_12
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1660
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebcb160f70b9d3d0800000000000000
+      internalID: -3181317602150724631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_13
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 1659
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1fd13f71de919fb0800000000000000
+      internalID: -4642755118222942436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_14
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1659
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94faf88501477b480800000000000000
+      internalID: -8883504126410903735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_15
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 1660
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa227c59ffdc3d920800000000000000
+      internalID: 3013979073254204074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1404
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb97ee011610e1b0800000000000000
+      internalID: -5629475271692805138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_17
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1404
+        width: 62
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8256cc4a60d15a3a0800000000000000
+      internalID: -6654880959998171864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_18
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1404
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b50b65e6eea7ab10800000000000000
+      internalID: 1992753666849441203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_19
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1405
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2e7496e65d68440800000000000000
+      internalID: 4937868711647765165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_20
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1405
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25ede4651e3d5c50800000000000000
+      internalID: 6655544085932008749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_21
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 1405
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d06fb78aaa61770800000000000000
+      internalID: 8581233780612009347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_22
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1405
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9151e3ef2f7a88cc0800000000000000
+      internalID: -3708529631050197735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_23
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 1406
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c200d7f42688b840800000000000000
+      internalID: 5240085659780121287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blcksmithidle_24
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1150
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8f73322e2b62df0800000000000000
+      internalID: -205280048675555157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      blcksmithidle_0: -1640108189430272123
+      blcksmithidle_1: -5663704802438986333
+      blcksmithidle_10: 3400336021483631633
+      blcksmithidle_11: 1271347144282523628
+      blcksmithidle_12: -3181317602150724631
+      blcksmithidle_13: -4642755118222942436
+      blcksmithidle_14: -8883504126410903735
+      blcksmithidle_15: 3013979073254204074
+      blcksmithidle_16: -5629475271692805138
+      blcksmithidle_17: -6654880959998171864
+      blcksmithidle_18: 1992753666849441203
+      blcksmithidle_19: 4937868711647765165
+      blcksmithidle_2: 7421470847210152529
+      blcksmithidle_20: 6655544085932008749
+      blcksmithidle_21: 8581233780612009347
+      blcksmithidle_22: -3708529631050197735
+      blcksmithidle_23: 5240085659780121287
+      blcksmithidle_24: -205280048675555157
+      blcksmithidle_3: 2089121924130268682
+      blcksmithidle_4: 2271350694455376392
+      blcksmithidle_5: 4744172196282944719
+      blcksmithidle_6: 7079365211662587153
+      blcksmithidle_7: -2496177224906693233
+      blcksmithidle_8: 9010710043612705282
+      blcksmithidle_9: 8585666739950189167
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
