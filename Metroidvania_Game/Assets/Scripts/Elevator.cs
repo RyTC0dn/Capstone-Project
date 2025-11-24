@@ -96,7 +96,8 @@ public class Elevator : MonoBehaviour
         if (data is bool interact && interact && isNear)
         {
             if (ElevatorManager.instance.elevators.Count > 1)
-            {           
+            {   
+                playerAttack.DisableAttack();
 
                 elevatorAnimation.SetTrigger("OpenDoor");
                 parentPanel.SetActive(true);

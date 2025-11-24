@@ -23,6 +23,8 @@ public class WallBreakCharge : MonoBehaviour
 
     public Canvas chargeCanvas;
 
+    public GameObject dashTrail;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +34,7 @@ public class WallBreakCharge : MonoBehaviour
         chargeFill.fillAmount = chargeTime / maxCharge;
 
         chargeCanvas.enabled = false;
+        dashTrail.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,13 +71,15 @@ public class WallBreakCharge : MonoBehaviour
 
             gameObject.tag = "AbilityPickup";
 
+            dashTrail.SetActive(true);
+
             Vector2 direction = playerMove.isFacingRight ? Vector2.right : Vector2.left;
             StartCoroutine(ChargeDash(direction));
             //rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
             chargeTime = 0;
             Debug.Log("Charge!");
 
-            //Invoke(nameof(ReEnableMovement), 0.3f);
+            StartCoroutine(DisableDash());
         }
         if(!isPressed && chargeTime < maxCharge)
         {
@@ -82,6 +87,12 @@ public class WallBreakCharge : MonoBehaviour
             chargeTime = 0;
             isCharging = false;
         }
+    }
+
+    private IEnumerator DisableDash()
+    {
+        yield return new WaitForSeconds(0.6f);
+        dashTrail.SetActive(false);
     }
 
     private IEnumerator ChargeDash(Vector2 direction)

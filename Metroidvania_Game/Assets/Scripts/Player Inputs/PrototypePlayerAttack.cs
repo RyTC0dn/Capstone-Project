@@ -70,7 +70,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     {
         ///Attack function is being managed by 
         ///
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        if (!context.performed)
             return;
 
         if(context.performed)

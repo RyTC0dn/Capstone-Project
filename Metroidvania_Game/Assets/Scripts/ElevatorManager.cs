@@ -38,8 +38,9 @@ public class ElevatorManager : MonoBehaviour
     }
 
     public void CloseUI()//Close UI on button click
-    {
+    {        
         parentPanel.SetActive(false);
+        Invoke(nameof(EnableComponent), 0.3f);
         UIManager.instance.CloseElevatorMenu();//Deactivate Event system
     }
 
@@ -75,6 +76,7 @@ public class ElevatorManager : MonoBehaviour
             else
                 player.position = targetPos;
             Debug.Log("Has Teleported");
+            Invoke(nameof(EnableComponent), 0.3f);
         }
         else
         {
