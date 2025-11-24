@@ -17,10 +17,10 @@ public class CharacterManager : MonoBehaviour
     public GameObject characterCanvas;
 
     [Header("Knight Scripts")]
-    PrototypeShield shield;
+    Knight_Ability1_Shield shield;
     PrototypePlayerAttack attack;
     PrototypePlayerMovementControls controls;
-    PrototypePlayerAttackRanged attackRanged;
+    Knight_Ability2_AxeThrow attackRanged;
 
 
 

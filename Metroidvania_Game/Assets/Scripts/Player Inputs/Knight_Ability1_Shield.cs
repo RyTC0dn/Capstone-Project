@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-public class PrototypeShield : MonoBehaviour
+public class Knight_Ability1_Shield : MonoBehaviour
 {
     private Animator animator;
 
@@ -56,7 +56,7 @@ public class PrototypeShield : MonoBehaviour
 
     public void OnBlock()
     {
-        bool playerKey = Mouse.current.rightButton.isPressed;
+        bool playerKey = Keyboard.current?.cKey.isPressed ?? false;
         bool playerButton = Gamepad.current?.leftTrigger.isPressed ?? false;
 
         bool isPressed = playerKey || playerButton;

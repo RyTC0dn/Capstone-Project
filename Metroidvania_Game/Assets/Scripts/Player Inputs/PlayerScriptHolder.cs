@@ -4,7 +4,7 @@ public class PlayerScriptHolder : MonoBehaviour
 {
     PrototypePlayerMovementControls movement;
     PrototypePlayerAttack attack;
-    PrototypePlayerAttackRanged ranged;
+    Knight_Ability2_AxeThrow ranged;
     PlayerSpawnControl spawnControl;
     PlayerJumps jump;
 
@@ -15,7 +15,7 @@ public class PlayerScriptHolder : MonoBehaviour
     {
         movement = GetComponent<PrototypePlayerMovementControls>();
         attack = GetComponent<PrototypePlayerAttack>();
-        ranged = GetComponent<PrototypePlayerAttackRanged>();
+        ranged = GetComponent<Knight_Ability2_AxeThrow>();
         spawnControl = GetComponent<PlayerSpawnControl>();
         jump = GetComponent<PlayerJumps>();
     }

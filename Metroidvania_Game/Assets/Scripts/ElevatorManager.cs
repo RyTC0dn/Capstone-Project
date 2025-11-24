@@ -81,4 +81,10 @@ public class ElevatorManager : MonoBehaviour
             Debug.LogWarning($"Destination {destinationName} not found");
         }
     }
+
+    void EnableComponent()
+    {
+        var playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+        playerAttack.EnableAttack();
+    }
 }

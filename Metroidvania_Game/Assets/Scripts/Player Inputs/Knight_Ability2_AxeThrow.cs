@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PrototypePlayerAttackRanged : MonoBehaviour
+public class Knight_Ability2_AxeThrow : MonoBehaviour
 {
     [Header("Ranged Weapon Setup")]
     public Transform firePoint;

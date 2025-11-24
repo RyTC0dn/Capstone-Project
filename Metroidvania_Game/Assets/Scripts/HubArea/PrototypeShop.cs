@@ -17,6 +17,7 @@ public class PrototypeShop : MonoBehaviour
     public GameObject shopUI;
     private UIManager uiManager;
     public AudioSource devonAudio;
+    private AudioSource playerAttackSlash;
 
 
     [Header("Game Events")]
@@ -48,6 +49,8 @@ public class PrototypeShop : MonoBehaviour
         uiManager = FindAnyObjectByType<UIManager>();
         promptButton.SetActive(false);
         devonAudio = gameObject.GetComponent<AudioSource>();
+        playerAttackSlash = GameObject.Find("Character 1").GetComponent<AudioSource>();
+
 
         //Setting UI components to false on start
         shopUI.SetActive(false);
@@ -75,6 +78,7 @@ public class PrototypeShop : MonoBehaviour
                 shopUI.SetActive(true);
                 promptButton.SetActive(false);
                 playerAttack.enabled = false;
+                playerAttackSlash.enabled = false;
                 isShopping = true;
                 GameManager.instance.StateSwitch(GameStates.Pause);                
             }
@@ -83,8 +87,6 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuySwordUpgrade()
     {
-        prototypeEnd.SetActive(true);
-        GameManager.instance.StateSwitch(GameStates.Pause);
         //Check if the player has enough coins before buying
         int amount = GameManager.instance.currentCoin;
         if(amount >= upgradePrice)
@@ -103,8 +105,6 @@ public class PrototypeShop : MonoBehaviour
 
     public void BuyAxe() //Function for buying the axe
     {
-        prototypeEnd.SetActive(true);
-        GameManager.instance.StateSwitch(GameStates.Pause);
         int amount = GameManager.instance.currentCoin;
         if (amount >= axePrice)
         {
@@ -120,6 +120,13 @@ public class PrototypeShop : MonoBehaviour
     {
         shopUI.SetActive(false);
         GameManager.instance.StateSwitch(GameStates.Play);
+        Invoke(nameof(ReEnablePlayer), 0.3f);
+    }
+
+    void ReEnablePlayer()
+    {
+        playerAttack.enabled = true;
+        playerAttackSlash.enabled = true;
     }
 
     //Check if the player is close to display the interact text 
