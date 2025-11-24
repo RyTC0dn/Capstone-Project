@@ -44,6 +44,18 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void OnAxeAttack(Component sender, object data)
+    {
+        if (data is AttackDataAxe axe)
+        {
+            if(axe.target == this.gameObject)
+            {
+                EnemyDamage(axe.damage);
+                Debug.Log("Axe hit!");
+            }
+        }
+    }
+
     public void EnemyDamage(int damage)
     {        
        enemyHealth -= damage;
