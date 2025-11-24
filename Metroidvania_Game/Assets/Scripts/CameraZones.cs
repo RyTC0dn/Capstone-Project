@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -9,26 +10,60 @@ public class CameraZones : MonoBehaviour
     public float minX, minY, maxX, maxY;
     [Tooltip("Set the spawnpoint position within each room")]
     public float spawnPointX, spawnPointY;
+
     public GameObject playerSpawnPoint;
+
     private Vector2 spawnpointPos;
 
+    private static List<CameraZones> zones = new List<CameraZones>();
 
-    void SetSpawnPoint()
+
+    private void Awake()
     {
-        spawnpointPos = new Vector2(spawnPointX, spawnPointY);
-        playerSpawnPoint.transform.position = spawnpointPos;
+        //Register this zone in the list on awake
+        zones.Add(this);
+    }
+
+    private void Start()
+    {
+        if(playerSpawnPoint != null)
+        {
+            playerSpawnPoint.transform.position = 
+                new Vector2(spawnPointX, spawnPointY);
+            playerSpawnPoint.SetActive(false); //All spawn points will start inactive
+        }  
+        
+    }
+
+    private void OnDestroy()
+    {
+        zones.Remove(this);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
+            return;
+
+        CameraControl cam = Camera.main.GetComponent<CameraControl>();
+        if (cam != null)
         {
-            CameraControl cam = Camera.main.GetComponent<CameraControl>();
-            if (cam != null)
-            {
-                cam.SetBounds(minX, maxX, minY, maxY, roomType);
-                SetSpawnPoint();
-            }
+            cam.SetBounds(minX, maxX, minY, maxY, roomType);
+        }
+
+        ActivateThisSpawn();
+    }
+
+    private void ActivateThisSpawn()
+    {
+        foreach (CameraZones zone in zones)
+        {
+            if(zone.playerSpawnPoint == null) continue;
+
+            if (zone == this)
+                zone.playerSpawnPoint.SetActive(true);
+            else
+                zone.playerSpawnPoint.SetActive(false);
         }
     }
 

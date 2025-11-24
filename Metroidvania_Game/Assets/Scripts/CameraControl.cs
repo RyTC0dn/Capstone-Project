@@ -4,9 +4,9 @@ using UnityEngine;
 /// This script is in need of revision
 /// </summary>
 
+[System.Flags]
 public enum Rooms
 {
-    Town,
     Entrance,
     Room_A1,
     Room_A2,

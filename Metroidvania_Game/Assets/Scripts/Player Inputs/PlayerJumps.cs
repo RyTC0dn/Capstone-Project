@@ -70,7 +70,6 @@ public class PlayerJumps : MonoBehaviour
         //Minimum parameters are astarting point, direction, and size
         //The additional parameter is the layermask, "which layer?"
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
-        animator.SetBool("onGround", isGrounded);
 
         //Gravity modifications 
         //If the player is falling, increase gravity factor
@@ -106,14 +105,20 @@ public class PlayerJumps : MonoBehaviour
         //Jump input 
         if ((callbackContext.performed) && coyoteTime > 0)
         {
-            //Set the rigidbody's velocity to whatever its current velocity is on x
-            //and jump force on y
-            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
-            coyoteTime = 0;
-            isGrounded = false;
-        }
+            //Trigger animation before the jump executes
+            animator.SetTrigger("isJumping");
 
+            coyoteTime = 0;
+            isGrounded = false;            
+        }
         
+    }
+
+    public void ExecuteJump()
+    {
+        //Set the rigidbody's velocity to whatever its current velocity is on x
+        //and jump force on y
+        rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
     }
 
     //Special function to make gizmos visible 

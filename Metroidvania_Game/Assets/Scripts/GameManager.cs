@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
-    public GameObject playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
+    public GameObject[] playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
     //Checking if npcs are saved
     public bool isBlacksmithSaved = false;
@@ -61,11 +61,17 @@ public class GameManager : MonoBehaviour
         {
             //GameObject player = GameObject.FindGameObjectWithTag("Player");
             Transform player = (Transform)data;
-            if (player)
+            Debug.Log("Teleport player");
+            foreach(GameObject pos in playerSpawnPoint)
             {
-                Debug.Log("Teleport player");
-                player.transform.position = playerSpawnPoint.transform.position;
+                if(pos != null && pos.activeInHierarchy)
+                {
+                    player.transform.position = pos.transform.position;
+                    break;
+                }                   
+
             }
+
             
         }
     }
