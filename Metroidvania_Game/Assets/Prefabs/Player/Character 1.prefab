@@ -1931,6 +1931,7 @@ MonoBehaviour:
   chargeTime: 0
   maxCharge: 1.5
   isCharging: 0
+  wallBreakPickedUp: 0
   chargeDistance: 10
   chargeMultiplier: 3.5
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
@@ -1978,7 +1979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9b46c744c61f34aad6addad275a38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 8
   rb: {fileID: 8108088426756765879}
 --- !u!1 &6740129528520037912
 GameObject:
