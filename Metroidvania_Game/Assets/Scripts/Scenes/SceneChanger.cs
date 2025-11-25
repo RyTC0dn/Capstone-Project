@@ -7,7 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     public string sceneDestination;
     [SerializeField]private string spawnPointDestination;
-    private float transportTimer = 3f;
+    [SerializeField]private float transportTimer;
     [SerializeField]private Image chargeBar;
     private Canvas timeCanvas;
 

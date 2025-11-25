@@ -38,9 +38,10 @@ public class ElevatorManager : MonoBehaviour
     }
 
     public void CloseUI()//Close UI on button click
-    {
-        UIManager.instance.CloseElevatorMenu();//Deactivate Event system
+    {        
         parentPanel.SetActive(false);
+        Invoke(nameof(EnableComponent), 0.3f);
+        UIManager.instance.CloseElevatorMenu();//Deactivate Event system
     }
 
     public void RegisterElevator(Elevator elevator)
@@ -75,10 +76,17 @@ public class ElevatorManager : MonoBehaviour
             else
                 player.position = targetPos;
             Debug.Log("Has Teleported");
+            Invoke(nameof(EnableComponent), 0.3f);
         }
         else
         {
             Debug.LogWarning($"Destination {destinationName} not found");
         }
+    }
+
+    void EnableComponent()
+    {
+        var playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+        playerAttack.EnableAttack();
     }
 }

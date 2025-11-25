@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public enum PlayerCharacter
@@ -31,8 +32,12 @@ public class PrototypePlayerAttack : MonoBehaviour
     private void Awake()
     {
         playerControl = new Player_Controller();
-        playerControl.Enable();
 
+        //Enable the Gameplay map
+        playerControl.Gameplay.Enable();
+
+
+        //Subscribe to attack input
         playerControl.Gameplay.Melee.performed += OnAttack;
         playerControl.Gameplay.Melee.canceled += OnAttack;
     }
@@ -53,12 +58,6 @@ public class PrototypePlayerAttack : MonoBehaviour
         weaponCollider.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     /// <summary>
     /// This is the main attack function that is called within Unity on the player input component
@@ -70,6 +69,9 @@ public class PrototypePlayerAttack : MonoBehaviour
     public void OnAttack(InputAction.CallbackContext context)
     {
         ///Attack function is being managed by 
+        ///
+        if (!context.performed)
+            return;
 
         if(context.performed)
         {
@@ -84,6 +86,22 @@ public class PrototypePlayerAttack : MonoBehaviour
                     break;
             }           
         }
+    }
+
+    public void DisableAttack()
+    {
+        playerControl.Gameplay.Melee.Disable();
+        swordSlashAudio.enabled = false;
+        animator.enabled = false;
+        slashVFX.gameObject.SetActive(false);
+    }
+
+    public void EnableAttack()
+    {
+        playerControl.Gameplay.Melee.Enable();
+        swordSlashAudio.enabled = true;
+        animator.enabled = true;    
+        slashVFX.gameObject.SetActive(true);
     }
 
     private void KnightStandardAttack()//This function is to store what the knight does when they attack

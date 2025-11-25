@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Timers;
 using Unity.AppUI.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,13 +12,19 @@ public class WallBreakCharge : MonoBehaviour
     public float maxCharge;
     private Rigidbody2D rb2D;
     [SerializeField]private bool isCharging = false;
-    private bool wallBreakPickedUp = false; //Checks if the wall break upgrade is picked up
+    [SerializeField]private bool wallBreakPickedUp = false; //Checks if the wall break upgrade is picked up
 
     private PrototypePlayerMovementControls playerMove;
+
+    [SerializeField]private float chargeDistance;
+    [SerializeField] private float chargeMultiplier;
+    public SceneInfo sceneInfo;
 
     public Image chargeFill;
 
     public Canvas chargeCanvas;
+
+    public GameObject dashTrail;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,21 +35,23 @@ public class WallBreakCharge : MonoBehaviour
         chargeFill.fillAmount = chargeTime / maxCharge;
 
         chargeCanvas.enabled = false;
+        dashTrail.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(wallBreakPickedUp)
+        if(sceneInfo.isWallBreakPickedUp)
         {
             ChargeMechanic();
-        }        
+        }
+        Debug.Log(sceneInfo.isWallBreakPickedUp);
         chargeFill.fillAmount = chargeTime / maxCharge;
     }
 
     void ChargeMechanic()
-    {
-        
+    {       
 
         bool chargeKey = Keyboard.current.rKey.isPressed;
         bool chargeButton = Gamepad.current?.leftTrigger.isPressed ?? false;
@@ -63,12 +73,15 @@ public class WallBreakCharge : MonoBehaviour
 
             gameObject.tag = "AbilityPickup";
 
+            dashTrail.SetActive(true);
+
             Vector2 direction = playerMove.isFacingRight ? Vector2.right : Vector2.left;
-            rb2D.linearVelocity = direction * playerMove.playerSpeed * 10f;
+            StartCoroutine(ChargeDash(direction));
+            //rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
             chargeTime = 0;
             Debug.Log("Charge!");
 
-            Invoke(nameof(ReEnableMovement), 0.3f);
+            StartCoroutine(DisableDash());
         }
         if(!isPressed && chargeTime < maxCharge)
         {
@@ -78,8 +91,38 @@ public class WallBreakCharge : MonoBehaviour
         }
     }
 
-    void ReEnableMovement()
+    private IEnumerator DisableDash()
     {
+        yield return new WaitForSeconds(0.6f);
+        dashTrail.SetActive(false);
+    }
+
+    private IEnumerator ChargeDash(Vector2 direction)
+    {
+        float dashDuration = 0.3f;
+        float elapsed = 0f;
+
+        //Disable gravity + drag so it feels clean
+        float originalGravity = rb2D.gravityScale;
+        rb2D.gravityScale = 0;
+
+        //Freeze movement
+        playerMove.enabled = false;
+
+        while (elapsed < dashDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            //Lerp velocity for smooth acceleration
+            rb2D.linearVelocity = direction * Mathf.Lerp(0, chargeDistance * chargeMultiplier, elapsed/dashDuration);
+
+            yield return null;
+        }
+
+        rb2D.linearVelocity = Vector2.zero;
+        rb2D.gravityScale = originalGravity;
+
+        //Restore control
         playerMove.enabled = true;
         gameObject.tag = "Player";
     }
@@ -92,6 +135,7 @@ public class WallBreakCharge : MonoBehaviour
             if (pickedUp)
             {
                 wallBreakPickedUp = true;
+                sceneInfo.isWallBreakPickedUp = wallBreakPickedUp;
                 Debug.Log("Wall Break Ability Ready!");
             }
             else
