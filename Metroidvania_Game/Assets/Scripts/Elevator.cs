@@ -99,7 +99,7 @@ public class Elevator : MonoBehaviour
             {   
                 playerAttack.DisableAttack();
 
-                elevatorAnimation.SetTrigger("OpenDoor");
+                elevatorAnimation.SetBool("isOpen", true);
                 elevatorOpened = true;
                 parentPanel.SetActive(true);
 
@@ -115,7 +115,7 @@ public class Elevator : MonoBehaviour
 
     private IEnumerator CloseDoor(string destinationName)
     {
-        elevatorAnimation.SetTrigger("CloseDoor");
+        elevatorAnimation.SetBool("isOpen", false);
         yield return new WaitForSeconds(0.5f);
 
         //Wait for 0.5 seconds before teleporting player so animation can play
