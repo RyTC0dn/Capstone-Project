@@ -87,8 +87,10 @@ public class EnemyHealth : MonoBehaviour
         isKnockedBack = true;
         enemyControls.enabled = false;
 
+        float totalKnockbackForce = kbForce * GameManager.instance.currentUpgrade;
+
         rb.linearVelocity = Vector2.zero;
-        rb.AddForce(direction * kbForce, ForceMode2D.Impulse);
+        rb.AddForce(direction * totalKnockbackForce, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(kbDuration);
 
