@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Elevator : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Elevator : MonoBehaviour
 
     public TextMeshProUGUI inputText;
 
+    private PrototypePlayerAttack playerAttack;
+
     public float buttonSpacing = -50f;
     private bool isNear = false;
 
@@ -37,6 +40,8 @@ public class Elevator : MonoBehaviour
     {
         elevatorAnimation = GetComponent<Animator>();
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+
 
         //Disable all buttons at start
         foreach (Button button in elevatorButtons)
@@ -91,15 +96,13 @@ public class Elevator : MonoBehaviour
         if (data is bool interact && interact && isNear)
         {
             if (ElevatorManager.instance.elevators.Count > 1)
-            {
+            {   
+                playerAttack.DisableAttack();
+
                 elevatorAnimation.SetTrigger("OpenDoor");
                 parentPanel.SetActive(true);
 
                 UIActive.Raise(this, true);
-
-                Debug.Log("Event recieved");
-                PrototypePlayerAttack playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
-                playerAttack.enabled = false;
             }
         }
     }
@@ -108,16 +111,9 @@ public class Elevator : MonoBehaviour
     {
         ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
         parentPanel.SetActive(false);
-        elevatorAnimation.SetTrigger("CloseDoor");
+        elevatorAnimation.SetTrigger("CloseDoor");        
     }
 
-    //IEnumerator DisableAttack()
-    //{
-       
-    //    yield return new WaitForSeconds(2);
-    //    playerAttack.enabled = true;
-    //}
-  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
