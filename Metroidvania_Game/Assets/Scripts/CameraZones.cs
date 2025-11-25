@@ -25,13 +25,7 @@ public class CameraZones : MonoBehaviour
     }
 
     private void Start()
-    {
-        if(playerSpawnPoint != null)
-        {
-            playerSpawnPoint.transform.position = 
-                new Vector2(spawnPointX, spawnPointY);
-            playerSpawnPoint.SetActive(false); //All spawn points will start inactive
-        }  
+    { 
         
     }
 
@@ -51,7 +45,13 @@ public class CameraZones : MonoBehaviour
             cam.SetBounds(minX, maxX, minY, maxY, roomType);
         }
 
-        ActivateThisSpawn();
+        SetSpawnPoint();
+    }
+
+    private void SetSpawnPoint()
+    {
+        playerSpawnPoint.transform.position =
+                 new Vector2(spawnPointX, spawnPointY);
     }
 
     private void ActivateThisSpawn()
