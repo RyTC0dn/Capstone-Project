@@ -20,7 +20,9 @@ public class Elevator : MonoBehaviour
     public GameEvent UIActive;
 
     [Header("Elevator Animations")]
-    private Animator elevatorAnimation;
+    [HideInInspector]public Animator elevatorAnimation;
+    private bool elevatorOpened = false;
+    private bool playerTeleported = false;
 
 
     [Header("UI Setup")]
@@ -46,6 +48,8 @@ public class Elevator : MonoBehaviour
         //Disable all buttons at start
         foreach (Button button in elevatorButtons)
         {
+            string destinationName = button.name;
+            button.onClick.AddListener(() => OnButtonClicked(destinationName));
             button.interactable = false;
         }
 
@@ -69,13 +73,9 @@ public class Elevator : MonoBehaviour
 
             if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
             {
-                button.interactable = true;
+                button.interactable = ElevatorManager.instance.elevators.ContainsKey(destinationName);
 
-                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
-
-                //Ensure that listener is only added once
-                button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => OnButtonClicked(destinationName));
+                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);                              
             }
         }
         TextColor();
@@ -100,6 +100,7 @@ public class Elevator : MonoBehaviour
                 playerAttack.DisableAttack();
 
                 elevatorAnimation.SetTrigger("OpenDoor");
+                elevatorOpened = true;
                 parentPanel.SetActive(true);
 
                 UIActive.Raise(this, true);
@@ -109,11 +110,19 @@ public class Elevator : MonoBehaviour
 
     public void OnButtonClicked(string destinationName)
     {
-        ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
-        parentPanel.SetActive(false);
-        elevatorAnimation.SetTrigger("CloseDoor");        
+        StartCoroutine(CloseDoor(destinationName));                
     }
 
+    private IEnumerator CloseDoor(string destinationName)
+    {
+        elevatorAnimation.SetTrigger("CloseDoor");
+        yield return new WaitForSeconds(0.5f);
+
+        //Wait for 0.5 seconds before teleporting player so animation can play
+        ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
+        parentPanel.SetActive(false);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1326,7 +1326,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 5700040910716105452, guid: 91d71b378d416594494f32ee99b50965, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1470,6 +1470,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4895757740315594668, guid: ddc61152c13ad834789c5b99afb38597, type: 3}
   animator: {fileID: 8842708863280125052}
   isAxeBought: 0
+  throwRate: 1
+  throwCooldown: 0
 --- !u!114 &2791710261131852306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1931,6 +1933,7 @@ MonoBehaviour:
   chargeTime: 0
   maxCharge: 1.5
   isCharging: 0
+  wallBreakPickedUp: 0
   chargeDistance: 10
   chargeMultiplier: 3.5
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
