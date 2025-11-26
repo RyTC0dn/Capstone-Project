@@ -25,12 +25,14 @@ public class ItemPickup : MonoBehaviour
         if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
         {
             hasPickedUpShield = true;
+            sceneInfo.isShieldPickedUp = hasPickedUpShield;
             abilityPickup.Raise(this, hasPickedUpShield);
             Destroy(gameObject);
         }
         if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
+            sceneInfo.isWallBreakPickedUp = hasPickedUpWallBreak;
             abilityPickup.Raise(this, hasPickedUpWallBreak);
             Destroy(gameObject);
         }

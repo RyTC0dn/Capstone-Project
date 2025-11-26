@@ -128,9 +128,9 @@ public class WallBreakCharge : MonoBehaviour
 
     public void OnWallBreakPickup(Component sender, object data)
     {
-        if (data is bool && sender.gameObject == GameObject.Find("WallBreakPickup"))
+        if (data is bool)
         {
-            bool pickedUp = (bool)data;
+            bool pickedUp = sceneInfo.isWallBreakPickedUp;
             if (pickedUp)
             {
                 wallBreakPickedUp = true;

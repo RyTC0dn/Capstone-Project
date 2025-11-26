@@ -63,7 +63,7 @@ public class Knight_Ability1_Shield : MonoBehaviour
 
         bool isPressed = playerKey || playerButton;
         //If the player holds the shield input = Q key (keyboard) or left trigger (controller)
-        if (isPressed && shieldTimer > 0 && sceneInfo.isShieldPickedUp)
+        if (isPressed && shieldTimer > 0 && shieldPickedUp)
         {
             EnableShield();
         }
@@ -75,9 +75,9 @@ public class Knight_Ability1_Shield : MonoBehaviour
 
     public void OnShieldPickUp(Component sender, object data)
     {
-        if(data is bool && sender.gameObject == GameObject.Find("ShieldPickup"))
+        if(data is bool)
         {
-            bool pickedUp = (bool)data;
+            bool pickedUp = sceneInfo.isShieldPickedUp;
             if(pickedUp == true)
             {
                 shieldPickedUp = true;
