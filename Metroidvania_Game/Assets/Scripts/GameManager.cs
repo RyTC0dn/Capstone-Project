@@ -21,10 +21,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     private GameObject pauseMenu;
+    CameraZones zones;
 
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
-    public GameObject playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
+    public GameObject[] playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
     //Checking if npcs are saved
     public bool isBlacksmithSaved = false;
@@ -57,15 +58,12 @@ public class GameManager : MonoBehaviour
     //When player loses 2 hp
     public void SendPlayerToStart(Component sender, object data)
     {
-        if (data is Transform && playerSpawnPoint != null && sender is PlayerHealth)
+        if (data is Transform player && sender is PlayerHealth)
         {
             //GameObject player = GameObject.FindGameObjectWithTag("Player");
-            Transform player = (Transform)data;
-            if (player)
-            {
-                Debug.Log("Teleport player");
-                player.transform.position = playerSpawnPoint.transform.position;
-            }
+            Debug.Log("Teleport player");
+
+            player.transform.position = zones.playerSpawnPoint.transform.position;
             
         }
     }
@@ -161,5 +159,7 @@ public class GameManager : MonoBehaviour
         // Refresh UI with current values
         if (coinText != null) SetCoin(currentCoin);
         if (weaponUpgradeText != null) SetUpgrade(currentUpgrade);
+
+        zones = FindAnyObjectByType<CameraZones>();
     }
 }

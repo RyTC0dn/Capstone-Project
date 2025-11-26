@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityPickup: {fileID: 11400000, guid: 286c44b7fbeca8f40abe78895f363003, type: 2}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!95 &5836753119807044784
 Animator:
   serializedVersion: 7
