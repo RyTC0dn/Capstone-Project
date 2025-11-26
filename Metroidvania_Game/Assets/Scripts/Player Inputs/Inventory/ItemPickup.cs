@@ -7,6 +7,16 @@ public class ItemPickup : MonoBehaviour
     private bool hasPickedUpShield = false;
     private bool hasPickedUpWallBreak = false;
 
+    public SceneInfo sceneInfo;
+
+    private void Start()
+    {
+        if(sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
+            Destroy(gameObject);
+        if (sceneInfo.isWallBreakPickedUp && gameObject.name == "WallBreakPickup")
+            Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && gameObject.name == "ShieldPickup")

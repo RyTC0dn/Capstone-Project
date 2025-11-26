@@ -6,7 +6,6 @@ using UnityEngine;
 
 public enum Rooms
 {
-    Town,
     Entrance,
     Room_A1,
     Room_A2,
@@ -14,6 +13,7 @@ public enum Rooms
     Room_A4,
     Room_A5,
     Room_A6,
+    Room_A7,
 }
 
 public class CameraControl : MonoBehaviour
@@ -45,46 +45,4 @@ public class CameraControl : MonoBehaviour
 
         currentRoom = room;
     }
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    //Vector3 cameraPos = new Vector3(playerPos.position.x, playerPos.position.y + 2, -10);
-    //    //transform.position = cameraPos;
-
-    //    switch (currentRoom)
-    //    {
-    //        case Rooms.Entrance:
-    //            EntranceRoom();
-    //            break;
-    //        case Rooms.Room_A1:
-    //            RoomA1();
-    //            break;
-    //        case Rooms.Room_A2: 
-    //            RoomA2(); 
-    //            break;
-    //    }
-    //}
-
-    //public void EntranceRoom()
-    //{
-    //    //Setting the boundaries for entrance
-    //    minX = -8; maxX = 33.5f;
-    //    minY = -1.5f; maxY = 7;
-
-    //    Vector2 clampPos = new Vector2(Mathf.Clamp(transform.position.x, minX, maxX), 
-    //        Mathf.Clamp(transform.position.y, minY, maxY));
-
-    //    transform.position = clampPos;
-    //}
-
-    //public void RoomA1()
-    //{
-
-    //}
-
-    //public void RoomA2()
-    //{
-
-    //}
 }

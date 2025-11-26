@@ -46,7 +46,6 @@ public class WallBreakCharge : MonoBehaviour
         {
             ChargeMechanic();
         }
-        Debug.Log(sceneInfo.isWallBreakPickedUp);
         chargeFill.fillAmount = chargeTime / maxCharge;
     }
 

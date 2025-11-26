@@ -10,6 +10,13 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private bool isAxeBought;
 
+    [Header("Axe Settings")]
+    public float throwRate = 1f;
+    private float delayTillThrow;
+    [SerializeField]private float throwCooldown = 0;
+    private bool wasThrown = false;
+
+
 
     PrototypePlayerMovementControls playerController;
     PrototypeShop shop;
@@ -21,6 +28,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
         shop = FindAnyObjectByType<PrototypeShop>();
         isAxeBought = PlayerPrefs.GetInt("AxeBought", 0) == 1;
+        delayTillThrow = throwRate;
     }
 
     // Update is called once per frame
@@ -30,6 +38,14 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && isAxeBought)
         {
             Shoot();
+        }
+        if(wasThrown)
+        {
+            throwCooldown -= Time.deltaTime;
+            if(throwCooldown <= 0)
+            {
+                wasThrown = false;
+            }
         }
     }
 
@@ -51,12 +67,18 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
 
     void Shoot()
     {
-        Transform firingPoint = firePoint;
-        animator.SetBool("isThrowing", true);
-        //Instantiate ProjectilePrefab
-        Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
-        
-        StartCoroutine(ResetWeapon());
+        if(throwCooldown <= 0)
+        {
+            Transform firingPoint = firePoint;
+            animator.SetBool("isThrowing", true);
+            //Instantiate ProjectilePrefab
+            Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
+            throwCooldown = 1f / delayTillThrow;
+            wasThrown = true;
+
+            StartCoroutine(ResetWeapon());
+        }
+               
     }
 
     IEnumerator ResetWeapon()
