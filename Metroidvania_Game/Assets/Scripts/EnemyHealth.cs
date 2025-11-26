@@ -74,20 +74,23 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void EnemyDeath()
-    {
-        if(enemyHealth <= 0)
+    {        
+        if (enemyHealth <= 0)
         {
             Instantiate(coinDrop, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject, 1);
         }
     }
+
 
     IEnumerator Knockback(Vector2 direction)
     {
         isKnockedBack = true;
         enemyControls.enabled = false;
 
-        float totalKnockbackForce = kbForce * GameManager.instance.currentUpgrade;
+        float totalKnockbackForce = GameManager.instance.firstUpgrade ? 
+            kbForce * GameManager.instance.currentUpgrade : kbForce;
 
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction * totalKnockbackForce, ForceMode2D.Impulse);

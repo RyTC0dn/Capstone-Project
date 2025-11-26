@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public bool isBlacksmithSaved = false;
     public bool isPotionMakerSaved = false;
     public bool isHealerSaved = false;
+    public bool firstUpgrade = false;
 
     [Header("Player UI Components")]
     public TextMeshProUGUI coinText;
