@@ -8,15 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 4bed66d71528e0c43bb48fec33a0c4b1
-  - enabled: 0
-    path: Assets/Scenes/Level 1 (Block-out).unity
-    guid: ff8ae752a99a9774099613ab21530d25
   - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: f3207fe3ce9744b42aaa376aa17797ed
   - enabled: 1
-    path: Assets/Scenes/Level 1 - RyanTestZone.unity
-    guid: 42510af64889b3b408887b48fc53bc2d
+    path: Assets/Scenes/Level 1.unity
+    guid: c63d683768c5e564fa366211330f8b32
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
