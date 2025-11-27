@@ -31,13 +31,15 @@ public class GameManager : MonoBehaviour
     public bool isBlacksmithSaved = false;
     public bool isPotionMakerSaved = false;
     public bool isHealerSaved = false;
+    public bool firstUpgrade = false;
 
     [Header("Player UI Components")]
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI weaponUpgradeText;
+    public Material playerSlash;
 
-    public int totalCoin = 0;
-    [HideInInspector] public int currentCoin;
+    private int totalCoin = 0;
+    public int currentCoin;
     private int totalUpgradeLevel = 0;
     public int currentUpgrade;
     private int upgradeValue = 1;
@@ -135,9 +137,24 @@ public class GameManager : MonoBehaviour
             {
                 currentUpgrade += upgradeValue;
                 SetUpgrade(currentUpgrade);
+                EnhanceKnightSlash(currentUpgrade);
                 Debug.Log($"{bought}");
             }
         }
+    }
+
+    private void EnhanceKnightSlash(int upgrade)
+    {
+        //Assigning different colors for different upgrade tiers
+        if(upgrade <= 0)
+            playerSlash.color = Color.white;
+
+        if (upgrade > 0 && upgrade < 5)
+            playerSlash.color = new Color(191, 4, 4);
+
+        if (upgrade >= 5)
+            playerSlash.color = Color.red;
+
     }
 
     private void OnEnable()

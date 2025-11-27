@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(Rigidbody2D))] //Use kinematic 
 public class ItemPickup : MonoBehaviour
 {
     public GameEvent abilityPickup;
     private bool hasPickedUpShield = false;
     private bool hasPickedUpWallBreak = false;
+    public GameObject itemShield; //Manually assign in inpsector
+    public GameObject itemWallBreak; //Manually assign in inpsector
 
     public SceneInfo sceneInfo;
 
@@ -19,15 +22,17 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && gameObject.name == "ShieldPickup")
+        if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
         {
             hasPickedUpShield = true;
+            sceneInfo.isShieldPickedUp = hasPickedUpShield;
             abilityPickup.Raise(this, hasPickedUpShield);
             Destroy(gameObject);
         }
-        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && gameObject.name == "WallBreakPickup")
+        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
+            sceneInfo.isWallBreakPickedUp = hasPickedUpWallBreak;
             abilityPickup.Raise(this, hasPickedUpWallBreak);
             Destroy(gameObject);
         }
