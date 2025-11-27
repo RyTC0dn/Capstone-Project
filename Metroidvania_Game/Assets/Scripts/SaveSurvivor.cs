@@ -45,8 +45,9 @@ public class SaveSurvivor : MonoBehaviour
             return;
         }
 
-        textBubble.SetActive(false);
+        textBubble.SetActive(true);
         buttonPrompt.SetActive(false);
+        dialogueText.text = beforeSavingDialogue.textLines[activeLineIndex].text;
         animator.enabled = false;
 
         Color start = new Color(0, 255, 242, 0.5f);
@@ -67,9 +68,9 @@ public class SaveSurvivor : MonoBehaviour
 
     private void BeforeSavedDialogue()
     {
-        if (!conversationActive || beforeSavingDialogue.textLines.Length == 0) { return; }
+        Dialogue currentDialogue = afterSavingDialogue;
 
-        Dialogue currentDialogue = hasBeenSaved ? afterSavingDialogue : beforeSavingDialogue;
+        if (!conversationActive || currentDialogue.textLines.Length == 0) { return; }        
 
         dialogueText.text = currentDialogue.textLines[activeLineIndex].text;
         npcName.text = npcData.npcName;
@@ -83,7 +84,7 @@ public class SaveSurvivor : MonoBehaviour
         {
             if (!firstLineShown)
             {
-                textBubble.SetActive(true);
+                textBubble.SetActive(true);                
                 firstLineShown = true;
                 return; //Don't advance on first first press
             }
@@ -148,6 +149,7 @@ public class SaveSurvivor : MonoBehaviour
         else if (hitsLeft <= 0)
         {
             bubbleSp.gameObject.SetActive(false);
+            textBubble.gameObject.SetActive(false);
             numberOfHits = 3;
             animator.enabled = true;
             hasBeenSaved = true;
