@@ -108,18 +108,16 @@ public class PlayerJumps : MonoBehaviour
             //Trigger animation before the jump executes
             animator.SetTrigger("isJumping");
 
+            //Set the rigidbody's velocity to whatever its current velocity is on x
+            //and jump force on y
+            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
+
             coyoteTime = 0;
             isGrounded = false;            
         }
         
     }
 
-    public void ExecuteJump()
-    {
-        //Set the rigidbody's velocity to whatever its current velocity is on x
-        //and jump force on y
-        rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
-    }
 
     //Special function to make gizmos visible 
     //On draw gizmos selected will show gizmos when you select the game object
