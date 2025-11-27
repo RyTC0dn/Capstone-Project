@@ -14,7 +14,7 @@ public class ItemPickup : MonoBehaviour
 
     private void Start()
     {
-        if (sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
+        if(sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
             Destroy(gameObject);
         if (sceneInfo.isWallBreakPickedUp && gameObject.name == "WallBreakPickup")
             Destroy(gameObject);
@@ -22,15 +22,17 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
+        if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
         {
             hasPickedUpShield = true;
+            sceneInfo.isShieldPickedUp = hasPickedUpShield;
             abilityPickup.Raise(this, hasPickedUpShield);
             Destroy(gameObject);
         }
         if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
+            sceneInfo.isWallBreakPickedUp = hasPickedUpWallBreak;
             abilityPickup.Raise(this, hasPickedUpWallBreak);
             Destroy(gameObject);
         }

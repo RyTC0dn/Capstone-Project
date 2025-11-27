@@ -88,6 +88,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Town");
     }
 
+    public void NewGame()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
+
     public void LoadMenu()
     {
         SceneManager.LoadScene("StartMenu");

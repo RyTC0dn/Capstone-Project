@@ -91,6 +91,7 @@ public class PrototypeShop : MonoBehaviour
         int amount = GameManager.instance.currentCoin;
         if(amount >= upgradePrice)
         {
+            GameManager.instance.firstUpgrade = true;
             buyEvent.Raise(this, upgradePrice);
             boughtUpgrade = true;
             upgradeBoughtEvent.Raise(this, boughtUpgrade);
