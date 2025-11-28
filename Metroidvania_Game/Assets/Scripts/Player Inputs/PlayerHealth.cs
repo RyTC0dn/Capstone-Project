@@ -55,14 +55,14 @@ public class PlayerHealth : MonoBehaviour
     {
         //This function will check if the enemy sent out attack event 
         //and if the sent out data was an integer variable
-        if(data is int damage)
+        if(data is int damage && sender is BasicEnemyAttackState)
         {
             TakeDamage(damage, sender);
         }
     }
 
     //These functions are to define how damage to the player works
-    public void TakeDamage(int damageAmount, Component source = null)
+    public void TakeDamage(int damageAmount, Component source)
     {
         if (isInvulnerable) { return; }
         StartCoroutine(DamagerRoutine(damageAmount, source));
@@ -85,11 +85,11 @@ public class PlayerHealth : MonoBehaviour
             Transform newPos = transform;
             playerHealthChanged.Raise(this, newPos);
         }
-        else if (currentHealth <= 0)
-        {
-            Transform deathPos = transform;
-            playerDeath.Raise(this, deathPos);
-        }
+        //else if (currentHealth <= 0)
+        //{
+        //    Transform deathPos = transform;
+        //    playerDeath.Raise(this, deathPos);
+        //}
 
         //Knockback function
         Vector2 direction = (transform.position - source.transform.position).normalized;

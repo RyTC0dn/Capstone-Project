@@ -37,6 +37,7 @@ public class PrototypeShop : MonoBehaviour
     [SerializeField]private bool boughtUpgrade = false;
 
     public Button axeButton;
+    public Button upgradeButton;    
 
     [Header("Prototype End Screen")]
     public GameObject prototypeEnd;
@@ -59,9 +60,13 @@ public class PrototypeShop : MonoBehaviour
 
     private void Update()
     {
-        if (boughtAxe)
+        if (PlayerPrefs.GetInt("AxeBought", 0) == 1)
         {
            axeButton.interactable = false;
+        }
+        if(GameManager.instance.currentUpgrade == 5)
+        {
+            upgradeButton.interactable = false;
         }
     }
 
@@ -89,11 +94,12 @@ public class PrototypeShop : MonoBehaviour
     {
         //Check if the player has enough coins before buying
         int amount = GameManager.instance.currentCoin;
-        if(amount >= upgradePrice)
+        int upgradeCap = GameManager.instance.currentUpgrade;
+        if(amount >= upgradePrice && upgradeCap <= 5)
         {
-            GameManager.instance.firstUpgrade = true;
-            buyEvent.Raise(this, upgradePrice);
             boughtUpgrade = true;
+            GameManager.instance.firstUpgrade = true;
+            buyEvent.Raise(this, upgradePrice);            
             upgradeBoughtEvent.Raise(this, boughtUpgrade);
         }
         else

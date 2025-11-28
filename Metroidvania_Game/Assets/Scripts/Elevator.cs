@@ -61,11 +61,16 @@ public class Elevator : MonoBehaviour
             registeredElevators.Contains(elevatorLocationName))
         {
             ElevatorManager.instance.RegisterElevator(this);
-        }
+        }  
     }
 
     private void Update()
     {
+        //If the shop is active ensure this is not reading click input
+        if(GameManager.instance.state == GameStates.Pause)
+        {
+            return;
+        }
         //Check every frame if elevators have been registered
         foreach (Button button in elevatorButtons)
         {
