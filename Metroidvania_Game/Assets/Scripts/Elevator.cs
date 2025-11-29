@@ -49,7 +49,7 @@ public class Elevator : MonoBehaviour
         foreach (Button button in elevatorButtons)
         {
             string destinationName = button.name;
-            button.onClick.AddListener(() => OnButtonClicked(destinationName));
+            button.onClick.AddListener(delegate { OnButtonClicked(destinationName); });
             button.interactable = false;
         }
 

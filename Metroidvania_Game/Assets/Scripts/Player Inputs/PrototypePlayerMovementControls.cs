@@ -38,11 +38,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("Sprite Settings")]    
     [HideInInspector] public bool isFacingRight = true;
 
-    [Header("UI Settings")]
-    PrototypeShop shop;
-    PrototypePlayerAttack playerAttack;
-    BasicEnemyAttackState enemyAttack;
-
     private void Awake()
     {
         playerController = new Player_Controller();
@@ -63,12 +58,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         //Setting the dash time to timer
         dashTime = dashTimer;
-
-        shop = FindAnyObjectByType<PrototypeShop>();
-
-        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
-
-        enemyAttack = FindAnyObjectByType<BasicEnemyAttackState>();
     }
 
     private void OnDestroy()
@@ -96,12 +85,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         //Set the movement function
         Move();
-
-        if(Keyboard.current.rKey.isPressed)
-        {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
-        }
     }
 
     public void OnMove(InputAction.CallbackContext ctx)

@@ -11,16 +11,21 @@ using UnityEngine.UIElements;
 
 public class SaveSurvivor : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private bool playerIsNear = false;
     private bool hasBeenSaved = false;
     private bool blacksmithFreed = false;
 
+    [Header("NPC State Data")]
     public NPC npcData;
     public Dialogue beforeSavingDialogue;
     public Dialogue afterSavingDialogue;
     public GameObject textBubble;
     public SpriteRenderer bubbleSp;
 
+    [Space(5)]
+
+    [Header("Dialogue Text")]
     public TextMeshProUGUI npcName;
     public TextMeshProUGUI dialogueText;
 
@@ -30,14 +35,31 @@ public class SaveSurvivor : MonoBehaviour
     private int numberOfHits = 3;
     private Animator animator;
 
+    [Space(20)]
+
+    [Header("Trapped state values")]
+    public float floatYAmplitude = 0.5f;
+    public float floatYSpeed = 2f;
+    public float floatXAmplitude = 5.0f;
+    public float floatXSpeed = 0.5f;
+
+    [Space(5)]
+
+    private Vector2 startPos;
+
+    private Rigidbody2D rb2D;
+
     public string sceneName;
 
     public GameObject buttonPrompt;
+    #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        startPos = transform.position;
         animator = GetComponent<Animator>();
+        rb2D = GetComponent<Rigidbody2D>();
         //Check if this NPC should be destroyed based on save data and current scene
         if(GameManager.instance.isBlacksmithSaved )
         {
@@ -54,6 +76,13 @@ public class SaveSurvivor : MonoBehaviour
         bubbleSp.color = start;
     }
 
+    void FloatingIdle()
+    {
+        float yOffset = Mathf.Sin(Time.time * floatYSpeed) * floatYAmplitude;
+        float xOffset = Mathf.Sin(Time.time * floatXSpeed) * floatXAmplitude;
+        transform.position = startPos + new Vector2(xOffset, yOffset);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -61,7 +90,13 @@ public class SaveSurvivor : MonoBehaviour
         {
             buttonPrompt.SetActive(true);
             conversationActive = true;
+            rb2D.gravityScale = 1.0f;
             BeforeSavedDialogue();
+        }
+        else if(!hasBeenSaved)
+        {
+            FloatingIdle();
+            rb2D.gravityScale = 0;
         }
 
     }
