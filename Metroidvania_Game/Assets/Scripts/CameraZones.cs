@@ -13,7 +13,9 @@ public class CameraZones : MonoBehaviour
 
     public GameObject playerSpawnPoint;
 
-    private Vector2 spawnpointPos;
+    private GameObject player;
+
+    public string findPlayer;
 
     private static List<CameraZones> zones = new List<CameraZones>();
 
@@ -22,6 +24,7 @@ public class CameraZones : MonoBehaviour
     {
         //Register this zone in the list on awake
         zones.Add(this);
+        player = GameObject.Find(findPlayer);
     }
 
     private void Start()
@@ -36,7 +39,7 @@ public class CameraZones : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player") || !collision.gameObject == player)
             return;
 
         CameraControl cam = Camera.main.GetComponent<CameraControl>();
