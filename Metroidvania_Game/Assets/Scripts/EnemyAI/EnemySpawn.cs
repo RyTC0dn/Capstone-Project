@@ -3,7 +3,10 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyObject; //Manually select which enemy you wish to spawn
-    public Collider2D roomCollider; //Get the collider of the room to trigger when player enters
+    public GameObject spawnObject; //Manuallt insert the spawn object with the room
+    public Transform spawnPos;
+
+    [Space(5)]
 
     [SerializeField]private float minTimer; //Setting the min time for spawn
 
@@ -13,31 +16,32 @@ public class EnemySpawn : MonoBehaviour
 
     public int spawnCount;
     [SerializeField]private int maxSpawnCount; //Set the max amount of enemies that should spawn
+    private bool spawned = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetSpawnTime();
-        gameObject.SetActive(false);
+        spawnObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(spawnCount <= maxSpawnCount)
+        if(spawnCount <= maxSpawnCount && spawned)
         {
             timeUntilSpawn -= Time.deltaTime;
 
             if (timeUntilSpawn <= 0)
             {
-                Instantiate(enemyObject, transform.position, Quaternion.identity);
+                Instantiate(enemyObject, spawnPos.position, Quaternion.identity);
                 spawnCount++;
                 SetSpawnTime();
             }
         }
         else
         {
-            gameObject.SetActive(false);
+            spawnObject.SetActive(false);
         }
     }
 
@@ -49,9 +53,10 @@ public class EnemySpawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && )
+        if (collision.CompareTag("Player"))
         {
-
+            spawnObject.SetActive(true);
+            spawned = true;
         }
     }
 }
