@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public PlayerHealth playerHP {  get; private set; }
+
     [Header("Health Stats")]
     public int totalHealth = 4;
     [SerializeField]private int currentHealth;

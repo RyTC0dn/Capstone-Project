@@ -10,10 +10,15 @@ public class ItemPickup : MonoBehaviour
     public GameObject itemShield; //Manually assign in inpsector
     public GameObject itemWallBreak; //Manually assign in inpsector
 
+    private SpriteRenderer sp;
+    private Collider2D itemCollider;
+
     public SceneInfo sceneInfo;
 
     private void Start()
     {
+        sp = GetComponent<SpriteRenderer>();    
+        itemCollider = GetComponent<Collider2D>();
         if(sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
             Destroy(gameObject);
         if (sceneInfo.isWallBreakPickedUp && gameObject.name == "WallBreakPickup")
@@ -27,14 +32,16 @@ public class ItemPickup : MonoBehaviour
             hasPickedUpShield = true;
             sceneInfo.isShieldPickedUp = hasPickedUpShield;
             abilityPickup.Raise(this, hasPickedUpShield);
-            Destroy(gameObject);
+            sp.enabled = false;
+            itemCollider.enabled = false;
         }
         if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
             sceneInfo.isWallBreakPickedUp = hasPickedUpWallBreak;
             abilityPickup.Raise(this, hasPickedUpWallBreak);
-            Destroy(gameObject);
+            sp.enabled = false;
+            itemCollider.enabled = false;
         }
     }
 }
