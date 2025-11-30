@@ -28,6 +28,7 @@ public class CameraZones : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Character 1");
+        SetSpawnPoint();
     }
 
     private void OnDestroy()
@@ -44,8 +45,6 @@ public class CameraZones : MonoBehaviour
             {
                 cam.SetBounds(minX, maxX, minY, maxY, roomType);
             }
-
-            SetSpawnPoint();
         }        
     }
 

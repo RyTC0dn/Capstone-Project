@@ -8,10 +8,13 @@ public class SpikeLogic : MonoBehaviour
 
     public GameEvent onDamaged; //Call an event that will entity health
 
+    PlayerHealth playerHP;
+
 
     private void Start()
     {
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+        playerHP = FindFirstObjectByType<PlayerHealth>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,7 +22,7 @@ public class SpikeLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //Add player health change
-            onDamaged.Raise(this, damage);
+            playerHP.TakeDamage(damage, this);
         }
     }
 }
