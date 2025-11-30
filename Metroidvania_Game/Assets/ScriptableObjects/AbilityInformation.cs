@@ -5,5 +5,5 @@ using UnityEngine.UI;
 public class AbilityInformation : ScriptableObject
 {
     public string abilityName;
-    public Image abilityImage;
+    public Sprite abilityImage;
 }
