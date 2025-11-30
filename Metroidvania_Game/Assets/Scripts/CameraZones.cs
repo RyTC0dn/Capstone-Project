@@ -12,6 +12,7 @@ public class CameraZones : MonoBehaviour
     public float spawnPointX, spawnPointY;
 
     public GameObject playerSpawnPoint;
+    private GameObject player;
 
     private Vector2 spawnpointPos;
 
@@ -25,8 +26,8 @@ public class CameraZones : MonoBehaviour
     }
 
     private void Start()
-    { 
-        
+    {
+        player = GameObject.Find("Character 1");
     }
 
     private void OnDestroy()
@@ -36,16 +37,16 @@ public class CameraZones : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player"))
-            return;
-
-        CameraControl cam = Camera.main.GetComponent<CameraControl>();
-        if (cam != null)
+        if (collision.gameObject == player)
         {
-            cam.SetBounds(minX, maxX, minY, maxY, roomType);
-        }
+            CameraControl cam = Camera.main.GetComponent<CameraControl>();
+            if (cam != null)
+            {
+                cam.SetBounds(minX, maxX, minY, maxY, roomType);
+            }
 
-        SetSpawnPoint();
+            SetSpawnPoint();
+        }        
     }
 
     private void SetSpawnPoint()
