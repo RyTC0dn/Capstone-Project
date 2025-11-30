@@ -10,12 +10,14 @@ public class TurretBullet : MonoBehaviour
 
     public GameEvent onPlayerHit;
 
+    PlayerHealth playerHP;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         Destroy(gameObject, activeTimer);
-       
+       playerHP = FindAnyObjectByType<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class TurretBullet : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Raise event to damage player
-            onPlayerHit.Raise(this, bulletDamage);
+            playerHP.TakeDamage(bulletDamage, this);
             Destroy(gameObject);
         }
     }
