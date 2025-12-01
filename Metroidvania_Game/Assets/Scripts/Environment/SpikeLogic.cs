@@ -25,4 +25,13 @@ public class SpikeLogic : MonoBehaviour
             playerHP.TakeDamage(damage, this);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //Add player health change
+            playerHP.TakeDamage(damage, this);
+        }
+    }
 }
