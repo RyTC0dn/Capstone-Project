@@ -871,15 +871,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db066ed77913aff4cbcf21fa39cc1c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityTutorial: {fileID: 11400000, guid: 35a629b3f31e2c94597f80f0b2aaf417, type: 2}
+  abilityTutorial: {fileID: 11400000, guid: 979db1e7d3ff11a4eb56236bf2a0f166, type: 2}
   videoCanvas: {fileID: 5080305962032536715}
-  video:
-  - {fileID: 32900000, guid: 6bb17aa4534a03246833997c326b48a2, type: 3}
-  - {fileID: 32900000, guid: 5ec2ed32742e21c42b410eade743a268, type: 3}
+  videos:
+  - {fileID: 32900000, guid: a96d25e03bc583e4681aa51edef3b390, type: 3}
   videoPlayer: {fileID: 6711253095619280895}
   tutorialText: {fileID: 4691229019679402113}
   abilityNameText: {fileID: 1592765070797374024}
-  abilityName: Wall Break Dash
+  abilityName: Shield
   nextButton: {fileID: 4661430178489532153}
 --- !u!114 &2871572501946707308
 MonoBehaviour:
@@ -1625,7 +1624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -317.87}
+  m_AnchoredPosition: {x: 0, y: -244.09}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3584356123953169909

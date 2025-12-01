@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Wall Break Tutorial
   m_EditorClassIdentifier: 
   textLines:
-  - text: 'Hold down the R key (on Keyboard) or Right Bumper (on Controller) to charge
-      ability. Once fully charged, release to dash across the screen. '
-  - text: This is effective for breaking cracked walls or leaping over gaps
+  - text: Hold down the R key (on Keyboard) or Right Bumper (on Controller) to charge
+      ability. Release after charge to dash, effective to break cracked walls...
+  - text: Or for making it across gaps.

@@ -54,6 +54,7 @@ public class Tutorial : MonoBehaviour
             ifPickedUp = true;
             GameManager.instance.StateSwitch(GameStates.Pause);
             playerAttack.enabled = false;
+            PlayVideo(activeLineIndex);
         }
     }
 
@@ -93,7 +94,11 @@ public class Tutorial : MonoBehaviour
             GameManager.instance.StateSwitch(GameStates.Play);
             playerAttack.enabled = true;
             Destroy(gameObject, 0.5f);
+            return;
         }
+
+        //Play next video
+        PlayVideo(activeLineIndex);
     }
     #endregion
 
@@ -101,6 +106,12 @@ public class Tutorial : MonoBehaviour
 
     private void PlayVideo(int index)
     {
-        if(videos != null && index < videos.Length )
+        if(videos != null && 
+            index < videos.Length && videos[index] != null)
+        {
+            videoPlayer.clip = videos[index];   
+            videoPlayer.Play();
+        }
     }
+    #endregion
 }
