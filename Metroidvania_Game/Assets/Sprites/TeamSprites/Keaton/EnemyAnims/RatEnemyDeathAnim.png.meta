@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: 3834180ffe50aa54cb0f7c4cb56e562e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7142345431942113234
+    second: RatEnemyDeathAnim_0
+  - first:
+      213: 5669657931997128627
+    second: RatEnemyDeathAnim_1
+  - first:
+      213: 2926741826150236715
+    second: RatEnemyDeathAnim_2
+  - first:
+      213: -3217068086059840389
+    second: RatEnemyDeathAnim_3
+  - first:
+      213: 19107297776793642
+    second: RatEnemyDeathAnim_4
+  - first:
+      213: 4015989917312270489
+    second: RatEnemyDeathAnim_5
+  - first:
+      213: -3388596584838857192
+    second: RatEnemyDeathAnim_6
+  - first:
+      213: -77457459652825966
+    second: RatEnemyDeathAnim_7
+  - first:
+      213: 3589116480815781411
+    second: RatEnemyDeathAnim_8
+  - first:
+      213: -8597636381651959536
+    second: RatEnemyDeathAnim_9
+  - first:
+      213: 6576760028220917542
+    second: RatEnemyDeathAnim_10
+  - first:
+      213: -5803032407694473075
+    second: RatEnemyDeathAnim_11
+  - first:
+      213: -4716007754185359677
+    second: RatEnemyDeathAnim_12
+  - first:
+      213: -2050483560015177449
+    second: RatEnemyDeathAnim_13
+  - first:
+      213: 6088576022000638803
+    second: RatEnemyDeathAnim_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1919
+        width: 163
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d72b0e1455be1360800000000000000
+      internalID: 7142345431942113234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_1
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1917
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b72aaa99dbaeae40800000000000000
+      internalID: 5669657931997128627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_2
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1915
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2286f03f20ed9820800000000000000
+      internalID: 2926741826150236715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_3
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1913
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c4828de9daa53d0800000000000000
+      internalID: -3217068086059840389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1911
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a287a907cf1e34000800000000000000
+      internalID: 19107297776793642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_5
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 1910
+        width: 166
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990c2fa5d89abb730800000000000000
+      internalID: 4015989917312270489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_6
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1909
+        width: 170
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ef3911c5949f0d0800000000000000
+      internalID: -3388596584838857192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_7
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 1908
+        width: 172
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c6030d9d0dceef0800000000000000
+      internalID: -77457459652825966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1652
+        width: 171
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32656806c6a1fc130800000000000000
+      internalID: 3589116480815781411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_9
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1652
+        width: 169
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01109ab534f0fa880800000000000000
+      internalID: -8597636381651959536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_10
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1652
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62788178668554b50800000000000000
+      internalID: 6576760028220917542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_11
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1652
+        width: 163
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d888a4f55cc777fa0800000000000000
+      internalID: -5803032407694473075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_12
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1652
+        width: 161
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce3bcd1fef5d8eb0800000000000000
+      internalID: -4716007754185359677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_13
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1653
+        width: 158
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719548be0183b83e0800000000000000
+      internalID: -2050483560015177449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatEnemyDeathAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 1654
+        width: 155
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b1f4322a7fe7450800000000000000
+      internalID: 6088576022000638803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

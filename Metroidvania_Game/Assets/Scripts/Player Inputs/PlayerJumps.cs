@@ -73,11 +73,12 @@ public class PlayerJumps : MonoBehaviour
 
         //Gravity modifications 
         //If the player is falling, increase gravity factor
-        if (rb2d.linearVelocity.y < 0)
+        if (!isGrounded)
         {
             //Add the fall multiplier to velocity 
             //Vector2.up * whatever gravity is * fall multiplier - 1
             //and then scale by delta time to account for frame jitter
+            fallMultiplier += Time.deltaTime;
             rb2d.linearVelocity += (Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
         }
         else if (rb2d.linearVelocity.y > 0)
@@ -91,6 +92,7 @@ public class PlayerJumps : MonoBehaviour
         if (isGrounded)
         {
             coyoteTime = coyoteTimeMax;
+            fallMultiplier = 2.5f;
         }
         else
         {

@@ -112,7 +112,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         }
 
         //animator.SetBool("isRunning", h != 0);
-        animator.SetFloat("Velocity", Mathf.Abs(h));
+        animator.SetFloat("horizontal", h);
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor

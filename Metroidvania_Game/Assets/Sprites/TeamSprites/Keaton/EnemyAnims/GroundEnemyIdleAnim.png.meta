@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 153ef25c71877684491aa9ffe954ac10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3898011792384029135
+    second: GroundEnemyIdleAnim_0
+  - first:
+      213: 689021798050268185
+    second: GroundEnemyIdleAnim_1
+  - first:
+      213: 4302866260812785588
+    second: GroundEnemyIdleAnim_2
+  - first:
+      213: -468174389626021950
+    second: GroundEnemyIdleAnim_3
+  - first:
+      213: 8029591002405741822
+    second: GroundEnemyIdleAnim_4
+  - first:
+      213: 583014585826449489
+    second: GroundEnemyIdleAnim_5
+  - first:
+      213: 3330366741637212986
+    second: GroundEnemyIdleAnim_6
+  - first:
+      213: 6831499483473550210
+    second: GroundEnemyIdleAnim_7
+  - first:
+      213: -1761298126608029662
+    second: GroundEnemyIdleAnim_8
+  - first:
+      213: -1015274960816645346
+    second: GroundEnemyIdleAnim_9
+  - first:
+      213: 2645595098641017833
+    second: GroundEnemyIdleAnim_10
+  - first:
+      213: 5229502596329815126
+    second: GroundEnemyIdleAnim_11
+  - first:
+      213: 5387176071643242039
+    second: GroundEnemyIdleAnim_12
+  - first:
+      213: -1751796290102313630
+    second: GroundEnemyIdleAnim_13
+  - first:
+      213: 167987599150033463
+    second: GroundEnemyIdleAnim_14
+  - first:
+      213: -3097091706634116792
+    second: GroundEnemyIdleAnim_15
+  - first:
+      213: -4176261006544442409
+    second: GroundEnemyIdleAnim_16
+  - first:
+      213: 8516587744733465974
+    second: GroundEnemyIdleAnim_17
+  - first:
+      213: 2734066768755888418
+    second: GroundEnemyIdleAnim_18
+  - first:
+      213: 2775266544680895869
+    second: GroundEnemyIdleAnim_19
+  - first:
+      213: -1614176384254323138
+    second: GroundEnemyIdleAnim_20
+  - first:
+      213: -4714754887288627929
+    second: GroundEnemyIdleAnim_21
+  - first:
+      213: 4783021060039431651
+    second: GroundEnemyIdleAnim_22
+  - first:
+      213: 7002541051105698897
+    second: GroundEnemyIdleAnim_23
+  - first:
+      213: -439464563541505896
+    second: GroundEnemyIdleAnim_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1922
+        width: 180
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc175579215881630800000000000000
+      internalID: 3898011792384029135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_1
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1922
+        width: 181
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 914894bbca5ef8900800000000000000
+      internalID: 689021798050268185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_2
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1921
+        width: 181
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b762cf011ad6bb30800000000000000
+      internalID: 4302866260812785588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_3
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1921
+        width: 182
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c7d7658fd5b089f0800000000000000
+      internalID: -468174389626021950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1921
+        width: 182
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4211e5976de6f60800000000000000
+      internalID: 8029591002405741822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_5
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1920
+        width: 182
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1589e074da8471800800000000000000
+      internalID: 583014585826449489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_6
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1920
+        width: 182
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3baf0f08e6d73e20800000000000000
+      internalID: 3330366741637212986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_7
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 1920
+        width: 183
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b94bbd59c5ece50800000000000000
+      internalID: 6831499483473550210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_8
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1664
+        width: 182
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228a7f38fac9e87e0800000000000000
+      internalID: -1761298126608029662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1663
+        width: 183
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bdc236dc409e1f0800000000000000
+      internalID: -1015274960816645346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_10
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 1664
+        width: 183
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb230aa9ba07b420800000000000000
+      internalID: 2645595098641017833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_11
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 1664
+        width: 182
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65cb83e77ece29840800000000000000
+      internalID: 5229502596329815126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_12
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 1664
+        width: 182
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e97cc381813ca40800000000000000
+      internalID: 5387176071643242039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_13
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 1664
+        width: 181
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26dba993e8e50b7e0800000000000000
+      internalID: -1751796290102313630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1664
+        width: 181
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a2206d4dfc45200800000000000000
+      internalID: 167987599150033463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_15
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 1664
+        width: 180
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841e34d708be405d0800000000000000
+      internalID: -3097091706634116792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_16
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1408
+        width: 179
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db6a97cdb0fa06c0800000000000000
+      internalID: -4176261006544442409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_17
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1408
+        width: 178
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d88475e6ff03670800000000000000
+      internalID: 8516587744733465974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_18
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1408
+        width: 179
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22115ef8d3b51f520800000000000000
+      internalID: 2734066768755888418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_19
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1409
+        width: 179
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d750bb8e73ab38620800000000000000
+      internalID: 2775266544680895869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_20
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1409
+        width: 180
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3652bb712b4999e0800000000000000
+      internalID: -1614176384254323138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_21
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1409
+        width: 180
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ddf1ce863d19eb0800000000000000
+      internalID: -4714754887288627929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_22
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1409
+        width: 180
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5dcd40054b06240800000000000000
+      internalID: 4783021060039431651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_23
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1410
+        width: 180
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154ee342cf50e2160800000000000000
+      internalID: 7002541051105698897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemyIdleAnim_24
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1154
+        width: 180
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8988cbece45b6e9f0800000000000000
+      internalID: -439464563541505896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GroundEnemyIdleAnim_0: 3898011792384029135
+      GroundEnemyIdleAnim_1: 689021798050268185
+      GroundEnemyIdleAnim_10: 2645595098641017833
+      GroundEnemyIdleAnim_11: 5229502596329815126
+      GroundEnemyIdleAnim_12: 5387176071643242039
+      GroundEnemyIdleAnim_13: -1751796290102313630
+      GroundEnemyIdleAnim_14: 167987599150033463
+      GroundEnemyIdleAnim_15: -3097091706634116792
+      GroundEnemyIdleAnim_16: -4176261006544442409
+      GroundEnemyIdleAnim_17: 8516587744733465974
+      GroundEnemyIdleAnim_18: 2734066768755888418
+      GroundEnemyIdleAnim_19: 2775266544680895869
+      GroundEnemyIdleAnim_2: 4302866260812785588
+      GroundEnemyIdleAnim_20: -1614176384254323138
+      GroundEnemyIdleAnim_21: -4714754887288627929
+      GroundEnemyIdleAnim_22: 4783021060039431651
+      GroundEnemyIdleAnim_23: 7002541051105698897
+      GroundEnemyIdleAnim_24: -439464563541505896
+      GroundEnemyIdleAnim_3: -468174389626021950
+      GroundEnemyIdleAnim_4: 8029591002405741822
+      GroundEnemyIdleAnim_5: 583014585826449489
+      GroundEnemyIdleAnim_6: 3330366741637212986
+      GroundEnemyIdleAnim_7: 6831499483473550210
+      GroundEnemyIdleAnim_8: -1761298126608029662
+      GroundEnemyIdleAnim_9: -1015274960816645346
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

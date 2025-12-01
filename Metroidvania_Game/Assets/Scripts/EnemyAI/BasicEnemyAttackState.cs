@@ -9,6 +9,9 @@ public class BasicEnemyAttackState : MonoBehaviour
     private float raycastLength = 2;
     public int damage = 1;
 
+    private Animator animator;
+    private Vector2 lastPosition;
+
     private enum enemyTypes { ground, flying}
     enemyTypes currentEnemyType;
 
@@ -22,6 +25,8 @@ public class BasicEnemyAttackState : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player");
 
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
+
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -38,6 +43,29 @@ public class BasicEnemyAttackState : MonoBehaviour
 
         if (gameObject.tag == "GroundEnemy") { currentEnemyType = enemyTypes.ground; }
         if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
+
+        UpdateAnimation();
+    }
+
+    private void UpdateAnimation()
+    {
+        Vector2 currentPosition = transform.position;
+        Vector2 velocity = (currentPosition - lastPosition) / Time.deltaTime;
+
+        float horizontal = velocity.x;
+
+        animator.SetFloat("horizontal", horizontal);
+
+        lastPosition = currentPosition;
+
+        if(horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if(horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     public void GroundEnemy()
@@ -45,13 +73,13 @@ public class BasicEnemyAttackState : MonoBehaviour
         //Move towards player
         float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
         
-        Vector2 playerPosX = new Vector2(playerPos.transform.position.x, transform.position.y);
-        transform.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
+        Vector2 playerPosX = new Vector2(playerPos.transform.position.x, rb2D.position.y);
+        rb2D.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
 
         float jumpForce = 5;
 
-        //Jump
-        rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        ////Jump
+        //rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     public void FlyingEnemy()

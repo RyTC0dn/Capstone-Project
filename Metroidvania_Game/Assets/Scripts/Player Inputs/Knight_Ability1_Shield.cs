@@ -97,7 +97,7 @@ public class Knight_Ability1_Shield : MonoBehaviour
         shieldCollider.SetActive(true);
         shieldEnabled = true;
         playerMovement.horizontalSpeed = playerMovement.playerSpeed / 2;
-        animator.SetBool("isBlocking", true);
+        animator.Play("Knightblock");
     }
 
     private void DisableShield()
