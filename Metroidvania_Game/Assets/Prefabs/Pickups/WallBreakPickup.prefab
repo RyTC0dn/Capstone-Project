@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9041573236007714448}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AcquiredItemPopup, Assembly-CSharp
         m_MethodName: Confirm
         m_Mode: 1
@@ -282,7 +282,6 @@ GameObject:
   - component: {fileID: 2845474785097886911}
   - component: {fileID: 157441526895038115}
   - component: {fileID: 3629891431757964869}
-  - component: {fileID: 9041573236007714448}
   - component: {fileID: 4429791450156895440}
   m_Layer: 0
   m_Name: WallBreakPickup
@@ -442,22 +441,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &9041573236007714448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2741335245078394358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a229e92169b364abd062176786c06a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityInfo: {fileID: 11400000, guid: 0fe7eef9efc8d31499118934d0728cfb, type: 2}
-  itemText: {fileID: 912239869553211047}
-  uiCanvas: {fileID: 6584491078763352271}
-  abilityImage: {fileID: 5970379306640931074}
 --- !u!114 &4429791450156895440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +458,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9041573236007714448}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AcquiredItemPopup, Assembly-CSharp
         m_MethodName: OnAbilityPickup
         m_Mode: 0

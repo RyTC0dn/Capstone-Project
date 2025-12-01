@@ -71,6 +71,7 @@ public class SaveSurvivor : MonoBehaviour
         buttonPrompt.SetActive(false);
         dialogueText.text = beforeSavingDialogue.textLines[activeLineIndex].text;
         animator.enabled = false;
+        npcName.text = npcData.npcName;
 
         Color start = new Color(0, 255, 242, 0.5f);
         bubbleSp.color = start;
@@ -107,8 +108,7 @@ public class SaveSurvivor : MonoBehaviour
 
         if (!conversationActive || currentDialogue.textLines.Length == 0) { return; }        
 
-        dialogueText.text = currentDialogue.textLines[activeLineIndex].text;
-        npcName.text = npcData.npcName;
+        dialogueText.text = currentDialogue.textLines[activeLineIndex].text;        
 
         //Calling inputs in booleans require ? after current
         //and ?? as to say it is currently not pressed 

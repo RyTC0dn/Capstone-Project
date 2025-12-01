@@ -902,8 +902,10 @@ MonoBehaviour:
   bubbleSp: {fileID: 414224401943422995}
   npcName: {fileID: 2419190446536886090}
   dialogueText: {fileID: 1168976836184661395}
-  floatAmplitude: 0.5
-  floatSpeed: 2
+  floatYAmplitude: 0.5
+  floatYSpeed: 2
+  floatXAmplitude: 5
+  floatXSpeed: 0.5
   sceneName: Level 1 - RyanTestZone
   buttonPrompt: {fileID: 3041088372839659987}
 --- !u!95 &862895010000645107
