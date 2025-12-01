@@ -96,4 +96,13 @@ public class BasicEnemyAttackState : MonoBehaviour
             onAttackEvent.Raise(this, damage);
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //Raise a global event to attack player
+            onAttackEvent.Raise(this, damage);
+        }
+    }
 }

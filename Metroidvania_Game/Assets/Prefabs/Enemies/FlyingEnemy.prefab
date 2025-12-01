@@ -208,7 +208,7 @@ MonoBehaviour:
   totalHealth: 2
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
-  kbForce: 100
+  kbForce: 2.5
   kbDuration: 0.2
 --- !u!114 &-5814837572841073523
 MonoBehaviour:

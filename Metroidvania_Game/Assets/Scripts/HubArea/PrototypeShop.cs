@@ -16,6 +16,14 @@ public class PrototypeShop : MonoBehaviour
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private UIManager uiManager;
+    [Space(20)]
+
+    [Header("Audio Clips")]
+    public AudioClip[] firstReturnClip;
+    public AudioClip noMoneyClip;
+    public AudioClip purchaseClip;
+    public AudioClip leaveWithoutPayClip;
+
     public AudioSource devonAudio;
     private AudioSource playerAttackSlash;
 
@@ -78,7 +86,7 @@ public class PrototypeShop : MonoBehaviour
             if(isPressed && isNearShop && GameManager.instance.isBlacksmithSaved)
             {
                 //Set the shop ui object to active when function is called
-                devonAudio.Play();
+                PlayRandomClip(firstReturnClip);
 
                 shopUI.SetActive(true);
                 promptButton.SetActive(false);
@@ -90,6 +98,16 @@ public class PrototypeShop : MonoBehaviour
         }      
     }
 
+    private void PlayRandomClip(AudioClip[] clips)
+    {
+        if (clips == null || clips.Length == 0) return;
+
+        AudioClip clip = clips[Random.Range(0, clips.Length)];
+
+        devonAudio.Stop();
+        devonAudio.PlayOneShot(clip);
+    }
+
     public void BuySwordUpgrade()
     {
         //Check if the player has enough coins before buying
@@ -97,6 +115,7 @@ public class PrototypeShop : MonoBehaviour
         int upgradeCap = GameManager.instance.currentUpgrade;
         if(amount >= upgradePrice && upgradeCap <= 5)
         {
+            devonAudio.PlayOneShot(purchaseClip);
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
             buyEvent.Raise(this, upgradePrice);            
@@ -105,7 +124,7 @@ public class PrototypeShop : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins");
-            //Can have an audio play here
+            devonAudio.PlayOneShot(noMoneyClip);
         }
       
     }
@@ -115,11 +134,16 @@ public class PrototypeShop : MonoBehaviour
         int amount = GameManager.instance.currentCoin;
         if (amount >= axePrice)
         {
+            devonAudio.PlayOneShot(purchaseClip);
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             axeBoughtEvent.Raise(this, true);
             PlayerPrefs.SetInt("AxeBought", 1);
             PlayerPrefs.Save();
+        }
+        else
+        {
+            devonAudio.PlayOneShot(noMoneyClip);
         }
     }
 
@@ -128,6 +152,14 @@ public class PrototypeShop : MonoBehaviour
         shopUI.SetActive(false);
         GameManager.instance.StateSwitch(GameStates.Play);
         Invoke(nameof(ReEnablePlayer), 0.3f);
+        if(!boughtAxe && !boughtUpgrade)
+        {
+            devonAudio.PlayOneShot(leaveWithoutPayClip);
+        }
+        else
+        {
+            return;
+        }
     }
 
     void ReEnablePlayer()
