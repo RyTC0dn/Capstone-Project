@@ -24,12 +24,15 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject settingsMenu;
+    public GameObject keyboardControlMenu;
+    public GameObject gamepadControlMenu;
     public static bool isGamePaused = false;
 
     [Header("First Selected Option")]
     [SerializeField] private GameObject menuFirst;
     [SerializeField] private GameObject settingsMenuFirst;
     [SerializeField] private GameObject startMenuFirst;
+    [SerializeField] private GameObject controlMenuFirst;
 
     private void Awake()
     {
@@ -43,6 +46,11 @@ public class UIManager : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(startMenuFirst);
         }
+
+        //Deactivate control menus on awake
+        keyboardControlMenu.SetActive(false);
+        gamepadControlMenu.SetActive(false);
+        controlMenuFirst.SetActive(false);
     }
 
     // Update is called once per frame
@@ -115,6 +123,9 @@ public class UIManager : MonoBehaviour
     {
         pauseMenu.gameObject.SetActive(true);
         settingsMenu.gameObject.SetActive(false);
+        keyboardControlMenu.gameObject.SetActive(false);
+        gamepadControlMenu.gameObject.SetActive(false);
+        controlMenuFirst.gameObject.SetActive(false);
         Time.timeScale = 0f;
         isGamePaused = true;
 
@@ -127,13 +138,36 @@ public class UIManager : MonoBehaviour
 
     }
 
+    #region Settings
     void OpenSettingsMenuHandle()
     {
         settingsMenu.gameObject.SetActive(true);
         pauseMenu.gameObject.SetActive(false);
+        keyboardControlMenu.gameObject.SetActive(false);
+        gamepadControlMenu.gameObject.SetActive(false);
+        controlMenuFirst.gameObject.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
+
+    public void OpenKeyboardControls()
+    {
+        keyboardControlMenu.gameObject.SetActive(true);
+        settingsMenu.gameObject.SetActive(false);
+        controlMenuFirst.gameObject.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(controlMenuFirst);
+    }
+
+    public void OpenGamepadControls()
+    {
+        gamepadControlMenu.gameObject.SetActive(true);
+        settingsMenu.gameObject.SetActive(false);
+        controlMenuFirst.gameObject.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(controlMenuFirst);
+    }
+    #endregion
 
     #region Main Menu Button Actions
     public void OnSettingsPress()
