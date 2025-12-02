@@ -30,7 +30,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject menuFirst;
     [SerializeField] private GameObject settingsMenuFirst;
     [SerializeField] private GameObject startMenuFirst;
-    [SerializeField] private GameObject elevatorFirst;
 
     private void Awake()
     {
@@ -43,11 +42,6 @@ public class UIManager : MonoBehaviour
         else
         {
             EventSystem.current.SetSelectedGameObject(startMenuFirst);
-        }
-
-        if(checkSceneName == "Level 1 - RyanTestZone")
-        {
-            elevatorFirst = GameObject.Find("Elevator_Entrance").GetComponent<GameObject>();
         }
     }
 
@@ -150,36 +144,6 @@ public class UIManager : MonoBehaviour
     public void OnSettingsBackPress()
     {
         Pause();
-    }
-
-    #endregion
-
-    #region Elevator Button Actions
-    public void OnElevatorInteract(Component sender, object data)
-    {
-        bool isNear = ElevatorManager.instance.isNearElevator;
-        if(data is bool active && active && sender is Elevator)
-        {
-            EventSystem.current.SetSelectedGameObject(elevatorFirst);
-
-            //Deactivate player controls
-            playerAttack.enabled = false;
-            playerControls.enabled = false;
-            Debug.Log("UIManager: Interact event recieved");
-        }
-    }
-
-    public void CloseElevatorMenu()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        playerAttack.enabled = true;
-        playerControls.enabled = true;
-    }
-
-    public IEnumerator SetFirstElevatorSelected()
-    {
-        yield return new WaitForSeconds(1f);
-        EventSystem.current.SetSelectedGameObject(elevatorFirst);
     }
 
     #endregion

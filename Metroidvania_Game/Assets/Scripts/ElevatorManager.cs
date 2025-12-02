@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class ElevatorSaveData
 {
@@ -20,6 +21,8 @@ public class ElevatorManager : MonoBehaviour
 
     public ElevatorSaveData saveData = new ElevatorSaveData();
 
+    public GameObject elevatorFirst;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -38,10 +41,12 @@ public class ElevatorManager : MonoBehaviour
     }
 
     public void CloseUI()//Close UI on button click
-    {        
+    {
+        //Disable event sytem controls
+        EventSystem.current.SetSelectedGameObject(null);
+
         parentPanel.SetActive(false);
         Invoke(nameof(EnableComponent), 0.3f);
-        UIManager.instance.CloseElevatorMenu();//Deactivate Event system
     }
 
     public void RegisterElevator(Elevator elevator)
@@ -69,6 +74,9 @@ public class ElevatorManager : MonoBehaviour
     {
         if (elevators.ContainsKey(destinationName))
         {
+            //Disable event sytem controls
+            EventSystem.current.SetSelectedGameObject(null);
+
             Vector3 targetPos = elevators[destinationName].transform.position;
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             if (rb != null)

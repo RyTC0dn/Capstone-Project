@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class Elevator : MonoBehaviour
 {
@@ -101,16 +102,23 @@ public class Elevator : MonoBehaviour
         if (data is bool interact && interact && isNear)
         {
             if (ElevatorManager.instance.elevators.Count > 1)
-            {   
-                playerAttack.DisableAttack();
-
-                elevatorAnimation.SetBool("isOpen", true);
-                elevatorOpened = true;
-                parentPanel.SetActive(true);
-
-                UIActive.Raise(this, true);
+            {
+                OpenElevatorUI();
             }
         }
+    }
+
+    private void OpenElevatorUI()
+    {
+        parentPanel.SetActive(true);
+
+        //Set default UI button once
+        EventSystem.current.SetSelectedGameObject(ElevatorManager.instance.elevatorFirst);
+
+        playerAttack.DisableAttack();
+
+        elevatorAnimation.SetBool("isOpen", true);
+        elevatorOpened = true;
     }
 
     public void OnButtonClicked(string destinationName)

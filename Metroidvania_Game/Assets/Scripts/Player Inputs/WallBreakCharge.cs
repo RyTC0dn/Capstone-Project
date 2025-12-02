@@ -53,7 +53,7 @@ public class WallBreakCharge : MonoBehaviour
     {       
 
         bool chargeKey = Keyboard.current.rKey.isPressed;
-        bool chargeButton = Gamepad.current?.leftTrigger.isPressed ?? false;
+        bool chargeButton = Gamepad.current?.leftShoulder.isPressed ?? false;
         bool isPressed = chargeKey || chargeButton;
 
         if (isPressed)

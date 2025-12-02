@@ -1428,6 +1428,7 @@ MonoBehaviour:
   isNearElevator: 0
   isActive: 0
   parentPanel: {fileID: 1368645902131436300}
+  elevatorFirst: {fileID: 3660466363690864242}
 --- !u!320 &7050290088981174768
 PlayableDirector:
   m_ObjectHideFlags: 0

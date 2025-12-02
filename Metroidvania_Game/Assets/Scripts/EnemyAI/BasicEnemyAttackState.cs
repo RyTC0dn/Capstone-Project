@@ -41,10 +41,10 @@ public class BasicEnemyAttackState : MonoBehaviour
                 break;
         }
 
-        if (gameObject.tag == "GroundEnemy") { currentEnemyType = enemyTypes.ground; }
+        if (gameObject.tag == "GroundEnemy") { UpdateAnimation(); currentEnemyType = enemyTypes.ground; }
         if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
 
-        UpdateAnimation();
+        
     }
 
     private void UpdateAnimation()

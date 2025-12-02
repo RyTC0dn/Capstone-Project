@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PrototypeShop : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PrototypeShop : MonoBehaviour
 
     public AudioSource devonAudio;
     private AudioSource playerAttackSlash;
+    [Space(10)]
 
 
     [Header("Game Events")]
@@ -44,11 +46,11 @@ public class PrototypeShop : MonoBehaviour
     [SerializeField]private bool boughtAxe = false;
     [SerializeField]private bool boughtUpgrade = false;
 
+    [Header("UI Components")]
     public Button axeButton;
-    public Button upgradeButton;    
-
-    [Header("Prototype End Screen")]
-    public GameObject prototypeEnd;
+    public Button upgradeButton;
+    public GameObject shopFirst;
+    public GameObject shopNext;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,7 +65,6 @@ public class PrototypeShop : MonoBehaviour
 
         //Setting UI components to false on start
         shopUI.SetActive(false);
-        prototypeEnd.SetActive(false);
     }
 
     private void Update()
@@ -72,10 +73,15 @@ public class PrototypeShop : MonoBehaviour
         {
            axeButton.interactable = false;
         }
-        if(GameManager.instance.currentUpgrade == 5)
+        if(PlayerPrefs.GetInt("UpgradeLimit", 0) == 1)
         {
             upgradeButton.interactable = false;
         }
+
+        //Close shop shortcut
+        bool keyInput = Keyboard.current.escapeKey.isPressed;
+        bool buttonInput = Gamepad.current?.bButton.isPressed ?? false;
+
     }
 
     //This function is being called by the player movement controls script
@@ -90,10 +96,15 @@ public class PrototypeShop : MonoBehaviour
 
                 shopUI.SetActive(true);
                 promptButton.SetActive(false);
+
+                //Enable event system once
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(shopFirst);
+                
                 playerAttack.enabled = false;
                 playerAttackSlash.enabled = false;
                 isShopping = true;
-                GameManager.instance.StateSwitch(GameStates.Pause);                
+                GameManager.instance.StateSwitch(GameStates.Pause);               
             }
         }      
     }
@@ -113,7 +124,7 @@ public class PrototypeShop : MonoBehaviour
         //Check if the player has enough coins before buying
         int amount = GameManager.instance.currentCoin;
         int upgradeCap = GameManager.instance.currentUpgrade;
-        if(amount >= upgradePrice && upgradeCap <= 5)
+        if(amount >= upgradePrice && upgradeCap < 5)
         {
             devonAudio.PlayOneShot(purchaseClip);
             boughtUpgrade = true;
@@ -125,6 +136,12 @@ public class PrototypeShop : MonoBehaviour
         {
             Debug.Log("Not enough coins");
             devonAudio.PlayOneShot(noMoneyClip);
+        }
+
+        if(upgradeCap >= 5)
+        {
+            PlayerPrefs.SetInt("UpgradeLimit", 1);
+            PlayerPrefs.Save();
         }
       
     }
@@ -138,6 +155,9 @@ public class PrototypeShop : MonoBehaviour
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             axeBoughtEvent.Raise(this, true);
+
+            EventSystem.current.SetSelectedGameObject(shopNext);
+
             PlayerPrefs.SetInt("AxeBought", 1);
             PlayerPrefs.Save();
         }
@@ -149,11 +169,16 @@ public class PrototypeShop : MonoBehaviour
 
     public void CloseShop()
     {
-        shopUI.SetActive(false);
+        //Disable event system
+        EventSystem.current.SetSelectedGameObject(null);
+
+        shopUI.SetActive(false); 
+
         GameManager.instance.StateSwitch(GameStates.Play);
         Invoke(nameof(ReEnablePlayer), 0.3f);
         if(!boughtAxe && !boughtUpgrade)
         {
+            //Play audio clip if player hasn't bought anything from shop
             devonAudio.PlayOneShot(leaveWithoutPayClip);
         }
         else
@@ -195,18 +220,5 @@ public class PrototypeShop : MonoBehaviour
             }
 
         }
-    }
-
-    //Functions past this point are specifically for the end of the prototype 
-    //when players buy something from the shop after saving the blacksmith
-    public void ClosePanel()
-    {
-        prototypeEnd.SetActive(false);
-        GameManager.instance.StateSwitch(GameStates.Play);
-    }
-
-    public void CloseGame()
-    {
-        Application.Quit();
     }
 }

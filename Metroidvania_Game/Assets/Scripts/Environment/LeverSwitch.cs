@@ -20,7 +20,10 @@ public class LeverSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.eKey.isPressed && isDetected)
+        bool keyInput = Keyboard.current.eKey.isPressed;
+        bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
+
+        if ((keyInput || buttonInput) && isDetected)
         {
             OpenDoor();
         }
