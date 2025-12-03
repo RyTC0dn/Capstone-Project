@@ -36,13 +36,13 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        string checkSceneName = SceneManager.GetActiveScene().name;
-        if(checkSceneName != "StartMenu")
+        if(instance == null)
         {
-            playerControls = GameObject.Find(player.name).GetComponent<PrototypePlayerMovementControls>();
-            playerAttack = GameObject.Find(player.name).GetComponent<PrototypePlayerAttack>();
+            instance = this;
         }
-        else
+
+        string checkSceneName = SceneManager.GetActiveScene().name;
+        if(checkSceneName == "StartMenu")
         {
             EventSystem.current.SetSelectedGameObject(startMenuFirst);
         }
@@ -56,6 +56,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FindPlayer();
         if (InputManager.Instance.MenuOpenCloseInput)
         {
             if (isGamePaused)
@@ -66,6 +67,20 @@ public class UIManager : MonoBehaviour
             {
                 Pause();
             }
+        }
+    }
+
+    void FindPlayer()
+    {
+        if (playerControls != null && playerAttack != null)
+            return;
+
+        var p = GameObject.FindWithTag("Player");
+
+        if (p != null)
+        {
+            playerControls = p.GetComponent<PrototypePlayerMovementControls>();
+            playerAttack = p.GetComponent<PrototypePlayerAttack>();
         }
     }
 
@@ -115,8 +130,10 @@ public class UIManager : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(null);
 
-        playerControls.enabled = true;
-        playerAttack.enabled = true;
+        if (playerControls != null)
+            playerControls.enabled = true;
+        if (playerAttack != null)
+            playerAttack.enabled = true;
     }
 
     void Pause()
@@ -132,8 +149,10 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuFirst);
 
         //Deactivate player controls
-        playerAttack.enabled = false;
-        playerControls.enabled = false;
+        if (playerControls != null)
+            playerControls.enabled = false;
+        if (playerAttack != null)
+            playerAttack.enabled = false;
 
 
     }

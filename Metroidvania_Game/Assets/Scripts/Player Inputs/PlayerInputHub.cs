@@ -12,12 +12,4 @@ public class PlayerInputHub : MonoBehaviour
             controls.Enable();
         }
     }
-
-    private void OnDestroy() {
-        if (controls != null)
-        {
-            controls.Disable();
-        }
-    
-    }
 }
