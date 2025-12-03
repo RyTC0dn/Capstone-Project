@@ -3,16 +3,16 @@ using UnityEngine;
 public class BasicEnemyAttackState : MonoBehaviour
 {
     private GameObject playerPos;
-    PrototypePlayerMovementControls playerControls;
     private Rigidbody2D rb2D;
     [SerializeField]private bool isGrounded;
     private float raycastLength = 2;
     public int damage = 1;
+    public float jumpForce;
 
     private Animator animator;
     private Vector2 lastPosition;
 
-    private enum enemyTypes { ground, flying}
+    private enum enemyTypes { ground, flying, spider}
     enemyTypes currentEnemyType;
 
     public GameEvent onAttackEvent;
@@ -23,8 +23,6 @@ public class BasicEnemyAttackState : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
 
         playerPos = GameObject.FindGameObjectWithTag("Player");
-
-        playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
 
         animator = GetComponent<Animator>();
     }
@@ -39,10 +37,14 @@ public class BasicEnemyAttackState : MonoBehaviour
             case enemyTypes.flying:
                 FlyingEnemy();
                 break;
+            case enemyTypes.spider:
+                SpiderEnemy();
+                break;
         }
 
         if (gameObject.tag == "GroundEnemy") { UpdateAnimation(); currentEnemyType = enemyTypes.ground; }
         if (gameObject.tag == "FlyingEnemy") { currentEnemyType = enemyTypes.flying; }
+        if (gameObject.tag == "SpiderEnemy") { currentEnemyType = enemyTypes.spider; }
 
         
     }
@@ -75,11 +77,23 @@ public class BasicEnemyAttackState : MonoBehaviour
         
         Vector2 playerPosX = new Vector2(playerPos.transform.position.x, rb2D.position.y);
         rb2D.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
+    }
 
-        float jumpForce = 5;
+    public void SpiderEnemy()
+    {
+        //Move towards player
+        float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
 
-        ////Jump
-        //rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        Vector2 playerPosX = new Vector2(playerPos.transform.position.x, rb2D.position.y);
+        rb2D.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
+
+        float jump = jumpForce;
+
+        if (Vector2.Distance(transform.position, playerPosX) <= 2)
+        {
+            //Jump
+            rb2D.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+        }        
     }
 
     public void FlyingEnemy()
