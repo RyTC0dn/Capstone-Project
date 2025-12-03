@@ -1240,6 +1240,7 @@ GameObject:
   - component: {fileID: 7002829267281125606}
   - component: {fileID: 2791710261131852306}
   - component: {fileID: 1892630965472275289}
+  - component: {fileID: 6899408857453848692}
   - component: {fileID: 8842708863280125052}
   - component: {fileID: 5587350823930368243}
   - component: {fileID: 7047053321633390745}
@@ -1604,6 +1605,18 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6899408857453848692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1b9cb683ea16f4fadf825cb14494ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8842708863280125052
 Animator:
   serializedVersion: 7

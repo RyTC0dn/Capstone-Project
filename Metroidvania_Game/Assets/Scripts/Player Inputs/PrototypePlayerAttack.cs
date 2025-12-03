@@ -19,7 +19,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     [Header("Weapon Setup")]
     public Collider2D weaponCollider;
 
-    PrototypePlayerMovementControls playerController;
+    PrototypePlayerMovementControls playerMovement;
     public PlayerCharacter character;
 
     private AudioSource swordSlashAudio;
@@ -31,27 +31,26 @@ public class PrototypePlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        playerControl = new Player_Controller();
+        //Enable player controller
+        playerControl = PlayerInputHub.controls;
 
-        //Enable the Gameplay map
-        playerControl.Gameplay.Enable();
-
-
-        //Subscribe to attack input
         playerControl.Gameplay.Melee.performed += OnAttack;
         playerControl.Gameplay.Melee.canceled += OnAttack;
     }
 
     private void OnDestroy()
     {
-        playerControl.Gameplay.Melee.performed -= OnAttack;
-        playerControl.Gameplay.Melee.canceled -= OnAttack;
+        if(PlayerInputHub.controls != null)
+        {
+            PlayerInputHub.controls.Gameplay.Melee.performed -= OnAttack;
+            PlayerInputHub.controls.Gameplay.Melee.canceled -= OnAttack;
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerController = GetComponentInParent<PrototypePlayerMovementControls>();
+        playerMovement = GetComponentInParent<PrototypePlayerMovementControls>();
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 

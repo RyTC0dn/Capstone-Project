@@ -31,8 +31,8 @@ public class PlayerJumps : MonoBehaviour
 
     private void Awake()
     {
-        controller = new Player_Controller();
-        controller.Enable();
+        //Enable player controller
+        controller = PlayerInputHub.controls;
 
         controller.Gameplay.Jump.performed += OnJump;
         controller.Gameplay.Jump.canceled += OnJump;
@@ -40,8 +40,11 @@ public class PlayerJumps : MonoBehaviour
 
     private void OnDestroy()
     {
-        controller.Gameplay.Jump.performed -= OnJump;
-        controller.Gameplay.Jump.canceled -= OnJump;
+        if (PlayerInputHub.controls != null)
+        {
+            PlayerInputHub.controls.Gameplay.Jump.performed -= OnJump;
+            PlayerInputHub.controls.Gameplay.Jump.canceled -= OnJump;
+        }
     }
 
     // Start is called before the first frame update
