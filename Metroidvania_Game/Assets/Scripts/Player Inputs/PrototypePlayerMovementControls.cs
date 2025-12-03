@@ -40,8 +40,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void Awake()
     {
-        playerController = new Player_Controller();
-        playerController.Enable();
+        //Enable player controller
+        playerController = PlayerInputHub.controls;
 
         //Subscribing to the move event
         playerController.Gameplay.Movement.performed += OnMove;
@@ -62,10 +62,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(playerController != null)
+        if(PlayerInputHub.controls != null)
         {
-            playerController.Gameplay.Disable();
-            playerController.UI.Disable();
+            PlayerInputHub.controls.Gameplay.Movement.performed -= OnMove;
+            PlayerInputHub.controls.Gameplay.Movement.canceled -= OnMove;
+            PlayerInputHub.controls.Gameplay.Interact.performed -= InteractEvent;
+            PlayerInputHub.controls.Gameplay.Interact.canceled -= InteractEvent;
         }        
     }
 
