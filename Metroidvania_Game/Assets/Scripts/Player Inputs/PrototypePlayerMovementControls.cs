@@ -62,11 +62,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(playerController != null)
-        {
-            playerController.Gameplay.Disable();
-            playerController.UI.Disable();
-        }        
+        playerController.Gameplay.Movement.performed -= OnMove;
+        playerController.Gameplay.Movement.canceled -= OnMove;
+        playerController.Gameplay.Interact.performed -= InteractEvent;
+        playerController.Gameplay.Interact.canceled -= InteractEvent;
     }
 
     public void InteractEvent(InputAction.CallbackContext context)
