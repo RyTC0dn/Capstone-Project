@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class WallBreakCharge : MonoBehaviour
 {
     private SpriteRenderer characterSP;
+    private Animator animator;
     public float chargeTime = 0;
     public float maxCharge;
     private Rigidbody2D rb2D;
@@ -30,6 +31,7 @@ public class WallBreakCharge : MonoBehaviour
     void Start()
     {
         characterSP = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         playerMove = GetComponent<PrototypePlayerMovementControls>();
         chargeFill.fillAmount = chargeTime / maxCharge;
@@ -112,6 +114,8 @@ public class WallBreakCharge : MonoBehaviour
         {
             elapsed += Time.deltaTime;
 
+            animator.SetBool("hasCharged", true);
+
             //Lerp velocity for smooth acceleration
             rb2D.linearVelocity = direction * Mathf.Lerp(0, chargeDistance * chargeMultiplier, elapsed/dashDuration);
 
@@ -120,6 +124,7 @@ public class WallBreakCharge : MonoBehaviour
 
         rb2D.linearVelocity = Vector2.zero;
         rb2D.gravityScale = originalGravity;
+        animator.SetBool("hasCharged", false);
 
         //Restore control
         playerMove.enabled = true;
