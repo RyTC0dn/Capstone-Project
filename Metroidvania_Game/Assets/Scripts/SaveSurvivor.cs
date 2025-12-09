@@ -91,7 +91,7 @@ public class SaveSurvivor : MonoBehaviour
         {
             buttonPrompt.SetActive(true);
             conversationActive = true;
-            rb2D.gravityScale = 1.0f;
+            rb2D.gravityScale = 9.81f;
             BeforeSavedDialogue();
         }
         else if(!hasBeenSaved)
