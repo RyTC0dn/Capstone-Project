@@ -27,24 +27,12 @@ public class PlayerJumps : MonoBehaviour
     public float coyoteTimeMax = 0.2f;
     private float raycastLength = 2;
 
-    Player_Controller controller;
+    public Player_Controller controller;
 
     private void Awake()
     {
-        //Enable player controller
-        controller = PlayerInputHub.controls;
-
-        controller.Gameplay.Jump.performed += OnJump;
-        controller.Gameplay.Jump.canceled += OnJump;
-    }
-
-    private void OnDestroy()
-    {
-        if (PlayerInputHub.controls != null)
-        {
-            PlayerInputHub.controls.Gameplay.Jump.performed -= OnJump;
-            PlayerInputHub.controls.Gameplay.Jump.canceled -= OnJump;
-        }
+        ////Enable player controller
+        //controller = PlayerInputHub.controls;
     }
 
     // Start is called before the first frame update
@@ -102,13 +90,18 @@ public class PlayerJumps : MonoBehaviour
             rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, rb2d.linearVelocity.y);
             coyoteTime -= Time.deltaTime;
         }
+
+        OnJump();
     }
 
-    public void OnJump(InputAction.CallbackContext callbackContext)
-    {       
+    public void OnJump()
+    {
+        bool key = Keyboard.current?.spaceKey.wasPressedThisFrame ?? false;
+        bool button = Gamepad.current?.buttonSouth.wasPressedThisFrame ?? false;
+        bool isPressed = key || button;
 
         //Jump input 
-        if ((callbackContext.performed) && coyoteTime > 0)
+        if (isPressed && coyoteTime > 0)
         {
             //Trigger animation before the jump executes
             animator.SetTrigger("isJumping");
