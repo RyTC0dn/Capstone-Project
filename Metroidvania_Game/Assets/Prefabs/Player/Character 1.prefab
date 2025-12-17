@@ -1234,7 +1234,6 @@ GameObject:
   - component: {fileID: 7411665141688049481}
   - component: {fileID: 8108088426756765879}
   - component: {fileID: 1052429430747177008}
-  - component: {fileID: 3919217711980766130}
   - component: {fileID: 2249839468151686403}
   - component: {fileID: 2684591189990701646}
   - component: {fileID: 7002829267281125606}
@@ -1390,35 +1389,6 @@ MonoBehaviour:
   dashTimer: 0.5
   dashTime: 0
   isFacingRight: 1
---- !u!114 &3919217711980766130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: Teleport the player when selecting button
-  gameEvent: {fileID: 11400000, guid: 230ad68fe92e39f479b82ede584c6a0e, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1052429430747177008}
-        m_TargetAssemblyTypeName: PrototypePlayerMovementControls, Assembly-CSharp
-        m_MethodName: OnTeleportPlayer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2249839468151686403
 MonoBehaviour:
   m_ObjectHideFlags: 0

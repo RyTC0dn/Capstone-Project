@@ -31,20 +31,11 @@ public class PrototypePlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        //Enable player controller
-        playerControl = PlayerInputHub.controls;
+        ////Enable player controller
+        //playerControl = PlayerInputHub.controls;
 
-        playerControl.Gameplay.Melee.performed += OnAttack;
-        playerControl.Gameplay.Melee.canceled += OnAttack;
-    }
-
-    private void OnDestroy()
-    {
-        if(PlayerInputHub.controls != null)
-        {
-            PlayerInputHub.controls.Gameplay.Melee.performed -= OnAttack;
-            PlayerInputHub.controls.Gameplay.Melee.canceled -= OnAttack;
-        }
+        //playerControl.Gameplay.Melee.performed += OnAttack;
+        //playerControl.Gameplay.Melee.canceled += OnAttack;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +48,11 @@ public class PrototypePlayerAttack : MonoBehaviour
         weaponCollider.enabled = false;
     }
 
+    private void Update()
+    {
+        OnAttack();
+    }
+
 
     /// <summary>
     /// This is the main attack function that is called within Unity on the player input component
@@ -65,14 +61,15 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// </summary>
     /// <param name="context"></param>
     /// 
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnAttack()
     {
         ///Attack function is being managed by 
         ///
-        if (!context.performed)
-            return;
+        bool key = Mouse.current?.leftButton.wasPressedThisFrame ?? false;
+        bool button = Gamepad.current?.rightTrigger.wasPressedThisFrame ?? false;
+        bool isPressed = key || button;
 
-        if(context.performed)
+        if (isPressed)
         {
             StartCoroutine(Delay());
             switch (character)

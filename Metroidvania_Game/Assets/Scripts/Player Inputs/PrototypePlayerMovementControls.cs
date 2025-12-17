@@ -54,42 +54,17 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         dashTime = dashTimer;
     }
 
-    private void OnEnable()
+    public void InteractEvent()
     {
-        //Subscribing to the move event
-        playerController.Gameplay.Movement.performed += OnMove;
-        playerController.Gameplay.Movement.canceled += OnMove;
-        playerController.Gameplay.Interact.performed += InteractEvent;
-        playerController.Gameplay.Interact.canceled += InteractEvent;
-    }
+        bool key = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+        bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
+        bool isPressed = key || button; 
 
-    private void OnDisable()
-    {
-        //Subscribing to the move event
-        playerController.Gameplay.Movement.performed -= OnMove;
-        playerController.Gameplay.Movement.canceled -= OnMove;
-        playerController.Gameplay.Interact.performed -= InteractEvent;
-        playerController.Gameplay.Interact.canceled -= InteractEvent;
-    }
-
-    //private void OnDestroy()
-    //{
-    //    if(PlayerInputHub.controls != null)
-    //    {
-    //        PlayerInputHub.controls.Gameplay.Movement.performed -= OnMove;
-    //        PlayerInputHub.controls.Gameplay.Movement.canceled -= OnMove;
-    //        PlayerInputHub.controls.Gameplay.Interact.performed -= InteractEvent;
-    //        PlayerInputHub.controls.Gameplay.Interact.canceled -= InteractEvent;
-    //    }        
-    //}
-
-    public void InteractEvent(InputAction.CallbackContext context)
-    {
         //If either the ekey or xButton is pressed
-        if (context.performed)
+        if (isPressed)
         {
             //Send the interact event out
-            playerInteract.Raise(this, context.performed);
+            playerInteract.Raise(this, isPressed);
         }
     }
 
@@ -99,17 +74,15 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
 
         //Set the movement function
-        Move();
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+
+        Move(moveInput.x);
+        InteractEvent();
+
     }
 
-    public void OnMove(InputAction.CallbackContext ctx)
+    private void Move(float h)
     {
-        moveInput = ctx.ReadValue<Vector2>();
-    }
-
-    private void Move()
-    {
-        float h = moveInput.x;
 
         rb2D.linearVelocity = new Vector2(h * playerSpeed, rb2D.linearVelocity.y);
 
