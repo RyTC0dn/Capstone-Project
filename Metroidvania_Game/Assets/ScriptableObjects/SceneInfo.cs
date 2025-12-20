@@ -6,4 +6,5 @@ public class SceneInfo : ScriptableObject
     //Check if the abilities have been picked up
     public bool isShieldPickedUp = false;
     public bool isWallBreakPickedUp = false;
+    public bool isAxeBought = false;
 }

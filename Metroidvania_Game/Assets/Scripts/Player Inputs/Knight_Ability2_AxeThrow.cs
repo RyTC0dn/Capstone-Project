@@ -20,6 +20,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
 
     PrototypePlayerMovementControls playerController;
     PrototypeShop shop;
+    public SceneInfo sceneInfo;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,8 +35,8 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AxeEvent(shop, isAxeBought);
-        if (Input.GetButtonDown("Fire2") && isAxeBought)
+        //AxeEvent(shop, isAxeBought);
+        if (Input.GetButtonDown("Fire2") && sceneInfo.isAxeBought)
         {
             Shoot();
         }

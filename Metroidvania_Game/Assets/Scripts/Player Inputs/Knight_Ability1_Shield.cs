@@ -9,7 +9,7 @@ public class Knight_Ability1_Shield : MonoBehaviour
     public GameObject shieldCollider;
     public float shieldDuration;
     [SerializeField]private float shieldTimer;
-    [SerializeField]private bool shieldEnabled = false; //activates shield when pressing input
+    [SerializeField] private bool shieldEnabled; //activates shield when pressing input
     private bool shieldPickedUp = false; //checks if the shield item has been picked up in scene
     PrototypePlayerMovementControls playerMovement;
 
@@ -26,12 +26,13 @@ public class Knight_Ability1_Shield : MonoBehaviour
         //Setting game object components 
         shieldCollider.SetActive(false);
         shieldTimer = shieldDuration;
-        shieldIcon.SetActive(false);
+        shieldIcon.SetActive(false);     
     }
 
     private void Update()
     {
-        if (shieldEnabled)
+
+        if (sceneInfo.isShieldPickedUp)
         {
             shieldTimer -= Time.deltaTime;
             if (shieldTimer <= 0)
@@ -58,12 +59,12 @@ public class Knight_Ability1_Shield : MonoBehaviour
 
     public void OnBlock()
     {
-        bool playerKey = Keyboard.current.cKey.isPressed;
+        bool playerKey = Keyboard.current.qKey.isPressed;
         bool playerButton = Gamepad.current?.leftTrigger.isPressed ?? false;
 
         bool isPressed = playerKey || playerButton;
         //If the player holds the shield input = Q key (keyboard) or left trigger (controller)
-        if (isPressed && shieldTimer > 0 && shieldPickedUp)
+        if (isPressed && shieldTimer > 0 && sceneInfo.isShieldPickedUp)
         {
             EnableShield();
         }

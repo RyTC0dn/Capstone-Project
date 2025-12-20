@@ -30,7 +30,7 @@ public class ItemPickup : MonoBehaviour
         if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
         {
             hasPickedUpShield = true;
-            sceneInfo.isShieldPickedUp = hasPickedUpShield;
+            sceneInfo.isShieldPickedUp = true;
             abilityPickup.Raise(this, hasPickedUpShield);
             sp.enabled = false;
             itemCollider.enabled = false;
@@ -38,7 +38,7 @@ public class ItemPickup : MonoBehaviour
         if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
-            sceneInfo.isWallBreakPickedUp = hasPickedUpWallBreak;
+            sceneInfo.isWallBreakPickedUp = true;
             abilityPickup.Raise(this, hasPickedUpWallBreak);
             sp.enabled = false;
             itemCollider.enabled = false;

@@ -45,6 +45,7 @@ public class PrototypeShop : MonoBehaviour
     private bool isShopping = false;
     [SerializeField]private bool boughtAxe = false;
     [SerializeField]private bool boughtUpgrade = false;
+    public SceneInfo sceneInfo;
 
     [Header("UI Components")]
     public Button axeButton;
@@ -154,6 +155,7 @@ public class PrototypeShop : MonoBehaviour
             devonAudio.PlayOneShot(purchaseClip);
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;
+            sceneInfo.isAxeBought = true;
             axeBoughtEvent.Raise(this, true);
 
             EventSystem.current.SetSelectedGameObject(shopNext);
