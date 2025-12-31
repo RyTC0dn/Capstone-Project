@@ -7,10 +7,10 @@ public class EnemySpawn : MonoBehaviour
     public GameObject spawnObject;
     private bool spawning = false;
     private SpriteRenderer sp;
+    [Space(20)]
 
-    [SerializeField]private float minTimer; //Setting the min time for spawn
-
-    [SerializeField]private float maxTimer; //Setting the max time for spawn 
+    [Tooltip("Assign rate of spawn for the enemies")]
+    [SerializeField]private float spawnRate;
 
     public float timeUntilSpawn; //The amount of time it will take until spawn
 
@@ -20,7 +20,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (GameManager.instance.isBlacksmithSaved)
+        if(GameManager.instance.isBlacksmithSaved)
         {
             gameObject.SetActive(false);
         }
@@ -56,8 +56,8 @@ public class EnemySpawn : MonoBehaviour
 
     private void SetSpawnTime()
     {
-        //Randomize the time until spawn
-        timeUntilSpawn = Random.Range(minTimer, maxTimer); 
+        //Set the amount of spawn time the enemies will have here
+        timeUntilSpawn = spawnRate;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
