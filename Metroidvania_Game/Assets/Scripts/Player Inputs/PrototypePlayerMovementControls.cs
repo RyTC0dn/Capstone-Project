@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
+    public static PrototypePlayerMovementControls Instance;
+
     [Header("General input variables")]
     public GameEvent playerInteract;
 
@@ -38,10 +40,14 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("Sprite Settings")]    
     [HideInInspector] public bool isFacingRight = true;
 
+    public string playerName;
+
     private void Awake()
     {
         ////Enable player controller
         //playerController = PlayerInputHub.controls;
+
+        playerName = gameObject.name;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

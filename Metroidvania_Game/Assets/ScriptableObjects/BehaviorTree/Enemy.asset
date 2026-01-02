@@ -12,24 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
   m_Name: Enemy Blackboard
   m_EditorClassIdentifier: 
-  VersionTimestamp: 638985552495392976
+  VersionTimestamp: 639028812114296241
   AssetID:
     m_Value0: 9523677223168763648
     m_Value1: 13395251810392388840
   m_Blackboard:
     m_Variables:
     - rid: 6744760853488468261
+    - rid: 5832099987484049549
   m_SharedBlackboardVariableGuids: []
   references:
     version: 2
     RefIds:
+    - rid: 5832099987484049549
+      type: {class: 'BlackboardVariable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 722479884983574353
+          m_Value1: 5439934945679970740
+        Name: New GameObject List
+        m_Value: []
     - rid: 6744760853488468261
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
           m_Value0: 1
           m_Value1: 0
-        Name: Self
+        Name: GroundEnemy
         m_Value: {fileID: 0}
 --- !u!114 &-6906630766578118330
 MonoBehaviour:
@@ -44,16 +53,16 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   Graphs:
-  - rid: 6744760853488468391
+  - rid: 5832099987484049629
   RootGraph:
-    rid: 6744760853488468391
+    rid: 5832099987484049629
   m_DebugInfo: {fileID: -3849814697790949181}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6744760853488468391
+    - rid: 5832099987484049629
       type: {class: BehaviorGraphModule, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         AuthoringAssetID:
@@ -61,56 +70,65 @@ MonoBehaviour:
           m_Value1: 13395251810392388840
         m_DebugInfo: {fileID: 0}
         BlackboardReference:
-          rid: 6744760853488468392
+          rid: 5832099987484049630
         BlackboardGroupReferences: []
         Root:
-          rid: 6744760853488468393
+          rid: 5832099987484049631
         m_ActiveNodes: []
         m_NodesToTick: []
         m_NodesToEnd:
-          rid: 6744760853488468394
+          rid: 5832099987484049632
         m_EndedNodes:
-          rid: 6744760853488468395
-        m_VersionTimestamp: 638985552495537307
-    - rid: 6744760853488468392
+          rid: 5832099987484049633
+        m_VersionTimestamp: 639028820503999476
+    - rid: 5832099987484049630
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Blackboard:
-          rid: 6744760853488468396
+          rid: 5832099987484049634
         m_Source: {fileID: -8996101052179309623}
-    - rid: 6744760853488468393
+    - rid: 5832099987484049631
       type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
           m_Value0: 4023898099011889683
           m_Value1: 7782677619787734641
         Graph:
-          rid: 6744760853488468391
+          rid: 5832099987484049629
         m_Parent:
           rid: -2
         m_Child:
           rid: -2
         Repeat: 1
         AllowMultipleRepeatsPerTick: 0
-    - rid: 6744760853488468394
+    - rid: 5832099987484049632
       type: {class: 'Stack`1[[Unity.Behavior.Node, Unity.Behavior]]', ns: System.Collections.Generic, asm: mscorlib}
       data: 
-    - rid: 6744760853488468395
+    - rid: 5832099987484049633
       type: {class: 'HashSet`1[[Unity.Behavior.Node, Unity.Behavior]]', ns: System.Collections.Generic, asm: System.Core}
       data: 
-    - rid: 6744760853488468396
+    - rid: 5832099987484049634
       type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Variables:
-        - rid: 6744760853488468397
-    - rid: 6744760853488468397
+        - rid: 5832099987484049635
+        - rid: 5832099987484049636
+    - rid: 5832099987484049635
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
           m_Value0: 1
           m_Value1: 0
-        Name: Self
+        Name: GroundEnemy
         m_Value: {fileID: 0}
+    - rid: 5832099987484049636
+      type: {class: 'BlackboardVariable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 722479884983574353
+          m_Value1: 5439934945679970740
+        Name: New GameObject List
+        m_Value: []
 --- !u!114 &-3849814697790949181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +158,7 @@ MonoBehaviour:
   m_Description: 
   m_Nodes:
   - rid: 6744760853488468259
-  m_VersionTimestamp: 638985552495537307
+  m_VersionTimestamp: 639028820503999476
   m_DebugInfo: {fileID: -3849814697790949181}
   m_RuntimeGraph: {fileID: -6906630766578118330}
   AssetID:
@@ -158,6 +176,15 @@ MonoBehaviour:
       m_Value1: 11549843281177505721
     Variables: []
     NamedChildren: []
+  - Name: Conditional Branch
+    Story: 
+    RuntimeTypeID:
+      m_Value0: 12334964803190848789
+      m_Value1: 14608808926743427008
+    Variables: []
+    NamedChildren:
+    - True
+    - False
   - Name: Patrol
     Story: '[Agent] patrols along [Waypoints]'
     RuntimeTypeID:
@@ -254,20 +281,31 @@ MonoBehaviour:
     m_Value1: 13395251810392388840
   m_Variables:
   - rid: 6744760853488468269
-  m_VersionTimestamp: 638985552495392976
+  - rid: 5832099987484049547
+  m_VersionTimestamp: 639028812114296241
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: -8996101052179309623}
   references:
     version: 2
     RefIds:
+    - rid: 5832099987484049547
+      type: {class: 'TypedVariableModel`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 722479884983574353
+          m_Value1: 5439934945679970740
+        Name: New GameObject List
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: []
     - rid: 6744760853488468269
       type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
         ID:
           m_Value0: 1
           m_Value1: 0
-        Name: Self
+        Name: GroundEnemy
         IsExposed: 1
         m_IsShared: 0
         m_Value: {fileID: 0}

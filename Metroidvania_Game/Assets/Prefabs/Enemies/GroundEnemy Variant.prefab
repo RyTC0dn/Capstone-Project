@@ -78,11 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 735331059263378606, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.8
+      value: 2.8125
       objectReference: {fileID: 0}
     - target: {fileID: 735331059263378606, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.88
+      value: 1.375
       objectReference: {fileID: 0}
     - target: {fileID: 1994623804695009132, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_LocalScale.x
@@ -166,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7402571240219324013, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7402571240219324013, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: onAttackEvent
@@ -196,9 +196,13 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 8072791704070279469, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
     - {fileID: 324023879201063701, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+    - {fileID: 5845898335328023294, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 31987415684770010}
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1747511885805749196}
@@ -211,15 +215,38 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5342541874613903044}
-    - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6518034331848133559}
   m_SourcePrefab: {fileID: 100100000, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
 --- !u!1 &2902811957173728584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
   m_PrefabInstance: {fileID: 3155843116548847719}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &31987415684770010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902811957173728584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd9bc6564e6e9642a93a2bd455fc4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  enemySpeed: 0
+  currentWaypoint:
+  - {fileID: 0}
+  - {fileID: 0}
+  attackDamage: 1
+  attackCooldown: 1
+  onAttackEvent: {fileID: 0}
+  visionRange: 10
+  fovAngle: 0
+  attackRange: 5
 --- !u!95 &1747511885805749196
 Animator:
   serializedVersion: 7
@@ -397,31 +424,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6518034331848133559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902811957173728584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Graph: {fileID: -6906630766578118330, guid: 00e773d2f9e52a84e8b458eb8c7ee5b9, type: 2}
-  m_BlackboardVariableOverridesList:
-  - rid: 6744760853488468356
-  m_IsInitialised: 0
-  m_IsStarted: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 6744760853488468356
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1
-          m_Value1: 0
-        Name: Self
-        m_Value: {fileID: 2902811957173728584}
