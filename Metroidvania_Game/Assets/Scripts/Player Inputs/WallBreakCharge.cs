@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class WallBreakCharge : MonoBehaviour
 {
+    [Header("References")]
+    private Animator animator;
     private SpriteRenderer characterSP;
     public float chargeTime = 0;
     public float maxCharge;
@@ -29,10 +31,13 @@ public class WallBreakCharge : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        #region References
         characterSP = GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         playerMove = GetComponent<PrototypePlayerMovementControls>();
+        animator = GetComponent<Animator>();
         chargeFill.fillAmount = chargeTime / maxCharge;
+        #endregion
 
         chargeCanvas.enabled = false;
         dashTrail.SetActive(false);
@@ -75,6 +80,7 @@ public class WallBreakCharge : MonoBehaviour
             dashTrail.SetActive(true);
 
             Vector2 direction = playerMove.isFacingRight ? Vector2.right : Vector2.left;
+            animator.Play("KnightCharge");
             StartCoroutine(ChargeDash(direction));
             //rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
             chargeTime = 0;

@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: 9ce4ab0c0858e274c96a123fa2b78c5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3985753889385072551
+    second: KnightClimbingAnimation_0
+  - first:
+      213: 8007890942728962415
+    second: KnightClimbingAnimation_1
+  - first:
+      213: 8522010496417336529
+    second: KnightClimbingAnimation_2
+  - first:
+      213: 6206535753676156262
+    second: KnightClimbingAnimation_3
+  - first:
+      213: -6314451607860480762
+    second: KnightClimbingAnimation_4
+  - first:
+      213: -7697947557607039197
+    second: KnightClimbingAnimation_5
+  - first:
+      213: 7782395838704186186
+    second: KnightClimbingAnimation_6
+  - first:
+      213: -3808766690474285373
+    second: KnightClimbingAnimation_7
+  - first:
+      213: 8841957263305078290
+    second: KnightClimbingAnimation_8
+  - first:
+      213: 4738502697441196374
+    second: KnightClimbingAnimation_9
+  - first:
+      213: 2419609261232237084
+    second: KnightClimbingAnimation_10
+  - first:
+      213: 4963138610143967621
+    second: KnightClimbingAnimation_11
+  - first:
+      213: 6153217940229967935
+    second: KnightClimbingAnimation_12
+  - first:
+      213: -79486006759377819
+    second: KnightClimbingAnimation_13
+  - first:
+      213: -6249850123790589555
+    second: KnightClimbingAnimation_14
+  - first:
+      213: -1159159367894375468
+    second: KnightClimbingAnimation_15
+  - first:
+      213: -3432782876462208781
+    second: KnightClimbingAnimation_16
+  - first:
+      213: 5758086202575337233
+    second: KnightClimbingAnimation_17
+  - first:
+      213: 1862207347324955700
+    second: KnightClimbingAnimation_18
+  - first:
+      213: 515796643411041172
+    second: KnightClimbingAnimation_19
+  - first:
+      213: -6216004536993527483
+    second: KnightClimbingAnimation_20
+  - first:
+      213: -4086972534745054939
+    second: KnightClimbingAnimation_21
+  - first:
+      213: 1048325981934355513
+    second: KnightClimbingAnimation_22
+  - first:
+      213: 1276473875944832942
+    second: KnightClimbingAnimation_23
+  - first:
+      213: 7288488326196986591
+    second: KnightClimbingAnimation_24
+  - first:
+      213: -5974698705834144743
+    second: KnightClimbingAnimation_25
+  - first:
+      213: 2966552827913856184
+    second: KnightClimbingAnimation_26
+  - first:
+      213: 3185052646253121578
+    second: KnightClimbingAnimation_27
+  - first:
+      213: 1066908848714508247
+    second: KnightClimbingAnimation_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1917
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7cde28b0e305730800000000000000
+      internalID: 3985753889385072551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1917
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f618d61826eb12f60800000000000000
+      internalID: 8007890942728962415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1918
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc0b1b1563444670800000000000000
+      internalID: 8522010496417336529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1918
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66de0a3626b022650800000000000000
+      internalID: 6206535753676156262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1918
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605f412d7bf8e58a0800000000000000
+      internalID: -6314451607860480762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1918
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f1f395b756b2590800000000000000
+      internalID: -7697947557607039197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1918
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43f07b48cf900c60800000000000000
+      internalID: 7782395838704186186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1918
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6a0fdefda842bc0800000000000000
+      internalID: -3808766690474285373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1662
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 216fb76c841f4ba70800000000000000
+      internalID: 8841957263305078290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1663
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6597630091b82c140800000000000000
+      internalID: 4738502697441196374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1662
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a2efeadcd249120800000000000000
+      internalID: 2419609261232237084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1662
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58938a4254c90e440800000000000000
+      internalID: 4963138610143967621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1662
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f30d7f09d1f946550800000000000000
+      internalID: 6153217940229967935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 1662
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5643e72e5eb95eef0800000000000000
+      internalID: -79486006759377819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 1662
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81e700fc621449a0800000000000000
+      internalID: -6249850123790589555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 1909
+        y: 1662
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d3e69642b6d9efe0800000000000000
+      internalID: -1159159367894375468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1406
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f82d69592e4c50d0800000000000000
+      internalID: -3432782876462208781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1406
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117b492c4e4d8ef40800000000000000
+      internalID: 5758086202575337233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1405
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c2d6b47b3e7d910800000000000000
+      internalID: 1862207347324955700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1405
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b9ada705a782700800000000000000
+      internalID: 515796643411041172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_20
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1405
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549c842bec05cb9a0800000000000000
+      internalID: -6216004536993527483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_21
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1405
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5214eb322282847c0800000000000000
+      internalID: -4086972534745054939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_22
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1405
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93482022de66c8e00800000000000000
+      internalID: 1048325981934355513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_23
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1405
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaff1c42a32f6b110800000000000000
+      internalID: 1276473875944832942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_24
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1149
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd28d804489e52560800000000000000
+      internalID: 7288488326196986591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_25
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1149
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c05ceae2b951da0800000000000000
+      internalID: -5974698705834144743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_26
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1150
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b46c3b54105b2920800000000000000
+      internalID: 2966552827913856184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_27
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1150
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20d5d2b184933c20800000000000000
+      internalID: 3185052646253121578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightClimbingAnimation_28
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1150
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d76957f1fb6ece00800000000000000
+      internalID: 1066908848714508247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KnightClimbingAnimation_0: 3985753889385072551
+      KnightClimbingAnimation_1: 8007890942728962415
+      KnightClimbingAnimation_10: 2419609261232237084
+      KnightClimbingAnimation_11: 4963138610143967621
+      KnightClimbingAnimation_12: 6153217940229967935
+      KnightClimbingAnimation_13: -79486006759377819
+      KnightClimbingAnimation_14: -6249850123790589555
+      KnightClimbingAnimation_15: -1159159367894375468
+      KnightClimbingAnimation_16: -3432782876462208781
+      KnightClimbingAnimation_17: 5758086202575337233
+      KnightClimbingAnimation_18: 1862207347324955700
+      KnightClimbingAnimation_19: 515796643411041172
+      KnightClimbingAnimation_2: 8522010496417336529
+      KnightClimbingAnimation_20: -6216004536993527483
+      KnightClimbingAnimation_21: -4086972534745054939
+      KnightClimbingAnimation_22: 1048325981934355513
+      KnightClimbingAnimation_23: 1276473875944832942
+      KnightClimbingAnimation_24: 7288488326196986591
+      KnightClimbingAnimation_25: -5974698705834144743
+      KnightClimbingAnimation_26: 2966552827913856184
+      KnightClimbingAnimation_27: 3185052646253121578
+      KnightClimbingAnimation_28: 1066908848714508247
+      KnightClimbingAnimation_3: 6206535753676156262
+      KnightClimbingAnimation_4: -6314451607860480762
+      KnightClimbingAnimation_5: -7697947557607039197
+      KnightClimbingAnimation_6: 7782395838704186186
+      KnightClimbingAnimation_7: -3808766690474285373
+      KnightClimbingAnimation_8: 8841957263305078290
+      KnightClimbingAnimation_9: 4738502697441196374
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -38,12 +38,12 @@ public class Enemy_AI_Logic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetectPlayer();
-
         if (patrolling && !isPlayerInSight || patrolling && !isPlayerInRange)
         {
             Patrolling();
-        }       
+        }
+
+        DetectPlayer();
     }
 
     private void FixedUpdate()
@@ -63,6 +63,7 @@ public class Enemy_AI_Logic : MonoBehaviour
 
             if(waypointIndex >= currentWaypoint.Length)
             {
+                //Reset waypoint index once no more waypoints found
                 waypointIndex = 0;
             }
         }
@@ -81,7 +82,7 @@ public class Enemy_AI_Logic : MonoBehaviour
 
     private void DetectPlayer()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.left, visionRange);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.right, visionRange);
         if(ray.collider != null)
         {
             isPlayerInSight = ray.collider.CompareTag("Player");
