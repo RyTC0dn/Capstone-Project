@@ -1,3 +1,4 @@
+using System.Xml.Serialization;
 using Unity.Behavior;
 using UnityEngine;
 
@@ -5,6 +6,9 @@ public class Enemy_AI_Logic : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform playerTransform;
+    private Vector2 lastPos;
+    private float horizontal;
+    public static Enemy_AI_Logic Instance { get {  return Instance; } }
 
     [Header("Layers")]
     [SerializeField] private LayerMask playerLayer;
@@ -38,17 +42,35 @@ public class Enemy_AI_Logic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DetectPlayer();
+
         if (patrolling && !isPlayerInSight || patrolling && !isPlayerInRange)
         {
             Patrolling();
         }
-
-        DetectPlayer();
+        else if (!patrolling && isPlayerInSight)
+        {
+            ChasePlayer();
+        }
     }
 
     private void FixedUpdate()
     {
-        
+        Vector2 currentPosition = transform.position;
+        Vector2 velocity = (currentPosition - lastPos) / Time.deltaTime;
+
+        horizontal = velocity.x;
+
+        lastPos = currentPosition;
+
+        if(horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if(horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     private void Patrolling()
@@ -82,32 +104,36 @@ public class Enemy_AI_Logic : MonoBehaviour
 
     private void DetectPlayer()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.right, visionRange);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.left, 
+            visionRange, playerLayer);
         if(ray.collider != null)
         {
-            isPlayerInSight = ray.collider.CompareTag("Player");
-            Vector3 end = new Vector3(transform.position.x - visionRange, transform.position.y);
-            Debug.DrawRay(transform.position, transform.position - end, Color.green);
-            if (isPlayerInSight)
-            {
-                Debug.DrawRay(transform.position, Vector2.left, Color.green);
-                Debug.Log("Sees player");
-            }
+            Debug.DrawRay(transform.position, Vector2.left * visionRange, Color.green);
+            Debug.Log("Sees player");
+            isPlayerInSight = true;
+            patrolling = false;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, Vector2.left * visionRange, Color.red);
+            Debug.Log("Sees player");
+            isPlayerInSight = false;
+            patrolling = true;
         }
     }
 
     #region AttackActions
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             AttackPlayer();
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             AttackPlayer();
         }

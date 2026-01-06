@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 9070547331616899129}
   - component: {fileID: 799806113731762350}
   - component: {fileID: 148261653843026439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Character 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1389,6 +1389,7 @@ MonoBehaviour:
   dashTimer: 0.5
   dashTime: 0
   isFacingRight: 1
+  playerName: 
 --- !u!114 &2249839468151686403
 MonoBehaviour:
   m_ObjectHideFlags: 0
