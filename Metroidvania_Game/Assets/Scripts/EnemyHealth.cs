@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int totalHealth = 2;
     [SerializeField]private int enemyHealth;
     public GameObject coinDrop;
+    [SerializeField]private int coinAmount;
 
     [Header("Knockback")]
     public float kbForce = 100f;
@@ -17,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     private bool isKnockedBack = false;
 
     BasicEnemyControls enemyControls;
+    private Animator animator;
 
     private void Start()
     {
@@ -77,9 +79,13 @@ public class EnemyHealth : MonoBehaviour
     {        
         if (enemyHealth <= 0)
         {
-            Instantiate(coinDrop, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-            Destroy(gameObject, 1);
+             if(coinAmount > 0)
+            {
+                Instantiate(coinDrop, transform.position, Quaternion.identity);
+            }
+            
+
+            //gameObject.SetActive(false);
         }
     }
 

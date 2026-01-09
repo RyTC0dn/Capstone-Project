@@ -1,0 +1,203 @@
+using System.Xml.Serialization;
+using Unity.AppUI.UI;
+using Unity.Behavior;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class Rat_Enemy_AI_Logic : MonoBehaviour
+{
+    [Header("References")]
+    private Transform playerTransform;
+    private Animator animator;
+    private Vector2 lastPos;
+    private float horizontal;
+    private float h;
+    public static Rat_Enemy_AI_Logic Instance { get {  return Instance; } }
+
+    [Header("Layers")]
+    [SerializeField] private LayerMask playerLayer;
+    [Space(20)]
+
+    [Header("Patrol Settings")]
+    [SerializeField]private float enemySpeed;
+    [SerializeField]private GameObject[] currentWaypoint;
+    private int waypointIndex;
+    private bool patrolling = true;
+
+    [Header("Combat Settings")]
+    [SerializeField] private int attackDamage = 1;
+    [SerializeField]private float attackCooldown = 1f;
+    public GameEvent onAttackEvent;
+    public Collider2D attackCollider;
+    [Space(20)]
+
+    [Header("Detection Ranges")]
+    [SerializeField]private float visionRange;
+    [SerializeField] private float fovAngle;
+    [SerializeField]private float attackRange;
+    private bool isPlayerInSight;
+    private bool isPlayerInRange = false;
+
+    [Tooltip("Should be the same as the death animation run time")]
+    [SerializeField]private float deathTimer;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        animator = GetComponent<Animator>();
+        attackCollider.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Detection logic functions
+        DetectPlayer();
+        AttackRange();
+
+        //State logic functions
+        if (patrolling && !isPlayerInSight || patrolling && !isPlayerInRange)
+        {
+            Patrolling();
+        }
+        else if (!patrolling && isPlayerInSight)
+        {
+            ChasePlayer();
+        }
+        else if(!patrolling && isPlayerInRange)
+        {
+            AttackPlayer();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 currentPosition = transform.position;
+        Vector2 velocity = (currentPosition - lastPos) / Time.deltaTime;
+
+        horizontal = velocity.x;
+
+        lastPos = currentPosition;
+        if(horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if(horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
+    private void Patrolling()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint[waypointIndex].transform.position, 
+            enemySpeed * Time.deltaTime);
+
+        if(Vector2.Distance(transform.position, currentWaypoint[waypointIndex].transform.position) < 0.2f)
+        {
+            //go to next waypoint
+            waypointIndex++;
+
+            if(waypointIndex >= currentWaypoint.Length)
+            {
+                //Reset waypoint index once no more waypoints found
+                waypointIndex = 0;
+            }
+        }
+    }
+
+    private void ChasePlayer()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, enemySpeed * Time.deltaTime);
+    }
+
+    private void AttackPlayer()
+    {
+        attackCollider.enabled = true;
+
+        animator.Play("EnemyRatAttack");
+
+        if (attackCollider.CompareTag("Player"))
+        {
+            //Could also use other actions here
+            onAttackEvent.Raise(this, attackDamage);
+            Debug.Log("Enemy attacked");
+        }
+    }
+
+    public void AttackRange()
+    {
+        RaycastHit2D attackRay = Physics2D.Raycast(transform.position, Vector2.left,
+           attackRange, playerLayer);
+
+        if (attackRay.collider != null)
+        {            
+            Debug.DrawRay(transform.position, Vector2.left * attackRange, Color.white);
+            isPlayerInRange = true;
+        }
+        else
+        {
+            Color orange = new Color(255, 174, 66);
+            Debug.DrawRay(transform.position, Vector2.left * attackRange, orange);
+            isPlayerInRange = false;
+        }
+    }
+
+    private void DetectPlayer()
+    {
+        if(horizontal > 0)
+        {
+            h = -1;
+        }
+        else if(horizontal < 0)
+        {
+            h = 1;
+        }
+
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.left  * new Vector2(h, 0), 
+            visionRange, playerLayer);
+
+        #region Detection Logic
+        if (ray.collider != null)
+        {
+            Debug.DrawRay(transform.position, Vector2.left * new Vector2(h, 0), Color.green);
+            isPlayerInSight = true;
+            patrolling = false;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, Vector2.left * new Vector2(h, 0), Color.red);
+            isPlayerInSight = false;
+            patrolling = true;
+        }
+        #endregion
+    }
+
+    public void DeathState(Object enemy)
+    {
+        animator.Play("EnemyRatDeath");
+
+        //Could also turn off the sprite and add particle effects before destroy
+
+        Destroy(enemy, deathTimer);
+    }
+
+    #region AttackActions
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        AttackPlayer();
+    //    }
+    //}
+
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        AttackPlayer();
+    //    }
+    //}
+    #endregion
+}
