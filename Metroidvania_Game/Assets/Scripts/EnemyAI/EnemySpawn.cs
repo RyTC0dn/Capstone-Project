@@ -20,6 +20,11 @@ public class EnemySpawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (GameManager.instance.isBlacksmithSaved)
+        {
+            gameObject.SetActive(false);
+        }
+
         SetSpawnTime();
         spawnObject.SetActive(false);
         sp = GetComponent<SpriteRenderer>();
@@ -30,7 +35,7 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawnCount <= maxSpawnCount && spawning)
+        if(spawnCount < maxSpawnCount && spawning)
         {
             timeUntilSpawn -= Time.deltaTime;
 
@@ -39,11 +44,13 @@ public class EnemySpawn : MonoBehaviour
                 Instantiate(enemyObject, spawnObject.transform.position, Quaternion.identity);
                 spawnCount++;
                 SetSpawnTime();
+                return;
             }
         }
-        else
+        else if (spawnCount >= maxSpawnCount && spawning)
         {
-            spawnObject.SetActive(false);
+            spawning = false;
+            sp.enabled = false;
         }
     }
 
