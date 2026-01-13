@@ -16,6 +16,7 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     [Header("Layers")]
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField]private LayerMask obstructLayer;
     [Space(20)]
 
     [Header("Patrol Settings")]
@@ -29,14 +30,19 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     [SerializeField]private float attackCooldown = 1f;
     public GameEvent onAttackEvent;
     public Collider2D attackCollider;
+    [SerializeField]private float attackRadius;
     [Space(20)]
 
     [Header("Detection Ranges")]
-    [SerializeField]private float visionRange;
-    [SerializeField] private float fovAngle;
+    [SerializeField]private float visionRange; //How far the AI can see 
+    [SerializeField] private float fovAngle; //The vision angle 
     [SerializeField]private float attackRange;
+    [SerializeField] private float topPoint;
+    [SerializeField] private float bottomPoint;
     private bool isPlayerInSight;
     private bool isPlayerInRange = false;
+    [Range(0, 1)]
+    public float detectorTransparency;
 
     [Tooltip("Should be the same as the death animation run time")]
     [SerializeField]private float deathTimer;
@@ -128,20 +134,20 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     public void AttackRange()
     {
-        RaycastHit2D attackRay = Physics2D.Raycast(transform.position, Vector2.left,
-           attackRange, playerLayer);
+        //RaycastHit2D attackRay = Physics2D.Raycast(transform.position, Vector2.left,
+        //   attackRange, playerLayer);
 
-        if (attackRay.collider != null)
-        {            
-            Debug.DrawRay(transform.position, Vector2.left * attackRange, Color.white);
-            isPlayerInRange = true;
-        }
-        else
-        {
-            Color orange = new Color(255, 174, 66);
-            Debug.DrawRay(transform.position, Vector2.left * attackRange, orange);
-            isPlayerInRange = false;
-        }
+        //if (attackRay.collider != null)
+        //{            
+        //    Debug.DrawRay(transform.position, Vector2.left * attackRange, Color.white);
+        //    isPlayerInRange = true;
+        //}
+        //else
+        //{
+        //    Color orange = new Color(255, 174, 66);
+        //    Debug.DrawRay(transform.position, Vector2.left * attackRange, orange);
+        //    isPlayerInRange = false;
+        //}
     }
 
     private void DetectPlayer()
@@ -158,12 +164,25 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.left  * new Vector2(h, 0), 
             visionRange, playerLayer);
 
+
+        RaycastHit2D topRay = Physics2D.Raycast(transform.position, new Vector2(visionRange, visionRange * Mathf.Tan(45)));
+
+
+        //if(Physics2D.OverlapCircle(transform.position, visionRange).CompareTag("Player"))
+
         #region Detection Logic
         if (ray.collider != null)
         {
             Debug.DrawRay(transform.position, Vector2.left * new Vector2(h, 0), Color.green);
-            isPlayerInSight = true;
-            patrolling = false;
+
+                Debug.DrawRay(transform.position, new Vector2(visionRange, visionRange * Mathf.Tan(45)), Color.green);
+            if(ray.transform == playerTransform)
+            {
+                isPlayerInSight = true;
+                patrolling = false;
+                Debug.Log("Found Player");  
+            }
+            
         }
         else
         {
@@ -181,6 +200,14 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         //Could also turn off the sprite and add particle effects before destroy
 
         Destroy(enemy, deathTimer);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Color detection = new Color(255, 0, 0, detectorTransparency);
+
+        Gizmos.color = detection;
+        Gizmos.DrawSphere(transform.position, visionRange / 2);
     }
 
     #region AttackActions

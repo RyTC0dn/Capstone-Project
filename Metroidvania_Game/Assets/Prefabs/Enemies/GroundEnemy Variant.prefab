@@ -308,6 +308,9 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  obstructLayer:
+    serializedVersion: 2
+    m_Bits: 0
   enemySpeed: 0
   currentWaypoint:
   - {fileID: 0}
@@ -316,9 +319,11 @@ MonoBehaviour:
   attackCooldown: 1
   onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
   attackCollider: {fileID: 5012366158886678913}
+  attackRadius: 0
   visionRange: 10
   fovAngle: 0
   attackRange: 5
+  detectorTransparency: 0.178
   deathTimer: 0.55
 --- !u!95 &1747511885805749196
 Animator:
@@ -454,6 +459,7 @@ MonoBehaviour:
   totalHealth: 2
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
+  coinAmount: 0
   kbForce: 20000
   kbDuration: 0.2
 --- !u!114 &5342541874613903044
