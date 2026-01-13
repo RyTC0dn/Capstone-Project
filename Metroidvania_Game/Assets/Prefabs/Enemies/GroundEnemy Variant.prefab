@@ -310,7 +310,7 @@ MonoBehaviour:
     m_Bits: 128
   obstructLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   enemySpeed: 0
   currentWaypoint:
   - {fileID: 0}
@@ -319,9 +319,10 @@ MonoBehaviour:
   attackCooldown: 1
   onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
   attackCollider: {fileID: 5012366158886678913}
-  attackRadius: 0
+  launchDistance: 0
+  launchHeight: 0
   visionRange: 10
-  fovAngle: 0
+  fovAngle: 45
   attackRange: 5
   detectorTransparency: 0.178
   deathTimer: 0.55
