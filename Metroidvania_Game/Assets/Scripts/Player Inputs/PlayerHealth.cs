@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public PlayerHealth playerHP {  get; private set; }
+    public PlayerHealth playerHP { get; private set; }
 
     [Header("Health Stats")]
     public int totalHealth = 4;
-    [SerializeField]private int currentHealth;
+    [SerializeField] private int currentHealth;
     public bool isInvulnerable = false; //We want to prevent multiple hits on the player
-    [SerializeField]private float invulnerableTimer = 2;
+    [SerializeField] private float invulnerableTimer = 2;
 
     private SpriteRenderer sprite;
     public GameEvent playerHealthChanged;
@@ -35,13 +35,13 @@ public class PlayerHealth : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerControls = GetComponent<PrototypePlayerMovementControls>();
-        sprite = GetComponent<SpriteRenderer>();    
+        sprite = GetComponent<SpriteRenderer>();
         currentHealth = totalHealth;
     }
 
     private void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             SendToSTart();
         }
@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
     {
         //This function will check if the enemy sent out attack event 
         //and if the sent out data was an integer variable
-        if(data is int damage && sender is Rat_Enemy_AI_Logic)
+        if (data is int damage && sender is Rat_Enemy_AI_Logic)
         {
             TakeDamage(damage, sender);
         }

@@ -1,5 +1,13 @@
+using System.Collections;
 using Unity.AppUI.UI;
 using UnityEngine;
+
+public enum CurrentState
+{
+    Patrol,
+    Chase,
+    Attack
+}
 
 public class Rat_Enemy_AI_Logic : MonoBehaviour
 {
@@ -26,11 +34,13 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     [Header("Combat Settings")]
     [SerializeField] private int attackDamage = 1;
     [SerializeField] private float attackCooldown = 1f;
+    [SerializeField] private float launchForceX = 6f;
+    [SerializeField] private float launchForceY = 4f;
     public GameEvent onAttackEvent;
     public Collider2D attackCollider;
-    [SerializeField] private float launchDistance;
-    [SerializeField] private float launchHeight;
-    private bool canAttack = false;
+
+    private bool canAttack = true;
+    private bool isAttacking = false;
     [Space(20)]
 
     [Header("Detection Ranges")]
@@ -59,24 +69,33 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     {
         //Detection logic functions
         DetectPlayer();
+    }
 
-        //State logic functions
-        if (patrolling && !isPlayerInSight)
+    public void StateSwitch(CurrentState state)
+    {
+        if (isAttacking && state != CurrentState.Attack)
+            return;
+
+        switch (state)
         {
-            Patrolling();
-        }
-        else if (!patrolling && isPlayerInSight)
-        {
-            ChasePlayer();
-        }
-        else if (!patrolling && isPlayerInRange)
-        {
-            AttackPlayer();
+            case CurrentState.Patrol:
+                Patrolling();
+                break;
+            case CurrentState.Chase:
+                Chase();
+                break;
+            case CurrentState.Attack:
+                Attack();
+                break;
+            default:
+                break;
         }
     }
 
     private void FixedUpdate()
     {
+        CheckDistanceToPlayer();
+
         Vector2 currentPosition = transform.position;
         Vector2 velocity = (currentPosition - lastPos) / Time.deltaTime;
 
@@ -96,7 +115,7 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     private void Patrolling()
     {
         transform.position = Vector2.MoveTowards(transform.position, currentWaypoint[waypointIndex].transform.position,
-            enemySpeed * Time.deltaTime);
+             enemySpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, currentWaypoint[waypointIndex].transform.position) < 0.2f)
         {
@@ -111,38 +130,37 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         }
     }
 
-    private void ChasePlayer()
+    private void Chase()
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, enemySpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position,
+            playerTransform.position, enemySpeed * Time.deltaTime);
     }
 
-    private void AttackPlayer()
+    private void Attack()
     {
-        attackCollider.enabled = true;
+        if (!canAttack || isAttacking)
+            return;
 
-        canAttack = true;
+        isAttacking = true;
+        canAttack = false;
 
         animator.Play("EnemyRatAttack");
 
-        Vector2 launchAtk = new Vector2(launchDistance, launchHeight);
+        float direction = playerTransform.position.x > transform.position.x ? 1f : -1f;
 
-        Vector2 distanceToPlayer = (playerTransform.position - transform.position).normalized;
+        Vector2 launchVector = new Vector2(direction * launchForceX, launchForceY);
 
-
-        rb2D.AddForce(distanceToPlayer * launchDistance, ForceMode2D.Impulse);
-
-        if (attackCollider.CompareTag("Player"))
-        {
-            //Could also use other actions here
-            onAttackEvent.Raise(this, attackDamage);
-            Debug.Log("Enemy attacked");
-        }
+        StartCoroutine(ApplyLaunchForce(launchVector));
     }
 
-    public void AttackRange()
+    private IEnumerator ApplyLaunchForce(Vector2 force)
     {
-        if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange)
-            isPlayerInRange = true;
+        yield return new WaitForFixedUpdate();
+        rb2D.AddForce(force, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
+        canAttack = true;
     }
 
     private void DetectPlayer()
@@ -170,25 +188,33 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         Debug.DrawRay(transform.position, bottomDir * visionRange, Color.yellow);
 
 
-        if (topRay != null)
+        if (topRay == playerTransform)
         {
             playerDetected = true;
         }
-        else if (bottomRay != null)
+        else if (bottomRay == playerTransform)
         {
             playerDetected = true;
         }
 
         if (playerDetected)
         {
-            Debug.Log("Player Detetced");
-            patrolling = false;
-            isPlayerInSight = true;
+            StateSwitch(CurrentState.Chase);
         }
         else
         {
-            isPlayerInSight = false;
-            patrolling = true;
+            StateSwitch(CurrentState.Patrol);
+        }
+        #endregion
+    }
+
+    private void CheckDistanceToPlayer()
+    {
+        #region Attack Transition
+        if (Vector2.Distance(transform.position,
+            playerTransform.position) <= attackRange)
+        {
+            StateSwitch(CurrentState.Attack);
         }
         #endregion
     }
@@ -209,22 +235,4 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         Gizmos.color = detection;
         Gizmos.DrawSphere(transform.position, attackRange / 2);
     }
-
-    #region AttackActions
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        AttackPlayer();
-    //    }
-    //}
-
-    //private void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        AttackPlayer();
-    //    }
-    //}
-    #endregion
 }
