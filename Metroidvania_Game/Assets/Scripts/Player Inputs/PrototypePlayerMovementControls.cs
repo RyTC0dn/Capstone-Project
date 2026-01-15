@@ -148,6 +148,30 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            animator.SetBool("isClimbing", true);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            animator.SetBool("isClimbing", true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            animator.SetBool("isClimbing", false);
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Debug.DrawRay(transform.position, Vector2.down, Color.blue);
