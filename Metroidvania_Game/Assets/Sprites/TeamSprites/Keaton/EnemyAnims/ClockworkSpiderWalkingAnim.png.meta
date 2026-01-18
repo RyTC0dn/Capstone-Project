@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 11116dcb1cd709e409a35657d2196e66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2622969971632267451
+    second: ClockworkSpiderWalkingAnim_0
+  - first:
+      213: 2168337695186764883
+    second: ClockworkSpiderWalkingAnim_1
+  - first:
+      213: -5745600707506141081
+    second: ClockworkSpiderWalkingAnim_2
+  - first:
+      213: 899151950644673004
+    second: ClockworkSpiderWalkingAnim_3
+  - first:
+      213: 1132040947421183610
+    second: ClockworkSpiderWalkingAnim_4
+  - first:
+      213: 696799365554467931
+    second: ClockworkSpiderWalkingAnim_5
+  - first:
+      213: 205870584766825085
+    second: ClockworkSpiderWalkingAnim_6
+  - first:
+      213: 2715622396458428667
+    second: ClockworkSpiderWalkingAnim_7
+  - first:
+      213: -6935583948118385666
+    second: ClockworkSpiderWalkingAnim_8
+  - first:
+      213: -8424904978826467673
+    second: ClockworkSpiderWalkingAnim_9
+  - first:
+      213: -4292329311002790617
+    second: ClockworkSpiderWalkingAnim_10
+  - first:
+      213: -5417172149816876174
+    second: ClockworkSpiderWalkingAnim_11
+  - first:
+      213: -3024724292325170695
+    second: ClockworkSpiderWalkingAnim_12
+  - first:
+      213: -7120437356155390491
+    second: ClockworkSpiderWalkingAnim_13
+  - first:
+      213: 9136782292453787735
+    second: ClockworkSpiderWalkingAnim_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1913
+        width: 100
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f975835b6599bd0800000000000000
+      internalID: -2622969971632267451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_1
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1915
+        width: 100
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35442ba35ab771e10800000000000000
+      internalID: 2168337695186764883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1915
+        width: 100
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7680dd719968340b0800000000000000
+      internalID: -5745600707506141081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_3
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1916
+        width: 100
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce976496fed6a7c00800000000000000
+      internalID: 899151950644673004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1916
+        width: 99
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e7c3e6e31d5bf00800000000000000
+      internalID: 1132040947421183610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_5
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1915
+        width: 100
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b547797c4578ba900800000000000000
+      internalID: 696799365554467931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_6
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1915
+        width: 100
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d728ab2c4366bd200800000000000000
+      internalID: 205870584766825085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_7
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1913
+        width: 100
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8effc7e24dfa520800000000000000
+      internalID: 2715622396458428667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1658
+        width: 99
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb908e352bdfbf90800000000000000
+      internalID: -6935583948118385666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_9
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1658
+        width: 98
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6e0ae0f89b41b80800000000000000
+      internalID: -8424904978826467673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_10
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1659
+        width: 98
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7257eaebb359e64c0800000000000000
+      internalID: -4292329311002790617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_11
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1658
+        width: 98
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273a60391a652d4b0800000000000000
+      internalID: -5417172149816876174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_12
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1658
+        width: 99
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1a67428450606d0800000000000000
+      internalID: -3024724292325170695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_13
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1658
+        width: 99
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5bfe443ff1f2d90800000000000000
+      internalID: -7120437356155390491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockworkSpiderWalkingAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1657
+        width: 100
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75889c3161f5cce70800000000000000
+      internalID: 9136782292453787735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ClockworkSpiderWalkingAnim_0: -2622969971632267451
+      ClockworkSpiderWalkingAnim_1: 2168337695186764883
+      ClockworkSpiderWalkingAnim_10: -4292329311002790617
+      ClockworkSpiderWalkingAnim_11: -5417172149816876174
+      ClockworkSpiderWalkingAnim_12: -3024724292325170695
+      ClockworkSpiderWalkingAnim_13: -7120437356155390491
+      ClockworkSpiderWalkingAnim_14: 9136782292453787735
+      ClockworkSpiderWalkingAnim_2: -5745600707506141081
+      ClockworkSpiderWalkingAnim_3: 899151950644673004
+      ClockworkSpiderWalkingAnim_4: 1132040947421183610
+      ClockworkSpiderWalkingAnim_5: 696799365554467931
+      ClockworkSpiderWalkingAnim_6: 205870584766825085
+      ClockworkSpiderWalkingAnim_7: 2715622396458428667
+      ClockworkSpiderWalkingAnim_8: -6935583948118385666
+      ClockworkSpiderWalkingAnim_9: -8424904978826467673
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
