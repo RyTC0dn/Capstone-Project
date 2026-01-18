@@ -13,18 +13,19 @@ public class EnemyHealth : MonoBehaviour
     [Header("Knockback")]
     public float kbForce = 100f;
     public float kbDuration = 0.2f;
+    public Vector2 knockbackForce;
 
     private Rigidbody2D rb;
     private bool isKnockedBack = false;
 
-    BasicEnemyControls enemyControls;
+    Rat_Enemy_AI_Logic ratEnemy;
     private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        enemyControls = GetComponent<BasicEnemyControls>();
+        ratEnemy = GetComponent<Rat_Enemy_AI_Logic>();
 
         enemyHealth = totalHealth;
     }
@@ -64,11 +65,11 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Enemy hit");
 
         //Knockback function
-        GameObject player = GameObject.FindGameObjectWithTag("Weapon");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(player != null)
         {
-            Vector2 direction = (transform.position - player.transform.position).normalized;
-            StartCoroutine(Knockback(direction));
+            float condition = transform.position.x > player.transform.position.x ? 1 : -1;
+            StartCoroutine(Knockback(condition));
         }
 
 
@@ -79,21 +80,21 @@ public class EnemyHealth : MonoBehaviour
     {        
         if (enemyHealth <= 0)
         {
-             if(coinAmount > 0)
+             if(coinAmount < 0)
             {
                 Instantiate(coinDrop, transform.position, Quaternion.identity);
             }
-            
 
-            //gameObject.SetActive(false);
+
+            gameObject.SetActive(false);
         }
     }
 
     #region Knockback Logic
-    IEnumerator Knockback(Vector2 direction)
+    IEnumerator Knockback(float direction)
     {
         isKnockedBack = true;
-        enemyControls.enabled = false;
+        ratEnemy.KnockedBack(true);
 
         float totalKnockbackForce = GameManager.instance.firstUpgrade ? 
             kbForce * GameManager.instance.currentUpgrade : kbForce;
@@ -103,7 +104,7 @@ public class EnemyHealth : MonoBehaviour
         if (rb.bodyType == RigidbodyType2D.Dynamic)
         {
             //Dynamic enemies use physics
-            rb.AddForce(direction * totalKnockbackForce, ForceMode2D.Impulse);
+            rb.AddForce(knockbackForce * direction, ForceMode2D.Impulse);
         }
         else if (rb.bodyType == RigidbodyType2D.Kinematic) {
             //Kinematic enemies manually move during knockback
@@ -111,7 +112,7 @@ public class EnemyHealth : MonoBehaviour
             while(timer > 0)
             {
                 timer -= Time.deltaTime;
-                rb.position += direction * (totalKnockbackForce * 0.02f);
+                rb.position += knockbackForce * (direction * 0.02f);
                 yield return null;
             }
         }
@@ -121,7 +122,7 @@ public class EnemyHealth : MonoBehaviour
         //Stop movement again
         rb.linearVelocity = Vector2.zero;
 
-        enemyControls.enabled = true;
+        ratEnemy.KnockedBack(false);
         isKnockedBack = false;
     }
     #endregion
@@ -133,7 +134,6 @@ public class EnemyHealth : MonoBehaviour
             //Have the enemy get knocked back but not damaged when colliding with shield
             GameObject shield = GameObject.FindGameObjectWithTag("AbilityPickup");
             Vector2 direction = (transform.position - shield.transform.position).normalized;
-            StartCoroutine(Knockback(direction));
         }
     }
 }

@@ -41,6 +41,7 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     private bool canAttack = true;
     private bool isAttacking = false;
+    public bool IfIsInKnockBack {  get; private set; }
     [Space(20)]
 
     [Header("Detection Ranges")]
@@ -69,12 +70,12 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     {
         //Detection logic functions
         DetectPlayer();
+
+        animator.applyRootMotion = false;
     }
 
     public void StateSwitch(CurrentState state)
     {
-        if (isAttacking && state != CurrentState.Attack)
-            return;
 
         switch (state)
         {
@@ -96,6 +97,9 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     {
         CheckDistanceToPlayer();
 
+        if (IfIsInKnockBack)
+            return;
+
         Vector2 currentPosition = transform.position;
         Vector2 velocity = (currentPosition - lastPos) / Time.deltaTime;
 
@@ -112,8 +116,17 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         }
     }
 
+    public void KnockedBack(bool state)
+    {
+        IfIsInKnockBack = state;
+    }
+
     private void Patrolling()
     {
+        if (IfIsInKnockBack)
+        {
+            return;
+        }
         transform.position = Vector2.MoveTowards(transform.position, currentWaypoint[waypointIndex].transform.position,
              enemySpeed * Time.deltaTime);
 
@@ -132,12 +145,17 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     private void Chase()
     {
+        if(IfIsInKnockBack) { return; }
+
         transform.position = Vector2.MoveTowards(transform.position,
             playerTransform.position, enemySpeed * Time.deltaTime);
     }
 
     private void Attack()
     {
+        if (IfIsInKnockBack)
+            return;
+
         if (!canAttack || isAttacking)
             return;
 
