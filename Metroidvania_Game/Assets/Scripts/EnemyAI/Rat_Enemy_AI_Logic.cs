@@ -27,7 +27,8 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     [Header("Patrol Settings")]
     [SerializeField] private float enemySpeed;
     [SerializeField] private GameObject[] currentWaypoint;
-    private int waypointIndex;
+    [SerializeField] private Vector2[] waypoints;
+    [SerializeField]private int waypointIndex;
     private bool patrolling = true;
     [Space(20)]
 
@@ -127,15 +128,18 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         {
             return;
         }
-        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint[waypointIndex].transform.position,
-             enemySpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex], 
+            enemySpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, currentWaypoint[waypointIndex].transform.position) < 0.2f)
+        //transform.position = Vector2.MoveTowards(transform.position, currentWaypoint[waypointIndex].transform.position,
+        //     enemySpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, waypoints[waypointIndex]) < 0.2f)
         {
             //go to next waypoint
             waypointIndex++;
 
-            if (waypointIndex >= currentWaypoint.Length)
+            if (waypointIndex >= waypoints.Length)
             {
                 //Reset waypoint index once no more waypoints found
                 waypointIndex = 0;
@@ -252,5 +256,11 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
         Gizmos.color = detection;
         Gizmos.DrawSphere(transform.position, attackRange / 2);
+
+        Gizmos.color = Color.yellow;
+        foreach(Vector2 pos in waypoints)
+        {
+            Gizmos.DrawSphere((Vector3)pos, 2f / 2);
+        }
     }
 }
