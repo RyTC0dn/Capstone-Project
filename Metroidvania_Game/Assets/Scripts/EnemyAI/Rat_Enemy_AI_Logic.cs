@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System.Collections;
 using Unity.AppUI.UI;
 using UnityEngine;
@@ -15,7 +16,9 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     private Transform playerTransform;
     private Rigidbody2D rb2D;
     private Animator animator;
+    private SpriteRenderer ratSp;
     private Vector2 lastPos;
+    private Vector2 movement;
     private float horizontal;
     private float h;
 
@@ -28,8 +31,13 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
     [SerializeField] private float enemySpeed;
     [SerializeField] private GameObject[] currentWaypoint;
     [SerializeField] private Vector2[] waypoints;
-    [SerializeField]private int waypointIndex;
+    [SerializeField] private int waypointIndex;
+    [SerializeField] private float stopTimer; //For how long an enemy stays at a particular position
     private bool patrolling = true;
+    private bool isGrounded;
+
+    [SerializeField] private int startingDirection = 1;
+    private int currentDirection;
     [Space(20)]
 
     [Header("Combat Settings")]
@@ -42,16 +50,18 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     private bool canAttack = true;
     private bool isAttacking = false;
-    public bool IfIsInKnockBack {  get; private set; }
+    public bool IfIsInKnockBack { get; private set; }
     [Space(20)]
 
     [Header("Detection Ranges")]
     [SerializeField] private float visionRange; //How far the AI can see 
     [SerializeField] private float fovAngle; //The vision angle 
     [SerializeField] private float attackRange;
+    private float halfWidth;
+    private float halfHeight;
     private bool isPlayerInSight = false;
     private bool isPlayerInRange = false;
-    [Range(0, 1)]
+    [UnityEngine.Range(0, 1)]
     public float detectorTransparency;
 
     [Tooltip("Should be the same as the death animation run time")]
@@ -63,7 +73,13 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
+        ratSp = GetComponent<SpriteRenderer>();
         attackCollider.enabled = false;
+
+        //Set the width and height of the rat enemy sprite
+        halfWidth = ratSp.bounds.extents.x;
+        halfHeight = ratSp.bounds.extents.y;
+        currentDirection = startingDirection;
     }
 
     // Update is called once per frame
@@ -96,6 +112,10 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //movement.x = enemySpeed * currentDirection;
+        //movement.y = rb2D.linearVelocity.y;
+        //rb2D.linearVelocity = movement;
+
         CheckDistanceToPlayer();
 
         if (IfIsInKnockBack)
@@ -124,20 +144,64 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     private void Patrolling()
     {
+        //Vector2 rightPos = transform.position;
+        //Vector2 leftPos = transform.position;
+        //rightPos.x += halfWidth;
+        //leftPos.x -= halfWidth;
+
+        //Debug.DrawRay(transform.position, Vector2.right * (halfWidth + 0.1f), Color.red);
+        //Debug.DrawRay(transform.position, Vector2.left * (halfWidth + 0.1f), Color.red);
+        //if (rb2D.linearVelocity.x > 0)
+        //{
+
+        //    if (Physics2D.Raycast(transform.position, Vector2.right, halfWidth + 0.1f, LayerMask.GetMask("Ground"))
+        //        && rb2D.linearVelocity.x > 0)
+        //    {
+        //        //Draw raycast from rat to the right 
+        //        //Check if the rat enemy is moving right
+
+        //        currentDirection *= -1;
+        //        ratSp.flipX = false;
+        //    }
+        //    else if (!Physics2D.Raycast(rightPos, Vector2.down, halfHeight + 0.1f, LayerMask.GetMask("Ground")))
+        //    {
+        //        currentDirection *= -1;
+        //        ratSp.flipX = false;
+        //    }
+        //}
+        //else if (rb2D.linearVelocity.x < 0)
+        //{
+        //    if (Physics2D.Raycast(transform.position, Vector2.left, halfWidth + 0.1f, LayerMask.GetMask("Ground"))
+        //    && rb2D.linearVelocity.x < 0)
+        //    {
+        //        currentDirection *= -1;
+        //        ratSp.flipX = true;
+        //    }
+        //    else if (!Physics2D.Raycast(leftPos, Vector2.down, halfHeight + 0.1f, LayerMask.GetMask("Ground")))
+        //    {
+        //        currentDirection *= -1;
+        //        ratSp.flipX = true;
+        //    }
+        //}
+
+
         if (IfIsInKnockBack)
         {
             return;
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex], 
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex],
             enemySpeed * Time.deltaTime);
-
-        //transform.position = Vector2.MoveTowards(transform.position, currentWaypoint[waypointIndex].transform.position,
-        //     enemySpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, waypoints[waypointIndex]) < 0.2f)
         {
-            //go to next waypoint
-            waypointIndex++;
+            stopTimer--;
+
+            if (stopTimer <= 0)
+            {
+                //go to next waypoint
+                waypointIndex++;
+                stopTimer = Random.Range(0, 10);
+            }
 
             if (waypointIndex >= waypoints.Length)
             {
@@ -149,7 +213,7 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
     private void Chase()
     {
-        if(IfIsInKnockBack) { return; }
+        if (IfIsInKnockBack) { return; }
 
         transform.position = Vector2.MoveTowards(transform.position,
             playerTransform.position, enemySpeed * Time.deltaTime);
@@ -170,7 +234,7 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
         float direction = playerTransform.position.x > transform.position.x ? 1f : -1f;
 
-        Vector2 launchVector = new Vector2(direction * launchForceX, launchForceY);
+        Vector2 launchVector = new Vector2(launchForceX * direction, launchForceY);
 
         StartCoroutine(ApplyLaunchForce(launchVector));
     }
@@ -205,9 +269,11 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
         RaycastHit2D topRay = Physics2D.Raycast(transform.position, topDir, visionRange, playerLayer);
         RaycastHit2D bottomRay = Physics2D.Raycast(transform.position, bottomDir, visionRange, playerLayer);
+        Physics2D.OverlapCircleAll(transform.position, visionRange / 2, playerLayer);
 
         Debug.DrawRay(transform.position, topDir * visionRange, Color.yellow);
         Debug.DrawRay(transform.position, bottomDir * visionRange, Color.yellow);
+
 
 
         if (topRay == playerTransform)
@@ -258,9 +324,13 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         Gizmos.DrawSphere(transform.position, attackRange / 2);
 
         Gizmos.color = Color.yellow;
-        foreach(Vector2 pos in waypoints)
+        foreach (Vector2 pos in waypoints)
         {
             Gizmos.DrawSphere((Vector3)pos, 2f / 2);
         }
+
+        Color circle = new Color(0, 255, 0, 0.10f);
+        Gizmos.color = circle;
+        Gizmos.DrawSphere(transform.position, visionRange / 2);
     }
 }

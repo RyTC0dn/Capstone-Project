@@ -323,7 +323,9 @@ MonoBehaviour:
   currentWaypoint:
   - {fileID: 0}
   - {fileID: 0}
-  waypoints: []
+  waypoints:
+  - {x: 13.47, y: 0}
+  - {x: 0, y: 0}
   waypointIndex: 0
   attackDamage: 1
   attackCooldown: 1
@@ -331,7 +333,7 @@ MonoBehaviour:
   launchForceY: 4.72
   onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
   attackCollider: {fileID: 5012366158886678913}
-  visionRange: 10
+  visionRange: 20
   fovAngle: 45
   attackRange: 5
   detectorTransparency: 0.178
@@ -467,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3707780e1cbb23d4e9b23170a8ee4994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 10
+  totalHealth: 5
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   coinAmount: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Squid_Enemy_AI_Logic : MonoBehaviour
@@ -141,7 +142,19 @@ public class Squid_Enemy_AI_Logic : MonoBehaviour
 
         float direction = playerTransform.position.x > transform.position.x ? 1f : -1f;
 
-        Vector2 launchVector = new Vector2(direction * launchForceX, launchForceY);
+        Vector2 launchVector = new Vector2(launchForceX * direction, launchForceY);
+
+        StartCoroutine(LaunchAttack(launchVector));
+    }
+
+    private IEnumerator LaunchAttack(Vector2 launch)
+    {
+        rb2D.position += launch;
+
+        yield return new WaitForFixedUpdate();
+
+        isAttacking = false;
+        canAttack = true;
     }
 
     private void DetectPlayer()
