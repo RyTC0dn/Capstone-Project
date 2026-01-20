@@ -3,7 +3,7 @@ using System.Collections;
 using Unity.AppUI.UI;
 using UnityEngine;
 
-public enum CurrentState
+public enum RatState
 {
     Patrol,
     Chase,
@@ -91,18 +91,18 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         animator.applyRootMotion = false;
     }
 
-    public void StateSwitch(CurrentState state)
+    public void StateSwitch(RatState state)
     {
 
         switch (state)
         {
-            case CurrentState.Patrol:
+            case RatState.Patrol:
                 Patrolling();
                 break;
-            case CurrentState.Chase:
+            case RatState.Chase:
                 Chase();
                 break;
-            case CurrentState.Attack:
+            case RatState.Attack:
                 Attack();
                 break;
             default:
@@ -287,11 +287,11 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
 
         if (playerDetected)
         {
-            StateSwitch(CurrentState.Chase);
+            StateSwitch(RatState.Chase);
         }
         else
         {
-            StateSwitch(CurrentState.Patrol);
+            StateSwitch(RatState.Patrol);
         }
         #endregion
     }
@@ -302,7 +302,7 @@ public class Rat_Enemy_AI_Logic : MonoBehaviour
         if (Vector2.Distance(transform.position,
             playerTransform.position) <= attackRange)
         {
-            StateSwitch(CurrentState.Attack);
+            StateSwitch(RatState.Attack);
         }
         #endregion
     }
