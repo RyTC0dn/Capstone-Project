@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject keyboardControlMenu;
     public GameObject gamepadControlMenu;
+    GameObject inventoryMenu;
     public static bool isGamePaused = false;
 
     [Header("First Selected Option")]
@@ -51,6 +52,7 @@ public class UIManager : MonoBehaviour
         keyboardControlMenu.SetActive(false);
         gamepadControlMenu.SetActive(false);
         controlMenuFirst.SetActive(false);
+        inventoryMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -154,6 +156,11 @@ public class UIManager : MonoBehaviour
         if (playerAttack != null)
             playerAttack.enabled = false;
 
+
+    }
+
+    public void OpenInventory()
+    {
 
     }
 
