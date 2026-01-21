@@ -1,6 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
+public enum SquidStates
+{
+    Patrol, 
+    Chase, 
+    Attack
+}
+
 public class Squid_Enemy_AI_Logic : MonoBehaviour
 {
     [Header("References")]
@@ -55,29 +62,31 @@ public class Squid_Enemy_AI_Logic : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         attackCollider.enabled = false;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         //Detection logic functions
-        DetectPlayer();
+        //DetectPlayer();
+        StateSwitch(SquidStates.Chase);
     }
 
-    public void StateSwitch(CurrentState state)
+    public void StateSwitch(SquidStates state)
     {
-        if (isAttacking && state != CurrentState.Attack)
+        if (isAttacking && state != SquidStates.Attack)
             return;
 
         switch (state)
         {
-            case CurrentState.Patrol:
+            case SquidStates.Patrol:
                 Patrolling();
                 break;
-            case CurrentState.Chase:
+            case SquidStates.Chase:
                 Chase();
                 break;
-            case CurrentState.Attack:
+            case SquidStates.Attack:
                 Attack();
                 break;
             default:
@@ -193,11 +202,11 @@ public class Squid_Enemy_AI_Logic : MonoBehaviour
 
         if (playerDetected)
         {
-            StateSwitch(CurrentState.Chase);
+            StateSwitch(SquidStates.Chase);
         }
         else
         {
-            StateSwitch(CurrentState.Patrol);
+            StateSwitch(SquidStates.Patrol);
         }
         #endregion
     }
@@ -208,7 +217,7 @@ public class Squid_Enemy_AI_Logic : MonoBehaviour
         if (Vector2.Distance(transform.position,
             playerTransform.position) <= attackRange)
         {
-            StateSwitch(CurrentState.Attack);
+            StateSwitch(SquidStates.Attack);
         }
         #endregion
     }

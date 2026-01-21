@@ -261,6 +261,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_UseAutoMass
       value: 0
       objectReference: {fileID: 0}
@@ -288,13 +292,13 @@ PrefabInstance:
       addedObject: {fileID: 1906923991335954127}
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3421850835543586429}
+    - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -1007506165360875067}
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5342541874613903044}
-    - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1912753306500045951}
   m_SourcePrefab: {fileID: 100100000, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
 --- !u!1 &2902811957173728584 stripped
 GameObject:
@@ -420,6 +424,43 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3421850835543586429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902811957173728584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd9bc6564e6e9642a93a2bd455fc4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstructLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  enemySpeed: 3.5
+  currentWaypoint: []
+  targetPoint1: {fileID: 0}
+  targetPoint2: {fileID: 0}
+  waypoints: []
+  waypointIndex: 0
+  stayOnLedge: 0
+  startingDirection: 1
+  attackDamage: 1
+  attackCooldown: 1
+  launchForceX: 20
+  launchForceY: 7.45
+  onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+  attackCollider: {fileID: 5012366158886678913}
+  visionRange: 10
+  fovAngle: 45
+  attackRange: 7.92
+  detectorTransparency: 0.168
+  chaseTimer: 0
 --- !u!114 &-1007506165360875067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,34 +521,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1912753306500045951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902811957173728584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Graph: {fileID: -6906630766578118330, guid: 00e773d2f9e52a84e8b458eb8c7ee5b9, type: 2}
-  m_BlackboardVariableOverridesList:
-  - rid: 5832100380052816463
-  m_IsInitialised: 0
-  m_IsStarted: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 5832100380052816463
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1
-          m_Value1: 0
-        Name: GroundEnemy
-        m_Value: {fileID: 2902811957173728584}
 --- !u!4 &3487366454794465035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994623804695009132, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}

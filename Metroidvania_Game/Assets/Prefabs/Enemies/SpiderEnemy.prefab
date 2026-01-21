@@ -275,6 +275,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3626692877816933744}
+    - targetCorrespondingSourceObject: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7548255858602882145}
   m_SourcePrefab: {fileID: 100100000, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
 --- !u!1 &937411284582924107 stripped
 GameObject:
@@ -460,6 +463,41 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7548255858602882145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937411284582924107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb71a97d7024fbe47a2b35d6256fc583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstructLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  enemySpeed: 5
+  currentWaypoint: []
+  waypoints: []
+  waypointIndex: 0
+  stayOnLedge: 0
+  startingDirection: 1
+  attackDamage: 1
+  attackCooldown: 1
+  launchForceX: 6
+  launchForceY: 4
+  onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+  attackCollider: {fileID: 0}
+  visionRange: 20
+  fovAngle: 45
+  attackRange: 5
+  detectorTransparency: 0.025
+  chaseTimer: 0
 --- !u!4 &1526469382974891272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994623804695009132, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
