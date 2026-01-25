@@ -7,6 +7,9 @@ using System.Collections;
 public class PlayerUI : MonoBehaviour
 {
     [Header("UI Text")]
+    //Move inventory manager code here
+    public GameObject inventoryMenu;
+    private bool menuOpened;
 
     [Header("HP Icon")]
     public List<Image> clockIcons = new List<Image>(); //Drag each UI Clock image in order
@@ -27,7 +30,43 @@ public class PlayerUI : MonoBehaviour
             animator.enabled = false;
         }
         damageFrame.SetActive(false);
+        inventoryMenu.SetActive(false);
+        
     }
+
+    #region UI Menu
+    private void Update()
+    {
+        //If the player presses the inventory menu input
+        //TAB - Keyboard or Select - Gamepad
+        if (InputManager.Instance.InventoryOpenCloseInput)
+        {
+            if (menuOpened) //Check if the menu is already open
+            {
+                CloseMenu();
+            }
+            else //Otherwise open player menu 
+            {
+                OpenMenu();
+            }
+        }
+        
+    }
+
+    private void OpenMenu()
+    {
+        inventoryMenu.SetActive(true);
+        Time.timeScale = 0;
+        menuOpened = true;
+    }
+
+    private void CloseMenu()
+    {
+        inventoryMenu.SetActive(false);
+        Time.timeScale = 1f;
+        menuOpened = false;
+    }
+    #endregion
 
     private void SetHealth(int health)
     {

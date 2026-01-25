@@ -674,6 +674,7 @@ GameObject:
   - component: {fileID: 2343509871104611225}
   - component: {fileID: 7601157557474731157}
   - component: {fileID: 1228098492012187569}
+  - component: {fileID: -5040522542601845559}
   - component: {fileID: 5836753119807044784}
   - component: {fileID: 4155893237956093743}
   - component: {fileID: 3869725235667300672}
@@ -807,9 +808,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityPickup: {fileID: 11400000, guid: 286c44b7fbeca8f40abe78895f363003, type: 2}
+  sendID: {fileID: 11400000, guid: 037d68e529bc69a44bd016a726ddd2dd, type: 2}
   itemShield: {fileID: 3738341810539077272}
   itemWallBreak: {fileID: 2741335245078394358, guid: 0c63e1b2efc6a64438da1f2a32ba25ce, type: 3}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
+--- !u!114 &-5040522542601845559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738341810539077272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96806174e8f4af64e8b1be134965f45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSP: {fileID: 0}
 --- !u!95 &5836753119807044784
 Animator:
   serializedVersion: 7

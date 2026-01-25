@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 /// <summary>
-/// I just created this script to give some basic UI updating for the coin tracker
-/// If you want to make any additional changes then please go ahead
+/// This script is to help initialize input functions with UI components
 /// </summary>
 /// 
 
@@ -26,7 +25,6 @@ public class UIManager : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject keyboardControlMenu;
     public GameObject gamepadControlMenu;
-    GameObject inventoryMenu;
     public static bool isGamePaused = false;
 
     [Header("First Selected Option")]
@@ -52,7 +50,6 @@ public class UIManager : MonoBehaviour
         keyboardControlMenu.SetActive(false);
         gamepadControlMenu.SetActive(false);
         controlMenuFirst.SetActive(false);
-        inventoryMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -156,11 +153,6 @@ public class UIManager : MonoBehaviour
         if (playerAttack != null)
             playerAttack.enabled = false;
 
-
-    }
-
-    public void OpenInventory()
-    {
 
     }
 

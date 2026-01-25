@@ -286,6 +286,15 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InventoryMenuOpenClose"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ebd776e-cf39-41e8-995d-90e4124cd716"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -308,6 +317,28 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""MenuOpenClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50fab410-8b6b-4780-bff4-af119af3b52d"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""InventoryMenuOpenClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c8a39d7f-e7ab-43e3-bcc5-2ced1f77738d"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""InventoryMenuOpenClose"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -349,6 +380,7 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MenuOpenClose = m_UI.FindAction("MenuOpenClose", throwIfNotFound: true);
+        m_UI_InventoryMenuOpenClose = m_UI.FindAction("InventoryMenuOpenClose", throwIfNotFound: true);
     }
 
     ~@Player_Controller()
@@ -495,11 +527,13 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_MenuOpenClose;
+    private readonly InputAction m_UI_InventoryMenuOpenClose;
     public struct UIActions
     {
         private @Player_Controller m_Wrapper;
         public UIActions(@Player_Controller wrapper) { m_Wrapper = wrapper; }
         public InputAction @MenuOpenClose => m_Wrapper.m_UI_MenuOpenClose;
+        public InputAction @InventoryMenuOpenClose => m_Wrapper.m_UI_InventoryMenuOpenClose;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -512,6 +546,9 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
             @MenuOpenClose.started += instance.OnMenuOpenClose;
             @MenuOpenClose.performed += instance.OnMenuOpenClose;
             @MenuOpenClose.canceled += instance.OnMenuOpenClose;
+            @InventoryMenuOpenClose.started += instance.OnInventoryMenuOpenClose;
+            @InventoryMenuOpenClose.performed += instance.OnInventoryMenuOpenClose;
+            @InventoryMenuOpenClose.canceled += instance.OnInventoryMenuOpenClose;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -519,6 +556,9 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
             @MenuOpenClose.started -= instance.OnMenuOpenClose;
             @MenuOpenClose.performed -= instance.OnMenuOpenClose;
             @MenuOpenClose.canceled -= instance.OnMenuOpenClose;
+            @InventoryMenuOpenClose.started -= instance.OnInventoryMenuOpenClose;
+            @InventoryMenuOpenClose.performed -= instance.OnInventoryMenuOpenClose;
+            @InventoryMenuOpenClose.canceled -= instance.OnInventoryMenuOpenClose;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -565,5 +605,6 @@ public partial class @Player_Controller: IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnMenuOpenClose(InputAction.CallbackContext context);
+        void OnInventoryMenuOpenClose(InputAction.CallbackContext context);
     }
 }
