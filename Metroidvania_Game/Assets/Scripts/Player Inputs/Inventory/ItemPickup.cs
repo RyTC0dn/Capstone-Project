@@ -9,7 +9,6 @@ public class ItemPickup : MonoBehaviour
     private bool hasPickedUpWallBreak = false;
     public GameObject itemShield; //Manually assign in inpsector
     public GameObject itemWallBreak; //Manually assign in inpsector
-    private GameObject shieldIcon;
 
     private SpriteRenderer sp;
     private Collider2D itemCollider;
@@ -28,11 +27,11 @@ public class ItemPickup : MonoBehaviour
 
         //Grab game object id from Unity
         id = gameObject.GetInstanceID();
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if(collision.tag == "Player" && 
             gameObject.tag == "AbilityPickup" 
             && this.gameObject == itemShield)
@@ -41,7 +40,6 @@ public class ItemPickup : MonoBehaviour
             sceneInfo.isShieldPickedUp = true;
 
             abilityPickup.Raise(this, hasPickedUpShield);
-            Inventory.instance.Initiate(shieldIcon);
 
             sp.enabled = false;
             itemCollider.enabled = false;
