@@ -62,7 +62,7 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Enemy hit");
 
         //Knockback function
-        GameObject player = GameObject.FindGameObjectWithTag("Weapon");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(player != null)
         {
             Vector2 direction = (transform.position - player.transform.position).normalized;
