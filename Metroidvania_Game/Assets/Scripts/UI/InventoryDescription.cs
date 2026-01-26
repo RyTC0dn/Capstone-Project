@@ -14,6 +14,9 @@ public class InventoryDescription : MonoBehaviour
     public void Show()
     {
         textDesc.SetActive(true);
+        MenuManager.instance.menuAudio.
+            PlayOneShot(MenuManager.instance.menuClips[2]);
+
     }
 
     public void Hide()

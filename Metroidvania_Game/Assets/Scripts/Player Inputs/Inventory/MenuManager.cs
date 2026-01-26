@@ -1,19 +1,31 @@
 using NUnit.Framework;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-
+/// <summary>
+/// This script is to handle interactions and navigation within each menu page
+/// </summary>
 public class MenuManager : MonoBehaviour
 {
+    [Header("Menu UI Components")]
     public GameObject[] itemIcons;
+    private int coinTracker;
+    [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private SceneInfo sceneInfo;
     [Space(20)]
 
     [Tooltip("Assign the first button to highlight on each page")]
     public GameObject[] menuFirst; //Highlight first button object for controller navigation
+
+    [Header("Audio")]
     public AudioSource menuAudio;
     public AudioClip[] menuClips;
+    [Space(10)]
+
+    [Header("Menu animations")]
+    public Animator animator;
 
     public static MenuManager instance { get; private set; }
 
@@ -34,12 +46,12 @@ public class MenuManager : MonoBehaviour
         {
             itemIcons[i].SetActive(false);
         }
-
     }
 
     private void Update()
     {
         CheckPickup();
+        TrackCoin();
     }
 
     private void CheckPickup()
@@ -52,11 +64,18 @@ public class MenuManager : MonoBehaviour
         }
         else if(sceneInfo.isWallBreakPickedUp)
             itemIcons[1].SetActive(true);
-        else
+        else //If no items/abilities are picked up
         {
             itemIcons[0].SetActive(false);
             itemIcons[1].SetActive(false);
         }
+    }
+
+    private void TrackCoin()
+    {
+        //Attach reference from GameManager
+        coinTracker = GameManager.instance.currentCoin;
+        coinText.text = coinTracker.ToString();
     }
 
     #region Menu Tabs
@@ -68,13 +87,20 @@ public class MenuManager : MonoBehaviour
 
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
+
+        menuAudio.PlayOneShot(menuClips[0]);
     }
 
     public void InventoryOpen()
     {
         equipmentMenu.SetActive(false);
         inventoryMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(menuFirst[1]);
+
         questMenu.SetActive(false);
+
+        menuAudio.PlayOneShot(menuClips[0]);
     }
 
     public void QuestOpen()
@@ -82,10 +108,19 @@ public class MenuManager : MonoBehaviour
         equipmentMenu.SetActive(false);
         inventoryMenu.SetActive(false);
         questMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(menuFirst[2]);
+
+        menuAudio.PlayOneShot(menuClips[0]);
     }
 
     public void CloseMenus()
     {
+        for (int i = 0; i < menuFirst.Length; i++)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
         //Check which menu is currently open
         if (equipmentMenu.activeInHierarchy)
             equipmentMenu.SetActive(false);
