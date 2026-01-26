@@ -1,19 +1,19 @@
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
-[System.Serializable]
-public class CustomEvent : UnityEvent<GameObject, SceneInfo> { }
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject[] itemIcons;
-    public SceneInfo sceneInfo;
-    private int itemValues;
+    [SerializeField] private SceneInfo sceneInfo;
     [Space(20)]
 
-    private Dictionary<GameObject, int> items = new Dictionary<GameObject, int>();
+    [Tooltip("Assign the first button to highlight on each page")]
+    public GameObject[] menuFirst; //Highlight first button object for controller navigation
+    public AudioSource menuAudio;
+    public AudioClip[] menuClips;
 
     public static MenuManager instance { get; private set; }
 
@@ -27,6 +27,9 @@ public class MenuManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(instance == null)
+            instance = this;
+
         for (int i = 0; i < itemIcons.Length; i++)
         {
             itemIcons[i].SetActive(false);
@@ -52,13 +55,17 @@ public class MenuManager : MonoBehaviour
         else
         {
             itemIcons[0].SetActive(false);
-            itemIcons[1].SetActive(true);
+            itemIcons[1].SetActive(false);
         }
     }
+
     #region Menu Tabs
     public void EquipmentOpen()
     {
         equipmentMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(menuFirst[0]);
+
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
     }
@@ -75,6 +82,23 @@ public class MenuManager : MonoBehaviour
         equipmentMenu.SetActive(false);
         inventoryMenu.SetActive(false);
         questMenu.SetActive(true);
+    }
+
+    public void CloseMenus()
+    {
+        //Check which menu is currently open
+        if (equipmentMenu.activeInHierarchy)
+            equipmentMenu.SetActive(false);
+        else if(inventoryMenu.activeInHierarchy)
+            inventoryMenu.SetActive(false);
+        else if(questMenu.activeInHierarchy)
+            questMenu.SetActive(false);
+        else
+        {
+            //If no menus are open 
+            Debug.LogError("There are no menus open");
+            return;
+        }
     }
     #endregion
 }

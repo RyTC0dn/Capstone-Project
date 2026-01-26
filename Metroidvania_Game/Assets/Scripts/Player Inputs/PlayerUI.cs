@@ -8,7 +8,6 @@ public class PlayerUI : MonoBehaviour
 {
     [Header("UI Text")]
     //Move inventory manager code here
-    public GameObject inventoryMenu;
     private bool menuOpened;
 
     [Header("HP Icon")]
@@ -30,7 +29,6 @@ public class PlayerUI : MonoBehaviour
             animator.enabled = false;
         }
         damageFrame.SetActive(false);
-        inventoryMenu.SetActive(false);
         
     }
 
@@ -55,14 +53,20 @@ public class PlayerUI : MonoBehaviour
 
     private void OpenMenu()
     {
-        inventoryMenu.SetActive(true);
+        MenuManager.instance.EquipmentOpen();
+        //Call the page flipping audio clip
+        MenuManager.instance.menuAudio.PlayOneShot
+            (MenuManager.instance.menuClips[0]);
         Time.timeScale = 0;
         menuOpened = true;
     }
 
     private void CloseMenu()
     {
-        inventoryMenu.SetActive(false);
+        MenuManager.instance.CloseMenus();
+        //Call the close menu audio clip
+        MenuManager.instance.menuAudio.PlayOneShot
+            (MenuManager.instance.menuClips[1]);
         Time.timeScale = 1f;
         menuOpened = false;
     }
