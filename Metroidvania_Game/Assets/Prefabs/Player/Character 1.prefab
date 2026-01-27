@@ -1237,21 +1237,18 @@ GameObject:
   - component: {fileID: 2249839468151686403}
   - component: {fileID: 2684591189990701646}
   - component: {fileID: 7002829267281125606}
-  - component: {fileID: 2791710261131852306}
   - component: {fileID: 1892630965472275289}
   - component: {fileID: 6899408857453848692}
   - component: {fileID: 8842708863280125052}
   - component: {fileID: 5587350823930368243}
   - component: {fileID: 7047053321633390745}
   - component: {fileID: 7230040857322067965}
-  - component: {fileID: -2314640459181212252}
   - component: {fileID: 7303601509363141473}
   - component: {fileID: 7255461258010286579}
   - component: {fileID: -9122513460649579465}
   - component: {fileID: 3152163559832396325}
   - component: {fileID: 3118155449231023822}
   - component: {fileID: 7513154692873368834}
-  - component: {fileID: 9070547331616899129}
   - component: {fileID: 799806113731762350}
   - component: {fileID: 148261653843026439}
   m_Layer: 0
@@ -1442,39 +1439,11 @@ MonoBehaviour:
   firePoint: {fileID: 4675273244458121808}
   projectilePrefab: {fileID: 4895757740315594668, guid: ddc61152c13ad834789c5b99afb38597, type: 3}
   animator: {fileID: 8842708863280125052}
-  isAxeBought: 0
+  axeSelected: 0
   throwRate: 1
   throwCooldown: 0
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
---- !u!114 &2791710261131852306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: Checks to see if axe is bought
-  gameEvent: {fileID: 11400000, guid: c38366c6ae30e1945b89a55dabad712a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7002829267281125606}
-        m_TargetAssemblyTypeName: PrototypePlayerAttackRanged, Assembly-CSharp
-        m_MethodName: AxeEvent
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  axeIcon: {fileID: 7095507384009223231}
 --- !u!114 &1892630965472275289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,35 +1711,6 @@ MonoBehaviour:
   shieldEnabled: 0
   shieldIcon: {fileID: 7906824389012981252}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
---- !u!114 &-2314640459181212252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: Activate shield when picked up
-  gameEvent: {fileID: 11400000, guid: 286c44b7fbeca8f40abe78895f363003, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7230040857322067965}
-        m_TargetAssemblyTypeName: PrototypeShield, Assembly-CSharp
-        m_MethodName: OnShieldPickUp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7303601509363141473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1923,42 +1863,13 @@ MonoBehaviour:
   chargeTime: 0
   maxCharge: 0.75
   isCharging: 0
-  wallBreakPickedUp: 0
+  wallBreakSelected: 0
   chargeDistance: 10
   chargeMultiplier: 3.5
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   chargeFill: {fileID: 8322047894532967043}
   chargeCanvas: {fileID: 663570219876286703}
   dashTrail: {fileID: 5955177133110927976}
---- !u!114 &9070547331616899129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: When the player picks up wall break ability
-  gameEvent: {fileID: 11400000, guid: 286c44b7fbeca8f40abe78895f363003, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7513154692873368834}
-        m_TargetAssemblyTypeName: WallBreakCharge, Assembly-CSharp
-        m_MethodName: OnWallBreakPickup
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &799806113731762350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2836,6 +2747,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 78546315936870174, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1008648888245265046, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_text
       value: Work in progress
@@ -2850,7 +2765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000344719348730365, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2228436044553686813, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_Colors.m_SelectedColor.a
@@ -2876,10 +2791,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoinTracker
       objectReference: {fileID: 0}
-    - target: {fileID: 2623114571658072871, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: coinText
-      value: 
-      objectReference: {fileID: 4496560038603040626}
     - target: {fileID: 3075772357592492437, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -2888,10 +2799,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3216952331083041722, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331198835601453238, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331198835601453238, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3638287947987816910, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708840331995778342, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7513154692873368834}
     - target: {fileID: 3817890619843633453, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_Name
       value: Shield
@@ -2936,6 +2863,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4131961540699543975, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7230040857322067965}
+    - target: {fileID: 4131961540699543975, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7002829267281125606}
     - target: {fileID: 4178456411214535285, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2980,6 +2915,14 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7227944933367277761, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227944933367277761, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7698274027739838231, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_SizeDelta.x
       value: 678.9
@@ -3000,6 +2943,14 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8239548518188193172, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7002829267281125606}
+    - target: {fileID: 8239548518188193172, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7230040857322067965}
     - target: {fileID: 8279308377263902217, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -3012,11 +2963,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 664.3
       objectReference: {fileID: 0}
+    - target: {fileID: 9113391828346890865, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_Name
+      value: Axe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1360438668761045963, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
     - {fileID: 1680562527938800632, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
     - {fileID: 3049264330427621594, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+    - {fileID: 2507283336677241590, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -3041,20 +2997,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4496560038603040626 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8185664594002401186, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-  m_PrefabInstance: {fileID: 5764518583592284368}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &6862969837351255233 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1207393134794591249, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7095507384009223231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3280838533205466351, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
   m_PrefabInstance: {fileID: 5764518583592284368}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7906824389012981252 stripped

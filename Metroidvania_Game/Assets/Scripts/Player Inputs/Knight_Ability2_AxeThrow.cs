@@ -8,7 +8,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     public Transform firePoint;
     public GameObject projectilePrefab;
     [SerializeField] private Animator animator;
-    [SerializeField] private bool isAxeBought;
+    [SerializeField] private bool axeSelected;
 
     [Header("Axe Settings")]
     public float throwRate = 1f;
@@ -21,6 +21,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     PrototypePlayerMovementControls playerController;
     PrototypeShop shop;
     public SceneInfo sceneInfo;
+    [SerializeField]private GameObject axeIcon;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,15 +29,16 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
         shop = FindAnyObjectByType<PrototypeShop>();
-        isAxeBought = PlayerPrefs.GetInt("AxeBought", 0) == 1;
         delayTillThrow = throwRate;
+
+        axeIcon.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         //AxeEvent(shop, isAxeBought);
-        if (Input.GetButtonDown("Fire2") && sceneInfo.isAxeBought)
+        if (Input.GetButtonDown("Fire2") && axeSelected)
         {
             Shoot();
         }
@@ -48,22 +50,21 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
                 wasThrown = false;
             }
         }
+
+        if (axeSelected)
+            axeIcon.SetActive(true);
+        else
+            axeIcon.SetActive(false);
     }
 
-    public void AxeEvent(Component sender, object data)
+    public void OnButtonSelected()
     {
-        if(data is bool)
-        {
-            bool bought = (bool)data;
-            if (bought)
-            {
-                isAxeBought=true;
-            }
-        }
-        else
-        {
-            Debug.LogWarning("AxeEvent called but data is not a bool");
-        }
+        axeSelected = true;
+    }
+
+    public void OnButtonDeselect()
+    {
+        axeSelected = false;
     }
 
     void Shoot()

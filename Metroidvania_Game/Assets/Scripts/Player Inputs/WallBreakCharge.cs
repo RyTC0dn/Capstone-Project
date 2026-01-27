@@ -14,7 +14,7 @@ public class WallBreakCharge : MonoBehaviour
     public float maxCharge;
     private Rigidbody2D rb2D;
     [SerializeField]private bool isCharging = false;
-    [SerializeField]private bool wallBreakPickedUp = false; //Checks if the wall break upgrade is picked up
+    [SerializeField]private bool wallBreakSelected = false; //Checks if the wall break upgrade is picked up
 
     private PrototypePlayerMovementControls playerMove;
 
@@ -132,21 +132,8 @@ public class WallBreakCharge : MonoBehaviour
         gameObject.tag = "Player";
     }
 
-    public void OnWallBreakPickup(Component sender, object data)
+    public void OnMenuSelected()
     {
-        if (data is bool && sender.gameObject.name == "WallBreakPickup")
-        {
-            bool pickedUp = sceneInfo.isWallBreakPickedUp;
-            if (pickedUp)
-            {
-                wallBreakPickedUp = true;
-                sceneInfo.isWallBreakPickedUp = wallBreakPickedUp;
-                Debug.Log("Wall Break Ability Ready!");
-            }
-            else
-            {
-                Debug.LogError("Wall Break not Ready, check item bool");
-            }
-        }
+        wallBreakSelected = true;
     }
 }

@@ -3,12 +3,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 /// <summary>
 /// This script is to handle interactions and navigation within each menu page
 /// </summary>
 public class MenuManager : MonoBehaviour
 {
+    #region Variables
     [Header("Menu UI Components")]
     public GameObject[] itemIcons;
     private int coinTracker;
@@ -24,8 +27,8 @@ public class MenuManager : MonoBehaviour
     public AudioClip[] menuClips;
     [Space(10)]
 
-    [Header("Menu animations")]
-    public Animator animator;
+    [Header("Menu Video Settings")]
+    [SerializeField]private VideoPlayer videoPlayer;
 
     public static MenuManager instance { get; private set; }
 
@@ -34,6 +37,7 @@ public class MenuManager : MonoBehaviour
     public GameObject equipmentMenu;
     public GameObject inventoryMenu;
     public GameObject questMenu;
+    #endregion
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,19 +60,9 @@ public class MenuManager : MonoBehaviour
 
     private void CheckPickup()
     {
-        //Using Scene info scipt object
-        //Check for if item is picked up
-        if(sceneInfo.isShieldPickedUp)
-        {
-            itemIcons[0].SetActive(true);
-        }
-        else if(sceneInfo.isWallBreakPickedUp)
-            itemIcons[1].SetActive(true);
-        else //If no items/abilities are picked up
-        {
-            itemIcons[0].SetActive(false);
-            itemIcons[1].SetActive(false);
-        }
+        itemIcons[0].SetActive(sceneInfo.isShieldPickedUp);
+        itemIcons[1].SetActive(sceneInfo.isWallBreakPickedUp);
+        itemIcons[2].SetActive(sceneInfo.isAxeBought);
     }
 
     private void TrackCoin()
@@ -76,6 +70,17 @@ public class MenuManager : MonoBehaviour
         //Attach reference from GameManager
         coinTracker = GameManager.instance.currentCoin;
         coinText.text = coinTracker.ToString();
+    }
+
+    public void PlayAudioClip()
+    {
+        menuAudio.PlayOneShot(menuClips[2]);
+    }
+
+    public void PlayVideo(VideoClip clip)
+    {
+        videoPlayer.clip = clip;
+        videoPlayer.Play();
     }
 
     #region Menu Tabs
