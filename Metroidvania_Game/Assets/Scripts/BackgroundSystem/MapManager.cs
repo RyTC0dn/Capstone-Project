@@ -40,6 +40,7 @@ public class MapManager : MonoBehaviour
         miniMap.SetActive(false);
         largeMap.SetActive(true);
         isLargeMapOpen = true;
+        Time.timeScale = 0f;
     }
 
     private void CloseLargeMap()
@@ -47,5 +48,6 @@ public class MapManager : MonoBehaviour
         miniMap.SetActive(true);
         largeMap.SetActive(false);
         isLargeMapOpen=false;
+        Time.timeScale = 1.0f;
     }
 }
