@@ -25,10 +25,6 @@ public class MenuManager : MonoBehaviour
     [Header("Audio")]
     public AudioSource menuAudio;
     public AudioClip[] menuClips;
-    [Space(10)]
-
-    [Header("Menu Video Settings")]
-    [SerializeField]private VideoPlayer videoPlayer;
 
     public static MenuManager instance { get; private set; }
 
@@ -72,15 +68,9 @@ public class MenuManager : MonoBehaviour
         coinText.text = coinTracker.ToString();
     }
 
-    public void PlayAudioClip()
+    public void PlayAudio(int index)
     {
-        menuAudio.PlayOneShot(menuClips[2]);
-    }
-
-    public void PlayVideo(VideoClip clip)
-    {
-        videoPlayer.clip = clip;
-        videoPlayer.Play();
+        menuAudio.PlayOneShot(menuClips[index]);
     }
 
     #region Menu Tabs

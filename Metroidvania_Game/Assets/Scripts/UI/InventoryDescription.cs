@@ -5,6 +5,8 @@ public class InventoryDescription : MonoBehaviour
 {
     public GameObject textDesc;
     public SceneInfo sceneInfo;
+    [SerializeField] private GameObject video;
+    [SerializeField] private VideoPlayer player;
     [SerializeField] private VideoClip clip;
 
 
@@ -12,16 +14,21 @@ public class InventoryDescription : MonoBehaviour
     void Start()
     {
         textDesc.SetActive(false);
+        video.SetActive(false);       
     }
 
     public void Show()
     {
         textDesc.SetActive(true);
-        MenuManager.instance.PlayAudioClip();
+        video.SetActive(true);
+        player.clip = clip;
+        player.Play();
     }
 
     public void Hide()
     {
         textDesc.SetActive(false);
+        video.SetActive(false);
+        player.Stop();
     }
 }
