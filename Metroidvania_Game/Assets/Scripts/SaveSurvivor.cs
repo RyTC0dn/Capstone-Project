@@ -42,7 +42,13 @@ public class SaveSurvivor : MonoBehaviour
     public float floatYSpeed = 2f;
     public float floatXAmplitude = 5.0f;
     public float floatXSpeed = 0.5f;
+    [Space(5)]
 
+    [Header("Saved state values")]
+    [Tooltip("Manually assign where the npc will fall to")]
+    [SerializeField] private Vector2 targetPos;
+    [Tooltip("Manually set how fast the npc falls")]
+    [SerializeField] private float fallingSpeed;
     [Space(5)]
 
     private Vector2 startPos;
@@ -84,15 +90,20 @@ public class SaveSurvivor : MonoBehaviour
         transform.position = startPos + new Vector2(xOffset, yOffset);
     }
 
+    private void Saved()
+    {
+        buttonPrompt.SetActive(true);
+        conversationActive = true;
+        rb2D.position = Vector2.MoveTowards(rb2D.position, targetPos, fallingSpeed * Time.deltaTime);
+        BeforeSavedDialogue();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (hasBeenSaved)
         {
-            buttonPrompt.SetActive(true);
-            conversationActive = true;
-            rb2D.gravityScale = 9.81f;
-            BeforeSavedDialogue();
+            Saved();
         }
         else if(!hasBeenSaved)
         {
@@ -199,6 +210,12 @@ public class SaveSurvivor : MonoBehaviour
             playerIsNear = false;
             buttonPrompt.SetActive(false);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(targetPos, 1f);
     }
 
 

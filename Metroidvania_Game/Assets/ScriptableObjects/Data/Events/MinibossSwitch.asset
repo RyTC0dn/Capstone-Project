@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31afe7ddd2c21bb42be58573d2cce5e4, type: 3}
-  m_Name: Shield Tutorial
+  m_Script: {fileID: 11500000, guid: fa927c8412b0a62428b9661fdc76b9f7, type: 3}
+  m_Name: MinibossSwitch
   m_EditorClassIdentifier: 
-  textLines:
-  - text: Hold down the R key (for Keyboard) or Left Trigger (for Controller) to
-      use shield to block incoming projectiles and enemy attacks
+  listeners: []
