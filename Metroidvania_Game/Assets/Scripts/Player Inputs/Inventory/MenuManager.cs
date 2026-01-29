@@ -46,6 +46,10 @@ public class MenuManager : MonoBehaviour
         {
             itemIcons[i].SetActive(false);
         }
+
+        equipmentMenu.SetActive(false);
+        inventoryMenu.SetActive(false);
+        questMenu.SetActive(false);
     }
 
     private void Update()
