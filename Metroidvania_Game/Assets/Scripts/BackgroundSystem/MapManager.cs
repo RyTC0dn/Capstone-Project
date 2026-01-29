@@ -6,6 +6,10 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private GameObject miniMap;
     [SerializeField] private GameObject largeMap;
+    [SerializeField] private Camera mapCamera;
+
+    public float mapSizeSmall = 20f;
+    public float mapSizeLarge = 40f;
 
     public bool isLargeMapOpen {  get; private set; }
 
@@ -40,6 +44,8 @@ public class MapManager : MonoBehaviour
         miniMap.SetActive(false);
         largeMap.SetActive(true);
         isLargeMapOpen = true;
+        Time.timeScale = 0f;
+        mapCamera.orthographicSize = mapSizeLarge;
     }
 
     private void CloseLargeMap()
@@ -47,5 +53,7 @@ public class MapManager : MonoBehaviour
         miniMap.SetActive(true);
         largeMap.SetActive(false);
         isLargeMapOpen=false;
+        Time.timeScale = 1.0f;
+        mapCamera.orthographicSize = mapSizeSmall;
     }
 }
