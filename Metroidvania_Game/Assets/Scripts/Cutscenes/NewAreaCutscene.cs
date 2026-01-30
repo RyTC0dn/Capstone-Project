@@ -5,18 +5,22 @@ using UnityEngine.Playables;
 public class NewAreaCutscene : MonoBehaviour
 {
     [SerializeField] private PlayableDirector cutsceneTimeline;
-    private double timeEnd;
-    public GameEvent cutsceneEvent;
+    private float timeEnd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if(cutsceneTimeline != null)
         {
+            //Restart cutscene on start
             cutsceneTimeline.time = 0;
+            cutsceneTimeline.Stop();
         }
 
-        timeEnd = cutsceneTimeline.time;
+        //Tie a variable to the duration of the assigned cutscene
+        timeEnd = (float)cutsceneTimeline.duration;
+        //Ensure that the cutscene timeline ignores time scale 
+        cutsceneTimeline.timeUpdateMode = DirectorUpdateMode.UnscaledGameTime;
     }
 
     // Update is called once per frame
@@ -29,12 +33,14 @@ public class NewAreaCutscene : MonoBehaviour
     {
         if(data is bool)
         {
-
+            StartCoroutine(Cutscene());
         }
     }
 
     IEnumerator Cutscene()
     {
+        //Set the time scale to 0,
+        //pausing the game to let the cutscene play
         Time.timeScale = 0;
 
         if(cutsceneTimeline != null)
@@ -42,6 +48,10 @@ public class NewAreaCutscene : MonoBehaviour
             cutsceneTimeline.Play();
         }
 
-        yield return new WaitForSeconds();
+        yield return new WaitForSeconds(timeEnd);
+
+        //After the cutscene finishes playing,
+        //have time move again by setting time scale to 1
+        Time.timeScale = 1;
     }
 }
