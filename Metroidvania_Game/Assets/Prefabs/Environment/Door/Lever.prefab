@@ -105,6 +105,8 @@ MonoBehaviour:
   switchFlipEvent: {fileID: 11400000, guid: 77cb038545e451b4ea2aaca90f082e8a, type: 2}
   buttonPrompt: {fileID: 1552545535937436217}
   leverSP: {fileID: 8549792548732593536}
+  signalNumber: 0
+  doorType: 1
 --- !u!70 &1025231965092577192
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

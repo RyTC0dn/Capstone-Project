@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3ba40135f36cd4297844ff21907fd4, type: 3}
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
-  isShieldPickedUp: 1
-  isWallBreakPickedUp: 1
+  isShieldPickedUp: 0
+  isWallBreakPickedUp: 0
   isAxeBought: 0

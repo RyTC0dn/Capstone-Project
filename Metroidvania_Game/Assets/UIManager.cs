@@ -14,7 +14,7 @@ using System.Collections;
 public class UIManager : MonoBehaviour
 {
     //Game Variables
-    private int coinCount;
+    private SceneInfo info;
     public static UIManager instance { get; private set; }
 
     PrototypePlayerMovementControls playerControls;
@@ -106,6 +106,12 @@ public class UIManager : MonoBehaviour
 
     public void NewGame()
     {
+        //Set script object booleans to false on start of game
+        info.isAxeBought = false;
+        info.isWallBreakPickedUp= false;
+        info.isShieldPickedUp = false;
+
+
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
     }
