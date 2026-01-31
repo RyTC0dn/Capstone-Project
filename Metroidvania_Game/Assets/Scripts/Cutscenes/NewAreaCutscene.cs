@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class NewAreaCutscene : MonoBehaviour
 {
     [SerializeField] private PlayableDirector cutsceneTimeline;
+    [SerializeField] private PlayableAsset[] timeline;
     private float timeEnd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,7 +16,6 @@ public class NewAreaCutscene : MonoBehaviour
         {
             //Restart cutscene on start
             cutsceneTimeline.time = 0;
-            cutsceneTimeline.Stop();
         }
 
         //Tie a variable to the duration of the assigned cutscene
@@ -31,13 +32,15 @@ public class NewAreaCutscene : MonoBehaviour
 
     public void OnEventTriggered(Component sender, object data)
     {
-        if(data is bool)
+        if(data is int signal)
         {
-            StartCoroutine(Cutscene());
+            //Play the specific cutscene based on the signal recieved 
+            //from a specific lever, 0 being the first 
+            StartCoroutine(Cutscene(signal));
         }
     }
 
-    IEnumerator Cutscene()
+    IEnumerator Cutscene(int number)
     {
         //Set the time scale to 0,
         //pausing the game to let the cutscene play
@@ -45,6 +48,7 @@ public class NewAreaCutscene : MonoBehaviour
 
         if(cutsceneTimeline != null)
         {
+            cutsceneTimeline.playableAsset = timeline[number];
             cutsceneTimeline.Play();
         }
 

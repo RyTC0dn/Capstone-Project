@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum DoorType
+{
+    //For our purposes and separating the types of doors being used in scenes
+    Standard, 
+    Cutscene
+}
+
 public class LeverSwitch : MonoBehaviour
 {
     bool flippedSwitch = false;
@@ -9,6 +16,10 @@ public class LeverSwitch : MonoBehaviour
     public GameEvent switchFlipEvent;
     public GameObject buttonPrompt;
     [SerializeField]private SpriteRenderer leverSP;
+    [Tooltip("Assign a number in relation to which opening event is triggered, starting at 0")]
+    [SerializeField]private int signalNumber; //This is to indicate which 
+
+    [SerializeField]private DoorType doorType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +46,22 @@ public class LeverSwitch : MonoBehaviour
         flippedSwitch = true;
         leverSP.flipX = true;
         Debug.Log("Lever is flipped");
-        switchFlipEvent.Raise(this, flippedSwitch);
+
+        #region Door Type
+        switch (doorType)
+        {
+            case DoorType.Standard:
+                //Standard door open event
+                switchFlipEvent.Raise(this, flippedSwitch);
+                break;
+            case DoorType.Cutscene:
+                //Send signal based on which area is being opened up
+                switchFlipEvent.Raise(this, signalNumber);
+                break;
+            default:
+                break;
+        }
+        #endregion
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
