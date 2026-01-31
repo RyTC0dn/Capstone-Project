@@ -17,6 +17,7 @@ public class NewAreaCutscene : MonoBehaviour
             cutsceneTimeline.time = 0;
             // Ensure that the cutscene timeline ignores time scale 
             cutsceneTimeline.timeUpdateMode = DirectorUpdateMode.UnscaledGameTime;
+            cutsceneTimeline.playOnAwake = false;
         }
     }
 
