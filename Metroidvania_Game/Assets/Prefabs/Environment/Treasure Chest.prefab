@@ -201,9 +201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldAmount: 100
   treasureType: 0
-  treasure: {fileID: 0}
+  treasure: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   buttonPrompt: {fileID: 2947436010056580724}
   waitTime: 1
+  playerDetected: 0
   timeInAir: 1
 --- !u!1001 &4199874919023445778
 PrefabInstance:

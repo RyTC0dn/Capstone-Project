@@ -21,36 +21,29 @@ public class Treasure : MonoBehaviour
     private Animator animator;
     [SerializeField] private float waitTime;
     private bool isOpened = false;
-    private bool playerDetected = false;
+    [SerializeField]private bool playerDetected = false;
     [Space(20)]
 
     [Header("Toss Force")]
-    private Vector2 spawnDirection;
     [SerializeField] private float timeInAir;
-    private Rigidbody2D rb;
     private float throwForce = 5f;
 
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        rb = treasure.GetComponent<Rigidbody2D>();
         buttonPrompt.SetActive(false);
     }
 
     private void Update()
     {
-        bool keyPressd = Keyboard.current.eKey.wasPressedThisFrame;
+        bool keyPressed = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
         bool gamepadPressed = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
 
-        if (playerDetected && !isOpened)
+        if ((keyPressed || gamepadPressed) && playerDetected)
         {
-            buttonPrompt.SetActive(true);
-            if (keyPressd || gamepadPressed)
-            {
-                isOpened = true;
-                StartCoroutine(OpenChest());
-            }
+            isOpened = true;
+            StartCoroutine(OpenChest());
         }
     }
 
@@ -58,16 +51,28 @@ public class Treasure : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if(isOpened) return;
             playerDetected = true;
+            buttonPrompt.SetActive(true);
         }
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !isOpened)
+        {
+            playerDetected = false;
+            if(buttonPrompt != null) buttonPrompt.SetActive(false);
+        }
     }
 
     IEnumerator OpenChest()
     {
-        if(animator != null)
+        isOpened = true; //Prevent other interactions while opening
+
+        if (animator != null)
         {
-            animator.SetTrigger("Open");
+            this.animator.SetTrigger("Open");
             Debug.Log("Chest Opening!");
         }
         else
@@ -77,19 +82,30 @@ public class Treasure : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        Instantiate(treasure, transform.position, Quaternion.identity);
-        buttonPrompt.SetActive(false);
+        if (treasure != null)
+        {
+            GameObject spawned = Instantiate(treasure, transform.position, Quaternion.identity);
+
+            Rigidbody2D rb = spawned.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                //Randomize direction horizontally and give upward force
+                Vector2 direction = new Vector2(Random.Range(-1, 1), 1).normalized;
+                rb.AddForce(direction * throwForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                //If the prefab has no rigidbody, give a simple upward offset
+                spawned.transform.position += Vector3.up * 0.5f;
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Treasure prefab was not assigned to {gameObject.name}");
+        }
+        if(buttonPrompt != null) buttonPrompt.SetActive(false);
+        playerDetected = false;
         Debug.Log("Throw Coins!");
-    }
-
-    IEnumerator ThrowCoins()
-    {
-        rb.AddForce(new Vector2(
-            Random.Range(-1f, 1f), 1).normalized * throwForce, 
-            ForceMode2D.Impulse);
-
-        yield return new WaitForSeconds(waitTime);
-
-        treasure.transform.position = Vector2.zero;
     }
 }

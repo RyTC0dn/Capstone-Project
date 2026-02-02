@@ -7,6 +7,7 @@ public class DebrisCollision : MonoBehaviour
     [SerializeField] private float debrisLifetime; // Lifetime of debris in seconds
     [SerializeField]private int damage;
     [SerializeField]private GameEvent damagePlayer;
+    private ParticleSystem rockExplosion;
 
     private void Start()
     {
@@ -16,11 +17,11 @@ public class DebrisCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(gameObject == null) return;
+        if (gameObject == null) return;
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(damagePlayer == null)
+            if (damagePlayer == null)
             {
                 Debug.LogWarning("Damage Player GameEvent is not assigned in DebrisCollision script.");
                 return;
@@ -28,6 +29,10 @@ public class DebrisCollision : MonoBehaviour
 
             // Deal damage to the player
             damagePlayer.Raise(this, damage);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
             Destroy(gameObject);
         }
 
