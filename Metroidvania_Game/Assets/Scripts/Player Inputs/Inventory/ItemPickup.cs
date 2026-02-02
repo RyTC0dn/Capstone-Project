@@ -10,52 +10,29 @@ public class ItemPickup : MonoBehaviour
     public GameObject itemShield; //Manually assign in inpsector
     public GameObject itemWallBreak; //Manually assign in inpsector
 
-    private SpriteRenderer sp;
-    private Collider2D itemCollider;
-
     public SceneInfo sceneInfo;
-    private int id;
 
     private void Start()
     {
-        sp = GetComponent<SpriteRenderer>();    
-        itemCollider = GetComponent<Collider2D>();
-        if(sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
+        if (sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
             Destroy(gameObject);
         if (sceneInfo.isWallBreakPickedUp && gameObject.name == "WallBreakPickup")
             Destroy(gameObject);
-
-        //Grab game object id from Unity
-        id = gameObject.GetInstanceID();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if(collision.tag == "Player" && 
-            gameObject.tag == "AbilityPickup" 
-            && this.gameObject == itemShield)
+        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
         {
             hasPickedUpShield = true;
-            sceneInfo.isShieldPickedUp = true;
-
             abilityPickup.Raise(this, hasPickedUpShield);
-
-            sp.enabled = false;
-            itemCollider.enabled = false;
+            Destroy(gameObject);
         }
-        if (collision.tag == "Player" 
-            && gameObject.tag == "AbilityPickup" 
-            && this.gameObject == itemWallBreak)
+        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
-            sceneInfo.isWallBreakPickedUp = true;
-
-            //Game events
             abilityPickup.Raise(this, hasPickedUpWallBreak);
-
-            sp.enabled = false;
-            itemCollider.enabled = false;
+            Destroy(gameObject);
         }
     }
 }
