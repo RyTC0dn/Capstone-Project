@@ -7,11 +7,10 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float maxRocks;
     [SerializeField] private float detectionRange;
-    [SerializeField] private bool detectPlayer = false;
-    [Space(20)]
+    [SerializeField] private bool detectPlayer;
+    private float reInitializeTime = 2;
+    private bool wasPlayerDetected;
 
-    [SerializeField] private float damage;
-    [SerializeField] private GameEvent damagePlayer;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,10 +23,21 @@ public class FallingBlocks : MonoBehaviour
     void Update()
     {
         DetectPlayer();
+        if (wasPlayerDetected)
+        {
+            reInitializeTime -= Time.deltaTime;
+            if (reInitializeTime <= 0f)
+            {
+                wasPlayerDetected = false;
+                reInitializeTime = 2f; // Reset the timer
+            }
+        }
     }
 
     private void DetectPlayer()
     {
+        if (wasPlayerDetected) return;
+
         //For now, have the rocks fall when the player is detected below with the raycast
         detectPlayer = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, LayerMask.GetMask("Player"));
         Debug.DrawRay(transform.position, Vector2.down * detectionRange, Color.red);
@@ -35,7 +45,6 @@ public class FallingBlocks : MonoBehaviour
         if (detectPlayer)
         {
             SpawnRocks();
-            detectPlayer = false; //Reset detection to prevent continuous spawning
         }
     }
 
@@ -48,8 +57,12 @@ public class FallingBlocks : MonoBehaviour
         {
             //If the spawn point is not null, use its position, otherwise use the current position
             Vector2 offset = (spawnPoint != null) ? spawnPoint.position : transform.position;
-            offset.x += Random.Range(-1f, 1f);
-            Instantiate(rock, spawnPoint.position, Quaternion.identity);
+            offset.x += Random.Range(-5f, 5f);
+
+            Quaternion angle = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
+
+            Instantiate(rock, offset, angle);
+            wasPlayerDetected = true;
         }
     }
 }
