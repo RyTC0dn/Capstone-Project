@@ -32,9 +32,7 @@ public class ItemPickup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if(collision.tag == "Player" && 
-            gameObject.tag == "AbilityPickup" 
-            && this.gameObject == itemShield)
+        if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemShield)
         {
             hasPickedUpShield = true;
             sceneInfo.isShieldPickedUp = true;
@@ -43,10 +41,9 @@ public class ItemPickup : MonoBehaviour
 
             sp.enabled = false;
             itemCollider.enabled = false;
+            Destroy(gameObject, 0.1f); //Destroy after a short delay to allow event to process
         }
-        if (collision.tag == "Player" 
-            && gameObject.tag == "AbilityPickup" 
-            && this.gameObject == itemWallBreak)
+        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == itemWallBreak)
         {
             hasPickedUpWallBreak = true;
             sceneInfo.isWallBreakPickedUp = true;
@@ -56,6 +53,7 @@ public class ItemPickup : MonoBehaviour
 
             sp.enabled = false;
             itemCollider.enabled = false;
+            Destroy(gameObject, 0.1f);
         }
     }
 }
