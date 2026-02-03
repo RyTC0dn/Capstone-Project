@@ -57,7 +57,9 @@ public class PlayerHealth : MonoBehaviour
     {
         //This function will check if the enemy sent out attack event 
         //and if the sent out data was an integer variable
-        if(data is int damage && sender is BasicEnemyAttackState)
+        
+        sender = sender.gameObject.GetComponent<Component>();
+        if (data is int damage)
         {
             TakeDamage(damage, sender);
         }
