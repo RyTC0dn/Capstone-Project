@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
     public GameObject equipmentMenu;
     public GameObject inventoryMenu;
     public GameObject questMenu;
+    private PrototypePlayerAttack playerAttack; //So I can disable attack when menu is open
     [Space(20)]
 
     [Header("Book Icon Indicator1")]
@@ -65,6 +66,7 @@ public class MenuManager : MonoBehaviour
 
         bookIcon.SetActive(false);
         bookIcon.transform.position = startPos;
+        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
     }
 
     private void Update()
@@ -76,10 +78,16 @@ public class MenuManager : MonoBehaviour
             if (menuOpened) //Check if the menu is already open
             {
                 CloseMenu();
+                //Enable player attack when menu is closed
+                if (playerAttack != null)
+                    playerAttack.enabled = true;
             }
             else //Otherwise open player menu 
             {
                 OpenMenu();
+                //Disable player attack when menu is open
+                if (playerAttack != null)
+                    playerAttack.enabled = false;
             }
         }
 
