@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 71239c857196bdc45b9488e2488428ec
+guid: 8bfd77d1f5dc6ec42bc41f54c190188c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6704776228946865029
-    second: Priest_1-ezgif.com-gif-to-sprite-converter_0
-  - first:
-      213: 7273171386941253767
-    second: Priest_1-ezgif.com-gif-to-sprite-converter_1
-  - first:
-      213: 6841207775534111422
-    second: Priest_1-ezgif.com-gif-to-sprite-converter_2
-  - first:
-      213: 129076540987171100
-    second: Priest_1-ezgif.com-gif-to-sprite-converter_3
+      213: -813934231786165588
+    second: Screenshot 2026-02-04 235534_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Priest_1-ezgif.com-gif-to-sprite-converter_0
+      name: Screenshot 2026-02-04 235534_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 107
-        width: 245
-        height: 353
+        x: 0
+        y: 0
+        width: 1089
+        height: 429
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58b6cd0f4762c0d50800000000000000
-      internalID: 6704776228946865029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Priest_1-ezgif.com-gif-to-sprite-converter_1
-      rect:
-        serializedVersion: 2
-        x: 728
-        y: 107
-        width: 245
-        height: 353
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7882b2d67de7fe460800000000000000
-      internalID: 7273171386941253767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Priest_1-ezgif.com-gif-to-sprite-converter_2
-      rect:
-        serializedVersion: 2
-        x: 1304
-        y: 107
-        width: 245
-        height: 353
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ebad95fb93ad0fe50800000000000000
-      internalID: 6841207775534111422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Priest_1-ezgif.com-gif-to-sprite-converter_3
-      rect:
-        serializedVersion: 2
-        x: 1862
-        y: 107
-        width: 263
-        height: 353
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c11606e1e629ac100800000000000000
-      internalID: 129076540987171100
+      spriteID: caaeadbe02354b4f0800000000000000
+      internalID: -813934231786165588
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Priest_1-ezgif.com-gif-to-sprite-converter_0: 6704776228946865029
-      Priest_1-ezgif.com-gif-to-sprite-converter_1: 7273171386941253767
-      Priest_1-ezgif.com-gif-to-sprite-converter_2: 6841207775534111422
-      Priest_1-ezgif.com-gif-to-sprite-converter_3: 129076540987171100
+      Screenshot 2026-02-04 235534_0: -813934231786165588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
