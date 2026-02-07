@@ -65,4 +65,11 @@ public class FallingBlocks : MonoBehaviour
             wasPlayerDetected = true;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        //Draw a ray downwards to show the detection range
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector3.down * detectionRange);
+    }
 }
