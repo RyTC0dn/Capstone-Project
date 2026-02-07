@@ -17,14 +17,9 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// </summary>
 
     [Header("Weapon Setup")]
-    public Collider2D[] weaponColliders; // To track which collider to activate for directional attacks
-    public float attackRate = 1f;    // attacks per second                     
+    public Collider2D weaponCollider;
+    public float attackRate = 1f;                        // attacks per second
     private float delayTillAttack;
-    [SerializeField]private GameObject colliderHolder; // empty game object to hold the weapon collider(s) as children
-    private bool upHeld, upAttackQueued = false; // Track if the up key is pressed for vertical attacks
-
-    bool isAttacking = false;
-    float timeBetweenAttack, timeSinceLastAttack;
 
     [Header("Input / Timing")]
     [Tooltip("Time between pressing the attack button and the attack firing (wind-up).")]
@@ -65,10 +60,7 @@ public class PrototypePlayerAttack : MonoBehaviour
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        for (int i = 0; i < weaponColliders.Length; i++)
-        {
-            weaponColliders[i].enabled = false;
-        }            
+        weaponCollider.enabled = false;
         delayTillAttack = 1f / attackRate;
     }
 
@@ -103,21 +95,12 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// <param name="context"></param>
     public void OnAttack()
     {
-        bool upKey = Keyboard.current?.wKey.isPressed ?? false;
         bool key = Mouse.current?.leftButton.wasPressedThisFrame ?? false;
         bool button = Gamepad.current?.rightTrigger.wasPressedThisFrame ?? false;
         bool isPressed = key || button;
 
-        upHeld = upKey; // Check if up key is pressed for vertical attack
-
         if (isPressed)
         {
-            // If up key is held when attack input is registered, queue vertical attack
-            if (upHeld)
-            {
-                upAttackQueued = true;
-            }
-
             // If we're allowed to attack now, start attack (with optional windup).
             if (!hasAttacked)
             {
@@ -140,31 +123,6 @@ public class PrototypePlayerAttack : MonoBehaviour
                 delayTillAttack = 1f / attackRate;
             }
         }
-        else if (upKey)
-        {
-            colliderHolder.transform.localRotation = Quaternion.Euler(0, 0, 90); // Rotate collider holder for vertical attack
-            upAttackQueued = true; // Queue vertical attack if up key is held without pressing attack button
-            if (upAttackQueued && isPressed)
-            {
-                upAttackQueued = false;
-                StartCoroutine(PerformAttackWithWindup());
-            }
-        }
-        else
-        {
-            colliderHolder.transform.localRotation = Quaternion.Euler(0, 0, 0); // Reset collider holder rotation for horizontal attack
-        }
-    }
-
-    void Attack()
-    {
-        timeSinceLastAttack += Time.deltaTime;
-        if(isAttacking && timeSinceLastAttack >= timeBetweenAttack)
-        {
-            // Perform attack logic here (e.g., enable weapon collider, play animation, etc.)
-            timeSinceLastAttack = 0f;
-
-        }
     }
 
     public void DisableAttack()
@@ -184,7 +142,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     }
 
     // Performs the actual attack after windup delay.
-    private IEnumerator PerformAttackWithWindup(/*Vector2 direction*/)
+    private IEnumerator PerformAttackWithWindup()
     {
         // windup delay before the attack happens
         if (attackWindup > 0f)
@@ -198,9 +156,7 @@ public class PrototypePlayerAttack : MonoBehaviour
         switch (character)
         {
             case PlayerCharacter.Knight:
-                //Pass in direction for directional attacks (if needed)
-                animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
-                swordSlashAudio.Play();
+                KnightStandardAttack(); // now only performs visual/sound/collider work
                 break;
             case PlayerCharacter.Priest:
                 PriestStandardAttack();
@@ -208,17 +164,14 @@ public class PrototypePlayerAttack : MonoBehaviour
         }
     }
 
-    private void KnightStandardAttack(int collider) //This function is to store what the knight does when they attack
+    private void KnightStandardAttack() //This function is to store what the knight does when they attack
     {
         // When function is called, activate collider for weapon collider
         // Trigger the attack animation to start and play audio attached
         // Start coroutine function that turns off collider after animation stops
-        for (int i = 0; i < weaponColliders.Length; i++)
-        {
-            weaponColliders[i].enabled = false;
-        }
-        weaponColliders[collider].enabled = true;
-
+        weaponCollider.enabled = true;
+        animator.SetTrigger("isSlashing");
+        swordSlashAudio.Play();
 
         slashVFX.Play();
         slashVFX.Clear();
@@ -229,17 +182,13 @@ public class PrototypePlayerAttack : MonoBehaviour
     private IEnumerator ResetWeapon() //Reset the collider after animation plays
     {
         yield return new WaitForSeconds(0.6f);
-        for (int i = 0; i < weaponColliders.Length; i++)
-            weaponColliders[i].enabled = false;
+        weaponCollider.enabled = false;
         Debug.Log("Weapon deactivated");
     }
 
     private void PriestStandardAttack() //This function is to store what the priest does when they attack
     {
-        for (int i = 0; i < weaponColliders.Length; i++)
-        {
-            weaponColliders[i].enabled = true;
-        }
+        weaponCollider.enabled = true;
         animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
 

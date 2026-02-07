@@ -18,6 +18,7 @@ public class Elevator : MonoBehaviour
     /// </summary>
     public string elevatorLocationName;
     public GameEvent teleportPlayer;
+    public GameEvent UIActive;
 
     [Header("Elevator Animations")]
     [HideInInspector]public Animator elevatorAnimation;
@@ -52,8 +53,6 @@ public class Elevator : MonoBehaviour
             button.onClick.AddListener(delegate { OnButtonClicked(destinationName); });
             button.interactable = false;
         }
-
-        parentPanel = ElevatorManager.instance.parentPanel.GetComponent<GameObject>();
 
         parentPanel.SetActive(false);
         inputText.enabled = false;
