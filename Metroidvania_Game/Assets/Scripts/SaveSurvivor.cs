@@ -14,10 +14,9 @@ public class SaveSurvivor : MonoBehaviour
     #region Variables
     [SerializeField] private bool playerIsNear = false;
     private bool hasBeenSaved = false;
-    private bool blacksmithFreed = false;
+    private bool npcFreed = false;
 
     [Header("NPC State Data")]
-    public NPC npcData;
     public Dialogue beforeSavingDialogue;
     public Dialogue afterSavingDialogue;
     public GameObject textBubble;
@@ -55,8 +54,6 @@ public class SaveSurvivor : MonoBehaviour
 
     private Rigidbody2D rb2D;
 
-    public string sceneName;
-
     public GameObject buttonPrompt;
     #endregion
 
@@ -77,7 +74,7 @@ public class SaveSurvivor : MonoBehaviour
         buttonPrompt.SetActive(false);
         dialogueText.text = beforeSavingDialogue.textLines[activeLineIndex].text;
         animator.enabled = false;
-        npcName.text = npcData.npcName;
+        npcName.text = beforeSavingDialogue.npcName;
 
         Color start = new Color(0, 255, 242, 0.5f);
         bubbleSp.color = start;
@@ -152,9 +149,36 @@ public class SaveSurvivor : MonoBehaviour
             conversationActive = false;
             textBubble.SetActive(false);
             firstLineShown = false;
-            GameManager.instance.isBlacksmithSaved = true;
-            PlayerPrefs.SetInt("BlacksmithSaved", 1);
-            PlayerPrefs.Save();
+
+            #region Save Data Handling
+            if (npcName.text == "Blacksmith")
+            {
+                GameManager.instance.isBlacksmithSaved = true;
+                PlayerPrefs.SetInt("BlacksmithSaved", 1);
+                PlayerPrefs.Save();
+                Debug.Log("Blacksmith saved, save data updated.");
+            }
+            else if (npcName.text == "Alchemist")
+            {
+                GameManager.instance.isPotionMakerSaved = true;
+                PlayerPrefs.SetInt("AlchemistSaved", 1);
+                PlayerPrefs.Save();
+                Debug.Log("Alchemist saved, save data updated.");
+            }
+            else if (npcName.text == "Healer")
+            {
+                GameManager.instance.isHealerSaved = true;
+                PlayerPrefs.SetInt("HealerSaved", 1);
+                PlayerPrefs.Save();
+                Debug.Log("Healer saved, save data updated.");
+            }
+            else
+            {
+                Debug.LogWarning("NPC name not recognized, save data may not be properly recorded.");
+                return;
+            }
+            #endregion
+
             Destroy(gameObject);
             return;
         }
