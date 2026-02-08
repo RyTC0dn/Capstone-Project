@@ -1,27 +1,36 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class Tutorial : MonoBehaviour
 {
+    [Header("Screen Setup")]
     [SerializeField]private GameObject screen;
-    [SerializeField]private Sprite image;
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField]private GameObject spawn;
+    public GameObject player;
+
+    public string sceneToLoad;
+
+    [Header("State")]
+    public GameEvent switcthToTutorialState;
 
     private void Start()
     {
         screen.SetActive(false);
     }
 
-    public void Show()
+    public void TutorialConfirmation()
     {
+        //Play video, then load the tutorial scene
         screen.SetActive(true);
-        screen.GetComponent<UnityEngine.UI.Image>().sprite = image;
+        SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);   
     }
 
-    public void Hide()
+    public void TransportPlayer()
     {
-        screen.SetActive(false);
-        screen.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        SceneManager.LoadScene("CodeTesting");
+        player.transform.position = spawn.transform.position;
     }
 
 }
