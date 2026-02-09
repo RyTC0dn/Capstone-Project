@@ -11,7 +11,7 @@ public class ChangeTownState : MonoBehaviour
     void Start()
     {
         townAnim.enabled = false;
-        isBlacksmithSaved = GameManager.instance.isBlacksmithSaved;
+        isBlacksmithSaved = GameManager.instance.isBlackSmithSaved;
         isPotionMakerSaved = GameManager.instance.isPotionMakerSaved;
         isHealerSaved = GameManager.instance.isHealerSaved;
     }
@@ -20,6 +20,10 @@ public class ChangeTownState : MonoBehaviour
     void Update()
     {
         if(isBlacksmithSaved && gameObject.name == "blacksmith_0")
+        {
+            townAnim.enabled=true;
+        }
+        if(isPotionMakerSaved && gameObject.name == "PotionMakerBuildingSheet_0")
         {
             townAnim.enabled=true;
         }

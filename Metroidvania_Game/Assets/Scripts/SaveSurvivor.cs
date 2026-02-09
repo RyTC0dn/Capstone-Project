@@ -55,6 +55,8 @@ public class SaveSurvivor : MonoBehaviour
     private Rigidbody2D rb2D;
 
     public GameObject buttonPrompt;
+
+    private bool isTyping = false;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -64,7 +66,7 @@ public class SaveSurvivor : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         //Check if this NPC should be destroyed based on save data and current scene
-        if(GameManager.instance.isBlacksmithSaved )
+        if(GameManager.instance.isBlackSmithSaved )
         {
             Destroy(gameObject);
             return;
@@ -129,10 +131,13 @@ public class SaveSurvivor : MonoBehaviour
             {
                 textBubble.SetActive(true);                
                 firstLineShown = true;
+                conversationActive = true;
                 return; //Don't advance on first first press
             }
             buttonPrompt.SetActive(false);
+
             AdvanceDialog();
+            StartCoroutine(EffectTypewriter(currentDialogue.textLines[activeLineIndex].text, currentDialogue));
         }
     }
 
@@ -153,7 +158,7 @@ public class SaveSurvivor : MonoBehaviour
             #region Save Data Handling
             if (npcName.text == "Blacksmith")
             {
-                GameManager.instance.isBlacksmithSaved = true;
+                GameManager.instance.isBlackSmithSaved = true;
                 PlayerPrefs.SetInt("BlacksmithSaved", 1);
                 PlayerPrefs.Save();
                 Debug.Log("Blacksmith saved, save data updated.");
@@ -184,6 +189,20 @@ public class SaveSurvivor : MonoBehaviour
         }
 
         //dialog.text = conversation.textLines[activeLineIndex].text;
+    }
+
+    private IEnumerator EffectTypewriter(string text, Dialogue dialogue)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+
+        foreach (char letter in text.ToCharArray())
+        {
+            dialogue.textLines[activeLineIndex].text += letter;
+            yield return new WaitForSeconds(0.05f);            
+        }
+
+        isTyping = false;
     }
 
 

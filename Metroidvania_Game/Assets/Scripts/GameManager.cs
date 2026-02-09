@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
     //Checking if npcs are saved
-    public bool isBlacksmithSaved = false;
+    public bool isBlackSmithSaved = false;
     public bool isPotionMakerSaved = false;
     public bool isHealerSaved = false;
     public bool firstUpgrade = false;

@@ -100,13 +100,13 @@ MonoBehaviour:
   - {fileID: 1264537974538543287}
   - {fileID: 7942962902800592434}
   - {fileID: 2847721789252335334}
-  isBlacksmithSaved: 0
+  isBlackSmithSaved: 0
   isPotionMakerSaved: 0
   isHealerSaved: 0
+  firstUpgrade: 0
   coinText: {fileID: 6719870974473410219, guid: a89a0a0405a1d8c4f84411ce0e32d530, type: 3}
   weaponUpgradeText: {fileID: 9035818045752732553, guid: e9f3dd5e1f7febb458e78931af669561, type: 3}
   playerSlash: {fileID: 2100000, guid: 7e2e93e5d515a73449b19b84a9dd6d90, type: 2}
-  totalCoin: 0
   currentCoin: 0
   currentUpgrade: 0
 --- !u!114 &-2324710628687831382
