@@ -145,6 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsCollected: 0
   coinCollection: {fileID: 11400000, guid: ddc47c283e2827c4eb3c46d47d97f4db, type: 2}
+  pullRadius: 5
+  pullSpeed: 2.5
 --- !u!95 &-1381410457892553643
 Animator:
   serializedVersion: 7

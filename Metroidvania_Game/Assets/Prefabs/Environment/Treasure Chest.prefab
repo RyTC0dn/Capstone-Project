@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be365f108c6d29042948a19635b3034a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldAmount: 100
+  goldAmount: 10
   treasureType: 0
   treasure: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   buttonPrompt: {fileID: 2947436010056580724}
