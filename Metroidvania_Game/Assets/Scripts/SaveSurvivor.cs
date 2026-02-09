@@ -137,6 +137,7 @@ public class SaveSurvivor : MonoBehaviour
             buttonPrompt.SetActive(false);
 
             AdvanceDialog();
+            StopAllCoroutines();
             StartCoroutine(EffectTypewriter(currentDialogue.textLines[activeLineIndex].text, currentDialogue));
         }
     }
@@ -159,22 +160,22 @@ public class SaveSurvivor : MonoBehaviour
             if (npcName.text == "Blacksmith")
             {
                 GameManager.instance.isBlackSmithSaved = true;
-                PlayerPrefs.SetInt("BlacksmithSaved", 1);
-                PlayerPrefs.Save();
+                //PlayerPrefs.SetInt("BlacksmithSaved", 1);
+                //PlayerPrefs.Save();
                 Debug.Log("Blacksmith saved, save data updated.");
             }
             else if (npcName.text == "Alchemist")
             {
                 GameManager.instance.isPotionMakerSaved = true;
-                PlayerPrefs.SetInt("AlchemistSaved", 1);
-                PlayerPrefs.Save();
+                //PlayerPrefs.SetInt("AlchemistSaved", 1);
+                //PlayerPrefs.Save();
                 Debug.Log("Alchemist saved, save data updated.");
             }
             else if (npcName.text == "Healer")
             {
                 GameManager.instance.isHealerSaved = true;
-                PlayerPrefs.SetInt("HealerSaved", 1);
-                PlayerPrefs.Save();
+                //PlayerPrefs.SetInt("HealerSaved", 1);
+                //PlayerPrefs.Save();
                 Debug.Log("Healer saved, save data updated.");
             }
             else
