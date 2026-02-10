@@ -14,7 +14,7 @@ using System.Collections;
 public class UIManager : MonoBehaviour
 {
     //Game Variables
-    private SceneInfo info;
+    [SerializeField]private SceneInfo info;
     public static UIManager instance { get; private set; }
 
     PrototypePlayerMovementControls playerControls;
@@ -102,6 +102,8 @@ public class UIManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         SceneManager.LoadScene("Town");
+
+        NewGame();  //Call new game function to reset all player prefs and scriptable object values
     }
 
     public void NewGame()
@@ -114,6 +116,7 @@ public class UIManager : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        Debug.Log("New Game Started, PlayerPrefs cleared");
     }
 
     public void LoadMenu()

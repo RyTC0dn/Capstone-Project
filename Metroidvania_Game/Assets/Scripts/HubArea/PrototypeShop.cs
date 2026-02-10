@@ -90,7 +90,7 @@ public class PrototypeShop : MonoBehaviour
     {
         if (data is bool isPressed)
         {
-            if(isPressed && isNearShop && GameManager.instance.isBlacksmithSaved)
+            if(isPressed && isNearShop && GameManager.instance.isBlackSmithSaved)
             {
                 //Set the shop ui object to active when function is called
                 PlayRandomClip(firstReturnClip);
@@ -202,7 +202,7 @@ public class PrototypeShop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {  
             isNearShop = true;
-            if(isNearShop && GameManager.instance.isBlacksmithSaved) //Also check to see if the npc has been saved
+            if(isNearShop && GameManager.instance.isBlackSmithSaved) //Also check to see if the npc has been saved
             {
                 promptButton.SetActive(true);
             }
