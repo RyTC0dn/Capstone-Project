@@ -32,46 +32,6 @@ public class PlayerUI : MonoBehaviour
         
     }
 
-    #region UI Menu
-    private void Update()
-    {
-        //If the player presses the inventory menu input
-        //TAB - Keyboard or Select - Gamepad
-        if (InputManager.Instance.InventoryOpenCloseInput)
-        {
-            if (menuOpened) //Check if the menu is already open
-            {
-                CloseMenu();
-            }
-            else //Otherwise open player menu 
-            {
-                OpenMenu();
-            }
-        }
-        
-    }
-
-    private void OpenMenu()
-    {
-        MenuManager.instance.EquipmentOpen();
-        //Call the page flipping audio clip
-        MenuManager.instance.menuAudio.PlayOneShot
-            (MenuManager.instance.menuClips[0]);
-        Time.timeScale = 0;
-        menuOpened = true;
-    }
-
-    private void CloseMenu()
-    {
-        MenuManager.instance.CloseMenus();
-        //Call the close menu audio clip
-        MenuManager.instance.menuAudio.PlayOneShot
-            (MenuManager.instance.menuClips[1]);
-        Time.timeScale = 1f;
-        menuOpened = false;
-    }
-    #endregion
-
     private void SetHealth(int health)
     {
 
