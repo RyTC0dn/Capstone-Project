@@ -450,7 +450,7 @@ TextureImporter:
         width: 50
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -472,7 +472,7 @@ TextureImporter:
         width: 42
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -494,7 +494,7 @@ TextureImporter:
         width: 37
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -508,431 +508,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_10
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 135
-        width: 19
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6488b57fdfbee6b90800000000000000
-      internalID: -7246595274383325114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_11
-      rect:
-        serializedVersion: 2
-        x: 841
-        y: 78
-        width: 29
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af2e90a3d441b7020800000000000000
-      internalID: 2340486753267868410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_12
-      rect:
-        serializedVersion: 2
-        x: 943
-        y: 78
-        width: 29
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7a7a5060cc811070800000000000000
-      internalID: 8075390364730161788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_13
-      rect:
-        serializedVersion: 2
-        x: 1045
-        y: 78
-        width: 29
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a71987f6214f04e0800000000000000
-      internalID: -2013318872793802846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_14
-      rect:
-        serializedVersion: 2
-        x: 1147
-        y: 78
-        width: 29
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71dd7ef4353f0dc90800000000000000
-      internalID: -7146945069488546537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_17
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 71
-        width: 29
-        height: 71
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bfeb2b76c8afaa50800000000000000
-      internalID: 6534627154761346999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_35
-      rect:
-        serializedVersion: 2
-        x: 752
-        y: 95
-        width: 12
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2d96cda1c8e980a0800000000000000
-      internalID: -6878711037289915090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_36
-      rect:
-        serializedVersion: 2
-        x: 761
-        y: 104
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0eed9cfc04bf15950800000000000000
-      internalID: 6436201598271741664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_37
-      rect:
-        serializedVersion: 2
-        x: 863
-        y: 104
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2342663615af96cb0800000000000000
-      internalID: -4870086294557547470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_38
-      rect:
-        serializedVersion: 2
-        x: 965
-        y: 104
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f98e4721c7788920800000000000000
-      internalID: 2992773623859546617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_39
-      rect:
-        serializedVersion: 2
-        x: 1067
-        y: 104
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c523a4527ac04ce50800000000000000
-      internalID: 6828596847025205852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_40
-      rect:
-        serializedVersion: 2
-        x: 1169
-        y: 104
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa825c7bbf736f1f0800000000000000
-      internalID: -1011559512038627158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_51
-      rect:
-        serializedVersion: 2
-        x: 842
-        y: 46
-        width: 29
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd424be97813fb5f0800000000000000
-      internalID: -738817355312519969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_52
-      rect:
-        serializedVersion: 2
-        x: 944
-        y: 46
-        width: 29
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 861f03f223853e0e0800000000000000
-      internalID: -2241851216937029272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_53
-      rect:
-        serializedVersion: 2
-        x: 1046
-        y: 46
-        width: 29
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15822e68e9c4c8df0800000000000000
-      internalID: -176682041622779823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_54
-      rect:
-        serializedVersion: 2
-        x: 1148
-        y: 46
-        width: 29
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 854fd034baed14150800000000000000
-      internalID: 5855205817704117336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_63
-      rect:
-        serializedVersion: 2
-        x: 738
-        y: 46
-        width: 31
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 24449caf22af440d0800000000000000
-      internalID: -3439349187260890046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_64
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 66
-        width: 17
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98b2c5d7e34e012b0800000000000000
-      internalID: -5615737778288710775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_68
-      rect:
-        serializedVersion: 2
-        x: 1209
-        y: 52
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2c0cae48c76f2790800000000000000
-      internalID: -7552703940066014164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FallingRocks_75
       rect:
         serializedVersion: 2
-        x: 719
+        x: 712
         y: 2
-        width: 63
-        height: 49
+        width: 80
+        height: 158
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -948,211 +530,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_76
-      rect:
-        serializedVersion: 2
-        x: 775
-        y: 28
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33241de7f1551be60800000000000000
-      internalID: 7976250008809849395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_77
-      rect:
-        serializedVersion: 2
-        x: 820
-        y: 27
-        width: 15
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27fd5f20e8ecf9970800000000000000
-      internalID: 8763950509216620402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_78
-      rect:
-        serializedVersion: 2
-        x: 834
-        y: 23
-        width: 31
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 393599d80d2b6a390800000000000000
-      internalID: -7807356295201598573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_79
-      rect:
-        serializedVersion: 2
-        x: 856
-        y: 38
-        width: 12
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8dbd3eb62c1a865c0800000000000000
-      internalID: -4221946794254017576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_80
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 31
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2018047afa0edf780800000000000000
-      internalID: -8647508664451563262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_81
-      rect:
-        serializedVersion: 2
-        x: 867
-        y: 44
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: faa9cab79fb9561f0800000000000000
-      internalID: -1052263442097071441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_82
-      rect:
-        serializedVersion: 2
-        x: 870
-        y: 37
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06a5e0d9cd89708d0800000000000000
-      internalID: -2880165363384952224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_83
-      rect:
-        serializedVersion: 2
-        x: 875
-        y: 28
-        width: 17
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88e10d82783da2290800000000000000
-      internalID: -7914280817691451768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_84
-      rect:
-        serializedVersion: 2
-        x: 917
-        y: 32
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fef0c4313217f7060800000000000000
-      internalID: 6953400745144881135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FallingRocks_85
       rect:
         serializedVersion: 2
-        x: 921
+        x: 915
         y: 2
-        width: 75
-        height: 49
+        width: 81
+        height: 158
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1168,79 +552,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_86
-      rect:
-        serializedVersion: 2
-        x: 969
-        y: 44
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 040064d38c3502a80800000000000000
-      internalID: -8493696777734193088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_87
-      rect:
-        serializedVersion: 2
-        x: 983
-        y: 27
-        width: 11
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4020c4d089950a390800000000000000
-      internalID: -7809143244267453948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_88
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 34
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 972dde61e9444a3c0800000000000000
-      internalID: -4349275894352850311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FallingRocks_89
       rect:
         serializedVersion: 2
-        x: 1023
+        x: 1016
         y: 2
-        width: 56
-        height: 49
+        width: 93
+        height: 158
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1256,101 +574,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_90
-      rect:
-        serializedVersion: 2
-        x: 1070
-        y: 32
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 92a34e8a64ff19e70800000000000000
-      internalID: 9120351399348288041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_91
-      rect:
-        serializedVersion: 2
-        x: 1071
-        y: 44
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02093745ab9db12b0800000000000000
-      internalID: -5612653116283187168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_92
-      rect:
-        serializedVersion: 2
-        x: 1074
-        y: 35
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5312cf27c8facec0800000000000000
-      internalID: -3545748222217415844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_93
-      rect:
-        serializedVersion: 2
-        x: 1091
-        y: 42
-        width: 20
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: efd772c2d4b93ea20800000000000000
-      internalID: 3090484525061864958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FallingRocks_94
       rect:
         serializedVersion: 2
         x: 1123
         y: 0
-        width: 96
-        height: 51
+        width: 97
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1366,353 +596,89 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_95
+      name: FallingRocks_3
       rect:
         serializedVersion: 2
-        x: 1173
-        y: 44
-        width: 6
-        height: 7
+        x: 425
+        y: 37
+        width: 43
+        height: 123
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 55f681f5e7ab86360800000000000000
-      internalID: 7163180259256856405
+      spriteID: b1747cb906aa94e45a284e0515ec40bc
+      internalID: -3979155756028092907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_100
+      name: FallingRocks_4
       rect:
         serializedVersion: 2
-        x: 716
-        y: 10
-        width: 12
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6f49bfe1a830ba80800000000000000
-      internalID: -8453194232411631766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_101
-      rect:
-        serializedVersion: 2
-        x: 727
-        y: 27
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa7baddd19c3a3ad0800000000000000
-      internalID: -2721796427602020438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_102
-      rect:
-        serializedVersion: 2
-        x: 777
-        y: 7
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff77089e2b0b05900800000000000000
-      internalID: 671230626946381823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_103
-      rect:
-        serializedVersion: 2
-        x: 818
-        y: 10
-        width: 16
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f9488e112c5560c0800000000000000
-      internalID: -4583155748463687182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_104
-      rect:
-        serializedVersion: 2
-        x: 821
+        x: 522
         y: 3
-        width: 42
-        height: 27
+        width: 46
+        height: 157
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a52ba77ae4b4d2410800000000000000
-      internalID: 1453901055899906650
+      spriteID: d177b8b1c5ae04a4c80debe54bf44215
+      internalID: -2100036861891231357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingRocks_105
+      name: FallingRocks_5
       rect:
         serializedVersion: 2
-        x: 863
-        y: 17
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e6616928d84c0010800000000000000
-      internalID: 1156379297571759847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_106
-      rect:
-        serializedVersion: 2
-        x: 879
-        y: 22
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00d8b1de2bc37ce00800000000000000
-      internalID: 1064886576076262656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_107
-      rect:
-        serializedVersion: 2
-        x: 917
-        y: 21
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b9a149d8cd57d4c0800000000000000
-      internalID: -4262835405063083591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_108
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 21
-        width: 9
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f7ac73ee29665b380800000000000000
-      internalID: -8956139502708471169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_109
-      rect:
-        serializedVersion: 2
-        x: 1075
-        y: 8
-        width: 27
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 292e4194ce935aaf0800000000000000
-      internalID: -385838506069138798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_110
-      rect:
-        serializedVersion: 2
-        x: 869
-        y: 6
-        width: 25
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d68ebf19ec604330800000000000000
-      internalID: 3693071442959566549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_111
-      rect:
-        serializedVersion: 2
-        x: 1069
-        y: 8
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d8df866ceeaf96a0800000000000000
-      internalID: -6440236611760301870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_112
-      rect:
-        serializedVersion: 2
-        x: 1074
-        y: 16
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e88f1c0a346901b20800000000000000
-      internalID: 3103145360462313614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_113
-      rect:
-        serializedVersion: 2
-        x: 771
-        y: 6
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03fe82fffd89ca090800000000000000
-      internalID: -8021868748427694288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FallingRocks_114
-      rect:
-        serializedVersion: 2
-        x: 852
+        x: 625
         y: 2
-        width: 14
-        height: 10
+        width: 45
+        height: 158
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0bed6abeac34c7000800000000000000
-      internalID: 34977435928157872
+      spriteID: f040885b74761e042a1bf5fa127302c5
+      internalID: 5720955798780844712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingRocks_6
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 2
+        width: 76
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe7c33fe1e666d45a987bd21622f7ff
+      internalID: -181949042990339902
       vertices: []
       indices: 
       edges: []
