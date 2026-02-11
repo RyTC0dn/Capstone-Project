@@ -16,6 +16,7 @@ public class PrototypeShop : MonoBehaviour
     public GameObject promptButton;
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
+    private bool firstOccurence;
     private UIManager uiManager;
     [Space(20)]
 
@@ -24,6 +25,7 @@ public class PrototypeShop : MonoBehaviour
     public AudioClip noMoneyClip;
     public AudioClip purchaseClip;
     public AudioClip leaveWithoutPayClip;
+    private AudioPlayer player;
 
     public AudioSource devonAudio;
     private AudioSource playerAttackSlash;
@@ -62,6 +64,7 @@ public class PrototypeShop : MonoBehaviour
         promptButton.SetActive(false);
         devonAudio = gameObject.GetComponent<AudioSource>();
         playerAttackSlash = GameObject.Find("Character 1").GetComponent<AudioSource>();
+        player = GetComponent<AudioPlayer>(); 
 
 
         //Setting UI components to false on start

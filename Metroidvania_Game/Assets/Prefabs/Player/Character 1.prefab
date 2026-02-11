@@ -517,7 +517,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -632,7 +632,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8c935fabc431ad940825ed04c0854da4, type: 3}
   - {fileID: 8300000, guid: 6680175c56640b9458fdd4236d1eaacf, type: 3}
   - {fileID: 8300000, guid: 5c9702165d4cdd94ba8950d7b27a6f6b, type: 3}
-  currentClipIndex: 0
+  - {fileID: 8300000, guid: 5680d59a91c974e469c74437f6f0866c, type: 3}
+  - {fileID: 8300000, guid: dc38b2a2cb3e8464c85228b8c30e0415, type: 3}
+  - {fileID: 8300000, guid: f053067457bdefb43b0d00c4254f50fa, type: 3}
+  - {fileID: 8300000, guid: 345d1960aeb251a46b4c36e53730b842, type: 3}
+  - {fileID: 8300000, guid: 92863514b0036d140a0ea263f5c145bc, type: 3}
+  - {fileID: 8300000, guid: fc986f91bed71114a9942c0a7b3e4f2c, type: 3}
+  - {fileID: 8300000, guid: 8072f417f1fdae548998568d9d3ce5c3, type: 3}
+  - {fileID: 8300000, guid: 23d5adacf8f6562419640dd7078e698c, type: 3}
+  - {fileID: 8300000, guid: 9043094769d87a44e9dda4d559494359, type: 3}
 --- !u!1 &1700976960615353984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInteract: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
-  idleTimer: 30
   moveInput: {x: 0, y: 0}
   playerSpeed: 10
   horizontalSpeed: 0
@@ -2120,6 +2127,8 @@ MonoBehaviour:
   dashTimer: 0.5
   dashTime: 0
   isFacingRight: 1
+  idleTimer: 30
+  idleAccumTimer: 0
 --- !u!114 &2249839468151686403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,6 +2482,7 @@ MonoBehaviour:
   - {fileID: 6862969837351255233}
   damageFrame: {fileID: 245951893432547926}
   totalHealth: 4
+  source: {fileID: 7748115924461751084}
 --- !u!114 &7255461258010286579
 MonoBehaviour:
   m_ObjectHideFlags: 0
