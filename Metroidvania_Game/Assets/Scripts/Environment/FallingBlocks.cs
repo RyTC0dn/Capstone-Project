@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FallingBlocks : MonoBehaviour
@@ -7,15 +8,10 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private Rigidbody2D rb2D;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private IEnumerator Fall()
     {
-        
-    }
+        yield return new WaitForSeconds(fallDelay);
+        rb2D.bodyType = RigidbodyType2D.Dynamic;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
