@@ -25,6 +25,9 @@ public class PlayerHealth : MonoBehaviour
 
     PrototypePlayerMovementControls playerControls;
 
+    AudioPlayer audioPlayer;
+    AudioSource audioSource;
+
     private void Awake()
     {
 
@@ -35,7 +38,9 @@ public class PlayerHealth : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerControls = GetComponent<PrototypePlayerMovementControls>();
-        sprite = GetComponent<SpriteRenderer>();    
+        sprite = GetComponent<SpriteRenderer>(); 
+        audioSource = GetComponent<AudioSource>();
+        audioPlayer = GetComponentInChildren<AudioPlayer>();
         currentHealth = totalHealth;
     }
 
@@ -70,7 +75,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvulnerable) { return; }
         StartCoroutine(DamagerRoutine(damageAmount, source));
-
+        //Play player hurt sound effect
+        audioPlayer.PlayRandomClip(audioSource, 4, 6);
     }
 
     IEnumerator DamagerRoutine(int damageAmount, Component source)

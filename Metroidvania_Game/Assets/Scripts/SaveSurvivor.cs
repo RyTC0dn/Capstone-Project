@@ -14,7 +14,8 @@ public class SaveSurvivor : MonoBehaviour
     #region Variables
     [SerializeField] private bool playerIsNear = false;
     private bool hasBeenSaved = false;
-    private bool npcFreed = false;
+    private AudioSource source;
+    AudioPlayer audioPlayer;
 
     [Header("NPC State Data")]
     public Dialogue beforeSavingDialogue;
@@ -57,16 +58,21 @@ public class SaveSurvivor : MonoBehaviour
     public GameObject buttonPrompt;
 
     private bool isTyping = false;
+    private float typingSpeed = 0.05f;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //Initialization of variables and components    
         startPos = transform.position;
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
+        audioPlayer = GetComponentInChildren<AudioPlayer>();
+
         //Check if this NPC should be destroyed based on save data and current scene
-        if(GameManager.instance.isBlackSmithSaved )
+        if (GameManager.instance.isBlackSmithSaved )
         {
             Destroy(gameObject);
             return;
@@ -127,9 +133,10 @@ public class SaveSurvivor : MonoBehaviour
 
         if ((keyInput||buttonInput) && playerIsNear)
         {
+
             if (!firstLineShown)
             {
-                textBubble.SetActive(true);                
+                textBubble.SetActive(true);
                 firstLineShown = true;
                 conversationActive = true;
                 return; //Don't advance on first first press
@@ -137,14 +144,43 @@ public class SaveSurvivor : MonoBehaviour
             buttonPrompt.SetActive(false);
 
             AdvanceDialog();
-            StopAllCoroutines();
-            StartCoroutine(EffectTypewriter(currentDialogue.textLines[activeLineIndex].text, currentDialogue));
         }
+    }
+
+    private IEnumerator TypeSentence(string sentence)
+    {
+        isTyping = true;
+        dialogueText.text = " ";
+
+        if(source != null)
+        {
+            if(audioPlayer != null)
+            {
+                audioPlayer.PlayRandomClip(source, 0, audioPlayer.clips.Length);
+            }            
+        }
+
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            //Wait for a short duration before typing the next letter, creating a typewriter effect
+            yield return new WaitForSeconds(typingSpeed);  
+        }
+        isTyping = false;
     }
 
     void AdvanceDialog()
     {
         activeLineIndex++;
+
+        if (source != null)
+        {
+            if (audioPlayer != null)
+            {
+                audioPlayer.PlayRandomClip(source, 0, audioPlayer.clips.Length);
+                Debug.Log("Played dialogue sound effect.");
+            }
+        }
 
         //If the active index variable stays less than
         //the amount of text lines generated
