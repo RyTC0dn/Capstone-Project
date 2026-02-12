@@ -8,8 +8,8 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private float maxRocks;
     [SerializeField] private float detectionRange;
     [SerializeField] private bool detectPlayer;
-    [SerializeField] private float reInitializeTime = 2;
-    [SerializeField] private float delaySpawn = 1f;
+    private float reInitializeTime = 2f;
+    private float delaySpawnTime = 1f;
     [SerializeField] private float maxRange = 5f;
     [SerializeField] private float minRange = -5f;
     private bool wasPlayerDetected;
