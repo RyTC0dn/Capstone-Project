@@ -44,6 +44,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Vector2 startPos;
     [SerializeField]private Vector2 targetPos;
     [SerializeField]private TextMeshProUGUI bookText;
+
+    [SerializeField] private int sceneIndex;
     #endregion
 
 
@@ -67,6 +69,7 @@ public class MenuManager : MonoBehaviour
         bookIcon.SetActive(false);
         bookIcon.transform.position = startPos;
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        SceneManager.UnloadSceneAsync(sceneIndex);
     }
 
     private void Update()
