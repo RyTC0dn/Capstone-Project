@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84de545992f3c9344957d4273f650131, type: 3}
+  m_Name: Gold
+  m_EditorClassIdentifier: 
+  itemName: Gold
+  itemDescription: 'A gold coin that gives +1 to the inventory '
+  itemIcon: {fileID: 1333058526, guid: 79d1630d0fb7bc54b8e1d5ceb3509658, type: 3}
+  health: 0
+  speed: 0
+  strength: 0
+  damage: 0
+  isConsumable: 0
+  isGold: 1
+  duration: 0

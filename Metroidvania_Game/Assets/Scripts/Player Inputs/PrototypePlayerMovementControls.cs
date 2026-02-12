@@ -107,7 +107,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
                 idleAccumTimer = 0f; //Reset the accumulated timer
             }
-            Debug.Log("Player is idle. Accumulated time: " + idleAccumTimer);
+            //Debug.Log("Player is idle. Accumulated time: " + idleAccumTimer);
         }
         else
         {

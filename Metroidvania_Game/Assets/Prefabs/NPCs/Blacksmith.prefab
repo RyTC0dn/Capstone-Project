@@ -996,9 +996,6 @@ MonoBehaviour:
   floatXSpeed: 0.5
   targetPos: {x: 0, y: 0}
   fallingSpeed: 0
-  npcSavedClips:
-  - {fileID: 8300000, guid: 7db11a9b3086b724f93278215458285c, type: 3}
-  - {fileID: 8300000, guid: f8097e6cb90d0c94d964778685072fa5, type: 3}
   buttonPrompt: {fileID: 3041088372839659987}
 --- !u!95 &862895010000645107
 Animator:
@@ -1034,7 +1031,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

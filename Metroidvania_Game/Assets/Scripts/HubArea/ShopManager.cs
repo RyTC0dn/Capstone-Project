@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PrototypeShop : MonoBehaviour
+public class ShopManager : MonoBehaviour
 {
     /// <summary>
     /// All UI stuff that pertains to the player UI such as, coin, weapon upgrades, buying axe 
@@ -13,7 +13,6 @@ public class PrototypeShop : MonoBehaviour
     /// </summary>
 
     [Header("General Shop Setup")]
-    public GameObject promptButton;
     PrototypePlayerAttack playerAttack;
     public GameObject shopUI;
     private bool firstOccurence;
@@ -21,37 +20,44 @@ public class PrototypeShop : MonoBehaviour
     [Space(20)]
 
     [Header("Audio Clips")]
-    public AudioClip[] firstReturnClip;
-    public AudioClip noMoneyClip;
-    public AudioClip purchaseClip;
-    public AudioClip leaveWithoutPayClip;
+    [SerializeField]private int firstOccurrenceElement;
+    [SerializeField] private int regularOccurrenceElement;
+    [SerializeField]private int noMoneyElement;
+    [SerializeField] private int purchaseElement;
+    [SerializeField] private int leaveWithoutPayElement;
     private AudioPlayer player;
+    private bool firstVisit = false;
+    [Tooltip("Toggle on if not using regular occurence element")]
+    [SerializeField]private bool notUsed = false;
 
-    public AudioSource devonAudio;
+    public AudioSource audioSource;
     private AudioSource playerAttackSlash;
     [Space(10)]
 
 
     [Header("Game Events")]
     public GameEvent buyEvent; //For whenever the player buys something
-    public GameEvent axeBoughtEvent; //
-    public GameEvent upgradeBoughtEvent; //Checking if upgrade bought to update UI
+    public GameEvent secondItemEvent; //
+    public GameEvent firstItemEvent; //Checking if upgrade bought to update UI
 
     [Header("Shop Prices")]
     ///Shop prices
     ///May turn to using arrays to store prices as to not clutter too much
-    public int upgradePrice = 8;
-    public int axePrice = 2;
+    public int upgradePrice;
+    public int axePrice;
+    public int healthPrice;
+    public int strengthPrice;
 
     public bool isNearShop = false;
     private bool isShopping = false;
     [SerializeField]private bool boughtAxe = false;
     [SerializeField]private bool boughtUpgrade = false;
+    [SerializeField] private bool boughtHealth = false;
     public SceneInfo sceneInfo;
 
     [Header("UI Components")]
-    public Button axeButton;
-    public Button upgradeButton;
+    public Button secondItemButton;
+    public Button firstItemButton;
     public GameObject shopFirst;
     public GameObject shopNext;
 
@@ -61,8 +67,7 @@ public class PrototypeShop : MonoBehaviour
         //Initialize the components
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         uiManager = FindAnyObjectByType<UIManager>();
-        promptButton.SetActive(false);
-        devonAudio = gameObject.GetComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         playerAttackSlash = GameObject.Find("Character 1").GetComponent<AudioSource>();
         player = GetComponent<AudioPlayer>(); 
 
@@ -75,11 +80,11 @@ public class PrototypeShop : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("AxeBought", 0) == 1)
         {
-           axeButton.interactable = false;
+           secondItemButton.interactable = false;
         }
-        if(PlayerPrefs.GetInt("UpgradeLimit", 0) == 1)
+        else if(PlayerPrefs.GetInt("UpgradeLimit", 0) == 1)
         {
-            upgradeButton.interactable = false;
+            firstItemButton.interactable = false;
         }
 
         //Close shop shortcut
@@ -93,56 +98,59 @@ public class PrototypeShop : MonoBehaviour
     {
         if (data is bool isPressed)
         {
-            if(isPressed && isNearShop && GameManager.instance.isBlackSmithSaved)
+            if (isPressed && isNearShop && (GameManager.instance.isBlackSmithSaved || GameManager.instance.isPotionMakerSaved))
             {
                 //Set the shop ui object to active when function is called
-                PlayRandomClip(firstReturnClip);
+                if (!firstOccurence)
+                    player.PlayAudio(firstOccurrenceElement, audioSource);
+                else
+                {
+                    if (!notUsed)
+                    {
+                        player.PlayAudio(regularOccurrenceElement, audioSource);
+                        firstOccurence = true;
+                    }
+                }
+                    
 
                 shopUI.SetActive(true);
-                promptButton.SetActive(false);
 
                 //Enable event system once
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(shopFirst);
-                
+
                 playerAttack.enabled = false;
                 playerAttackSlash.enabled = false;
                 isShopping = true;
-                GameManager.instance.StateSwitch(GameStates.Pause);               
+                GameManager.instance.StateSwitch(GameStates.Pause);
             }
         }      
     }
 
-    private void PlayRandomClip(AudioClip[] clips)
-    {
-        if (clips == null || clips.Length == 0) return;
-
-        AudioClip clip = clips[Random.Range(0, clips.Length)];
-
-        devonAudio.Stop();
-        devonAudio.PlayOneShot(clip);
-    }
-
-    public void BuySwordUpgrade()
+    /// <summary>
+    /// This is where the purchase logic for each item for the Blacksmith will stay
+    /// </summary>
+    #region Blacksmith Items
+    public void BuySwordUpgrade() //Buy sword strength upgrade function
     {
         //Check if the player has enough coins before buying
         int amount = GameManager.instance.currentCoin;
         int upgradeCap = GameManager.instance.currentUpgrade;
         if(amount >= upgradePrice && upgradeCap < 5)
         {
-            devonAudio.PlayOneShot(purchaseClip);
+            player.PlayAudio(purchaseElement, audioSource);
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
             buyEvent.Raise(this, upgradePrice);            
-            upgradeBoughtEvent.Raise(this, boughtUpgrade);
+            firstItemEvent.Raise(this, boughtUpgrade);
         }
         else
         {
             Debug.Log("Not enough coins");
-            devonAudio.PlayOneShot(noMoneyClip);
+            player.PlayAudio(noMoneyElement, audioSource);
         }
 
-        if(upgradeCap >= 5)
+        if(upgradeCap >= 5) //Limit 
         {
             PlayerPrefs.SetInt("UpgradeLimit", 1);
             PlayerPrefs.Save();
@@ -155,11 +163,12 @@ public class PrototypeShop : MonoBehaviour
         int amount = GameManager.instance.currentCoin;
         if (amount >= axePrice)
         {
-            devonAudio.PlayOneShot(purchaseClip);
+            //If purchased, play audio cue
+            player.PlayAudio(purchaseElement, audioSource);
             buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             sceneInfo.isAxeBought = true;
-            axeBoughtEvent.Raise(this, true);
+            secondItemEvent.Raise(this, true);
 
             EventSystem.current.SetSelectedGameObject(shopNext);
 
@@ -168,9 +177,31 @@ public class PrototypeShop : MonoBehaviour
         }
         else
         {
-            devonAudio.PlayOneShot(noMoneyClip);
+            player.PlayAudio(noMoneyElement, audioSource);
         }
     }
+    #endregion
+
+    /// <summary>
+    /// This is where the purchase logic for each item in the Potion shop are held
+    /// </summary>
+    #region Alchemist Items
+    public void BuyHealthPotion()
+    {
+        int amount = GameManager.instance.currentCoin;
+        if(amount >= healthPrice)
+        {
+            player.PlayAudio(purchaseElement, audioSource);
+            buyEvent.Raise(this, healthPrice);
+
+            sceneInfo.isHPBought = true;
+        }
+        else if(amount <= 0)
+        {
+            player.PlayAudio(noMoneyElement, audioSource);
+        }
+    }
+    #endregion
 
     public void CloseShop()
     {
@@ -184,7 +215,12 @@ public class PrototypeShop : MonoBehaviour
         if(!boughtAxe && !boughtUpgrade)
         {
             //Play audio clip if player hasn't bought anything from shop
-            devonAudio.PlayOneShot(leaveWithoutPayClip);
+            player.PlayAudio(leaveWithoutPayElement, audioSource);
+        }
+        else if (!boughtHealth)
+        {
+            //Play audio clip if player hasn't bought anything from shop
+            player.PlayAudio(leaveWithoutPayElement, audioSource);
         }
         else
         {
@@ -204,12 +240,7 @@ public class PrototypeShop : MonoBehaviour
     { 
         if (collision.CompareTag("Player"))
         {  
-            isNearShop = true;
-            if(isNearShop && GameManager.instance.isBlackSmithSaved) //Also check to see if the npc has been saved
-            {
-                promptButton.SetActive(true);
-            }
- 
+            isNearShop = true; 
         }
     }
 
@@ -219,11 +250,6 @@ public class PrototypeShop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNearShop = false;
-            if (!isNearShop)
-            {
-                promptButton.SetActive(true);
-            }
-
         }
     }
 }

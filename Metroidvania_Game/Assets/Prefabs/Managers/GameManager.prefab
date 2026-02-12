@@ -109,6 +109,8 @@ MonoBehaviour:
   playerSlash: {fileID: 2100000, guid: 7e2e93e5d515a73449b19b84a9dd6d90, type: 2}
   currentCoin: 0
   currentUpgrade: 0
+  quantity: 0
+  sendQuantity: {fileID: 11400000, guid: 6a47ef2525deb8c4898f625388940089, type: 2}
 --- !u!114 &-2324710628687831382
 MonoBehaviour:
   m_ObjectHideFlags: 0
