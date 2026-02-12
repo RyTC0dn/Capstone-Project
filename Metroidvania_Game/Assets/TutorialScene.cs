@@ -7,21 +7,23 @@ using UnityEngine.InputSystem;
 public class TutorialScene : MonoBehaviour
 {
     public GameObject tutorialSpawn;
+    public GameObject playerTutorial;
+    bool tutorialStart = false;
 
 
     private void Awake()
     {
-        TutorialManager.instance.LoadTutorialSpawn(tutorialSpawn);
+        playerTutorial.SetActive(false);
     }
 
     private void Update()
     {
-        bool input = Keyboard.current?.pKey.isPressed ?? false;
+        EnablePlayer();        
+    }
 
-        if (input)
-        {
-            TutorialManager.instance.StartTutorial(tutorialSpawn);
-        }
+    private void EnablePlayer()
+    {
+        playerTutorial.SetActive(tutorialStart);
     }
 
 }
