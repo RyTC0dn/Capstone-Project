@@ -8,7 +8,10 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private float maxRocks;
     [SerializeField] private float detectionRange;
     [SerializeField] private bool detectPlayer;
-    private float reInitializeTime = 2;
+    [SerializeField] private float reInitializeTime = 2;
+    [SerializeField] private float delaySpawn = 1f;
+    [SerializeField] private float maxRange = 5f;
+    [SerializeField] private float minRange = -5f;
     private bool wasPlayerDetected;
 
 
@@ -57,7 +60,7 @@ public class FallingBlocks : MonoBehaviour
         {
             //If the spawn point is not null, use its position, otherwise use the current position
             Vector2 offset = (spawnPoint != null) ? spawnPoint.position : transform.position;
-            offset.x += Random.Range(-5f, 5f);
+            offset.x += Random.Range(minRange, maxRange);
 
             Quaternion angle = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
 
