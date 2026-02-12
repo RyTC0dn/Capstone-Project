@@ -13,6 +13,7 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private float maxRange = 5f;
     [SerializeField] private float minRange = -5f;
     private bool wasPlayerDetected;
+    private bool hasDelayTimerStarted;
 
 
 
@@ -47,7 +48,17 @@ public class FallingBlocks : MonoBehaviour
 
         if (detectPlayer)
         {
-            SpawnRocks();
+            hasDelayTimerStarted = true;
+        }
+        else if (hasDelayTimerStarted)
+        {
+            delaySpawnTime -= Time.deltaTime;
+            if (delaySpawnTime <= 0f)
+            {
+                SpawnRocks();
+                delaySpawnTime = 1f;
+                hasDelayTimerStarted = false;
+            }
         }
     }
 
