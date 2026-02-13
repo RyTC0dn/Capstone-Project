@@ -15,6 +15,8 @@ public class FallingBlocks : MonoBehaviour
     private bool wasPlayerDetected;
     private bool hasDelayTimerStarted;
 
+    public Animator debrisAnim;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +35,7 @@ public class FallingBlocks : MonoBehaviour
             if (reInitializeTime <= 0f)
             {
                 wasPlayerDetected = false;
+                debrisAnim.SetBool("playerUnderRay", false);
                 reInitializeTime = 2f; // Reset the timer
             }
         }
@@ -49,6 +52,7 @@ public class FallingBlocks : MonoBehaviour
         if (detectPlayer)
         {
             hasDelayTimerStarted = true;
+            debrisAnim.SetBool("playerUnderRay", true);
         }
         else if (hasDelayTimerStarted)
         {
