@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
     public GameObject equipmentMenu;
     public GameObject inventoryMenu;
     public GameObject questMenu;
+    public GameObject tutorialMenu;
     private PrototypePlayerAttack playerAttack; //So I can disable attack when menu is open
     [Space(20)]
 
@@ -44,6 +45,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Vector2 startPos;
     [SerializeField]private Vector2 targetPos;
     [SerializeField]private TextMeshProUGUI bookText;
+
+    [SerializeField] private int sceneIndex;
     #endregion
 
 
@@ -67,6 +70,7 @@ public class MenuManager : MonoBehaviour
         bookIcon.SetActive(false);
         bookIcon.transform.position = startPos;
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        SceneManager.UnloadSceneAsync(sceneIndex);
     }
 
     private void Update()
@@ -200,6 +204,7 @@ public class MenuManager : MonoBehaviour
 
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
 
         menuAudio.PlayOneShot(menuClips[0]);
     }
@@ -212,6 +217,7 @@ public class MenuManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuFirst[1]);
 
         questMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
 
         menuAudio.PlayOneShot(menuClips[0]);
     }
@@ -223,6 +229,20 @@ public class MenuManager : MonoBehaviour
         questMenu.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(menuFirst[2]);
+
+        tutorialMenu.SetActive(false);
+
+        menuAudio.PlayOneShot(menuClips[0]);
+    }
+
+    public void TutorialOpen()
+    {
+        equipmentMenu.SetActive(false);
+        inventoryMenu.SetActive(false);
+        questMenu.SetActive(false);
+        tutorialMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(menuFirst[3]);
 
         menuAudio.PlayOneShot(menuClips[0]);
     }
@@ -241,6 +261,8 @@ public class MenuManager : MonoBehaviour
             inventoryMenu.SetActive(false);
         else if(questMenu.activeInHierarchy)
             questMenu.SetActive(false);
+        else if(tutorialMenu.activeInHierarchy)
+            tutorialMenu.SetActive(false);
         else
         {
             //If no menus are open 

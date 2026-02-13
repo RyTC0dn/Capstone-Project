@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 6135753101997528374}
   - component: {fileID: 3572007441248159807}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,6 +247,8 @@ PlayableDirector:
   - key: {fileID: -7188980992959771530, guid: 483a334a193e12847bfdcfa7cfeb6e3e, type: 2}
     value: {fileID: 2012073073372510288}
   - key: {fileID: 4945509000789179191, guid: 483a334a193e12847bfdcfa7cfeb6e3e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4880879463714859174, guid: 483a334a193e12847bfdcfa7cfeb6e3e, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
