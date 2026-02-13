@@ -8,7 +8,7 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private float maxRocks;
     [SerializeField] private float detectionRange;
     [SerializeField] private bool detectPlayer;
-    private float reInitializeTime = 2f;
+    private float reInitializeTime = 5f;
     private float delaySpawnTime = 1f;
     [SerializeField] private float maxRange = 5f;
     [SerializeField] private float minRange = -5f;
@@ -36,7 +36,7 @@ public class FallingBlocks : MonoBehaviour
             {
                 wasPlayerDetected = false;
                 debrisAnim.SetBool("playerUnderRay", false);
-                reInitializeTime = 2f; // Reset the timer
+                reInitializeTime = 5f; // Reset the timer
             }
         }
     }
