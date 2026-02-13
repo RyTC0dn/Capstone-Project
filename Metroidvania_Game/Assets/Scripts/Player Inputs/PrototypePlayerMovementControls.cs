@@ -12,6 +12,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("General input variables")]
     public GameEvent playerInteract;
 
+
     Player_Controller playerController;
     [HideInInspector] public Vector2 moveInput;
      
@@ -37,6 +38,14 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     [Header("Sprite Settings")]    
     [HideInInspector] public bool isFacingRight = true;
+    [Space(10)]
+
+    [Header("Idle Audio")]
+    [SerializeField] private float idleTimer; //Timer for idle audio, manually set in inspector
+    private bool isIdle = false;
+    AudioPlayer audioPlayer;
+    AudioSource audioSource;
+    [SerializeField] private float idleAccumTimer = 0f;  
 
     private void Awake()
     {
@@ -49,6 +58,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         //Initialize the rigidbody variables
         rb2D = GetComponent<Rigidbody2D>();
+        audioPlayer = GetComponentInChildren<AudioPlayer>();
+        audioSource = GetComponent<AudioSource>();
 
         //Setting the dash time to timer
         dashTime = dashTimer;
@@ -78,8 +89,35 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         Move(moveInput.x);
         InteractEvent();
-
     }
+
+    private void Update()
+    {
+        //Idle Audio
+        if (moveInput.x == 0)
+        {
+            idleAccumTimer += Time.deltaTime; //Add 1 second by delta time
+
+            if(!isIdle && idleAccumTimer >= idleTimer)
+            {
+                isIdle = true;
+                //Play a random clip from the audio player, using the range of 14 to 16 for the clip index
+                if (audioPlayer != null && audioSource != null)
+                    audioPlayer.PlayRandomClip(audioSource, 14, 16);
+
+                idleAccumTimer = 0f; //Reset the accumulated timer
+            }
+            //Debug.Log("Player is idle. Accumulated time: " + idleAccumTimer);
+        }
+        else
+        {
+            idleAccumTimer = 0f; //Reset the accumulated timer if the player is moving
+            if(isIdle)
+                isIdle = false; //Reset the idle state if the player starts moving
+        }
+    }
+
+
 
     private void Move(float h)
     {

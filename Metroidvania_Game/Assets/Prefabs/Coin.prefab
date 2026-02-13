@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 140054830298566490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.5860615, y: 1.8396066, z: 0}
+  m_LocalPosition: {x: 9.586015, y: 1.8459115, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -124,7 +124,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -145,6 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsCollected: 0
   coinCollection: {fileID: 11400000, guid: ddc47c283e2827c4eb3c46d47d97f4db, type: 2}
+  coinType: 0
+  pullRadius: 5
+  pullSpeed: 2.5
+  throwForce: 5
+  timeInAir: 3
 --- !u!95 &-1381410457892553643
 Animator:
   serializedVersion: 7

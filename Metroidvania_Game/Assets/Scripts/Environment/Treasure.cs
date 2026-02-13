@@ -1,6 +1,8 @@
+using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public enum TreasureType
 {
@@ -13,10 +15,12 @@ public class Treasure : MonoBehaviour
 {
     [Header("Treasure Settings")]
     [SerializeField] private int goldAmount = 100;
-    public int GoldAmount => goldAmount;
     public TreasureType treasureType;
     [SerializeField]private GameObject treasure;
     [SerializeField] private GameObject buttonPrompt;
+    private List<GameObject> spawnedTreasures = new List<GameObject>();
+
+    AudioPlayer audioPlayer;
 
     private Animator animator;
     [SerializeField] private float waitTime;
@@ -32,7 +36,9 @@ public class Treasure : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audioPlayer = FindFirstObjectByType<AudioPlayer>();
         buttonPrompt.SetActive(false);
+        treasure.GetComponent<CoinCollection>().coinType = CoinType.Treasure;
     }
 
     private void Update()
@@ -82,22 +88,19 @@ public class Treasure : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
+        audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9); //Play random chest opening sound effect
+
         if (treasure != null)
         {
-            GameObject spawned = Instantiate(treasure, transform.position, Quaternion.identity);
-
-            Rigidbody2D rb = spawned.GetComponent<Rigidbody2D>();
-
-            if (rb != null)
+            for(int i = 0; i < goldAmount; i++)
             {
-                //Randomize direction horizontally and give upward force
-                Vector2 direction = new Vector2(Random.Range(-1, 1), 1).normalized;
-                rb.AddForce(direction * throwForce, ForceMode2D.Impulse);
-            }
-            else
-            {
-                //If the prefab has no rigidbody, give a simple upward offset
-                spawned.transform.position += Vector3.up * 0.5f;
+                Vector2 spawnPos = (Vector2)transform.position + new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.5f, 1f));
+
+                GameObject spawned = Instantiate(treasure, spawnPos, Quaternion.identity);
+
+                spawnedTreasures.Add(spawned);
+
+                spawned.name = "Coin" + i; //Name the spawned coins for easier debugging
             }
         }
         else
@@ -106,6 +109,5 @@ public class Treasure : MonoBehaviour
         }
         if(buttonPrompt != null) buttonPrompt.SetActive(false);
         playerDetected = false;
-        Debug.Log("Throw Coins!");
     }
 }

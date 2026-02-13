@@ -7,4 +7,5 @@ public class SceneInfo : ScriptableObject
     public bool isShieldPickedUp = false;
     public bool isWallBreakPickedUp = false;
     public bool isAxeBought = false;
+    public bool isHPBought = false;
 }

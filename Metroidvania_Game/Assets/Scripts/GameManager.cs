@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI weaponUpgradeText;
     public Material playerSlash;
 
-    private int totalCoin = 0;
     public int currentCoin;
     private int totalUpgradeLevel = 0;
     public int currentUpgrade;
@@ -85,15 +84,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            StateSwitch(GameStates.Pause);
-            Debug.Log("Game is paused");
-        }
-    }
-
     /// <summary>
     /// All functions below are meant for the player UI
     /// </summary>
@@ -104,7 +94,7 @@ public class GameManager : MonoBehaviour
     }
     public void UpdateCoins(Component sender, object data)
     {
-        if (data is int && sender is PrototypeShop)
+        if (data is int && sender is ShopManager)
         {
             int amount = (int)data;
             if (currentCoin > 0)

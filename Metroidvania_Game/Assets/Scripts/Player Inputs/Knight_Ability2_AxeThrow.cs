@@ -19,7 +19,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
 
 
     PrototypePlayerMovementControls playerController;
-    PrototypeShop shop;
+    ShopManager shop;
     public SceneInfo sceneInfo;
     [SerializeField]private GameObject axeIcon;
 
@@ -28,7 +28,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
-        shop = FindAnyObjectByType<PrototypeShop>();
+        shop = FindAnyObjectByType<ShopManager>();
         delayTillThrow = throwRate;
 
         axeIcon.SetActive(false);
