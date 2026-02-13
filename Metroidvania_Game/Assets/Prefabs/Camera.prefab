@@ -13,14 +13,13 @@ GameObject:
   - component: {fileID: 7474606769541334327}
   - component: {fileID: 7432170646137840689}
   - component: {fileID: 8592348566288224466}
-  - component: {fileID: 7668865146611657064}
   - component: {fileID: 2894325880004478746}
   - component: {fileID: 1571669507062687982}
   - component: {fileID: 950173914095005516}
   - component: {fileID: 7554481973556601656}
   - component: {fileID: 3431958915907984644}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +100,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15113568464040707}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &7432170646137840689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,21 +177,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!114 &7668865146611657064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15113568464040707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45f9c56d68463d47b8dee1e2e5ad625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
-  offsetY: 2
-  currentRoom: 0
 --- !u!95 &2894325880004478746
 Animator:
   serializedVersion: 7
@@ -247,6 +231,8 @@ PlayableDirector:
   - key: {fileID: -7188980992959771530, guid: 483a334a193e12847bfdcfa7cfeb6e3e, type: 2}
     value: {fileID: 3936638784108804361}
   - key: {fileID: 4945509000789179191, guid: 483a334a193e12847bfdcfa7cfeb6e3e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4880879463714859174, guid: 483a334a193e12847bfdcfa7cfeb6e3e, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
