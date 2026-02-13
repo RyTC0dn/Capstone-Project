@@ -20,6 +20,8 @@ public class Treasure : MonoBehaviour
     [SerializeField] private GameObject buttonPrompt;
     private List<GameObject> spawnedTreasures = new List<GameObject>();
 
+    AudioPlayer audioPlayer;
+
     private Animator animator;
     [SerializeField] private float waitTime;
     private bool isOpened = false;
@@ -34,6 +36,7 @@ public class Treasure : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audioPlayer = FindFirstObjectByType<AudioPlayer>();
         buttonPrompt.SetActive(false);
         treasure.GetComponent<CoinCollection>().coinType = CoinType.Treasure;
     }
@@ -84,6 +87,8 @@ public class Treasure : MonoBehaviour
         }
 
         yield return new WaitForSeconds(waitTime);
+
+        audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9); //Play random chest opening sound effect
 
         if (treasure != null)
         {

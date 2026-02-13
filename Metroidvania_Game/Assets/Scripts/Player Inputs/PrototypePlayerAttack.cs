@@ -15,7 +15,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// This script will be for activating animation and control for the attack
     /// but the actual damage function will be on PlayerWeapon
     /// </summary>
-
+    #region Attack Variables
     [Header("Weapon Setup")]
     public Collider2D[] weaponColliders; // To track which collider to activate for directional attacks
     public float attackRate = 1f;    // attacks per second                     
@@ -42,12 +42,13 @@ public class PrototypePlayerAttack : MonoBehaviour
     public PlayerCharacter character;
 
     private AudioSource swordSlashAudio;
-    /*[SerializeField] */
+    AudioPlayer audioPlayer;
     private Animator animator;
 
     Player_Controller playerControl;
 
     public ParticleSystem slashVFX;
+    #endregion
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class PrototypePlayerAttack : MonoBehaviour
         playerMovement = GetComponentInParent<PrototypePlayerMovementControls>();
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        audioPlayer = GetComponentInChildren<AudioPlayer>();
 
         for (int i = 0; i < weaponColliders.Length; i++)
         {
@@ -190,6 +192,8 @@ public class PrototypePlayerAttack : MonoBehaviour
                 //Pass in direction for directional attacks (if needed)
                 animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
                 swordSlashAudio.Play();
+                //Play knight audio
+                audioPlayer.PlayRandomClip(swordSlashAudio, 0, 3);
                 break;
             case PlayerCharacter.Priest:
                 PriestStandardAttack();

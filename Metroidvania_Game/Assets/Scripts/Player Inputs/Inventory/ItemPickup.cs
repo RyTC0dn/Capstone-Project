@@ -12,6 +12,7 @@ public class ItemPickup : MonoBehaviour
 
     private SpriteRenderer sp;
     private Collider2D itemCollider;
+    AudioPlayer audioPlayer;
 
     public SceneInfo sceneInfo;
     private int id;
@@ -20,6 +21,8 @@ public class ItemPickup : MonoBehaviour
     {
         sp = GetComponent<SpriteRenderer>();    
         itemCollider = GetComponent<Collider2D>();
+        audioPlayer = FindFirstObjectByType<AudioPlayer>();
+
         if(sceneInfo.isShieldPickedUp && gameObject.name == "ShieldPickup")
             Destroy(gameObject);
         if (sceneInfo.isWallBreakPickedUp && gameObject.name == "WallBreakPickup")
@@ -39,6 +42,8 @@ public class ItemPickup : MonoBehaviour
 
             abilityPickup.Raise(this, hasPickedUpShield);
 
+            audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9); //Play random pickup sound effect
+
             sp.enabled = false;
             itemCollider.enabled = false;
             Destroy(gameObject, 0.1f); //Destroy after a short delay to allow event to process
@@ -50,6 +55,8 @@ public class ItemPickup : MonoBehaviour
 
             //Game events
             abilityPickup.Raise(this, hasPickedUpWallBreak);
+
+            audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9); //Play random pickup sound effect
 
             sp.enabled = false;
             itemCollider.enabled = false;

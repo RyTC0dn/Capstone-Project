@@ -4,8 +4,6 @@ using UnityEngine.UI;
 [System.Serializable]
 public struct Line
 {
-    public NPC npc;
-
     [TextArea(2, 5)]
     public string text;
 }
@@ -14,4 +12,5 @@ public struct Line
 public class Dialogue : ScriptableObject
 {
     public Line[] textLines;
+    public string npcName;
 }

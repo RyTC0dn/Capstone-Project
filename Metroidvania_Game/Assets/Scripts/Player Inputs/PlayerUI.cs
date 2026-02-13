@@ -18,6 +18,8 @@ public class PlayerUI : MonoBehaviour
     public GameObject damageFrame;
 
     [SerializeField]private int totalHealth = 4;
+    AudioPlayer player;
+    [SerializeField]private AudioSource source;
 
 
     private void Awake()
@@ -29,7 +31,7 @@ public class PlayerUI : MonoBehaviour
             animator.enabled = false;
         }
         damageFrame.SetActive(false);
-        
+        player = GetComponentInChildren<AudioPlayer>();
     }
 
     private void SetHealth(int health)
@@ -70,6 +72,7 @@ public class PlayerUI : MonoBehaviour
 
                 damageFrame.SetActive(true);
                 StartCoroutine(DelayAnimation(damageFrame, 1.5f));
+                player.PlayRandomClip(source, 17, 21);
 
                 remainingHealth -= 1;
             }
@@ -78,6 +81,10 @@ public class PlayerUI : MonoBehaviour
                 //When no health left > hide icon
                 animator.enabled = true;
                 animator.Play("ClockBreak");
+                if (player.clips != null)
+                {
+                    player.PlayRandomClip(source, 22, 25);
+                }
                 StartCoroutine(Delay(image, spriteRenderer, 1.5f));                
             }
         }
