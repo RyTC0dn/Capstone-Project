@@ -8,8 +8,14 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private float maxRocks;
     [SerializeField] private float detectionRange;
     [SerializeField] private bool detectPlayer;
-    private float reInitializeTime = 2;
+    private float reInitializeTime = 5f;
+    private float delaySpawnTime = 1f;
+    [SerializeField] private float maxRange = 5f;
+    [SerializeField] private float minRange = -5f;
     private bool wasPlayerDetected;
+    private bool hasDelayTimerStarted;
+
+    public Animator debrisAnim;
 
 
 
@@ -29,7 +35,8 @@ public class FallingBlocks : MonoBehaviour
             if (reInitializeTime <= 0f)
             {
                 wasPlayerDetected = false;
-                reInitializeTime = 2f; // Reset the timer
+                debrisAnim.SetBool("playerUnderRay", false);
+                reInitializeTime = 5f; // Reset the timer
             }
         }
     }
@@ -44,7 +51,18 @@ public class FallingBlocks : MonoBehaviour
 
         if (detectPlayer)
         {
-            SpawnRocks();
+            hasDelayTimerStarted = true;
+            debrisAnim.SetBool("playerUnderRay", true);
+        }
+        else if (hasDelayTimerStarted)
+        {
+            delaySpawnTime -= Time.deltaTime;
+            if (delaySpawnTime <= 0f)
+            {
+                SpawnRocks();
+                delaySpawnTime = 1f;
+                hasDelayTimerStarted = false;
+            }
         }
     }
 
@@ -57,7 +75,7 @@ public class FallingBlocks : MonoBehaviour
         {
             //If the spawn point is not null, use its position, otherwise use the current position
             Vector2 offset = (spawnPoint != null) ? spawnPoint.position : transform.position;
-            offset.x += Random.Range(-5f, 5f);
+            offset.x += Random.Range(minRange, maxRange);
 
             Quaternion angle = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
 
