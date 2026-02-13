@@ -625,6 +625,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8072f417f1fdae548998568d9d3ce5c3, type: 3}
   - {fileID: 8300000, guid: 23d5adacf8f6562419640dd7078e698c, type: 3}
   - {fileID: 8300000, guid: 9043094769d87a44e9dda4d559494359, type: 3}
+  - {fileID: 8300000, guid: 2b43d6287433f4045a0d2d2b5a150037, type: 3}
 --- !u!1 &1700976960615353984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,6 +2172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInteract: {fileID: 11400000, guid: abb9776af42e8f14d8ffa443f1312102, type: 2}
+  movementType: 0
   moveInput: {x: 0, y: 0}
   playerSpeed: 10
   horizontalSpeed: 0

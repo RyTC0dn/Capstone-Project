@@ -13,7 +13,7 @@ public class TutorialManager : MonoBehaviour
     private Sprite image;
     [SerializeField] private int sceneIndex;
     public bool readyToStart = false;
-    public PlayableDirector tutorialStartTimeline;
+    public Animator animator;
     private float animTime;
 
     public List<TutorialScene> tutorials = new List<TutorialScene>();
@@ -34,11 +34,6 @@ public class TutorialManager : MonoBehaviour
         screen.SetActive(false);
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
-
-    //private IEnumerator StartTutorial()
-    //{
-
-    //}
 
 
 }

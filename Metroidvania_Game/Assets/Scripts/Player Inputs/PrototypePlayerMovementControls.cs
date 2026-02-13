@@ -3,14 +3,18 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// This script is in need of revision
-/// </summary>
+public enum MovementType
+{
+    Scaled,
+    Unscaled
+}
 
 public class PrototypePlayerMovementControls : MonoBehaviour
 {
     [Header("General input variables")]
     public GameEvent playerInteract;
+    public MovementType movementType;
+    private bool unscaledTime = false;
 
 
     Player_Controller playerController;
@@ -45,16 +49,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private bool isIdle = false;
     AudioPlayer audioPlayer;
     AudioSource audioSource;
-    [SerializeField] private float idleAccumTimer = 0f;  
+    [SerializeField] private float idleAccumTimer = 0f;
 
-    private void Awake()
-    {
-        ////Enable player controller
-        //playerController = PlayerInputHub.controls;
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+        void Start()
     {
         //Initialize the rigidbody variables
         rb2D = GetComponent<Rigidbody2D>();
@@ -83,16 +82,20 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     //Is good for physics calculations
     private void FixedUpdate()
     {
+        MoveScaled(moveInput.x);
+        //if (!unscaledTime)
+        //{         
+            
+        //}
 
-        //Set the movement function
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-
-        Move(moveInput.x);
         InteractEvent();
     }
 
     private void Update()
     {
+        //Set the movement function
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+
         //Idle Audio
         if (moveInput.x == 0)
         {
@@ -115,11 +118,28 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             if(isIdle)
                 isIdle = false; //Reset the idle state if the player starts moving
         }
+
+        //if (unscaledTime)
+        //{
+        //    MoveUnscaled(moveInput.x);
+        //}
+
+        switch (movementType)
+        {
+            case MovementType.Scaled:
+                unscaledTime = false;
+                break;
+            case MovementType.Unscaled:
+                unscaledTime= true;
+                break;
+            default:
+                break;
+        }
     }
 
 
 
-    private void Move(float h)
+    private void MoveScaled(float h)
     {
 
         rb2D.linearVelocity = new Vector2(h * playerSpeed, rb2D.linearVelocity.y);
@@ -137,7 +157,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
-        //animator.SetBool("isRunning", h != 0);
         animator.SetFloat("horizontal", h);
 
         ////Ternary if statement
@@ -158,7 +177,29 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //}
     }
 
-    //Only call this function when the player lives equal 0
+    private void MoveUnscaled(float h)
+    {
+        float dt = Time.unscaledDeltaTime;
+
+        //Move by modifying transform when dealing with unscaled time
+        Vector3 pos = transform.position;
+        pos.x += h * playerSpeed * dt;
+        transform.position = pos;
+
+        ///The entire object is flipped based on direction
+        ///to ensure that the attack collider will always be in front of the player
+        if (h > 0)
+        {
+            isFacingRight = true;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (h < 0)
+        {
+            isFacingRight = false;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        animator.SetFloat("horizontal", h);
+    }
     
 
     private void Dash(float hSpeed)
