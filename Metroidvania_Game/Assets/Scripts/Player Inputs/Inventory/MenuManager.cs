@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour
     public GameObject equipmentMenu;
     public GameObject inventoryMenu;
     public GameObject questMenu;
-    private PrototypePlayerAttack playerAttack; //So I can disable attack when menu is open
+    private Player_Attack_Knight playerAttack; //So I can disable attack when menu is open
     [Space(20)]
 
     [Header("Book Icon Indicator1")]
@@ -66,7 +66,7 @@ public class MenuManager : MonoBehaviour
 
         bookIcon.SetActive(false);
         bookIcon.transform.position = startPos;
-        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        playerAttack = FindFirstObjectByType<Player_Attack_Knight>();
     }
 
     private void Update()

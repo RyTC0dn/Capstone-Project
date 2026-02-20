@@ -34,7 +34,7 @@ public class Elevator : MonoBehaviour
 
     public TextMeshProUGUI inputText;
 
-    private PrototypePlayerAttack playerAttack;
+    private Player_Attack_Knight playerAttack;
 
     public float buttonSpacing = -50f;
     private bool isNear = false;
@@ -43,7 +43,7 @@ public class Elevator : MonoBehaviour
     {
         elevatorAnimation = GetComponent<Animator>();
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
-        playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+        playerAttack = FindAnyObjectByType<Player_Attack_Knight>();
 
 
         //Disable all buttons at start

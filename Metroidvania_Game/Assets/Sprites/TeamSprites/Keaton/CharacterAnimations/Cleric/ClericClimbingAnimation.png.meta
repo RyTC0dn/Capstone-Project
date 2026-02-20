@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: fe2e37b57f1a10a4bb483a178123386f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4262193963834750906
+    second: ClericClimbingAnimation_0
+  - first:
+      213: 2648093646454814204
+    second: ClericClimbingAnimation_1
+  - first:
+      213: -1556349452951964650
+    second: ClericClimbingAnimation_2
+  - first:
+      213: 8354306954734420528
+    second: ClericClimbingAnimation_3
+  - first:
+      213: -711066517711804404
+    second: ClericClimbingAnimation_4
+  - first:
+      213: -7777824177030978439
+    second: ClericClimbingAnimation_5
+  - first:
+      213: -1038664921334213973
+    second: ClericClimbingAnimation_6
+  - first:
+      213: 1415464448802739511
+    second: ClericClimbingAnimation_7
+  - first:
+      213: 7300395381692664060
+    second: ClericClimbingAnimation_8
+  - first:
+      213: -246258533781957840
+    second: ClericClimbingAnimation_9
+  - first:
+      213: -5399410394357694231
+    second: ClericClimbingAnimation_10
+  - first:
+      213: 2040392197780884632
+    second: ClericClimbingAnimation_11
+  - first:
+      213: -7491658700045775030
+    second: ClericClimbingAnimation_12
+  - first:
+      213: 9135099124276401155
+    second: ClericClimbingAnimation_13
+  - first:
+      213: 596580057201539433
+    second: ClericClimbingAnimation_14
+  - first:
+      213: -3948282283213910592
+    second: ClericClimbingAnimation_15
+  - first:
+      213: 546052134151801853
+    second: ClericClimbingAnimation_16
+  - first:
+      213: -124720254442747992
+    second: ClericClimbingAnimation_17
+  - first:
+      213: 6157403302949599178
+    second: ClericClimbingAnimation_18
+  - first:
+      213: 7860765220144598727
+    second: ClericClimbingAnimation_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1916
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 648c0d50c25a9d4c0800000000000000
+      internalID: -4262193963834750906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1917
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf578e8242befb420800000000000000
+      internalID: 2648093646454814204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1917
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614bc6e1b6cb66ae0800000000000000
+      internalID: -1556349452951964650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1917
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032458d89e570f370800000000000000
+      internalID: 8354306954734420528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1917
+        width: 31
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c082d1005c8c126f0800000000000000
+      internalID: -711066517711804404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1917
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974af92ae1e9f0490800000000000000
+      internalID: -7777824177030978439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1917
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba21733d1cbe591f0800000000000000
+      internalID: -1038664921334213973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 1917
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735d41faa6db4a310800000000000000
+      internalID: 1415464448802739511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1661
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf881b5abe6305560800000000000000
+      internalID: 7300395381692664060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03394031b2d159cf0800000000000000
+      internalID: -246258533781957840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e002c78ad07115b0800000000000000
+      internalID: -5399410394357694231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c4537b4ede05c10800000000000000
+      internalID: 2040392197780884632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f8e45da18480890800000000000000
+      internalID: -7491658700045775030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3041a72f04466ce70800000000000000
+      internalID: 9135099124276401155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9697495b66a774800800000000000000
+      internalID: 596580057201539433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 1660
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd011cae22e439c0800000000000000
+      internalID: -3948282283213910592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1404
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb46fcd587f39700800000000000000
+      internalID: 546052134151801853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1404
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a7c4a1e697e44ef0800000000000000
+      internalID: -124720254442747992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1404
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7b0234ead737550800000000000000
+      internalID: 6157403302949599178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericClimbingAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1404
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cec671d15c071d60800000000000000
+      internalID: 7860765220144598727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -189,6 +189,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 9183808301538950007}
   spawn: {fileID: 0}
   player: {fileID: 5958576740038597133}
+  sceneToLoad: 
   switcthToTutorialState: {fileID: 0}
 --- !u!1 &205037250374655973
 GameObject:
@@ -1972,7 +1973,7 @@ GameObject:
   - component: {fileID: 7411665141688049481}
   - component: {fileID: 8108088426756765879}
   - component: {fileID: 1052429430747177008}
-  - component: {fileID: 2249839468151686403}
+  - component: {fileID: 1230807525751311286}
   - component: {fileID: 2684591189990701646}
   - component: {fileID: 7002829267281125606}
   - component: {fileID: 1892630965472275289}
@@ -2128,7 +2129,7 @@ MonoBehaviour:
   isFacingRight: 1
   idleTimer: 30
   idleAccumTimer: 0
---- !u!114 &2249839468151686403
+--- !u!114 &1230807525751311286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2137,7 +2138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5958576740038597133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 042a56841b2d74348ac965d2c9688391, type: 3}
+  m_Script: {fileID: 11500000, guid: 5981da1b4b09bb646b67c7821a009d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponColliders:
@@ -2147,7 +2148,7 @@ MonoBehaviour:
   colliderHolder: {fileID: 3104063125806549742}
   attackWindup: 0.12
   inputBuffer: 0.18
-  attackCooldown: 0
+  attackCooldown: 0.5
   character: 0
   slashVFX: {fileID: 3875973796710765611}
 --- !u!114 &2684591189990701646
@@ -2259,7 +2260,7 @@ MonoBehaviour:
     m_ActionName: 'Gameplay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2249839468151686403}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PrototypePlayerAttack, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 0

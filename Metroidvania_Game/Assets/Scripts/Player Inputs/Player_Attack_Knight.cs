@@ -9,7 +9,7 @@ public enum PlayerCharacter
     Priest
 }
 
-public class PrototypePlayerAttack : MonoBehaviour
+public class Player_Attack_Knight : MonoBehaviour
 {
     /// <summary>
     /// This script will be for activating animation and control for the attack

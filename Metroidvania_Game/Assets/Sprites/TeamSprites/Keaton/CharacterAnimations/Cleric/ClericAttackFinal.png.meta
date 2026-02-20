@@ -1,0 +1,867 @@
+fileFormatVersion: 2
+guid: 4f750dfd8dda39b4da04eda58a0885f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6633169590734353987
+    second: ClericAttackFinal_0
+  - first:
+      213: 4886106119454681690
+    second: ClericAttackFinal_1
+  - first:
+      213: 6156929515762390731
+    second: ClericAttackFinal_2
+  - first:
+      213: 2895532941659594356
+    second: ClericAttackFinal_3
+  - first:
+      213: -7878817461487400339
+    second: ClericAttackFinal_4
+  - first:
+      213: 1473910401030231576
+    second: ClericAttackFinal_5
+  - first:
+      213: 5087774108096423584
+    second: ClericAttackFinal_6
+  - first:
+      213: 7353993602987080162
+    second: ClericAttackFinal_7
+  - first:
+      213: -4834544330087929910
+    second: ClericAttackFinal_8
+  - first:
+      213: -5987044602437608286
+    second: ClericAttackFinal_9
+  - first:
+      213: 8472739407943553990
+    second: ClericAttackFinal_10
+  - first:
+      213: 1525197571402700981
+    second: ClericAttackFinal_11
+  - first:
+      213: 7821112133705458464
+    second: ClericAttackFinal_12
+  - first:
+      213: -1230407098621436835
+    second: ClericAttackFinal_13
+  - first:
+      213: -4756191294578495684
+    second: ClericAttackFinal_14
+  - first:
+      213: -6923289820646071474
+    second: ClericAttackFinal_15
+  - first:
+      213: 4961699119791836593
+    second: ClericAttackFinal_16
+  - first:
+      213: 311942513265179202
+    second: ClericAttackFinal_17
+  - first:
+      213: -4761334796169952639
+    second: ClericAttackFinal_18
+  - first:
+      213: -4387340139979837220
+    second: ClericAttackFinal_19
+  - first:
+      213: 536936040541107053
+    second: ClericAttackFinal_20
+  - first:
+      213: 755472023925884918
+    second: ClericAttackFinal_21
+  - first:
+      213: -444658345447690224
+    second: ClericAttackFinal_22
+  - first:
+      213: 674324413813884102
+    second: ClericAttackFinal_23
+  - first:
+      213: 2301923743513648234
+    second: ClericAttackFinal_24
+  - first:
+      213: -5921812339846402785
+    second: ClericAttackFinal_25
+  - first:
+      213: 9029514354483283728
+    second: ClericAttackFinal_26
+  - first:
+      213: -3141595277113946272
+    second: ClericAttackFinal_27
+  - first:
+      213: 6333476148946418170
+    second: ClericAttackFinal_28
+  - first:
+      213: -4669074324830234863
+    second: ClericAttackFinal_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClericAttackFinal_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1916
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 346f4a64990cd0c50800000000000000
+      internalID: 6633169590734353987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_1
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1916
+        width: 23
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a65f0c0afeec340800000000000000
+      internalID: 4886106119454681690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1916
+        width: 22
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc6922616cec17550800000000000000
+      internalID: 6156929515762390731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_3
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 1916
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47edf078edffe2820800000000000000
+      internalID: 2895532941659594356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_4
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1916
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a06e53341d8a290800000000000000
+      internalID: -7878817461487400339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_5
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1916
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816192c53b1647410800000000000000
+      internalID: 1473910401030231576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_6
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1916
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6648a58976b9640800000000000000
+      internalID: 5087774108096423584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_7
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1916
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e93a820832ae0660800000000000000
+      internalID: 7353993602987080162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_8
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1660
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7ea3adb8f38ecb0800000000000000
+      internalID: -4834544330087929910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_9
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1660
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac5941a7aeb9eca0800000000000000
+      internalID: -5987044602437608286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_10
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1660
+        width: 32
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3ddecd997359570800000000000000
+      internalID: 8472739407943553990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_11
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 1660
+        width: 27
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b81fbf3c179a2510800000000000000
+      internalID: 1525197571402700981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_12
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1660
+        width: 29
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 023e20e2c0c2a8c60800000000000000
+      internalID: 7821112133705458464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_13
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1660
+        width: 33
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5cdc854347bceee0800000000000000
+      internalID: -1230407098621436835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_14
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1660
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fe7da873d9efdb0800000000000000
+      internalID: -4756191294578495684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_15
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 1660
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43205bd6988bef90800000000000000
+      internalID: -6923289820646071474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_16
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1404
+        width: 43
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd8f8daf0f7bd440800000000000000
+      internalID: 4961699119791836593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_17
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1404
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a7385201e345400800000000000000
+      internalID: 311942513265179202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_18
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1404
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1824591ca375cedb0800000000000000
+      internalID: -4761334796169952639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_19
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1404
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd070b743690d13c0800000000000000
+      internalID: -4387340139979837220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_20
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1404
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63be8beb74937700800000000000000
+      internalID: 536936040541107053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_21
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 1404
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f709d79dc9fb7a00800000000000000
+      internalID: 755472023925884918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_22
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1404
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0107d29379144d9f0800000000000000
+      internalID: -444658345447690224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_23
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1404
+        width: 25
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c400cc4b7eab5900800000000000000
+      internalID: 674324413813884102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_24
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1148
+        width: 22
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c1b28d27312ff10800000000000000
+      internalID: 2301923743513648234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_25
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1148
+        width: 22
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d2ee05d0f71dda0800000000000000
+      internalID: -5921812339846402785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_26
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1148
+        width: 22
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017444907774f4d70800000000000000
+      internalID: 9029514354483283728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_27
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1148
+        width: 23
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f04978dbfc664d0800000000000000
+      internalID: -3141595277113946272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_28
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1148
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af93c53500705e750800000000000000
+      internalID: 6333476148946418170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericAttackFinal_29
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1148
+        width: 31
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117d89ea3ad143fb0800000000000000
+      internalID: -4669074324830234863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: 954348706ca42f54983cd376de16f17d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 960364013467718428
+    second: ClericJumpFront_0
+  - first:
+      213: -2297876514401419989
+    second: ClericJumpFront_1
+  - first:
+      213: -7681860398200681321
+    second: ClericJumpFront_2
+  - first:
+      213: -1447097248039105486
+    second: ClericJumpFront_3
+  - first:
+      213: 703852524957611238
+    second: ClericJumpFront_4
+  - first:
+      213: 287724804694129134
+    second: ClericJumpFront_5
+  - first:
+      213: 7304886360428144720
+    second: ClericJumpFront_6
+  - first:
+      213: 5409767090260145228
+    second: ClericJumpFront_7
+  - first:
+      213: -7619066309451276187
+    second: ClericJumpFront_8
+  - first:
+      213: -2638981885930825923
+    second: ClericJumpFront_9
+  - first:
+      213: 1374548615606728714
+    second: ClericJumpFront_10
+  - first:
+      213: 7472036062480147655
+    second: ClericJumpFront_11
+  - first:
+      213: 8924319771667543238
+    second: ClericJumpFront_12
+  - first:
+      213: -5559321147044704599
+    second: ClericJumpFront_13
+  - first:
+      213: 7279911229508525739
+    second: ClericJumpFront_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClericJumpFront_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1918
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13dfc56bf5e35d00800000000000000
+      internalID: 960364013467718428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1918
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2df36d1c7d4c10e0800000000000000
+      internalID: -2297876514401419989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_2
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1918
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c8b170bac846590800000000000000
+      internalID: -7681860398200681321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_3
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1919
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c0f2f48b0eaebe0800000000000000
+      internalID: -1447097248039105486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_4
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1919
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e43c5c642694c900800000000000000
+      internalID: 703852524957611238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_5
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1920
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee9bcd87f243ef300800000000000000
+      internalID: 287724804694129134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_6
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1920
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0586aed117b206560800000000000000
+      internalID: 7304886360428144720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_7
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 1921
+        width: 29
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44fd84a18a531b40800000000000000
+      internalID: 5409767090260145228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1665
+        width: 29
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560a2012f83a34690800000000000000
+      internalID: -7619066309451276187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_9
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1666
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d371768e4f3706bd0800000000000000
+      internalID: -2638981885930825923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_10
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1665
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a087eb7eea0631310800000000000000
+      internalID: 1374548615606728714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_11
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1664
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4a905d53102b760800000000000000
+      internalID: 7472036062480147655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_12
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1663
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c43d3c9c8d89db70800000000000000
+      internalID: 8924319771667543238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_13
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1662
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae451e0fd259d2b0800000000000000
+      internalID: -5559321147044704599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClericJumpFront_14
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1662
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae9b3f41b0770560800000000000000
+      internalID: 7279911229508525739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

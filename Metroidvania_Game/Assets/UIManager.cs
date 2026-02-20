@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; private set; }
 
     PrototypePlayerMovementControls playerControls;
-    PrototypePlayerAttack playerAttack;
+    Player_Attack_Knight playerAttack;
     public GameObject player;
 
     public GameObject pauseMenu;
@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
         if (p != null)
         {
             playerControls = p.GetComponent<PrototypePlayerMovementControls>();
-            playerAttack = p.GetComponent<PrototypePlayerAttack>();
+            playerAttack = p.GetComponent<Player_Attack_Knight>();
         }
     }
 
