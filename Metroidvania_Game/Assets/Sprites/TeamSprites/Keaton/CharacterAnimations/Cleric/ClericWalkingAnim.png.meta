@@ -154,7 +154,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -168,7 +168,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -192,7 +192,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1109,7 +1109,47 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ClericWalkingAnim_0: -8948786955317602341
+      ClericWalkingAnim_1: 8873883673186381172
+      ClericWalkingAnim_10: 6929121069651970237
+      ClericWalkingAnim_11: 5094599161881036487
+      ClericWalkingAnim_12: -4803305621502340867
+      ClericWalkingAnim_13: -1826599856213213963
+      ClericWalkingAnim_14: -2448689719492368675
+      ClericWalkingAnim_15: -7716997209684302864
+      ClericWalkingAnim_16: -6019098425615443322
+      ClericWalkingAnim_17: -5330718693595736004
+      ClericWalkingAnim_18: 6948240860052047191
+      ClericWalkingAnim_19: 1785847529906577691
+      ClericWalkingAnim_2: -1418490720447024850
+      ClericWalkingAnim_20: -6677297390172500006
+      ClericWalkingAnim_21: 7595593473076643844
+      ClericWalkingAnim_22: 6637578199458404745
+      ClericWalkingAnim_23: -1158058702390405411
+      ClericWalkingAnim_24: 3450792863939578349
+      ClericWalkingAnim_25: 5418473355685335722
+      ClericWalkingAnim_26: -5235970542843705179
+      ClericWalkingAnim_27: -7330024995231432282
+      ClericWalkingAnim_28: 2806999393661814816
+      ClericWalkingAnim_29: -1199488610896855304
+      ClericWalkingAnim_3: 7668255417376230905
+      ClericWalkingAnim_30: 1938274137537938315
+      ClericWalkingAnim_31: 590006915960730930
+      ClericWalkingAnim_32: 3807726277256679767
+      ClericWalkingAnim_33: -7703567314248793139
+      ClericWalkingAnim_34: 533769358807361254
+      ClericWalkingAnim_35: -6642580972088638028
+      ClericWalkingAnim_36: 4069355249433871799
+      ClericWalkingAnim_37: 8157879346556046028
+      ClericWalkingAnim_38: -2409151353581438622
+      ClericWalkingAnim_39: 3709716876072205938
+      ClericWalkingAnim_4: 7029503070752364643
+      ClericWalkingAnim_5: 4906051585462376063
+      ClericWalkingAnim_6: 9034877786366117161
+      ClericWalkingAnim_7: 2341860111280416948
+      ClericWalkingAnim_8: -6064195827536719297
+      ClericWalkingAnim_9: -1266132809862715126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ClericClimbingAnimation_0: -4262193963834750906
+      ClericClimbingAnimation_1: 2648093646454814204
+      ClericClimbingAnimation_10: -5399410394357694231
+      ClericClimbingAnimation_11: 2040392197780884632
+      ClericClimbingAnimation_12: -7491658700045775030
+      ClericClimbingAnimation_13: 9135099124276401155
+      ClericClimbingAnimation_14: 596580057201539433
+      ClericClimbingAnimation_15: -3948282283213910592
+      ClericClimbingAnimation_16: 546052134151801853
+      ClericClimbingAnimation_17: -124720254442747992
+      ClericClimbingAnimation_18: 6157403302949599178
+      ClericClimbingAnimation_19: 7860765220144598727
+      ClericClimbingAnimation_2: -1556349452951964650
+      ClericClimbingAnimation_3: 8354306954734420528
+      ClericClimbingAnimation_4: -711066517711804404
+      ClericClimbingAnimation_5: -7777824177030978439
+      ClericClimbingAnimation_6: -1038664921334213973
+      ClericClimbingAnimation_7: 1415464448802739511
+      ClericClimbingAnimation_8: 7300395381692664060
+      ClericClimbingAnimation_9: -246258533781957840
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

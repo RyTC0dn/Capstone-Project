@@ -124,7 +124,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -138,7 +138,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -162,7 +162,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -859,7 +859,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ClericIdleFinal_0: -3069838392120610724
+      ClericIdleFinal_1: 5962711749236765985
+      ClericIdleFinal_10: -4955532791031333746
+      ClericIdleFinal_11: -2818097614941254861
+      ClericIdleFinal_12: -8686650817210679370
+      ClericIdleFinal_13: 8458776403967049432
+      ClericIdleFinal_14: 6255708110235357338
+      ClericIdleFinal_15: -307599744132560632
+      ClericIdleFinal_16: 6043404224913363862
+      ClericIdleFinal_17: 2936413067230280772
+      ClericIdleFinal_18: -3128868128867584721
+      ClericIdleFinal_19: 8150262594311903913
+      ClericIdleFinal_2: 8058217896082280669
+      ClericIdleFinal_20: -6754183975898563047
+      ClericIdleFinal_21: -864242748884952280
+      ClericIdleFinal_22: 2026127327190820950
+      ClericIdleFinal_23: -6861989087530085769
+      ClericIdleFinal_24: -1148207003936980588
+      ClericIdleFinal_25: 982831211924328584
+      ClericIdleFinal_26: 2216618648708713722
+      ClericIdleFinal_27: -3567686686372645688
+      ClericIdleFinal_28: 7687870126444096446
+      ClericIdleFinal_29: 2945546495502847014
+      ClericIdleFinal_3: 3883712799005417459
+      ClericIdleFinal_4: -940621878387461498
+      ClericIdleFinal_5: -9169453810598641932
+      ClericIdleFinal_6: -6675543040751866861
+      ClericIdleFinal_7: 4696980306042426138
+      ClericIdleFinal_8: 6031028291092122602
+      ClericIdleFinal_9: -4681053860967414391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

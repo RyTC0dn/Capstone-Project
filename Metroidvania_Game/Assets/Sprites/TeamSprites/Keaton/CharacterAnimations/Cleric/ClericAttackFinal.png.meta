@@ -124,7 +124,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -138,7 +138,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -162,7 +162,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -859,7 +859,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ClericAttackFinal_0: 6633169590734353987
+      ClericAttackFinal_1: 4886106119454681690
+      ClericAttackFinal_10: 8472739407943553990
+      ClericAttackFinal_11: 1525197571402700981
+      ClericAttackFinal_12: 7821112133705458464
+      ClericAttackFinal_13: -1230407098621436835
+      ClericAttackFinal_14: -4756191294578495684
+      ClericAttackFinal_15: -6923289820646071474
+      ClericAttackFinal_16: 4961699119791836593
+      ClericAttackFinal_17: 311942513265179202
+      ClericAttackFinal_18: -4761334796169952639
+      ClericAttackFinal_19: -4387340139979837220
+      ClericAttackFinal_2: 6156929515762390731
+      ClericAttackFinal_20: 536936040541107053
+      ClericAttackFinal_21: 755472023925884918
+      ClericAttackFinal_22: -444658345447690224
+      ClericAttackFinal_23: 674324413813884102
+      ClericAttackFinal_24: 2301923743513648234
+      ClericAttackFinal_25: -5921812339846402785
+      ClericAttackFinal_26: 9029514354483283728
+      ClericAttackFinal_27: -3141595277113946272
+      ClericAttackFinal_28: 6333476148946418170
+      ClericAttackFinal_29: -4669074324830234863
+      ClericAttackFinal_3: 2895532941659594356
+      ClericAttackFinal_4: -7878817461487400339
+      ClericAttackFinal_5: 1473910401030231576
+      ClericAttackFinal_6: 5087774108096423584
+      ClericAttackFinal_7: 7353993602987080162
+      ClericAttackFinal_8: -4834544330087929910
+      ClericAttackFinal_9: -5987044602437608286
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

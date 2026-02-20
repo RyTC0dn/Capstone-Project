@@ -79,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -93,7 +93,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ClericHitAnim_0: 5725176957349280551
+      ClericHitAnim_1: -1290840550295089676
+      ClericHitAnim_10: -1537251959921901674
+      ClericHitAnim_11: 1872158480596828761
+      ClericHitAnim_12: 2064526066651904347
+      ClericHitAnim_13: -3516443760116939391
+      ClericHitAnim_14: 6136059742358285868
+      ClericHitAnim_2: 5770931804507171667
+      ClericHitAnim_3: -4365573243133986597
+      ClericHitAnim_4: 248510287215748789
+      ClericHitAnim_5: 2024207906753671586
+      ClericHitAnim_6: 1320513254655266252
+      ClericHitAnim_7: 5582132212901299090
+      ClericHitAnim_8: 2432525153902434145
+      ClericHitAnim_9: -1114858060838815270
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
