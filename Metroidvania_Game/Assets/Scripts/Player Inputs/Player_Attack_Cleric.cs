@@ -1,10 +1,8 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-
-public class Player_Attack_Knight : MonoBehaviour
+public class Player_Attack_Cleric : MonoBehaviour
 {
     /// <summary>
     /// This script will be for activating animation and control for the attack
@@ -43,15 +41,6 @@ public class Player_Attack_Knight : MonoBehaviour
 
     public ParticleSystem slashVFX;
     #endregion
-
-    private void Awake()
-    {
-        ////Enable player controller
-        //playerControl = PlayerInputHub.controls;
-
-        //playerControl.Gameplay.Melee.performed += OnAttack;
-        //playerControl.Gameplay.Melee.canceled += OnAttack;
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -179,29 +168,10 @@ public class Player_Attack_Knight : MonoBehaviour
         hasAttacked = true;
         delayTillAttack = 1f / attackRate;
 
-        //Pass in direction for directional attacks (if needed)
-        animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
+        animator.Play("ClericAttack");
         swordSlashAudio.Play();
-        //Play knight audio
-        audioPlayer.PlayRandomClip(swordSlashAudio, 0, 3);
-    }
 
-    private void KnightStandardAttack(int collider) //This function is to store what the knight does when they attack
-    {
-        // When function is called, activate collider for weapon collider
-        // Trigger the attack animation to start and play audio attached
-        // Start coroutine function that turns off collider after animation stops
-        for (int i = 0; i < weaponColliders.Length; i++)
-        {
-            weaponColliders[i].enabled = false;
-        }
-        weaponColliders[collider].enabled = true;
-
-
-        slashVFX.Play();
-        slashVFX.Clear();
-
-        StartCoroutine(ResetWeapon());
+        //Add attack audio here for cleric
     }
 
     private IEnumerator ResetWeapon() //Reset the collider after animation plays
@@ -212,18 +182,17 @@ public class Player_Attack_Knight : MonoBehaviour
         Debug.Log("Weapon deactivated");
     }
 
-    private void PriestStandardAttack() //This function is to store what the priest does when they attack
+    private void PriestStandardAttack(int collider) //This function is to store what the priest does when they attack
     {
         for (int i = 0; i < weaponColliders.Length; i++)
         {
             weaponColliders[i].enabled = true;
         }
-        animator.SetTrigger("isSlashing");
-        swordSlashAudio.Play();
+        weaponColliders[collider].enabled = true;
+
+        slashVFX.Play();
+        slashVFX.Clear();
 
         StartCoroutine(ResetWeapon());
     }
 }
-
-
-

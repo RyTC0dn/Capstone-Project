@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     public static PlayerController instance;
-    PlayerStateList pState;
+    CharacterSelect pState;
 
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        pState = GetComponent<PlayerStateList>();
+        pState = GetComponent<CharacterSelect>();
     }
 
     // Update is called once per frame
