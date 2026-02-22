@@ -19,7 +19,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
 
 
     PrototypePlayerMovementControls playerController;
-    PrototypeShop shop;
+    ShopManager shop;
     public SceneInfo sceneInfo;
     [SerializeField]private GameObject axeIcon;
 
@@ -28,7 +28,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     void Start()
     {
         playerController = GetComponentInParent<PrototypePlayerMovementControls>();
-        shop = FindAnyObjectByType<PrototypeShop>();
+        shop = FindAnyObjectByType<ShopManager>();
         delayTillThrow = throwRate;
 
         axeIcon.SetActive(false);
@@ -72,7 +72,7 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
         if(throwCooldown <= 0)
         {
             Transform firingPoint = firePoint;
-            animator.SetBool("isThrowing", true);
+            animator.Play("KnightAxeThrow");
             //Instantiate ProjectilePrefab
             Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
             throwCooldown = 1f / delayTillThrow;
@@ -85,7 +85,8 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
 
     IEnumerator ResetWeapon()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(animator.recorderStopTime);
+        // Reset animator to initial state
         animator.SetBool("isThrowing", false);
     }
 

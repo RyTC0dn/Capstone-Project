@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 989035d1deddd2249acda110d5585eb2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6015724854676829866
+    second: AlchemistNPCIdle_0
+  - first:
+      213: -1602726471252598530
+    second: AlchemistNPCIdle_1
+  - first:
+      213: 8408152547574503355
+    second: AlchemistNPCIdle_2
+  - first:
+      213: -442498629549145321
+    second: AlchemistNPCIdle_3
+  - first:
+      213: -3504167700787868932
+    second: AlchemistNPCIdle_4
+  - first:
+      213: -8193709666714509902
+    second: AlchemistNPCIdle_5
+  - first:
+      213: -1138366639039222051
+    second: AlchemistNPCIdle_6
+  - first:
+      213: -8232681003869252216
+    second: AlchemistNPCIdle_7
+  - first:
+      213: 1772557155045787149
+    second: AlchemistNPCIdle_8
+  - first:
+      213: -2391920782501511308
+    second: AlchemistNPCIdle_9
+  - first:
+      213: 6212188510033504400
+    second: AlchemistNPCIdle_10
+  - first:
+      213: -4028682866840652321
+    second: AlchemistNPCIdle_11
+  - first:
+      213: -575839836263959132
+    second: AlchemistNPCIdle_12
+  - first:
+      213: 551480487175015456
+    second: AlchemistNPCIdle_13
+  - first:
+      213: 3314787984345018980
+    second: AlchemistNPCIdle_14
+  - first:
+      213: -4229307192582281547
+    second: AlchemistNPCIdle_15
+  - first:
+      213: 7559889423694192203
+    second: AlchemistNPCIdle_16
+  - first:
+      213: -3964951472195324616
+    second: AlchemistNPCIdle_17
+  - first:
+      213: -2699913329120316572
+    second: AlchemistNPCIdle_18
+  - first:
+      213: -2630477664729611399
+    second: AlchemistNPCIdle_19
+  - first:
+      213: 1869310461131075603
+    second: AlchemistNPCIdle_20
+  - first:
+      213: -8966421721378708567
+    second: AlchemistNPCIdle_21
+  - first:
+      213: -4147192949086170399
+    second: AlchemistNPCIdle_22
+  - first:
+      213: 2516168333413300485
+    second: AlchemistNPCIdle_23
+  - first:
+      213: -3106837222470638259
+    second: AlchemistNPCIdle_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1917
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa63085f1e52c7350800000000000000
+      internalID: 6015724854676829866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1917
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0afd814c8f1c9e0800000000000000
+      internalID: -1602726471252598530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_2
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1917
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb759779132cfa470800000000000000
+      internalID: 8408152547574503355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_3
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1917
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 713402447ddebd9f0800000000000000
+      internalID: -442498629549145321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_4
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1917
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa4421ca02be5fc0800000000000000
+      internalID: -3504167700787868932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1917
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd1cc268781a4e80800000000000000
+      internalID: -8193709666714509902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_6
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1917
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde69e7b295b330f0800000000000000
+      internalID: -1138366639039222051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_7
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 1917
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885544fde34afbd80800000000000000
+      internalID: -8232681003869252216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06c4925753699810800000000000000
+      internalID: 1772557155045787149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_9
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f7f14a8b03eced0800000000000000
+      internalID: -2391920782501511308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_10
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0986f4a4980263650800000000000000
+      internalID: 6212188510033504400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_11
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5b249074e3718c0800000000000000
+      internalID: -4028682866840652321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_12
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5b7f748b43208f0800000000000000
+      internalID: -575839836263959132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_13
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c40aac49047a700800000000000000
+      internalID: 551480487175015456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_14
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4623e98fb1e700e20800000000000000
+      internalID: 3314787984345018980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_15
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 1661
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6e024248b7e45c0800000000000000
+      internalID: -4229307192582281547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_16
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e5688706f1ae860800000000000000
+      internalID: 7559889423694192203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_17
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835b22ca4a9a9f8c0800000000000000
+      internalID: -3964951472195324616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_18
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463f075c12bf78ad0800000000000000
+      internalID: -2699913329120316572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_19
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9734134308aae7bd0800000000000000
+      internalID: -2630477664729611399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_20
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310b3aad5ff11f910800000000000000
+      internalID: 1869310461131075603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_21
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a320e653fed09380800000000000000
+      internalID: -8966421721378708567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_22
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1405
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2d6be4cf53276c0800000000000000
+      internalID: -4147192949086170399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_23
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 1405
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509bf2c94c93be220800000000000000
+      internalID: 2516168333413300485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlchemistNPCIdle_24
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1149
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d452da3c10c42e4d0800000000000000
+      internalID: -3106837222470638259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AlchemistNPCIdle_0: 6015724854676829866
+      AlchemistNPCIdle_1: -1602726471252598530
+      AlchemistNPCIdle_10: 6212188510033504400
+      AlchemistNPCIdle_11: -4028682866840652321
+      AlchemistNPCIdle_12: -575839836263959132
+      AlchemistNPCIdle_13: 551480487175015456
+      AlchemistNPCIdle_14: 3314787984345018980
+      AlchemistNPCIdle_15: -4229307192582281547
+      AlchemistNPCIdle_16: 7559889423694192203
+      AlchemistNPCIdle_17: -3964951472195324616
+      AlchemistNPCIdle_18: -2699913329120316572
+      AlchemistNPCIdle_19: -2630477664729611399
+      AlchemistNPCIdle_2: 8408152547574503355
+      AlchemistNPCIdle_20: 1869310461131075603
+      AlchemistNPCIdle_21: -8966421721378708567
+      AlchemistNPCIdle_22: -4147192949086170399
+      AlchemistNPCIdle_23: 2516168333413300485
+      AlchemistNPCIdle_24: -3106837222470638259
+      AlchemistNPCIdle_3: -442498629549145321
+      AlchemistNPCIdle_4: -3504167700787868932
+      AlchemistNPCIdle_5: -8193709666714509902
+      AlchemistNPCIdle_6: -1138366639039222051
+      AlchemistNPCIdle_7: -8232681003869252216
+      AlchemistNPCIdle_8: 1772557155045787149
+      AlchemistNPCIdle_9: -2391920782501511308
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
