@@ -15,6 +15,7 @@ public class TutorialManager : MonoBehaviour
     public bool readyToStart = false;
     public Animator animator;
     private float animTime;
+    public Vector2 targetPos;
 
     public List<TutorialScene> tutorials = new List<TutorialScene>();
 
@@ -35,5 +36,14 @@ public class TutorialManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
 
+    public void PlayTutorial()
+    {
+        gameObject.transform.position = targetPos;
+    }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(targetPos, 0.5f);
+    }
 }

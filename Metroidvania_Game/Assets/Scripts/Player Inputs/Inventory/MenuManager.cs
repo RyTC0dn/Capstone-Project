@@ -143,24 +143,24 @@ public class MenuManager : MonoBehaviour
         menuAudio.PlayOneShot(menuClips[index]);
     }
 
-    private void BookIcon()
-    {
-        //TO DO: Animate book icon when quest menu is opened
-        if(SceneManager.GetActiveScene().buildIndex == 2 && !menuOpened) //Only show in level 1
-        {
-            bookIcon.SetActive(true);
-            bookIcon.transform.position = 
-                Vector2.Lerp(bookIcon.transform.position, 
-                targetPos, Time.deltaTime * 5f/6);
-            StartCoroutine(FlashText());
-        }
-        else
-        {
-            bookIcon.SetActive(false);
-            bookIcon.transform.position = startPos;
-        }
+    //private void BookIcon()
+    //{
+    //    //TO DO: Animate book icon when quest menu is opened
+    //    if(SceneManager.GetActiveScene().buildIndex == 2 && !menuOpened) //Only show in level 1
+    //    {
+    //        bookIcon.SetActive(true);
+    //        bookIcon.transform.position = 
+    //            Vector2.Lerp(bookIcon.transform.position, 
+    //            targetPos, Time.deltaTime * 5f/6);
+    //        StartCoroutine(FlashText());
+    //    }
+    //    else
+    //    {
+    //        bookIcon.SetActive(false);
+    //        bookIcon.transform.position = startPos;
+    //    }
 
-    }
+    //}
 
     private System.Collections.IEnumerator FlashText()
     {
