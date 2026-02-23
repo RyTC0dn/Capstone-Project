@@ -54,6 +54,7 @@ MonoBehaviour:
   maxRange: 5
   minRange: -5
   debrisAnim: {fileID: 0}
+  debrisSound: {fileID: 8300000, guid: fa9475d3eab32f9448271b6331530bad, type: 3}
 --- !u!82 &4132351309034728916
 AudioSource:
   m_ObjectHideFlags: 0

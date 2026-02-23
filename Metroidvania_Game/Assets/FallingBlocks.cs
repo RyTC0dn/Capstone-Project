@@ -16,13 +16,17 @@ public class FallingBlocks : MonoBehaviour
     private bool hasDelayTimerStarted;
 
     public Animator debrisAnim;
+    [SerializeField]
+    private AudioClip debrisSound;
+
+    private AudioSource debrisAudioSource;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        debrisAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,8 @@ public class FallingBlocks : MonoBehaviour
         {
             hasDelayTimerStarted = true;
             debrisAnim.SetBool("playerUnderRay", true);
+            debrisAudioSource.clip = debrisSound;
+            debrisAudioSource.Play();
         }
         else if (hasDelayTimerStarted)
         {
