@@ -42,8 +42,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("Book Icon Indicator1")]
     public GameObject bookIcon;
-    [SerializeField] private Vector2 startPos;
-    [SerializeField]private Vector2 targetPos;
+    public Animator bookAnim;
     [SerializeField]private TextMeshProUGUI bookText;
 
     [SerializeField] private int sceneIndex;
@@ -65,10 +64,10 @@ public class MenuManager : MonoBehaviour
         equipmentMenu.SetActive(false);
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
         #endregion
 
         bookIcon.SetActive(false);
-        bookIcon.transform.position = startPos;
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
@@ -92,13 +91,15 @@ public class MenuManager : MonoBehaviour
                 //Disable player attack when menu is open
                 if (playerAttack != null)
                     playerAttack.enabled = false;
+
+                BookIcon(false); //Remove book icon when menu is opened
             }
         }
 
         //Call Methods
         CheckPickup();
         TrackCoin();
-        BookIcon();
+        //BookIcon();
     }
 
     #region Call Menus
@@ -143,24 +144,17 @@ public class MenuManager : MonoBehaviour
         menuAudio.PlayOneShot(menuClips[index]);
     }
 
-    //private void BookIcon()
-    //{
-    //    //TO DO: Animate book icon when quest menu is opened
-    //    if(SceneManager.GetActiveScene().buildIndex == 2 && !menuOpened) //Only show in level 1
-    //    {
-    //        bookIcon.SetActive(true);
-    //        bookIcon.transform.position = 
-    //            Vector2.Lerp(bookIcon.transform.position, 
-    //            targetPos, Time.deltaTime * 5f/6);
-    //        StartCoroutine(FlashText());
-    //    }
-    //    else
-    //    {
-    //        bookIcon.SetActive(false);
-    //        bookIcon.transform.position = startPos;
-    //    }
+    //Call this function when player updates quest or picks up items to show in book 
+    private void BookIcon(bool isActive)
+    {
+        //Animate book depending on whether book menu is needed or not
+        bookAnim.SetBool("Active", isActive);
 
-    //}
+        StartCoroutine(FlashText());
+
+        //Could also add a sound effect here when book icon appears
+        //Or a notification icon on the book icon to indicate new content
+    }
 
     private System.Collections.IEnumerator FlashText()
     {
@@ -181,17 +175,6 @@ public class MenuManager : MonoBehaviour
 
             bookText.color = new Color(color.r, color.g, color.b, 1f);
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        //Draw target position for book icon
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(targetPos, 10f);
-
-        //Draw start position for book icon
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(startPos, 10f);
     }
     #endregion
 

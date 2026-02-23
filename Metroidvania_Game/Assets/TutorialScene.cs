@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This script will handle what goes on within the individual tutorial scene
@@ -7,23 +8,20 @@ using UnityEngine.InputSystem;
 public class TutorialScene : MonoBehaviour
 {
     public GameObject tutorialSpawn;
-    public GameObject playerTutorial;
+    public GameEvent[] tutorialEvents;
+    //public GameObject playerTutorial;
     bool tutorialStart = false;
 
 
     private void Awake()
     {
-        playerTutorial.SetActive(false);
+        //playerTutorial.SetActive(false);
     }
 
     private void Update()
     {
-        EnablePlayer();        
+        //EnablePlayer();        
     }
 
-    private void EnablePlayer()
-    {
-        playerTutorial.SetActive(tutorialStart);
-    }
 
 }

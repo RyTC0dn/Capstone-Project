@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial 2 - Messages
   m_EditorClassIdentifier: 
   textLines:
-  - text: Welcome to the movement tutorial
   - text: 'Basic movement: A - Left, D - Right (Keyboard), left-joystick (Controller)'
   - text: 'Jumping: Space bar (Keyboard), A button (Controller)'
   - text: Congratulations! press E near teleporter to be sent back

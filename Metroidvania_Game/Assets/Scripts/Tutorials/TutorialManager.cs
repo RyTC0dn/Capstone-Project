@@ -11,39 +11,58 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField]private GameObject screen;
     private Sprite image;
-    [SerializeField] private int sceneIndex;
     public bool readyToStart = false;
     public Animator animator;
     private float animTime;
-    public Vector2 targetPos;
+    private GameObject player;
 
     public List<TutorialScene> tutorials = new List<TutorialScene>();
 
     private void Start()
     {
         screen.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void Show()
+    public void Show(int sceneIndex)
+    {
+        StartCoroutine(LoadTutorialScene(sceneIndex));
+    }
+
+    //Load the tutorial scene additively so that the main scene is still active in the background
+    private IEnumerator LoadTutorialScene(int sceneIndex)
     {
         screen.SetActive(true);
-        SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
+
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
+
+        while (!op.isDone)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Tutorial scene loaded");
+
+        Scene tutorialScene = SceneManager.GetSceneByBuildIndex(sceneIndex);    
+        SceneManager.SetActiveScene(tutorialScene);
     }
 
-    public void Hide()
+    public void Hide(int sceneIndex)
     {
         screen.SetActive(false);
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
 
-    public void PlayTutorial()
+    public void PlayTutorial(int tutorialSceneIndex)
     {
-        gameObject.transform.position = targetPos;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(tutorialSceneIndex));
+        Debug.Log("Player moved to tutorial scene");
     }
 
-    private void OnDrawGizmos()
+    //After player is finished with the tutorial, 
+    public void EndTutorial(int lastSceneIndex)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(targetPos, 0.5f);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(lastSceneIndex));
+        Debug.Log("Player moved back to main scene");
     }
 }

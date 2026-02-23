@@ -53,7 +53,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+    void Start()
     {
         //Initialize the rigidbody variables
         rb2D = GetComponent<Rigidbody2D>();
@@ -82,11 +82,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     //Is good for physics calculations
     private void FixedUpdate()
     {
-        MoveScaled(moveInput.x);
-        //if (!unscaledTime)
-        //{         
-            
-        //}
+        if(!unscaledTime)
+            MoveScaled(moveInput.x);
 
         InteractEvent();
     }
@@ -119,10 +116,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
                 isIdle = false; //Reset the idle state if the player starts moving
         }
 
-        //if (unscaledTime)
-        //{
-        //    MoveUnscaled(moveInput.x);
-        //}
+        if (unscaledTime)
+        {
+            MoveUnscaled(moveInput.x);
+        }
 
         switch (movementType)
         {

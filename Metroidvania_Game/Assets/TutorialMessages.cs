@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class TutorialMessages : MonoBehaviour
 {
+    public Dialogue tutorialMessages;
+    [SerializeField] private int messageIndex;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -1384,7 +1384,7 @@ Transform:
   m_GameObject: {fileID: 5958576740038597133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.13, y: 26.59, z: 0.0066606253}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1672,6 +1672,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0ebd776e-cf39-41e8-995d-90e4124cd716
     m_ActionName: 'UI/InventoryMenuOpenClose[/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb3d182e-d471-453a-9a6e-f1d03e35df1b
+    m_ActionName: 'Tutorial/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c81088ba-437d-4f3f-8ec9-0885906306aa
+    m_ActionName: 'Tutorial/Block[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d4b262ef-0cda-42b1-af5e-694615e35e68
+    m_ActionName: 'Tutorial/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7cfc5570-38ee-4cd9-b373-22f6b10108d5
+    m_ActionName: 'Tutorial/Melee[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38553826-dcaa-4804-be94-47f06b491e47
+    m_ActionName: 'Tutorial/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f87b0d88-452b-4157-b631-f373ef9ba286
+    m_ActionName: 'Tutorial/MenuOpenClose[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -2950,6 +2974,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 2304060714020531920, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2304325318138910581, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_Name
       value: CoinTracker
@@ -3170,6 +3198,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4501238125900401615, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4520937512132197058, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_SizeDelta.x
       value: 149.205
@@ -3189,34 +3221,6 @@ PrefabInstance:
     - target: {fileID: 4549514086803136296, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3489560608513992116}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TutorialManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807714077725980566, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4993225958065093185, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3278,6 +3282,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6147655825444769578, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 58650465a00452b4abd8b1d58a6d6159, type: 2}
     - target: {fileID: 6171628892797666568, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 1
@@ -3422,6 +3430,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 564.6
       objectReference: {fileID: 0}
+    - target: {fileID: 8414185776565949737, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8488375107014410638, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -325.69
@@ -3446,10 +3458,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
-    - target: {fileID: 9192629685845742948, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: screen
-      value: 
-      objectReference: {fileID: 6724075784024113875}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1360438668761045963, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -3474,6 +3482,7 @@ PrefabInstance:
     - {fileID: -2765028933011759318, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
     - {fileID: 3216952331083041722, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
     - {fileID: 3747425005814405220, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+    - {fileID: 3644568230932647939, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1829556979620286040, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -3501,17 +3510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3489560608513992116 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9192629685845742948, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-  m_PrefabInstance: {fileID: 5764518583592284368}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e00bcc23a65db4281803a7f0994eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6240946183984742024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1829556979620286040, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -3532,11 +3530,6 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: f739d83c1c5855c4b8515ab3a239195d, type: 2}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   itemPrefab: {fileID: 6240946183984742024}
---- !u!1 &6724075784024113875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1346321549404647939, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-  m_PrefabInstance: {fileID: 5764518583592284368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &6862969837351255233 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1207393134794591249, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
