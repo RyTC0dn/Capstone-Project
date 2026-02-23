@@ -1,0 +1,1131 @@
+fileFormatVersion: 2
+guid: f684d72312faae44aa4c9abb3f7b5bf7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6850883337220013145
+    second: StarSpinny-sheet_0
+  - first:
+      213: 8323372184568312396
+    second: StarSpinny-sheet_1
+  - first:
+      213: -3992682649555755579
+    second: StarSpinny-sheet_2
+  - first:
+      213: 1669889926230488296
+    second: StarSpinny-sheet_3
+  - first:
+      213: -2548142272268144210
+    second: StarSpinny-sheet_4
+  - first:
+      213: -4097995535052311436
+    second: StarSpinny-sheet_5
+  - first:
+      213: 1264733455172294866
+    second: StarSpinny-sheet_6
+  - first:
+      213: -4936765371952750877
+    second: StarSpinny-sheet_7
+  - first:
+      213: -5769361415463750032
+    second: StarSpinny-sheet_8
+  - first:
+      213: -7372777657526875708
+    second: StarSpinny-sheet_9
+  - first:
+      213: 7278010711996875484
+    second: StarSpinny-sheet_10
+  - first:
+      213: -8286772047758648271
+    second: StarSpinny-sheet_11
+  - first:
+      213: 1862004349013422019
+    second: StarSpinny-sheet_12
+  - first:
+      213: 4664484586273942069
+    second: StarSpinny-sheet_13
+  - first:
+      213: 5647348298678553963
+    second: StarSpinny-sheet_14
+  - first:
+      213: 846464156948781715
+    second: StarSpinny-sheet_15
+  - first:
+      213: 2757040583736401131
+    second: StarSpinny-sheet_16
+  - first:
+      213: 8305905051051581252
+    second: StarSpinny-sheet_17
+  - first:
+      213: 277183678557697805
+    second: StarSpinny-sheet_18
+  - first:
+      213: -5723809852489093531
+    second: StarSpinny-sheet_19
+  - first:
+      213: 1906024878890336402
+    second: StarSpinny-sheet_20
+  - first:
+      213: -1682726219910124473
+    second: StarSpinny-sheet_21
+  - first:
+      213: 8291342261814138607
+    second: StarSpinny-sheet_22
+  - first:
+      213: 7826244774215290325
+    second: StarSpinny-sheet_23
+  - first:
+      213: 4734007442976156164
+    second: StarSpinny-sheet_24
+  - first:
+      213: 1341036006971868992
+    second: StarSpinny-sheet_25
+  - first:
+      213: -7021355860281780920
+    second: StarSpinny-sheet_26
+  - first:
+      213: 8120977808181325448
+    second: StarSpinny-sheet_27
+  - first:
+      213: 9137272677429714985
+    second: StarSpinny-sheet_28
+  - first:
+      213: -6761075602073188515
+    second: StarSpinny-sheet_29
+  - first:
+      213: -4626264786507544712
+    second: StarSpinny-sheet_30
+  - first:
+      213: -1044891053672262084
+    second: StarSpinny-sheet_31
+  - first:
+      213: 1159377625891414805
+    second: StarSpinny-sheet_32
+  - first:
+      213: -4537293110374926140
+    second: StarSpinny-sheet_33
+  - first:
+      213: -6242952606315082951
+    second: StarSpinny-sheet_34
+  - first:
+      213: 6080582790676741113
+    second: StarSpinny-sheet_35
+  - first:
+      213: -6701937683707007698
+    second: StarSpinny-sheet_36
+  - first:
+      213: 984183237105699693
+    second: StarSpinny-sheet_37
+  - first:
+      213: 2358925162687845539
+    second: StarSpinny-sheet_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StarSpinny-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1406
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c34a0091a331f50800000000000000
+      internalID: 6850883337220013145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1406
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42bf8a17ee828370800000000000000
+      internalID: 8323372184568312396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1406
+        width: 86
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd1d5cc8442798c0800000000000000
+      internalID: -3992682649555755579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1406
+        width: 80
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4b8fa5a04ac2710800000000000000
+      internalID: 1669889926230488296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1406
+        width: 71
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1fc40aa1e23acd0800000000000000
+      internalID: -2548142272268144210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 1406
+        width: 60
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474f112e5cef027c0800000000000000
+      internalID: -4097995535052311436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 1406
+        width: 47
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8d81b606c3d8110800000000000000
+      internalID: 1264733455172294866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1150
+        width: 33
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee9e41ec061d7bb0800000000000000
+      internalID: -4936765371952750877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1150
+        width: 27
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076307a2c5c1fefa0800000000000000
+      internalID: -5769361415463750032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1150
+        width: 27
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c98c2b78c1aea990800000000000000
+      internalID: -7372777657526875708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1150
+        width: 27
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2cf089e20b00560800000000000000
+      internalID: 7278010711996875484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1150
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c95be4ab87ffc80800000000000000
+      internalID: -8286772047758648271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 1150
+        width: 47
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf6d21171b27d910800000000000000
+      internalID: 1862004349013422019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1150
+        width: 58
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53aa42984049bb040800000000000000
+      internalID: 4664484586273942069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 894
+        width: 67
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d44a15b596f5e40800000000000000
+      internalID: 5647348298678553963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 894
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a580e7aae3fbb00800000000000000
+      internalID: 846464156948781715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_16
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 894
+        width: 82
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec91f0bdc9f24620800000000000000
+      internalID: 2757040583736401131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_17
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 894
+        width: 87
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f5d0a23a0844370800000000000000
+      internalID: 8305905051051581252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 894
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07b7f94611c8d300800000000000000
+      internalID: 277183678557697805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 894
+        width: 91
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ea184e341f090b0800000000000000
+      internalID: -5723809852489093531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 894
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290c05f578f837a10800000000000000
+      internalID: 1906024878890336402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_21
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 638
+        width: 87
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c65002b61c5a8e0800000000000000
+      internalID: -1682726219910124473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_22
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 638
+        width: 83
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe69d929bd3c01370800000000000000
+      internalID: 8291342261814138607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_23
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 638
+        width: 75
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd0c5c28286c9c60800000000000000
+      internalID: 7826244774215290325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_24
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 638
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a26a200b292b140800000000000000
+      internalID: 4734007442976156164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 638
+        width: 57
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047019aa4215c9210800000000000000
+      internalID: 1341036006971868992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 638
+        width: 45
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8451c4abb022f8e90800000000000000
+      internalID: -7021355860281780920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 638
+        width: 33
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e6a7d2a4283b070800000000000000
+      internalID: 8120977808181325448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_28
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 382
+        width: 27
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920a41ab61d1ece70800000000000000
+      internalID: 9137272677429714985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_29
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 382
+        width: 27
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d570ed6cf85db22a0800000000000000
+      internalID: -6761075602073188515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_30
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 382
+        width: 27
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877c15b00b43ccfb0800000000000000
+      internalID: -4626264786507544712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_31
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 382
+        width: 31
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3691ec6f1dcf71f0800000000000000
+      internalID: -1044891053672262084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 382
+        width: 43
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5132bcfdecfe61010800000000000000
+      internalID: 1159377625891414805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 382
+        width: 55
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8764aa4fb4801c0800000000000000
+      internalID: -4537293110374926140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 382
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b8dfe5ea39c59a0800000000000000
+      internalID: -6242952606315082951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_35
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 126
+        width: 74
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbf3a1f4d1926450800000000000000
+      internalID: 6080582790676741113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_36
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 126
+        width: 81
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2de6df5f2fedf2a0800000000000000
+      internalID: -6701937683707007698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_37
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 126
+        width: 86
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b4491907588ad00800000000000000
+      internalID: 984183237105699693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarSpinny-sheet_38
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 126
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a45db5ffe59cb020800000000000000
+      internalID: 2358925162687845539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StarSpinny-sheet_0: 6850883337220013145
+      StarSpinny-sheet_1: 8323372184568312396
+      StarSpinny-sheet_10: 7278010711996875484
+      StarSpinny-sheet_11: -8286772047758648271
+      StarSpinny-sheet_12: 1862004349013422019
+      StarSpinny-sheet_13: 4664484586273942069
+      StarSpinny-sheet_14: 5647348298678553963
+      StarSpinny-sheet_15: 846464156948781715
+      StarSpinny-sheet_16: 2757040583736401131
+      StarSpinny-sheet_17: 8305905051051581252
+      StarSpinny-sheet_18: 277183678557697805
+      StarSpinny-sheet_19: -5723809852489093531
+      StarSpinny-sheet_2: -3992682649555755579
+      StarSpinny-sheet_20: 1906024878890336402
+      StarSpinny-sheet_21: -1682726219910124473
+      StarSpinny-sheet_22: 8291342261814138607
+      StarSpinny-sheet_23: 7826244774215290325
+      StarSpinny-sheet_24: 4734007442976156164
+      StarSpinny-sheet_25: 1341036006971868992
+      StarSpinny-sheet_26: -7021355860281780920
+      StarSpinny-sheet_27: 8120977808181325448
+      StarSpinny-sheet_28: 9137272677429714985
+      StarSpinny-sheet_29: -6761075602073188515
+      StarSpinny-sheet_3: 1669889926230488296
+      StarSpinny-sheet_30: -4626264786507544712
+      StarSpinny-sheet_31: -1044891053672262084
+      StarSpinny-sheet_32: 1159377625891414805
+      StarSpinny-sheet_33: -4537293110374926140
+      StarSpinny-sheet_34: -6242952606315082951
+      StarSpinny-sheet_35: 6080582790676741113
+      StarSpinny-sheet_36: -6701937683707007698
+      StarSpinny-sheet_37: 984183237105699693
+      StarSpinny-sheet_38: 2358925162687845539
+      StarSpinny-sheet_4: -2548142272268144210
+      StarSpinny-sheet_5: -4097995535052311436
+      StarSpinny-sheet_6: 1264733455172294866
+      StarSpinny-sheet_7: -4936765371952750877
+      StarSpinny-sheet_8: -5769361415463750032
+      StarSpinny-sheet_9: -7372777657526875708
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
