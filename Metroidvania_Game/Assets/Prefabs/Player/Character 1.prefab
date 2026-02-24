@@ -189,6 +189,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 9183808301538950007}
   spawn: {fileID: 0}
   player: {fileID: 5958576740038597133}
+  sceneToLoad: 
   switcthToTutorialState: {fileID: 0}
 --- !u!1 &205037250374655973
 GameObject:
@@ -1989,6 +1990,7 @@ GameObject:
   - component: {fileID: 7513154692873368834}
   - component: {fileID: 799806113731762350}
   - component: {fileID: 148261653843026439}
+  - component: {fileID: 3283838300331102486}
   m_Layer: 7
   m_Name: Character 1
   m_TagString: Player
@@ -2686,6 +2688,18 @@ MonoBehaviour:
     - rid: 398708524179783753
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!114 &3283838300331102486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d6981d1afede546b9486fdc610605c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6740129528520037912
 GameObject:
   m_ObjectHideFlags: 0
