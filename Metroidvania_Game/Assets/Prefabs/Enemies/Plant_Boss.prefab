@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7160135638827389}
   - component: {fileID: 2551631124527351071}
   - component: {fileID: 3912132662172417788}
+  - component: {fileID: 7212580228144080639}
+  - component: {fileID: 4808532814033350826}
   m_Layer: 0
   m_Name: Plant_Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,3 +177,83 @@ MonoBehaviour:
           m_Value1: 9111520680370291631
         Name: Attack Radius
         m_Value: 10
+--- !u!114 &7212580228144080639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132032576510287594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ad0b29947e75d4a8a239c9f3502af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 8004861c6604bd546b2c998b622c2e6b, type: 3}
+  - {fileID: 8300000, guid: c14c6a373e58fee4184a9ce93b39bae7, type: 3}
+  - {fileID: 8300000, guid: 2fdc1b03e90c5784c8b490b0f5d02126, type: 3}
+--- !u!60 &4808532814033350826
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132032576510287594}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.92, y: 6.232148}
+    newSize: {x: 6.92, y: 6.232148}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.2962499, y: 1.036465}
+      - {x: 2.82125, y: 2.817715}
+      - {x: 1.7524999, y: 3.173965}
+      - {x: -1.69125, y: 3.173965}
+      - {x: -3.4725, y: 1.392715}
+      - {x: -3.4725, y: 0.79896504}
+      - {x: -2.87875, y: -0.38853496}
+      - {x: -2.64125, y: -0.626035}
+      - {x: -0.97875, y: -0.626035}
+      - {x: -1.0975, y: -0.626035}
+      - {x: -1.69125, y: -0.863535}
+      - {x: -1.2162501, y: -2.169785}
+      - {x: -0.14750002, y: -3.1197848}
+      - {x: 1.39625, y: -3.1197848}
+      - {x: 2.7024999, y: -1.4572849}
+      - {x: 3.6525, y: -0.38853496}
+      - {x: 3.6525, y: 0.79896504}
+  m_UseDelaunayMesh: 0
