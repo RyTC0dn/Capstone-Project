@@ -168,7 +168,7 @@ public class Player_Attack_Cleric : MonoBehaviour
         hasAttacked = true;
         delayTillAttack = 1f / attackRate;
 
-        animator.Play("ClericAttack");
+        animator.SetTrigger("isSlashing");
         swordSlashAudio.Play();
 
         //Add attack audio here for cleric

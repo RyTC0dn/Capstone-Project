@@ -1,5 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public enum  CharacterType
 {
@@ -18,6 +20,8 @@ public class CharacterSelect : MonoBehaviour
     public CharacterType selectedCharacter;
     private Animator animator;
     public GameObject selectorUI;
+    public GameObject iconFirst; //First button to be selected for controller navigation
+    private bool isSelectorActive = false;
 
     //Script references
     Player_Attack_Cleric clericAtk;
@@ -32,6 +36,36 @@ public class CharacterSelect : MonoBehaviour
         knightAtk = GetComponentInParent<Player_Attack_Knight>();
         selectorUI.SetActive(false);
     }
+
+    private void Update()
+    {
+        #region Singleton Pattern
+        // Check for input to toggle the character selector UI
+        bool activeInput = Keyboard.current.iKey.wasPressedThisFrame || Gamepad.current?.dpad.up.wasPressedThisFrame == true;
+
+        if (activeInput)
+        {
+            if (isSelectorActive)
+            {
+                Time.timeScale = 1f; // Resume the game when the selector is closed
+                ToggleSelectorUI(false);
+                isSelectorActive = false;
+
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+            else
+            {
+                Time.timeScale = 0f; // Pause the game when the selector is active
+                ToggleSelectorUI(true);
+                isSelectorActive = true;
+
+                //Set the first button to be selected for controller navigation
+                EventSystem.current.SetSelectedGameObject(iconFirst);
+            }
+        }
+        #endregion
+    }
+
 
     private void CharacterUpdate()
     {
