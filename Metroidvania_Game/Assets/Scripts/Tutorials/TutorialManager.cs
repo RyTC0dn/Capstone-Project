@@ -17,6 +17,7 @@ public class TutorialManager : MonoBehaviour
     private GameObject player;
 
     public List<TutorialScene> tutorials = new List<TutorialScene>();
+    public GameEvent[] gameEvents;
 
     private void Start()
     {
@@ -64,5 +65,41 @@ public class TutorialManager : MonoBehaviour
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(lastSceneIndex));
         Debug.Log("Player moved back to main scene");
+    }
+
+    public void ChooseTutorial(int scene)
+    {
+        SceneManager.LoadScene(scene); //Load the tutorial selection scene, which will then call Show() to load the selected tutorial
+    }
+
+    public void SetTutorialImage(Sprite newImage)
+    {
+        image = newImage;
+        screen.GetComponent<SpriteRenderer>().sprite = image;
+        screen.SetActive(true);
+    }
+
+    public void TriggerEvent(int eventIndex, Component sender, object data)
+    {
+        if (eventIndex < gameEvents.Length)
+        {
+            gameEvents[eventIndex].Raise(sender, data);
+        }
+        else
+        {
+            Debug.LogWarning("Event index out of range: " + eventIndex);
+        }
+    }
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 }
