@@ -112,6 +112,10 @@ PrefabInstance:
       value: GroundEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 253066347139419439, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

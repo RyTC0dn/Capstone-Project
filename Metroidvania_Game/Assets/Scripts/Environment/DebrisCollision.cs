@@ -7,10 +7,14 @@ public class DebrisCollision : MonoBehaviour
     [SerializeField] private float debrisLifetime; // Lifetime of debris in seconds
     [SerializeField]private int damage;
     [SerializeField]private GameEvent damagePlayer;
+    [SerializeField] private GameEvent damageEnemy;
     private ParticleSystem rockExplosion;
+
+    EnemyHealth enemyHP;
 
     private void Start()
     {
+        enemyHP = FindAnyObjectByType<EnemyHealth>();
         // Schedule debris destruction after its lifetime
         Destroy(gameObject, debrisLifetime);
     }
@@ -31,14 +35,16 @@ public class DebrisCollision : MonoBehaviour
             damagePlayer.Raise(this, damage);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Ground"))
+        else if (collision.gameObject.CompareTag("GroundEnemy") || 
+            collision.gameObject.CompareTag("FlyingEnemy"))
         {
+            // Optionally, you can add logic to damage the enemy here if needed
+            damageEnemy.Raise(this, damage);
             Destroy(gameObject);
         }
 
         // Start the coroutine to destroy debris after its lifetime
         StartCoroutine(DestroyDebrisAfterTime());
-
     }
 
     private System.Collections.IEnumerator DestroyDebrisAfterTime()

@@ -8,6 +8,7 @@ public class FallingBlocks : MonoBehaviour
     [SerializeField] private float maxRocks;
     [SerializeField] private float detectionRange;
     [SerializeField] private bool detectPlayer;
+    [SerializeField] private bool detectEnemy;
     private float reInitializeTime = 5f;
     private float delaySpawnTime = 1f;
     [SerializeField] private float maxRange = 5f;
@@ -53,7 +54,9 @@ public class FallingBlocks : MonoBehaviour
         detectPlayer = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, LayerMask.GetMask("Player"));
         Debug.DrawRay(transform.position, Vector2.down * detectionRange, Color.red);
 
-        if (detectPlayer)
+        detectEnemy = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, LayerMask.GetMask("Enemy"));
+
+        if (detectPlayer || detectEnemy)
         {
             hasDelayTimerStarted = true;
             debrisAnim.SetBool("playerUnderRay", true);
