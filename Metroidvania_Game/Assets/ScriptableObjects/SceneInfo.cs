@@ -3,16 +3,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SceneInfo", menuName = "Scriptable Objects/SceneInfo")]
 public class SceneInfo : ScriptableObject
 {
-    //Abilities
+    [Header("Abilities")]
     public bool isShieldPickedUp = false;
     public bool isWallBreakPickedUp = false;
     [Space(20)]
 
-    //Shop
+    [Header("Shop")]
     public bool isAxeBought = false;
     public bool isHPBought = false;
     [Space(20)]
 
-    //Cutscenes
+    [Header("Cutscenes")]
     public bool isBossCutscenePlayed = false;
+    [Space(20)]
+    
+    [Header("Tutorials")]
+    //Movement Tutorial
+    public bool isMoved = false;
+    public bool isJumped = false;
 }
