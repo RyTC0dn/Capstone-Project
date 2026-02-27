@@ -412,6 +412,8 @@ MonoBehaviour:
   abilityPickup: {fileID: 11400000, guid: 286c44b7fbeca8f40abe78895f363003, type: 2}
   itemShield: {fileID: 3738341810539077272, guid: 653ca9a9f73f3674ebe3c412844c71ee, type: 3}
   itemWallBreak: {fileID: 2741335245078394358}
+  shield: {fileID: 3738341810539077272, guid: 653ca9a9f73f3674ebe3c412844c71ee, type: 3}
+  wallBreak: {fileID: 2741335245078394358}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!50 &3629891431757964869
 Rigidbody2D:
