@@ -66,7 +66,7 @@ public class FallingBlocks : MonoBehaviour
             if (delaySpawnTime <= 0f)
             {
                 SpawnRocks();
-                delaySpawnTime = 1f;
+                delaySpawnTime = 100f;
                 hasDelayTimerStarted = false;
             }
         }
