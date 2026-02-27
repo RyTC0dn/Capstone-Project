@@ -42,6 +42,11 @@ public class EnemyHealth : MonoBehaviour
                 Debug.Log("Recieved attack");
             }
         }
+        if(sender is DebrisCollision debris && data is int debrisDamage)
+        {
+            EnemyDamage(debrisDamage);
+            Debug.Log("Hit by debris");
+        }
     }
 
     public void OnAxeAttack(Component sender, object data)
