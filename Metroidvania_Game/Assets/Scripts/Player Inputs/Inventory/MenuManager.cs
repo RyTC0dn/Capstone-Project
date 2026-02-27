@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
     public GameObject equipmentMenu;
     public GameObject inventoryMenu;
     public GameObject questMenu;
+    public GameObject tutorialMenu;
     private PrototypePlayerAttack playerAttack; //So I can disable attack when menu is open
     [Space(20)]
 
@@ -200,6 +201,7 @@ public class MenuManager : MonoBehaviour
 
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
 
         menuAudio.PlayOneShot(menuClips[0]);
     }
@@ -212,6 +214,7 @@ public class MenuManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuFirst[1]);
 
         questMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
 
         menuAudio.PlayOneShot(menuClips[0]);
     }
@@ -224,6 +227,21 @@ public class MenuManager : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(menuFirst[2]);
 
+        tutorialMenu.SetActive(false);
+
+        menuAudio.PlayOneShot(menuClips[0]);
+    }
+
+    public void TutorialOpen()
+    {
+        tutorialMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(menuFirst[3]);
+
+        equipmentMenu.SetActive(false);
+        inventoryMenu.SetActive(false);
+        questMenu.SetActive(false);
+
         menuAudio.PlayOneShot(menuClips[0]);
     }
 
@@ -234,6 +252,7 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
         }
 
+        #region Menu Hierarchy Check
         //Check which menu is currently open
         if (equipmentMenu.activeInHierarchy)
             equipmentMenu.SetActive(false);
@@ -241,12 +260,15 @@ public class MenuManager : MonoBehaviour
             inventoryMenu.SetActive(false);
         else if(questMenu.activeInHierarchy)
             questMenu.SetActive(false);
+        else if(tutorialMenu.activeInHierarchy)
+            tutorialMenu.SetActive(false);
         else
         {
             //If no menus are open 
             Debug.LogError("There are no menus open");
             return;
         }
+        #endregion
     }
     #endregion
 }
