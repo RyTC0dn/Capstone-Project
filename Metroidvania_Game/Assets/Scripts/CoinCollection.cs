@@ -110,7 +110,7 @@ public class CoinCollection : MonoBehaviour
         coinCollect = GetComponent<AudioSource>();
 
         //Check if the player walks into a coin
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("AbilityPickup"))
         {
             Debug.Log("Coin Collected");
 
