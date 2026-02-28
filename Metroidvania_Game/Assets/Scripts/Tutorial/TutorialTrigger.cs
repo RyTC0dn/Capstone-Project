@@ -19,6 +19,7 @@ public class TutorialTrigger : MonoBehaviour
     public CurrentTutorial tutorial;
     [SerializeField]private int tutorialSequence;
     [SerializeField] private int maxSequence;
+    public SceneInfo sceneInfo;
 
     private void Start()
     {
@@ -42,7 +43,12 @@ public class TutorialTrigger : MonoBehaviour
                 && tutorialSequence != maxSequence) {
                 TutorialManager.Instance.NextTutorialNotification();
                 //MovementTutorial(tutorialSequence);
-                gameObject.SetActive(false);                
+                gameObject.SetActive(false);     
+                
+                if(tutorialSequence >= maxSequence) {
+                    sceneInfo.isMoved = true;
+                    Debug.Log("Movement Tutorial Completed");
+                }
             }
             #endregion
         }

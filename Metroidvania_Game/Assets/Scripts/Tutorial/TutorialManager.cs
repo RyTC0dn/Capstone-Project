@@ -12,6 +12,8 @@ public class TutorialManager : MonoBehaviour
     [SerializeField]private float introTime = 0f;
     private bool tutorialStarted = false;
 
+    public SceneInfo currentScene;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +30,11 @@ public class TutorialManager : MonoBehaviour
             {
                 NextTutorialNotification();
             }
+        }
+
+        if (currentScene.isMoved)
+        {
+            SendBackToLevel();
         }
         
     }
@@ -71,5 +78,10 @@ public class TutorialManager : MonoBehaviour
             tutorialText.text = notifications.textLines[currentNotificationIndex].text;
             Debug.Log("Tutorial Notification: " + notifications.textLines[currentNotificationIndex].text);
         }
-    } 
+    }
+
+    public void SendBackToLevel()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }
