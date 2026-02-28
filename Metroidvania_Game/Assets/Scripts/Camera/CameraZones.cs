@@ -11,6 +11,11 @@ public class CameraZones : MonoBehaviour
     [Tooltip("Set the spawnpoint position within each room")]
     public float spawnPointX, spawnPointY;
 
+
+    public bool applyToAllCameras = false;
+    [Tooltip("If set and apply to all cameras is false, this camera will recieve the bounds")]
+    public Camera specificCamera; // If applyToAllCameras is false, specify the camera to apply the bounds to
+
     public GameObject playerSpawnPoint;
     private GameObject player;
 
@@ -28,7 +33,7 @@ public class CameraZones : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Character 1");
-        
+
     }
 
     private void OnDestroy()
@@ -40,13 +45,50 @@ public class CameraZones : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            CameraControl cam = Camera.main.GetComponent<CameraControl>();
-            if (cam != null)
+            if (applyToAllCameras)
             {
-                cam.SetBounds(minX, maxX, minY, maxY, roomType);
+                // FindObjectsOfType returns all active CameraControl instances in the scene
+                var allCams = FindObjectsOfType<CameraControl>();
+                foreach (var camCrtl in allCams)
+                {
+                    if (camCrtl != null)
+                        camCrtl.SetBounds(minX, maxX, minY, maxY, roomType);
+                }
             }
-            SetSpawnPoint();
-        }        
+            else
+            {
+                // Apply to a specific camera if assigned, otherwise fall back to Camera.main
+                Camera cam = specificCamera != null ? specificCamera : Camera.main;
+                if (cam != null)
+                {
+                    var camCtrl = cam.GetComponent<CameraControl>();
+                    if (camCtrl != null)
+                        camCtrl.SetBounds(minX, maxX, minY, maxY, roomType);
+                    else
+                        Debug.LogWarning($"Camera '{cam.name}' does not have a CameraControl component.");
+                }
+                else
+                {
+                    Debug.LogWarning("No camera found to apply bounds to (specificCamera is null and Camera.main is null).");
+                }
+                SetSpawnPoint();
+                ActivateThisSpawn();
+            }
+            //else if (specificCamera != null)
+            //{
+            //    CameraControl camControl = specificCamera.GetComponent<CameraControl>();
+            //    if (camControl != null)
+            //    {
+            //        camControl.SetBounds(minX, maxX, minY, maxY, roomType);
+            //    }
+            //}
+            //CameraControl cam = Camera.main.GetComponent<CameraControl>();
+            //if (cam != null)
+            //{
+            //    cam.SetBounds(minX, maxX, minY, maxY, roomType);
+            //}
+            //SetSpawnPoint();
+        }
     }
 
     private void SetSpawnPoint()
@@ -59,7 +101,7 @@ public class CameraZones : MonoBehaviour
     {
         foreach (CameraZones zone in zones)
         {
-            if(zone.playerSpawnPoint == null) continue;
+            if (zone.playerSpawnPoint == null) continue;
 
             if (zone == this)
                 zone.playerSpawnPoint.SetActive(true);

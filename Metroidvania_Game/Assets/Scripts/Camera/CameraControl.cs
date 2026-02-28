@@ -14,6 +14,16 @@ public enum Rooms
     Room_A5,
     Room_A6,
     Room_A7,
+    Tutorial1,
+    Tutorial2,
+    Tutorial3,
+    Tutorial4,
+    Tutorial5,
+    Tutorial6,
+    Tutorial7,
+    Tutorial8,
+    Tutorial9,
+    Tutorial10
 }
 
 public class CameraControl : MonoBehaviour

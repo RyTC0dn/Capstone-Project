@@ -1,10 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Attach this script onto game object that will act as 
-/// a trigger for the next tutorial sequence.
-/// </summary>
-
 //This list will get updated as more tutorials are finished
 public enum CurrentTutorial
 {
@@ -12,19 +7,29 @@ public enum CurrentTutorial
     UI
 }
 
+/// <summary>
+/// Represents a trigger component that manages and raises tutorial events based on player interactions within a scene.
+/// </summary>
+/// <remarks>Attach this component to a GameObject to handle tutorial progression and event triggering in response
+/// to player actions, such as entering specific areas. The component coordinates with associated tutorial data and
+/// scene information to determine when to raise tutorial events. Ensure that the required references to tutorial event,
+/// scene information, and tutorial type are assigned for correct operation.</remarks>
 public class TutorialTrigger : MonoBehaviour
 {
-    public GameEvent tutorialEvent;
-    public SceneInfo sceneInfo;
     public CurrentTutorial tutorial;
     [SerializeField]private int tutorialSequence;
     [SerializeField] private int maxSequence;
 
-    //Main event trigger logic that will call other functions
-    public void Trigger(Component sender, object data)
+    private void Start()
     {
-        //Send tutorial event
-        tutorialEvent.Raise(sender, data);
+        tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
+        maxSequence = TutorialManager.Instance.notifications.textLines.Length;
+    }
+
+    private void Update()
+    {
+        // Update the tutorial sequence based on the current notification index from the TutorialManager
+        tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
     }
 
     //
@@ -35,29 +40,11 @@ public class TutorialTrigger : MonoBehaviour
             #region Movement Tutorial
             if(tutorial == CurrentTutorial.Movement
                 && tutorialSequence != maxSequence) {
-                tutorialSequence++;
-                MovementTutorial(tutorialSequence);
-                if(tutorialSequence >= maxSequence)
-                {
-                    tutorialSequence = 0;
-                    return;
-                }
+                TutorialManager.Instance.NextTutorialNotification();
+                //MovementTutorial(tutorialSequence);
+                gameObject.SetActive(false);                
             }
             #endregion
-        }
-    }
-
-    private void MovementTutorial(int sequence)
-    {
-        if(sequence == 1)
-        {
-            Trigger(this, sceneInfo.isMoved);
-            Debug.Log("Movement");
-        }
-        else if(sequence == 2)
-        {
-            Trigger(this, sceneInfo.isJumped);
-            Debug.Log("Jumped");
         }
     }
 
