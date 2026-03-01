@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //This list will get updated as more tutorials are finished
 public enum CurrentTutorial
@@ -25,6 +26,12 @@ public class TutorialTrigger : MonoBehaviour
     {
         tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
         maxSequence = TutorialManager.Instance.notifications.textLines.Length;
+
+        //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial   
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            TutorialManager.Instance.ShowTutorialText(true);
+        }
     }
 
     private void Update()
@@ -53,5 +60,4 @@ public class TutorialTrigger : MonoBehaviour
             #endregion
         }
     }
-
 }

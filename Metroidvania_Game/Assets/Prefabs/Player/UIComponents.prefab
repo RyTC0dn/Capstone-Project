@@ -2782,8 +2782,6 @@ MonoBehaviour:
   questMenu: {fileID: 3638287947987816910}
   tutorialMenu: {fileID: 1989666894252574932}
   bookIcon: {fileID: 7283362158537869902}
-  startPos: {x: 1758.2, y: -143.4}
-  targetPos: {x: 1758.2, y: 100}
   bookText: {fileID: 4501238125900401615}
 --- !u!82 &8706295396120409906
 AudioSource:
@@ -7785,6 +7783,7 @@ GameObject:
   - component: {fileID: 2076847881662647226}
   - component: {fileID: 2781741197007797653}
   - component: {fileID: 4510842000732715655}
+  - component: {fileID: 3280052304623209062}
   m_Layer: 7
   m_Name: Book Icon
   m_TagString: Untagged
@@ -7850,6 +7849,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &3280052304623209062
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7283362158537869902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 53575b027780456418d76c2dc5d53fd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7608653561007750265
 GameObject:
   m_ObjectHideFlags: 0

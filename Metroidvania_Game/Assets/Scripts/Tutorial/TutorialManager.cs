@@ -7,6 +7,7 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI tutorialText;
+    public GameObject textBox;
     public Dialogue notifications;
     public int currentNotificationIndex = 0;
     [SerializeField]private float introTime = 0f;
@@ -18,6 +19,7 @@ public class TutorialManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        textBox.SetActive(false);
         Introduction();
     }
 
@@ -49,10 +51,9 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    public void ResetTutorial()
+    public void ShowTutorialText(bool show)
     {
-        currentNotificationIndex = 0;
-        tutorialText.text = "";
+        textBox.SetActive(show);
     }
 
     private void Awake()

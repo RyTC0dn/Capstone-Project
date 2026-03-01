@@ -42,8 +42,6 @@ public class MenuManager : MonoBehaviour
 
     [Header("Book Icon Indicator1")]
     public GameObject bookIcon;
-    [SerializeField] private Vector2 startPos;
-    [SerializeField]private Vector2 targetPos;
     [SerializeField]private TextMeshProUGUI bookText;
     #endregion
 
@@ -66,7 +64,6 @@ public class MenuManager : MonoBehaviour
         #endregion
 
         bookIcon.SetActive(false);
-        bookIcon.transform.position = startPos;
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
     }
 
@@ -142,20 +139,7 @@ public class MenuManager : MonoBehaviour
 
     private void BookIcon()
     {
-        //TO DO: Animate book icon when quest menu is opened
-        if(SceneManager.GetActiveScene().buildIndex == 2 && !menuOpened) //Only show in level 1
-        {
-            bookIcon.SetActive(true);
-            bookIcon.transform.position = 
-                Vector2.Lerp(bookIcon.transform.position, 
-                targetPos, Time.deltaTime * 5f/6);
-            StartCoroutine(FlashText());
-        }
-        else
-        {
-            bookIcon.SetActive(false);
-            bookIcon.transform.position = startPos;
-        }
+        //Trigger book icon animations
 
     }
 
@@ -178,17 +162,6 @@ public class MenuManager : MonoBehaviour
 
             bookText.color = new Color(color.r, color.g, color.b, 1f);
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        //Draw target position for book icon
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(targetPos, 10f);
-
-        //Draw start position for book icon
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(startPos, 10f);
     }
     #endregion
 

@@ -19,6 +19,6 @@ public class SceneInfo : ScriptableObject
     
     [Header("Tutorials")]
     //Movement Tutorial
-    public bool isMoved = false;
-    public bool isJumped = false;
+    public bool bookIsLookedAt = false;
+    public bool isMoved = false;    
 }

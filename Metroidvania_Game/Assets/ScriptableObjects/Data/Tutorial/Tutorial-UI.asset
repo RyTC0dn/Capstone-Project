@@ -18,7 +18,9 @@ MonoBehaviour:
 
       Controller - Press the
       select button to open menu'
-  - text: 'The Equipment menu will be where you will be able to select what abilities
-      or '
-  - text: 
+  - text: In the equipment menu you will see the different weapons, character abilities,
+      and universal abilities which provide information upon selecting them
+  - text: You may only select one weapon, character abilitiy, and universal ability
+      at a time (one per row)
+  - text: 'You can navigate to different pages through the tabs on the side '
   npcName: Narrator

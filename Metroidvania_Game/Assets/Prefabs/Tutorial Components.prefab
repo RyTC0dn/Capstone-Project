@@ -568,10 +568,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 5741473168856057442}
+  textBox: {fileID: 5970182226858579158}
   notifications: {fileID: 11400000, guid: a6a2f7d122a0e334fae2415de8ac2a89, type: 2}
   currentNotificationIndex: 0
   introTime: 0.1
-  currentScene: {fileID: 0}
+  currentScene: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!1 &4097546772434166438
 GameObject:
   m_ObjectHideFlags: 0
