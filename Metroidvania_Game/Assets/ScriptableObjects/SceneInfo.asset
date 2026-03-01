@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isShieldPickedUp: 0
   isWallBreakPickedUp: 0
+  isShieldUsed: 0
+  isWallBreakUsed: 0
   isAxeBought: 0
   isHPBought: 0
+  isAxeUsed: 0
   isBossCutscenePlayed: 0

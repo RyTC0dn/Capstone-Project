@@ -26,11 +26,21 @@ public class Knight_Ability1_Shield : MonoBehaviour
         //Setting game object components 
         shieldCollider.SetActive(false);
         shieldTimer = shieldDuration;
-        shieldIcon.SetActive(false);     
+        shieldIcon.SetActive(false);
+
+        if (sceneInfo.isShieldUsed && !sceneInfo.isAxeUsed)
+        {
+            shieldSelected = true;            
+        }
     }
 
     private void Update()
     {
+        if(sceneInfo == null)
+        {
+            Debug.LogError("SceneInfo reference is missing in Knight_Ability1_Shield script.");
+            return;
+        }
 
         if (sceneInfo.isShieldPickedUp)
         {
@@ -84,11 +94,13 @@ public class Knight_Ability1_Shield : MonoBehaviour
     public void OnButtonSelected()
     {
         shieldSelected = true;
+        sceneInfo.isShieldUsed = true; //Set shield as used when selected in menu
     }
 
     public void OnButtonDeselect()
     {
         shieldSelected = false;
+        sceneInfo.isShieldUsed = false; //Set shield as not used when deselected in menu
     }
     #endregion
 

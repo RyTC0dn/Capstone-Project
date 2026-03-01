@@ -32,6 +32,12 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
         delayTillThrow = throwRate;
 
         axeIcon.SetActive(false);
+
+        // Check if the player has picked up the shield and hasn't used the wall break ability
+        if (sceneInfo != null && sceneInfo.isAxeUsed && !sceneInfo.isShieldUsed)
+        {
+            axeSelected = true;
+        }
     }
 
     // Update is called once per frame
@@ -60,11 +66,13 @@ public class Knight_Ability2_AxeThrow : MonoBehaviour
     public void OnButtonSelected()
     {
         axeSelected = true;
+        sceneInfo.isAxeUsed = true;
     }
 
     public void OnButtonDeselect()
     {
         axeSelected = false;
+        sceneInfo.isAxeUsed = false;
     }
 
     void Shoot()
