@@ -63,7 +63,6 @@ public class MenuManager : MonoBehaviour
         questMenu.SetActive(false);
         #endregion
 
-        bookIcon.SetActive(false);
         playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
     }
 
@@ -73,7 +72,7 @@ public class MenuManager : MonoBehaviour
         //TAB - Keyboard or Select - Gamepad
         if (InputManager.Instance.InventoryOpenCloseInput)
         {
-            if (menuOpened) //Check if the menu is already open
+            if (menuOpened && sceneInfo.bookIsLookedAt) //Check if the menu is already open
             {
                 CloseMenu();
                 //Enable player attack when menu is closed

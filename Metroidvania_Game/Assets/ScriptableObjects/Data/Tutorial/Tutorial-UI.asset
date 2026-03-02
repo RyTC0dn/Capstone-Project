@@ -13,14 +13,19 @@ MonoBehaviour:
   m_Name: Tutorial-UI
   m_EditorClassIdentifier: 
   textLines:
-  - text: 'Welcome to the basic UI menu tutorial '
+  - text: Welcome to the basic UI menu tutorial
   - text: 'Keyboard - Press tab key to open the menu
 
       Controller - Press the
       select button to open menu'
   - text: In the equipment menu you will see the different weapons, character abilities,
-      and universal abilities which provide information upon selecting them
+      and universal abilities which provide information upon selecting them.
   - text: You may only select one weapon, character abilitiy, and universal ability
-      at a time (one per row)
-  - text: 'You can navigate to different pages through the tabs on the side '
+      at a time (one per row). Select any to continue
+  - text: You can navigate to different pages through the tabs on the side. Select
+      any to continue
+  - text: 'This is the end of the tutorial due to current implementations. Press
+      input to close tutorial
+
+'
   npcName: Narrator
