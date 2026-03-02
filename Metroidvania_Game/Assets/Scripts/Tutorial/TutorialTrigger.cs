@@ -28,16 +28,21 @@ public class TutorialTrigger : MonoBehaviour
         maxSequence = TutorialManager.Instance.notifications.textLines.Length;
 
         //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial   
-        if (SceneManager.GetActiveScene().buildIndex == 5)
-        {
-            TutorialManager.Instance.ShowTutorialText(true);
-        }
     }
 
     private void Update()
     {
         // Update the tutorial sequence based on the current notification index from the TutorialManager
         tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
+        if(tutorialSequence >= maxSequence)
+        {
+            if(tutorial == CurrentTutorial.Movement)
+            {
+                TutorialManager.Instance.ShowTutorialText(false);
+                TutorialManager.Instance.currentNotificationIndex = 0;
+                TutorialManager.Instance.SendBackToLevel();
+            }
+        }
     }
 
     //
@@ -50,14 +55,15 @@ public class TutorialTrigger : MonoBehaviour
                 && tutorialSequence != maxSequence) {
                 TutorialManager.Instance.NextTutorialNotification();
                 //MovementTutorial(tutorialSequence);
-                gameObject.SetActive(false);     
-                
-                if(tutorialSequence >= maxSequence) {
-                    sceneInfo.isMoved = true;
-                    Debug.Log("Movement Tutorial Completed");
-                }
+                gameObject.SetActive(false);             
+
             }
             #endregion
         }
+    }
+
+    public void SendBackToLevel()
+    {
+        SceneManager.LoadScene("Level 1");
     }
 }

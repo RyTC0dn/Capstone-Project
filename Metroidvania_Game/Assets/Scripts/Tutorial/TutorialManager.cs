@@ -14,12 +14,13 @@ public class TutorialManager : MonoBehaviour
     private bool tutorialStarted = false;
 
     public SceneInfo currentScene;
+    public GameObject input;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        textBox.SetActive(false);
+        input.SetActive(false);
         Introduction();
     }
 
@@ -32,13 +33,7 @@ public class TutorialManager : MonoBehaviour
             {
                 NextTutorialNotification();
             }
-        }
-
-        if (currentScene.isMoved)
-        {
-            SendBackToLevel();
-        }
-        
+        }       
     }
 
     public void Introduction()
@@ -74,15 +69,20 @@ public class TutorialManager : MonoBehaviour
         tutorialStarted = false;
 
         currentNotificationIndex++;
+        // Check if the current notification index is within the bounds of the notifications text lines
         if (currentNotificationIndex < notifications.textLines.Length)
         {
             tutorialText.text = notifications.textLines[currentNotificationIndex].text;
             Debug.Log("Tutorial Notification: " + notifications.textLines[currentNotificationIndex].text);
         }
+        else
+        {
+            SendBackToLevel();
+        }
     }
 
     public void SendBackToLevel()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level 1");
     }
 }
