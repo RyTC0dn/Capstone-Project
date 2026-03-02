@@ -16,7 +16,7 @@ public class UIMenuTutorial : MonoBehaviour
     [Space(20)]
 
     public Dialogue notifications;
-    private int currentNotificationIndex = 0;
+    [SerializeField]private int currentNotificationIndex = 0;
     private bool controllerDetected;
 
     public SceneInfo info;
@@ -76,17 +76,14 @@ public class UIMenuTutorial : MonoBehaviour
         {
             tutorialStart = true; // Start the tutorial progression for the next notifications
         }
-        else if(currentNotificationIndex == 5)
+        else if(currentNotificationIndex == 5 && input)
         {
+            FinishTutorial();
             //Turn off all arrows
             foreach (GameObject arrow in arrows)
             {
                 arrow.SetActive(false);
             }
-        }
-        else if (currentNotificationIndex >= 5 && input)
-        {
-            FinishTutorial();
         }
         #endregion
     }
@@ -149,6 +146,7 @@ public class UIMenuTutorial : MonoBehaviour
         info.bookIsLookedAt = true; // Set the book as looked at to trigger the next tutorial notification
         textBox.SetActive(false); // Hide the tutorial text box
         info.ResetSceneInfo(); // Reset the scene info for the next time the player goes through the tutorial
+        Debug.Log("Finished tutorial");
     }
 
     private IEnumerator ColorArrows()

@@ -43,6 +43,8 @@ public class MenuManager : MonoBehaviour
     [Header("Book Icon Indicator1")]
     public GameObject bookIcon;
     [SerializeField]private TextMeshProUGUI bookText;
+    private bool acceptTutorial = false;
+    public GameObject uiTutorial;
     #endregion
 
 
@@ -63,7 +65,19 @@ public class MenuManager : MonoBehaviour
         questMenu.SetActive(false);
         #endregion
 
-        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();        
+    }
+
+    public void TutorialConfirmation(bool accept)
+    {
+        if (!accept)
+        {
+            uiTutorial.SetActive(false);
+        }
+        else if (accept)
+        {
+            uiTutorial.SetActive(true);
+        }
     }
 
     private void Update()
