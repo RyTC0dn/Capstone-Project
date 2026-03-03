@@ -40,14 +40,13 @@ public class WallBreakCharge : MonoBehaviour
         #endregion
 
         chargeCanvas.enabled = false;
-        dashTrail.SetActive(false);
-        
+        dashTrail.SetActive(false);        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(sceneInfo.isWallBreakPickedUp)
+        if(sceneInfo.isWallBreakPickedUp/*sceneInfo.isWallBreakUsed*/)
         {
             ChargeMechanic();
         }
@@ -135,5 +134,12 @@ public class WallBreakCharge : MonoBehaviour
     public void OnMenuSelected()
     {
         wallBreakSelected = true;
+        sceneInfo.isWallBreakUsed = true;
+    }
+
+    public void OnMenuDeselected()
+    {
+        wallBreakSelected = false;
+        sceneInfo.isWallBreakUsed = false;
     }
 }
