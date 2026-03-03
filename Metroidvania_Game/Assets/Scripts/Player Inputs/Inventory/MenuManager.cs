@@ -257,4 +257,15 @@ public class MenuManager : MonoBehaviour
         #endregion
     }
     #endregion
+
+    public void TutorialSend(string sceneName)
+    {
+        //Ensure time scale is reset to normal before loading the tutorial scene
+        Time.timeScale = 1f;
+        menuOpened = false;
+
+        CloseMenu();
+
+        SceneManager.LoadScene(sceneName);
+    }
 }

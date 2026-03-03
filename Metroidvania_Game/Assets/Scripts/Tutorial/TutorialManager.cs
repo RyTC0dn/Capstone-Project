@@ -83,6 +83,8 @@ public class TutorialManager : MonoBehaviour
 
     public void SendBackToLevel()
     {
+        //Ensure that time scale is reset to normal before loading the next scene
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level 1");
     }
 }

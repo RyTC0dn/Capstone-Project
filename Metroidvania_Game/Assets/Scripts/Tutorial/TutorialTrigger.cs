@@ -89,6 +89,7 @@ public class TutorialTrigger : MonoBehaviour
 
     public void SendBackToLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level 1");
     }
 }
