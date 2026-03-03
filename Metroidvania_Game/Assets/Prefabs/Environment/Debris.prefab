@@ -178,3 +178,4 @@ MonoBehaviour:
   debrisLifetime: 3
   damage: 1
   damagePlayer: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+  damageEnemy: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}

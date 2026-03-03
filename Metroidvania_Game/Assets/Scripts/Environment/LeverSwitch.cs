@@ -29,6 +29,14 @@ public class LeverSwitch : MonoBehaviour
 
         if (leverSP == null)
             leverSP = GetComponent<SpriteRenderer>();
+
+        if(PlayerPrefs.GetInt("DoorOpen", 0) == 1)
+        {
+            flippedSwitch = true;
+            wasFlipped = true;
+            if (leverSP != null)
+                leverSP.flipX = true;
+        }
     }
 
     // Update is called once per frame
@@ -66,10 +74,14 @@ public class LeverSwitch : MonoBehaviour
             case DoorType.Standard:
                 // Standard door open event
                 switchFlipEvent.Raise(this, flippedSwitch);
+                PlayerPrefs.SetInt("DoorOpen", 1);
+                PlayerPrefs.Save();
                 break;
             case DoorType.Cutscene:
                 // Send signal based on which area is being opened up
                 switchFlipEvent.Raise(this, signalNumber);
+                PlayerPrefs.SetInt("DoorOpen", 1);
+                PlayerPrefs.Save();
                 break;
             default:
                 break;

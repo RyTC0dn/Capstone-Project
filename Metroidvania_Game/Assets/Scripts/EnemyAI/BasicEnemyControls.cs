@@ -17,7 +17,6 @@ public class BasicEnemyControls : MonoBehaviour
     public float enemySpeed;
     public float playerDistance;
     private Rigidbody2D enemyRB2D;
-    public int enemyHealth = 2;
 
     public LayerMask playerLayer; //
     private bool playerDetected = false; //Track if the player was hit by raycast

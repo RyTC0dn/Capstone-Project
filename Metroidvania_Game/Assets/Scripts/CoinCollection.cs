@@ -31,10 +31,9 @@ public class CoinCollection : MonoBehaviour
 
     private void Start()
     {
-        if(rb != null)
-            rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
-        if(coinType == CoinType.Treasure)
+        if (coinType == CoinType.Treasure)
         {
             LaunchCoin();
         }
