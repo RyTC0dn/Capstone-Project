@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 public enum CurrentTutorial
 {
     Movement, 
-    UI
+    UI, 
+    Wallbreak,
+    Combat,
+    NPCInteraction,
+    DoorInteraction,
+    None
 }
 
 /// <summary>
@@ -24,8 +29,28 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Start()
     {
-        tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
-        maxSequence = TutorialManager.Instance.notifications.textLines.Length;
+        tutorialSequence = TutorialManager.Instance != null ? TutorialManager.Instance.currentNotificationIndex : 0;
+        maxSequence = (TutorialManager.Instance != null && TutorialManager.Instance.notifications != null) 
+            ? TutorialManager.Instance.notifications.textLines.Length : 0;
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log($"[TutorialTrigger] Start - scene='{sceneName}', tutorial={tutorial}, seq={tutorialSequence}/{maxSequence}, sceneInfoAssigned={(sceneInfo != null)}");
+
+        //Robust comparison: trim and ignore case to avoid issues with scene name formatting
+        if (sceneName.Trim().Equals("Tutorial 5", System.StringComparison.OrdinalIgnoreCase) && tutorial == CurrentTutorial.Wallbreak)
+        {
+            if(sceneInfo != null)
+            {
+                sceneInfo.isWallBreakPickedUp = true;
+                Debug.Log("Wallbreak tutorial trigger set to true");
+            }
+            else
+            {
+                Debug.LogWarning("SceneInfo reference is not assigned in TutorialTrigger for Wallbreak tutorial.");
+
+            }
+
+        }
 
         //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial   
     }

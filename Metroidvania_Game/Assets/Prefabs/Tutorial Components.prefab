@@ -105,7 +105,7 @@ MonoBehaviour:
   tutorial: 0
   tutorialSequence: 0
   maxSequence: 0
-  sceneInfo: {fileID: 0}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!95 &3059141053177438209
 Animator:
   serializedVersion: 7
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   tutorial: 0
   tutorialSequence: 0
   maxSequence: 0
-  sceneInfo: {fileID: 0}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!95 &6084142455596102533
 Animator:
   serializedVersion: 7
