@@ -86,7 +86,7 @@ public class MenuManager : MonoBehaviour
         //TAB - Keyboard or Select - Gamepad
         if (InputManager.Instance.InventoryOpenCloseInput)
         {
-            if (menuOpened && sceneInfo.bookIsLookedAt) //Check if the menu is already open
+            if (menuOpened /*&& sceneInfo.bookIsLookedAt*/) //Check if the menu is already open
             {
                 CloseMenu();
                 //Enable player attack when menu is closed
@@ -257,15 +257,4 @@ public class MenuManager : MonoBehaviour
         #endregion
     }
     #endregion
-
-    public void TutorialSend(string sceneName)
-    {
-        //Ensure time scale is reset to normal before loading the tutorial scene
-        Time.timeScale = 1f;
-        menuOpened = false;
-
-        CloseMenu();
-
-        SceneManager.LoadScene(sceneName);
-    }
 }

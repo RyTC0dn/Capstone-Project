@@ -20,7 +20,7 @@ public class ItemPickup : MonoBehaviour
     private SpriteRenderer sp;
     private Collider2D itemCollider;
     AudioPlayer audioPlayer;
-    public Object shield;
+    public GameObject shield;
     public GameObject wallBreak;
 
     public SceneInfo sceneInfo;
@@ -46,11 +46,11 @@ public class ItemPickup : MonoBehaviour
         //Debug.Log($"Item ID: {id}, Shield Picked Up: {hasPickedUpShield}, Wall Break Picked Up: {hasPickedUpWallBreak}");
         if (sceneInfo.isShieldPickedUp)
         {
-            Destroy(shield);
+            shield.SetActive(false);
         }
         else if(sceneInfo.isWallBreakPickedUp)
         {
-            Destroy(wallBreak);
+            wallBreak.SetActive(false);
         }
     }
 

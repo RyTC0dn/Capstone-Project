@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266ee5624740d8b43b24e535e8e2b780, type: 3}
+  m_Name: TutorialBook
+  m_EditorClassIdentifier: 
+  textLines:
+  - text: "The UI tutorial goes over the basic functions of the book menu, equipping
+      abilities, find information provided by each item/ability and navigating through
+      other parts of the book menu. \n\nThe majority of the tutorial will take place
+      within the actual menu itself, then show how the menu gets updated with a notification
+      prompt with a book icon on the UI."
+  - text: "The movement tutorial takes you into the a new tutorial area that goes
+      over the basic controls for movement within the game. You will be required
+      to pickup star items to proceed through the tutorial and proof of completing
+      the tutorial. \n\nOnce you collect the last star, you will be brought back
+      to the level."
+  - text: This tutorial will take place in another scene to show you the main interactions
+      with the NPCs within the game, saving them, and interacting within the town.
+  - text: 'This tutorial will go over the controls behind the Charge Dash ability
+      and what are the different scenarios it can be applied to. '
+  - text: 'The UI tutorial goes over the basic functions of the book menu, equipping
+      abilities, find information provided by each item/ability and navigating through
+      other parts of the book menu. '
+  - text: This tutorial will discuss the door function within the game, how to interact
+      with it and counts as a door.
+  npcName: Narrator
