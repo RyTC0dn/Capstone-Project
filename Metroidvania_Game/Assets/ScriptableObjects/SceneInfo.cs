@@ -25,6 +25,11 @@ public class SceneInfo : ScriptableObject
     //Movement Tutorial
     public bool bookIsLookedAt = false;
     public bool isMoved = false;
+    public bool npcInteracted = false;
+    public bool combat = false;
+    public bool dashed = false;
+    public bool door = false;
+    [Space(20)]
 
     //Detect if the player is using a controller or keyboard
     public bool isController = false;

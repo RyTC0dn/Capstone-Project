@@ -22,15 +22,29 @@ public class Tutorial : MonoBehaviour
     [SerializeField]private VideoPlayer player;
     [SerializeField] private TextMeshProUGUI infoText;
     public VideoClip[] clips; //manually assign clips
+    [Space(20)]
+
+    public GameObject[] stars;
+    public SceneInfo sceneInfo;
 
     private void Start()
     {
+        //Have all components disabled at start
         foreach (var button in buttons)
         {
            button.SetActive(false);
         }
+        foreach (var star in stars)
+        {
+            star.SetActive(false);
+        }
         infoText.enabled = false;
         screen.SetActive(false);
+    }
+
+    private void Update()
+    {
+        StarCheck();
     }
 
     public void ShowPreview(int clipIndex)
@@ -75,5 +89,22 @@ public class Tutorial : MonoBehaviour
         {
             button.SetActive(false);
         }
+    }
+
+    public void StarCheck()
+    {
+        if(sceneInfo.bookIsLookedAt)
+            stars[0].SetActive(true);
+        else if(sceneInfo.isMoved)
+            stars[1].SetActive(true);
+        else if (sceneInfo.npcInteracted)
+            stars[2].SetActive(true);
+        else if (sceneInfo.combat)
+            stars[3].SetActive(true);
+        else if (sceneInfo.dashed)
+            stars[4].SetActive(true);
+        else if (sceneInfo.door)
+            stars[5].SetActive(true);
+
     }
 }
