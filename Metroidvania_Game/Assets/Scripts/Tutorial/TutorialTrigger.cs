@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 //This list will get updated as more tutorials are finished
 public enum CurrentTutorial
 {
-    Movement, 
-    UI, 
+    Movement,
+    UI,
     Wallbreak,
     Combat,
     NPCInteraction,
@@ -23,45 +24,27 @@ public enum CurrentTutorial
 public class TutorialTrigger : MonoBehaviour
 {
     public CurrentTutorial tutorial;
-    [SerializeField]private int tutorialSequence;
+    [SerializeField] private int tutorialSequence;
     [SerializeField] private int maxSequence;
+    [SerializeField] private Button button;
     public SceneInfo sceneInfo;
 
     private void Start()
     {
         tutorialSequence = TutorialManager.Instance != null ? TutorialManager.Instance.currentNotificationIndex : 0;
-        maxSequence = (TutorialManager.Instance != null && TutorialManager.Instance.notifications != null) 
+        maxSequence = (TutorialManager.Instance != null && TutorialManager.Instance.notifications != null)
             ? TutorialManager.Instance.notifications.textLines.Length : 0;
 
-        string sceneName = SceneManager.GetActiveScene().name;
-        Debug.Log($"[TutorialTrigger] Start - scene='{sceneName}', tutorial={tutorial}, seq={tutorialSequence}/{maxSequence}, sceneInfoAssigned={(sceneInfo != null)}");
-
-        //Robust comparison: trim and ignore case to avoid issues with scene name formatting
-        if (sceneName.Trim().Equals("Tutorial 5", System.StringComparison.OrdinalIgnoreCase) && tutorial == CurrentTutorial.Wallbreak)
-        {
-            if(sceneInfo != null)
-            {
-                sceneInfo.isWallBreakPickedUp = true;
-                Debug.Log("Wallbreak tutorial trigger set to true");
-            }
-            else
-            {
-                Debug.LogWarning("SceneInfo reference is not assigned in TutorialTrigger for Wallbreak tutorial.");
-
-            }
-
-        }
-
-        //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial   
+        //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial
     }
 
     private void Update()
     {
         // Update the tutorial sequence based on the current notification index from the TutorialManager
         tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
-        if(tutorialSequence >= maxSequence)
+        if (tutorialSequence >= maxSequence)
         {
-            if(tutorial == CurrentTutorial.Movement)
+            if (tutorial == CurrentTutorial.Movement)
             {
                 TutorialManager.Instance.ShowTutorialText(false);
                 TutorialManager.Instance.currentNotificationIndex = 0;
@@ -76,15 +59,21 @@ public class TutorialTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             #region Movement Tutorial
-            if(tutorial == CurrentTutorial.Movement
-                && tutorialSequence != maxSequence) {
+
+            if (tutorial == CurrentTutorial.Movement
+                && tutorialSequence != maxSequence)
+            {
                 TutorialManager.Instance.NextTutorialNotification();
                 //MovementTutorial(tutorialSequence);
-                gameObject.SetActive(false);             
-
+                gameObject.SetActive(false);
             }
-            #endregion
+
+            #endregion Movement Tutorial
         }
+    }
+
+    private void ListenForClick()
+    {
     }
 
     public void SendBackToLevel()

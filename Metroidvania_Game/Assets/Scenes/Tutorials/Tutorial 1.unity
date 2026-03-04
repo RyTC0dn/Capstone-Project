@@ -304,6 +304,34 @@ PrefabInstance:
       propertyPath: m_ShadowMesh.m_Mesh
       value: 
       objectReference: {fileID: 229637718}
+    - target: {fileID: 2863019209757152649, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: maxX
+      value: 18.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863019209757152649, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: maxY
+      value: 9.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863019209757152649, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: minX
+      value: 6.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863019209757152649, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: minY
+      value: 6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863019209757152649, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: spawnPointX
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863019209757152649, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: spawnPointY
+      value: 3.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100748397429472042, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.02
+      objectReference: {fileID: 0}
     - target: {fileID: 5563783820415314558, guid: 2da978a8259c4cc43a5e83732deabfa3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -28413,7 +28441,7 @@ Transform:
   - {fileID: 695927382}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1837300793
+--- !u!43 &1241799277
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
