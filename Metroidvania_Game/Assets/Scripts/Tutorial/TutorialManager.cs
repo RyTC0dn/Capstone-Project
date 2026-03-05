@@ -12,6 +12,7 @@ public class TutorialManager : MonoBehaviour
     public int currentNotificationIndex = 0;
     [SerializeField] private float introTime = 0f;
     private bool tutorialStarted = false;
+    public string sceneName;
 
     [Space(20)]
     public TextMeshProUGUI currentStarCount;
@@ -20,6 +21,7 @@ public class TutorialManager : MonoBehaviour
 
     public SceneInfo sceneInfo;
     public GameObject input;
+    public Animator bookAnim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -30,7 +32,7 @@ public class TutorialManager : MonoBehaviour
         input.SetActive(false);
         Introduction();
 
-        string sceneName = SceneManager.GetActiveScene().name;
+        //string sceneName = SceneManager.GetActiveScene().name;
 
         //Robust comparison: trim and ignore case to avoid issues with scene name formatting
         if (sceneName.Trim().Equals("Tutorial 5", System.StringComparison.OrdinalIgnoreCase))
@@ -44,6 +46,17 @@ public class TutorialManager : MonoBehaviour
             {
                 Debug.LogWarning("SceneInfo reference is not assigned in TutorialTrigger for Wallbreak tutorial.");
             }
+        }
+        else if (sceneName.Trim().Equals("Tutorial 1", System.StringComparison.OrdinalIgnoreCase))
+        {
+            sceneInfo.isWallBreakPickedUp = true;
+            sceneInfo.isAxeBought = true;
+            sceneInfo.isShieldPickedUp = true;
+            bookAnim.Play("BookEnter"); //On start, have the book enter animation trigger
+        }
+        else
+        {
+            sceneInfo.ResetSceneInfo();
         }
     }
 

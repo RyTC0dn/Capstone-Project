@@ -105,6 +105,7 @@ MonoBehaviour:
   tutorial: 0
   tutorialSequence: 0
   maxSequence: 0
+  button: {fileID: 0}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!95 &3059141053177438209
 Animator:
@@ -789,6 +790,7 @@ MonoBehaviour:
   maxStarCount: {fileID: 7691253736012885321}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   input: {fileID: 2705490218738506433}
+  bookAnim: {fileID: 4986660034963771712}
 --- !u!1 &4097546772434166438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1780,7 @@ MonoBehaviour:
   tutorial: 0
   tutorialSequence: 0
   maxSequence: 0
+  button: {fileID: 0}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!95 &6084142455596102533
 Animator:
@@ -1899,6 +1902,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+--- !u!95 &4986660034963771712 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7096187767442602678, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 2832365923334384630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5760681874642657660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7547074649022990986, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}

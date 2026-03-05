@@ -35,6 +35,9 @@ public class TutorialTrigger : MonoBehaviour
         maxSequence = (TutorialManager.Instance != null && TutorialManager.Instance.notifications != null)
             ? TutorialManager.Instance.notifications.textLines.Length : 0;
 
+        if (tutorial == CurrentTutorial.UI)
+            button.onClick.AddListener(delegate { TutorialManager.Instance.NextTutorialNotification(); });
+
         //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial
     }
 
