@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isKnockedBack = false;
+    private SpriteRenderer sp;
 
     private BasicEnemyControls enemyControls;
 
@@ -25,6 +26,8 @@ public class EnemyHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         enemyControls = GetComponent<BasicEnemyControls>();
+
+        sp = GetComponent<SpriteRenderer>();
 
         enemyHealth = totalHealth;
     }
@@ -99,6 +102,8 @@ public class EnemyHealth : MonoBehaviour
         float totalKnockbackForce = GameManager.instance.firstUpgrade ?
             kbForce * GameManager.instance.currentUpgrade : kbForce;
 
+        StartCoroutine(FlashSprite());
+
         //Stop motion
         rb.linearVelocity = Vector2.zero;
         if (rb.bodyType == RigidbodyType2D.Dynamic)
@@ -125,6 +130,27 @@ public class EnemyHealth : MonoBehaviour
 
         enemyControls.enabled = true;
         isKnockedBack = false;
+    }
+
+    private IEnumerator FlashSprite()
+    {
+        if(sp != null)
+        {
+            Color color = Color.red;
+            float elapsed = 0f;
+
+            while (elapsed < kbDuration)
+            {
+                elapsed += Time.deltaTime;
+                float flash = Mathf.Clamp01(elapsed / kbDuration);
+                sp.color = new Color(color.r, color.g, color.b, flash);
+                yield return null;
+            }
+            //Return to white base after
+            sp.color = Color.white;
+        }
+
+        yield return new WaitForSeconds((int)kbDuration);
     }
 
     #endregion Knockback Logic
