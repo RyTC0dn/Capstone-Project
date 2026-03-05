@@ -13,10 +13,11 @@ public class UIMenuTutorial : MonoBehaviour
     public GameObject controllerIcon;
     public GameObject[] arrows;
     [SerializeField] private Animator bookAnim;
-    [Space(20)]
 
+    [Space(20)]
     public Dialogue notifications;
-    [SerializeField]private int currentNotificationIndex = 0;
+
+    [SerializeField] private int currentNotificationIndex = 0;
     private bool controllerDetected;
 
     public SceneInfo info;
@@ -24,7 +25,7 @@ public class UIMenuTutorial : MonoBehaviour
     private bool tutorialStart = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         textBox.SetActive(false);
         foreach (GameObject arrow in arrows)
@@ -40,11 +41,12 @@ public class UIMenuTutorial : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {        
+    private void Update()
+    {
         bool input = controllerDetected ? Gamepad.current.buttonWest.wasPressedThisFrame : Keyboard.current.eKey.wasPressedThisFrame;
 
         #region Detect Controller or Keyboard Input
+
         if (controllerDetected && tutorialStart)
         {
             controllerIcon.SetActive(true);
@@ -60,9 +62,11 @@ public class UIMenuTutorial : MonoBehaviour
             controllerIcon.SetActive(false);
             keyboardIcon.SetActive(false);
         }
-        #endregion
+
+        #endregion Detect Controller or Keyboard Input
 
         #region Tutorial Sequence Progression
+
         if (tutorialStart && input)
         {
             NextTutorialNotification(true);
@@ -76,7 +80,7 @@ public class UIMenuTutorial : MonoBehaviour
         {
             tutorialStart = true; // Start the tutorial progression for the next notifications
         }
-        else if(currentNotificationIndex == 5 && input)
+        else if (currentNotificationIndex == 5 && input)
         {
             FinishTutorial();
             //Turn off all arrows
@@ -85,12 +89,17 @@ public class UIMenuTutorial : MonoBehaviour
                 arrow.SetActive(false);
             }
         }
-        #endregion
+
+        #endregion Tutorial Sequence Progression
+
+        if (currentNotificationIndex >= notifications.textLines.Length)
+        {
+            TutorialManager.Instance.SendBackToLevel();
+        }
     }
 
     private void OpenMenu()
     {
-
         bool input = controllerDetected ? Gamepad.current.selectButton.wasPressedThisFrame : Keyboard.current.tabKey.wasPressedThisFrame;
 
         if (input)
@@ -119,7 +128,6 @@ public class UIMenuTutorial : MonoBehaviour
                 tutorialText.text = notifications.textLines[currentNotificationIndex].text;
                 arrows[currentNotificationIndex - 1].SetActive(true); // Show the corresponding arrow for the current notification
                 Debug.Log("Tutorial Notification: " + notifications.textLines[currentNotificationIndex].text);
-
             }
         }
         else
@@ -128,7 +136,7 @@ public class UIMenuTutorial : MonoBehaviour
         }
     }
 
-    //This method will be triggered at the start of the game in town scene, 
+    //This method will be triggered at the start of the game in town scene,
     // pausing the game and showing the first tutorial notification.
     public void Tutorial()
     {
@@ -153,7 +161,7 @@ public class UIMenuTutorial : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
 
-        if(arrows != null)
+        if (arrows != null)
         {
             float elapsed = 0f;
             foreach (GameObject arrow in arrows)

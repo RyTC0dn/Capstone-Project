@@ -6,17 +6,19 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Enemy Stats")]
     public int totalHealth = 2;
-    [SerializeField]private int enemyHealth;
+
+    [SerializeField] private int enemyHealth;
     public GameObject coinDrop;
 
     [Header("Knockback")]
     public float kbForce = 100f;
+
     public float kbDuration = 0.2f;
 
     private Rigidbody2D rb;
     private bool isKnockedBack = false;
 
-    BasicEnemyControls enemyControls;
+    private BasicEnemyControls enemyControls;
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void OnPlayerAttack(Component sender, object data)
     {
-        if(data is AttackData attack)
+        if (data is AttackData attack)
         {
             if (attack.target == this.gameObject)
             {
@@ -42,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
                 Debug.Log("Recieved attack");
             }
         }
-        if(sender is DebrisCollision debris && data is int debrisDamage)
+        if (sender is DebrisCollision debris && data is int debrisDamage)
         {
             EnemyDamage(debrisDamage);
             Debug.Log("Hit by debris");
@@ -53,7 +55,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (data is AttackDataAxe axe)
         {
-            if(axe.target == this.gameObject)
+            if (axe.target == this.gameObject)
             {
                 EnemyDamage(axe.damage);
                 Debug.Log("Axe hit!");
@@ -62,39 +64,39 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void EnemyDamage(int damage)
-    {        
-       enemyHealth -= damage;
+    {
+        enemyHealth -= damage;
         Debug.Log("Enemy hit");
 
         //Knockback function
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null)
+        if (player != null)
         {
             Vector2 direction = (transform.position - player.transform.position).normalized;
             StartCoroutine(Knockback(direction));
         }
 
-
         EnemyDeath();
     }
 
     public void EnemyDeath()
-    {        
+    {
         if (enemyHealth <= 0)
         {
             Instantiate(coinDrop, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 
     #region Knockback Logic
-    IEnumerator Knockback(Vector2 direction)
+
+    private IEnumerator Knockback(Vector2 direction)
     {
         isKnockedBack = true;
         enemyControls.enabled = false;
 
-        float totalKnockbackForce = GameManager.instance.firstUpgrade ? 
+        float totalKnockbackForce = GameManager.instance.firstUpgrade ?
             kbForce * GameManager.instance.currentUpgrade : kbForce;
 
         //Stop motion
@@ -104,10 +106,11 @@ public class EnemyHealth : MonoBehaviour
             //Dynamic enemies use physics
             rb.AddForce(direction * totalKnockbackForce, ForceMode2D.Impulse);
         }
-        else if (rb.bodyType == RigidbodyType2D.Kinematic) {
+        else if (rb.bodyType == RigidbodyType2D.Kinematic)
+        {
             //Kinematic enemies manually move during knockback
             float timer = kbDuration;
-            while(timer > 0)
+            while (timer > 0)
             {
                 timer -= Time.deltaTime;
                 rb.position += direction * (totalKnockbackForce * 0.02f);
@@ -123,7 +126,8 @@ public class EnemyHealth : MonoBehaviour
         enemyControls.enabled = true;
         isKnockedBack = false;
     }
-    #endregion
+
+    #endregion Knockback Logic
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

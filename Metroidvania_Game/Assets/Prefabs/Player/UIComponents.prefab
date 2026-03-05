@@ -924,10 +924,10 @@ RectTransform:
   - {fileID: 5379171270775750271}
   m_Father: {fileID: 7848538125308606241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.1384, y: -67.35834}
-  m_SizeDelta: {x: 470.2768, y: 86.71667}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 86.71667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1353746579081041690
 CanvasRenderer:
@@ -1014,6 +1014,18 @@ MonoBehaviour:
       - m_Target: {fileID: 447886566092593095}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
         m_MethodName: TextAssign
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 447886566092593095}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ShowPreview
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3505,7 +3517,12 @@ MonoBehaviour:
   player: {fileID: 7134266096150178149}
   infoText: {fileID: 2503785039539161691}
   clips:
-  - {fileID: 32900000, guid: 9cb915db8da16fe4f97e2b9d67b8b229, type: 3}
+  - {fileID: 32900000, guid: c4b3e6d322d881b479d0ff164149de4b, type: 3}
+  - {fileID: 32900000, guid: f2edf273316c71b4985a9002fef09f45, type: 3}
+  - {fileID: 32900000, guid: 567d5e1e7627f3144b7a809d487ef7e1, type: 3}
+  - {fileID: 32900000, guid: 980a82f4407a1c94a8c1f4e69254a9a2, type: 3}
+  - {fileID: 32900000, guid: 0e5ee5c1ff678ab48bda6e8c44192a14, type: 3}
+  - {fileID: 32900000, guid: 2a1cb31b945dc134894717b1ee3297f0, type: 3}
   stars:
   - {fileID: 6436202975240269828}
   - {fileID: 6405847204004600324}
@@ -3531,7 +3548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3263766580591332997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3705,10 +3722,10 @@ RectTransform:
   - {fileID: 7688237100935918818}
   m_Father: {fileID: 7848538125308606241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.1384, y: -194.07501}
-  m_SizeDelta: {x: 470.2768, y: 86.71667}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 86.71667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1400571812079805475
 CanvasRenderer:
@@ -3802,6 +3819,18 @@ MonoBehaviour:
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: Tutorial 2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 447886566092593095}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ShowPreview
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2172052979966447066
@@ -5491,16 +5520,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2781617922927297619}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0066606253}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2374502875529677257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.0651016, y: 0.000011444092}
-  m_SizeDelta: {x: -8.13, y: 0.0000038147}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -11.4}
+  m_SizeDelta: {x: 151.8699, y: 29.99999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1493616800234285512
 CanvasRenderer:
@@ -5638,10 +5667,10 @@ RectTransform:
   - {fileID: 5748330025262765200}
   m_Father: {fileID: 7848538125308606241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.1384, y: -574.22504}
-  m_SizeDelta: {x: 470.2768, y: 86.71667}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 86.71667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8811074696026460463
 CanvasRenderer:
@@ -5744,7 +5773,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6393,10 +6422,10 @@ RectTransform:
   - {fileID: 1244707060012199636}
   m_Father: {fileID: 7848538125308606241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.1384, y: -447.50836}
-  m_SizeDelta: {x: 470.2768, y: 86.71667}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 86.71667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7413371809500009596
 CanvasRenderer:
@@ -6490,6 +6519,18 @@ MonoBehaviour:
           m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: Tutorial 4
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 447886566092593095}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ShowPreview
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3337882642254224366
@@ -7815,10 +7856,10 @@ RectTransform:
   - {fileID: 2241805915625129111}
   m_Father: {fileID: 7848538125308606241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.1384, y: -700.9417}
-  m_SizeDelta: {x: 470.2768, y: 86.71667}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 86.71667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3024867291061220483
 CanvasRenderer:
@@ -7912,6 +7953,18 @@ MonoBehaviour:
           m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: Tutorial 6
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 447886566092593095}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ShowPreview
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4150094826921821137
@@ -13444,10 +13497,10 @@ RectTransform:
   - {fileID: 7503674476045519060}
   m_Father: {fileID: 7848538125308606241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.1384, y: -320.7917}
-  m_SizeDelta: {x: 470.2768, y: 86.71667}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 86.71667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &59364963166349618
 CanvasRenderer:
@@ -13541,6 +13594,18 @@ MonoBehaviour:
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Tutorial 3
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 447886566092593095}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ShowPreview
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8598644226945371039

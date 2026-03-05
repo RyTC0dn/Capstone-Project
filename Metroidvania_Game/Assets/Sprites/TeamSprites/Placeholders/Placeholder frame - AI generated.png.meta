@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 76c7fb50878c05e419cba49d5914ca7b
+guid: a361a16dc2e501b42af9a39be9217438
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2528656090233902134
-    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_169085491770859589_0
+      213: 9155108918056123077
+    second: Placeholder frame - AI generated_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_169085491770859589_0
+      name: Placeholder frame - AI generated_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 11
         y: 0
-        width: 640
-        height: 640
+        width: 1494
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acbea7eeea868ecd0800000000000000
-      internalID: -2528656090233902134
+      spriteID: 5cafebc1e0b7d0f70800000000000000
+      internalID: 9155108918056123077
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_169085491770859589_0: -2528656090233902134
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

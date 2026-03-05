@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class TutorialManager : MonoBehaviour
     public SceneInfo sceneInfo;
     public GameObject input;
     public Animator bookAnim;
+    public Button[] button;
+
+    [Tooltip("Assign only in the combat tutorial scene")]
+    public GameObject[] enemies;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
