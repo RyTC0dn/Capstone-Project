@@ -63,4 +63,10 @@ public class SceneInfo : ScriptableObject
         }
         return false;
     }
+
+    public void ResetSaveData()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
 }

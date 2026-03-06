@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8152913360889862364}
   - component: {fileID: 5845898335328023294}
   - component: {fileID: 8789652016206958642}
+  - component: {fileID: -5689470515125063858}
   - component: {fileID: -2676361756894015011}
   - component: {fileID: -5814837572841073523}
   - component: {fileID: 3655159408340829999}
@@ -193,6 +194,23 @@ MonoBehaviour:
   isGrounded: 0
   damage: 1
   onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+--- !u!114 &-5689470515125063858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253066347139419439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2f7ac50d50b6941bd76a67640743fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackTime: 0.25
+  hitDirectionForce: 10
+  constForce: 5
+  inputForce: 7.5
+  rb2D: {fileID: 8152913360889862364}
 --- !u!114 &-2676361756894015011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +226,6 @@ MonoBehaviour:
   totalHealth: 4
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
-  kbForce: 5
-  kbDuration: 1
 --- !u!114 &-5814837572841073523
 MonoBehaviour:
   m_ObjectHideFlags: 0
