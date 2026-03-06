@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 /// </summary>
 public enum GameStates
 {
-    Play, 
+    Play,
     Pause
 }
 
@@ -21,20 +21,23 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     private GameObject pauseMenu;
-    CameraZones zones;
+    private CameraZones zones;
 
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
+
     public GameObject[] playerSpawnPoint; // Stores the position that the player will teleport to when hit or start in scene
 
     //Checking if npcs are saved
     public bool isBlackSmithSaved = false;
+
     public bool isPotionMakerSaved = false;
     public bool isHealerSaved = false;
     public bool firstUpgrade = false;
 
     [Header("Player UI Components")]
     public TextMeshProUGUI coinText;
+
     public TextMeshProUGUI weaponUpgradeText;
     public Material playerSlash;
 
@@ -45,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -65,7 +68,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Teleport player");
 
             player.transform.position = zones.playerSpawnPoint.transform.position;
-            
         }
     }
 
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
             case GameStates.Pause:
                 Time.timeScale = 0;
                 break;
+
             case GameStates.Play:
                 Time.timeScale = 1;
                 break;
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
     {
         coinText.text = coin.ToString();
     }
+
     public void UpdateCoins(Component sender, object data)
     {
         if (data is int && sender is ShopManager)
@@ -102,7 +106,6 @@ public class GameManager : MonoBehaviour
                 currentCoin -= amount;
                 SetCoin(currentCoin);
             }
-
         }
 
         //Check for coin collection script event to add to coin count
@@ -112,6 +115,25 @@ public class GameManager : MonoBehaviour
             currentCoin += amount;
             SetCoin(currentCoin);
         }
+    }
+
+    public bool TrySpendCoins(int amount)
+    {
+        if (amount <= 0) return false;
+        if (currentCoin >= amount)
+        {
+            currentCoin -= amount;
+            SetCoin(currentCoin);
+            return true;
+        }
+        return false;
+    }
+
+    public void AddCoins(int amount)
+    {
+        if (amount <= 0) return;
+        currentCoin += amount;
+        SetCoin(currentCoin);
     }
 
     private void SetUpgrade(int upgrade)
@@ -136,7 +158,7 @@ public class GameManager : MonoBehaviour
     private void EnhanceKnightSlash(int upgrade)
     {
         //Assigning different colors for different upgrade tiers
-        if(upgrade <= 0)
+        if (upgrade <= 0)
             playerSlash.color = Color.white;
 
         if (upgrade > 0 && upgrade < 5)
@@ -144,7 +166,6 @@ public class GameManager : MonoBehaviour
 
         if (upgrade >= 5)
             playerSlash.color = Color.red;
-
     }
 
     private void OnEnable()
