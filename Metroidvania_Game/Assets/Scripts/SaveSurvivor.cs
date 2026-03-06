@@ -12,21 +12,23 @@ using UnityEngine.UIElements;
 public class SaveSurvivor : MonoBehaviour
 {
     #region Variables
+
     [SerializeField] private bool playerIsNear = false;
     private bool hasBeenSaved = false;
     private AudioSource source;
-    AudioPlayer audioPlayer;
+    private AudioPlayer audioPlayer;
 
     [Header("NPC State Data")]
     public Dialogue beforeSavingDialogue;
+
     public Dialogue afterSavingDialogue;
     public GameObject textBubble;
     public SpriteRenderer bubbleSp;
 
     [Space(5)]
-
     [Header("Dialogue Text")]
     public TextMeshProUGUI npcName;
+
     public TextMeshProUGUI dialogueText;
 
     private int activeLineIndex = 0;
@@ -36,21 +38,22 @@ public class SaveSurvivor : MonoBehaviour
     private Animator animator;
 
     [Space(20)]
-
     [Header("Trapped state values")]
     public float floatYAmplitude = 0.5f;
+
     public float floatYSpeed = 2f;
     public float floatXAmplitude = 5.0f;
     public float floatXSpeed = 0.5f;
-    [Space(5)]
 
+    [Space(5)]
     [Header("Saved state values")]
     [Tooltip("Manually assign where the npc will fall to")]
     [SerializeField] private Vector2 targetPos;
+
     [Tooltip("Manually set how fast the npc falls")]
     [SerializeField] private float fallingSpeed;
-    [Space(5)]
 
+    [Space(5)]
     private Vector2 startPos;
 
     private Rigidbody2D rb2D;
@@ -59,12 +62,13 @@ public class SaveSurvivor : MonoBehaviour
 
     private bool isTyping = false;
     private float typingSpeed = 0.05f;
-    #endregion
+
+    #endregion Variables
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        //Initialization of variables and components    
+        //Initialization of variables and components
         startPos = transform.position;
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
@@ -72,13 +76,13 @@ public class SaveSurvivor : MonoBehaviour
         audioPlayer = GetComponentInChildren<AudioPlayer>();
 
         //Check if this NPC should be destroyed based on save data and current scene
-        if (GameManager.instance.isBlackSmithSaved )
+        if (GameManager.instance.isBlackSmithSaved)
         {
             Destroy(gameObject);
             return;
         }
 
-        textBubble.SetActive(true);
+        textBubble.SetActive(false);
         buttonPrompt.SetActive(false);
         dialogueText.text = beforeSavingDialogue.textLines[activeLineIndex].text;
         animator.enabled = false;
@@ -88,7 +92,7 @@ public class SaveSurvivor : MonoBehaviour
         bubbleSp.color = start;
     }
 
-    void FloatingIdle()
+    private void FloatingIdle()
     {
         float yOffset = Mathf.Sin(Time.time * floatYSpeed) * floatYAmplitude;
         float xOffset = Mathf.Sin(Time.time * floatXSpeed) * floatXAmplitude;
@@ -104,41 +108,48 @@ public class SaveSurvivor : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (hasBeenSaved)
         {
             Saved();
         }
-        else if(!hasBeenSaved)
+        else if (!hasBeenSaved)
         {
             FloatingIdle();
             rb2D.gravityScale = 0;
         }
-
     }
 
     private void BeforeSavedDialogue()
     {
         Dialogue currentDialogue = afterSavingDialogue;
 
-        if (!conversationActive || currentDialogue.textLines.Length == 0) { return; }        
+        if (!conversationActive || currentDialogue.textLines.Length == 0) { return; }
 
-        dialogueText.text = currentDialogue.textLines[activeLineIndex].text;        
+        dialogueText.text = currentDialogue.textLines[activeLineIndex].text;
 
         //Calling inputs in booleans require ? after current
-        //and ?? as to say it is currently not pressed 
+        //and ?? as to say it is currently not pressed
         bool keyInput = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
         bool buttonInput = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
 
-        if ((keyInput||buttonInput) && playerIsNear)
+        if ((keyInput || buttonInput) && playerIsNear)
         {
-
+            textBubble.SetActive(true);
             if (!firstLineShown)
             {
                 textBubble.SetActive(true);
                 firstLineShown = true;
                 conversationActive = true;
+                if (source != null)
+                {
+                    if (audioPlayer != null)
+                    {
+                        audioPlayer.PlayRandomClip(source, 0, audioPlayer.clips.Length);
+                        Debug.Log("Played dialogue sound effect.");
+                    }
+                }
                 return; //Don't advance on first first press
             }
             buttonPrompt.SetActive(false);
@@ -152,35 +163,26 @@ public class SaveSurvivor : MonoBehaviour
         isTyping = true;
         dialogueText.text = " ";
 
-        if(source != null)
-        {
-            if(audioPlayer != null)
-            {
-                audioPlayer.PlayRandomClip(source, 0, audioPlayer.clips.Length);
-            }            
-        }
-
-        foreach(char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            //Wait for a short duration before typing the next letter, creating a typewriter effect
-            yield return new WaitForSeconds(typingSpeed);  
-        }
-        isTyping = false;
-    }
-
-    void AdvanceDialog()
-    {
-        activeLineIndex++;
-
         if (source != null)
         {
             if (audioPlayer != null)
             {
                 audioPlayer.PlayRandomClip(source, 0, audioPlayer.clips.Length);
-                Debug.Log("Played dialogue sound effect.");
             }
         }
+
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            //Wait for a short duration before typing the next letter, creating a typewriter effect
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        isTyping = false;
+    }
+
+    private void AdvanceDialog()
+    {
+        activeLineIndex++;
 
         //If the active index variable stays less than
         //the amount of text lines generated
@@ -193,6 +195,7 @@ public class SaveSurvivor : MonoBehaviour
             firstLineShown = false;
 
             #region Save Data Handling
+
             if (npcName.text == "Blacksmith")
             {
                 GameManager.instance.isBlackSmithSaved = true;
@@ -219,7 +222,8 @@ public class SaveSurvivor : MonoBehaviour
                 Debug.LogWarning("NPC name not recognized, save data may not be properly recorded.");
                 return;
             }
-            #endregion
+
+            #endregion Save Data Handling
 
             Destroy(gameObject);
             return;
@@ -236,16 +240,14 @@ public class SaveSurvivor : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogue.textLines[activeLineIndex].text += letter;
-            yield return new WaitForSeconds(0.05f);            
+            yield return new WaitForSeconds(0.05f);
         }
 
         isTyping = false;
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Player"))
         {
             playerIsNear = true;
@@ -258,7 +260,7 @@ public class SaveSurvivor : MonoBehaviour
         }
     }
 
-    IEnumerator BubbleHit(int hitsLeft)
+    private IEnumerator BubbleHit(int hitsLeft)
     {
         yield return new WaitForSeconds(0.5f);
 
@@ -280,7 +282,6 @@ public class SaveSurvivor : MonoBehaviour
             animator.enabled = true;
             hasBeenSaved = true;
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -297,7 +298,4 @@ public class SaveSurvivor : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(targetPos, 1f);
     }
-
-
 }
-
