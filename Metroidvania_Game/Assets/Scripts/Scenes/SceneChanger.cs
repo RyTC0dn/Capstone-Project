@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]private string spawnPointDestination;
     [SerializeField]private float transportTimer;
     [SerializeField]private Image chargeBar;
+    [SerializeField]private Image buttonPrompt;
     private Canvas timeCanvas;
 
     private void Awake()
@@ -17,19 +19,33 @@ public class SceneChanger : MonoBehaviour
         chargeBar = GameObject.Find("TimerFill").GetComponent<Image>();
 
         timeCanvas.enabled = false;
+        buttonPrompt.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
+        bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
+
         if (other.tag == "Player" && gameObject.tag == "LevelExit")
         {
-            StartCoroutine(TimeToChange(transportTimer));
+            buttonPrompt.enabled = true;
+            //StartCoroutine(TimeToChange(transportTimer));
+            if (keyInput || buttonInput)
+            {
+                SceneManager.LoadScene(sceneDestination);
+            }
         }
 
         if (other.tag == "Player" && gameObject.tag == "LevelEnter")
         {
-            GameManager.instance.nextSpawnPointName = spawnPointDestination;
-            StartCoroutine(TimeToChange(transportTimer));
+            buttonPrompt.enabled = true;
+            //StartCoroutine(TimeToChange(transportTimer));
+            if (keyInput || buttonInput)
+            {
+                GameManager.instance.nextSpawnPointName = spawnPointDestination;
+                SceneManager.LoadScene(sceneDestination);
+            }
         }
     }
 
@@ -37,8 +53,10 @@ public class SceneChanger : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            chargeBar.fillAmount = 0;
-            timeCanvas.enabled = false;
+            //chargeBar.fillAmount = 0;
+            //timeCanvas.enabled = false;
+            buttonPrompt.enabled = false;
+
         }
     }
 
@@ -56,35 +74,35 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
-    private IEnumerator TimeToChange(float duration)
-    {
-        timeCanvas.enabled = true;
-        if (duration <= 0f)
-        {
-            chargeBar.fillAmount = 1f;
-            yield break;
-        }
+    //private IEnumerator TimeToChange(float duration)
+    //{
+    //    timeCanvas.enabled = true;
+    //    if (duration <= 0f)
+    //    {
+    //        chargeBar.fillAmount = 1f;
+    //        yield break;
+    //    }
 
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
+    //    float elapsed = 0f;
+    //    while (elapsed < duration)
+    //    {
             
-            elapsed += Time.deltaTime;
-            chargeBar.fillAmount = Mathf.Clamp01(elapsed/duration);
+    //        elapsed += Time.deltaTime;
+    //        chargeBar.fillAmount = Mathf.Clamp01(elapsed/duration);
 
-            yield return null;
+    //        yield return null;
 
-            if(!timeCanvas.enabled)
-                yield break;
-        }
+    //        if(!timeCanvas.enabled)
+    //            yield break;
+    //    }
 
-        //Have a delayed time before the player transitions to next scene
-        yield return new WaitForSeconds(1f);
+    //    //Have a delayed time before the player transitions to next scene
+    //    yield return new WaitForSeconds(1f);
 
-        chargeBar.fillAmount = 0;//Reset timer
-        timeCanvas.enabled = false;
-        SceneManager.LoadScene(sceneDestination);
-    }
+    //    chargeBar.fillAmount = 0;//Reset timer
+    //    timeCanvas.enabled = false;
+    //    SceneManager.LoadScene(sceneDestination);
+    //}
 
     public void Death()//Only call this function when player loses all lives
     {
