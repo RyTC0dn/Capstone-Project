@@ -24,14 +24,19 @@ public class SceneChanger : MonoBehaviour
         isDetected = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
         bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
-        if (keyInput || buttonInput && isDetected)
+        if ((keyInput || buttonInput) && isDetected && gameObject.tag == "LevelEnter")
         {
-            isDetected = false;
             SceneManager.LoadScene(sceneDestination);
+            isDetected = false;
+        }
+        else if ((keyInput || buttonInput) && isDetected && gameObject.tag == "LevelExit")
+        {
+            SceneManager.LoadScene(sceneDestination);
+            isDetected = false;
         }
     }
 
@@ -39,15 +44,7 @@ public class SceneChanger : MonoBehaviour
     {
 
 
-        if (other.tag == "Player" && gameObject.tag == "LevelExit")
-        {
-            buttonPrompt.enabled = true;
-            isDetected = true;
-            Debug.Log("Player is Detected");
-            //StartCoroutine(TimeToChange(transportTimer));
-        }
-
-        if (other.tag == "Player" && gameObject.tag == "LevelEnter")
+        if (other.tag == "Player")
         {
             buttonPrompt.enabled = true;
             isDetected = true;
