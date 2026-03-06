@@ -12,6 +12,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]private Image chargeBar;
     [SerializeField]private Image buttonPrompt;
     private Canvas timeCanvas;
+    private bool isDetected;
 
     private void Awake()
     {
@@ -20,32 +21,38 @@ public class SceneChanger : MonoBehaviour
 
         timeCanvas.enabled = false;
         buttonPrompt.enabled = false;
+        isDetected = false;
+    }
+
+    private void Update()
+    {
+        bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
+        bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
+        if (keyInput || buttonInput && isDetected)
+        {
+            isDetected = false;
+            SceneManager.LoadScene(sceneDestination);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
-        bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
+
 
         if (other.tag == "Player" && gameObject.tag == "LevelExit")
         {
             buttonPrompt.enabled = true;
+            isDetected = true;
+            Debug.Log("Player is Detected");
             //StartCoroutine(TimeToChange(transportTimer));
-            if (keyInput || buttonInput)
-            {
-                SceneManager.LoadScene(sceneDestination);
-            }
         }
 
         if (other.tag == "Player" && gameObject.tag == "LevelEnter")
         {
             buttonPrompt.enabled = true;
+            isDetected = true;
+            Debug.Log("Player is Detected");
             //StartCoroutine(TimeToChange(transportTimer));
-            if (keyInput || buttonInput)
-            {
-                GameManager.instance.nextSpawnPointName = spawnPointDestination;
-                SceneManager.LoadScene(sceneDestination);
-            }
         }
     }
 
@@ -56,6 +63,7 @@ public class SceneChanger : MonoBehaviour
             //chargeBar.fillAmount = 0;
             //timeCanvas.enabled = false;
             buttonPrompt.enabled = false;
+            isDetected = false;
 
         }
     }
