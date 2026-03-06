@@ -136,10 +136,10 @@ public class GameManager : MonoBehaviour
         SetCoin(currentCoin);
     }
 
-    private void SetUpgrade(int upgrade)
-    {
-        weaponUpgradeText.text = "+" + upgrade.ToString();
-    }
+    //private void SetUpgrade(int upgrade)
+    //{
+    //    weaponUpgradeText.text = "+" + upgrade.ToString();
+    //}
 
     public void UpgradeUpdate(Component sender, object data)
     {
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
             if (bought)
             {
                 currentUpgrade += upgradeValue;
-                SetUpgrade(currentUpgrade);
+                //SetUpgrade(currentUpgrade);
                 EnhanceKnightSlash(currentUpgrade);
                 Debug.Log($"{bought}");
             }
@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
 
         // Refresh UI with current values
         if (coinText != null) SetCoin(currentCoin);
-        if (weaponUpgradeText != null) SetUpgrade(currentUpgrade);
+        //if (weaponUpgradeText != null) SetUpgrade(currentUpgrade);
 
         zones = FindAnyObjectByType<CameraZones>();
     }
