@@ -96,46 +96,6 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    #region Knockback Logic
-
-    //private IEnumerator Knockback(Vector2 direction)
-    //{
-    //    isKnockedBack = true;
-    //    enemyControls.enabled = false;
-
-    //    float totalKnockbackForce = GameManager.instance.firstUpgrade ?
-    //        kbForce * GameManager.instance.currentUpgrade : kbForce;
-
-    //    StartCoroutine(FlashSprite());
-
-    //    //Stop motion
-    //    rb.linearVelocity = Vector2.zero;
-    //    if (rb.bodyType == RigidbodyType2D.Dynamic)
-    //    {
-    //        //Dynamic enemies use physics
-    //        rb.AddForce(direction * totalKnockbackForce, ForceMode2D.Impulse);
-    //    }
-    //    else if (rb.bodyType == RigidbodyType2D.Kinematic)
-    //    {
-    //        //Kinematic enemies manually move during knockback
-    //        float timer = kbDuration;
-    //        while (timer > 0)
-    //        {
-    //            timer -= Time.deltaTime;
-    //            rb.position += direction * (totalKnockbackForce * 0.02f);
-    //            yield return null;
-    //        }
-    //    }
-
-    //    yield return new WaitForSeconds(kbDuration);
-
-    //    //Stop movement again
-    //    rb.linearVelocity = Vector2.zero;
-
-    //    enemyControls.enabled = true;
-    //    isKnockedBack = false;
-    //}
-
     private IEnumerator FlashSprite()
     {
         if (sp != null)
@@ -156,8 +116,6 @@ public class EnemyHealth : MonoBehaviour
 
         yield return new WaitForSeconds((int)kb.knockbackTime);
     }
-
-    #endregion Knockback Logic
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
