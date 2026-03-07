@@ -5,6 +5,7 @@ public class ChangeTownState : MonoBehaviour
     public Animator townAnim;
     public GameObject blacksmithHouseBottom;
     public GameObject blacksmithHouseTop;
+    public GameObject poitionShopBottom;
     private bool isBlacksmithSaved;
     private bool isPotionMakerSaved;
     private bool isHealerSaved;
