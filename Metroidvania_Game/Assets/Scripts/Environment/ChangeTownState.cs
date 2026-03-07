@@ -3,9 +3,7 @@ using UnityEngine;
 public class ChangeTownState : MonoBehaviour
 {
     public Animator townAnim;
-    public GameObject blacksmithHouseBottom;
-    public GameObject blacksmithHouseTop;
-    public GameObject potionShopBottom;
+    public GameObject townObject;
     private bool isBlacksmithSaved;
     private bool isPotionMakerSaved;
     private bool isHealerSaved;
@@ -14,9 +12,7 @@ public class ChangeTownState : MonoBehaviour
     void Start()
     {
         townAnim.enabled = false;
-        blacksmithHouseBottom.SetActive(false);
-        blacksmithHouseTop.SetActive(false);
-        potionShopBottom.SetActive(false);
+        townObject.SetActive(false);
         isBlacksmithSaved = GameManager.instance.isBlackSmithSaved;
         isPotionMakerSaved = GameManager.instance.isPotionMakerSaved;
         isHealerSaved = GameManager.instance.isHealerSaved;
@@ -28,13 +24,13 @@ public class ChangeTownState : MonoBehaviour
         if(isBlacksmithSaved && gameObject.name == "blacksmith_0")
         {
             townAnim.enabled=true;
-            blacksmithHouseBottom.SetActive(true);
-            blacksmithHouseTop.SetActive(true);
-            potionShopBottom.SetActive(true);
+            townObject.SetActive(true);
         }
         if(isPotionMakerSaved && gameObject.name == "PotionMakerBuildingSheet_0")
         {
             townAnim.enabled=true;
+            townObject.SetActive(true);
+
         }
     }
 }
