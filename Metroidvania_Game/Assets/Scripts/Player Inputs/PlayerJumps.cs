@@ -6,15 +6,15 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerJumps : MonoBehaviour
 {
-    //Jump force 
+    //Jump force
     public float jumpForce = 10f;
-    public float fallMultiplier = 2.5f;     //How muc to increase gravity scale when falling 
+
+    public float fallMultiplier = 2.5f;     //How muc to increase gravity scale when falling
     public float lowJumpMultiplier = 2f;   //Factor for small jumps
     public LayerMask groundLayer;         //Layer for the ground
-    [SerializeField]private float gravityScale = 4f;
+    [SerializeField] private float gravityScale = 4f;
 
-    ////Variable for the animator
-    //private Animator jumpSP;
+    private int jumpCount = 0;
 
     //Boolean to store if the player is on the ground or not
     public bool isGrounded = false;
@@ -22,8 +22,9 @@ public class PlayerJumps : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator animator;
 
-    //Coyote time 
+    //Coyote time
     public float coyoteTime;
+
     public float coyoteTimeMax = 0.2f;
     private float raycastLength = 2;
 
@@ -36,7 +37,7 @@ public class PlayerJumps : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         //Initialize the rigidbody
         rb2d = GetComponent<Rigidbody2D>();
@@ -49,24 +50,22 @@ public class PlayerJumps : MonoBehaviour
         rb2d.gravityScale = gravityScale;
 
         animator = GetComponent<Animator>();
-
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //Check every frame to see if the player is grounded or not
-        //Raycasts are lines that check for collisions. They return a true or false 
+        //Raycasts are lines that check for collisions. They return a true or false
         //Minimum parameters are astarting point, direction, and size
         //The additional parameter is the layermask, "which layer?"
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
 
-        //Gravity modifications 
+        //Gravity modifications
         //If the player is falling, increase gravity factor
         if (!isGrounded)
         {
-            //Add the fall multiplier to velocity 
+            //Add the fall multiplier to velocity
             //Vector2.up * whatever gravity is * fall multiplier - 1
             //and then scale by delta time to account for frame jitter
             fallMultiplier += Time.deltaTime;
@@ -84,6 +83,7 @@ public class PlayerJumps : MonoBehaviour
         {
             coyoteTime = coyoteTimeMax;
             fallMultiplier = 2.5f;
+            jumpCount = 0;
         }
         else
         {
@@ -100,24 +100,26 @@ public class PlayerJumps : MonoBehaviour
         bool button = Gamepad.current?.buttonSouth.wasPressedThisFrame ?? false;
         bool isPressed = key || button;
 
-        //Jump input 
-        if (isPressed && coyoteTime > 0)
+        if (jumpCount == 0)
         {
-            //Trigger animation before the jump executes
-            animator.SetTrigger("isJumping");
+            jumpCount = 1;
+            //Jump input
+            if (isPressed && coyoteTime > 0)
+            {
+                //Trigger animation before the jump executes
+                animator.SetTrigger("isJumping");
 
-            //Set the rigidbody's velocity to whatever its current velocity is on x
-            //and jump force on y
-            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
+                //Set the rigidbody's velocity to whatever its current velocity is on x
+                //and jump force on y
+                rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
 
-            coyoteTime = 0;
-            isGrounded = false;            
+                coyoteTime = 0;
+                isGrounded = false;
+            }
         }
-        
     }
 
-
-    //Special function to make gizmos visible 
+    //Special function to make gizmos visible
     //On draw gizmos selected will show gizmos when you select the game object
     private void OnDrawGizmosSelected()
     {

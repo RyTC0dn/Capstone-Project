@@ -2008,8 +2008,8 @@ GameObject:
   - component: {fileID: 2249839468151686403}
   - component: {fileID: 2684591189990701646}
   - component: {fileID: 7002829267281125606}
-  - component: {fileID: 1892630965472275289}
   - component: {fileID: 6899408857453848692}
+  - component: {fileID: 1892630965472275289}
   - component: {fileID: 8842708863280125052}
   - component: {fileID: 5587350823930368243}
   - component: {fileID: 7047053321633390745}
@@ -2161,6 +2161,7 @@ MonoBehaviour:
   dashTime: 0
   isFacingRight: 1
   idleTimer: 30
+  audioSource: {fileID: 5587350823930368243}
   idleAccumTimer: 0
 --- !u!114 &2249839468151686403
 MonoBehaviour:
@@ -2183,6 +2184,7 @@ MonoBehaviour:
   inputBuffer: 0.18
   attackCooldown: 0
   character: 0
+  swordSlashAudio: {fileID: 5587350823930368243}
   slashVFX: {fileID: 3875973796710765611}
 --- !u!114 &2684591189990701646
 MonoBehaviour:
@@ -2226,6 +2228,18 @@ MonoBehaviour:
   throwCooldown: 0
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   axeIcon: {fileID: 7095507384009223231}
+--- !u!114 &6899408857453848692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958576740038597133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1b9cb683ea16f4fadf825cb14494ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1892630965472275289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,18 +2346,6 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6899408857453848692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958576740038597133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e1b9cb683ea16f4fadf825cb14494ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &8842708863280125052
 Animator:
   serializedVersion: 7
@@ -2376,8 +2378,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2b43d6287433f4045a0d2d2b5a150037, type: 3}
-  m_Resource: {fileID: 8300000, guid: 2b43d6287433f4045a0d2d2b5a150037, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2565,6 +2567,7 @@ MonoBehaviour:
   playerDeath: {fileID: 11400000, guid: 3080337d67e433a4fb693fee7716ae74, type: 2}
   kbForce: 50
   kbDuration: 0.2
+  audioSource: {fileID: 5587350823930368243}
 --- !u!114 &3152163559832396325
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public PlayerHealth playerHP {  get; private set; }
+    public PlayerHealth playerHP { get; private set; }
 
     [Header("Health Stats")]
     public int totalHealth = 4;
-    [SerializeField]private int currentHealth;
+
+    [SerializeField] private int currentHealth;
     public bool isInvulnerable = false; //We want to prevent multiple hits on the player
-    [SerializeField]private float invulnerableTimer = 2;
+    [SerializeField] private float invulnerableTimer = 2;
 
     private SpriteRenderer sprite;
     public GameEvent playerHealthChanged;
@@ -18,27 +19,27 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Knockback")]
     public float kbForce = 10f;
+
     public float kbDuration = 0.2f;
 
     private Rigidbody2D rb;
     private bool isKnockedBack = false;
 
-    PrototypePlayerMovementControls playerControls;
+    private PrototypePlayerMovementControls playerControls;
 
-    AudioPlayer audioPlayer;
-    AudioSource audioSource;
+    private AudioPlayer audioPlayer;
+    public AudioSource audioSource;
 
     private void Awake()
     {
-
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerControls = GetComponent<PrototypePlayerMovementControls>();
-        sprite = GetComponent<SpriteRenderer>(); 
+        sprite = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         audioPlayer = GetComponentInChildren<AudioPlayer>();
         currentHealth = totalHealth;
@@ -46,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             SendToSTart();
         }
@@ -60,9 +61,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnEnemyAttack(Component sender, object data)
     {
-        //This function will check if the enemy sent out attack event 
+        //This function will check if the enemy sent out attack event
         //and if the sent out data was an integer variable
-        
+
         sender = sender.gameObject.GetComponent<Component>();
         if (data is int damage)
         {
@@ -79,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
         audioPlayer.PlayRandomClip(audioSource, 4, 6);
     }
 
-    IEnumerator DamagerRoutine(int damageAmount, Component source)
+    private IEnumerator DamagerRoutine(int damageAmount, Component source)
     {
         currentHealth -= damageAmount; //How much health is lost
 
@@ -127,7 +128,7 @@ public class PlayerHealth : MonoBehaviour
         isInvulnerable = false;
     }
 
-    IEnumerator Knockback(Vector2 direction)
+    private IEnumerator Knockback(Vector2 direction)
     {
         isKnockedBack = true;
         playerControls.enabled = false;
@@ -143,7 +144,7 @@ public class PlayerHealth : MonoBehaviour
         isKnockedBack = false;
     }
 
-    void SendToSTart()
+    private void SendToSTart()
     {
         SceneManager.LoadScene("Town");
     }

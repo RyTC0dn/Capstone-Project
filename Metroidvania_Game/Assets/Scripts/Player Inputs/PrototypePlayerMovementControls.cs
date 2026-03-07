@@ -12,10 +12,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("General input variables")]
     public GameEvent playerInteract;
 
-
-    Player_Controller playerController;
+    private Player_Controller playerController;
     [HideInInspector] public Vector2 moveInput;
-     
+
     public float playerSpeed;
     [HideInInspector] public float horizontalSpeed;
     private Rigidbody2D rb2D;
@@ -23,29 +22,31 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     [SerializeField]
     private float sprintFactor = 1.5f;
+
     public float sprintDuration = 2f;
     public float sprintTimer;
     private bool isSprinting = false;
 
     [Header("Dash Settings")]
-
     private float dashSpeed;
+
     private float dashFactor = 2f;
-    [SerializeField]private float dashTimer = 0.5f;
+    [SerializeField] private float dashTimer = 0.5f;
     public float dashTime;
     private bool isDashing = false;
     private bool isInvincible = false;
 
-    [Header("Sprite Settings")]    
+    [Header("Sprite Settings")]
     [HideInInspector] public bool isFacingRight = true;
-    [Space(10)]
 
+    [Space(10)]
     [Header("Idle Audio")]
     [SerializeField] private float idleTimer; //Timer for idle audio, manually set in inspector
+
     private bool isIdle = false;
-    AudioPlayer audioPlayer;
-    AudioSource audioSource;
-    [SerializeField] private float idleAccumTimer = 0f;  
+    private AudioPlayer audioPlayer;
+    public AudioSource audioSource;
+    [SerializeField] private float idleAccumTimer = 0f;
 
     private void Awake()
     {
@@ -54,11 +55,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         //Initialize the rigidbody variables
         rb2D = GetComponent<Rigidbody2D>();
-        audioPlayer = GetComponentInChildren<AudioPlayer>();
+        audioPlayer = GetComponent<AudioPlayer>();
         audioSource = GetComponent<AudioSource>();
 
         //Setting the dash time to timer
@@ -69,7 +70,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         bool key = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
         bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
-        bool isPressed = key || button; 
+        bool isPressed = key || button;
 
         //If either the ekey or xButton is pressed
         if (isPressed)
@@ -79,11 +80,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         }
     }
 
-    //FixedUpdate runs every frame at a set interval 
+    //FixedUpdate runs every frame at a set interval
     //Is good for physics calculations
     private void FixedUpdate()
     {
-
         //Set the movement function
         moveInput.x = Input.GetAxisRaw("Horizontal");
 
@@ -98,7 +98,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             idleAccumTimer += Time.deltaTime; //Add 1 second by delta time
 
-            if(!isIdle && idleAccumTimer >= idleTimer)
+            if (!isIdle && idleAccumTimer >= idleTimer)
             {
                 isIdle = true;
                 //Play a random clip from the audio player, using the range of 14 to 16 for the clip index
@@ -112,26 +112,23 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         else
         {
             idleAccumTimer = 0f; //Reset the accumulated timer if the player is moving
-            if(isIdle)
+            if (isIdle)
                 isIdle = false; //Reset the idle state if the player starts moving
         }
     }
 
-
-
     private void Move(float h)
     {
-
         rb2D.linearVelocity = new Vector2(h * playerSpeed, rb2D.linearVelocity.y);
 
-         ///The entire object is flipped based on direction
+        ///The entire object is flipped based on direction
         ///to ensure that the attack collider will always be in front of the player
-        if(h > 0)
+        if (h > 0)
         {
             isFacingRight = true;
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else if(h < 0)
+        else if (h < 0)
         {
             isFacingRight = false;
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -159,11 +156,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     }
 
     //Only call this function when the player lives equal 0
-    
 
     private void Dash(float hSpeed)
-    { 
-        if(dashTime > 0)
+    {
+        if (dashTime > 0)
         {
             dashSpeed = playerSpeed;
             Vector2 dashVector = new Vector2(dashSpeed * dashFactor, 0);

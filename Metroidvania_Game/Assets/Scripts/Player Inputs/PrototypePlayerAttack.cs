@@ -15,40 +15,47 @@ public class PrototypePlayerAttack : MonoBehaviour
     /// This script will be for activating animation and control for the attack
     /// but the actual damage function will be on PlayerWeapon
     /// </summary>
+
     #region Attack Variables
+
     [Header("Weapon Setup")]
     public Collider2D[] weaponColliders; // To track which collider to activate for directional attacks
-    public float attackRate = 1f;    // attacks per second                     
+
+    public float attackRate = 1f;    // attacks per second
     private float delayTillAttack;
     [SerializeField] private GameObject colliderHolder; // empty game object to hold the weapon collider(s) as children
     private bool upHeld, upAttackQueued = false; // Track if the up key is pressed for vertical attacks
 
-    bool isAttacking = false;
-    float timeBetweenAttack, timeSinceLastAttack;
+    private bool isAttacking = false;
+    private float timeBetweenAttack, timeSinceLastAttack;
 
     [Header("Input / Timing")]
     [Tooltip("Time between pressing the attack button and the attack firing (wind-up).")]
     [SerializeField] private float attackWindup = 0.12f; // delay between input and actual attack
+
     [Tooltip("How long an input is buffered (queued) while attack is on cooldown).")]
     [SerializeField] private float inputBuffer = 0.18f; // how long an input can be queued
+
     [SerializeField] private float attackCooldown = 0;
     private bool hasAttacked = false;
 
     // input buffer state
     private bool attackQueued = false;
+
     private float bufferTimer = 0f;
 
-    PrototypePlayerMovementControls playerMovement;
+    private PrototypePlayerMovementControls playerMovement;
     public PlayerCharacter character;
 
-    private AudioSource swordSlashAudio;
-    AudioPlayer audioPlayer;
+    [SerializeField] private AudioSource swordSlashAudio;
+    private AudioPlayer audioPlayer;
     private Animator animator;
 
-    Player_Controller playerControl;
+    private Player_Controller playerControl;
 
     public ParticleSystem slashVFX;
-    #endregion
+
+    #endregion Attack Variables
 
     private void Awake()
     {
@@ -60,7 +67,7 @@ public class PrototypePlayerAttack : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         playerMovement = GetComponentInParent<PrototypePlayerMovementControls>();
         swordSlashAudio = GetComponent<AudioSource>();
@@ -195,6 +202,7 @@ public class PrototypePlayerAttack : MonoBehaviour
                 //Play knight audio
                 audioPlayer.PlayRandomClip(swordSlashAudio, 0, 3);
                 break;
+
             case PlayerCharacter.Priest:
                 PriestStandardAttack();
                 break;
@@ -211,7 +219,6 @@ public class PrototypePlayerAttack : MonoBehaviour
             weaponColliders[i].enabled = false;
         }
         weaponColliders[collider].enabled = true;
-
 
         slashVFX.Play();
         slashVFX.Clear();
@@ -239,6 +246,3 @@ public class PrototypePlayerAttack : MonoBehaviour
         StartCoroutine(ResetWeapon());
     }
 }
-
-
-

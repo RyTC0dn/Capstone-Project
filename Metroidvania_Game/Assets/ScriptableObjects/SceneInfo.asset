@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
   isShieldPickedUp: 0
-  isWallBreakPickedUp: 1
+  isWallBreakPickedUp: 0
   isShieldUsed: 0
   isWallBreakUsed: 0
   isAxeBought: 0
@@ -21,10 +21,10 @@ MonoBehaviour:
   isAxeUsed: 0
   isBossCutscenePlayed: 0
   bookIsLookedAt: 0
-  isMoved: 1
+  isMoved: 0
   npcInteracted: 0
-  combat: 1
-  dashed: 1
+  combat: 0
+  dashed: 0
   door: 0
   isController: 0
   isKeyboard: 0
