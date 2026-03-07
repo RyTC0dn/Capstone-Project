@@ -1545,7 +1545,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 3755916041720099647, guid: c68263c707b65f347a791a3e790ec01d, type: 3}
+    - sprite: {fileID: -1948859780465183405, guid: 7f1afd0b68455fa468a4f85937ed410c, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5096,7 +5096,7 @@ Transform:
   m_GameObject: {fileID: 8978412619370071038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.74, y: 0.43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
