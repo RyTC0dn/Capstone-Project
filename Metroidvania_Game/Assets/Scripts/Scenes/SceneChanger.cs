@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]private string spawnPointDestination;
     [SerializeField]private float transportTimer;
     [SerializeField]private Image chargeBar;
+    [SerializeField]private TextMeshProUGUI buttonText;
     [SerializeField]private Image buttonPrompt;
     private Canvas timeCanvas;
     private bool isDetected;
@@ -22,6 +24,7 @@ public class SceneChanger : MonoBehaviour
         timeCanvas.enabled = false;
         buttonPrompt.enabled = false;
         isDetected = false;
+        buttonText.enabled = false;
     }
 
     private void FixedUpdate()
@@ -48,6 +51,7 @@ public class SceneChanger : MonoBehaviour
         {
             buttonPrompt.enabled = true;
             isDetected = true;
+            buttonText.enabled = true;
             Debug.Log("Player is Detected");
             //StartCoroutine(TimeToChange(transportTimer));
         }
@@ -61,6 +65,7 @@ public class SceneChanger : MonoBehaviour
             //timeCanvas.enabled = false;
             buttonPrompt.enabled = false;
             isDetected = false;
+            buttonText.enabled = false;
 
         }
     }
