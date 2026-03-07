@@ -15,16 +15,20 @@ using UnityEngine.Video;
 public class Tutorial : MonoBehaviour
 {
     [Header("Screen Setup")]
-    [SerializeField]private GameObject screen;
+    [SerializeField] private GameObject screen;
+
     public Dialogue textPrompts;
+
     [Tooltip("Assign in order of tutorial scenes")]
     public GameObject[] buttons;
-    [SerializeField]private VideoPlayer player;
+
+    [SerializeField] private VideoPlayer player;
     [SerializeField] private TextMeshProUGUI infoText;
     public VideoClip[] clips; //manually assign clips
-    [Space(20)]
 
+    [Space(20)]
     public GameObject[] stars;
+
     public SceneInfo sceneInfo;
 
     private void Start()
@@ -32,7 +36,7 @@ public class Tutorial : MonoBehaviour
         //Have all components disabled at start
         foreach (var button in buttons)
         {
-           button.SetActive(false);
+            button.SetActive(false);
         }
         foreach (var star in stars)
         {
@@ -77,15 +81,15 @@ public class Tutorial : MonoBehaviour
         SceneManager.LoadScene(tutorialScene);
     }
 
-    void Show(int index)
+    private void Show(int index)
     {
         Close(); //Close all buttons before activating the assigned index
         buttons[index].SetActive(true);
     }
 
-    void Close()
+    private void Close()
     {
-        foreach(var button in buttons)
+        foreach (var button in buttons)
         {
             button.SetActive(false);
         }
@@ -93,18 +97,11 @@ public class Tutorial : MonoBehaviour
 
     public void StarCheck()
     {
-        if(sceneInfo.bookIsLookedAt)
-            stars[0].SetActive(true);
-        else if(sceneInfo.isMoved)
-            stars[1].SetActive(true);
-        else if (sceneInfo.npcInteracted)
-            stars[2].SetActive(true);
-        else if (sceneInfo.combat)
-            stars[3].SetActive(true);
-        else if (sceneInfo.dashed)
-            stars[4].SetActive(true);
-        else if (sceneInfo.door)
-            stars[5].SetActive(true);
-
+        stars[0].SetActive(sceneInfo.bookIsLookedAt);
+        stars[1].SetActive(sceneInfo.isMoved);
+        stars[2].SetActive(sceneInfo.npcInteracted);
+        stars[3].SetActive(sceneInfo.combat);
+        stars[4].SetActive(sceneInfo.dashed);
+        stars[5].SetActive(sceneInfo.door);
     }
 }

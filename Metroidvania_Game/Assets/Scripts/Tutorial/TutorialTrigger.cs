@@ -41,74 +41,14 @@ public class TutorialTrigger : MonoBehaviour
     {
         // Update the tutorial sequence based on the current notification index from the TutorialManager
         tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
-        if (tutorialSequence >= maxSequence)
+        if (tutorial == CurrentTutorial.Combat)
         {
-            #region Complete Tutorial
-
-            switch (tutorial)
-            {
-                case CurrentTutorial.Movement:
-                    TutorialManager.Instance.ShowTutorialText(false);
-                    TutorialManager.Instance.currentNotificationIndex = 0;
-                    sceneInfo.isMoved = true;
-                    TutorialManager.Instance.SendBackToLevel();
-                    break;
-
-                case CurrentTutorial.UI:
-                    TutorialManager.Instance.ShowTutorialText(false);
-                    TutorialManager.Instance.currentNotificationIndex = 0;
-                    sceneInfo.bookIsLookedAt = true;
-                    TutorialManager.Instance.SendBackToLevel();
-                    break;
-
-                case CurrentTutorial.Wallbreak:
-                    TutorialManager.Instance.ShowTutorialText(false);
-                    TutorialManager.Instance.currentNotificationIndex = 0;
-                    sceneInfo.dashed = true;
-                    TutorialManager.Instance.SendBackToLevel();
-                    break;
-
-                case CurrentTutorial.Combat:
-                    TutorialManager.Instance.ShowTutorialText(false);
-                    TutorialManager.Instance.currentNotificationIndex = 0;
-                    sceneInfo.combat = true;
-                    TutorialManager.Instance.SendBackToLevel();
-                    break;
-
-                case CurrentTutorial.NPCInteraction:
-                    TutorialManager.Instance.ShowTutorialText(false);
-                    TutorialManager.Instance.currentNotificationIndex = 0;
-                    sceneInfo.npcInteracted = true;
-                    TutorialManager.Instance.SendBackToLevel();
-                    break;
-
-                case CurrentTutorial.DoorInteraction:
-                    TutorialManager.Instance.ShowTutorialText(false);
-                    TutorialManager.Instance.currentNotificationIndex = 0;
-                    sceneInfo.door = true;
-                    TutorialManager.Instance.SendBackToLevel();
-                    break;
-
-                case CurrentTutorial.None:
-                    break;
-
-                default:
-                    break;
-            }
-
-            #endregion Complete Tutorial
+            //Have the enemies appear in sequence of the tutorial
+            TutorialManager.Instance.enemies[tutorialSequence].SetActive(true);
         }
         else
         {
-            if (tutorial == CurrentTutorial.Combat)
-            {
-                //Have the enemies appear in sequence of the tutorial
-                TutorialManager.Instance.enemies[tutorialSequence].SetActive(true);
-            }
-            else
-            {
-                TutorialManager.Instance.enemies[tutorialSequence].SetActive(false);
-            }
+            TutorialManager.Instance.enemies[tutorialSequence].SetActive(false);
         }
     }
 

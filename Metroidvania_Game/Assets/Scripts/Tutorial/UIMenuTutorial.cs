@@ -153,7 +153,7 @@ public class UIMenuTutorial : MonoBehaviour
         Time.timeScale = 1f; // Resume the game
         info.bookIsLookedAt = true; // Set the book as looked at to trigger the next tutorial notification
         textBox.SetActive(false); // Hide the tutorial text box
-        info.ResetSceneInfo(); // Reset the scene info for the next time the player goes through the tutorial
+        //info.ResetSceneInfo(); // Reset the scene info for the next time the player goes through the tutorial
         Debug.Log("Finished tutorial");
     }
 
