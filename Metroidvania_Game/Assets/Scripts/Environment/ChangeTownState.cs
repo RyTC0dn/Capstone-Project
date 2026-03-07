@@ -5,7 +5,7 @@ public class ChangeTownState : MonoBehaviour
     public Animator townAnim;
     public GameObject blacksmithHouseBottom;
     public GameObject blacksmithHouseTop;
-    public GameObject poitionShopBottom;
+    public GameObject potionShopBottom;
     private bool isBlacksmithSaved;
     private bool isPotionMakerSaved;
     private bool isHealerSaved;
@@ -16,6 +16,7 @@ public class ChangeTownState : MonoBehaviour
         townAnim.enabled = false;
         blacksmithHouseBottom.SetActive(false);
         blacksmithHouseTop.SetActive(false);
+        potionShopBottom.SetActive(false);
         isBlacksmithSaved = GameManager.instance.isBlackSmithSaved;
         isPotionMakerSaved = GameManager.instance.isPotionMakerSaved;
         isHealerSaved = GameManager.instance.isHealerSaved;
@@ -29,6 +30,7 @@ public class ChangeTownState : MonoBehaviour
             townAnim.enabled=true;
             blacksmithHouseBottom.SetActive(true);
             blacksmithHouseTop.SetActive(true);
+            potionShopBottom.SetActive(true);
         }
         if(isPotionMakerSaved && gameObject.name == "PotionMakerBuildingSheet_0")
         {
