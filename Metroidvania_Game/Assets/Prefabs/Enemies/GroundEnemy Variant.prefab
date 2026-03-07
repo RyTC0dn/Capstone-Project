@@ -280,6 +280,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
@@ -504,10 +508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2f7ac50d50b6941bd76a67640743fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackTime: 0.5
-  hitDirectionForce: 10
-  constForce: 5
-  inputForce: 7.5
+  knockbackTime: 0.25
+  hitDirectionForce: 2.5
+  constForce: 2.5
+  inputForce: 1.5
   rb2D: {fileID: 6552518764005499067}
 --- !u!114 &6518034331848133559
 MonoBehaviour:
