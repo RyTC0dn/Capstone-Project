@@ -61,14 +61,22 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnEnemyAttack(Component sender, object data)
     {
-        //This function will check if the enemy sent out attack event
-        //and if the sent out data was an integer variable
+        //Validate the data being recieved
+        if (!(data is int damage)) return;
 
-        sender = sender.gameObject.GetComponent<Component>();
-        if (data is int damage)
-        {
-            TakeDamage(damage, sender);
-        }
+        //Ensure sender is a componenet
+        if (sender == null) return;
+        GameObject sourceObject = sender.gameObject;
+        if (sourceObject == null) return;
+
+        //Only accept attacks coming from enemy objects
+        //adjust tags where applicable
+        bool isEnemySource = sourceObject.CompareTag("GroundEnemy")
+            || sourceObject.CompareTag("FlyingEnemy");
+
+        if (!isEnemySource) return;
+
+        TakeDamage(damage, sender);
     }
 
     //These functions are to define how damage to the player works
@@ -77,7 +85,7 @@ public class PlayerHealth : MonoBehaviour
         if (isInvulnerable) { return; }
         StartCoroutine(DamagerRoutine(damageAmount, source));
         //Play player hurt sound effect
-        audioPlayer.PlayRandomClip(audioSource, 4, 6);
+        audioPlayer.PlayRandomClip(audioSource, 5, 6);
     }
 
     private IEnumerator DamagerRoutine(int damageAmount, Component source)

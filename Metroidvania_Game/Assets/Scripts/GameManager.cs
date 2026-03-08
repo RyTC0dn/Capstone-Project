@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -43,8 +44,11 @@ public class GameManager : MonoBehaviour
 
     public int currentCoin;
     private int totalUpgradeLevel = 0;
-    public int currentUpgrade;
+    public int currentSwordDamage;
     private int upgradeValue = 1;
+
+    //New listener for upgrade change
+    public event Action<int> OnUpgradeChanged;
 
     private void Awake()
     {
@@ -134,25 +138,6 @@ public class GameManager : MonoBehaviour
         if (amount <= 0) return;
         currentCoin += amount;
         SetCoin(currentCoin);
-    }
-
-    //private void SetUpgrade(int upgrade)
-    //{
-    //    weaponUpgradeText.text = "+" + upgrade.ToString();
-    //}
-
-    public void UpgradeUpdate(Component sender, object data)
-    {
-        if (data is bool bought)
-        {
-            if (bought)
-            {
-                currentUpgrade += upgradeValue;
-                //SetUpgrade(currentUpgrade);
-                EnhanceKnightSlash(currentUpgrade);
-                Debug.Log($"{bought}");
-            }
-        }
     }
 
     private void EnhanceKnightSlash(int upgrade)

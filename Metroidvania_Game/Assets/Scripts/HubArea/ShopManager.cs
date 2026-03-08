@@ -57,7 +57,8 @@ public class ShopManager : MonoBehaviour
     public GameEvent firstItemEvent; //Checking if upgrade bought to update UI
 
     [Header("Shop Prices")]
-    public int upgradePrice;
+    [Tooltip("Set price only if enum state is set for Blacksmith")]
+    public int swordUpgradePrice;
 
     public int axePrice;
     public int healthPrice;
@@ -119,9 +120,10 @@ public class ShopManager : MonoBehaviour
     //This function is being called by the player movement controls script
     public void EnableShop(Component sender, object data) ///This is for general shopping interactions
     {
+        bool isSaved = GameManager.instance.isBlackSmithSaved || GameManager.instance.isPotionMakerSaved || GameManager.instance.isHealerSaved;
         if (data is bool isPressed)
         {
-            if (isPressed && isNearShop && (GameManager.instance.isBlackSmithSaved || GameManager.instance.isPotionMakerSaved))
+            if (isPressed && isNearShop && isSaved)
             {
                 //Set the shop ui object to active when function is called
                 if (!firstOccurence)
@@ -159,16 +161,17 @@ public class ShopManager : MonoBehaviour
                 break;
 
             case ShopType.Blacksmith:
-                firstItemText.text = $"Throwable Axe: {axePrice} gold";
-                secondItemText.text = $"Sword Upgrade: {upgradePrice} gold";
+                firstItemText.text = $"Throwable Axe: " + axePrice.ToString();
+                secondItemText.text = $"Sword Upgrade: " + swordUpgradePrice.ToString();
                 break;
 
             case ShopType.Alchemist:
-                firstItemText.text = $"Health Potion: {healthPrice} gold";
-                secondItemText.text = $"Strength Potion: {strengthPrice} gold";
+                firstItemText.text = $"Health Potion: " + healthPrice.ToString();
+                secondItemText.text = $"Strength Potion: " + strengthPrice.ToString();
                 break;
 
             case ShopType.Priest:
+                //TBD
                 break;
 
             default:
@@ -186,35 +189,30 @@ public class ShopManager : MonoBehaviour
 
     public void BuySwordUpgrade() //Buy sword strength upgrade function
     {
-        int upgradeCap = GameManager.instance.currentUpgrade;
-        if (upgradeCap >= 5)
+        if (GameManager.instance.TrySpendCoins(swordUpgradePrice))
         {
-            PlayerPrefs.SetInt("UpgradeLimit", 1);
-            PlayerPrefs.Save();
-            firstItemButton.interactable = false;
-            return;
-        }
-
-        if (GameManager.instance.TrySpendCoins(upgradePrice))
-        {
+            //Play audio clip for purchasing
             player.PlayAudio(purchaseElement, audioSource);
+
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
-            buyEvent.Raise(this, upgradePrice);         // keep notifying other systems
-            firstItemEvent.Raise(this, boughtUpgrade);
+            buyEvent.Raise(this, swordUpgradePrice);         // keep notifying other systems
+
+            if (sceneInfo.swordDamageValue != 2)
+            {
+                int damageIncrease = 1;
+                sceneInfo.swordDamageValue += damageIncrease;
+            }
+
+            sceneInfo.isWeaponUpgradeBought = true;
 
             // Recalculate price and refresh text only when price changed
-            float newPricedAmount = Mathf.RoundToInt(upgradePrice / 0.75f);
-            upgradePrice = (int)newPricedAmount;
+            int newPricedAmount = swordUpgradePrice * 2;
+            swordUpgradePrice = newPricedAmount;
             UpdatePrice();
-            Debug.Log(upgradePrice);
+            Debug.Log(swordUpgradePrice);
 
-            if (GameManager.instance.currentUpgrade >= 5)
-            {
-                PlayerPrefs.SetInt("UpgradeLimit", 1);
-                PlayerPrefs.Save();
-                firstItemButton.interactable = false;
-            }
+            firstItemButton.interactable = false;
         }
         else
         {
@@ -279,14 +277,16 @@ public class ShopManager : MonoBehaviour
 
         shopUI.SetActive(false);
 
+        bool boughtSword = GameManager.instance.firstUpgrade;
+
         GameManager.instance.StateSwitch(GameStates.Play);
         Invoke(nameof(ReEnablePlayer), 0.3f);
-        if (!boughtAxe && !boughtUpgrade)
+        if (!boughtAxe && !boughtUpgrade && shopType == ShopType.Blacksmith)
         {
             //Play audio clip if player hasn't bought anything from shop
             player.PlayAudio(leaveWithoutPayElement, audioSource);
         }
-        else if (!boughtHealth)
+        else if (!boughtHealth && shopType == ShopType.Alchemist)
         {
             //Play audio clip if player hasn't bought anything from shop
             player.PlayAudio(leaveWithoutPayElement, audioSource);

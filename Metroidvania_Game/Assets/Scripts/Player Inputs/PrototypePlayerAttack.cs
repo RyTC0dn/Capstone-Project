@@ -198,9 +198,8 @@ public class PrototypePlayerAttack : MonoBehaviour
             case PlayerCharacter.Knight:
                 //Pass in direction for directional attacks (if needed)
                 animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
-                swordSlashAudio.Play();
                 //Play knight audio
-                audioPlayer.PlayRandomClip(swordSlashAudio, 0, 3);
+                audioPlayer.PlayRandomClip(swordSlashAudio, 0, 2);
                 break;
 
             case PlayerCharacter.Priest:

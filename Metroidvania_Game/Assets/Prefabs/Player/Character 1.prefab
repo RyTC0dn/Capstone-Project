@@ -679,7 +679,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3514488982334873918
 Transform:
   m_ObjectHideFlags: 0
@@ -708,7 +708,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 1
+  damagePerUpgrade: 1
+  currentDamage: 0
   onPlayerAttack: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!70 &2789948947558836208
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2567,7 +2570,7 @@ MonoBehaviour:
   playerDeath: {fileID: 11400000, guid: 3080337d67e433a4fb693fee7716ae74, type: 2}
   kbForce: 50
   kbDuration: 0.2
-  audioSource: {fileID: 5587350823930368243}
+  audioSource: {fileID: 7748115924461751084}
 --- !u!114 &3152163559832396325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,7 +2784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 1
+  damagePerUpgrade: 1
+  currentDamage: 0
   onPlayerAttack: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!70 &5498312769674275536
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

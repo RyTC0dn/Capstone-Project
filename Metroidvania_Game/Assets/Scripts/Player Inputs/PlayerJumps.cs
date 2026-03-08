@@ -4,6 +4,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using static UnityEngine.InputSystem.InputAction;
 
+/// <summary>
+/// Provides player jump mechanics for a 2D platformer, including jump force, gravity adjustments, coyote time, and
+/// ground detection.
+/// </summary>
+/// <remarks>This component manages jumping behavior by applying configurable jump force and gravity multipliers
+/// to the player's Rigidbody2D. It supports coyote time, allowing jumps shortly after leaving the ground, and detects
+/// ground contact using raycasts. Attach this script to a player GameObject with a Rigidbody2D and Animator. Ensure the
+/// groundLayer is set to match the ground objects in your scene. The jump input is handled via keyboard (space) or
+/// gamepad (button south).</remarks>
 public class PlayerJumps : MonoBehaviour
 {
     //Jump force

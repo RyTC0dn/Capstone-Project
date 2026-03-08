@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 2652501374289222702}
   - component: {fileID: 3834808667088926466}
   - component: {fileID: -2324710628687831382}
-  - component: {fileID: 2219635748562084278}
   - component: {fileID: -2047089400135143592}
   - component: {fileID: -5545780782057316611}
   - component: {fileID: 7672356728645152245}
@@ -108,9 +107,7 @@ MonoBehaviour:
   weaponUpgradeText: {fileID: 9035818045752732553, guid: e9f3dd5e1f7febb458e78931af669561, type: 3}
   playerSlash: {fileID: 2100000, guid: 7e2e93e5d515a73449b19b84a9dd6d90, type: 2}
   currentCoin: 0
-  currentUpgrade: 0
-  quantity: 0
-  sendQuantity: {fileID: 11400000, guid: 6a47ef2525deb8c4898f625388940089, type: 2}
+  currentSwordDamage: 0
 --- !u!114 &-2324710628687831382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,35 +128,6 @@ MonoBehaviour:
       - m_Target: {fileID: 3834808667088926466}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: SendPlayerToStart
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2219635748562084278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402802345738783772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f53238bf84e3d74190d99ec60d2cf8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDescription: 'Change the upgrade multiplier '
-  gameEvent: {fileID: 11400000, guid: a1edae8d05a9ad14a8bee6aa050eb024, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3834808667088926466}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: UpgradeUpdate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

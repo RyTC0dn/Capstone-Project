@@ -15,8 +15,11 @@ public class SceneInfo : ScriptableObject
     [Header("Shop")]
     public bool isAxeBought = false;
 
+    public bool isWeaponUpgradeBought = false;
+
     public bool isHPBought = false;
     public bool isAxeUsed = false;
+    public int swordDamageValue = 1;
 
     [Space(20)]
     [Header("Cutscenes")]
