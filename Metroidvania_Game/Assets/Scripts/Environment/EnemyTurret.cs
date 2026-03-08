@@ -34,6 +34,8 @@ public class EnemyTurret : MonoBehaviour
         Shoot();
     }
 
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float audioRadius = 10f;
     private void Shoot()
     {
         if (firingCooldown <= 0)
@@ -41,8 +43,14 @@ public class EnemyTurret : MonoBehaviour
             Instantiate(bullet, firingPoint.transform.position, transform.rotation);
             firingCooldown = 1f / firingRate;
 
-            player.PlayRandomClip(source, minAudio, maxAudio);
+            float distance = Vector3.Distance(transform.position, playerTransform.position);
+
+            if (distance <= audioRadius)
+            {
+                player.PlayRandomClip(source, minAudio, maxAudio);
+            }
         }
+
         firingCooldown -= Time.deltaTime;
     }
 }
