@@ -103,8 +103,7 @@ public class CoinCollection : MonoBehaviour
         // Apply an impulse force to the coin in the launch direction
         rb.AddForce(launchDir * throwForce, ForceMode2D.Impulse);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         coinCollect = GetComponent<AudioSource>();
 

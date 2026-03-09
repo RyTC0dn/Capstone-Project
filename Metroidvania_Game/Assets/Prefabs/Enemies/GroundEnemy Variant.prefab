@@ -280,6 +280,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
@@ -451,7 +455,6 @@ MonoBehaviour:
   totalHealth: 4
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
-  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!114 &5342541874613903044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,10 +508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2f7ac50d50b6941bd76a67640743fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackTime: 0.5
-  hitDirectionForce: 5
+  knockbackTime: 0.25
+  hitDirectionForce: 2.5
   constForce: 2.5
-  inputForce: 3.75
+  inputForce: 1.5
   rb2D: {fileID: 6552518764005499067}
 --- !u!114 &6518034331848133559
 MonoBehaviour:
