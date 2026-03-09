@@ -451,6 +451,7 @@ MonoBehaviour:
   totalHealth: 4
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!114 &5342541874613903044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,9 +506,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackTime: 0.5
-  hitDirectionForce: 10
-  constForce: 5
-  inputForce: 7.5
+  hitDirectionForce: 5
+  constForce: 2.5
+  inputForce: 3.75
   rb2D: {fileID: 6552518764005499067}
 --- !u!114 &6518034331848133559
 MonoBehaviour:

@@ -17,10 +17,11 @@ MonoBehaviour:
   isShieldUsed: 0
   isWallBreakUsed: 0
   isAxeBought: 0
-  isWeaponUpgradeBought: 1
+  isWeaponUpgradeBought: 0
   isHPBought: 0
   isAxeUsed: 0
-  swordDamageValue: 3
+  swordDamageValue: 1
+  knockbackForce: 1
   isBossCutscenePlayed: 0
   bookIsLookedAt: 0
   isMoved: 0

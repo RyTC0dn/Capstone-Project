@@ -2,6 +2,16 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Represents the health and death behavior of an enemy character in the game, including handling damage, knockback,
+/// and coin drop upon defeat.
+/// </summary>
+/// <remarks>Attach this component to enemy GameObjects to manage their health state and respond to player attacks
+/// or environmental hazards. The class interacts with other components such as Rigidbody2D, BasicEnemyControls,
+/// Knockback, and SceneInfo to provide knockback effects and coordinate enemy death events. Coin drops are instantiated
+/// at the enemy's position when defeated. Ensure required components are assigned in the inspector for proper
+/// functionality.</remarks>
+
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Enemy Stats")]
@@ -12,6 +22,8 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("Knockback")]
     private Rigidbody2D rb;
+
+    public SceneInfo sceneInfo; //Assign in inspector
 
     private bool isKnockedBack = false;
     private SpriteRenderer sp;
@@ -38,6 +50,15 @@ public class EnemyHealth : MonoBehaviour
         EnemyDeath();
     }
 
+    /// <summary>
+    /// Handles attack events directed at the enemy, applying damage based on the source and attack data.
+    /// </summary>
+    /// <remarks>This method processes both direct player attacks and collisions with debris. Damage is
+    /// applied only if the attack targets this enemy or if debris collides with it. Ensure that the data parameter
+    /// matches the expected type for the sender to avoid ignored events.</remarks>
+    /// <param name="sender">The component that initiated the attack event. Can represent a player, debris, or other sources.</param>
+    /// <param name="data">The event data associated with the attack. Can be an AttackData object containing attack details or an integer
+    /// representing debris damage.</param>
     public void OnPlayerAttack(Component sender, object data)
     {
         if (data is AttackData attack)
@@ -67,8 +88,15 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Applies damage to the enemy and triggers knockback and visual feedback effects.
+    /// </summary>
+    /// <remarks>If the player object is present in the scene, the enemy will be knocked back and a visual
+    /// flash effect will occur. This method also checks for enemy death after applying damage.</remarks>
+    /// <param name="damage">The amount of damage to subtract from the enemy's health. Must be a non-negative integer.</param>
     public void EnemyDamage(int damage)
     {
+        //Deplete health points
         enemyHealth -= damage;
         Debug.Log("Enemy hit");
 
@@ -78,9 +106,8 @@ public class EnemyHealth : MonoBehaviour
         {
             Vector2 direction = (transform.position - player.transform.position).normalized;
 
-            kb.CallKnockback(direction, Vector2.up, enemyControls.enemySpeed);
+            kb.CallKnockback(direction, Vector2.up, enemyControls.enemySpeed * sceneInfo.knockbackForce);
             StartCoroutine(FlashSprite());
-            //StartCoroutine(Knockback(direction));
         }
 
         EnemyDeath();
@@ -96,6 +123,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Animates the sprite by gradually flashing it red during the knockback period, then restores its original color.
+    /// </summary>
+    /// <remarks>This coroutine is intended to be used with Unity's StartCoroutine method. The sprite is set
+    /// to red and its opacity increases over the knockback time, after which it returns to white. If the sprite
+    /// renderer is not assigned, the animation is skipped.</remarks>
+    /// <returns>An enumerator that performs the sprite flash animation over the knockback duration.</returns>
     private IEnumerator FlashSprite()
     {
         if (sp != null)

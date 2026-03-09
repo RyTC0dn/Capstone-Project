@@ -51,14 +51,15 @@ public class ShopManager : MonoBehaviour
 
     [Space(10)]
     [Header("Game Events")]
-    public GameEvent buyEvent; //For whenever the player buys something
-
     public GameEvent secondItemEvent; //
+
     public GameEvent firstItemEvent; //Checking if upgrade bought to update UI
 
     [Header("Shop Prices")]
     [Tooltip("Set price only if enum state is set for Blacksmith")]
     public int swordUpgradePrice;
+
+    public int knockbackUpgradePrice;
 
     public int axePrice;
     public int healthPrice;
@@ -68,6 +69,7 @@ public class ShopManager : MonoBehaviour
     private bool isShopping = false;
     [SerializeField] private bool boughtAxe = false;
     [SerializeField] private bool boughtUpgrade = false;
+    [SerializeField] private bool boughtKnockback = false;
     [SerializeField] private bool boughtHealth = false;
     public SceneInfo sceneInfo;
 
@@ -196,7 +198,7 @@ public class ShopManager : MonoBehaviour
 
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
-            buyEvent.Raise(this, swordUpgradePrice);         // keep notifying other systems
+            //buyEvent.Raise(this, swordUpgradePrice);         // keep notifying other systems
 
             if (sceneInfo.swordDamageValue != 2)
             {
@@ -206,11 +208,40 @@ public class ShopManager : MonoBehaviour
 
             sceneInfo.isWeaponUpgradeBought = true;
 
-            // Recalculate price and refresh text only when price changed
-            int newPricedAmount = swordUpgradePrice * 2;
-            swordUpgradePrice = newPricedAmount;
-            UpdatePrice();
-            Debug.Log(swordUpgradePrice);
+            //In case we want to have increasing price over time
+            //// Recalculate price and refresh text only when price changed
+            //int newPricedAmount = swordUpgradePrice * 2;
+            //swordUpgradePrice = newPricedAmount;
+            //UpdatePrice();
+            //Debug.Log(swordUpgradePrice);
+
+            firstItemButton.interactable = false;
+        }
+        else
+        {
+            Debug.Log("Not enough coins");
+            player.PlayAudio(noMoneyElement, audioSource);
+        }
+    }
+
+    public void BuyKnockbackUpgrade()
+    {
+        if (GameManager.instance.TrySpendCoins(knockbackUpgradePrice))
+        {
+            //Play audio clip for purchasing
+            player.PlayAudio(purchaseElement, audioSource);
+
+            boughtUpgrade = true;
+            GameManager.instance.firstUpgrade = true;
+            //buyEvent.Raise(this, knockbackUpgradePrice);         // keep notifying other systems
+
+            if (sceneInfo.knockbackForce != 2)
+            {
+                float FORCE = 2;
+                sceneInfo.knockbackForce = FORCE;
+            }
+
+            sceneInfo.isWeaponUpgradeBought = true;
 
             firstItemButton.interactable = false;
         }
@@ -224,11 +255,11 @@ public class ShopManager : MonoBehaviour
     public void BuyAxe() //Function for buying the axe
     {
         int amount = GameManager.instance.currentCoin;
-        if (amount >= axePrice)
+        if (GameManager.instance.TrySpendCoins(axePrice))
         {
             //If purchased, play audio cue
             player.PlayAudio(purchaseElement, audioSource);
-            buyEvent.Raise(this, axePrice);
+            //buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             sceneInfo.isAxeBought = true;
             secondItemEvent.Raise(this, true);
@@ -258,7 +289,7 @@ public class ShopManager : MonoBehaviour
         if (amount >= healthPrice)
         {
             player.PlayAudio(purchaseElement, audioSource);
-            buyEvent.Raise(this, healthPrice);
+            //buyEvent.Raise(this, healthPrice);
 
             sceneInfo.isHPBought = true;
         }

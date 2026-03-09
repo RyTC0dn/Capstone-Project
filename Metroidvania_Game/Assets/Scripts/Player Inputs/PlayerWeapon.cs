@@ -12,12 +12,17 @@ public class PlayerWeapon : MonoBehaviour
     [Header("Weapon Stats")]
     public int damageValue = 1;
 
+    public float knockbackForce = 1;
+
     public int damagePerUpgrade = 1;
 
     [SerializeField] private int currentDamage;
+    [SerializeField] private float currentKnockback;
 
     [Header("Game Event")]
     public GameEvent onPlayerAttack;
+
+    public GameEvent onKnockback;
 
     public SceneInfo sceneInfo;
 
@@ -25,7 +30,8 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Start()
     {
-        currentDamage = damageValue;
+        currentDamage = damageValue * sceneInfo.swordDamageValue;
+        currentKnockback = knockbackForce * sceneInfo.knockbackForce;
     }
 
     private void Update()
@@ -37,7 +43,8 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
         {
-            onPlayerAttack.Raise(this, new AttackData(collision.gameObject, sceneInfo.swordDamageValue));
+            onPlayerAttack.Raise(this, new AttackData(collision.gameObject, currentDamage));
+            onPlayerAttack.Raise(this, new KnockbackData(collision.gameObject, currentKnockback));
         }
     }
 
@@ -54,6 +61,12 @@ public class PlayerWeapon : MonoBehaviour
     }
 }
 
+/// <summary>
+/// Represents information about an attack, including the target and the amount of damage dealt.
+/// </summary>
+/// <remarks>Use this class to encapsulate attack details when processing combat actions or events. The target
+/// specifies the recipient of the attack, and the damage indicates the amount inflicted. This class is typically used
+/// in game logic to pass attack data between systems.</remarks>
 public class AttackData
 {
     public GameObject target;
@@ -63,5 +76,24 @@ public class AttackData
     {
         this.target = target;
         this.damage = damage;
+    }
+}
+
+/// <summary>
+/// Represents knockback information for a specific game object, including the target and the magnitude of the knockback
+/// effect.
+/// </summary>
+/// <remarks>Use this class to encapsulate knockback data when applying force or effects to game objects in
+/// gameplay scenarios. The target field identifies the affected object, while knockback specifies the strength of the
+/// effect.</remarks>
+public class KnockbackData
+{
+    public GameObject target;
+    public float knockback;
+
+    public KnockbackData(GameObject target, float knockback)
+    {
+        this.target = target;
+        this.knockback = knockback;
     }
 }

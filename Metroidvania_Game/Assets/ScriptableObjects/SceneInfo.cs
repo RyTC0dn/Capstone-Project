@@ -20,6 +20,7 @@ public class SceneInfo : ScriptableObject
     public bool isHPBought = false;
     public bool isAxeUsed = false;
     public int swordDamageValue = 1;
+    public float knockbackForce = 1;
 
     [Space(20)]
     [Header("Cutscenes")]

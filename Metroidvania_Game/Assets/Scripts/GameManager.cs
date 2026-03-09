@@ -102,15 +102,15 @@ public class GameManager : MonoBehaviour
 
     public void UpdateCoins(Component sender, object data)
     {
-        if (data is int && sender is ShopManager)
-        {
-            int amount = (int)data;
-            if (currentCoin > 0)
-            {
-                currentCoin -= amount;
-                SetCoin(currentCoin);
-            }
-        }
+        //if (data is int && sender is ShopManager)
+        //{
+        //    int amount = (int)data;
+        //    if (currentCoin > 0)
+        //    {
+        //        currentCoin -= amount;
+        //        SetCoin(currentCoin);
+        //    }
+        //}
 
         //Check for coin collection script event to add to coin count
         if (data is int && sender is CoinCollection)
