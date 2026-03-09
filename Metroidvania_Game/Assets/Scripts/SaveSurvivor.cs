@@ -31,6 +31,8 @@ public class SaveSurvivor : MonoBehaviour
 
     public TextMeshProUGUI dialogueText;
 
+    private TypewriterEffect typewriterEffect;
+
     private int activeLineIndex = 0;
     private bool conversationActive = false;
     private bool firstLineShown = false;
@@ -61,7 +63,7 @@ public class SaveSurvivor : MonoBehaviour
     public GameObject buttonPrompt;
 
     private bool isTyping = false;
-    private float typingSpeed = 0.05f;
+    [SerializeField] private float typingSpeed = 0.05f;
 
     #endregion Variables
 
@@ -74,6 +76,7 @@ public class SaveSurvivor : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
         audioPlayer = GetComponentInChildren<AudioPlayer>();
+        typewriterEffect = GetComponent<TypewriterEffect>();
 
         //Check if this NPC should be destroyed based on save data and current scene
         if (GameManager.instance.isBlackSmithSaved)
@@ -142,6 +145,7 @@ public class SaveSurvivor : MonoBehaviour
                 textBubble.SetActive(true);
                 firstLineShown = true;
                 conversationActive = true;
+                typewriterEffect.SetText(currentDialogue.textLines[activeLineIndex].text, dialogueText);
                 if (source != null)
                 {
                     if (audioPlayer != null)
@@ -155,6 +159,7 @@ public class SaveSurvivor : MonoBehaviour
             buttonPrompt.SetActive(false);
 
             AdvanceDialog();
+            typewriterEffect.SetText(currentDialogue.textLines[activeLineIndex].text, dialogueText);
         }
     }
 
@@ -162,14 +167,6 @@ public class SaveSurvivor : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = " ";
-
-        if (source != null)
-        {
-            if (audioPlayer != null)
-            {
-                audioPlayer.PlayRandomClip(source, 0, audioPlayer.clips.Length);
-            }
-        }
 
         foreach (char letter in sentence.ToCharArray())
         {

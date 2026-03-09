@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 8185659968478772252}
   - component: {fileID: 4020196587750293799}
   - component: {fileID: 2290177499615324340}
+  - component: {fileID: 1708025543991796619}
   - component: {fileID: 862895010000645107}
   - component: {fileID: 8915612375021893606}
   - component: {fileID: 2237365976252304545}
@@ -409,6 +410,23 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0}
   fallingSpeed: 0
   buttonPrompt: {fileID: 3041088372839659987}
+  typingSpeed: 0.05
+--- !u!114 &1708025543991796619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9021047022510109762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524da0ac8e5c2e6448abec7a28793acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPerSecond: 20
+  interpunctuationDelay: 0.5
+  quickSkip: 0
+  skipSpeedup: 5
 --- !u!95 &862895010000645107
 Animator:
   serializedVersion: 7
