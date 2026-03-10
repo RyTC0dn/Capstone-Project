@@ -17,11 +17,8 @@ public class TutorialManager : MonoBehaviour
     public string sceneName;
 
     [Space(20)]
-    public TextMeshProUGUI currentStarCount;
-
-    public TextMeshProUGUI maxStarCount;
-
     public SceneInfo sceneInfo;
+
     public GameObject input;
     public Animator bookAnim;
     public Button[] button;
@@ -32,9 +29,6 @@ public class TutorialManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        currentStarCount.text = currentNotificationIndex.ToString();
-        maxStarCount.text = notifications.textLines.Length.ToString();
-
         input.SetActive(false);
         Introduction();
 
@@ -111,7 +105,6 @@ public class TutorialManager : MonoBehaviour
         if (currentNotificationIndex < notifications.textLines.Length)
         {
             tutorialText.text = notifications.textLines[currentNotificationIndex].text;
-            currentStarCount.text = currentNotificationIndex.ToString(); //Update text
             Debug.Log("Tutorial Notification: " + notifications.textLines[currentNotificationIndex].text);
         }
         else
