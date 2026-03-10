@@ -787,8 +787,6 @@ MonoBehaviour:
   currentNotificationIndex: 0
   introTime: 0.1
   sceneName: 
-  currentStarCount: {fileID: 8433417308444997735}
-  maxStarCount: {fileID: 7691253736012885321}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   input: {fileID: 2705490218738506433}
   bookAnim: {fileID: 4986660034963771712}
@@ -974,19 +972,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5561233953239577388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8035854248909909018}
-  m_Father: {fileID: 6590447790978233220}
+  m_Father: {fileID: 2663280893876945165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6226345506922332941
 Canvas:
   m_ObjectHideFlags: 0
@@ -1401,7 +1399,6 @@ Transform:
   - {fileID: 8435926087561011138}
   - {fileID: 6959485644029858424}
   - {fileID: 9141324608920178261}
-  - {fileID: 9011049014051037459}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &508308013542423345
@@ -1426,6 +1423,7 @@ MonoBehaviour:
   - {fileID: 5108120212161609928}
   - {fileID: 8646010277755983756}
   - {fileID: 7983566668161730406}
+  stepIndex: 0
   currentStarCount: {fileID: 8433417308444997735}
   maxStarCount: {fileID: 7691253736012885321}
   keyInput: {fileID: 6071023252593767212}
@@ -2005,12 +2003,20 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3375009611665323281, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 268890036393126651, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9011049014051037459}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
 --- !u!1 &575057629708887860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2356954988051778754, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 2832365923334384630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2663280893876945165 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 268890036393126651, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
   m_PrefabInstance: {fileID: 2832365923334384630}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &4986660034963771712 stripped

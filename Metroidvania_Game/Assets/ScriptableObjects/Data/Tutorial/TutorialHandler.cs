@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public enum TutorialCondition
 {
@@ -42,8 +43,6 @@ public class TutorialHandler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        currentStarCount.text = stepIndex.ToString();
-        maxStarCount.text = sequence.steps.Length.ToString();
         controlDetected = sceneInfo.OnDeviceChange(Gamepad.current);
         StartTutorial();
     }
@@ -56,8 +55,17 @@ public class TutorialHandler : MonoBehaviour
 
     private void StartTutorial()
     {
+        TutorialStep step = sequence.steps[stepIndex];
         if (type == TutorialType.UI)
+        {
+            arrows[step.arrowIndex].SetActive(true);
             Time.timeScale = 0;
+        }
+        else
+            Time.timeScale = 1;
+
+        currentStarCount.text = stepIndex.ToString();
+        maxStarCount.text = sequence.steps.Length.ToString();
 
         textBox.SetActive(true);
 
@@ -69,6 +77,9 @@ public class TutorialHandler : MonoBehaviour
         TutorialStep step = sequence.steps[stepIndex];
 
         tutorialText.text = step.dialogueText;
+
+        currentStarCount.text = stepIndex.ToString();
+        maxStarCount.text = sequence.steps.Length.ToString();
 
         if (type == TutorialType.UI)
         {
