@@ -194,6 +194,8 @@ MonoBehaviour:
   isGrounded: 0
   damage: 1
   onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+  isKnocked: 0
+  vulnerableTimer: 1
 --- !u!114 &-5689470515125063858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,9 +209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackTime: 0.25
-  hitDirectionForce: 10
-  constForce: 5
-  inputForce: 7.5
+  hitDirectionForce: 2.5
+  constForce: 2.5
+  inputForce: 1.5
   rb2D: {fileID: 8152913360889862364}
 --- !u!114 &-2676361756894015011
 MonoBehaviour:
