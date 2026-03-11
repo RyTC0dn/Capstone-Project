@@ -509,9 +509,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackTime: 0.25
-  hitDirectionForce: 2.5
-  constForce: 2.5
-  inputForce: 1.5
+  hitDirectionForce: 4
+  constForce: 3
+  inputForce: 2
   rb2D: {fileID: 6552518764005499067}
 --- !u!114 &6518034331848133559
 MonoBehaviour:
