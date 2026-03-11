@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPerSecond: 20
   interpunctuationDelay: 0.5
+  IsTyping: 0
   quickSkip: 0
   skipSpeedup: 5
 --- !u!95 &862895010000645107
