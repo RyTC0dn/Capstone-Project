@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -13,45 +14,51 @@ using UnityEngine.Video;
 public class MenuManager : MonoBehaviour
 {
     #region Variables
+
     [Header("Menu UI Components")]
     [Tooltip("0 is the Shield, 1 equals wall break, 2 is axe")]
     public GameObject[] itemIcons;
+
     private int coinTracker;
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private SceneInfo sceneInfo;
-    [Space(20)]
 
+    [Space(20)]
     [Tooltip("Assign the first button to highlight on each page")]
     public GameObject[] menuFirst; //Highlight first button object for controller navigation
 
     [Header("Audio")]
     public AudioSource menuAudio;
+
     public AudioClip[] menuClips;
 
     public static MenuManager instance { get; private set; }
 
     [Header("Menu Pages")]
-    //Store the separate menu options
     public bool menuOpened = false;
+
     public GameObject equipmentMenu;
     public GameObject inventoryMenu;
     public GameObject questMenu;
     public GameObject tutorialMenu;
     private PrototypePlayerAttack playerAttack; //So I can disable attack when menu is open
-    [Space(20)]
+    public Button finalizeTutorialButton;
 
+    [Space(20)]
     [Header("Book Icon Indicator1")]
     public GameObject bookIcon;
-    [SerializeField]private TextMeshProUGUI bookText;
+
+    [SerializeField] private TextMeshProUGUI bookText;
     private bool acceptTutorial = false;
     public GameObject uiTutorial;
-    #endregion
 
+    #endregion Variables
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         #region Singleton Pattern
+
         if (instance == null)
             instance = this;
 
@@ -60,12 +67,15 @@ public class MenuManager : MonoBehaviour
             itemIcons[i].SetActive(false);
         }
 
+        //Have components inactive until specified
         equipmentMenu.SetActive(false);
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
-        #endregion
+        tutorialMenu.SetActive(false);
 
-        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();        
+        #endregion Singleton Pattern
+
+        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
     }
 
     public void TutorialConfirmation(bool accept)
@@ -93,7 +103,7 @@ public class MenuManager : MonoBehaviour
                 if (playerAttack != null)
                     playerAttack.enabled = true;
             }
-            else //Otherwise open player menu 
+            else //Otherwise open player menu
             {
                 OpenMenu();
                 //Disable player attack when menu is open
@@ -109,6 +119,7 @@ public class MenuManager : MonoBehaviour
     }
 
     #region Call Menus
+
     private void OpenMenu()
     {
         MenuManager.instance.EquipmentOpen();
@@ -128,9 +139,11 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1f;
         menuOpened = false;
     }
-    #endregion
+
+    #endregion Call Menus
 
     #region Misc Methods
+
     private void CheckPickup()
     {
         itemIcons[0].SetActive(sceneInfo.isShieldPickedUp);
@@ -153,22 +166,21 @@ public class MenuManager : MonoBehaviour
     private void BookIcon()
     {
         //Trigger book icon animations
-
     }
 
     private System.Collections.IEnumerator FlashText()
     {
         yield return new WaitForSeconds(0.1f);
 
-        if(bookText != null)
+        if (bookText != null)
         {
             Color color = bookText.color;
             float elapsed = 0f;
 
-            while(elapsed < 1f)
+            while (elapsed < 1f)
             {
                 elapsed += Time.deltaTime;
-                float alpha = Mathf.PingPong(Time.time * 4f, 0.5f * 5) + 0.5f/2; // oscillates between 0.5–1
+                float alpha = Mathf.PingPong(Time.time * 4f, 0.5f * 5) + 0.5f / 2; // oscillates between 0.5–1
                 bookText.color = new Color(color.r, color.g, color.b, alpha); //Flashing transparency
                 yield return null;
             }
@@ -176,9 +188,11 @@ public class MenuManager : MonoBehaviour
             bookText.color = new Color(color.r, color.g, color.b, 1f);
         }
     }
-    #endregion
+
+    #endregion Misc Methods
 
     #region Menu Tabs
+
     public void EquipmentOpen()
     {
         equipmentMenu.SetActive(true);
@@ -228,6 +242,8 @@ public class MenuManager : MonoBehaviour
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
 
+        finalizeTutorialButton.interactable = false;
+
         menuAudio.PlayOneShot(menuClips[0]);
     }
 
@@ -239,22 +255,30 @@ public class MenuManager : MonoBehaviour
         }
 
         #region Menu Hierarchy Check
+
         //Check which menu is currently open
         if (equipmentMenu.activeInHierarchy)
             equipmentMenu.SetActive(false);
-        else if(inventoryMenu.activeInHierarchy)
+        else if (inventoryMenu.activeInHierarchy)
             inventoryMenu.SetActive(false);
-        else if(questMenu.activeInHierarchy)
+        else if (questMenu.activeInHierarchy)
             questMenu.SetActive(false);
-        else if(tutorialMenu.activeInHierarchy)
+        else if (tutorialMenu.activeInHierarchy)
             tutorialMenu.SetActive(false);
         else
         {
-            //If no menus are open 
+            //If no menus are open
             Debug.LogError("There are no menus open");
             return;
         }
-        #endregion
+
+        #endregion Menu Hierarchy Check
     }
-    #endregion
+
+    #endregion Menu Tabs
+
+    public void SendBack(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

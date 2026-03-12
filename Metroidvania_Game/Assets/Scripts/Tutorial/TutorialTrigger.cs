@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -24,9 +25,13 @@ public enum CurrentTutorial
 public class TutorialTrigger : MonoBehaviour
 {
     public CurrentTutorial tutorial;
+    private bool isNearby = false;
+    private bool eventTriggered = false;
+    private bool input;
     [SerializeField] private int tutorialSequence;
     [SerializeField] private int maxSequence;
     public SceneInfo sceneInfo;
+    public GameEvent tutorialTriggerEvent;
 
     private void Start()
     {
@@ -39,16 +44,47 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Update()
     {
-        // Update the tutorial sequence based on the current notification index from the TutorialManager
-        tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
-        if (tutorial == CurrentTutorial.Combat)
+        bool key = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+        bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
+
+        input = key || button;
+        switch (tutorial)
         {
-            //Have the enemies appear in sequence of the tutorial
-            TutorialManager.Instance.enemies[tutorialSequence].SetActive(true);
-        }
-        else
-        {
-            TutorialManager.Instance.enemies[tutorialSequence].SetActive(false);
+            case CurrentTutorial.Movement:
+                break;
+
+            case CurrentTutorial.UI:
+                break;
+
+            case CurrentTutorial.Wallbreak:
+                break;
+
+            case CurrentTutorial.Combat:
+                break;
+
+            case CurrentTutorial.NPCInteraction:
+                break;
+
+            case CurrentTutorial.DoorInteraction:
+                if (!isNearby)
+                    return;
+
+                if (input)
+                {
+                    Debug.Log("Event triggered");
+
+                    eventTriggered = true;
+                    tutorialTriggerEvent.Raise(this, eventTriggered);
+                    eventTriggered = false;
+                }
+
+                break;
+
+            case CurrentTutorial.None:
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -57,52 +93,55 @@ public class TutorialTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            isNearby = true;
+            Debug.Log("Player near");
+
             #region Assigning tutorial logic
 
-            switch (tutorial)
-            {
-                case CurrentTutorial.Movement:
-                    TutorialManager.Instance.NextTutorialNotification();
-                    //MovementTutorial(tutorialSequence);
-                    gameObject.SetActive(false);
-                    break;
+            //switch (tutorial)
+            //{
+            //    case CurrentTutorial.Movement:
+            //        TutorialManager.Instance.NextTutorialNotification();
+            //        //MovementTutorial(tutorialSequence);
+            //        gameObject.SetActive(false);
+            //        break;
 
-                case CurrentTutorial.UI:
-                    TutorialManager.Instance.NextTutorialNotification();
-                    //MovementTutorial(tutorialSequence);
-                    gameObject.SetActive(false);
-                    break;
+            //    case CurrentTutorial.UI:
+            //        TutorialManager.Instance.NextTutorialNotification();
+            //        //MovementTutorial(tutorialSequence);
+            //        gameObject.SetActive(false);
+            //        break;
 
-                case CurrentTutorial.Wallbreak:
-                    TutorialManager.Instance.NextTutorialNotification();
-                    //MovementTutorial(tutorialSequence);
-                    gameObject.SetActive(false);
-                    break;
+            //    case CurrentTutorial.Wallbreak:
+            //        TutorialManager.Instance.NextTutorialNotification();
+            //        //MovementTutorial(tutorialSequence);
+            //        gameObject.SetActive(false);
+            //        break;
 
-                case CurrentTutorial.Combat:
-                    TutorialManager.Instance.NextTutorialNotification();
-                    //MovementTutorial(tutorialSequence);
-                    gameObject.SetActive(false);
-                    break;
+            //    case CurrentTutorial.Combat:
+            //        TutorialManager.Instance.NextTutorialNotification();
+            //        //MovementTutorial(tutorialSequence);
+            //        gameObject.SetActive(false);
+            //        break;
 
-                case CurrentTutorial.NPCInteraction:
-                    TutorialManager.Instance.NextTutorialNotification();
-                    //MovementTutorial(tutorialSequence);
-                    gameObject.SetActive(false);
-                    break;
+            //    case CurrentTutorial.NPCInteraction:
+            //        TutorialManager.Instance.NextTutorialNotification();
+            //        //MovementTutorial(tutorialSequence);
+            //        gameObject.SetActive(false);
+            //        break;
 
-                case CurrentTutorial.DoorInteraction:
-                    TutorialManager.Instance.NextTutorialNotification();
-                    //MovementTutorial(tutorialSequence);
-                    gameObject.SetActive(false);
-                    break;
+            //    case CurrentTutorial.DoorInteraction:
+            //        TutorialManager.Instance.NextTutorialNotification();
+            //        //MovementTutorial(tutorialSequence);
+            //        gameObject.SetActive(false);
+            //        break;
 
-                case CurrentTutorial.None:
-                    break;
+            //    case CurrentTutorial.None:
+            //        break;
 
-                default:
-                    break;
-            }
+            //    default:
+            //        break;
+            //}
 
             #endregion Assigning tutorial logic
         }

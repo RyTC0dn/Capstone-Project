@@ -60,6 +60,7 @@ public class TutorialHandler : MonoBehaviour
         {
             arrows[step.arrowIndex].SetActive(true);
             Time.timeScale = 0;
+            TutorialManager.Instance.bookAnim.playbackTime += Time.unscaledTime;
         }
         else
             Time.timeScale = 1;
@@ -100,7 +101,7 @@ public class TutorialHandler : MonoBehaviour
         stepIndex++;
         if (stepIndex >= sequence.steps.Length)
         {
-            FinishTutorial();
+            //FinishTutorial();
             return;
         }
 
@@ -182,6 +183,13 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialCondition.None:
+                MenuManager.instance.tutorialMenu.SetActive(true);
+                sceneInfo.bookIsLookedAt = true;
+                MenuManager.instance.finalizeTutorialButton.interactable = true;
+                foreach (var arrow in arrows)
+                {
+                    arrow.gameObject.SetActive(false);
+                }
                 break;
 
             default:

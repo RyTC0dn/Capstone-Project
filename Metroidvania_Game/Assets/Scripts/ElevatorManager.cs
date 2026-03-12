@@ -57,6 +57,8 @@ public class ElevatorManager : MonoBehaviour
 
             saveData.registeredElevators.Add(elevator.elevatorLocationName);
 
+            GameManager.instance.nextSpawnPointName = elevator.elevatorLocationName;
+
             string json = JsonUtility.ToJson(saveData);
             PlayerPrefs.SetString("ElevatorRegistered", json);
             PlayerPrefs.Save();
@@ -92,7 +94,7 @@ public class ElevatorManager : MonoBehaviour
         }
     }
 
-    void EnableComponent()
+    private void EnableComponent()
     {
         var playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
         playerAttack.EnableAttack();
