@@ -27,6 +27,7 @@ public class TutorialHandler : MonoBehaviour
     public TutorialSequence sequence;
     public TutorialType type;
     public SceneInfo sceneInfo;
+    private bool eventTrigger = false;
 
     public TextMeshProUGUI tutorialText;
     public GameObject textBox;
@@ -120,6 +121,7 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialType.Movement:
+                MovementProgression();
                 break;
 
             case TutorialType.NPC:
@@ -254,6 +256,70 @@ public class TutorialHandler : MonoBehaviour
 
             default:
                 break;
+        }
+    }
+
+    private void MovementProgression()
+    {
+        TutorialStep step = sequence.steps[stepIndex];
+
+        switch (step.condition)
+        {
+            case TutorialCondition.PressConfirm:
+                if (eventTrigger)
+                {
+                    NextStep();
+                    eventTrigger = false;
+                }
+                break;
+
+            case TutorialCondition.OpenMenu:
+                if (eventTrigger)
+                {
+                    NextStep();
+                    eventTrigger = false;
+                }
+                break;
+
+            case TutorialCondition.ClickButton:
+                if (eventTrigger)
+                {
+                    NextStep();
+                    eventTrigger = false;
+                }
+                break;
+
+            case TutorialCondition.NextPage:
+                if (eventTrigger)
+                {
+                    NextStep();
+                    eventTrigger = false;
+                }
+                break;
+
+            case TutorialCondition.None:
+                MenuManager.instance.tutorialMenu.SetActive(true);
+                sceneInfo.isMoved = true;
+                MenuManager.instance.finalizeTutorialButton.interactable = true;
+                foreach (var arrow in arrows)
+                {
+                    arrow.gameObject.SetActive(false);
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public void OnEventTrigger(Component sender, object data)
+    {
+        if (sender is TutorialTrigger && data is bool trigger)
+        {
+            if (trigger)
+            {
+                eventTrigger = true;
+            }
         }
     }
 

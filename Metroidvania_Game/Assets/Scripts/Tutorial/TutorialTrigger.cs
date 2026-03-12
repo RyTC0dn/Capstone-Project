@@ -44,48 +44,13 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Update()
     {
-        bool key = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
-        bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
-
-        input = key || button;
-        switch (tutorial)
+        tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
+        if (tutorial == CurrentTutorial.Combat)
         {
-            case CurrentTutorial.Movement:
-                break;
-
-            case CurrentTutorial.UI:
-                break;
-
-            case CurrentTutorial.Wallbreak:
-                break;
-
-            case CurrentTutorial.Combat:
-                break;
-
-            case CurrentTutorial.NPCInteraction:
-                break;
-
-            case CurrentTutorial.DoorInteraction:
-                if (!isNearby)
-                    return;
-
-                if (input)
-                {
-                    Debug.Log("Event triggered");
-
-                    eventTriggered = true;
-                    tutorialTriggerEvent.Raise(this, eventTriggered);
-                    eventTriggered = false;
-                }
-
-                break;
-
-            case CurrentTutorial.None:
-                break;
-
-            default:
-                break;
+            TutorialManager.Instance.enemies[tutorialSequence].SetActive(true);
         }
+        else
+            TutorialManager.Instance.enemies[tutorialSequence].SetActive(false);
     }
 
     //
@@ -93,55 +58,52 @@ public class TutorialTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isNearby = true;
-            Debug.Log("Player near");
-
             #region Assigning tutorial logic
 
-            //switch (tutorial)
-            //{
-            //    case CurrentTutorial.Movement:
-            //        TutorialManager.Instance.NextTutorialNotification();
-            //        //MovementTutorial(tutorialSequence);
-            //        gameObject.SetActive(false);
-            //        break;
+            switch (tutorial)
+            {
+                case CurrentTutorial.Movement:
+                    TutorialManager.Instance.NextTutorialNotification();
+                    //MovementTutorial(tutorialSequence);
+                    gameObject.SetActive(false);
+                    break;
 
-            //    case CurrentTutorial.UI:
-            //        TutorialManager.Instance.NextTutorialNotification();
-            //        //MovementTutorial(tutorialSequence);
-            //        gameObject.SetActive(false);
-            //        break;
+                case CurrentTutorial.UI:
+                    TutorialManager.Instance.NextTutorialNotification();
+                    //MovementTutorial(tutorialSequence);
+                    gameObject.SetActive(false);
+                    break;
 
-            //    case CurrentTutorial.Wallbreak:
-            //        TutorialManager.Instance.NextTutorialNotification();
-            //        //MovementTutorial(tutorialSequence);
-            //        gameObject.SetActive(false);
-            //        break;
+                case CurrentTutorial.Wallbreak:
+                    TutorialManager.Instance.NextTutorialNotification();
+                    //MovementTutorial(tutorialSequence);
+                    gameObject.SetActive(false);
+                    break;
 
-            //    case CurrentTutorial.Combat:
-            //        TutorialManager.Instance.NextTutorialNotification();
-            //        //MovementTutorial(tutorialSequence);
-            //        gameObject.SetActive(false);
-            //        break;
+                case CurrentTutorial.Combat:
+                    TutorialManager.Instance.NextTutorialNotification();
+                    //MovementTutorial(tutorialSequence);
+                    gameObject.SetActive(false);
+                    break;
 
-            //    case CurrentTutorial.NPCInteraction:
-            //        TutorialManager.Instance.NextTutorialNotification();
-            //        //MovementTutorial(tutorialSequence);
-            //        gameObject.SetActive(false);
-            //        break;
+                case CurrentTutorial.NPCInteraction:
+                    TutorialManager.Instance.NextTutorialNotification();
+                    //MovementTutorial(tutorialSequence);
+                    gameObject.SetActive(false);
+                    break;
 
-            //    case CurrentTutorial.DoorInteraction:
-            //        TutorialManager.Instance.NextTutorialNotification();
-            //        //MovementTutorial(tutorialSequence);
-            //        gameObject.SetActive(false);
-            //        break;
+                case CurrentTutorial.DoorInteraction:
+                    TutorialManager.Instance.NextTutorialNotification();
+                    //MovementTutorial(tutorialSequence);
+                    gameObject.SetActive(false);
+                    break;
 
-            //    case CurrentTutorial.None:
-            //        break;
+                case CurrentTutorial.None:
+                    break;
 
-            //    default:
-            //        break;
-            //}
+                default:
+                    break;
+            }
 
             #endregion Assigning tutorial logic
         }
