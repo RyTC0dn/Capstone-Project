@@ -7,7 +7,6 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject miniMap;
     [SerializeField] private GameObject largeMap;
     [SerializeField] private GameObject mapLegend;
-    //[SerializeField] private GameObject mapGradient;
     [SerializeField] private Camera mapCamera;
 
     public float mapSizeSmall = 20f;
@@ -46,7 +45,6 @@ public class MapManager : MonoBehaviour
         miniMap.SetActive(false);
         largeMap.SetActive(true);
         mapLegend.SetActive(true);
-        //mapGradient.SetActive(false);
         isLargeMapOpen = true;
         Time.timeScale = 0f;
         mapCamera.orthographicSize = mapSizeLarge;
@@ -57,7 +55,6 @@ public class MapManager : MonoBehaviour
         miniMap.SetActive(true);
         largeMap.SetActive(false);
         mapLegend.SetActive(false);
-        //mapGradient.SetActive(true);
         isLargeMapOpen=false;
         Time.timeScale = 1.0f;
         mapCamera.orthographicSize = mapSizeSmall;
