@@ -33,9 +33,9 @@ public class ItemPickup : MonoBehaviour
         audioPlayer = FindFirstObjectByType<AudioPlayer>();
 
         if(sceneInfo.isShieldPickedUp)
-            Destroy(shield);
+            shield.SetActive(false);
         if (sceneInfo.isWallBreakPickedUp)
-            Destroy(wallBreak);
+            wallBreak.SetActive(false);
 
         //Grab game object id from Unity
         id = gameObject.GetInstanceID();

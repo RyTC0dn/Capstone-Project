@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2807c966844b747919b8b46ddb7989, type: 3}
-  m_Name: UIStep4
+  m_Name: UIStep3
   m_EditorClassIdentifier: 
-  dialogueText: "Once you have your information, you can check the different pages
-    by clicking on the tabs on the side \n"
-  arrowIndex: 3
-  condition: 3
+  dialogueText: This is the Equipment menu, you can click on any one of these buttons
+    in order to recieve information on what the item does and equip them.
+  arrowIndex: 2
+  condition: 2

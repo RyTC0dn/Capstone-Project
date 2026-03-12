@@ -9,6 +9,8 @@ public enum TutorialCondition
     OpenMenu,
     ClickButton,
     NextPage,
+    InventoryPage,
+    QuestPaqge,
     None
 }
 
@@ -165,25 +167,29 @@ public class TutorialHandler : MonoBehaviour
                     || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
                     NextStep();
                 break;
-
             case TutorialCondition.OpenMenu:
                 TutorialManager.Instance.bookAnim.Play("BookEnter");
                 if (Keyboard.current.tabKey.wasPressedThisFrame
                     || Gamepad.current?.selectButton.wasPressedThisFrame == true)
                     NextStep();
                 break;
-
             case TutorialCondition.ClickButton:
                 TutorialManager.Instance.bookAnim.Play("BookLeave");
                 if (UIEvents.buttonClicked)
                     NextStep();
                 break;
-
             case TutorialCondition.NextPage:
                 if (UIEvents.pageTurned)
                     NextStep();
                 break;
-
+            case TutorialCondition.InventoryPage:
+                if(UIEvents.nextPageTurn)
+                    NextStep();
+                break;
+            case TutorialCondition.QuestPaqge:
+                if (UIEvents.finalPageTurn)
+                    NextStep();
+                break;
             case TutorialCondition.None:
                 MenuManager.instance.tutorialMenu.SetActive(true);
                 sceneInfo.bookIsLookedAt = true;
@@ -193,7 +199,6 @@ public class TutorialHandler : MonoBehaviour
                     arrow.gameObject.SetActive(false);
                 }
                 break;
-
             default:
                 break;
         }
@@ -209,8 +214,18 @@ public class TutorialHandler : MonoBehaviour
         UIEvents.pageTurned = turn;
     }
 
+    public void OnInventory(bool next)
+    {
+        UIEvents.nextPageTurn = next;
+    }
+
+    public void OnQuest(bool final)
+    {
+        UIEvents.nextPageTurn = final;
+    }
     #endregion UI Sequence
 
+    #region Interaction Sequence
     private void InteractProgression()
     {
         TutorialStep step = sequence.steps[stepIndex];
@@ -258,6 +273,7 @@ public class TutorialHandler : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
     private void MovementProgression()
     {
@@ -342,4 +358,6 @@ public static class UIEvents
 {
     public static bool buttonClicked;
     public static bool pageTurned;
+    public static bool nextPageTurn;
+    public static bool finalPageTurn;
 }

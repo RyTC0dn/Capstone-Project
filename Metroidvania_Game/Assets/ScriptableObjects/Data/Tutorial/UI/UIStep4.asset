@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2807c966844b747919b8b46ddb7989, type: 3}
-  m_Name: UIStep5
+  m_Name: UIStep4
   m_EditorClassIdentifier: 
-  dialogueText: "Congratulations, the tutorial is finished, you can move on to another
-    tutorial or go back. \n"
+  dialogueText: After reading the information, check the Inventory tab shown near
+    the top right.
   arrowIndex: 3
-  condition: 4
+  condition: 3

@@ -72,8 +72,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
         bool isPressed = key || button;
 
-        bool resetKey = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
-        bool resetButton = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
+        bool resetKey = Keyboard.current?.pKey.wasPressedThisFrame ?? false;
+        bool resetButton = Gamepad.current?.dpad.up.wasPressedThisFrame ?? false;
         bool reset = resetKey || resetButton;
 
         //If either the ekey or xButton is pressed

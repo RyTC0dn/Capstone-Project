@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2807c966844b747919b8b46ddb7989, type: 3}
-  m_Name: UIStep3
+  m_Name: UIStep5
   m_EditorClassIdentifier: 
-  dialogueText: Now that the menu is open, you can click on any one of these buttons
-    in order to recieve information on what the item does
-  arrowIndex: 2
-  condition: 2
+  dialogueText: 'The Inventory page is intended to be the storage for all potions
+    or other items picked. Click on the Quest tab.
+
+'
+  arrowIndex: 4
+  condition: 4
