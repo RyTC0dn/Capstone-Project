@@ -10,7 +10,7 @@ public enum TutorialCondition
     ClickButton,
     NextPage,
     InventoryPage,
-    QuestPaqge,
+    QuestPage,
     None
 }
 
@@ -39,7 +39,7 @@ public class TutorialHandler : MonoBehaviour
     private bool controlDetected;
 
     public TextMeshProUGUI currentStarCount;
-    public TextMeshProUGUI maxStarCount;
+    public GameObject starUI;
     public GameObject keyInput;
     public GameObject buttonInput;
 
@@ -68,8 +68,7 @@ public class TutorialHandler : MonoBehaviour
         else
             Time.timeScale = 1;
 
-        currentStarCount.text = stepIndex.ToString();
-        maxStarCount.text = sequence.steps.Length.ToString();
+        currentStarCount.text = sequence.steps[stepIndex].ToString();
 
         textBox.SetActive(true);
 
@@ -83,7 +82,6 @@ public class TutorialHandler : MonoBehaviour
         tutorialText.text = step.dialogueText;
 
         currentStarCount.text = stepIndex.ToString();
-        maxStarCount.text = sequence.steps.Length.ToString();
 
         if (type == TutorialType.UI)
         {
@@ -99,7 +97,7 @@ public class TutorialHandler : MonoBehaviour
         }
     }
 
-    private void NextStep()
+    public void NextStep()
     {
         stepIndex++;
         if (stepIndex >= sequence.steps.Length)
@@ -133,6 +131,7 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialType.Dash:
+                DashSequence();
                 break;
 
             case TutorialType.Interact:
@@ -167,31 +166,38 @@ public class TutorialHandler : MonoBehaviour
                     || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
                     NextStep();
                 break;
+
             case TutorialCondition.OpenMenu:
                 TutorialManager.Instance.bookAnim.Play("BookEnter");
                 if (Keyboard.current.tabKey.wasPressedThisFrame
                     || Gamepad.current?.selectButton.wasPressedThisFrame == true)
                     NextStep();
                 break;
+
             case TutorialCondition.ClickButton:
-                TutorialManager.Instance.bookAnim.Play("BookLeave");
+                MenuManager.instance.EquipmentOpen();
                 if (UIEvents.buttonClicked)
                     NextStep();
                 break;
+
             case TutorialCondition.NextPage:
                 if (UIEvents.pageTurned)
                     NextStep();
                 break;
+
             case TutorialCondition.InventoryPage:
-                if(UIEvents.nextPageTurn)
+                if (UIEvents.nextPageTurn)
                     NextStep();
                 break;
-            case TutorialCondition.QuestPaqge:
+
+            case TutorialCondition.QuestPage:
                 if (UIEvents.finalPageTurn)
                     NextStep();
                 break;
+
             case TutorialCondition.None:
                 MenuManager.instance.tutorialMenu.SetActive(true);
+                starUI.SetActive(false);
                 sceneInfo.bookIsLookedAt = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
                 foreach (var arrow in arrows)
@@ -199,6 +205,7 @@ public class TutorialHandler : MonoBehaviour
                     arrow.gameObject.SetActive(false);
                 }
                 break;
+
             default:
                 break;
         }
@@ -212,20 +219,25 @@ public class TutorialHandler : MonoBehaviour
     public void OnPageTurn(bool turn)
     {
         UIEvents.pageTurned = turn;
+        Debug.Log("Turning page");
     }
 
     public void OnInventory(bool next)
     {
         UIEvents.nextPageTurn = next;
+        Debug.Log("To next page");
     }
 
     public void OnQuest(bool final)
     {
-        UIEvents.nextPageTurn = final;
+        UIEvents.finalPageTurn = final;
+        Debug.Log("To final page");
     }
+
     #endregion UI Sequence
 
     #region Interaction Sequence
+
     private void InteractProgression()
     {
         TutorialStep step = sequence.steps[stepIndex];
@@ -273,35 +285,51 @@ public class TutorialHandler : MonoBehaviour
                 break;
         }
     }
-    #endregion
+
+    #endregion Interaction Sequence
+
+    #region Movement Sequence
 
     private void MovementProgression()
     {
         TutorialStep step = sequence.steps[stepIndex];
 
+        bool keyCheck = Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame;
+        bool joystickCheck = Gamepad.current.leftStick.left.wasPressedThisFrame || Gamepad.current.leftStick.right.wasPressedThisFrame;
+        bool check = keyCheck || joystickCheck;
+
         switch (step.condition)
         {
             case TutorialCondition.PressConfirm:
-                if (eventTrigger)
+                if (!controlDetected)
+                {
+                    keyInput.SetActive(true);
+                    buttonInput.SetActive(false);
+                }
+                else if (controlDetected)
+                {
+                    buttonInput.SetActive(true);
+                    keyInput.SetActive(false);
+                }
+                if (Keyboard.current.eKey.wasPressedThisFrame
+                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
                 {
                     NextStep();
-                    eventTrigger = false;
                 }
                 break;
 
             case TutorialCondition.OpenMenu:
-                if (eventTrigger)
+                if (check)
                 {
                     NextStep();
-                    eventTrigger = false;
                 }
                 break;
 
             case TutorialCondition.ClickButton:
-                if (eventTrigger)
+                if (Keyboard.current.spaceKey.wasPressedThisFrame
+                    || Gamepad.current?.buttonSouth.wasPressedThisFrame == true)
                 {
                     NextStep();
-                    eventTrigger = false;
                 }
                 break;
 
@@ -313,14 +341,56 @@ public class TutorialHandler : MonoBehaviour
                 }
                 break;
 
-            case TutorialCondition.None:
-                MenuManager.instance.tutorialMenu.SetActive(true);
+            case TutorialCondition.InventoryPage:
+                MenuManager.instance.TutorialOpen();
                 sceneInfo.isMoved = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
                 foreach (var arrow in arrows)
                 {
                     arrow.gameObject.SetActive(false);
                 }
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    #endregion Movement Sequence
+
+    private void DashSequence()
+    {
+        TutorialStep step = sequence.steps[stepIndex];
+
+        switch (step.condition)
+        {
+            case TutorialCondition.PressConfirm:
+                if (Keyboard.current.rKey.wasPressedThisFrame
+                    || Gamepad.current?.leftShoulder.wasPressedThisFrame == true)
+                {
+                    NextStep();
+                }
+                break;
+
+            case TutorialCondition.OpenMenu:
+
+                break;
+
+            case TutorialCondition.ClickButton:
+                break;
+
+            case TutorialCondition.NextPage:
+                MenuManager.instance.TutorialOpen();
+                sceneInfo.isMoved = true;
+                MenuManager.instance.finalizeTutorialButton.interactable = true;
+                foreach (var arrow in arrows)
+                {
+                    arrow.gameObject.SetActive(false);
+                }
+                break;
+
+            case TutorialCondition.InventoryPage:
+
                 break;
 
             default:
@@ -341,15 +411,13 @@ public class TutorialHandler : MonoBehaviour
 
     private void FinishTutorial()
     {
-        if (type == TutorialType.UI)
-            Time.timeScale = 1;
-        textBox.SetActive(false);
+        MenuManager.instance.tutorialMenu.SetActive(true);
+        sceneInfo.bookIsLookedAt = true;
+        MenuManager.instance.finalizeTutorialButton.interactable = true;
         foreach (var arrow in arrows)
         {
             arrow.gameObject.SetActive(false);
         }
-
-        TutorialManager.Instance.SendBackToLevel();
     }
 }
 

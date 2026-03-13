@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfec8a0528523045bd401ebe7335c23, type: 3}
+  m_Name: TutorialDashSequence
+  m_EditorClassIdentifier: 
+  steps:
+  - {fileID: 11400000, guid: 11a0075949f1e6f4a9bf550ff33e9411, type: 2}
+  - {fileID: 11400000, guid: 498c4b4680d106f41bbf9583be0d4711, type: 2}
+  - {fileID: 11400000, guid: 7e959b3b066d54345a95e45a7b42346b, type: 2}
+  - {fileID: 11400000, guid: 60929b3bf37455f4baec3b4b7337dc33, type: 2}

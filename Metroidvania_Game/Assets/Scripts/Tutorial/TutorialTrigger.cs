@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -32,6 +33,8 @@ public class TutorialTrigger : MonoBehaviour
     [SerializeField] private int maxSequence;
     public SceneInfo sceneInfo;
     public GameEvent tutorialTriggerEvent;
+    public TextMeshProUGUI starText;
+    public TutorialHandler tutorialHandler;
 
     private void Start()
     {
@@ -39,12 +42,15 @@ public class TutorialTrigger : MonoBehaviour
         maxSequence = (TutorialManager.Instance != null && TutorialManager.Instance.notifications != null)
             ? TutorialManager.Instance.notifications.textLines.Length : 0;
 
+        starText.text = tutorialSequence.ToString();
+
         //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial
     }
 
     private void Update()
     {
         tutorialSequence = TutorialManager.Instance.currentNotificationIndex;
+        starText.text = tutorialSequence.ToString();
         if (tutorial == CurrentTutorial.Combat)
         {
             TutorialManager.Instance.enemies[tutorialSequence].SetActive(true);
@@ -56,7 +62,17 @@ public class TutorialTrigger : MonoBehaviour
     //
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && tutorialHandler.type == TutorialType.Movement)
+        {
+            tutorialHandler.NextStep();
+            gameObject.SetActive(false);
+        }
+        else if (collision.CompareTag("Player") && tutorialHandler.type == TutorialType.Dash)
+        {
+            tutorialHandler.NextStep();
+            gameObject.SetActive(false);
+        }
+        else if (collision.CompareTag("Player"))
         {
             #region Assigning tutorial logic
 
