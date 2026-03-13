@@ -4058,10 +4058,6 @@ PrefabInstance:
       propertyPath: finalizeTutorialButton
       value: 
       objectReference: {fileID: 3057901138673806655}
-    - target: {fileID: 2710113643634894858, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3075772357592492437, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

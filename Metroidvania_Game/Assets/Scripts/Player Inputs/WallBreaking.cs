@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 /// <summary>
-/// Breaking the wall when the player uses the wall break dash ability 
+/// Breaking the wall when the player uses the wall break dash ability
 /// </summary>
 public class WallBreaking : MonoBehaviour
 {
@@ -28,8 +28,8 @@ public class WallBreaking : MonoBehaviour
 
     private void Update()
     {
-        //Ability icon shows up if the player is within a manually set pop-up distance 
-        if (Vector2.Distance(transform.position, 
+        //Ability icon shows up if the player is within a manually set pop-up distance
+        if (Vector2.Distance(transform.position,
             player.transform.position) < popUpDistance)
         {
             icon.enabled = true;
@@ -43,6 +43,7 @@ public class WallBreaking : MonoBehaviour
         //If the player has the ability tag
         if (collision.gameObject.CompareTag(ability))
         {
+            icon.gameObject.SetActive(false);
             StartCoroutine(Break()); //Call the break function
         }
     }
