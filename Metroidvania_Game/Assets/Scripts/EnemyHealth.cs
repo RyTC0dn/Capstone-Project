@@ -119,7 +119,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(coinDrop, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
-            Destroy(gameObject);
         }
     }
 

@@ -699,7 +699,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PrototypeShop, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: BuyAxe
         m_Mode: 1
         m_Arguments:
@@ -1216,7 +1216,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PrototypeShop, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: BuySwordUpgrade
         m_Mode: 1
         m_Arguments:

@@ -215,17 +215,21 @@ PrefabInstance:
       value: 'Sword Upgrade: 20 Gold'
       objectReference: {fileID: 0}
     - target: {fileID: 7442034547716605648, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuySwordUpgrade
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8688641352442258889, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyAxe
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8873880428088122630, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8672525962791736543, guid: 8b85414a38ea700499e9cc8e95638133, type: 3}
+    - target: {fileID: 8939758780552534164, guid: 86a5b4a87ed7e774196e91661ee7bdbf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
