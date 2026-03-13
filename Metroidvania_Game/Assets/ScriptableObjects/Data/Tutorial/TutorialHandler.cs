@@ -492,11 +492,16 @@ public class TutorialHandler : MonoBehaviour
                     buttonInput.SetActive(true);
                     keyInput.SetActive(false);
                 }
-                if (Keyboard.current.eKey.wasPressedThisFrame
-                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
+                bool keyPressed = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+                bool buttonPressed = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
+                if (keyPressed || buttonPressed)
                 {
+                    Debug.Log("combat tutorial confirm");
+
                     NextStep();
-                    trigger.triggers[0].SetActive(true);
+
+                    if (trigger != null && trigger.triggers.Length > 0)
+                        trigger.triggers[0].SetActive(true);
                 }
                 break;
 
@@ -535,17 +540,6 @@ public class TutorialHandler : MonoBehaviour
             {
                 eventTrigger = true;
             }
-        }
-    }
-
-    private void FinishTutorial()
-    {
-        MenuManager.instance.tutorialMenu.SetActive(true);
-        sceneInfo.bookIsLookedAt = true;
-        MenuManager.instance.finalizeTutorialButton.interactable = true;
-        foreach (var arrow in arrows)
-        {
-            arrow.gameObject.SetActive(false);
         }
     }
 }

@@ -33,7 +33,6 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Update()
     {
-        triggers[tutorialSequence].SetActive(input);
     }
 
     //
