@@ -703,6 +703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-TowerDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 8398038029219956083, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

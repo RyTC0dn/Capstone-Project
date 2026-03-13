@@ -35,7 +35,7 @@ public class TutorialHandler : MonoBehaviour
     public GameObject textBox;
     public GameObject[] arrows;
 
-    [SerializeField] private int stepIndex = 0;
+    public int stepIndex = 0;
     private bool controlDetected;
 
     public TextMeshProUGUI currentStarCount;
@@ -125,6 +125,7 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialType.NPC:
+                NPCProgression();
                 break;
 
             case TutorialType.Combat:
@@ -358,6 +359,8 @@ public class TutorialHandler : MonoBehaviour
 
     #endregion Movement Sequence
 
+    #region DashSequence
+
     private void DashSequence()
     {
         TutorialStep step = sequence.steps[stepIndex];
@@ -381,7 +384,7 @@ public class TutorialHandler : MonoBehaviour
 
             case TutorialCondition.NextPage:
                 MenuManager.instance.TutorialOpen();
-                sceneInfo.isMoved = true;
+                sceneInfo.dashed = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
                 foreach (var arrow in arrows)
                 {
@@ -397,6 +400,76 @@ public class TutorialHandler : MonoBehaviour
                 break;
         }
     }
+
+    #endregion DashSequence
+
+    #region NPC Sequence
+
+    private void NPCProgression()
+    {
+        TutorialStep step = sequence.steps[stepIndex];
+
+        int hitCount = 0;
+
+        switch (step.condition)
+        {
+            case TutorialCondition.PressConfirm:
+                if (Mouse.current.leftButton.wasPressedThisFrame
+                    || Gamepad.current?.rightTrigger.wasPressedThisFrame == true)
+                {
+                    NextStep();
+                }
+                break;
+
+            case TutorialCondition.OpenMenu:
+                if (!controlDetected)
+                {
+                    keyInput.SetActive(true);
+                    buttonInput.SetActive(false);
+                }
+                else if (controlDetected)
+                {
+                    buttonInput.SetActive(true);
+                    keyInput.SetActive(false);
+                }
+                if (Keyboard.current.eKey.wasPressedThisFrame
+                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
+                {
+                    NextStep();
+                }
+                break;
+
+            case TutorialCondition.ClickButton:
+
+                break;
+
+            case TutorialCondition.NextPage:
+                if (NPCEvents.isDetected && (Keyboard.current.eKey.wasPressedThisFrame
+                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true))
+                    NextStep();
+                break;
+
+            case TutorialCondition.InventoryPage:
+                MenuManager.instance.TutorialOpen();
+                sceneInfo.npcInteracted = true;
+                MenuManager.instance.finalizeTutorialButton.interactable = true;
+                foreach (var arrow in arrows)
+                {
+                    arrow.gameObject.SetActive(false);
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public void OnNPCFinale(bool detected)
+    {
+        NPCEvents.isDetected = detected;
+    }
+
+    #endregion NPC Sequence
 
     public void OnEventTrigger(Component sender, object data)
     {
@@ -428,4 +501,9 @@ public static class UIEvents
     public static bool pageTurned;
     public static bool nextPageTurn;
     public static bool finalPageTurn;
+}
+
+public static class NPCEvents
+{
+    public static bool isDetected;
 }

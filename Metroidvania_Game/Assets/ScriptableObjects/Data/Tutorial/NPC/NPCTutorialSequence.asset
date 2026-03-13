@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfec8a0528523045bd401ebe7335c23, type: 3}
+  m_Name: NPCTutorialSequence
+  m_EditorClassIdentifier: 
+  steps:
+  - {fileID: 11400000, guid: 5b6c73d09ec80cc40b1bf9db901f2aa3, type: 2}
+  - {fileID: 11400000, guid: ec0bf1c5566a9d0439592a2d38c41586, type: 2}
+  - {fileID: 11400000, guid: 4aeb139dd53567448a53b0edea44e16f, type: 2}
+  - {fileID: 11400000, guid: 60f0c7cc7896a2f4488bf88bcfe1fa6f, type: 2}
+  - {fileID: 11400000, guid: 2db5acba18da38942936f5e8316dc560, type: 2}
