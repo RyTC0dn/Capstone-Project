@@ -32,6 +32,9 @@ public class EnemyHealth : MonoBehaviour
 
     private Knockback kb;
 
+    [SerializeField] AudioSource ghostAudioScorce;
+    [SerializeField] AudioClip ghostHit;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,6 +44,8 @@ public class EnemyHealth : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();
 
         kb = GetComponent<Knockback>();
+
+        ghostAudioScorce = GetComponent<AudioSource>();
 
         enemyHealth = totalHealth;
     }
@@ -98,6 +103,8 @@ public class EnemyHealth : MonoBehaviour
     {
         //Deplete health points
         enemyHealth -= damage;
+        ghostAudioScorce.clip = ghostHit;
+        ghostAudioScorce.Play();
         Debug.Log("Enemy hit");
 
         //Knockback function
