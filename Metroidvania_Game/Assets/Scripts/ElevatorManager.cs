@@ -96,7 +96,7 @@ public class ElevatorManager : MonoBehaviour
 
     private void EnableComponent()
     {
-        var playerAttack = FindAnyObjectByType<PrototypePlayerAttack>();
+        var playerAttack = FindAnyObjectByType<Player_Knight_Attack>();
         playerAttack.EnableAttack();
     }
 }

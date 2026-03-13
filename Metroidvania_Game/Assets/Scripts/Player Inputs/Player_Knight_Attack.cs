@@ -3,13 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public enum PlayerCharacter
-{
-    Knight,
-    Priest
-}
-
-public class PrototypePlayerAttack : MonoBehaviour
+public class Player_Knight_Attack : MonoBehaviour
 {
     /// <summary>
     /// This script will be for activating animation and control for the attack
@@ -20,6 +14,8 @@ public class PrototypePlayerAttack : MonoBehaviour
 
     [Header("Weapon Setup")]
     public Collider2D[] weaponColliders; // To track which collider to activate for directional attacks
+
+    public Character character;
 
     public float attackRate = 1f;    // attacks per second
     private float delayTillAttack;
@@ -45,7 +41,6 @@ public class PrototypePlayerAttack : MonoBehaviour
     private float bufferTimer = 0f;
 
     private PrototypePlayerMovementControls playerMovement;
-    public PlayerCharacter character;
 
     [SerializeField] private AudioSource swordSlashAudio;
     private AudioPlayer audioPlayer;
@@ -193,17 +188,26 @@ public class PrototypePlayerAttack : MonoBehaviour
         delayTillAttack = 1f / attackRate;
 
         // execute character-specific attack behaviour
-        switch (character)
+        switch (CharacterSelect.selectCharacter)
         {
-            case PlayerCharacter.Knight:
+            case Character.Knight:
                 //Pass in direction for directional attacks (if needed)
                 animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
                 //Play knight audio
                 audioPlayer.PlayRandomClip(swordSlashAudio, 0, 2);
                 break;
 
-            case PlayerCharacter.Priest:
+            case Character.Cleric:
                 PriestStandardAttack();
+                break;
+
+            case Character.Huntress:
+                break;
+
+            case Character.Wizard:
+                break;
+
+            default:
                 break;
         }
     }

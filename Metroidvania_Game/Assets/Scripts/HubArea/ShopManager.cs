@@ -25,7 +25,7 @@ public enum ShopType
 public class ShopManager : MonoBehaviour
 {
     [Header("General Shop Setup")]
-    private PrototypePlayerAttack playerAttack;
+    private Player_Knight_Attack playerAttack;
 
     public GameObject shopUI;
     private bool firstOccurence;
@@ -90,7 +90,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         //Initialize the components
-        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        playerAttack = FindFirstObjectByType<Player_Knight_Attack>();
         uiManager = FindAnyObjectByType<UIManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
         playerAttackSlash = GameObject.Find("Character 1").GetComponent<AudioSource>();

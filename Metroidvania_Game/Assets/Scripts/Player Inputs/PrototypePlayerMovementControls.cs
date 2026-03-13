@@ -12,6 +12,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("General input variables")]
     public GameEvent playerInteract;
 
+    public Character character;
+
     private Player_Controller playerController;
     [HideInInspector] public Vector2 moveInput;
 
@@ -106,6 +108,27 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         Move(moveInput.x);
         InteractEvent();
+        switch (CharacterSelect.selectCharacter)
+        {
+            case Character.Knight:
+                animator.SetBool("isKnight", true);
+                break;
+
+            case Character.Cleric:
+                animator.SetBool("isKnight", false);
+                break;
+
+            case Character.Huntress:
+                //Will implement in future here
+                break;
+
+            case Character.Wizard:
+                //Will implement in future here
+                break;
+
+            default:
+                break;
+        }
     }
 
     private void Update()

@@ -40,7 +40,7 @@ public class MenuManager : MonoBehaviour
     public GameObject inventoryMenu;
     public GameObject questMenu;
     public GameObject tutorialMenu;
-    private PrototypePlayerAttack playerAttack; //So I can disable attack when menu is open
+    private Player_Knight_Attack playerAttack; //So I can disable attack when menu is open
     public Button finalizeTutorialButton;
 
     [Space(20)]
@@ -74,7 +74,7 @@ public class MenuManager : MonoBehaviour
 
         #endregion Singleton Pattern
 
-        playerAttack = FindFirstObjectByType<PrototypePlayerAttack>();
+        playerAttack = FindFirstObjectByType<Player_Knight_Attack>();
     }
 
     public void TutorialConfirmation(bool accept)
