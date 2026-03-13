@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager Instance { get; private set; }
-    public CurrentTutorial tutorialType;
 
     [SerializeField] private TextMeshProUGUI tutorialText;
     public GameObject textBox;
@@ -106,65 +105,6 @@ public class TutorialManager : MonoBehaviour
         {
             tutorialText.text = notifications.textLines[currentNotificationIndex].text;
             Debug.Log("Tutorial Notification: " + notifications.textLines[currentNotificationIndex].text);
-        }
-        else
-        {
-            SendBackToLevel();
-            CheckCompletion(tutorialType);
-        }
-    }
-
-    public void CheckCompletion(CurrentTutorial current) //Only call when the player has completed tutorial
-    {
-        switch (current)
-        {
-            case CurrentTutorial.Movement:
-                ShowTutorialText(false);
-                currentNotificationIndex = 0;
-                sceneInfo.isMoved = true;
-                SendBackToLevel();
-                break;
-
-            case CurrentTutorial.UI:
-                ShowTutorialText(false);
-                currentNotificationIndex = 0;
-                sceneInfo.bookIsLookedAt = true;
-                SendBackToLevel();
-                break;
-
-            case CurrentTutorial.Wallbreak:
-                ShowTutorialText(false);
-                currentNotificationIndex = 0;
-                sceneInfo.dashed = true;
-                SendBackToLevel();
-                break;
-
-            case CurrentTutorial.Combat:
-                ShowTutorialText(false);
-                currentNotificationIndex = 0;
-                sceneInfo.combat = true;
-                SendBackToLevel();
-                break;
-
-            case CurrentTutorial.NPCInteraction:
-                ShowTutorialText(false);
-                currentNotificationIndex = 0;
-                sceneInfo.npcInteracted = true;
-                SendBackToLevel();
-                break;
-
-            case CurrentTutorial.DoorInteraction:
-                ShowTutorialText(false);
-                currentNotificationIndex = 0;
-                sceneInfo.door = true;
-                SendBackToLevel();
-                break;
-
-            case CurrentTutorial.None:
-                break;
-
-            default:
-                break;
         }
     }
 

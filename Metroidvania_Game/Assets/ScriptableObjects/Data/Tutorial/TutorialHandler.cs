@@ -27,6 +27,7 @@ public enum TutorialType
 public class TutorialHandler : MonoBehaviour
 {
     public TutorialSequence sequence;
+    public TutorialTrigger trigger;
     public TutorialType type;
     public SceneInfo sceneInfo;
     private bool eventTrigger = false;
@@ -129,6 +130,7 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialType.Combat:
+                CombatProgression();
                 break;
 
             case TutorialType.Dash:
@@ -471,6 +473,60 @@ public class TutorialHandler : MonoBehaviour
 
     #endregion NPC Sequence
 
+    private void CombatProgression()
+    {
+        TutorialStep step = sequence.steps[stepIndex];
+
+        int totalEnemies = trigger.triggers.Length;
+
+        switch (step.condition)
+        {
+            case TutorialCondition.PressConfirm:
+                if (!controlDetected)
+                {
+                    keyInput.SetActive(true);
+                    buttonInput.SetActive(false);
+                }
+                else if (controlDetected)
+                {
+                    buttonInput.SetActive(true);
+                    keyInput.SetActive(false);
+                }
+                if (Keyboard.current.eKey.wasPressedThisFrame
+                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
+                {
+                    NextStep();
+                    trigger.triggers[0].SetActive(true);
+                }
+                break;
+
+            case TutorialCondition.OpenMenu:
+
+                break;
+
+            case TutorialCondition.ClickButton:
+
+                break;
+
+            case TutorialCondition.NextPage:
+                MenuManager.instance.TutorialOpen();
+                sceneInfo.isMoved = true;
+                MenuManager.instance.finalizeTutorialButton.interactable = true;
+                foreach (var arrow in arrows)
+                {
+                    arrow.gameObject.SetActive(false);
+                }
+                break;
+
+            case TutorialCondition.InventoryPage:
+
+                break;
+
+            default:
+                break;
+        }
+    }
+
     public void OnEventTrigger(Component sender, object data)
     {
         if (sender is TutorialTrigger && data is bool trigger)
@@ -506,4 +562,5 @@ public static class UIEvents
 public static class NPCEvents
 {
     public static bool isDetected;
+    public static bool activated;
 }

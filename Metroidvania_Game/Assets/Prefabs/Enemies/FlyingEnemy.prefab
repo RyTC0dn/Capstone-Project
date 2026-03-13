@@ -229,6 +229,7 @@ MonoBehaviour:
   totalHealth: 4
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   ghostAudioScorce: {fileID: -4269474201762705440}
   ghostHit: {fileID: 8300000, guid: 691642d78ecd3c3498bbd04ca72bb3b1, type: 3}
 --- !u!114 &-5814837572841073523

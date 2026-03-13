@@ -4,18 +4,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//This list will get updated as more tutorials are finished
-public enum CurrentTutorial
-{
-    Movement,
-    UI,
-    Wallbreak,
-    Combat,
-    NPCInteraction,
-    DoorInteraction,
-    None
-}
-
 /// <summary>
 /// Represents a trigger component that manages and raises tutorial events based on player interactions within a scene.
 /// </summary>
@@ -25,12 +13,11 @@ public enum CurrentTutorial
 /// scene information, and tutorial type are assigned for correct operation.</remarks>
 public class TutorialTrigger : MonoBehaviour
 {
-    public CurrentTutorial tutorial;
     private bool isNearby = false;
     private bool eventTriggered = false;
     private bool input;
     [SerializeField] private int tutorialSequence;
-    [SerializeField] private int maxSequence;
+    public GameObject[] triggers; //Mainly for setting up the
     public SceneInfo sceneInfo;
     public GameEvent tutorialTriggerEvent;
     public TextMeshProUGUI starText;
@@ -38,10 +25,7 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Start()
     {
-        tutorialSequence = TutorialManager.Instance != null ? TutorialManager.Instance.currentNotificationIndex : 0;
-        maxSequence = (TutorialManager.Instance != null && TutorialManager.Instance.notifications != null)
-            ? TutorialManager.Instance.notifications.textLines.Length : 0;
-
+        tutorialSequence = tutorialHandler.stepIndex;
         starText.text = tutorialSequence.ToString();
 
         //Eventually have all tutorial scenes have the show tutorial text, but for now just have it for the movement tutorial
@@ -49,6 +33,7 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Update()
     {
+        triggers[tutorialSequence].SetActive(input);
     }
 
     //
@@ -75,67 +60,10 @@ public class TutorialTrigger : MonoBehaviour
         {
             tutorialHandler.OnNPCFinale(true);
         }
-        //else if (collision.CompareTag("Player"))
-        //{
-        //    #region Assigning tutorial logic
-
-        //    switch (tutorial)
-        //    {
-        //        case CurrentTutorial.Movement:
-        //            TutorialManager.Instance.NextTutorialNotification();
-        //            //MovementTutorial(tutorialSequence);
-        //            gameObject.SetActive(false);
-        //            break;
-
-        //        case CurrentTutorial.UI:
-        //            TutorialManager.Instance.NextTutorialNotification();
-        //            //MovementTutorial(tutorialSequence);
-        //            gameObject.SetActive(false);
-        //            break;
-
-        //        case CurrentTutorial.Wallbreak:
-        //            TutorialManager.Instance.NextTutorialNotification();
-        //            //MovementTutorial(tutorialSequence);
-        //            gameObject.SetActive(false);
-        //            break;
-
-        //        case CurrentTutorial.Combat:
-        //            TutorialManager.Instance.NextTutorialNotification();
-        //            //MovementTutorial(tutorialSequence);
-        //            gameObject.SetActive(false);
-        //            break;
-
-        //        case CurrentTutorial.NPCInteraction:
-        //            TutorialManager.Instance.NextTutorialNotification();
-        //            //MovementTutorial(tutorialSequence);
-        //            gameObject.SetActive(false);
-        //            break;
-
-        //        case CurrentTutorial.DoorInteraction:
-        //            TutorialManager.Instance.NextTutorialNotification();
-        //            //MovementTutorial(tutorialSequence);
-        //            gameObject.SetActive(false);
-        //            break;
-
-        //        case CurrentTutorial.None:
-        //            break;
-
-        //        default:
-        //            break;
-        //    }
-
-        //    #endregion Assigning tutorial logic
-        //}
     }
 
     public void NextMessage()
     {
         TutorialManager.Instance.NextTutorialNotification();
-    }
-
-    public void SendBackToLevel()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Level 1");
     }
 }

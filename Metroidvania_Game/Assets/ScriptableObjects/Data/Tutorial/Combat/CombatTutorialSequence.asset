@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfec8a0528523045bd401ebe7335c23, type: 3}
+  m_Name: CombatTutorialSequence
+  m_EditorClassIdentifier: 
+  steps:
+  - {fileID: 11400000, guid: 930acf5c943220947be126ddfb107a97, type: 2}
+  - {fileID: 11400000, guid: 5b9511c9011daad4ba84ae37baf47225, type: 2}
+  - {fileID: 11400000, guid: 07076e43269920c4cb4afcf02d58ae7b, type: 2}
+  - {fileID: 11400000, guid: 48268157b7d9cd64d9eac7cc95a72af1, type: 2}

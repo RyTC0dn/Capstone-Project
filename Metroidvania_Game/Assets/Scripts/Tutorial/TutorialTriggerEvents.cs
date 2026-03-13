@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class TutorialTriggerEvents : MonoBehaviour
 {
-    public CurrentTutorial tutorial;
     private bool isNearby = false;
     private bool eventTriggered = false;
     private bool input;
@@ -24,52 +23,6 @@ public class TutorialTriggerEvents : MonoBehaviour
         bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
 
         input = key || button;
-        switch (tutorial)
-        {
-            case CurrentTutorial.Movement:
-                if (!isNearby)
-                    return;
-
-                Debug.Log("Event triggered");
-
-                eventTriggered = true;
-                tutorialTriggerEvent.Raise(this, eventTriggered);
-                gameObject.SetActive(false);
-                break;
-
-            case CurrentTutorial.UI:
-                break;
-
-            case CurrentTutorial.Wallbreak:
-                break;
-
-            case CurrentTutorial.Combat:
-                break;
-
-            case CurrentTutorial.NPCInteraction:
-                break;
-
-            case CurrentTutorial.DoorInteraction:
-                if (!isNearby)
-                    return;
-
-                if (input)
-                {
-                    Debug.Log("Event triggered");
-
-                    eventTriggered = true;
-                    tutorialTriggerEvent.Raise(this, eventTriggered);
-                    eventTriggered = false;
-                }
-
-                break;
-
-            case CurrentTutorial.None:
-                break;
-
-            default:
-                break;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
