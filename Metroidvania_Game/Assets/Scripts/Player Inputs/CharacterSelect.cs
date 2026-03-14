@@ -1,3 +1,4 @@
+using Unity.Behavior;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -64,33 +65,29 @@ public class CharacterSelect : MonoBehaviour
         #endregion Singleton Pattern
     }
 
-    public void SelectingCharacter(Character chosenCharacter)
+    public void SelectingCharacter(int selector)
     {
-        switch (chosenCharacter)
+        if (selector == 0)
         {
-            case Character.Knight:
-                isKnight = true;
-                break;
-
-            case Character.Cleric:
-                isCleric = true;
-                break;
-
-            case Character.Huntress:
-                isHuntress = true;
-                break;
-
-            case Character.Wizard:
-                isWizard = true;
-                break;
-
-            default:
-                isKnight = false;
-                isCleric = false;
-                isHuntress = false;
-                isWizard = false;
-                break;
+            CharacterSelection(Character.Knight);
         }
+        else if (selector == 1)
+        {
+            CharacterSelection(Character.Cleric);
+        }
+        else if (selector == 2)
+        {
+            CharacterSelection(Character.Huntress);
+        }
+        else if (selector == 3)
+        {
+            CharacterSelection(Character.Wizard);
+        }
+    }
+
+    public void CharacterSelection(Character selection)
+    {
+        selectCharacter = selection;
     }
 
     private void ToggleSelectorUI(bool toggle)

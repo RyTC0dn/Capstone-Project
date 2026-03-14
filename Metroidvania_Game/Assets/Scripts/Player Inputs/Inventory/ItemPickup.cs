@@ -10,7 +10,7 @@ using System.Collections.Generic;
 /// picked up are not available again. Requires a Rigidbody2D component for collision detection. Designed for use in
 /// Unity projects where ability pickups are tracked across scenes.</remarks>
 
-[RequireComponent(typeof(Rigidbody2D))] //Use kinematic 
+[RequireComponent(typeof(Rigidbody2D))] //Use kinematic
 public class ItemPickup : MonoBehaviour
 {
     public GameEvent abilityPickup;
@@ -19,7 +19,7 @@ public class ItemPickup : MonoBehaviour
 
     private SpriteRenderer sp;
     private Collider2D itemCollider;
-    AudioPlayer audioPlayer;
+    private AudioPlayer audioPlayer;
     public GameObject shield;
     public GameObject wallBreak;
 
@@ -28,11 +28,11 @@ public class ItemPickup : MonoBehaviour
 
     private void Start()
     {
-        sp = GetComponent<SpriteRenderer>();    
+        sp = GetComponent<SpriteRenderer>();
         itemCollider = GetComponent<Collider2D>();
         audioPlayer = FindFirstObjectByType<AudioPlayer>();
 
-        if(sceneInfo.isShieldPickedUp)
+        if (sceneInfo.isShieldPickedUp)
             shield.SetActive(false);
         if (sceneInfo.isWallBreakPickedUp)
             wallBreak.SetActive(false);
@@ -43,21 +43,11 @@ public class ItemPickup : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log($"Item ID: {id}, Shield Picked Up: {hasPickedUpShield}, Wall Break Picked Up: {hasPickedUpWallBreak}");
-        if (sceneInfo.isShieldPickedUp)
-        {
-            shield.SetActive(false);
-        }
-        else if(sceneInfo.isWallBreakPickedUp)
-        {
-            wallBreak.SetActive(false);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if(collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == shield)
+        if (collision.tag == "Player" && gameObject.tag == "AbilityPickup" && this.gameObject == shield)
         {
             hasPickedUpShield = true;
             sceneInfo.isShieldPickedUp = true;
