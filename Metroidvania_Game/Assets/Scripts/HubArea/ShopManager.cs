@@ -189,7 +189,7 @@ public class ShopManager : MonoBehaviour
 
     #region Blacksmith Items
 
-    public void BuySwordUpgrade() //Buy sword strength upgrade function
+    public void BuySwordUpgrade(float damageIncrease) //Buy sword strength upgrade function
     {
         if (GameManager.instance.TrySpendCoins(swordUpgradePrice))
         {
@@ -200,11 +200,7 @@ public class ShopManager : MonoBehaviour
             GameManager.instance.firstUpgrade = true;
             //buyEvent.Raise(this, swordUpgradePrice);         // keep notifying other systems
 
-            if (sceneInfo.swordDamageValue != 2)
-            {
-                int damageIncrease = 1;
-                sceneInfo.swordDamageValue += damageIncrease;
-            }
+            sceneInfo.swordDamageValue += damageIncrease;
 
             sceneInfo.isWeaponUpgradeBought = true;
 
@@ -224,7 +220,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    public void BuyKnockbackUpgrade()
+    public void BuyKnockbackUpgrade(float FORCE)
     {
         if (GameManager.instance.TrySpendCoins(knockbackUpgradePrice))
         {
@@ -234,12 +230,7 @@ public class ShopManager : MonoBehaviour
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
             //buyEvent.Raise(this, knockbackUpgradePrice);         // keep notifying other systems
-
-            if (sceneInfo.knockbackForce != 2)
-            {
-                float FORCE = 2;
-                sceneInfo.knockbackForce = FORCE;
-            }
+            sceneInfo.knockbackForce = FORCE;
 
             sceneInfo.isWeaponUpgradeBought = true;
 

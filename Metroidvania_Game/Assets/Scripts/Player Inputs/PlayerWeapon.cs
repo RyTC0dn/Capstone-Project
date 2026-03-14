@@ -10,13 +10,13 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     [Header("Weapon Stats")]
-    public int damageValue = 1;
+    public float damageValue = 1;
 
     public float knockbackForce = 1;
 
     public int damagePerUpgrade = 1;
 
-    [SerializeField] private int currentDamage;
+    [SerializeField] private float currentDamage;
     [SerializeField] private float currentKnockback;
 
     [Header("Game Event")]
@@ -48,17 +48,17 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    private int DamageHandler()
-    {
-        if (sceneInfo.isWeaponUpgradeBought)
-        {
-            int damageCalc = currentDamage + sceneInfo.swordDamageValue;
-            Debug.Log(damageCalc);
-            sceneInfo.isWeaponUpgradeBought = false;
-            return damageCalc;
-        }
-        return currentDamage;
-    }
+    //private int DamageHandler()
+    //{
+    //    //if (sceneInfo.isWeaponUpgradeBought)
+    //    //{
+    //    //    int damageCalc = currentDamage + sceneInfo.swordDamageValue;
+    //    //    Debug.Log(damageCalc);
+    //    //    sceneInfo.isWeaponUpgradeBought = false;
+    //    //    return damageCalc;
+    //    //}
+    //    //return currentDamage;
+    //}
 }
 
 /// <summary>
@@ -70,9 +70,9 @@ public class PlayerWeapon : MonoBehaviour
 public class AttackData
 {
     public GameObject target;
-    public int damage;
+    public float damage;
 
-    public AttackData(GameObject target, int damage)
+    public AttackData(GameObject target, float damage)
     {
         this.target = target;
         this.damage = damage;

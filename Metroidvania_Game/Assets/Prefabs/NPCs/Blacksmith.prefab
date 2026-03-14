@@ -399,7 +399,7 @@ MonoBehaviour:
   playerIsNear: 0
   beforeSavingDialogue: {fileID: 11400000, guid: 23e1eabd91ebd284bb91cac2759f8fde, type: 2}
   afterSavingDialogue: {fileID: 11400000, guid: e1ee5548d484c344c9f011fd83a64640, type: 2}
-  textBubble: {fileID: 6838191692645386067}
+  textBubble: {fileID: 8715638810825674029}
   bubbleSp: {fileID: 414224401943422995}
   npcName: {fileID: 2419190446536886090}
   dialogueText: {fileID: 1168976836184661395}
@@ -739,9 +739,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6598548523534441448, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
   m_PrefabInstance: {fileID: 900711429630314590}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6838191692645386067 stripped
+--- !u!1 &8715638810825674029 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5952029557075218189, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8398038029219956083, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
   m_PrefabInstance: {fileID: 900711429630314590}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4079007066201997493

@@ -176,7 +176,7 @@ MonoBehaviour:
   playerIsNear: 0
   beforeSavingDialogue: {fileID: 11400000, guid: 24ce7dbbd945cd24c8cfe43fc598d42d, type: 2}
   afterSavingDialogue: {fileID: 11400000, guid: c5df6eec15314be49aa4c80139beec29, type: 2}
-  textBubble: {fileID: 6653454016363042182}
+  textBubble: {fileID: 8811250211730989048}
   bubbleSp: {fileID: 1873710737701073093}
   npcName: {fileID: 2531377947437782431}
   dialogueText: {fileID: 1336152975057522502}
@@ -187,6 +187,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0}
   fallingSpeed: 0
   buttonPrompt: {fileID: 1220469208544606670}
+  typingSpeed: 0.05
 --- !u!95 &6877045726413788616
 Animator:
   serializedVersion: 7
@@ -791,8 +792,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6598548523534441448, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
   m_PrefabInstance: {fileID: 1066238713512532619}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6653454016363042182 stripped
+--- !u!1 &8811250211730989048 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5952029557075218189, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8398038029219956083, guid: fc0627cca1d67a547805f56d2b935af6, type: 3}
   m_PrefabInstance: {fileID: 1066238713512532619}
   m_PrefabAsset: {fileID: 0}

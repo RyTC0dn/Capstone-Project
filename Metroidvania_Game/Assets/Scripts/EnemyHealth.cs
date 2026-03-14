@@ -15,9 +15,9 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    public int totalHealth = 2;
+    public float totalHealth = 2;
 
-    [SerializeField] private int enemyHealth;
+    [SerializeField] private float enemyHealth;
     public GameObject coinDrop;
 
     [Header("Knockback")]
@@ -32,8 +32,8 @@ public class EnemyHealth : MonoBehaviour
 
     private Knockback kb;
 
-    [SerializeField] AudioSource ghostAudioScorce;
-    [SerializeField] AudioClip ghostHit;
+    [SerializeField] private AudioSource ghostAudioScorce;
+    [SerializeField] private AudioClip ghostHit;
 
     private void Start()
     {
@@ -99,7 +99,7 @@ public class EnemyHealth : MonoBehaviour
     /// <remarks>If the player object is present in the scene, the enemy will be knocked back and a visual
     /// flash effect will occur. This method also checks for enemy death after applying damage.</remarks>
     /// <param name="damage">The amount of damage to subtract from the enemy's health. Must be a non-negative integer.</param>
-    public void EnemyDamage(int damage)
+    public void EnemyDamage(float damage)
     {
         //Deplete health points
         enemyHealth -= damage;
