@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PlayerUI : MonoBehaviour
     [Space(20)]
     [Header("Reminder Setup")]
     public Dialogue reminder;
+
+    public SceneInfo sceneInfo;
 
     [SerializeField] private int currentDialogue = 0;
     private float timer = 2.5f;
@@ -89,28 +92,37 @@ public class PlayerUI : MonoBehaviour
     /// reminders are shown and dismissed correctly.</remarks>
     private void HandleReminders()
     {
-        if (reminder == null || dialogueText == null || textBox == null) return;
+        if (reminder == null || dialogueText == null || textBox == null || SceneManager.GetActiveScene().name == "Town") return;
 
         //Check if the player presses input
         bool key = Keyboard.current?.eKey.isPressed ?? false;
         bool button = Gamepad.current?.buttonWest.isPressed ?? false;
         bool input = key || button;
 
-        //Determine which reminder should show based on Game Manager save instance
-        if (GameManager.instance.isBlackSmithSaved && currentDialogue == 0 && !textBox.activeSelf)
+        if (!sceneInfo.talkedToBlacksmith)
         {
-            ShowReminders(reminder.textLines[0].text);
-            return;
+            //Determine which reminder should show based on Game Manager save instance
+            if (GameManager.instance.isBlackSmithSaved && currentDialogue == 0 && !textBox.activeSelf)
+            {
+                ShowReminders(reminder.textLines[0].text);
+                return;
+            }
         }
-        else if (GameManager.instance.isPotionMakerSaved && currentDialogue == 1 && !textBox.activeSelf)
+        else if (!sceneInfo.talkedToAlchemist)
         {
-            ShowReminders(reminder.textLines[1].text);
-            return;
+            if (GameManager.instance.isPotionMakerSaved && currentDialogue == 1 && !textBox.activeSelf)
+            {
+                ShowReminders(reminder.textLines[1].text);
+                return;
+            }
         }
-        else if (GameManager.instance.isHealerSaved && currentDialogue == 2 && !textBox.activeSelf)
+        else if (!sceneInfo.talkedToPriest)
         {
-            ShowReminders(reminder.textLines[2].text);
-            return;
+            if (GameManager.instance.isHealerSaved && currentDialogue == 2 && !textBox.activeSelf)
+            {
+                ShowReminders(reminder.textLines[2].text);
+                return;
+            }
         }
 
         if (textBox.activeSelf)

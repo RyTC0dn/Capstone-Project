@@ -22,6 +22,13 @@ public class SceneInfo : ScriptableObject
     public float swordDamageValue = 1;
     public float knockbackForce = 1;
 
+    //Call after first talking to NPCs to prevent the reminder popup
+    //from reapperring
+    public bool talkedToBlacksmith = false;
+
+    public bool talkedToAlchemist = false;
+    public bool talkedToPriest = false;
+
     [Space(20)]
     [Header("Cutscenes")]
     public bool isBossCutscenePlayed = false;

@@ -135,14 +135,17 @@ public class ShopManager : MonoBehaviour
 
                 case ShopType.Blacksmith:
                     isSaved = GameManager.instance.isBlackSmithSaved;
+                    sceneInfo.talkedToBlacksmith = true;
                     break;
 
                 case ShopType.Alchemist:
                     isSaved = GameManager.instance.isPotionMakerSaved;
+                    sceneInfo.talkedToAlchemist = true;
                     break;
 
                 case ShopType.Priest:
                     isSaved = GameManager.instance.isHealerSaved;
+                    sceneInfo.talkedToPriest = true;
                     break;
 
                 default:
