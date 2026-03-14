@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopUI: {fileID: 1003671836875902522}
-  shopType: 0
+  shopType: 2
   firstOccurrenceElement: 6
   regularOccurrenceElement: 0
   noMoneyElement: 4
@@ -531,6 +531,7 @@ MonoBehaviour:
   shopNext: {fileID: 2422820720449463416}
   firstItemText: {fileID: 1898047655566232184}
   secondItemText: {fileID: 470730166109905781}
+  thirdItemText: {fileID: 0}
 --- !u!58 &2658044476890097624
 CircleCollider2D:
   m_ObjectHideFlags: 0

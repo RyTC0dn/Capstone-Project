@@ -32,6 +32,9 @@ public class EnemyHealth : MonoBehaviour
 
     private Knockback kb;
 
+    [Header("Hit flash setting")]
+    [SerializeField] private float flashTime = 0.5f;
+
     [SerializeField] private AudioSource ghostAudioScorce;
     [SerializeField] private AudioClip ghostHit;
 
@@ -143,11 +146,12 @@ public class EnemyHealth : MonoBehaviour
             Color color = Color.red;
             float elapsed = 0f;
 
-            while (elapsed < kb.knockbackTime)
+            while (elapsed < flashTime)
             {
                 elapsed += Time.deltaTime;
-                float flash = Mathf.Clamp01(elapsed / kb.knockbackTime);
-                sp.color = new Color(color.r, color.g, color.b, flash);
+                //float flash = Mathf.Clamp01(elapsed / flashTime);
+                float flashing = Mathf.PingPong(Time.time * 4f, 0.5f) + 0.5f;
+                sp.color = new Color(color.r, color.g, color.b, flashing);
                 yield return null;
             }
             //Return to white base after

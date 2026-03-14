@@ -8,18 +8,20 @@ using System.Collections;
 /// <summary>
 /// This script is to help initialize input functions with UI components
 /// </summary>
-/// 
+///
 
 ///This script is in need of revision
 public class UIManager : MonoBehaviour
 {
     //Game Variables
-    [SerializeField]private SceneInfo info;
+    [SerializeField] private SceneInfo info;
+
     public static UIManager instance { get; private set; }
 
-    PrototypePlayerMovementControls playerControls;
-    Player_Knight_Attack playerAttack;
+    private PrototypePlayerMovementControls playerControls;
+    private Player_Knight_Attack playerAttack;
     public GameObject player;
+    public SceneInfo sceneInfo;
 
     public GameObject pauseMenu;
     public GameObject settingsMenu;
@@ -29,19 +31,20 @@ public class UIManager : MonoBehaviour
 
     [Header("First Selected Option")]
     [SerializeField] private GameObject menuFirst;
+
     [SerializeField] private GameObject settingsMenuFirst;
     [SerializeField] private GameObject startMenuFirst;
     [SerializeField] private GameObject controlMenuFirst;
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
 
         string checkSceneName = SceneManager.GetActiveScene().name;
-        if(checkSceneName == "StartMenu")
+        if (checkSceneName == "StartMenu")
         {
             EventSystem.current.SetSelectedGameObject(startMenuFirst);
         }
@@ -53,7 +56,7 @@ public class UIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         FindPlayer();
         if (InputManager.Instance.MenuOpenCloseInput)
@@ -69,7 +72,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void FindPlayer()
+    private void FindPlayer()
     {
         if (playerControls != null && playerAttack != null)
             return;
@@ -83,9 +86,8 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
     /// <summary>
-    /// This portion of the code will be dedicated to the start menu 
+    /// This portion of the code will be dedicated to the start menu
     /// </summary>
     public void CloseGame() //This will be called in the start menu screen
     {
@@ -110,12 +112,12 @@ public class UIManager : MonoBehaviour
     {
         //Set script object booleans to false on start of game
         info.isAxeBought = false;
-        info.isWallBreakPickedUp= false;
+        info.isWallBreakPickedUp = false;
         info.isShieldPickedUp = false;
 
+        sceneInfo.ResetSceneInfo();
 
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        sceneInfo.ResetSaveData();
         Debug.Log("New Game Started, PlayerPrefs cleared");
     }
 
@@ -125,9 +127,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
-
     }
-
 
     public void Resume()
     {
@@ -144,7 +144,7 @@ public class UIManager : MonoBehaviour
             playerAttack.enabled = true;
     }
 
-    void Pause()
+    private void Pause()
     {
         pauseMenu.gameObject.SetActive(true);
         settingsMenu.gameObject.SetActive(false);
@@ -161,12 +161,11 @@ public class UIManager : MonoBehaviour
             playerControls.enabled = false;
         if (playerAttack != null)
             playerAttack.enabled = false;
-
-
     }
 
     #region Settings
-    void OpenSettingsMenuHandle()
+
+    private void OpenSettingsMenuHandle()
     {
         settingsMenu.gameObject.SetActive(true);
         pauseMenu.gameObject.SetActive(false);
@@ -194,9 +193,11 @@ public class UIManager : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(controlMenuFirst);
     }
-    #endregion
+
+    #endregion Settings
 
     #region Main Menu Button Actions
+
     public void OnSettingsPress()
     {
         OpenSettingsMenuHandle();
@@ -207,5 +208,5 @@ public class UIManager : MonoBehaviour
         Pause();
     }
 
-    #endregion
+    #endregion Main Menu Button Actions
 }

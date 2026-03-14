@@ -72,6 +72,7 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private bool boughtKnockback = false;
     [SerializeField] private bool boughtHealth = false;
     public SceneInfo sceneInfo;
+    private bool isSaved = false;
 
     [Header("UI Components")]
     public Button secondItemButton;
@@ -83,8 +84,11 @@ public class ShopManager : MonoBehaviour
     [Tooltip("Assign Axe price text, health potion text")]
     public TextMeshProUGUI firstItemText;
 
-    [Tooltip("Assign Upgrade, Strength potion text")]
+    [Tooltip("Assign Weapon Upgrade, Strength potion text")]
     public TextMeshProUGUI secondItemText;
+
+    [Tooltip("Assign Knockback text")]
+    public TextMeshProUGUI thirdItemText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -122,9 +126,28 @@ public class ShopManager : MonoBehaviour
     //This function is being called by the player movement controls script
     public void EnableShop(Component sender, object data) ///This is for general shopping interactions
     {
-        bool isSaved = GameManager.instance.isBlackSmithSaved || GameManager.instance.isPotionMakerSaved || GameManager.instance.isHealerSaved;
         if (data is bool isPressed)
         {
+            switch (shopType)
+            {
+                case ShopType.None:
+                    break;
+
+                case ShopType.Blacksmith:
+                    isSaved = GameManager.instance.isBlackSmithSaved;
+                    break;
+
+                case ShopType.Alchemist:
+                    isSaved = GameManager.instance.isPotionMakerSaved;
+                    break;
+
+                case ShopType.Priest:
+                    isSaved = GameManager.instance.isHealerSaved;
+                    break;
+
+                default:
+                    break;
+            }
             if (isPressed && isNearShop && isSaved)
             {
                 //Set the shop ui object to active when function is called
@@ -165,6 +188,7 @@ public class ShopManager : MonoBehaviour
             case ShopType.Blacksmith:
                 firstItemText.text = $"Throwable Axe: " + axePrice.ToString();
                 secondItemText.text = $"Sword Upgrade: " + swordUpgradePrice.ToString();
+                thirdItemText.text = "Knockback Upgrade: " + knockbackUpgradePrice.ToString();
                 break;
 
             case ShopType.Alchemist:
@@ -191,27 +215,30 @@ public class ShopManager : MonoBehaviour
 
     public void BuySwordUpgrade(float damageIncrease) //Buy sword strength upgrade function
     {
+        int purchaseCount = 0;
         if (GameManager.instance.TrySpendCoins(swordUpgradePrice))
         {
             //Play audio clip for purchasing
             player.PlayAudio(purchaseElement, audioSource);
 
+            purchaseCount++;
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
-            //buyEvent.Raise(this, swordUpgradePrice);         // keep notifying other systems
 
             sceneInfo.swordDamageValue += damageIncrease;
 
             sceneInfo.isWeaponUpgradeBought = true;
 
             //In case we want to have increasing price over time
-            //// Recalculate price and refresh text only when price changed
-            //int newPricedAmount = swordUpgradePrice * 2;
-            //swordUpgradePrice = newPricedAmount;
-            //UpdatePrice();
-            //Debug.Log(swordUpgradePrice);
+            // Recalculate price and refresh text only when price changed
 
+            swordUpgradePrice = 50;
+            UpdatePrice();
+        }
+        else if (purchaseCount >= 2)
+        {
             firstItemButton.interactable = false;
+            swordUpgradePrice = 15;
         }
         else
         {
@@ -230,7 +257,7 @@ public class ShopManager : MonoBehaviour
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
             //buyEvent.Raise(this, knockbackUpgradePrice);         // keep notifying other systems
-            sceneInfo.knockbackForce = FORCE;
+            sceneInfo.knockbackForce += FORCE;
 
             sceneInfo.isWeaponUpgradeBought = true;
 

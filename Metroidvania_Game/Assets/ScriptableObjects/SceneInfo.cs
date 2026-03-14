@@ -48,10 +48,22 @@ public class SceneInfo : ScriptableObject
         isAxeBought = false;
         isHPBought = false;
         isBossCutscenePlayed = false;
-        bookIsLookedAt = false;
-        isMoved = false;
+        isWeaponUpgradeBought = false;
+        isHPBought = false;
+        isAxeUsed = false;
+
+        swordDamageValue = 1;
+        knockbackForce = 1;
+
         isController = false;
         isKeyboard = false;
+
+        bookIsLookedAt = false;
+        isMoved = false;
+        npcInteracted = false;
+        combat = false;
+        dashed = false;
+        door = false;
     }
 
     //Detect if the player is using a controller or keyboard
