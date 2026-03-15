@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -231,19 +232,24 @@ public class MenuManager : MonoBehaviour
         menuAudio.PlayOneShot(menuClips[0]);
     }
 
-    public void TutorialOpen()
+    public void TutorialOpen(GameObject selectedButton)
     {
         tutorialMenu.SetActive(true);
-
-        EventSystem.current.SetSelectedGameObject(menuFirst[3]);
-
         equipmentMenu.SetActive(false);
         inventoryMenu.SetActive(false);
         questMenu.SetActive(false);
 
         finalizeTutorialButton.interactable = false;
 
+        StartCoroutine(routine: SelectButton(selectedButton));
+
         menuAudio.PlayOneShot(menuClips[0]);
+    }
+
+    private IEnumerator SelectButton(GameObject button)
+    {
+        yield return null; //Wait for one frame to set new button
+        EventSystem.current.SetSelectedGameObject(button);
     }
 
     public void CloseMenus()

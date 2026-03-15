@@ -102,9 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c275f912868a3b5418a5c1091e0137cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial: 0
   tutorialSequence: 0
-  maxSequence: 0
+  triggers: []
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   tutorialTriggerEvent: {fileID: 0}
   starText: {fileID: 0}
@@ -570,7 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107357fecd5dba429ca31a6da7bad34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialType: 0
   tutorialText: {fileID: 5741473168856057442}
   textBox: {fileID: 5970182226858579158}
   notifications: {fileID: 11400000, guid: a6a2f7d122a0e334fae2415de8ac2a89, type: 2}
@@ -987,6 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence: {fileID: 11400000, guid: b9b33f2931659344bb929be5419c382e, type: 2}
+  trigger: {fileID: 0}
   type: 0
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   tutorialText: {fileID: 8858085579350781619}
@@ -998,6 +997,7 @@ MonoBehaviour:
   - {fileID: 7983566668161730406}
   - {fileID: 7999694169490591123}
   - {fileID: 4002718845783257424}
+  tutorialMenuFirst: {fileID: 5789448573929828171}
   stepIndex: 0
   currentStarCount: {fileID: 8433417308444997735}
   starUI: {fileID: 5814117399801024110}
@@ -1105,9 +1105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c275f912868a3b5418a5c1091e0137cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial: 0
   tutorialSequence: 0
-  maxSequence: 0
+  triggers: []
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   tutorialTriggerEvent: {fileID: 0}
   starText: {fileID: 0}
@@ -1454,6 +1453,11 @@ GameObject:
 --- !u!4 &5760681874642657660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7547074649022990986, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
+  m_PrefabInstance: {fileID: 2832365923334384630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5789448573929828171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581280340813726909, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
   m_PrefabInstance: {fileID: 2832365923334384630}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5814117399801024110 stripped

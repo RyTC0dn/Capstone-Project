@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     private GameObject pauseMenu;
-    private CameraZones zones;
+    [HideInInspector] public CameraZones zones;
 
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points

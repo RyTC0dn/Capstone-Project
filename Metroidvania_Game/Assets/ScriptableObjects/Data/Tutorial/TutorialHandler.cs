@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
@@ -26,15 +27,20 @@ public enum TutorialType
 
 public class TutorialHandler : MonoBehaviour
 {
+    [Header("Tutorial Setup")]
     public TutorialSequence sequence;
+
     public TutorialTrigger trigger;
     public TutorialType type;
     public SceneInfo sceneInfo;
     private bool eventTrigger = false;
 
+    [Header("UI Setup")]
     public TextMeshProUGUI tutorialText;
+
     public GameObject textBox;
     public GameObject[] arrows;
+    public GameObject tutorialMenuFirst;
 
     public int stepIndex = 0;
     private bool controlDetected;
@@ -44,16 +50,38 @@ public class TutorialHandler : MonoBehaviour
     public GameObject keyInput;
     public GameObject buttonInput;
 
+    private bool confirmPressed;
+    private bool confirmMove;
+    private bool tutorialMenuOpened = false;
+    private float inputBuffer = 0f;
+    private float inputBufferTime = 0.15f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        controlDetected = sceneInfo.OnDeviceChange(Gamepad.current);
         StartTutorial();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        //Boolean checks
+        controlDetected = sceneInfo.OnDeviceChange(Gamepad.current);
+
+        confirmPressed = (Keyboard.current?.eKey.wasPressedThisFrame ?? false) ||
+            (Gamepad.current?.buttonWest.wasPressedThisFrame ?? false);
+
+        confirmMove = ((Keyboard.current?.aKey.wasPressedThisFrame ?? false) || (Keyboard.current?.dKey.wasPressedThisFrame ?? false))
+            || ((Gamepad.current?.leftStick.left.wasPressedThisFrame ?? false) || (Gamepad.current?.leftStick.right.wasPressedThisFrame ?? false));
+
+        if (confirmPressed)
+            inputBuffer = inputBufferTime;
+
+        if (inputBuffer > 0)
+        {
+            inputBufferTime -= Time.unscaledDeltaTime;
+        }
+
         Tutorials();
     }
 
@@ -165,9 +193,13 @@ public class TutorialHandler : MonoBehaviour
                     buttonInput.SetActive(true);
                     keyInput.SetActive(false);
                 }
-                if (Keyboard.current.eKey.wasPressedThisFrame
-                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
+
+                if (inputBuffer > 0)
+                {
                     NextStep();
+                    inputBufferTime = 0;
+                }
+
                 break;
 
             case TutorialCondition.OpenMenu:
@@ -258,9 +290,12 @@ public class TutorialHandler : MonoBehaviour
                     buttonInput.SetActive(true);
                     keyInput.SetActive(false);
                 }
-                if (Keyboard.current.eKey.wasPressedThisFrame
-                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
+
+                if (inputBuffer > 0)
+                {
                     NextStep();
+                    inputBufferTime = 0;
+                }
                 break;
 
             case TutorialCondition.OpenMenu:
@@ -297,10 +332,6 @@ public class TutorialHandler : MonoBehaviour
     {
         TutorialStep step = sequence.steps[stepIndex];
 
-        bool keyCheck = Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame;
-        bool joystickCheck = Gamepad.current.leftStick.left.wasPressedThisFrame || Gamepad.current.leftStick.right.wasPressedThisFrame;
-        bool check = keyCheck || joystickCheck;
-
         switch (step.condition)
         {
             case TutorialCondition.PressConfirm:
@@ -314,15 +345,16 @@ public class TutorialHandler : MonoBehaviour
                     buttonInput.SetActive(true);
                     keyInput.SetActive(false);
                 }
-                if (Keyboard.current.eKey.wasPressedThisFrame
-                    || Gamepad.current?.buttonWest.wasPressedThisFrame == true)
+
+                if (inputBuffer > 0)
                 {
                     NextStep();
+                    inputBufferTime = 0;
                 }
                 break;
 
             case TutorialCondition.OpenMenu:
-                if (check)
+                if (confirmMove)
                 {
                     NextStep();
                 }
@@ -345,13 +377,15 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialCondition.InventoryPage:
-                MenuManager.instance.TutorialOpen();
+
+                if (!tutorialMenuOpened)
+                {
+                    MenuManager.instance.TutorialOpen(tutorialMenuFirst);
+                    tutorialMenuOpened = true;
+                }
+
                 sceneInfo.isMoved = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
-                foreach (var arrow in arrows)
-                {
-                    arrow.gameObject.SetActive(false);
-                }
                 break;
 
             default:
@@ -385,7 +419,12 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialCondition.NextPage:
-                MenuManager.instance.TutorialOpen();
+                if (!tutorialMenuOpened)
+                {
+                    MenuManager.instance.TutorialOpen(tutorialMenuFirst);
+                    tutorialMenuOpened = true;
+                }
+
                 sceneInfo.dashed = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
                 foreach (var arrow in arrows)
@@ -410,8 +449,6 @@ public class TutorialHandler : MonoBehaviour
     private void NPCProgression()
     {
         TutorialStep step = sequence.steps[stepIndex];
-
-        int hitCount = 0;
 
         switch (step.condition)
         {
@@ -452,7 +489,11 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialCondition.InventoryPage:
-                MenuManager.instance.TutorialOpen();
+                if (!tutorialMenuOpened)
+                {
+                    MenuManager.instance.TutorialOpen(tutorialMenuFirst);
+                    tutorialMenuOpened = true;
+                }
                 sceneInfo.npcInteracted = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
                 foreach (var arrow in arrows)
@@ -473,6 +514,8 @@ public class TutorialHandler : MonoBehaviour
 
     #endregion NPC Sequence
 
+    #region Combat Sequence
+
     private void CombatProgression()
     {
         TutorialStep step = sequence.steps[stepIndex];
@@ -492,17 +535,15 @@ public class TutorialHandler : MonoBehaviour
                     buttonInput.SetActive(true);
                     keyInput.SetActive(false);
                 }
-                bool keyPressed = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
-                bool buttonPressed = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
-                if (keyPressed || buttonPressed)
+                if (inputBuffer > 0)
                 {
-                    Debug.Log("combat tutorial confirm");
-
                     NextStep();
+                    inputBufferTime = 0;
 
                     if (trigger != null && trigger.triggers.Length > 0)
                         trigger.triggers[0].SetActive(true);
                 }
+
                 break;
 
             case TutorialCondition.OpenMenu:
@@ -514,7 +555,11 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialCondition.NextPage:
-                MenuManager.instance.TutorialOpen();
+                if (!tutorialMenuOpened)
+                {
+                    MenuManager.instance.TutorialOpen(tutorialMenuFirst);
+                    tutorialMenuOpened = true;
+                }
                 sceneInfo.isMoved = true;
                 MenuManager.instance.finalizeTutorialButton.interactable = true;
                 foreach (var arrow in arrows)
@@ -532,16 +577,7 @@ public class TutorialHandler : MonoBehaviour
         }
     }
 
-    public void OnEventTrigger(Component sender, object data)
-    {
-        if (sender is TutorialTrigger && data is bool trigger)
-        {
-            if (trigger)
-            {
-                eventTrigger = true;
-            }
-        }
-    }
+    #endregion Combat Sequence
 }
 
 //Tutorial Events

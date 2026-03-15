@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public PlayerHealth playerHP { get; private set; }
+    private TutorialType tutorial;
 
     [Header("Health Stats")]
     public int totalHealth = 4;
@@ -47,9 +48,20 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        //If the player loses all health
         if (currentHealth <= 0)
         {
-            SendToSTart();
+            if (tutorial == TutorialType.Combat) //Check if the player is in the combat tutorial
+            {
+                //Just restart the tutorial
+                Transform tutorialSpawn = GameManager.instance.zones.playerSpawnPoint.transform;
+                GameManager.instance.SendPlayerToStart(this, tutorialSpawn);
+            }
+            else
+            {
+                //Otherwise, send player back to town upon losing health
+                SendToSTart();
+            }
         }
     }
 
