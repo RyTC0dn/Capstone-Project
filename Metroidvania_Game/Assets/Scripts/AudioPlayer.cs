@@ -3,6 +3,7 @@ using UnityEngine;
 public class AudioPlayer : MonoBehaviour
 {
     public AudioClip[] clips; //Manually assignable array of audio clips in the inspector
+    private static float lastAudioPlayed;
 
     public void PlayAudio(int clipIndex, AudioSource source)
     {
@@ -14,8 +15,11 @@ public class AudioPlayer : MonoBehaviour
 
         if (!source.isPlaying) //Prevent overlapping audio clips
         {
-            source.clip = clips[clipIndex];
-            source.PlayOneShot(source.clip);
+            if (Time.time - AudioPlayer.lastAudioPlayed > 0.5f)
+            {
+                source.clip = clips[clipIndex];
+                source.PlayOneShot(source.clip);
+            }
         }
         // Move to the next clip index, looping back to the start if necessary
         //currentClipIndex = (currentClipIndex + 1) % clips.Length;
@@ -32,8 +36,11 @@ public class AudioPlayer : MonoBehaviour
 
         if (!source.isPlaying)
         {
-            source.clip = clips[Random.Range(minValue, maxValue)];
-            source.PlayOneShot(source.clip);
+            if (Time.time - AudioPlayer.lastAudioPlayed > 0.5f)
+            {
+                source.clip = clips[Random.Range(minValue, maxValue)];
+                source.PlayOneShot(source.clip);
+            }
         }
     }
 }

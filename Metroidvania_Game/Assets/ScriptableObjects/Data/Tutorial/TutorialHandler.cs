@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -92,13 +93,13 @@ public class TutorialHandler : MonoBehaviour
         {
             arrows[step.arrowIndex].SetActive(true);
             Time.timeScale = 0;
-            TutorialManager.Instance.bookAnim.playbackTime += Time.unscaledTime;
         }
         else
             Time.timeScale = 1;
 
         currentStarCount.text = sequence.steps[stepIndex].ToString();
 
+        TutorialManager.Instance.bookAnim.gameObject.SetActive(false);
         textBox.SetActive(true);
 
         ShowStep();
@@ -196,6 +197,8 @@ public class TutorialHandler : MonoBehaviour
 
                 if (inputBuffer > 0)
                 {
+                    TutorialManager.Instance.bookAnim.gameObject.SetActive(true);
+                    TutorialManager.Instance.bookAnim.Play("BookEnter");
                     NextStep();
                     inputBufferTime = 0;
                 }
@@ -203,14 +206,14 @@ public class TutorialHandler : MonoBehaviour
                 break;
 
             case TutorialCondition.OpenMenu:
-                TutorialManager.Instance.bookAnim.Play("BookEnter");
                 if (Keyboard.current.tabKey.wasPressedThisFrame
                     || Gamepad.current?.selectButton.wasPressedThisFrame == true)
                     NextStep();
                 break;
 
             case TutorialCondition.ClickButton:
-                MenuManager.instance.EquipmentOpen();
+                //MenuManager.instance.EquipmentOpen();
+                TutorialManager.Instance.bookAnim.Play("BookLeave");
                 if (UIEvents.buttonClicked)
                     NextStep();
                 break;
