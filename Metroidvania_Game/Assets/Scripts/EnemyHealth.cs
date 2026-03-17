@@ -35,8 +35,8 @@ public class EnemyHealth : MonoBehaviour
     [Header("Hit flash setting")]
     [SerializeField] private float flashTime = 0.5f;
 
-    [SerializeField] private AudioSource ghostAudioScorce;
-    [SerializeField] private AudioClip ghostHit;
+    [SerializeField] private AudioSource enemyAudioScorce;
+    [SerializeField] private AudioClip enemyHit;
 
     private void Start()
     {
@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
 
         kb = GetComponent<Knockback>();
 
-        ghostAudioScorce = GetComponent<AudioSource>();
+        enemyAudioScorce = GetComponent<AudioSource>();
 
         enemyHealth = totalHealth;
     }
@@ -106,8 +106,8 @@ public class EnemyHealth : MonoBehaviour
     {
         //Deplete health points
         enemyHealth -= damage;
-        ghostAudioScorce.clip = ghostHit;
-        ghostAudioScorce.Play();
+        enemyAudioScorce.clip = enemyHit;
+        enemyAudioScorce.Play();
         Debug.Log("Enemy hit");
 
         //Knockback function
