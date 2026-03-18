@@ -35,6 +35,8 @@ public class Player_Knight_Attack : MonoBehaviour
     [SerializeField] private float attackCooldown = 0;
     private bool hasAttacked = false;
 
+    private bool hasAttackedFirst = false;
+
     // input buffer state
     private bool attackQueued = false;
 
@@ -144,7 +146,8 @@ public class Player_Knight_Attack : MonoBehaviour
                 delayTillAttack = 1f / attackRate;
             }
         }
-        else if (upKey)
+
+        if (upKey)
         {
             colliderHolder.transform.localRotation = Quaternion.Euler(0, 0, 90); // Rotate collider holder for vertical attack
             upAttackQueued = true; // Queue vertical attack if up key is held without pressing attack button
@@ -179,9 +182,10 @@ public class Player_Knight_Attack : MonoBehaviour
     // Performs the actual attack after windup delay.
     private IEnumerator PerformAttackWithWindup(/*Vector2 direction*/)
     {
-        // windup delay before the attack happens
-        if (attackWindup > 0f)
+        if (hasAttackedFirst)
             yield return new WaitForSeconds(attackWindup);
+        else
+            hasAttackedFirst = true;
 
         // mark attack started and set cooldown
         hasAttacked = true;
@@ -193,6 +197,7 @@ public class Player_Knight_Attack : MonoBehaviour
             case Character.Knight:
                 //Pass in direction for directional attacks (if needed)
                 animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
+
                 //Play knight audio
                 audioPlayer.PlayRandomClip(swordSlashAudio, 0, 2);
                 break;
