@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 18a7a4945428f864c8a5a996e80077c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5934880611081472550
+    second: AcidSpitProj_0
+  - first:
+      213: -8996921801347533874
+    second: AcidSpitProj_1
+  - first:
+      213: 7552616369392053239
+    second: AcidSpitProj_2
+  - first:
+      213: -1794264662209421746
+    second: AcidSpitProj_3
+  - first:
+      213: 6348135411493251243
+    second: AcidSpitProj_4
+  - first:
+      213: 7914605555676286051
+    second: AcidSpitProj_5
+  - first:
+      213: 5187064092825088829
+    second: AcidSpitProj_6
+  - first:
+      213: 8789547016691633592
+    second: AcidSpitProj_7
+  - first:
+      213: -800469406009857273
+    second: AcidSpitProj_8
+  - first:
+      213: 3781396465491350344
+    second: AcidSpitProj_9
+  - first:
+      213: 1454282090876733179
+    second: AcidSpitProj_10
+  - first:
+      213: -8082112750032439203
+    second: AcidSpitProj_11
+  - first:
+      213: 3063135074665656636
+    second: AcidSpitProj_12
+  - first:
+      213: -3231623095002406855
+    second: AcidSpitProj_13
+  - first:
+      213: -2471347936519934673
+    second: AcidSpitProj_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AcidSpitProj_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1936
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5b220578113ada0800000000000000
+      internalID: -5934880611081472550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1933
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec376b61a43842380800000000000000
+      internalID: -8996921801347533874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_2
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1934
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbe96e829840d860800000000000000
+      internalID: 7552616369392053239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_3
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 1937
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e98ffcbcd7917e0800000000000000
+      internalID: -1794264662209421746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_4
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 1942
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8222cd58b191850800000000000000
+      internalID: 6348135411493251243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_5
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1942
+        width: 50
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c0b6bc1d356dd60800000000000000
+      internalID: 7914605555676286051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_6
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1942
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33f5086f472cf740800000000000000
+      internalID: 5187064092825088829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_7
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 1942
+        width: 50
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bdcf72517ebaf970800000000000000
+      internalID: 8789547016691633592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1687
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70be639f05924e4f0800000000000000
+      internalID: -800469406009857273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1684
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8439788fc083a7430800000000000000
+      internalID: 3781396465491350344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_10
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1681
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf68be54bd5ae2410800000000000000
+      internalID: 1454282090876733179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_11
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1682
+        width: 49
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5839a3564196df80800000000000000
+      internalID: -8082112750032439203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_12
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 1681
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c317c780f11728a20800000000000000
+      internalID: 3063135074665656636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_13
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1679
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930ee6ebae7f623d0800000000000000
+      internalID: -3231623095002406855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcidSpitProj_14
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1679
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2da55f352204bdd0800000000000000
+      internalID: -2471347936519934673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AcidSpitProj_0: -5934880611081472550
+      AcidSpitProj_1: -8996921801347533874
+      AcidSpitProj_10: 1454282090876733179
+      AcidSpitProj_11: -8082112750032439203
+      AcidSpitProj_12: 3063135074665656636
+      AcidSpitProj_13: -3231623095002406855
+      AcidSpitProj_14: -2471347936519934673
+      AcidSpitProj_2: 7552616369392053239
+      AcidSpitProj_3: -1794264662209421746
+      AcidSpitProj_4: 6348135411493251243
+      AcidSpitProj_5: 7914605555676286051
+      AcidSpitProj_6: 5187064092825088829
+      AcidSpitProj_7: 8789547016691633592
+      AcidSpitProj_8: -800469406009857273
+      AcidSpitProj_9: 3781396465491350344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

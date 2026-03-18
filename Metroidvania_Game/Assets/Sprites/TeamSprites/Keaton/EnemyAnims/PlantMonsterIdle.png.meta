@@ -1,64 +1,67 @@
 fileFormatVersion: 2
-guid: 649493e002d480945b8ad673e660a0d4
+guid: 7881c9b7d400fc840ba091b318e9f4b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7587694053469455157
-    second: Plant_Boss_Idle_WIP_0
+      213: 8784313434438094486
+    second: PlantMonsterIdle_0
   - first:
-      213: 8585340754212372737
-    second: Plant_Boss_Idle_WIP_1
+      213: -546387418418904848
+    second: PlantMonsterIdle_1
   - first:
-      213: 6314378150831542973
-    second: Plant_Boss_Idle_WIP_2
+      213: 798027807746390134
+    second: PlantMonsterIdle_2
   - first:
-      213: 6162294764104646666
-    second: Plant_Boss_Idle_WIP_3
+      213: -3124004218857494124
+    second: PlantMonsterIdle_3
   - first:
-      213: 8275788773403262926
-    second: Plant_Boss_Idle_WIP_4
+      213: 5260317779183897885
+    second: PlantMonsterIdle_4
   - first:
-      213: 5478778555080860057
-    second: Plant_Boss_Idle_WIP_5
+      213: 2349391581739792845
+    second: PlantMonsterIdle_5
   - first:
-      213: 7403589642770841084
-    second: Plant_Boss_Idle_WIP_6
+      213: -6143824080889996556
+    second: PlantMonsterIdle_6
   - first:
-      213: -5042259736801967849
-    second: Plant_Boss_Idle_WIP_7
+      213: -5531487480853303235
+    second: PlantMonsterIdle_7
   - first:
-      213: -3405396326960171079
-    second: Plant_Boss_Idle_WIP_8
+      213: 3336203276559557978
+    second: PlantMonsterIdle_8
   - first:
-      213: -8636754496897075732
-    second: Plant_Boss_Idle_WIP_9
+      213: -2144866087986170803
+    second: PlantMonsterIdle_9
   - first:
-      213: -4133729671299567891
-    second: Plant_Boss_Idle_WIP_10
+      213: 1527266597042677877
+    second: PlantMonsterIdle_10
   - first:
-      213: 3234270014090666394
-    second: Plant_Boss_Idle_WIP_11
+      213: -3953926830078364572
+    second: PlantMonsterIdle_11
   - first:
-      213: 1330104247494329479
-    second: Plant_Boss_Idle_WIP_12
+      213: -6368618191238490608
+    second: PlantMonsterIdle_12
   - first:
-      213: -8952643153842381726
-    second: Plant_Boss_Idle_WIP_13
+      213: 9003568283983451024
+    second: PlantMonsterIdle_13
   - first:
-      213: 5710265878350909276
-    second: Plant_Boss_Idle_WIP_14
+      213: -6269864964257555106
+    second: PlantMonsterIdle_14
   - first:
-      213: -675488214722911293
-    second: Plant_Boss_Idle_WIP_15
+      213: -7449177025976401570
+    second: PlantMonsterIdle_15
   - first:
-      213: -390179243640852116
-    second: Plant_Boss_Idle_WIP_16
+      213: -1390485267480908367
+    second: PlantMonsterIdle_16
   - first:
-      213: -677882055469527401
-    second: Plant_Boss_Idle_WIP_17
+      213: -1225882960784315290
+    second: PlantMonsterIdle_17
   - first:
-      213: 842622223709847206
-    second: Plant_Boss_Idle_WIP_18
+      213: 1005986515270281762
+    second: PlantMonsterIdle_18
+  - first:
+      213: 2080034900419994667
+    second: PlantMonsterIdle_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -91,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,13 +157,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_0
+      name: PlantMonsterIdle_0
       rect:
         serializedVersion: 2
-        x: 199
-        y: 619
-        width: 692
-        height: 622
+        x: 39
+        y: 1915
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53304615a87ec4960800000000000000
-      internalID: 7587694053469455157
+      spriteID: 69ecf5ff68628e970800000000000000
+      internalID: 8784313434438094486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_1
+      name: PlantMonsterIdle_1
       rect:
         serializedVersion: 2
-        x: 1479
-        y: 619
-        width: 692
-        height: 622
+        x: 295
+        y: 1915
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 101438acde1452770800000000000000
-      internalID: 8585340754212372737
+      spriteID: 0f0066fa987da68f0800000000000000
+      internalID: -546387418418904848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_2
+      name: PlantMonsterIdle_2
       rect:
         serializedVersion: 2
-        x: 2759
-        y: 619
-        width: 692
-        height: 622
+        x: 551
+        y: 1915
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db25dc1297d21a750800000000000000
-      internalID: 6314378150831542973
+      spriteID: 6787b91201a231b00800000000000000
+      internalID: 798027807746390134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_3
+      name: PlantMonsterIdle_3
       rect:
         serializedVersion: 2
-        x: 4039
-        y: 619
-        width: 697
-        height: 622
+        x: 807
+        y: 1915
+        width: 141
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0005bf407ed48550800000000000000
-      internalID: 6162294764104646666
+      spriteID: 4996d22f6be45a4d0800000000000000
+      internalID: -3124004218857494124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_4
+      name: PlantMonsterIdle_4
       rect:
         serializedVersion: 2
-        x: 5319
-        y: 619
-        width: 697
-        height: 622
+        x: 1063
+        y: 1915
+        width: 141
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecffddada0289d270800000000000000
-      internalID: 8275788773403262926
+      spriteID: d1d8de95627600940800000000000000
+      internalID: 5260317779183897885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_5
+      name: PlantMonsterIdle_5
       rect:
         serializedVersion: 2
-        x: 6599
-        y: 619
-        width: 697
-        height: 617
+        x: 1319
+        y: 1915
+        width: 141
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9916f9a6118880c40800000000000000
-      internalID: 5478778555080860057
+      spriteID: dc9b4eb2237ba9020800000000000000
+      internalID: 2349391581739792845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_6
+      name: PlantMonsterIdle_6
       rect:
         serializedVersion: 2
-        x: 7879
-        y: 619
-        width: 692
-        height: 617
+        x: 1575
+        y: 1915
+        width: 140
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +304,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfdfd10ed85deb660800000000000000
-      internalID: 7403589642770841084
+      spriteID: 4fa9f00cc80ccbaa0800000000000000
+      internalID: -6143824080889996556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_7
+      name: PlantMonsterIdle_7
       rect:
         serializedVersion: 2
-        x: 9159
-        y: 619
-        width: 692
-        height: 622
+        x: 1831
+        y: 1915
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7110aa20c7b460ab0800000000000000
-      internalID: -5042259736801967849
+      spriteID: d30f73871753c33b0800000000000000
+      internalID: -5531487480853303235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_8
+      name: PlantMonsterIdle_8
       rect:
         serializedVersion: 2
-        x: 10439
-        y: 619
-        width: 687
-        height: 622
+        x: 39
+        y: 1659
+        width: 139
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b77e1c451a9db0d0800000000000000
-      internalID: -3405396326960171079
+      spriteID: a55a3dd34339c4e20800000000000000
+      internalID: 3336203276559557978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_9
+      name: PlantMonsterIdle_9
       rect:
         serializedVersion: 2
-        x: 11719
-        y: 619
-        width: 687
-        height: 622
+        x: 295
+        y: 1659
+        width: 139
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce531386b85142880800000000000000
-      internalID: -8636754496897075732
+      spriteID: d447dce28a7eb32e0800000000000000
+      internalID: -2144866087986170803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_10
+      name: PlantMonsterIdle_10
       rect:
         serializedVersion: 2
-        x: 12999
-        y: 619
-        width: 687
-        height: 622
+        x: 551
+        y: 1659
+        width: 139
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,20 +392,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dee62b0f3ca02a6c0800000000000000
-      internalID: -4133729671299567891
+      spriteID: 5786c02d0e0f13510800000000000000
+      internalID: 1527266597042677877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_11
+      name: PlantMonsterIdle_11
       rect:
         serializedVersion: 2
-        x: 14279
-        y: 619
-        width: 692
-        height: 622
+        x: 807
+        y: 1659
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +414,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a916291217f62ec20800000000000000
-      internalID: 3234270014090666394
+      spriteID: 464fa413f74d029c0800000000000000
+      internalID: -3953926830078364572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_12
+      name: PlantMonsterIdle_12
       rect:
         serializedVersion: 2
-        x: 15559
-        y: 619
-        width: 692
-        height: 622
+        x: 1063
+        y: 1659
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,20 +436,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 784432214ca757210800000000000000
-      internalID: 1330104247494329479
+      spriteID: 01693295f7f1e97a0800000000000000
+      internalID: -6368618191238490608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_13
+      name: PlantMonsterIdle_13
       rect:
         serializedVersion: 2
-        x: 16839
-        y: 619
-        width: 697
-        height: 617
+        x: 1319
+        y: 1659
+        width: 141
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26c54661c72d1c380800000000000000
-      internalID: -8952643153842381726
+      spriteID: 0939ecdb6a913fc70800000000000000
+      internalID: 9003568283983451024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_14
+      name: PlantMonsterIdle_14
       rect:
         serializedVersion: 2
-        x: 18119
-        y: 619
-        width: 697
-        height: 617
+        x: 1575
+        y: 1659
+        width: 141
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,20 +480,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5fc324ef80fe3f40800000000000000
-      internalID: 5710265878350909276
+      spriteID: e5dd2cfb807fcf8a0800000000000000
+      internalID: -6269864964257555106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_15
+      name: PlantMonsterIdle_15
       rect:
         serializedVersion: 2
-        x: 19399
-        y: 619
-        width: 697
-        height: 622
+        x: 1831
+        y: 1659
+        width: 141
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,20 +502,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c36a7f2c0f20a6f0800000000000000
-      internalID: -675488214722911293
+      spriteID: e510da956f43f9890800000000000000
+      internalID: -7449177025976401570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_16
+      name: PlantMonsterIdle_16
       rect:
         serializedVersion: 2
-        x: 20679
-        y: 619
-        width: 697
-        height: 622
+        x: 39
+        y: 1403
+        width: 141
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,20 +524,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c617e009b0ec59af0800000000000000
-      internalID: -390179243640852116
+      spriteID: 1bde26e240104bce0800000000000000
+      internalID: -1390485267480908367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_17
+      name: PlantMonsterIdle_17
       rect:
         serializedVersion: 2
-        x: 21959
-        y: 619
-        width: 692
-        height: 622
+        x: 295
+        y: 1403
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -543,20 +546,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79e8024bcdda796f0800000000000000
-      internalID: -677882055469527401
+      spriteID: 66c2f3231f9ccfee0800000000000000
+      internalID: -1225882960784315290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_Boss_Idle_WIP_18
+      name: PlantMonsterIdle_18
       rect:
         serializedVersion: 2
-        x: 23239
-        y: 619
-        width: 692
-        height: 622
+        x: 551
+        y: 1403
+        width: 140
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,8 +568,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ae3314b27891bb00800000000000000
-      internalID: 842622223709847206
+      spriteID: 22aa48bd76bf5fd00800000000000000
+      internalID: 1005986515270281762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_19
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1403
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24e2ffa8b4cddc10800000000000000
+      internalID: 2080034900419994667
       vertices: []
       indices: 
       edges: []
@@ -585,25 +610,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Plant_Boss_Idle_WIP_0: 7587694053469455157
-      Plant_Boss_Idle_WIP_1: 8585340754212372737
-      Plant_Boss_Idle_WIP_10: -4133729671299567891
-      Plant_Boss_Idle_WIP_11: 3234270014090666394
-      Plant_Boss_Idle_WIP_12: 1330104247494329479
-      Plant_Boss_Idle_WIP_13: -8952643153842381726
-      Plant_Boss_Idle_WIP_14: 5710265878350909276
-      Plant_Boss_Idle_WIP_15: -675488214722911293
-      Plant_Boss_Idle_WIP_16: -390179243640852116
-      Plant_Boss_Idle_WIP_17: -677882055469527401
-      Plant_Boss_Idle_WIP_18: 842622223709847206
-      Plant_Boss_Idle_WIP_2: 6314378150831542973
-      Plant_Boss_Idle_WIP_3: 6162294764104646666
-      Plant_Boss_Idle_WIP_4: 8275788773403262926
-      Plant_Boss_Idle_WIP_5: 5478778555080860057
-      Plant_Boss_Idle_WIP_6: 7403589642770841084
-      Plant_Boss_Idle_WIP_7: -5042259736801967849
-      Plant_Boss_Idle_WIP_8: -3405396326960171079
-      Plant_Boss_Idle_WIP_9: -8636754496897075732
+      PlantMonsterIdle_0: 8784313434438094486
+      PlantMonsterIdle_1: -546387418418904848
+      PlantMonsterIdle_10: 1527266597042677877
+      PlantMonsterIdle_11: -3953926830078364572
+      PlantMonsterIdle_12: -6368618191238490608
+      PlantMonsterIdle_13: 9003568283983451024
+      PlantMonsterIdle_14: -6269864964257555106
+      PlantMonsterIdle_15: -7449177025976401570
+      PlantMonsterIdle_16: -1390485267480908367
+      PlantMonsterIdle_17: -1225882960784315290
+      PlantMonsterIdle_18: 1005986515270281762
+      PlantMonsterIdle_19: 2080034900419994667
+      PlantMonsterIdle_2: 798027807746390134
+      PlantMonsterIdle_3: -3124004218857494124
+      PlantMonsterIdle_4: 5260317779183897885
+      PlantMonsterIdle_5: 2349391581739792845
+      PlantMonsterIdle_6: -6143824080889996556
+      PlantMonsterIdle_7: -5531487480853303235
+      PlantMonsterIdle_8: 3336203276559557978
+      PlantMonsterIdle_9: -2144866087986170803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
