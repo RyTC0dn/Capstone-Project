@@ -217,6 +217,9 @@ MonoBehaviour:
   - rid: 2494650445322518874
   - rid: 2494650445322518875
   - rid: 2494650467571204213
+  - rid: 2494650474019947475
+  - rid: 2494650474019947476
+  - rid: 2494650475954831796
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -256,6 +259,30 @@ MonoBehaviour:
           m_Value1: 2984359432076729037
         Name: Action Timer
         m_Value: 3.23
+    - rid: 2494650474019947475
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Animator, UnityEngine.AnimationModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 3564356599211660083
+          m_Value1: 1430161640022793496
+        Name: Plant_Boss
+        m_Value: {fileID: 2551631124527351071}
+    - rid: 2494650474019947476
+      type: {class: 'BlackboardVariable`1[[System.String, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14723094545295310770
+          m_Value1: 4850038911402165171
+        Name: Bite Anim Trigger
+        m_Value: InRange
+    - rid: 2494650475954831796
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 4628867584061206228
+          m_Value1: 10358709828046967753
+        Name: Idle Timer
+        m_Value: 7.02
     - rid: 7375806016656245156
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -295,7 +322,7 @@ MonoBehaviour:
           m_Value0: 9864300731550682486
           m_Value1: 9111520680370291631
         Name: Attack Radius
-        m_Value: 10
+        m_Value: 46.07
 --- !u!114 &7212580228144080639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +387,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 1.26}
+    oldSize: {x: 7, y: 6.3}
     newSize: {x: 1.4, y: 1.26}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
