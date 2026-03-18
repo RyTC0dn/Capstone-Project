@@ -32,12 +32,6 @@ public partial class VineAttackAction : Action
 
     protected override Status OnUpdate()
     {
-        if (lifeTimeCounter.Value < 0)
-        {
-            lifeTimeCounter.Value++;
-            return Status.Running;
-        }
-
         //VineObject.Value.
         return Status.Success;
     }
