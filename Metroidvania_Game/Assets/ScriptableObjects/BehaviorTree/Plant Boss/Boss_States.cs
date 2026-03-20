@@ -5,8 +5,9 @@ using Unity.Behavior;
 public enum Boss_States
 {
     Idle,
-	Attack_Close,
-	Attack_Vines,
-	Attack_Projectile,
-	Death
+    Attack_Close,
+    Attack_Vines,
+    Attack_Projectile,
+    Damaged,
+    Death
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Behavior;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -84,7 +85,8 @@ public class PlayerHealth : MonoBehaviour
         //Only accept attacks coming from enemy objects
         //adjust tags where applicable
         bool isEnemySource = sourceObject.CompareTag("GroundEnemy")
-            || sourceObject.CompareTag("FlyingEnemy");
+            || sourceObject.CompareTag("FlyingEnemy")
+            || sourceObject.CompareTag("Boss");
 
         if (!isEnemySource) return;
 
@@ -116,11 +118,6 @@ public class PlayerHealth : MonoBehaviour
             Transform newPos = transform;
             playerHealthChanged.Raise(this, newPos);
         }
-        //else if (currentHealth <= 0)
-        //{
-        //    Transform deathPos = transform;
-        //    playerDeath.Raise(this, deathPos);
-        //}
 
         //Knockback function
         Vector2 direction = (transform.position - source.transform.position).normalized;
@@ -167,5 +164,13 @@ public class PlayerHealth : MonoBehaviour
     private void SendToSTart()
     {
         SceneManager.LoadScene("Town");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            TakeDamage(1, collision);
+        }
     }
 }

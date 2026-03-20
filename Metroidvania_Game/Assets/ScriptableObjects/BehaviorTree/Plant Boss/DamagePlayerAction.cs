@@ -5,14 +5,19 @@ using Action = Unity.Behavior.Action;
 using Unity.Properties;
 
 [Serializable, GeneratePropertyBag]
-[NodeDescription(name: "Damage Player", story: "Player [HP] depleted by set [Damage]", category: "Action", id: "2efae19069c89102ea309a4fb1d6ec3e")]
+[NodeDescription(name: "DamagePlayer", story: "Send [Damage] to Player with [GameEvent]", category: "Action", id: "a06a2b3d2212bfaebf64750073ea2fae")]
 public partial class DamagePlayerAction : Action
 {
-    [SerializeReference] public BlackboardVariable<PlayerHealth> HP;
     [SerializeReference] public BlackboardVariable<int> Damage;
+    [SerializeReference] public BlackboardVariable<PlayerHealth> GameEvent;
 
     protected override Status OnStart()
     {
+        if (GameEvent.Value == null)
+            return Status.Failure;
+
+        GameEvent.Value.TakeDamage(Damage.Value, null);
+
         return Status.Running;
     }
 
@@ -25,4 +30,3 @@ public partial class DamagePlayerAction : Action
     {
     }
 }
-

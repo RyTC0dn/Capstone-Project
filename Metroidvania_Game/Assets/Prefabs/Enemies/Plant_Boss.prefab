@@ -43,9 +43,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1925372890168945168}
   - component: {fileID: 2123601890982108632}
+  - component: {fileID: 7780171729272626281}
   m_Layer: 0
   m_Name: Firepoint
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +79,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRot: {x: 0, y: 0, z: 0, w: 0}
+--- !u!58 &7780171729272626281
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129054800019314055}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.33
 --- !u!1 &3132032576510287594
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,9 +130,10 @@ GameObject:
   - component: {fileID: 7212580228144080639}
   - component: {fileID: 4808532814033350826}
   - component: {fileID: 8285966378383940161}
+  - component: {fileID: 4640293939142068688}
   m_Layer: 0
   m_Name: Plant_Boss
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,6 +258,9 @@ MonoBehaviour:
   - rid: 2494650474019947475
   - rid: 2494650474019947476
   - rid: 2494650475954831796
+  - rid: 2494650499604414888
+  - rid: 2494650505133818003
+  - rid: 2494650505133818004
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -283,6 +324,30 @@ MonoBehaviour:
           m_Value1: 10358709828046967753
         Name: Idle Timer
         m_Value: 7.02
+    - rid: 2494650499604414888
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Collider2D, UnityEngine.Physics2DModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14956937008208576510
+          m_Value1: 6109147952648713770
+        Name: AttackRange
+        m_Value: {fileID: 4640293939142068688}
+    - rid: 2494650505133818003
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Collider2D, UnityEngine.Physics2DModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 5208220198470249893
+          m_Value1: 18289043978031217443
+        Name: Bite Collider
+        m_Value: {fileID: 7780171729272626281}
+    - rid: 2494650505133818004
+      type: {class: 'BlackboardVariable`1[[GameEvent, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17758050058754091680
+          m_Value1: 13799959276893964025
+        Name: Attack Player Event
+        m_Value: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
     - rid: 7375806016656245156
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -322,7 +387,7 @@ MonoBehaviour:
           m_Value0: 9864300731550682486
           m_Value1: 9111520680370291631
         Name: Attack Radius
-        m_Value: 46.07
+        m_Value: 10
 --- !u!114 &7212580228144080639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +592,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &4640293939142068688
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132032576510287594}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 6.88
 --- !u!1 &4098568762855989379
 GameObject:
   m_ObjectHideFlags: 0

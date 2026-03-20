@@ -2,18 +2,52 @@ using UnityEngine;
 
 public class VineLogic : MonoBehaviour
 {
-    public Vector2[] roomPos;
-    private int positionCount = 0;
+    private int damage = 1;
+    public Animator animator;
+    private PlayerHealth playerHP;
+
+    [SerializeField]
+    private float lifeTime = 2.0f;
+
+    private float currentLifeTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        positionCount = Random.Range(0, roomPos.Length);
-        transform.position = roomPos[positionCount];
+        playerHP = FindFirstObjectByType<PlayerHealth>();
+        currentLifeTime = lifeTime;
     }
 
     // Update is called once per frame
     private void Update()
     {
+        if (gameObject.activeSelf)
+        {
+            currentLifeTime -= Time.deltaTime;
+            if (currentLifeTime < 0)
+            {
+                currentLifeTime = lifeTime;
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Collision logic: if the projectile collides with the player, raise the attack event and destroy the projectile.
+        //If it collides with the ground, just destroy the projectile.
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerHP.TakeDamage(damage, this);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //Add player health change
+            playerHP.TakeDamage(damage, this);
+        }
     }
 }
