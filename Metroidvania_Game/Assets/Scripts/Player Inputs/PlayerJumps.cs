@@ -106,8 +106,9 @@ public class PlayerJumps : MonoBehaviour
     public void OnJump()
     {
         bool key = Keyboard.current?.spaceKey.wasPressedThisFrame ?? false;
+        bool key2 = Keyboard.current?.wKey.wasPressedThisFrame ?? false;
         bool button = Gamepad.current?.buttonSouth.wasPressedThisFrame ?? false;
-        bool isPressed = key || button;
+        bool isPressed = key || key2 || button;
 
         if (jumpCount == 0)
         {
