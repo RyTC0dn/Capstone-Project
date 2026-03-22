@@ -45,7 +45,7 @@ public class Player_Knight_Attack : MonoBehaviour
     private PrototypePlayerMovementControls playerMovement;
 
     [SerializeField] private AudioSource swordSlashAudio;
-    private AudioPlayer audioPlayer;
+    public AudioPlayer audioPlayer;
     private Animator animator;
 
     private Player_Controller playerControl;
@@ -69,7 +69,6 @@ public class Player_Knight_Attack : MonoBehaviour
         playerMovement = GetComponentInParent<PrototypePlayerMovementControls>();
         swordSlashAudio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        audioPlayer = GetComponentInChildren<AudioPlayer>();
 
         for (int i = 0; i < weaponColliders.Length; i++)
         {

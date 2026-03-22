@@ -42,13 +42,22 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [HideInInspector] public bool isFacingRight = true;
 
     [Space(10)]
-    [Header("Idle Audio")]
+    [Header("Audio")]
     [SerializeField] private float idleTimer; //Timer for idle audio, manually set in inspector
 
     private bool isIdle = false;
-    private AudioPlayer audioPlayer;
+    public AudioPlayer audioPlayer;
     public AudioSource audioSource;
-    [SerializeField] private float idleAccumTimer = 0f;
+
+    [SerializeField]
+    private float idleAccumTimer = 0f;
+
+    [Header("Movement Audio Check")]
+    public int grassMin, grassMax;
+
+    public int stoneMin, stoneMax;
+    private bool isGrass, isStone;
+    public string townName, levelName;
 
     private void Awake()
     {
@@ -66,6 +75,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         //Setting the dash time to timer
         dashTime = dashTimer;
+
+        isGrass = SceneManager.GetActiveScene().name == townName;
+        isStone = SceneManager.GetActiveScene().name == levelName;
     }
 
     public void InteractEvent()
@@ -174,8 +186,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
-        //animator.SetBool("isRunning", h != 0);
+        //Play walking animation while player is in motion
         animator.SetFloat("horizontal", h);
+
+        if ((h > 0 || h < 0) && isGrass)
+            audioPlayer.PlayAudioCycle(audioSource, grassMin, grassMax);
+        else if ((h > 0 || h < 0) && isStone)
+            audioPlayer.PlayAudioCycle(audioSource, stoneMin, stoneMax);
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor
