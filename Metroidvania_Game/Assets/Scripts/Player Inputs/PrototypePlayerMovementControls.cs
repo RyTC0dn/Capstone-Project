@@ -70,8 +70,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         //Initialize the rigidbody variables
         rb2D = GetComponent<Rigidbody2D>();
-        audioPlayer = GetComponent<AudioPlayer>();
-        audioSource = GetComponent<AudioSource>();
 
         //Setting the dash time to timer
         dashTime = dashTimer;
@@ -155,9 +153,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
                 isIdle = true;
                 //Play a random clip from the audio player, using the range of 14 to 16 for the clip index
                 if (audioPlayer != null && audioSource != null)
-                    audioPlayer.PlayRandomClip(audioSource, 14, 16);
+                    //audioPlayer.PlayRandomClip(audioSource, 14, 16);
 
-                idleAccumTimer = 0f; //Reset the accumulated timer
+                    idleAccumTimer = 0f; //Reset the accumulated timer
             }
             //Debug.Log("Player is idle. Accumulated time: " + idleAccumTimer);
         }

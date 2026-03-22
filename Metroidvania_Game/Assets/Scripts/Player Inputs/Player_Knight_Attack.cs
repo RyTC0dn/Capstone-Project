@@ -175,12 +175,22 @@ public class Player_Knight_Attack : MonoBehaviour
         slashVFX.gameObject.SetActive(false);
     }
 
+    public void DisableCollider()
+    {
+        attackCollider.SetActive(false);
+    }
+
     public void EnableAttack()
     {
         playerControl.Gameplay.Melee.Enable();
         swordSlashAudio.enabled = true;
         animator.enabled = true;
         slashVFX.gameObject.SetActive(true);
+    }
+
+    public void EnableCollider()
+    {
+        attackCollider.SetActive(true);
     }
 
     // Performs the actual attack after windup delay.
@@ -204,6 +214,9 @@ public class Player_Knight_Attack : MonoBehaviour
 
                 //Play knight audio
                 audioPlayer.PlayRandomClip(swordSlashAudio, 0, 2);
+
+                yield return new WaitForSeconds(delayTillAttack);
+                attackCollider.SetActive(false);
                 break;
 
             case Character.Cleric:
@@ -256,5 +269,13 @@ public class Player_Knight_Attack : MonoBehaviour
         swordSlashAudio.Play();
 
         StartCoroutine(ResetWeapon());
+    }
+
+    private bool IsAnimatorStatePlaying(string stateName)
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        // Check if current state is the target state & the animation is not looping
+        // looping animations have a normalized time greater than 1
+        return stateInfo.IsName(stateName) && stateInfo.normalizedTime < 1.0f;
     }
 }
