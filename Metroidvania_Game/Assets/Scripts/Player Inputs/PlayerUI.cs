@@ -22,8 +22,14 @@ public class PlayerUI : MonoBehaviour
     public GameObject damageFrame;
 
     [SerializeField] private int totalHealth = 4;
-    private AudioPlayer player;
+
+    [Space(20)]
+    [Header("Audio")]
+    [SerializeField] private AudioPlayer player;
+
     [SerializeField] private AudioSource source;
+    public int crackMin, crackMax;
+    public int breakMin, breakMax;
 
     [Space(20)]
     [Header("Reminder Setup")]
@@ -192,9 +198,9 @@ public class PlayerUI : MonoBehaviour
 
                 damageFrame.SetActive(true);
                 StartCoroutine(DelayAnimation(damageFrame, 1.5f));
-                player.PlayRandomClip(source, 17, 21);
-
                 remainingHealth -= 1;
+
+                player.PlayRandomClip(source, crackMin, crackMax);
             }
             else
             {
@@ -203,7 +209,7 @@ public class PlayerUI : MonoBehaviour
                 animator.Play("ClockBreak");
                 if (player.clips != null)
                 {
-                    player.PlayRandomClip(source, 22, 25);
+                    player.PlayRandomClip(source, breakMin, breakMax);
                 }
                 StartCoroutine(Delay(image, spriteRenderer, 1.5f));
             }

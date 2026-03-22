@@ -15,6 +15,8 @@ public class Player_Knight_Attack : MonoBehaviour
     [Header("Weapon Setup")]
     public Collider2D[] weaponColliders; // To track which collider to activate for directional attacks
 
+    public GameObject attackCollider;
+
     public Character character;
 
     public float attackRate = 1f;    // attacks per second
@@ -74,6 +76,7 @@ public class Player_Knight_Attack : MonoBehaviour
         {
             weaponColliders[i].enabled = false;
         }
+        attackCollider.SetActive(false); //Have the attack collider turned off at the start
         delayTillAttack = 1f / attackRate;
     }
 
@@ -117,6 +120,8 @@ public class Player_Knight_Attack : MonoBehaviour
 
         if (isPressed)
         {
+            attackCollider.SetActive(true);
+
             // If up key is held when attack input is registered, queue vertical attack
             if (upHeld)
             {

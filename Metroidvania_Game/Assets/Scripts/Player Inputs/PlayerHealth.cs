@@ -85,8 +85,7 @@ public class PlayerHealth : MonoBehaviour
         //Only accept attacks coming from enemy objects
         //adjust tags where applicable
         bool isEnemySource = sourceObject.CompareTag("GroundEnemy")
-            || sourceObject.CompareTag("FlyingEnemy")
-            || sourceObject.CompareTag("Boss");
+            || sourceObject.CompareTag("FlyingEnemy");
 
         if (!isEnemySource) return;
 

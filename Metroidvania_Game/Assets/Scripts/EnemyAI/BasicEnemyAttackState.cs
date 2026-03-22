@@ -18,6 +18,7 @@ public class BasicEnemyAttackState : MonoBehaviour
     private enemyTypes currentEnemyType;
 
     public GameEvent onAttackEvent;
+    public PlayerHealth hp;
     private Knockback kb;
     [SerializeField] private bool isKnocked = false;
     [SerializeField] private float vulnerableTimer = 1f;
@@ -34,6 +35,8 @@ public class BasicEnemyAttackState : MonoBehaviour
         animator = GetComponent<Animator>();
 
         kb = GetComponent<Knockback>();
+
+        hp = FindFirstObjectByType<PlayerHealth>();
     }
 
     private void Update()
@@ -124,7 +127,8 @@ public class BasicEnemyAttackState : MonoBehaviour
             if (vulnerableTimer < 1) return;
 
             //Raise a global event to attack player
-            onAttackEvent.Raise(this, damage);
+            //onAttackEvent.Raise(this, damage);
+            hp.TakeDamage(damage, this);
         }
     }
 
@@ -135,7 +139,8 @@ public class BasicEnemyAttackState : MonoBehaviour
             if (vulnerableTimer < 1) return;
 
             //Raise a global event to attack player
-            onAttackEvent.Raise(this, damage);
+            //onAttackEvent.Raise(this, damage);
+            hp.TakeDamage(damage, this);
         }
     }
 }
