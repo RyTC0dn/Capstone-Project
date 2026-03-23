@@ -8,6 +8,7 @@ public class LadderMovement : MonoBehaviour
     private bool isClimbing;
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,11 @@ public class LadderMovement : MonoBehaviour
         if (isOnLadder && Mathf.Abs(vertical) > 0f) 
         {
             isClimbing = true;
+            animator.SetBool("isClimb", true);
+        }
+        else
+        {
+            animator.SetBool("isClimb", false);
         }
     }
 
