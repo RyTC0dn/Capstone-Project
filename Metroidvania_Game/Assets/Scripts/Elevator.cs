@@ -12,23 +12,25 @@ public class Elevator : MonoBehaviour
     /// <summary>
     /// The main way that the elevator works in tandem with the elevator manager and player spawn control scripts.
     /// To summarize, you define which location you want the player to go to, elevator location name equals the name of the game object.
-    /// Give the generate button function the name of the elevator you want players to move to. 
+    /// Give the generate button function the name of the elevator you want players to move to.
     /// Then the script will compare the name of the button to the name of the gameobject/elevatorlocationname, if they match then
     /// move the player to that location.
     /// </summary>
     public string elevatorLocationName;
+
     public GameEvent teleportPlayer;
     public GameEvent UIActive;
 
     [Header("Elevator Animations")]
-    [HideInInspector]public Animator elevatorAnimation;
+    [HideInInspector] public Animator elevatorAnimation;
+
     private bool elevatorOpened = false;
     private bool playerTeleported = false;
 
-
     [Header("UI Setup")]
     public GameObject parentPanel; [Tooltip("Manually assign from ElevatorManager prefab")]
-    PrototypePlayerMovementControls playerControls;
+    private PrototypePlayerMovementControls playerControls;
+
     [Tooltip("Manually assign each elevator button from the panel on ElevatorManager")]
     public Button[] elevatorButtons;
 
@@ -44,7 +46,6 @@ public class Elevator : MonoBehaviour
         elevatorAnimation = GetComponent<Animator>();
         playerControls = FindAnyObjectByType<PrototypePlayerMovementControls>();
         playerAttack = FindAnyObjectByType<Player_Knight_Attack>();
-
 
         //Disable all buttons at start
         foreach (Button button in elevatorButtons)
@@ -62,13 +63,13 @@ public class Elevator : MonoBehaviour
             registeredElevators.Contains(elevatorLocationName))
         {
             ElevatorManager.instance.RegisterElevator(this);
-        }  
+        }
     }
 
     private void Update()
     {
         //If the shop is active ensure this is not reading click input
-        if(GameManager.instance.state == GameStates.Pause)
+        if (GameManager.instance.state == GameStates.Pause)
         {
             return;
         }
@@ -81,7 +82,7 @@ public class Elevator : MonoBehaviour
             {
                 button.interactable = ElevatorManager.instance.elevators.ContainsKey(destinationName);
 
-                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);                              
+                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
             }
         }
         TextColor();
@@ -90,16 +91,25 @@ public class Elevator : MonoBehaviour
             inputText.enabled = true;
     }
 
-    void TextColor()
+    private void FixedUpdate()
+    {
+        InputListener();
+    }
+
+    private void TextColor()
     {
         Color color = inputText.color;
         float gradient = Mathf.PingPong(Time.time * 4f, 1f) + 1f;
         inputText.color = new Color(gradient, color.g, color.b);
     }
 
-    public void OnInteract(Component sender, object data)
+    private void InputListener()
     {
-        if (data is bool interact && interact && isNear)
+        bool input = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+        bool game = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
+        bool pressed = input || game;
+
+        if (isNear && pressed)
         {
             if (ElevatorManager.instance.elevators.Count > 1)
             {
@@ -107,6 +117,17 @@ public class Elevator : MonoBehaviour
             }
         }
     }
+
+    //public void OnInteract(Component sender, object data)
+    //{
+    //    if (data is bool interact && interact && isNear)
+    //    {
+    //        if (ElevatorManager.instance.elevators.Count > 1)
+    //        {
+    //            OpenElevatorUI();
+    //        }
+    //    }
+    //}
 
     private void OpenElevatorUI()
     {
@@ -123,7 +144,7 @@ public class Elevator : MonoBehaviour
 
     public void OnButtonClicked(string destinationName)
     {
-        StartCoroutine(CloseDoor(destinationName));                
+        StartCoroutine(CloseDoor(destinationName));
     }
 
     private IEnumerator CloseDoor(string destinationName)
@@ -134,7 +155,6 @@ public class Elevator : MonoBehaviour
         //Wait for 0.5 seconds before teleporting player so animation can play
         ElevatorManager.instance.TeleportPlayer(destinationName, playerControls.transform);
         parentPanel.SetActive(false);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -146,6 +166,7 @@ public class Elevator : MonoBehaviour
             inputText.enabled = true;
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
