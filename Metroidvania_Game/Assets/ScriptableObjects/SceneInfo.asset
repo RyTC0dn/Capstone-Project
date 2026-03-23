@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3ba40135f36cd4297844ff21907fd4, type: 3}
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
-  isShieldPickedUp: 0
+  isShieldPickedUp: 1
   isWallBreakPickedUp: 1
-  isShieldUsed: 0
+  isShieldUsed: 1
   isWallBreakUsed: 0
   isAxeBought: 0
   isWeaponUpgradeBought: 0
@@ -32,6 +32,6 @@ MonoBehaviour:
   combat: 0
   dashed: 0
   door: 0
-  isMiniBossKilled: 0
+  isMiniBossKilled: 1
   isController: 0
   isKeyboard: 0
