@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
   isShieldPickedUp: 0
-  isWallBreakPickedUp: 1
+  isWallBreakPickedUp: 0
   isShieldUsed: 0
   isWallBreakUsed: 0
   isAxeBought: 0
@@ -22,8 +22,8 @@ MonoBehaviour:
   isAxeUsed: 0
   swordDamageValue: 1
   knockbackForce: 1
-  talkedToBlacksmith: 1
-  talkedToAlchemist: 1
+  talkedToBlacksmith: 0
+  talkedToAlchemist: 0
   talkedToPriest: 0
   isBossCutscenePlayed: 0
   bookIsLookedAt: 0
