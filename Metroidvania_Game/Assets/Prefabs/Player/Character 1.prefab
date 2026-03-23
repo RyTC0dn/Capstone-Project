@@ -93,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounce: 15
   playerRB2D: {fileID: 8108088426756765879}
+  onPlayerStomp: {fileID: 11400000, guid: 45e3690c48e58a0448d0dce92515d9af, type: 2}
+  stompDamage: 1
 --- !u!1 &205037250374655973
 GameObject:
   m_ObjectHideFlags: 0

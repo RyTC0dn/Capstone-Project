@@ -77,10 +77,22 @@ public class EnemyHealth : MonoBehaviour
                 Debug.Log("Recieved attack");
             }
         }
+
         if (sender is DebrisCollision debris && data is int debrisDamage)
         {
             EnemyDamage(debrisDamage);
             Debug.Log("Hit by debris");
+        }
+    }
+
+    public void OnStompAttack(Component sender, object data)
+    {
+        if (data is StompData stomp)
+        {
+            if (stomp.target == this.gameObject)
+            {
+                EnemyDamage(stomp.damage);
+            }
         }
     }
 
