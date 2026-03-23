@@ -59,6 +59,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private bool isGrass, isStone;
     public string townName, levelName;
 
+    [Header("UI")]
+    public GameObject buttonPrompt;
+
+    public GameObject keyPrompt;
+    public SceneInfo sceneInfo;
+    private bool isController;
+
     private void Awake()
     {
         ////Enable player controller
@@ -74,6 +81,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Setting the dash time to timer
         dashTime = dashTimer;
 
+        buttonPrompt.SetActive(false);
+        keyPrompt.SetActive(false);
+
+        isController = sceneInfo.OnDeviceChange(Gamepad.current);
+
+        //Keep track of the current scene
         isGrass = SceneManager.GetActiveScene().name == townName;
         isStone = SceneManager.GetActiveScene().name == levelName;
     }
@@ -239,6 +252,18 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Elevator"))
+        {
+            //Check for if the controller is connected
+            if (isController)
+            {
+                buttonPrompt.SetActive(true);
+            }
+            else
+            {
+                keyPrompt.SetActive(true);
+            }
+        }
         if (collision.CompareTag("Ladder"))
         {
             animator.SetBool("isClimbing", true);
@@ -255,6 +280,18 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.CompareTag("Elevator"))
+        {
+            //Check for if the controller is connected
+            if (isController)
+            {
+                buttonPrompt.SetActive(false);
+            }
+            else
+            {
+                keyPrompt.SetActive(false);
+            }
+        }
         if (collision.CompareTag("Ladder"))
         {
             animator.SetBool("isClimbing", false);
