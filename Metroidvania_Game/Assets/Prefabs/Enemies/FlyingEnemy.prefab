@@ -195,6 +195,7 @@ MonoBehaviour:
   isGrounded: 0
   damage: 1
   onAttackEvent: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+  hp: {fileID: 0}
   isKnocked: 0
   vulnerableTimer: 1
 --- !u!114 &-5689470515125063858
@@ -230,8 +231,9 @@ MonoBehaviour:
   enemyHealth: 0
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
-  ghostAudioScorce: {fileID: -4269474201762705440}
-  ghostHit: {fileID: 8300000, guid: 691642d78ecd3c3498bbd04ca72bb3b1, type: 3}
+  flashTime: 0.5
+  enemyAudioScorce: {fileID: -4269474201762705440}
+  enemyHit: {fileID: 8300000, guid: 691642d78ecd3c3498bbd04ca72bb3b1, type: 3}
 --- !u!114 &-5814837572841073523
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1653,7 +1653,7 @@ MonoBehaviour:
   dashTime: 0
   isFacingRight: 1
   idleTimer: 30
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: 5518086543226646726}
   audioSource: {fileID: 5587350823930368243}
   idleAccumTimer: 0
   grassMin: 0
@@ -1662,9 +1662,9 @@ MonoBehaviour:
   stoneMax: 0
   townName: 
   levelName: 
-  buttonPrompt: {fileID: 0}
-  keyPrompt: {fileID: 0}
-  sceneInfo: {fileID: 0}
+  buttonPrompt: {fileID: 7362015414511754493}
+  keyPrompt: {fileID: 8744941819710305476}
+  sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
 --- !u!114 &2249839468151686403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   inputBuffer: 0.18
   attackCooldown: 0
   swordSlashAudio: {fileID: 5587350823930368243}
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: 5518086543226646726}
   slashVFX: {fileID: 3875973796710765611}
 --- !u!114 &2684591189990701646
 MonoBehaviour:
@@ -2021,8 +2021,8 @@ MonoBehaviour:
   - {fileID: 6862969837351255233}
   damageFrame: {fileID: 245951893432547926}
   totalHealth: 4
-  player: {fileID: 0}
-  source: {fileID: 0}
+  player: {fileID: 1063261500313886685}
+  source: {fileID: 8884732048864544201}
   crackMin: 0
   crackMax: 0
   breakMin: 0
@@ -4399,6 +4399,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1063261500313886685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4701434408033922829, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ad0b29947e75d4a8a239c9f3502af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1197382748271113843 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6873155348992525987, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -4480,6 +4491,17 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &5518086543226646726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 246432878446297110, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ad0b29947e75d4a8a239c9f3502af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6240946183984742024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1829556979620286040, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -4508,6 +4530,11 @@ Animator:
 --- !u!1 &7095507384009223231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3280838533205466351, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7362015414511754493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3014189217598909485, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
   m_PrefabInstance: {fileID: 5764518583592284368}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7753091697373045751 stripped
@@ -4542,6 +4569,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4074832128741087440, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
   m_PrefabInstance: {fileID: 5764518583592284368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8744941819710305476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3937247083642061844, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8884630028778026110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3797419507206767790, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -4565,6 +4597,11 @@ MonoBehaviour:
   tutorialTriggerEvent: {fileID: 0}
   starText: {fileID: 0}
   tutorialHandler: {fileID: 0}
+--- !u!82 &8884732048864544201 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3797457687168316697, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8991543042266567461 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3690646971318068213, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
