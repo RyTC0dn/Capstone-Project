@@ -31,7 +31,7 @@ public class ElevatorManager : MonoBehaviour
             return;
         }
         instance = this;
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         if (PlayerPrefs.HasKey("ElevatorRegistered"))
         {
