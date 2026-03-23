@@ -44,6 +44,10 @@ public class SceneInfo : ScriptableObject
     public bool door = false;
 
     [Space(20)]
+    [Header("Enemies")]
+    public bool isMiniBossKilled = false;
+
+    [Space(20)]
     public bool isController = false;
 
     public bool isKeyboard = false;

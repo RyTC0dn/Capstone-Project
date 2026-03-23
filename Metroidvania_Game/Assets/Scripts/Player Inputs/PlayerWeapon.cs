@@ -97,3 +97,15 @@ public class KnockbackData
         this.knockback = knockback;
     }
 }
+
+public class StompData
+{
+    public GameObject target;
+    public float damage;
+
+    public StompData(GameObject target, float damage)
+    {
+        this.target = target;
+        this.damage = damage;
+    }
+}
