@@ -46,8 +46,8 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [SerializeField] private float idleTimer; //Timer for idle audio, manually set in inspector
 
     private bool isIdle = false;
-    public AudioPlayer audioPlayer;
-    public AudioSource audioSource;
+    public AudioPlayer movementAudioPlayer;
+    public AudioSource movementAudioSource;
 
     [SerializeField]
     private float idleAccumTimer = 0f;
@@ -165,7 +165,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             {
                 isIdle = true;
                 //Play a random clip from the audio player, using the range of 14 to 16 for the clip index
-                if (audioPlayer != null && audioSource != null)
+                if (movementAudioPlayer != null && movementAudioSource != null)
                     //audioPlayer.PlayRandomClip(audioSource, 14, 16);
 
                     idleAccumTimer = 0f; //Reset the accumulated timer
@@ -201,9 +201,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         animator.SetFloat("horizontal", h);
 
         if ((h > 0 || h < 0) && isGrass)
-            audioPlayer.PlayAudioCycle(audioSource, grassMin, grassMax);
+            movementAudioPlayer.PlayAudioCycle(movementAudioSource, grassMin, grassMax);
         else if ((h > 0 || h < 0) && isStone)
-            audioPlayer.PlayAudioCycle(audioSource, stoneMin, stoneMax);
+            movementAudioPlayer.PlayAudioCycle(movementAudioSource, stoneMin, stoneMax);
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor

@@ -1653,15 +1653,15 @@ MonoBehaviour:
   dashTime: 0
   isFacingRight: 1
   idleTimer: 30
-  audioPlayer: {fileID: 5518086543226646726}
-  audioSource: {fileID: 5587350823930368243}
+  movementAudioPlayer: {fileID: 4629086295875110199}
+  movementAudioSource: {fileID: 412432810683736337}
   idleAccumTimer: 0
   grassMin: 0
-  grassMax: 0
-  stoneMin: 0
-  stoneMax: 0
-  townName: 
-  levelName: 
+  grassMax: 3
+  stoneMin: 4
+  stoneMax: 7
+  townName: Town
+  levelName: Level 1
   buttonPrompt: {fileID: 7362015414511754493}
   keyPrompt: {fileID: 8744941819710305476}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 8108088426756765879}
-  animator: {fileID: 0}
+  animator: {fileID: 8842708863280125052}
 --- !u!114 &148261653843026439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4372,6 +4372,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5518709364804176518, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
   m_PrefabInstance: {fileID: 5764518583592284368}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &412432810683736337 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5352227341556961729, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &475752722139416245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5288802149632603749, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -4462,6 +4467,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4629086295875110199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1135609049252115943, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ad0b29947e75d4a8a239c9f3502af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4695232679557196350 stripped
