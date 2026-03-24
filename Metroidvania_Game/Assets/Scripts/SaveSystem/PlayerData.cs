@@ -7,11 +7,11 @@ public class PlayerData
 {
     public float[] position;
 
-    public PlayerData (PrototypePlayerMovementControls controls) 
+    public PlayerData (PrototypePlayerMovementControls player) 
     {
         position = new float[2];
-        position[0] = controls.transform.position.x;
-        position[1] = controls.transform.position.y;
+        position[0] = player.transform.position.x;
+        position[1] = player.transform.position.y;
     }
 
 }
