@@ -16,6 +16,7 @@ public class LeverSwitch : MonoBehaviour
     public GameEvent switchFlipEvent;
     public GameObject buttonPrompt;
     [SerializeField] private SpriteRenderer leverSP;
+    public Sprite[] switchState;
     [Tooltip("Assign a number in relation to which opening event is triggered, starting at 0")]
     [SerializeField] private int signalNumber;
 
@@ -30,12 +31,14 @@ public class LeverSwitch : MonoBehaviour
         if (leverSP == null)
             leverSP = GetComponent<SpriteRenderer>();
 
-        if(PlayerPrefs.GetInt("DoorOpen", 0) == 1)
+        leverSP.sprite = switchState[0];
+
+        if (PlayerPrefs.GetInt("DoorOpen", 0) == 1)
         {
             flippedSwitch = true;
             wasFlipped = true;
             if (leverSP != null)
-                leverSP.flipX = true;
+                leverSP.sprite = switchState[1];
         }
     }
 
@@ -61,11 +64,12 @@ public class LeverSwitch : MonoBehaviour
         flippedSwitch = true;
 
         if (leverSP != null)
-            leverSP.flipX = true;
+            leverSP.sprite = switchState[1];
 
         Debug.Log("Lever is flipped");
 
         #region Door Type
+
         if (switchFlipEvent == null)
             return;
 
@@ -77,16 +81,19 @@ public class LeverSwitch : MonoBehaviour
                 PlayerPrefs.SetInt("DoorOpen", 1);
                 PlayerPrefs.Save();
                 break;
+
             case DoorType.Cutscene:
                 // Send signal based on which area is being opened up
                 switchFlipEvent.Raise(this, signalNumber);
                 PlayerPrefs.SetInt("DoorOpen", 1);
                 PlayerPrefs.Save();
                 break;
+
             default:
                 break;
         }
-        #endregion
+
+        #endregion Door Type
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

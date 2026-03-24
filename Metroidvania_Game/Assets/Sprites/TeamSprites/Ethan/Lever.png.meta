@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e2931a162a1e7684780bc56ec75ad69c
+guid: b06fca0d80a7e8745b42bb11c95274a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4695049622564728188
-    second: ChatGPT Image Nov 12, 2025, 05_50_05 PM_0
-  - first:
-      213: 7262519364220871956
-    second: ChatGPT Image Nov 12, 2025, 05_50_05 PM_1
+      213: -4454914845596493489
+    second: Lever_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,45 +100,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT Image Nov 12, 2025, 05_50_05 PM_0
+      name: Lever_0
       rect:
         serializedVersion: 2
-        x: 905
-        y: 100
-        width: 382
-        height: 466
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c7d6dcb91ca282140800000000000000
-      internalID: 4695049622564728188
+      spriteID: 31f2a259abcf53644b46f098da811383
+      internalID: -750288492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image Nov 12, 2025, 05_50_05 PM_1
+      name: Lever_1
       rect:
         serializedVersion: 2
-        x: 221
-        y: 103
-        width: 439
-        height: 231
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 415e7ce12e6a9c460800000000000000
-      internalID: 7262519364220871956
+      spriteID: 3881a338be19e8f40b2445a3cc999150
+      internalID: -374499280
       vertices: []
       indices: 
       edges: []
@@ -150,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1016a3a1bd812e0419b7fd916ef9fcab
+    spriteID: 336ec1e50fa841b478b9bbee7a282ffc
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +157,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChatGPT Image Nov 12, 2025, 05_50_05 PM_0: 4695049622564728188
-      ChatGPT Image Nov 12, 2025, 05_50_05 PM_1: 7262519364220871956
+      Lever_0: -750288492
+      Lever_1: -374499280
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
