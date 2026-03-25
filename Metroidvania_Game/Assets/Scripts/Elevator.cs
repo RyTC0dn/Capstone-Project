@@ -19,7 +19,6 @@ public class Elevator : MonoBehaviour
     public string elevatorLocationName;
 
     public GameEvent teleportPlayer;
-    public GameEvent UIActive;
 
     [Header("Elevator Animations")]
     [HideInInspector] public Animator elevatorAnimation;
@@ -73,18 +72,7 @@ public class Elevator : MonoBehaviour
         {
             return;
         }
-        //Check every frame if elevators have been registered
-        foreach (Button button in elevatorButtons)
-        {
-            string destinationName = button.name;
 
-            if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
-            {
-                button.interactable = ElevatorManager.instance.elevators.ContainsKey(destinationName);
-
-                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
-            }
-        }
         TextColor();
 
         if (ElevatorManager.instance.elevators.ContainsKey(elevatorLocationName))
@@ -133,6 +121,19 @@ public class Elevator : MonoBehaviour
     {
         parentPanel.SetActive(true);
 
+        //Check every frame if elevators have been registered
+        foreach (Button button in elevatorButtons)
+        {
+            string destinationName = button.name;
+
+            if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
+            {
+                button.interactable = ElevatorManager.instance.elevators.ContainsKey(destinationName);
+
+                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
+            }
+        }
+
         //Set default UI button once
         EventSystem.current.SetSelectedGameObject(ElevatorManager.instance.elevatorFirst);
 
@@ -150,6 +151,7 @@ public class Elevator : MonoBehaviour
     private IEnumerator CloseDoor(string destinationName)
     {
         elevatorAnimation.SetBool("isOpen", false);
+        ElevatorManager.instance.isActive = true;
         yield return new WaitForSeconds(0.5f);
 
         //Wait for 0.5 seconds before teleporting player so animation can play

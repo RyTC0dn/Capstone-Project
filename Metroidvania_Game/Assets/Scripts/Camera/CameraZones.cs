@@ -6,13 +6,15 @@ public class CameraZones : MonoBehaviour
 {
     [Tooltip("Set what room the boundary is for")]
     public Rooms roomType;
+
     [Tooltip("Set the boundary the camera moves in")]
     public float minX, minY, maxX, maxY;
+
     [Tooltip("Set the spawnpoint position within each room")]
     public float spawnPointX, spawnPointY;
 
-
     public bool applyToAllCameras = false;
+
     [Tooltip("If set and apply to all cameras is false, this camera will recieve the bounds")]
     public Camera specificCamera; // If applyToAllCameras is false, specify the camera to apply the bounds to
 
@@ -23,7 +25,6 @@ public class CameraZones : MonoBehaviour
 
     private static List<CameraZones> zones = new List<CameraZones>();
 
-
     private void Awake()
     {
         //Register this zone in the list on awake
@@ -33,7 +34,6 @@ public class CameraZones : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Character 1");
-
     }
 
     private void OnDestroy()
@@ -43,6 +43,8 @@ public class CameraZones : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (ElevatorManager.instance.isActive) { return; }
+
         if (collision.gameObject == player)
         {
             if (applyToAllCameras)
