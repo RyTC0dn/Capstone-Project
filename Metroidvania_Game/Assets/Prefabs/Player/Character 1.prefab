@@ -1688,9 +1688,10 @@ MonoBehaviour:
   character: 0
   attackRate: 1
   colliderHolder: {fileID: 3104063125806549742}
-  attackWindup: 0.12
-  inputBuffer: 0.18
+  attackWindup: 0.05
+  inputBuffer: 0.08
   attackCooldown: 0
+  attackSpeed: 4.78
   swordSlashAudio: {fileID: 5587350823930368243}
   audioPlayer: {fileID: 5518086543226646726}
   slashVFX: {fileID: 3875973796710765611}
