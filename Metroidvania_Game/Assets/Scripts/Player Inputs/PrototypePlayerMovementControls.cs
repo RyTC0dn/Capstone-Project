@@ -302,4 +302,17 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         Debug.DrawRay(transform.position, Vector2.down, Color.blue);
     }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        Vector2 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+    }
 }

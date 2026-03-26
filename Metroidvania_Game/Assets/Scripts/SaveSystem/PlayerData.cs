@@ -5,13 +5,15 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PlayerData
 {
+    public int health;
+
     public float[] position;
 
-    public PlayerData (PrototypePlayerMovementControls player) 
+    public PlayerData (PrototypePlayerMovementControls controller) 
     {
         position = new float[2];
-        position[0] = player.transform.position.x;
-        position[1] = player.transform.position.y;
+        position[0] = controller.transform.position.x;
+        position[1] = controller.transform.position.y;
     }
 
 }
