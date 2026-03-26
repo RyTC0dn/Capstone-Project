@@ -131,6 +131,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Set the movement function
         moveInput.x = Input.GetAxisRaw("Horizontal");
 
+        bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
+        bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
+
         Move(moveInput.x);
         InteractEvent();
         switch (CharacterSelect.selectCharacter)
@@ -154,6 +157,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             default:
                 break;
         }
+
+        if ((keyInput || buttonInput) && canSave)
+        {
+            SavePlayerPosition();
+        }
+
     }
 
     private void Update()
@@ -270,7 +279,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", true);
         }
-        if (collision.CompareTag("SaveSatation"))
+        if (collision.CompareTag("SaveStation"))
         {
             canSave = true;
         }
@@ -325,5 +334,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         Vector2 position;
         position.x = data.position[0];
         position.y = data.position[1];
+        transform.position = position;
     }
 }
