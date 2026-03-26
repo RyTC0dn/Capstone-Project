@@ -174,6 +174,11 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = true;
+            ElevatorManager.instance.SetElevator(this);
+            ElevatorManager.instance.elevatorCam.transform.position = new Vector3(this.transform.position.x,
+                this.transform.position.y,
+                this.transform.position.z - 10);
+            Debug.Log($"Current elevator is {this.name}");
         }
     }
 
@@ -182,6 +187,7 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = false;
+            ElevatorManager.instance.SetElevator(null);
         }
     }
 }
