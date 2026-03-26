@@ -3,17 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class PlayerData
+public class PlayerControllerData
 {
     public int health;
 
     public float[] position;
 
-    public PlayerData (PrototypePlayerMovementControls controller) 
+    public PlayerControllerData (PrototypePlayerMovementControls controller) 
     {
         position = new float[2];
         position[0] = controller.transform.position.x;
         position[1] = controller.transform.position.y;
     }
-
 }

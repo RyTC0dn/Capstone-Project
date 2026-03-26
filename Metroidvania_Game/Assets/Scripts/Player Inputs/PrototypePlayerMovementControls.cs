@@ -65,11 +65,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     public GameObject keyPrompt;
     public SceneInfo sceneInfo;
     private bool isController;
+    private bool canSave;
 
     private void Awake()
     {
         ////Enable player controller
         //playerController = PlayerInputHub.controls;
+        canSave = false;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -268,6 +270,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", true);
         }
+        if (collision.CompareTag("SaveSatation"))
+        {
+            canSave = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -276,6 +282,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", true);
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -296,6 +303,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", false);
         }
+        if (collision.CompareTag("SaveStation"))
+        {
+            canSave = false;
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -303,13 +314,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down, Color.blue);
     }
 
-    public void SavePlayer()
+    public void SavePlayerPosition()
     {
         SaveSystem.SavePlayer(this);
     }
-    public void LoadPlayer()
+    public void LoadPlayerPosition()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
+        PlayerControllerData data = SaveSystem.LoadPlayer();
 
         Vector2 position;
         position.x = data.position[0];
