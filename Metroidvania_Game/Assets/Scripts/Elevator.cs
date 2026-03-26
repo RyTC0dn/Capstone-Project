@@ -38,6 +38,7 @@ public class Elevator : MonoBehaviour
     private Player_Knight_Attack playerAttack;
 
     public float buttonSpacing = -50f;
+    public float messageTimer = 1;
     private bool isNear = false;
 
     private void Start()
@@ -103,6 +104,16 @@ public class Elevator : MonoBehaviour
             {
                 OpenElevatorUI();
             }
+            else
+            {
+                ElevatorManager.instance.textPopup.SetActive(true);
+                ElevatorManager.instance.inputCount++;
+            }
+        }
+        else if (pressed && ElevatorManager.instance.inputCount >= 2)
+        {
+            ElevatorManager.instance.textPopup.SetActive(false);
+            ElevatorManager.instance.inputCount = 0;
         }
     }
 

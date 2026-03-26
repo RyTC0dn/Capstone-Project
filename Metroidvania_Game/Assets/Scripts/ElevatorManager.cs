@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using System.Collections;
 using Unity.Cinemachine;
+using TMPro;
 
 public class ElevatorSaveData
 {
@@ -42,6 +43,11 @@ public class ElevatorManager : MonoBehaviour
     [SerializeField]
     private int minAudioValue, maxAudioValue;
 
+    public GameObject textPopup;
+    public TextMeshProUGUI popupText;
+    public string message;
+    public int inputCount = 0;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -58,6 +64,8 @@ public class ElevatorManager : MonoBehaviour
             saveData = JsonUtility.FromJson<ElevatorSaveData>(json);
         }
         elevatorCam.gameObject.SetActive(false);
+        popupText.text = message;
+        textPopup.SetActive(false);
     }
 
     public void CloseUI()//Close UI on button click
