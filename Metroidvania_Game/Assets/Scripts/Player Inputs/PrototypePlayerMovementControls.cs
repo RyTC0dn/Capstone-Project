@@ -210,13 +210,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             movementAudioPlayer.PlayAudioCycle(movementAudioSource,
                 grassMin, grassMax);
-            Debug.Log("This is grass");
         }
         else if ((h > 0 || h < 0) && isStone)
         {
             movementAudioPlayer.PlayAudioCycle(movementAudioSource,
                 stoneMin, stoneMax);
-            Debug.Log("This is stone");
         }
 
         ////Ternary if statement

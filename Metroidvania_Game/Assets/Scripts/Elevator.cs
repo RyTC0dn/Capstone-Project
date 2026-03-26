@@ -189,7 +189,6 @@ public class Elevator : MonoBehaviour
             ElevatorManager.instance.elevatorCam.transform.position = new Vector3(this.transform.position.x,
                 this.transform.position.y,
                 this.transform.position.z - 10);
-            Debug.Log($"Current elevator is {this.name}");
         }
     }
 

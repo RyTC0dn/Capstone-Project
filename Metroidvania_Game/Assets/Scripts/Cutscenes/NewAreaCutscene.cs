@@ -7,10 +7,13 @@ public class NewAreaCutscene : MonoBehaviour
     [SerializeField] private PlayableDirector cutsceneTimeline;
     [SerializeField] private PlayableAsset[] timeline;
     private float timeEnd;
+    public Camera cutsceneCamera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cutsceneCamera.gameObject.SetActive(false);
+
         if (cutsceneTimeline != null)
         {
             // Restart cutscene on start
@@ -39,6 +42,8 @@ public class NewAreaCutscene : MonoBehaviour
 
     IEnumerator Cutscene(int number)
     {
+        cutsceneCamera.gameObject.SetActive(true);
+
         // Pause game time while the cutscene plays (the PlayableDirector runs on unscaled time)
         Time.timeScale = 0;
 
@@ -65,6 +70,7 @@ public class NewAreaCutscene : MonoBehaviour
         {
             // Always restore time scale
             Time.timeScale = 1;
+            cutsceneCamera.gameObject.SetActive(false);
         }
     }
 }
