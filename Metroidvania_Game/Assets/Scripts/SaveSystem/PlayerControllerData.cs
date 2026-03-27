@@ -5,8 +5,6 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PlayerControllerData
 {
-    public int health;
-
     public float[] position;
 
     public PlayerControllerData (PrototypePlayerMovementControls controller) 
