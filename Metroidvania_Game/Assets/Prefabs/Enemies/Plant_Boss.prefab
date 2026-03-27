@@ -99,7 +99,71 @@ Transform:
   m_Children:
   - {fileID: 2837417567060822119}
   - {fileID: 2545034624519876028}
+  - {fileID: 4188407026469955058}
+  - {fileID: 4054375784618539460}
   m_Father: {fileID: 3539262221412780589}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1103314941633383191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4054375784618539460}
+  m_Layer: 0
+  m_Name: Position (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4054375784618539460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103314941633383191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.16, y: -4.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 578232022615081615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1240930670111705804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4188407026469955058}
+  m_Layer: 0
+  m_Name: Position (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4188407026469955058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240930670111705804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.93, y: -7.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 578232022615081615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2129054800019314055
 GameObject:
@@ -290,8 +354,8 @@ MonoBehaviour:
   - rid: 2494650475954831796
   - rid: 2494650499604414888
   - rid: 2494650505133818003
-  - rid: 2494650505133818004
   - rid: 7450366023346946638
+  - rid: 2494650660924424206
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -323,6 +387,8 @@ MonoBehaviour:
         m_Value:
         - {fileID: 4098568762855989379}
         - {fileID: 4906709063612731101}
+        - {fileID: 1240930670111705804}
+        - {fileID: 1103314941633383191}
     - rid: 2494650467571204213
       type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -370,15 +436,15 @@ MonoBehaviour:
           m_Value0: 5208220198470249893
           m_Value1: 18289043978031217443
         Name: Bite Collider
-        m_Value: {fileID: 0}
-    - rid: 2494650505133818004
-      type: {class: 'BlackboardVariable`1[[GameEvent, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+        m_Value: {fileID: 6184436523609428593}
+    - rid: 2494650660924424206
+      type: {class: 'BlackboardVariable`1[[System.String, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 17758050058754091680
-          m_Value1: 13799959276893964025
-        Name: Attack Player Event
-        m_Value: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
+          m_Value0: 7179273827200129166
+          m_Value1: 5251466681690130678
+        Name: Death Anim Trigger
+        m_Value: Death
     - rid: 7375806016656245156
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:

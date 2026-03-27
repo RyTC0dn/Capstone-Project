@@ -1,0 +1,1989 @@
+fileFormatVersion: 2
+guid: 14fc6862d50096841a37053e02d1c04d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8019603430878281810
+    second: bossdeathanim_0
+  - first:
+      213: 2386545036874575169
+    second: bossdeathanim_1
+  - first:
+      213: 1888543765225826209
+    second: bossdeathanim_2
+  - first:
+      213: -39285428529798659
+    second: bossdeathanim_3
+  - first:
+      213: -4480317696905911674
+    second: bossdeathanim_4
+  - first:
+      213: 638336373327049552
+    second: bossdeathanim_5
+  - first:
+      213: 416041100371241344
+    second: bossdeathanim_6
+  - first:
+      213: -8579688070339654053
+    second: bossdeathanim_7
+  - first:
+      213: -9148284492243099238
+    second: bossdeathanim_8
+  - first:
+      213: 682050168309929875
+    second: bossdeathanim_9
+  - first:
+      213: -8585485155733792038
+    second: bossdeathanim_10
+  - first:
+      213: 6268501627455357422
+    second: bossdeathanim_11
+  - first:
+      213: 1685965596286475882
+    second: bossdeathanim_12
+  - first:
+      213: -5359755446937930692
+    second: bossdeathanim_13
+  - first:
+      213: -3312389803441202293
+    second: bossdeathanim_14
+  - first:
+      213: 4509033083878716674
+    second: bossdeathanim_15
+  - first:
+      213: -228514443512057283
+    second: bossdeathanim_16
+  - first:
+      213: 5543021565382473951
+    second: bossdeathanim_17
+  - first:
+      213: 5812044971236754816
+    second: bossdeathanim_18
+  - first:
+      213: 8938528568893743942
+    second: bossdeathanim_19
+  - first:
+      213: -3862359796878385206
+    second: bossdeathanim_20
+  - first:
+      213: -6044873690159205848
+    second: bossdeathanim_21
+  - first:
+      213: 3231353496052736129
+    second: bossdeathanim_22
+  - first:
+      213: -1979041485071104430
+    second: bossdeathanim_23
+  - first:
+      213: 8350623976846380587
+    second: bossdeathanim_24
+  - first:
+      213: -5142521586534155120
+    second: bossdeathanim_25
+  - first:
+      213: 1445489124107877311
+    second: bossdeathanim_26
+  - first:
+      213: 737693549129631686
+    second: bossdeathanim_27
+  - first:
+      213: -8806969599781502713
+    second: bossdeathanim_28
+  - first:
+      213: 2839060142551809147
+    second: bossdeathanim_29
+  - first:
+      213: -9084261658536273402
+    second: bossdeathanim_30
+  - first:
+      213: 4589857795462156758
+    second: bossdeathanim_31
+  - first:
+      213: -8391886398475687882
+    second: bossdeathanim_32
+  - first:
+      213: 903090047842319769
+    second: bossdeathanim_33
+  - first:
+      213: 5284014306594977027
+    second: bossdeathanim_34
+  - first:
+      213: 3352162339199801373
+    second: bossdeathanim_35
+  - first:
+      213: 2991160765161635947
+    second: bossdeathanim_36
+  - first:
+      213: 5054812183355649551
+    second: bossdeathanim_37
+  - first:
+      213: 3490465851765607726
+    second: bossdeathanim_38
+  - first:
+      213: -894270536843921161
+    second: bossdeathanim_39
+  - first:
+      213: 129950480023261629
+    second: bossdeathanim_40
+  - first:
+      213: 4911992049499415715
+    second: bossdeathanim_41
+  - first:
+      213: -7983993487406794673
+    second: bossdeathanim_42
+  - first:
+      213: 6802445880273725344
+    second: bossdeathanim_43
+  - first:
+      213: -2413961812997547371
+    second: bossdeathanim_44
+  - first:
+      213: 8111631490586144339
+    second: bossdeathanim_45
+  - first:
+      213: -3894608713574787753
+    second: bossdeathanim_46
+  - first:
+      213: -8944837913926453815
+    second: bossdeathanim_47
+  - first:
+      213: -2726104397573750888
+    second: bossdeathanim_48
+  - first:
+      213: 2557511541225697205
+    second: bossdeathanim_49
+  - first:
+      213: -1402899833751197360
+    second: bossdeathanim_50
+  - first:
+      213: -3683353532698936997
+    second: bossdeathanim_51
+  - first:
+      213: -3744628537802662121
+    second: bossdeathanim_52
+  - first:
+      213: -8086723070794082257
+    second: bossdeathanim_53
+  - first:
+      213: 4574922080728990936
+    second: bossdeathanim_54
+  - first:
+      213: -6064158015727197621
+    second: bossdeathanim_55
+  - first:
+      213: 8812883269481560061
+    second: bossdeathanim_56
+  - first:
+      213: 1699562449588207216
+    second: bossdeathanim_57
+  - first:
+      213: 6906593905363738567
+    second: bossdeathanim_58
+  - first:
+      213: -3977898308752112236
+    second: bossdeathanim_59
+  - first:
+      213: -8258207423564342639
+    second: bossdeathanim_60
+  - first:
+      213: 832333416129576165
+    second: bossdeathanim_61
+  - first:
+      213: 862360900799437001
+    second: bossdeathanim_62
+  - first:
+      213: 1519158282502574377
+    second: bossdeathanim_63
+  - first:
+      213: 6287023208621302489
+    second: bossdeathanim_64
+  - first:
+      213: 6415680187000440936
+    second: bossdeathanim_65
+  - first:
+      213: 8149402036033958917
+    second: bossdeathanim_66
+  - first:
+      213: 4236574092382452286
+    second: bossdeathanim_67
+  - first:
+      213: 7288211232678783358
+    second: bossdeathanim_68
+  - first:
+      213: -3952090177004078795
+    second: bossdeathanim_69
+  - first:
+      213: -8816796741923693955
+    second: bossdeathanim_70
+  - first:
+      213: -6954212155512135142
+    second: bossdeathanim_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bossdeathanim_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1915
+        width: 138
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2500109a4da5b4f60800000000000000
+      internalID: 8019603430878281810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1866
+        width: 191
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d616b0116be1120800000000000000
+      internalID: 2386545036874575169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_2
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1915
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7601d6c84753a10800000000000000
+      internalID: 1888543765225826209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_3
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1915
+        width: 123
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1e1a36c1e647ff0800000000000000
+      internalID: -39285428529798659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1915
+        width: 119
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682e60bdac6b2d1c0800000000000000
+      internalID: -4480317696905911674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_5
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1915
+        width: 116
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053be5bac83dbd800800000000000000
+      internalID: 638336373327049552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_6
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1915
+        width: 111
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089279f2d2316c500800000000000000
+      internalID: 416041100371241344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_7
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 1915
+        width: 107
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e8fbb3823dee880800000000000000
+      internalID: -8579688070339654053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1659
+        width: 102
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91a2a759b3ca0180800000000000000
+      internalID: -9148284492243099238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_9
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1659
+        width: 96
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397db11b301277900800000000000000
+      internalID: 682050168309929875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_10
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1659
+        width: 95
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada191c1dba3ad880800000000000000
+      internalID: -8585485155733792038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_11
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1659
+        width: 95
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee14f6aa4013ef650800000000000000
+      internalID: 6268501627455357422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_12
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1659
+        width: 94
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e5f26f6c0c56710800000000000000
+      internalID: 1685965596286475882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_13
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 1659
+        width: 94
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34bc4671d25e95b0800000000000000
+      internalID: -5359755446937930692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_14
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 1659
+        width: 93
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bd24806070802d0800000000000000
+      internalID: -3312389803441202293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_15
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 1659
+        width: 93
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205331d23bd439e30800000000000000
+      internalID: 4509033083878716674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_16
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1403
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32fa68035724dcf0800000000000000
+      internalID: -228514443512057283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_17
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1403
+        width: 91
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8b3fadeb4ccec40800000000000000
+      internalID: 5543021565382473951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_18
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1403
+        width: 89
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08589299b1888a050800000000000000
+      internalID: 5812044971236754816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_19
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 1403
+        width: 89
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 643a79300680c0c70800000000000000
+      internalID: 8938528568893743942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_20
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1403
+        width: 83
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf50587a34266ac0800000000000000
+      internalID: -3862359796878385206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_21
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 1403
+        width: 77
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822b4f9e76b4c1ca0800000000000000
+      internalID: -6044873690159205848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_22
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 1403
+        width: 71
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180a0fb52e218dc20800000000000000
+      internalID: 3231353496052736129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_23
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1403
+        width: 65
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256439631480984e0800000000000000
+      internalID: -1979041485071104430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_24
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1147
+        width: 60
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ec9c0734063e370800000000000000
+      internalID: 8350623976846380587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_25
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1147
+        width: 58
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c7ad00dd712a8b0800000000000000
+      internalID: -5142521586534155120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_26
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1147
+        width: 55
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbbf32923b86f0410800000000000000
+      internalID: 1445489124107877311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_27
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 1147
+        width: 52
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c708fcdf50dc3a00800000000000000
+      internalID: 737693549129631686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_28
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1147
+        width: 50
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7010c517fcb57c580800000000000000
+      internalID: -8806969599781502713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_29
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1147
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c35cc582e566720800000000000000
+      internalID: 2839060142551809147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_30
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1147
+        width: 46
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a9e3ce6283ee180800000000000000
+      internalID: -9084261658536273402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_31
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1147
+        width: 44
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1541cc85372bf30800000000000000
+      internalID: 4589857795462156758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_32
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 892
+        width: 41
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638ac6f58c70a8b80800000000000000
+      internalID: -8391886398475687882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_33
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 892
+        width: 39
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99df4dd1d9b688c00800000000000000
+      internalID: 903090047842319769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_34
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 892
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305fca41407945940800000000000000
+      internalID: 5284014306594977027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_35
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 892
+        width: 37
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18527113e5458e20800000000000000
+      internalID: 3352162339199801373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_36
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 892
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b608b893edcb28920800000000000000
+      internalID: 2991160765161635947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_37
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 893
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0eea3336ec462640800000000000000
+      internalID: 5054812183355649551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_38
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 893
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2dce1be230a07030800000000000000
+      internalID: 3490465851765607726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_39
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 893
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8f15e4fa9e693f0800000000000000
+      internalID: -894270536843921161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_40
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 637
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db19d28e54dadc100800000000000000
+      internalID: 129950480023261629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_41
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 637
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4a4f18eb6ea2440800000000000000
+      internalID: 4911992049499415715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_42
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 637
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48f5166938233190800000000000000
+      internalID: -7983993487406794673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_43
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 637
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7e889bc74276e50800000000000000
+      internalID: 6802445880273725344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_44
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 637
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a5ce25582ef7ed0800000000000000
+      internalID: -2413961812997547371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_45
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 637
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e62490ddd429070800000000000000
+      internalID: 8111631490586144339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_46
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 637
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755db30720293f9c0800000000000000
+      internalID: -3894608713574787753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_47
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 637
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5b7fe1f4d8dd380800000000000000
+      internalID: -8944837913926453815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_48
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 381
+        width: 33
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f7cf17e7eea2ad0800000000000000
+      internalID: -2726104397573750888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_49
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 381
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf28bb423b1e7320800000000000000
+      internalID: 2557511541225697205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_50
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 381
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0592ec9b806e78ce0800000000000000
+      internalID: -1402899833751197360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_51
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 381
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b59bc4d2a7912ecc0800000000000000
+      internalID: -3683353532698936997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_52
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 381
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f5b7c4f28680cc0800000000000000
+      internalID: -3744628537802662121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_53
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 381
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28dc50663036cf80800000000000000
+      internalID: -8086723070794082257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_54
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 381
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d441f8b4636d7f30800000000000000
+      internalID: 4574922080728990936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_55
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 381
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b422ebaf968c7dba0800000000000000
+      internalID: -6064158015727197621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_56
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 125
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df77e6414a6ad4a70800000000000000
+      internalID: 8812883269481560061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_57
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 131
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e3c411b0f069710800000000000000
+      internalID: 1699562449588207216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_58
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 125
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf5511709629df50800000000000000
+      internalID: 6906593905363738567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_59
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 129
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4950432609aabc8c0800000000000000
+      internalID: -3977898308752112236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_60
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 125
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a14f42a14f46d80800000000000000
+      internalID: -8258207423564342639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_61
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 126
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec371305da0d8b00800000000000000
+      internalID: 832333416129576165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_62
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 125
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c816589ba8b7fb00800000000000000
+      internalID: 862360900799437001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_63
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 124
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 921982ab862251510800000000000000
+      internalID: 1519158282502574377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_64
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 125
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d262845c4eff3750800000000000000
+      internalID: 6287023208621302489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_65
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 124
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8684caa6323190950800000000000000
+      internalID: 6415680187000440936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_66
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 125
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50436a179fd781170800000000000000
+      internalID: 8149402036033958917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_67
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 124
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a3411d0b55bca30800000000000000
+      internalID: 4236574092382452286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_68
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 125
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79a4d3608de42560800000000000000
+      internalID: 7288211232678783358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_69
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 124
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5397c5f4cea5729c0800000000000000
+      internalID: -3952090177004078795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_70
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 125
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a11dc931274a580800000000000000
+      internalID: -8816796741923693955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossdeathanim_71
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 124
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12eef9b3ecad7f90800000000000000
+      internalID: -6954212155512135142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bossdeathanim_0: 8019603430878281810
+      bossdeathanim_1: 2386545036874575169
+      bossdeathanim_10: -8585485155733792038
+      bossdeathanim_11: 6268501627455357422
+      bossdeathanim_12: 1685965596286475882
+      bossdeathanim_13: -5359755446937930692
+      bossdeathanim_14: -3312389803441202293
+      bossdeathanim_15: 4509033083878716674
+      bossdeathanim_16: -228514443512057283
+      bossdeathanim_17: 5543021565382473951
+      bossdeathanim_18: 5812044971236754816
+      bossdeathanim_19: 8938528568893743942
+      bossdeathanim_2: 1888543765225826209
+      bossdeathanim_20: -3862359796878385206
+      bossdeathanim_21: -6044873690159205848
+      bossdeathanim_22: 3231353496052736129
+      bossdeathanim_23: -1979041485071104430
+      bossdeathanim_24: 8350623976846380587
+      bossdeathanim_25: -5142521586534155120
+      bossdeathanim_26: 1445489124107877311
+      bossdeathanim_27: 737693549129631686
+      bossdeathanim_28: -8806969599781502713
+      bossdeathanim_29: 2839060142551809147
+      bossdeathanim_3: -39285428529798659
+      bossdeathanim_30: -9084261658536273402
+      bossdeathanim_31: 4589857795462156758
+      bossdeathanim_32: -8391886398475687882
+      bossdeathanim_33: 903090047842319769
+      bossdeathanim_34: 5284014306594977027
+      bossdeathanim_35: 3352162339199801373
+      bossdeathanim_36: 2991160765161635947
+      bossdeathanim_37: 5054812183355649551
+      bossdeathanim_38: 3490465851765607726
+      bossdeathanim_39: -894270536843921161
+      bossdeathanim_4: -4480317696905911674
+      bossdeathanim_40: 129950480023261629
+      bossdeathanim_41: 4911992049499415715
+      bossdeathanim_42: -7983993487406794673
+      bossdeathanim_43: 6802445880273725344
+      bossdeathanim_44: -2413961812997547371
+      bossdeathanim_45: 8111631490586144339
+      bossdeathanim_46: -3894608713574787753
+      bossdeathanim_47: -8944837913926453815
+      bossdeathanim_48: -2726104397573750888
+      bossdeathanim_49: 2557511541225697205
+      bossdeathanim_5: 638336373327049552
+      bossdeathanim_50: -1402899833751197360
+      bossdeathanim_51: -3683353532698936997
+      bossdeathanim_52: -3744628537802662121
+      bossdeathanim_53: -8086723070794082257
+      bossdeathanim_54: 4574922080728990936
+      bossdeathanim_55: -6064158015727197621
+      bossdeathanim_56: 8812883269481560061
+      bossdeathanim_57: 1699562449588207216
+      bossdeathanim_58: 6906593905363738567
+      bossdeathanim_59: -3977898308752112236
+      bossdeathanim_6: 416041100371241344
+      bossdeathanim_60: -8258207423564342639
+      bossdeathanim_61: 832333416129576165
+      bossdeathanim_62: 862360900799437001
+      bossdeathanim_63: 1519158282502574377
+      bossdeathanim_64: 6287023208621302489
+      bossdeathanim_65: 6415680187000440936
+      bossdeathanim_66: 8149402036033958917
+      bossdeathanim_67: 4236574092382452286
+      bossdeathanim_68: 7288211232678783358
+      bossdeathanim_69: -3952090177004078795
+      bossdeathanim_7: -8579688070339654053
+      bossdeathanim_70: -8816796741923693955
+      bossdeathanim_71: -6954212155512135142
+      bossdeathanim_8: -9148284492243099238
+      bossdeathanim_9: 682050168309929875
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

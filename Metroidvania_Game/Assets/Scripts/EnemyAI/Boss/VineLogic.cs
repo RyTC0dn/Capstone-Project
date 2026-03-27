@@ -11,6 +11,8 @@ public class VineLogic : MonoBehaviour
 
     private float currentLifeTime;
 
+    public bool isSpike, isHazard, isGrab = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -29,6 +31,22 @@ public class VineLogic : MonoBehaviour
                 currentLifeTime = lifeTime;
                 Destroy(gameObject);
             }
+        }
+    }
+
+    public void VineActions(bool spike, bool grab, bool hazard)
+    {
+        if (spike)
+        {
+            animator.Play("Vine_Spike");
+        }
+        else if (grab)
+        {
+            animator.Play("Vine_Grab");
+        }
+        else if (hazard)
+        {
+            animator.Play("Vine_Hazard");
         }
     }
 

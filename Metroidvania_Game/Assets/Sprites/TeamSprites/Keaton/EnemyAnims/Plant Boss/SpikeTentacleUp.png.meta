@@ -1,0 +1,1027 @@
+fileFormatVersion: 2
+guid: 36061e3482ba6244e9fad2e7c6624bd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2386773094297957899
+    second: SpikeTentacleUp_0
+  - first:
+      213: -5946730824209215419
+    second: SpikeTentacleUp_1
+  - first:
+      213: 4568606086739205430
+    second: SpikeTentacleUp_2
+  - first:
+      213: -2003621201845416349
+    second: SpikeTentacleUp_3
+  - first:
+      213: 7686083701083027491
+    second: SpikeTentacleUp_4
+  - first:
+      213: 3145085743216948346
+    second: SpikeTentacleUp_5
+  - first:
+      213: 3886242336248895127
+    second: SpikeTentacleUp_6
+  - first:
+      213: 6844138224856435971
+    second: SpikeTentacleUp_7
+  - first:
+      213: 2405463743536277349
+    second: SpikeTentacleUp_8
+  - first:
+      213: -4108772542705115115
+    second: SpikeTentacleUp_9
+  - first:
+      213: 8001781763270396797
+    second: SpikeTentacleUp_10
+  - first:
+      213: 2979945224682408792
+    second: SpikeTentacleUp_11
+  - first:
+      213: 1650794723212912321
+    second: SpikeTentacleUp_12
+  - first:
+      213: -547568936145146044
+    second: SpikeTentacleUp_13
+  - first:
+      213: 4992496197404634279
+    second: SpikeTentacleUp_14
+  - first:
+      213: 1926089324068903895
+    second: SpikeTentacleUp_15
+  - first:
+      213: 620643030387714520
+    second: SpikeTentacleUp_16
+  - first:
+      213: -8198966229568807346
+    second: SpikeTentacleUp_17
+  - first:
+      213: 6908682053575296013
+    second: SpikeTentacleUp_18
+  - first:
+      213: 5262517718228585651
+    second: SpikeTentacleUp_19
+  - first:
+      213: 5774209800383891535
+    second: SpikeTentacleUp_20
+  - first:
+      213: 8851214819272880722
+    second: SpikeTentacleUp_21
+  - first:
+      213: -8868904658819380348
+    second: SpikeTentacleUp_22
+  - first:
+      213: -2948139271789822149
+    second: SpikeTentacleUp_23
+  - first:
+      213: 5316298593144702744
+    second: SpikeTentacleUp_24
+  - first:
+      213: 170200524437965009
+    second: SpikeTentacleUp_25
+  - first:
+      213: 4777060701914336597
+    second: SpikeTentacleUp_26
+  - first:
+      213: -7389935628805306164
+    second: SpikeTentacleUp_27
+  - first:
+      213: 104442418359982002
+    second: SpikeTentacleUp_28
+  - first:
+      213: -4505009853214559410
+    second: SpikeTentacleUp_29
+  - first:
+      213: 6581301498019117865
+    second: SpikeTentacleUp_30
+  - first:
+      213: 3755942165716143746
+    second: SpikeTentacleUp_31
+  - first:
+      213: -1705834166476335469
+    second: SpikeTentacleUp_32
+  - first:
+      213: -1059889427477140816
+    second: SpikeTentacleUp_33
+  - first:
+      213: 1593060469999218600
+    second: SpikeTentacleUp_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpikeTentacleUp_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1803
+        width: 38
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06f61dcb758f1120800000000000000
+      internalID: 2386773094297957899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1810
+        width: 38
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540d42092d7f87da0800000000000000
+      internalID: -5946730824209215419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_2
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1817
+        width: 39
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d17c6c703f66f30800000000000000
+      internalID: 4568606086739205430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_3
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 1824
+        width: 40
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e009fe125b134e0800000000000000
+      internalID: -2003621201845416349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_4
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1832
+        width: 41
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32839fc47647aaa60800000000000000
+      internalID: 7686083701083027491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_5
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1839
+        width: 41
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a747790f1d695ab20800000000000000
+      internalID: 3145085743216948346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_6
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 1846
+        width: 42
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796133b80d4bee530800000000000000
+      internalID: 3886242336248895127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_7
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1854
+        width: 42
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d8d3624734bfe50800000000000000
+      internalID: 6844138224856435971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1605
+        width: 44
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567af81b78ce16120800000000000000
+      internalID: 2405463743536277349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1612
+        width: 46
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510ee214425baf6c0800000000000000
+      internalID: -4108772542705115115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_10
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1619
+        width: 46
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b4ee15e1a0c0f60800000000000000
+      internalID: 8001781763270396797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_11
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 1627
+        width: 45
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b0157b464ea5920800000000000000
+      internalID: 2979945224682408792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_12
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1634
+        width: 46
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c6e132fd0dc8e610800000000000000
+      internalID: 1650794723212912321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_13
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1641
+        width: 47
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fa70724f4a668f0800000000000000
+      internalID: -547568936145146044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_14
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 1649
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acaac417d8e84540800000000000000
+      internalID: 4992496197404634279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_15
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1649
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db9cce0908daba10800000000000000
+      internalID: 1926089324068903895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_16
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1393
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9e49e3c87fc9800800000000000000
+      internalID: 620643030387714520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_17
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1393
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e902977ab673e80800000000000000
+      internalID: -8198966229568807346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_18
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1393
+        width: 47
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04c87559b190ef50800000000000000
+      internalID: 6908682053575296013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_19
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1393
+        width: 47
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bcc6339bf7380940800000000000000
+      internalID: 5262517718228585651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_20
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1393
+        width: 47
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48067a683d122050800000000000000
+      internalID: 5774209800383891535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_21
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1393
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252fe6d7bf4d5da70800000000000000
+      internalID: 8851214819272880722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_22
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 1393
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b8348c3325be480800000000000000
+      internalID: -8868904658819380348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_23
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1393
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3fb694c3fa1617d0800000000000000
+      internalID: -2948139271789822149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_24
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1137
+        width: 48
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8178c4c476947c940800000000000000
+      internalID: 5316298593144702744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_25
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1126
+        width: 48
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8c5b7a97cac5200800000000000000
+      internalID: 170200524437965009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_26
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1116
+        width: 47
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d051006678b4240800000000000000
+      internalID: 4777060701914336597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_27
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 1106
+        width: 45
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc88e0cf2bca17990800000000000000
+      internalID: -7389935628805306164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_28
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 1096
+        width: 45
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b754dd73dd037100800000000000000
+      internalID: 104442418359982002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_29
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1086
+        width: 43
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43f285386dfa71c0800000000000000
+      internalID: -4505009853214559410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_30
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1075
+        width: 42
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bfc2dd7da755b50800000000000000
+      internalID: 6581301498019117865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_31
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1065
+        width: 41
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e0c68ff79cf1430800000000000000
+      internalID: 3755942165716143746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_32
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 799
+        width: 40
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396147d0dd8a358e0800000000000000
+      internalID: -1705834166476335469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_33
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 789
+        width: 38
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba68066e248a41f0800000000000000
+      internalID: -1059889427477140816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeTentacleUp_34
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 779
+        width: 38
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af250c9e00bb1610800000000000000
+      internalID: 1593060469999218600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpikeTentacleUp_0: 2386773094297957899
+      SpikeTentacleUp_1: -5946730824209215419
+      SpikeTentacleUp_10: 8001781763270396797
+      SpikeTentacleUp_11: 2979945224682408792
+      SpikeTentacleUp_12: 1650794723212912321
+      SpikeTentacleUp_13: -547568936145146044
+      SpikeTentacleUp_14: 4992496197404634279
+      SpikeTentacleUp_15: 1926089324068903895
+      SpikeTentacleUp_16: 620643030387714520
+      SpikeTentacleUp_17: -8198966229568807346
+      SpikeTentacleUp_18: 6908682053575296013
+      SpikeTentacleUp_19: 5262517718228585651
+      SpikeTentacleUp_2: 4568606086739205430
+      SpikeTentacleUp_20: 5774209800383891535
+      SpikeTentacleUp_21: 8851214819272880722
+      SpikeTentacleUp_22: -8868904658819380348
+      SpikeTentacleUp_23: -2948139271789822149
+      SpikeTentacleUp_24: 5316298593144702744
+      SpikeTentacleUp_25: 170200524437965009
+      SpikeTentacleUp_26: 4777060701914336597
+      SpikeTentacleUp_27: -7389935628805306164
+      SpikeTentacleUp_28: 104442418359982002
+      SpikeTentacleUp_29: -4505009853214559410
+      SpikeTentacleUp_3: -2003621201845416349
+      SpikeTentacleUp_30: 6581301498019117865
+      SpikeTentacleUp_31: 3755942165716143746
+      SpikeTentacleUp_32: -1705834166476335469
+      SpikeTentacleUp_33: -1059889427477140816
+      SpikeTentacleUp_34: 1593060469999218600
+      SpikeTentacleUp_4: 7686083701083027491
+      SpikeTentacleUp_5: 3145085743216948346
+      SpikeTentacleUp_6: 3886242336248895127
+      SpikeTentacleUp_7: 6844138224856435971
+      SpikeTentacleUp_8: 2405463743536277349
+      SpikeTentacleUp_9: -4108772542705115115
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

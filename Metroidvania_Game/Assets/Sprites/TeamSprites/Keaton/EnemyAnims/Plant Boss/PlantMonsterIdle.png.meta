@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 7881c9b7d400fc840ba091b318e9f4b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8784313434438094486
+    second: PlantMonsterIdle_0
+  - first:
+      213: -546387418418904848
+    second: PlantMonsterIdle_1
+  - first:
+      213: 798027807746390134
+    second: PlantMonsterIdle_2
+  - first:
+      213: -3124004218857494124
+    second: PlantMonsterIdle_3
+  - first:
+      213: 5260317779183897885
+    second: PlantMonsterIdle_4
+  - first:
+      213: 2349391581739792845
+    second: PlantMonsterIdle_5
+  - first:
+      213: -6143824080889996556
+    second: PlantMonsterIdle_6
+  - first:
+      213: -5531487480853303235
+    second: PlantMonsterIdle_7
+  - first:
+      213: 3336203276559557978
+    second: PlantMonsterIdle_8
+  - first:
+      213: -2144866087986170803
+    second: PlantMonsterIdle_9
+  - first:
+      213: 1527266597042677877
+    second: PlantMonsterIdle_10
+  - first:
+      213: -3953926830078364572
+    second: PlantMonsterIdle_11
+  - first:
+      213: -6368618191238490608
+    second: PlantMonsterIdle_12
+  - first:
+      213: 9003568283983451024
+    second: PlantMonsterIdle_13
+  - first:
+      213: -6269864964257555106
+    second: PlantMonsterIdle_14
+  - first:
+      213: -7449177025976401570
+    second: PlantMonsterIdle_15
+  - first:
+      213: -1390485267480908367
+    second: PlantMonsterIdle_16
+  - first:
+      213: -1225882960784315290
+    second: PlantMonsterIdle_17
+  - first:
+      213: 1005986515270281762
+    second: PlantMonsterIdle_18
+  - first:
+      213: 2080034900419994667
+    second: PlantMonsterIdle_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlantMonsterIdle_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1915
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ecf5ff68628e970800000000000000
+      internalID: 8784313434438094486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1915
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0066fa987da68f0800000000000000
+      internalID: -546387418418904848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_2
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1915
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6787b91201a231b00800000000000000
+      internalID: 798027807746390134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_3
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1915
+        width: 141
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4996d22f6be45a4d0800000000000000
+      internalID: -3124004218857494124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_4
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1915
+        width: 141
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d8de95627600940800000000000000
+      internalID: 5260317779183897885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1915
+        width: 141
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9b4eb2237ba9020800000000000000
+      internalID: 2349391581739792845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_6
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1915
+        width: 140
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa9f00cc80ccbaa0800000000000000
+      internalID: -6143824080889996556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_7
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1915
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30f73871753c33b0800000000000000
+      internalID: -5531487480853303235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1659
+        width: 139
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55a3dd34339c4e20800000000000000
+      internalID: 3336203276559557978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_9
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1659
+        width: 139
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d447dce28a7eb32e0800000000000000
+      internalID: -2144866087986170803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_10
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1659
+        width: 139
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5786c02d0e0f13510800000000000000
+      internalID: 1527266597042677877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_11
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1659
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464fa413f74d029c0800000000000000
+      internalID: -3953926830078364572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_12
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1659
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01693295f7f1e97a0800000000000000
+      internalID: -6368618191238490608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_13
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1659
+        width: 141
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0939ecdb6a913fc70800000000000000
+      internalID: 9003568283983451024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_14
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1659
+        width: 141
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dd2cfb807fcf8a0800000000000000
+      internalID: -6269864964257555106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_15
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1659
+        width: 141
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e510da956f43f9890800000000000000
+      internalID: -7449177025976401570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1403
+        width: 141
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bde26e240104bce0800000000000000
+      internalID: -1390485267480908367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_17
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1403
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c2f3231f9ccfee0800000000000000
+      internalID: -1225882960784315290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_18
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1403
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22aa48bd76bf5fd00800000000000000
+      internalID: 1005986515270281762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantMonsterIdle_19
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1403
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24e2ffa8b4cddc10800000000000000
+      internalID: 2080034900419994667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PlantMonsterIdle_0: 8784313434438094486
+      PlantMonsterIdle_1: -546387418418904848
+      PlantMonsterIdle_10: 1527266597042677877
+      PlantMonsterIdle_11: -3953926830078364572
+      PlantMonsterIdle_12: -6368618191238490608
+      PlantMonsterIdle_13: 9003568283983451024
+      PlantMonsterIdle_14: -6269864964257555106
+      PlantMonsterIdle_15: -7449177025976401570
+      PlantMonsterIdle_16: -1390485267480908367
+      PlantMonsterIdle_17: -1225882960784315290
+      PlantMonsterIdle_18: 1005986515270281762
+      PlantMonsterIdle_19: 2080034900419994667
+      PlantMonsterIdle_2: 798027807746390134
+      PlantMonsterIdle_3: -3124004218857494124
+      PlantMonsterIdle_4: 5260317779183897885
+      PlantMonsterIdle_5: 2349391581739792845
+      PlantMonsterIdle_6: -6143824080889996556
+      PlantMonsterIdle_7: -5531487480853303235
+      PlantMonsterIdle_8: 3336203276559557978
+      PlantMonsterIdle_9: -2144866087986170803
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 42b1bf59e1a497749ba692b063d8f11c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 90751691348457199
+    second: SpikeyTentaclePlatforGrab_0
+  - first:
+      213: 5894559656475445653
+    second: SpikeyTentaclePlatforGrab_1
+  - first:
+      213: -1473857464712103150
+    second: SpikeyTentaclePlatforGrab_2
+  - first:
+      213: -198469017308417536
+    second: SpikeyTentaclePlatforGrab_3
+  - first:
+      213: 1709296078148374284
+    second: SpikeyTentaclePlatforGrab_4
+  - first:
+      213: 8680781082356032542
+    second: SpikeyTentaclePlatforGrab_5
+  - first:
+      213: 2513623208362433111
+    second: SpikeyTentaclePlatforGrab_6
+  - first:
+      213: -2903276927083463439
+    second: SpikeyTentaclePlatforGrab_7
+  - first:
+      213: -1303360529799660640
+    second: SpikeyTentaclePlatforGrab_8
+  - first:
+      213: -5365183736007647026
+    second: SpikeyTentaclePlatforGrab_9
+  - first:
+      213: 6199726479173321615
+    second: SpikeyTentaclePlatforGrab_10
+  - first:
+      213: -288505345126717073
+    second: SpikeyTentaclePlatforGrab_11
+  - first:
+      213: -9142632377422501131
+    second: SpikeyTentaclePlatforGrab_12
+  - first:
+      213: -8677829303080313244
+    second: SpikeyTentaclePlatforGrab_13
+  - first:
+      213: -2838914420077484057
+    second: SpikeyTentaclePlatforGrab_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1946
+        width: 73
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe63795be2a624100800000000000000
+      internalID: 90751691348457199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1944
+        width: 77
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599419fd6ceadc150800000000000000
+      internalID: 5894559656475445653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_2
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1943
+        width: 81
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21bf646d17ecb8be0800000000000000
+      internalID: -1473857464712103150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_3
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1942
+        width: 84
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0023964fa75ee3df0800000000000000
+      internalID: -198469017308417536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_4
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1940
+        width: 86
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f80021ab3a8b710800000000000000
+      internalID: 1709296078148374284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_5
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1939
+        width: 89
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1423c2d664587870800000000000000
+      internalID: 8680781082356032542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_6
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 1937
+        width: 91
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ade918dfe22e220800000000000000
+      internalID: 2513623208362433111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_7
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1936
+        width: 92
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc3a9c540d75b7d0800000000000000
+      internalID: -2903276927083463439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_8
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1678
+        width: 93
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0abb60fe08889ede0800000000000000
+      internalID: -1303360529799660640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_9
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1677
+        width: 94
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0af8c61d90b85b0800000000000000
+      internalID: -5365183736007647026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_10
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1676
+        width: 95
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8385bf926ad90650800000000000000
+      internalID: 6199726479173321615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_11
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1674
+        width: 94
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69abebcae50ffbf0800000000000000
+      internalID: -288505345126717073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_12
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1673
+        width: 94
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa2fbfda48de1180800000000000000
+      internalID: -9142632377422501131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_13
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 1671
+        width: 93
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46e1c68d938229780800000000000000
+      internalID: -8677829303080313244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeyTentaclePlatforGrab_14
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1670
+        width: 92
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e72c8b40662a98d0800000000000000
+      internalID: -2838914420077484057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpikeyTentaclePlatforGrab_0: 90751691348457199
+      SpikeyTentaclePlatforGrab_1: 5894559656475445653
+      SpikeyTentaclePlatforGrab_10: 6199726479173321615
+      SpikeyTentaclePlatforGrab_11: -288505345126717073
+      SpikeyTentaclePlatforGrab_12: -9142632377422501131
+      SpikeyTentaclePlatforGrab_13: -8677829303080313244
+      SpikeyTentaclePlatforGrab_14: -2838914420077484057
+      SpikeyTentaclePlatforGrab_2: -1473857464712103150
+      SpikeyTentaclePlatforGrab_3: -198469017308417536
+      SpikeyTentaclePlatforGrab_4: 1709296078148374284
+      SpikeyTentaclePlatforGrab_5: 8680781082356032542
+      SpikeyTentaclePlatforGrab_6: 2513623208362433111
+      SpikeyTentaclePlatforGrab_7: -2903276927083463439
+      SpikeyTentaclePlatforGrab_8: -1303360529799660640
+      SpikeyTentaclePlatforGrab_9: -5365183736007647026
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

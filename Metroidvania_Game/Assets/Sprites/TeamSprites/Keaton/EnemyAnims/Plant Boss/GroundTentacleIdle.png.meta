@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 90d004637b7dea843a226d4e4c43d8ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1293001476397199645
+    second: GroundTentacleIdle_0
+  - first:
+      213: -5878041538083460139
+    second: GroundTentacleIdle_1
+  - first:
+      213: 8718876702262275078
+    second: GroundTentacleIdle_2
+  - first:
+      213: 540184166278781628
+    second: GroundTentacleIdle_3
+  - first:
+      213: -1148902859071523795
+    second: GroundTentacleIdle_4
+  - first:
+      213: 1900614384181868424
+    second: GroundTentacleIdle_5
+  - first:
+      213: 2369241166855861022
+    second: GroundTentacleIdle_6
+  - first:
+      213: 561710924458047029
+    second: GroundTentacleIdle_7
+  - first:
+      213: -5170934812787962750
+    second: GroundTentacleIdle_8
+  - first:
+      213: 1887651293260795164
+    second: GroundTentacleIdle_9
+  - first:
+      213: -6855350494729762466
+    second: GroundTentacleIdle_10
+  - first:
+      213: 5912525172715587905
+    second: GroundTentacleIdle_11
+  - first:
+      213: -756210045758700418
+    second: GroundTentacleIdle_12
+  - first:
+      213: -5415908326772767877
+    second: GroundTentacleIdle_13
+  - first:
+      213: -6489826581305979809
+    second: GroundTentacleIdle_14
+  - first:
+      213: -2198437051382056188
+    second: GroundTentacleIdle_15
+  - first:
+      213: 3446458225413836609
+    second: GroundTentacleIdle_16
+  - first:
+      213: -758994661473063377
+    second: GroundTentacleIdle_17
+  - first:
+      213: 7958964903950025813
+    second: GroundTentacleIdle_18
+  - first:
+      213: -6269920767990450022
+    second: GroundTentacleIdle_19
+  - first:
+      213: -9207330646002140542
+    second: GroundTentacleIdle_20
+  - first:
+      213: -7493281441255491343
+    second: GroundTentacleIdle_21
+  - first:
+      213: 1683952223229321562
+    second: GroundTentacleIdle_22
+  - first:
+      213: 158835320069816678
+    second: GroundTentacleIdle_23
+  - first:
+      213: 1410864517487916736
+    second: GroundTentacleIdle_24
+  - first:
+      213: -4070444526888235784
+    second: GroundTentacleIdle_25
+  - first:
+      213: -7996743167066696087
+    second: GroundTentacleIdle_26
+  - first:
+      213: -4153464554646912204
+    second: GroundTentacleIdle_27
+  - first:
+      213: 8703755353594705357
+    second: GroundTentacleIdle_28
+  - first:
+      213: 86616099703863451
+    second: GroundTentacleIdle_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroundTentacleIdle_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1908
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee0a4102065e0ee0800000000000000
+      internalID: -1293001476397199645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_1
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 1908
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db6b834d500d6ea0800000000000000
+      internalID: -5878041538083460139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 1908
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ca5c68a2caff870800000000000000
+      internalID: 8718876702262275078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1908
+        width: 138
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba565023ae1f7700800000000000000
+      internalID: 540184166278781628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_4
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1908
+        width: 138
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d247c93dfe64e00f0800000000000000
+      internalID: -1148902859071523795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1908
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887782866b6506a10800000000000000
+      internalID: 1900614384181868424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_6
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1907
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13fca9d94c31e020800000000000000
+      internalID: 2369241166855861022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_7
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 1907
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53637c61c199bc700800000000000000
+      internalID: 561710924458047029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1651
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c821f3f262d38b0800000000000000
+      internalID: -5170934812787962750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_9
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1651
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1dcd9a99d8423a10800000000000000
+      internalID: 1887651293260795164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_10
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1651
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5985d6db07ecd0a0800000000000000
+      internalID: -6855350494729762466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_11
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1651
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149844591528d0250800000000000000
+      internalID: 5912525172715587905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_12
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1651
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7488fe48f66185f0800000000000000
+      internalID: -756210045758700418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_13
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1650
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7301ae4214d6d4b0800000000000000
+      internalID: -5415908326772767877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_14
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1650
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c8e5fdb118fe5a0800000000000000
+      internalID: -6489826581305979809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_15
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 1650
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40bb05b46259d71e0800000000000000
+      internalID: -2198437051382056188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_16
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1395
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fc303fe7744df20800000000000000
+      internalID: 3446458225413836609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_17
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1395
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2eea7070628775f0800000000000000
+      internalID: -758994661473063377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_18
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1395
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5540eb7696ce37e60800000000000000
+      internalID: 7958964903950025813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_19
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1395
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98b51ee744ccf8a0800000000000000
+      internalID: -6269920767990450022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_20
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1395
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a797b5f8df83080800000000000000
+      internalID: -9207330646002140542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_21
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1395
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f870f3fa34820890800000000000000
+      internalID: -7493281441255491343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_22
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1395
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51205400a99e5710800000000000000
+      internalID: 1683952223229321562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_23
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 1396
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6610c8ec1eb443200800000000000000
+      internalID: 158835320069816678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_24
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1140
+        width: 138
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6f117bdc5649310800000000000000
+      internalID: 1410864517487916736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_25
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1140
+        width: 138
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fcc4e8d440e287c0800000000000000
+      internalID: -4070444526888235784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_26
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1140
+        width: 138
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96615f6457cd50190800000000000000
+      internalID: -7996743167066696087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_27
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1140
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43348195efdeb56c0800000000000000
+      internalID: -4153464554646912204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_28
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1140
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5baee2163f9c870800000000000000
+      internalID: 8703755353594705357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTentacleIdle_29
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 1140
+        width: 139
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98bdae32e8b33100800000000000000
+      internalID: 86616099703863451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GroundTentacleIdle_0: -1293001476397199645
+      GroundTentacleIdle_1: -5878041538083460139
+      GroundTentacleIdle_10: -6855350494729762466
+      GroundTentacleIdle_11: 5912525172715587905
+      GroundTentacleIdle_12: -756210045758700418
+      GroundTentacleIdle_13: -5415908326772767877
+      GroundTentacleIdle_14: -6489826581305979809
+      GroundTentacleIdle_15: -2198437051382056188
+      GroundTentacleIdle_16: 3446458225413836609
+      GroundTentacleIdle_17: -758994661473063377
+      GroundTentacleIdle_18: 7958964903950025813
+      GroundTentacleIdle_19: -6269920767990450022
+      GroundTentacleIdle_2: 8718876702262275078
+      GroundTentacleIdle_20: -9207330646002140542
+      GroundTentacleIdle_21: -7493281441255491343
+      GroundTentacleIdle_22: 1683952223229321562
+      GroundTentacleIdle_23: 158835320069816678
+      GroundTentacleIdle_24: 1410864517487916736
+      GroundTentacleIdle_25: -4070444526888235784
+      GroundTentacleIdle_26: -7996743167066696087
+      GroundTentacleIdle_27: -4153464554646912204
+      GroundTentacleIdle_28: 8703755353594705357
+      GroundTentacleIdle_29: 86616099703863451
+      GroundTentacleIdle_3: 540184166278781628
+      GroundTentacleIdle_4: -1148902859071523795
+      GroundTentacleIdle_5: 1900614384181868424
+      GroundTentacleIdle_6: 2369241166855861022
+      GroundTentacleIdle_7: 561710924458047029
+      GroundTentacleIdle_8: -5170934812787962750
+      GroundTentacleIdle_9: 1887651293260795164
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
