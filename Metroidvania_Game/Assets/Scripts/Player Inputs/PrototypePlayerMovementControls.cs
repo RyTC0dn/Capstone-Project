@@ -67,11 +67,13 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     public GameObject keyPrompt;
     public SceneInfo sceneInfo;
     private bool isController;
+    private bool canSave;
 
     private void Awake()
     {
         ////Enable player controller
         //playerController = PlayerInputHub.controls;
+        canSave = false;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -132,6 +134,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         //Set the movement function
         moveInput.x = Input.GetAxisRaw("Horizontal");
 
+        bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
+        bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
+
         Move(moveInput.x);
         InteractEvent();
         //Depending on character state
@@ -158,6 +163,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
             default:
                 break;
         }
+
+        if ((keyInput || buttonInput) && canSave)
+        {
+            SavePlayerPosition();
+        }
+
     }
 
     private void Update()
@@ -282,6 +293,10 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", true);
         }
+        if (collision.CompareTag("SaveStation"))
+        {
+            canSave = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -290,6 +305,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", true);
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -310,10 +326,28 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", false);
         }
+        if (collision.CompareTag("SaveStation"))
+        {
+            canSave = false;
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
         Debug.DrawRay(transform.position, Vector2.down, Color.blue);
+    }
+
+    public void SavePlayerPosition()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayerPosition()
+    {
+        PlayerControllerData data = SaveSystem.LoadPlayer();
+
+        Vector2 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        transform.position = position;
     }
 }
