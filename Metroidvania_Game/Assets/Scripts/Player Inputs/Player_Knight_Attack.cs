@@ -44,6 +44,8 @@ public class Player_Knight_Attack : MonoBehaviour
 
     private float bufferTimer = 0f;
 
+    [Range(0.5f, 10f)] public float attackSpeed;
+
     private PrototypePlayerMovementControls playerMovement;
 
     [SerializeField] private AudioSource swordSlashAudio;
@@ -147,6 +149,7 @@ public class Player_Knight_Attack : MonoBehaviour
             if (delayTillAttack <= 0f)
             {
                 hasAttacked = false;
+                hasAttackedFirst = false;
                 delayTillAttack = 1f / attackRate;
             }
         }
@@ -197,9 +200,15 @@ public class Player_Knight_Attack : MonoBehaviour
     private IEnumerator PerformAttackWithWindup(/*Vector2 direction*/)
     {
         if (hasAttackedFirst)
+        {
             yield return new WaitForSeconds(attackWindup);
+            attackSpeed = 2;
+        }
         else
+        {
             hasAttackedFirst = true;
+            attackSpeed = 4f;
+        }
 
         // mark attack started and set cooldown
         hasAttacked = true;
@@ -210,6 +219,7 @@ public class Player_Knight_Attack : MonoBehaviour
         {
             case Character.Knight:
                 //Pass in direction for directional attacks (if needed)
+                animator.SetFloat("slashSpeed", attackSpeed); // set the speed of the slash animation
                 animator.SetTrigger("isSlashing"); // now only performs visual/sound/collider work
 
                 //Play knight audio
@@ -245,9 +255,6 @@ public class Player_Knight_Attack : MonoBehaviour
         }
         weaponColliders[collider].enabled = true;
 
-        slashVFX.Play();
-        slashVFX.Clear();
-
         StartCoroutine(ResetWeapon());
     }
 
@@ -271,11 +278,9 @@ public class Player_Knight_Attack : MonoBehaviour
         StartCoroutine(ResetWeapon());
     }
 
-    private bool IsAnimatorStatePlaying(string stateName)
+    public void ActivateVFX()
     {
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        // Check if current state is the target state & the animation is not looping
-        // looping animations have a normalized time greater than 1
-        return stateInfo.IsName(stateName) && stateInfo.normalizedTime < 1.0f;
+        slashVFX.Play();
+        slashVFX.Clear();
     }
 }

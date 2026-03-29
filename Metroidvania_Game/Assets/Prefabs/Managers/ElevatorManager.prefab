@@ -1892,6 +1892,16 @@ MonoBehaviour:
   isActive: 0
   parentPanel: {fileID: 1368645902131436300}
   elevatorFirst: {fileID: 3660466363690864242}
+  cameraSpeed: 0
+  elevatorCam: {fileID: 0}
+  transitionReady: 0
+  elevatorAudioPlayer: {fileID: 0}
+  elevatorAudioSource: {fileID: 0}
+  minAudioValue: 0
+  maxAudioValue: 0
+  textPopup: {fileID: 0}
+  popupText: {fileID: 0}
+  message: Perhaps I need to find another elevator to activate
 --- !u!320 &7050290088981174768
 PlayableDirector:
   m_ObjectHideFlags: 0

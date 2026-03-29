@@ -1656,12 +1656,17 @@ MonoBehaviour:
   movementAudioPlayer: {fileID: 4629086295875110199}
   movementAudioSource: {fileID: 412432810683736337}
   idleAccumTimer: 0
-  grassMin: 0
-  grassMax: 3
-  stoneMin: 4
+  grassMin: 8
+  grassMax: 15
+  stoneMin: 0
   stoneMax: 7
-  townName: Town
-  levelName: Level 1
+  stoneLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  grassLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  detectionLength: 2
   buttonPrompt: {fileID: 7362015414511754493}
   keyPrompt: {fileID: 8744941819710305476}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
@@ -1683,9 +1688,10 @@ MonoBehaviour:
   character: 0
   attackRate: 1
   colliderHolder: {fileID: 3104063125806549742}
-  attackWindup: 0.12
-  inputBuffer: 0.18
+  attackWindup: 0.05
+  inputBuffer: 0.08
   attackCooldown: 0
+  attackSpeed: 4.78
   swordSlashAudio: {fileID: 5587350823930368243}
   audioPlayer: {fileID: 5518086543226646726}
   slashVFX: {fileID: 3875973796710765611}
@@ -1704,9 +1710,9 @@ MonoBehaviour:
   jumpForce: 12.5
   fallMultiplier: 3.5
   lowJumpMultiplier: 2
-  groundLayer:
+  jumpableLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   gravityScale: 4
   isGrounded: 0
   coyoteTime: 0
@@ -3534,10 +3540,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2000344719348730365, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2034304033768663012, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_Name
       value: Shield
@@ -3628,14 +3630,6 @@ PrefabInstance:
       objectReference: {fileID: 3057901138673806655}
     - target: {fileID: 2710113643634894858, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3075772357592492437, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3075772357592492437, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3085773221270019930, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
@@ -3830,26 +3824,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4277453699888571380, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4277453699888571380, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7753091697373045751}
-    - target: {fileID: 4277453699888571380, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayAudio
-      objectReference: {fileID: 0}
-    - target: {fileID: 4277453699888571380, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4277453699888571380, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4310388847793933421, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
@@ -4001,6 +3975,10 @@ PrefabInstance:
     - target: {fileID: 5867481500788867153, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171628892797666568, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6171628892797666568, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode

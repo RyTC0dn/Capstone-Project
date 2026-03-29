@@ -6,13 +6,15 @@ public class CameraZones : MonoBehaviour
 {
     [Tooltip("Set what room the boundary is for")]
     public Rooms roomType;
+
     [Tooltip("Set the boundary the camera moves in")]
     public float minX, minY, maxX, maxY;
+
     [Tooltip("Set the spawnpoint position within each room")]
     public float spawnPointX, spawnPointY;
 
-
     public bool applyToAllCameras = false;
+
     [Tooltip("If set and apply to all cameras is false, this camera will recieve the bounds")]
     public Camera specificCamera; // If applyToAllCameras is false, specify the camera to apply the bounds to
 
@@ -23,7 +25,6 @@ public class CameraZones : MonoBehaviour
 
     private static List<CameraZones> zones = new List<CameraZones>();
 
-
     private void Awake()
     {
         //Register this zone in the list on awake
@@ -33,7 +34,6 @@ public class CameraZones : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Character 1");
-
     }
 
     private void OnDestroy()
@@ -43,6 +43,8 @@ public class CameraZones : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (ElevatorManager.instance.transitionReady) { return; }
+
         if (collision.gameObject == player)
         {
             if (applyToAllCameras)
@@ -74,20 +76,44 @@ public class CameraZones : MonoBehaviour
                 SetSpawnPoint();
                 ActivateThisSpawn();
             }
-            //else if (specificCamera != null)
-            //{
-            //    CameraControl camControl = specificCamera.GetComponent<CameraControl>();
-            //    if (camControl != null)
-            //    {
-            //        camControl.SetBounds(minX, maxX, minY, maxY, roomType);
-            //    }
-            //}
-            //CameraControl cam = Camera.main.GetComponent<CameraControl>();
-            //if (cam != null)
-            //{
-            //    cam.SetBounds(minX, maxX, minY, maxY, roomType);
-            //}
-            //SetSpawnPoint();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (ElevatorManager.instance.transitionReady) { return; }
+
+        if (collision.gameObject == player)
+        {
+            if (applyToAllCameras)
+            {
+                // FindObjectsOfType returns all active CameraControl instances in the scene
+                var allCams = FindObjectsOfType<CameraControl>();
+                foreach (var camCrtl in allCams)
+                {
+                    if (camCrtl != null)
+                        camCrtl.SetBounds(minX, maxX, minY, maxY, roomType);
+                }
+            }
+            else
+            {
+                // Apply to a specific camera if assigned, otherwise fall back to Camera.main
+                Camera cam = specificCamera != null ? specificCamera : Camera.main;
+                if (cam != null)
+                {
+                    var camCtrl = cam.GetComponent<CameraControl>();
+                    if (camCtrl != null)
+                        camCtrl.SetBounds(minX, maxX, minY, maxY, roomType);
+                    else
+                        Debug.LogWarning($"Camera '{cam.name}' does not have a CameraControl component.");
+                }
+                else
+                {
+                    Debug.LogWarning("No camera found to apply bounds to (specificCamera is null and Camera.main is null).");
+                }
+                SetSpawnPoint();
+                ActivateThisSpawn();
+            }
         }
     }
 

@@ -57,7 +57,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     public int stoneMin, stoneMax;
     private bool isGrass, isStone;
-    public string townName, levelName;
+    [SerializeField] private LayerMask stoneLayer; //Apply the ground layer
+    [SerializeField] private LayerMask grassLayer;
+    [SerializeField] private float detectionLength;
 
     [Header("UI")]
     public GameObject buttonPrompt;
@@ -89,8 +91,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         isController = sceneInfo.OnDeviceChange(Gamepad.current);
 
         //Keep track of the current scene
-        isGrass = SceneManager.GetActiveScene().name == townName;
-        isStone = SceneManager.GetActiveScene().name == levelName;
+        //isGrass = SceneManager.GetActiveScene().name == townName;
+        isGrass = Physics2D.Raycast(transform.position, Vector2.down, detectionLength, grassLayer);
+        isStone = Physics2D.Raycast(transform.position, Vector2.down, detectionLength, stoneLayer);
     }
 
     public void InteractEvent()
@@ -136,8 +139,11 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         Move(moveInput.x);
         InteractEvent();
+        //Depending on character state
         switch (CharacterSelect.selectCharacter)
         {
+            //Play character specific animations
+            //animation setup within character 1 animator
             case Character.Knight:
                 animator.SetBool("isKnight", true);
                 break;
@@ -212,9 +218,17 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         animator.SetFloat("horizontal", h);
 
         if ((h > 0 || h < 0) && isGrass)
-            movementAudioPlayer.PlayAudioCycle(movementAudioSource, grassMin, grassMax);
+        {
+            movementAudioPlayer.PlayAudioCycle(movementAudioSource,
+                grassMin, grassMax);
+            Debug.Log("This is grass");
+        }
         else if ((h > 0 || h < 0) && isStone)
-            movementAudioPlayer.PlayAudioCycle(movementAudioSource, stoneMin, stoneMax);
+        {
+            movementAudioPlayer.PlayAudioCycle(movementAudioSource,
+                stoneMin, stoneMax);
+            Debug.Log("This is stone");
+        }
 
         ////Ternary if statement
         ////is the bool is sprinting true? if it is multiply hspeed by playerspeed and sprint factor

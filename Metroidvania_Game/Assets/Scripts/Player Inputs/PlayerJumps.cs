@@ -20,7 +20,7 @@ public class PlayerJumps : MonoBehaviour
 
     public float fallMultiplier = 2.5f;     //How muc to increase gravity scale when falling
     public float lowJumpMultiplier = 2f;   //Factor for small jumps
-    public LayerMask groundLayer;         //Layer for the ground
+    public LayerMask jumpableLayers;         //Layer for the ground
     [SerializeField] private float gravityScale = 4f;
 
     private int jumpCount = 0;
@@ -68,7 +68,7 @@ public class PlayerJumps : MonoBehaviour
         //Raycasts are lines that check for collisions. They return a true or false
         //Minimum parameters are astarting point, direction, and size
         //The additional parameter is the layermask, "which layer?"
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, jumpableLayers);
 
         //Gravity modifications
         //If the player is falling, increase gravity factor

@@ -19,7 +19,6 @@ public class Elevator : MonoBehaviour
     public string elevatorLocationName;
 
     public GameEvent teleportPlayer;
-    public GameEvent UIActive;
 
     [Header("Elevator Animations")]
     [HideInInspector] public Animator elevatorAnimation;
@@ -39,6 +38,7 @@ public class Elevator : MonoBehaviour
     private Player_Knight_Attack playerAttack;
 
     public float buttonSpacing = -50f;
+    public float messageTimer = 1;
     private bool isNear = false;
 
     private void Start()
@@ -73,18 +73,7 @@ public class Elevator : MonoBehaviour
         {
             return;
         }
-        //Check every frame if elevators have been registered
-        foreach (Button button in elevatorButtons)
-        {
-            string destinationName = button.name;
 
-            if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
-            {
-                button.interactable = ElevatorManager.instance.elevators.ContainsKey(destinationName);
-
-                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
-            }
-        }
         TextColor();
 
         if (ElevatorManager.instance.elevators.ContainsKey(elevatorLocationName))
@@ -115,6 +104,16 @@ public class Elevator : MonoBehaviour
             {
                 OpenElevatorUI();
             }
+            else
+            {
+                ElevatorManager.instance.textPopup.SetActive(true);
+                ElevatorManager.instance.inputCount++;
+            }
+        }
+        else if (pressed && ElevatorManager.instance.inputCount >= 2)
+        {
+            ElevatorManager.instance.textPopup.SetActive(false);
+            ElevatorManager.instance.inputCount = 0;
         }
     }
 
@@ -133,6 +132,19 @@ public class Elevator : MonoBehaviour
     {
         parentPanel.SetActive(true);
 
+        //Check every frame if elevators have been registered
+        foreach (Button button in elevatorButtons)
+        {
+            string destinationName = button.name;
+
+            if (ElevatorManager.instance.elevators.ContainsKey(destinationName))
+            {
+                button.interactable = ElevatorManager.instance.elevators.ContainsKey(destinationName);
+
+                PlayerPrefs.GetString("ElevatorRegistered", elevatorLocationName);
+            }
+        }
+
         //Set default UI button once
         EventSystem.current.SetSelectedGameObject(ElevatorManager.instance.elevatorFirst);
 
@@ -150,6 +162,7 @@ public class Elevator : MonoBehaviour
     private IEnumerator CloseDoor(string destinationName)
     {
         elevatorAnimation.SetBool("isOpen", false);
+        ElevatorManager.instance.isActive = true;
         yield return new WaitForSeconds(0.5f);
 
         //Wait for 0.5 seconds before teleporting player so animation can play
@@ -172,6 +185,11 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = true;
+            ElevatorManager.instance.SetElevator(this);
+            ElevatorManager.instance.elevatorCam.transform.position = new Vector3(this.transform.position.x,
+                this.transform.position.y,
+                this.transform.position.z - 10);
+            Debug.Log($"Current elevator is {this.name}");
         }
     }
 
@@ -180,6 +198,7 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = false;
+            ElevatorManager.instance.SetElevator(null);
         }
     }
 }
