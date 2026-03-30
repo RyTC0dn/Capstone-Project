@@ -8,6 +8,7 @@ public class SaveStation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI buttonText;
 
     [SerializeField] private Animator saveAnimator;
+    [SerializeField] private Animator healAnimator;
 
     private bool isDetected;
 
