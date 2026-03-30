@@ -226,12 +226,12 @@ TextureImporter:
       name: Healing_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 18
+        x: 0
+        y: 0
         width: 15
-        height: 15
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -248,10 +248,10 @@ TextureImporter:
       name: Healing_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 13
-        width: 22
-        height: 22
+        x: 25
+        y: 0
+        width: 15
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +270,10 @@ TextureImporter:
       name: Healing_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 6
-        width: 36
-        height: 34
+        x: 85
+        y: 0
+        width: 22
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +292,10 @@ TextureImporter:
       name: Healing_3
       rect:
         serializedVersion: 2
-        x: 206
-        y: 6
-        width: 36
-        height: 34
+        x: 143
+        y: 0
+        width: 34
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,10 +314,10 @@ TextureImporter:
       name: Healing_4
       rect:
         serializedVersion: 2
-        x: 270
-        y: 6
-        width: 35
-        height: 34
+        x: 207
+        y: 0
+        width: 34
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: Healing_5
       rect:
         serializedVersion: 2
-        x: 327
-        y: 5
-        width: 44
-        height: 54
+        x: 271
+        y: 0
+        width: 34
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +358,10 @@ TextureImporter:
       name: Healing_6
       rect:
         serializedVersion: 2
-        x: 391
-        y: 5
-        width: 45
-        height: 68
+        x: 327
+        y: 0
+        width: 44
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,10 +380,10 @@ TextureImporter:
       name: Healing_7
       rect:
         serializedVersion: 2
-        x: 455
-        y: 5
-        width: 45
-        height: 83
+        x: 391
+        y: 0
+        width: 44
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,10 +402,10 @@ TextureImporter:
       name: Healing_8
       rect:
         serializedVersion: 2
-        x: 519
-        y: 5
-        width: 45
-        height: 111
+        x: 455
+        y: 0
+        width: 44
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +424,10 @@ TextureImporter:
       name: Healing_9
       rect:
         serializedVersion: 2
-        x: 584
-        y: 5
-        width: 44
-        height: 123
+        x: 519
+        y: 0
+        width: 45
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,10 +446,10 @@ TextureImporter:
       name: Healing_10
       rect:
         serializedVersion: 2
-        x: 648
-        y: 5
+        x: 584
+        y: 0
         width: 45
-        height: 123
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,10 +468,10 @@ TextureImporter:
       name: Healing_11
       rect:
         serializedVersion: 2
-        x: 715
-        y: 5
-        width: 44
-        height: 123
+        x: 648
+        y: 0
+        width: 45
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,6 +482,28 @@ TextureImporter:
       bones: []
       spriteID: 4a71c15ef9d9fa2a0800000000000000
       internalID: -6723982408571676764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healing_12
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 0
+        width: 43
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86a68b8fcb319b419fd051b3be2208b
+      internalID: -4873551827386989881
       vertices: []
       indices: 
       edges: []
