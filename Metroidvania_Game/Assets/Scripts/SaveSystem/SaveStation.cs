@@ -24,6 +24,11 @@ public class SaveStation : MonoBehaviour
         bool keyInput = Keyboard.current?.eKey.isPressed ?? false;
         bool buttonInput = Gamepad.current?.xButton.isPressed ?? false;
 
+        if (keyInput || buttonInput && isDetected)
+        {
+            saveAnimator.Play("SaveStation");
+        }
+
 
     }
 
