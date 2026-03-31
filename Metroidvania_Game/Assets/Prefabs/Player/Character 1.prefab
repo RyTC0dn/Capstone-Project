@@ -2017,6 +2017,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: 0
+  buttonPromptText: {fileID: 959485594169602451}
+  keyChar: E
   clockIcons:
   - {fileID: 1268234722830003928}
   - {fileID: 8991543042266567461}
@@ -3408,6 +3410,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 557057250200681630, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 668970413496172163, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
@@ -4385,6 +4391,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &959485594169602451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4805173729714929987, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}
+  m_PrefabInstance: {fileID: 5764518583592284368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1063261500313886685 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4701434408033922829, guid: a8f78aa7185751c4ebde0bc8f9c314f5, type: 3}

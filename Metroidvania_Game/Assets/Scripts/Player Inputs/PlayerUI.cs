@@ -13,6 +13,9 @@ public class PlayerUI : MonoBehaviour
     [Header("UI Text")]
     private bool menuOpened;
 
+    public TextMeshProUGUI buttonPromptText;
+    public string keyChar;
+
     [Header("HP Icon")]
     public List<Image> clockIcons = new List<Image>(); //Drag each UI Clock image in order
 
@@ -81,6 +84,7 @@ public class PlayerUI : MonoBehaviour
 
         reminder.npcName = nameText.text;
         textBox.SetActive(false);
+        buttonPromptText.text = keyChar;
     }
 
     private void Update()
