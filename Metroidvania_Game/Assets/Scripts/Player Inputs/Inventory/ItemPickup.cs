@@ -39,6 +39,9 @@ public class ItemPickup : MonoBehaviour
 
         //Grab game object id from Unity
         id = gameObject.GetInstanceID();
+
+        wallBreak.SetActive(true);
+        shield.SetActive(true);
     }
 
     private void Update()

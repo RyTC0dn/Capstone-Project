@@ -102,29 +102,12 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         bool button = Gamepad.current?.buttonWest.wasPressedThisFrame ?? false;
         bool isPressed = key || button;
 
-        bool resetKey = Keyboard.current?.pKey.wasPressedThisFrame ?? false;
-        bool resetButton = Gamepad.current?.dpad.up.wasPressedThisFrame ?? false;
-        bool reset = resetKey || resetButton;
-
         //If either the ekey or xButton is pressed
         if (isPressed)
         {
             //Send the interact event out
             playerInteract.Raise(this, isPressed);
         }
-        if (reset)
-        {
-            ResetLevel();
-        }
-    }
-
-    public void ResetLevel()
-    {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-
-        string sceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(sceneName);
     }
 
     //FixedUpdate runs every frame at a set interval
