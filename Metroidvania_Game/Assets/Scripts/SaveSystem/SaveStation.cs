@@ -8,7 +8,6 @@ public class SaveStation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI buttonText;
 
     [SerializeField] private Animator saveAnimator;
-    [SerializeField] private Animator healAnimator;
 
     private bool isDetected;
 
@@ -26,7 +25,11 @@ public class SaveStation : MonoBehaviour
 
         if (keyInput || buttonInput && isDetected)
         {
-            saveAnimator.Play("SaveStation");
+            saveAnimator.SetBool("isSaving", true);
+        }
+        else
+        {
+            saveAnimator.SetBool("isSaving", false);
         }
 
 
