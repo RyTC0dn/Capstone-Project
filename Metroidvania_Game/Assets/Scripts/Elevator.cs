@@ -82,7 +82,7 @@ public class Elevator : MonoBehaviour
 
     private void FixedUpdate()
     {
-        InputListener();
+        //InputListener();
     }
 
     private void TextColor()
@@ -110,23 +110,36 @@ public class Elevator : MonoBehaviour
                 ElevatorManager.instance.inputCount++;
             }
         }
-        else if (pressed && ElevatorManager.instance.inputCount >= 2)
+        if (pressed && ElevatorManager.instance.inputCount >= 2)
         {
             ElevatorManager.instance.textPopup.SetActive(false);
             ElevatorManager.instance.inputCount = 0;
         }
     }
 
-    //public void OnInteract(Component sender, object data)
-    //{
-    //    if (data is bool interact && interact && isNear)
-    //    {
-    //        if (ElevatorManager.instance.elevators.Count > 1)
-    //        {
-    //            OpenElevatorUI();
-    //        }
-    //    }
-    //}
+    public void OnInteract(Component sender, object data)
+    {
+        if (data is bool interact)
+        {
+            if (interact && isNear)
+            {
+                if (ElevatorManager.instance.elevators.Count > 1)
+                {
+                    OpenElevatorUI();
+                }
+                else
+                {
+                    ElevatorManager.instance.textPopup.SetActive(true);
+                    ElevatorManager.instance.inputCount++;
+                }
+            }
+            else if (!isNear && interact && ElevatorManager.instance.inputCount >= 2)
+            {
+                ElevatorManager.instance.textPopup.SetActive(false);
+                ElevatorManager.instance.inputCount = 0;
+            }
+        }
+    }
 
     private void OpenElevatorUI()
     {
