@@ -185,26 +185,28 @@ public class ElevatorManager : MonoBehaviour
 
     private void AudioTrigger(string destinationName)
     {
+        elevatorAudioPlayer.PlayAudio(8, elevatorAudioSource, true);
+
         //Have each audio clip equal to different floor
-        if (destinationName == "Elevator_Entrance")
+        if (destinationName == "Ground Floor")
         {
-            elevatorAudioPlayer.PlayAudio(4, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(4, elevatorAudioSource, true);
         }
-        else if (destinationName == "Elevator_A2")
+        else if (destinationName == "Floor 1")
         {
-            elevatorAudioPlayer.PlayAudio(0, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(0, elevatorAudioSource, true);
         }
-        else if (destinationName == "Elevator_A3")
+        else if (destinationName == "Floor 2")
         {
-            elevatorAudioPlayer.PlayAudio(1, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(1, elevatorAudioSource, true);
         }
-        else if (destinationName == "Elevator_Runup")
+        else if (destinationName == "Runup Floor")
         {
-            elevatorAudioPlayer.PlayAudio(2, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(2, elevatorAudioSource, true);
         }
-        else if (destinationName == "Elevator_Boss")
+        else if (destinationName == "Boss Floor")
         {
-            elevatorAudioPlayer.PlayAudio(3, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(3, elevatorAudioSource, true);
         }
     }
 
@@ -217,13 +219,13 @@ public class ElevatorManager : MonoBehaviour
         if (startPos.y < targetPos.y)
         {
             //Play the elevator going up audio clip
-            elevatorAudioPlayer.PlayAudio(7, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(7, elevatorAudioSource, false);
         }
         //If the start position is greater than the target position
         else if (startPos.y > targetPos.y)
         {
             //Play the elevator going down audio clip
-            elevatorAudioPlayer.PlayAudio(6, elevatorAudioSource);
+            elevatorAudioPlayer.PlayAudio(6, elevatorAudioSource, false);
         }
     }
 }

@@ -155,12 +155,12 @@ public class ShopManager : MonoBehaviour
             {
                 //Set the shop ui object to active when function is called
                 if (!firstOccurence)
-                    player.PlayAudio(firstOccurrenceElement, audioSource);
+                    player.PlayAudio(firstOccurrenceElement, audioSource, false);
                 else
                 {
                     if (!notUsed)
                     {
-                        player.PlayAudio(regularOccurrenceElement, audioSource);
+                        player.PlayAudio(regularOccurrenceElement, audioSource, false);
                         firstOccurence = true;
                     }
                 }
@@ -222,7 +222,7 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.TrySpendCoins(swordUpgradePrice))
         {
             //Play audio clip for purchasing
-            player.PlayAudio(purchaseElement, audioSource);
+            player.PlayAudio(purchaseElement, audioSource, false);
 
             purchaseCount++;
             boughtUpgrade = true;
@@ -246,7 +246,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins");
-            player.PlayAudio(noMoneyElement, audioSource);
+            player.PlayAudio(noMoneyElement, audioSource, false);
         }
     }
 
@@ -255,7 +255,7 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.TrySpendCoins(knockbackUpgradePrice))
         {
             //Play audio clip for purchasing
-            player.PlayAudio(purchaseElement, audioSource);
+            player.PlayAudio(purchaseElement, audioSource, false);
 
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
@@ -269,7 +269,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins");
-            player.PlayAudio(noMoneyElement, audioSource);
+            player.PlayAudio(noMoneyElement, audioSource, false);
         }
     }
 
@@ -279,7 +279,7 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.TrySpendCoins(axePrice))
         {
             //If purchased, play audio cue
-            player.PlayAudio(purchaseElement, audioSource);
+            player.PlayAudio(purchaseElement, audioSource, false);
             //buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             sceneInfo.isAxeBought = true;
@@ -292,7 +292,7 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            player.PlayAudio(noMoneyElement, audioSource);
+            player.PlayAudio(noMoneyElement, audioSource, false);
         }
     }
 
@@ -309,14 +309,14 @@ public class ShopManager : MonoBehaviour
         int amount = GameManager.instance.currentCoin;
         if (amount >= healthPrice)
         {
-            player.PlayAudio(purchaseElement, audioSource);
+            player.PlayAudio(purchaseElement, audioSource, false);
             //buyEvent.Raise(this, healthPrice);
 
             sceneInfo.isHPBought = true;
         }
         else if (amount <= 0)
         {
-            player.PlayAudio(noMoneyElement, audioSource);
+            player.PlayAudio(noMoneyElement, audioSource, false);
         }
     }
 
@@ -336,12 +336,12 @@ public class ShopManager : MonoBehaviour
         if (!boughtAxe && !boughtUpgrade && shopType == ShopType.Blacksmith)
         {
             //Play audio clip if player hasn't bought anything from shop
-            player.PlayAudio(leaveWithoutPayElement, audioSource);
+            player.PlayAudio(leaveWithoutPayElement, audioSource, false);
         }
         else if (!boughtHealth && shopType == ShopType.Alchemist)
         {
             //Play audio clip if player hasn't bought anything from shop
-            player.PlayAudio(leaveWithoutPayElement, audioSource);
+            player.PlayAudio(leaveWithoutPayElement, audioSource, false);
         }
         else
         {

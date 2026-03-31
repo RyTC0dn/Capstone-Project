@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 525178776216761897}
   - component: {fileID: 3838786463061147844}
   m_Layer: 0
-  m_Name: Elevator_A3
+  m_Name: Elevator_2F
   m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003631c6b300964ea4a35f458a79c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorLocationName: Elevator_A3
+  elevatorLocationName: Floor 2
   teleportPlayer: {fileID: 11400000, guid: 230ad68fe92e39f479b82ede584c6a0e, type: 2}
   elevatorAnimation: {fileID: 0}
   parentPanel: {fileID: 640649593642543826}
@@ -569,6 +569,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 66534527b92e90f4194ae493b3b71266, type: 3}
   - {fileID: 8300000, guid: 5f0bf21e68293b4468727f0a5b1621f2, type: 3}
   - {fileID: 8300000, guid: 57e3904ff7c58be408473d6e8c69da6d, type: 3}
+  - {fileID: 8300000, guid: 66534527b92e90f4194ae493b3b71266, type: 3}
+  overlapAudio: 1
 --- !u!1 &1323019894688350891
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +587,7 @@ GameObject:
   - component: {fileID: 8040048556682037951}
   - component: {fileID: 1382805789954195594}
   m_Layer: 0
-  m_Name: Elevator_Runup
+  m_Name: Elevator_3F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003631c6b300964ea4a35f458a79c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorLocationName: Elevator_Runup
+  elevatorLocationName: Runup Floor
   teleportPlayer: {fileID: 11400000, guid: 230ad68fe92e39f479b82ede584c6a0e, type: 2}
   elevatorAnimation: {fileID: 0}
   parentPanel: {fileID: 640649593642543826}
@@ -1321,7 +1323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1408,7 +1410,7 @@ GameObject:
   - component: {fileID: 8579808669263754498}
   - component: {fileID: 8297164042774886986}
   m_Layer: 0
-  m_Name: Elevator_Entrance
+  m_Name: Elevator_GroundF
   m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,7 +1446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003631c6b300964ea4a35f458a79c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorLocationName: Elevator_Entrance
+  elevatorLocationName: Ground Floor
   teleportPlayer: {fileID: 11400000, guid: 230ad68fe92e39f479b82ede584c6a0e, type: 2}
   elevatorAnimation: {fileID: 0}
   parentPanel: {fileID: 640649593642543826}
@@ -1923,7 +1925,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8713970916682611409}
   - component: {fileID: 105429767417720446}
-  - component: {fileID: 1313738672680223736}
   - component: {fileID: 8462646598668456048}
   m_Layer: 0
   m_Name: Elevator_Camera
@@ -1998,14 +1999,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1313738672680223736
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013351172722831906}
-  m_Enabled: 1
 --- !u!114 &8462646598668456048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2408,7 +2401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2619,7 +2612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2755,7 +2748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3065,7 +3058,7 @@ GameObject:
   - component: {fileID: 4294316260257967945}
   - component: {fileID: 3783835074616105019}
   m_Layer: 0
-  m_Name: Elevator_A2
+  m_Name: Elevator_1F
   m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3101,7 +3094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003631c6b300964ea4a35f458a79c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorLocationName: Elevator_A2
+  elevatorLocationName: Floor 1
   teleportPlayer: {fileID: 11400000, guid: 230ad68fe92e39f479b82ede584c6a0e, type: 2}
   elevatorAnimation: {fileID: 0}
   parentPanel: {fileID: 640649593642543826}
@@ -3579,8 +3572,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 9071945581254237684}
     m_Modifications:
     - target: {fileID: 1284406769882150459, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_Name
+      value: Runup Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284406769882150459, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_TagString
       value: Elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521724686910128933, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_text
+      value: 'Boss Floor
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947318098191952636, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_text
+      value: 'Floor 2
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 2248256229490795447, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3655,6 +3665,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2854422370949517273, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_Name
+      value: Floor 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854422370949517273, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_TagString
       value: Elevator
       objectReference: {fileID: 0}
@@ -3668,7 +3682,7 @@ PrefabInstance:
       objectReference: {fileID: 2820464893227573762}
     - target: {fileID: 2960715344858107023, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: cameraSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2960715344858107023, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: elevatorCam
@@ -3699,6 +3713,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3660466363690864242, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_Name
+      value: Ground Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660466363690864242, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_TagString
       value: Elevator
       objectReference: {fileID: 0}
@@ -3719,12 +3737,54 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 155.26999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 27.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.3650055
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125087285148375983, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.600006
+      value: -7.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223157367115190880, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_Name
+      value: Floor 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223157367115190880, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_TagString
       value: Elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306051876298717895, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057480332856854693, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_text
+      value: 'Ground Floor
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5316636366662702596, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3743,12 +3803,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5339764529926232029, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339764529926232029, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.600006
+      value: 0.04710388
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018465764050689100, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_text
+      value: 'Floor 1
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6289125441873418009, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_Name
       value: ElevatorManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419565820962174781, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_text
+      value: 'Runup Floor
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478947517376690201, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_Name
+      value: Boss Floor
       objectReference: {fileID: 0}
     - target: {fileID: 6478947517376690201, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_TagString
@@ -3758,13 +3839,33 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7483676449388294400, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.600006
+    - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 147.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8783540183009625304, guid: e1b9864a2c3a72c4a849d1876a1a8a03, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.600006
+      value: 0.62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3886,7 +3987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2702657461761594270, guid: 5b9a0ccb1e7ad4a4d8f7d67a69103862, type: 3}
       propertyPath: m_Name
-      value: Elevator_Boss
+      value: Elevator_4F
       objectReference: {fileID: 0}
     - target: {fileID: 6202914246014620635, guid: 5b9a0ccb1e7ad4a4d8f7d67a69103862, type: 3}
       propertyPath: inputText
@@ -3898,7 +3999,7 @@ PrefabInstance:
       objectReference: {fileID: 640649593642543826}
     - target: {fileID: 6202914246014620635, guid: 5b9a0ccb1e7ad4a4d8f7d67a69103862, type: 3}
       propertyPath: elevatorLocationName
-      value: Elevator_Boss
+      value: Boss Floor
       objectReference: {fileID: 0}
     - target: {fileID: 6202914246014620635, guid: 5b9a0ccb1e7ad4a4d8f7d67a69103862, type: 3}
       propertyPath: elevatorButtons.Array.size

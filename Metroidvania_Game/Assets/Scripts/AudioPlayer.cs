@@ -6,7 +6,7 @@ public class AudioPlayer : MonoBehaviour
     public AudioClip[] clips; //Manually assignable array of audio clips in the inspector
     private static float lastAudioPlayed;
 
-    public void PlayAudio(int clipIndex, AudioSource source)
+    public void PlayAudio(int clipIndex, AudioSource source, bool overlap)
     {
         if (clips.Length == 0)
         {
@@ -14,16 +14,22 @@ public class AudioPlayer : MonoBehaviour
             return;
         }
 
-        if (!source.isPlaying) //Prevent overlapping audio clips
+        if (!overlap)
         {
-            if (Time.time - AudioPlayer.lastAudioPlayed > 0.5f)
+            if (!source.isPlaying) //Prevent overlapping audio clips
             {
-                source.clip = clips[clipIndex];
-                source.PlayOneShot(source.clip);
+                if (Time.time - AudioPlayer.lastAudioPlayed > 0.5f)
+                {
+                    source.clip = clips[clipIndex];
+                    source.PlayOneShot(source.clip);
+                }
             }
         }
-        // Move to the next clip index, looping back to the start if necessary
-        //currentClipIndex = (currentClipIndex + 1) % clips.Length;
+        else
+        {
+            source.clip = clips[clipIndex];
+            source.PlayOneShot(source.clip);
+        }
     }
 
     public void PlayRandomClip(AudioSource source, int minValue, int maxValue)

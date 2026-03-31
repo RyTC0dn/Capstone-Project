@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.699997, y: -2.6000004}
-  m_SizeDelta: {x: -12.86, y: 0}
+  m_AnchoredPosition: {x: 0.016197205, y: 0.047100067}
+  m_SizeDelta: {x: -9.4276, y: -5.2943}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6898368832860041906
 CanvasRenderer:
@@ -305,8 +305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1.4199982}
+  m_SizeDelta: {x: 0, y: -2.8400002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1946506230293313041
 CanvasRenderer:
@@ -1464,8 +1464,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.699997, y: -2.6000004}
-  m_SizeDelta: {x: -12.86, y: 0}
+  m_AnchoredPosition: {x: -1.699997, y: 0.20999146}
+  m_SizeDelta: {x: -12.86, y: 5.620008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8826281711603621644
 CanvasRenderer:
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   isActive: 0
   parentPanel: {fileID: 1368645902131436300}
   elevatorFirst: {fileID: 3660466363690864242}
-  cameraSpeed: 0
+  cameraSpeed: 6
   elevatorCam: {fileID: 0}
   transitionReady: 0
   elevatorAudioPlayer: {fileID: 0}
@@ -1902,6 +1902,7 @@ MonoBehaviour:
   textPopup: {fileID: 0}
   popupText: {fileID: 0}
   message: Perhaps I need to find another elevator to activate
+  inputCount: 0
 --- !u!320 &7050290088981174768
 PlayableDirector:
   m_ObjectHideFlags: 0
