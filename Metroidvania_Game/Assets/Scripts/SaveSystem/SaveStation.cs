@@ -10,12 +10,15 @@ public class SaveStation : MonoBehaviour
     [SerializeField] private Animator saveAnimator;
 
     private bool isDetected;
+    private float animTime;
 
     private void Awake()
     {
         isDetected = false;
         buttonPrompt.enabled = false;
         buttonText.enabled = false;
+        saveAnimator.SetBool("isSaving", false);
+        animTime = 1;
     }
 
     private void FixedUpdate()
@@ -26,11 +29,14 @@ public class SaveStation : MonoBehaviour
         if (keyInput || buttonInput && isDetected)
         {
             saveAnimator.SetBool("isSaving", true);
+            animTime -= Time.deltaTime;
         }
-        else
+        else if (animTime <= 0)
         {
             saveAnimator.SetBool("isSaving", false);
+            animTime = 1;
         }
+
 
 
     }
