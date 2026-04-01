@@ -29,7 +29,7 @@ public class ElevatorManager : MonoBehaviour
     [Space(20)]
     [Header("Camera")]
     [SerializeField]
-    private float cameraSpeed;
+    private float transitionDuration;
 
     public Camera elevatorCam;
     [HideInInspector] public bool transitionReady = false;
@@ -136,13 +136,14 @@ public class ElevatorManager : MonoBehaviour
         Transform cam = elevatorCam.transform;
         Vector3 startPos = cam.position;
 
-        float duration = cameraSpeed; //Total transition time
+        float duration = transitionDuration; //Total transition time
         float elapsed = 0f;
 
         Vector3 current = new Vector3(currentElevator.transform.position.x,
             currentElevator.transform.position.y,
             currentElevator.transform.position.z - 10);
 
+        //Grab the target position elevator and offset camera position 
         Vector3 target = new Vector3(targetPos.x, targetPos.y, targetPos.z - 10);
 
         playerSp.enabled = false;
@@ -153,12 +154,14 @@ public class ElevatorManager : MonoBehaviour
 
         GameManager.instance.StateSwitch(GameStates.Pause);
 
+        //While the elapsed time is less than the duration, keep transitioning the camera
         while (elapsed < duration)
         {
             elapsed += Time.unscaledDeltaTime;
 
             float t = elapsed / duration;
 
+            //Use SmoothStep for smoother transition
             float smoothT = Mathf.SmoothStep(0, 1, t);
 
             cam.position = Vector3.Lerp(startPos, target, smoothT);

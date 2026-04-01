@@ -24,14 +24,12 @@ public class BossTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(sceneInfo.isBossCutscenePlayed)
+
+        if (cutsceneTimeline.time >= cutsceneTimeline.duration)
         {
-            //// Disable the trigger after the cutscene has been played
-            //sceneInfo.isBossCutscenePlayed = false;
-            if(cutsceneTimeline.time >= cutsceneTimeline.duration)
-            {
-                Destroy(gameObject, (float)cutsceneTimeline.duration);
-            }               
+            // Disable the trigger after the cutscene has been played
+            sceneInfo.isBossCutscenePlayed = false;
+            Destroy(gameObject, 0.5f);
         }
     }
 
