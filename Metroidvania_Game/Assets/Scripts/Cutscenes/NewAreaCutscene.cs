@@ -13,12 +13,13 @@ public class NewAreaCutscene : MonoBehaviour
     void Start()
     {
         cutsceneCamera.gameObject.SetActive(false);
+        cutsceneCamera = GameObject.Find("CutsceneCamera").GetComponent<Camera>();
 
         if (cutsceneTimeline != null)
         {
             // Restart cutscene on start
             cutsceneTimeline.time = 0;
-            // Ensure that the cutscene timeline ignores time scale 
+            // Ensure that the cutscene timeline ignores time scale
             cutsceneTimeline.timeUpdateMode = DirectorUpdateMode.UnscaledGameTime;
             cutsceneTimeline.playOnAwake = false;
         }
@@ -27,15 +28,14 @@ public class NewAreaCutscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void OnEventTriggered(Component sender, object data)
     {
         if (data is int signal)
         {
-            // Play the specific cutscene based on the signal received 
-            // from a specific lever, 0 being the first 
+            // Play the specific cutscene based on the signal received
+            // from a specific lever, 0 being the first
             StartCoroutine(Cutscene(signal));
         }
     }

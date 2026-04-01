@@ -28,14 +28,14 @@ public partial class VineAttackAction : Action
         //On start, set the vine object to one of the randomly chosen positions
         VineObject.Value.transform.position = Position.Value[currentPositionCount].transform.position;
 
-        if (currentPositionCount == 0 || currentPositionCount == 1)
-        {
-            VineSetup.Value.VineActions(true, false, false);
-        }
-        else if (currentPositionCount == 2)
-        {
-            VineSetup.Value.VineActions(false, false, true);
-        }
+        //if (currentPositionCount == 0 || currentPositionCount == 1)
+        //{
+        //    VineSetup.Value.VineActions(true, false, false);
+        //}
+        //else if (currentPositionCount == 2)
+        //{
+        //    VineSetup.Value.VineActions(false, false, true);
+        //}
 
         return Status.Running;
     }

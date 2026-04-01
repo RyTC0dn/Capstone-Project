@@ -356,6 +356,8 @@ MonoBehaviour:
   - rid: 2494650505133818003
   - rid: 7450366023346946638
   - rid: 2494650660924424206
+  - rid: 2494650768275014245
+  - rid: 7475483926723559670
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -445,6 +447,14 @@ MonoBehaviour:
           m_Value1: 5251466681690130678
         Name: Death Anim Trigger
         m_Value: Death
+    - rid: 2494650768275014245
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17560358102846781045
+          m_Value1: 7937043795778261242
+        Name: Weapon
+        m_Value: {fileID: 5958576740038597133, guid: ee0ddbdae0fbcda4daddbfbbf49d4c73, type: 3}
     - rid: 7375806016656245156
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -493,6 +503,14 @@ MonoBehaviour:
           m_Value1: 11084952536377092327
         Name: Boss Collider
         m_Value: {fileID: 4808532814033350826}
+    - rid: 7475483926723559670
+      type: {class: 'BlackboardVariable`1[[System.Int32, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 16831667191438919800
+          m_Value1: 12777103479147924936
+        Name: Boss Health
+        m_Value: 3
 --- !u!60 &4808532814033350826
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -609,7 +627,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 6.88
+  m_Radius: 5.78
 --- !u!1 &4098568762855989379
 GameObject:
   m_ObjectHideFlags: 0

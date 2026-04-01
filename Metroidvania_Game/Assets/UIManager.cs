@@ -94,6 +94,8 @@ public class UIManager : MonoBehaviour
         //Delete all saved data on close
         PlayerPrefs.DeleteAll();
 
+        sceneInfo.ResetSceneInfo();
+
         //Make sure changes are saved to disk
         PlayerPrefs.Save();
 

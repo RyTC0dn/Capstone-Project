@@ -27,6 +27,13 @@ public class MiniBossHealth : MonoBehaviour
     [SerializeField] private AudioSource enemyAudioScorce;
     [SerializeField] private AudioClip enemyHit;
 
+    [Space(20)] //Ryan's note: This is for the spawning of spiders after the mini boss is killed, but I haven't implemented it yet.
+    [Header("Enemy Spider Spawn")]
+    public GameObject enemySpiders;
+
+    public int spiderAmount = 5;
+    public float spawnTime = 0;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,7 +51,7 @@ public class MiniBossHealth : MonoBehaviour
 
     private void Update()
     {
-        EnemyDeath();
+        //EnemyDeath();
     }
 
     /// <summary>
@@ -121,7 +128,7 @@ public class MiniBossHealth : MonoBehaviour
             StartCoroutine(FlashSprite());
         }
 
-        EnemyDeath();
+        StartCoroutine(routine: SpiderSpawn());
     }
 
     public void EnemyDeath()
@@ -130,6 +137,21 @@ public class MiniBossHealth : MonoBehaviour
         {
             sceneInfo.isMiniBossKilled = true;
             Instantiate(coinDrop, transform.position, Quaternion.identity);
+            gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator SpiderSpawn()
+    {
+        if (enemyHealth <= 0)
+        {
+            sceneInfo.isMiniBossKilled = true;
+            Instantiate(coinDrop, transform.position, Quaternion.identity);
+            for (int i = 0; i < spiderAmount; i++)
+            {
+                Instantiate(enemySpiders, transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(spawnTime);
+            }
             gameObject.SetActive(false);
         }
     }

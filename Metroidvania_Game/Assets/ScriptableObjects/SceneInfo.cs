@@ -69,6 +69,8 @@ public class SceneInfo : ScriptableObject
         isController = false;
         isKeyboard = false;
 
+        isMiniBossKilled = false;
+
         bookIsLookedAt = false;
         isMoved = false;
         npcInteracted = false;
