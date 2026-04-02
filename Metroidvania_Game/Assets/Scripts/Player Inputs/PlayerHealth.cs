@@ -87,7 +87,8 @@ public class PlayerHealth : MonoBehaviour
         //Only accept attacks coming from enemy objects
         //adjust tags where applicable
         bool isEnemySource = sourceObject.CompareTag("GroundEnemy")
-            || sourceObject.CompareTag("FlyingEnemy");
+            || sourceObject.CompareTag("FlyingEnemy")
+            || sourceObject.CompareTag("Boss");
 
         if (!isEnemySource) return;
 
@@ -165,13 +166,5 @@ public class PlayerHealth : MonoBehaviour
     private void SendToSTart()
     {
         SceneManager.LoadScene("Town");
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Boss"))
-        {
-            TakeDamage(1, collision);
-        }
     }
 }

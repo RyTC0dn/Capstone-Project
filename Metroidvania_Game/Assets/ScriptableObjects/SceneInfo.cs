@@ -47,6 +47,8 @@ public class SceneInfo : ScriptableObject
     [Header("Enemies")]
     public bool isMiniBossKilled = false;
 
+    public bool isBossKilled = false;
+
     [Space(20)]
     public bool isController = false;
 

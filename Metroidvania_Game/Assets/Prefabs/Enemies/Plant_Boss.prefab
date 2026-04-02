@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3849550547200974554}
   - component: {fileID: 6184436523609428593}
+  - component: {fileID: 4458047609527242759}
   m_Layer: 0
   m_Name: BiteCollider
   m_TagString: Boss
@@ -68,6 +69,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.33
+--- !u!114 &4458047609527242759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774118552609018577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a192f1ee8444b249ad7f8546c99e0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealthChanged: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
 --- !u!1 &934112649369092862
 GameObject:
   m_ObjectHideFlags: 0
