@@ -1,5 +1,12 @@
 using UnityEngine;
 
+public enum VineType
+{
+    Spike,
+    Grab,
+    Hazard
+}
+
 public class VineLogic : MonoBehaviour
 {
     private int damage = 1;
@@ -11,7 +18,7 @@ public class VineLogic : MonoBehaviour
 
     private float currentLifeTime;
 
-    public bool isSpike, isHazard, isGrab = false;
+    public VineType vineType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -23,30 +30,37 @@ public class VineLogic : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (gameObject.activeSelf)
-        {
-            currentLifeTime -= Time.deltaTime;
-            if (currentLifeTime < 0)
-            {
-                currentLifeTime = lifeTime;
-                Destroy(gameObject);
-            }
-        }
+        VineActions();
     }
 
-    public void VineActions(bool spike, bool grab, bool hazard)
+    public void VineActions()
     {
-        if (spike)
+        switch (vineType)
         {
-            animator.Play("Vine_Spike");
-        }
-        else if (grab)
-        {
-            animator.Play("Vine_Grab");
-        }
-        else if (hazard)
-        {
-            animator.Play("Vine_Hazard");
+            case VineType.Spike:
+                animator.SetBool("isGrab", false);
+                animator.SetBool("isHazard", false);
+                if (gameObject.activeSelf)
+                {
+                    currentLifeTime -= Time.deltaTime;
+                    if (currentLifeTime < 0)
+                    {
+                        currentLifeTime = lifeTime;
+                        Destroy(gameObject);
+                    }
+                }
+                break;
+
+            case VineType.Grab:
+                animator.SetBool("isGrab", true);
+                break;
+
+            case VineType.Hazard:
+                animator.SetBool("isHazard", true);
+                break;
+
+            default:
+                break;
         }
     }
 
