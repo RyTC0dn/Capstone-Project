@@ -32,8 +32,12 @@ public class PlayerHealth : MonoBehaviour
     private AudioPlayer audioPlayer;
     public AudioSource audioSource;
 
+    [SerializeField] private GameObject deathMenu;
+
     private void Awake()
     {
+        deathMenu.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -162,7 +166,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void SendToSTart()
     {
-        SceneManager.LoadScene("Town");
+        deathMenu.SetActive(true);
+        Time.timeScale = 0f;
+        //SceneManager.LoadScene("Town");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

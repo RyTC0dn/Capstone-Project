@@ -113,6 +113,7 @@ public class SceneChanger : MonoBehaviour
 
     public void Death()//Only call this function when player loses all lives
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("Town");
     }
 }

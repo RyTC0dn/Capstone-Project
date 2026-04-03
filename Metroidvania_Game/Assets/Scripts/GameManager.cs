@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Time.timeScale = 1.0f;
     }
 
     //When player loses 2 hp
