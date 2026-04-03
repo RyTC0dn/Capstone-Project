@@ -460,8 +460,8 @@ MonoBehaviour:
   coinDrop: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   sceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
   flashTime: 0.8
-  enemyAudioScorce: {fileID: 0}
-  enemyHit: {fileID: 0}
+  enemyAudioScorce: {fileID: 1906923991335954127}
+  enemyHit: {fileID: 8300000, guid: 4d04687122ab67b4ea58384045b42641, type: 3}
 --- !u!114 &5342541874613903044
 MonoBehaviour:
   m_ObjectHideFlags: 0
