@@ -38,29 +38,29 @@ public class CharacterSelect : MonoBehaviour
     {
         #region Singleton Pattern
 
-        // Check for input to toggle the character selector UI
-        bool activeInput = Keyboard.current.iKey.wasPressedThisFrame || Gamepad.current?.dpad.up.wasPressedThisFrame == true;
+        //// Check for input to toggle the character selector UI
+        //bool activeInput = Keyboard.current.iKey.wasPressedThisFrame || Gamepad.current?.dpad.up.wasPressedThisFrame == true;
 
-        if (activeInput)
-        {
-            if (isSelectorActive)
-            {
-                Time.timeScale = 1f; // Resume the game when the selector is closed
-                ToggleSelectorUI(false);
-                isSelectorActive = false;
+        //if (activeInput)
+        //{
+        //    if (isSelectorActive)
+        //    {
+        //        Time.timeScale = 1f; // Resume the game when the selector is closed
+        //        ToggleSelectorUI(false);
+        //        isSelectorActive = false;
 
-                EventSystem.current.SetSelectedGameObject(null);
-            }
-            else
-            {
-                Time.timeScale = 0f; // Pause the game when the selector is active
-                ToggleSelectorUI(true);
-                isSelectorActive = true;
+        //        EventSystem.current.SetSelectedGameObject(null);
+        //    }
+        //    else
+        //    {
+        //        Time.timeScale = 0f; // Pause the game when the selector is active
+        //        ToggleSelectorUI(true);
+        //        isSelectorActive = true;
 
-                //Set the first button to be selected for controller navigation
-                EventSystem.current.SetSelectedGameObject(iconFirst);
-            }
-        }
+        //        //Set the first button to be selected for controller navigation
+        //        EventSystem.current.SetSelectedGameObject(iconFirst);
+        //    }
+        //}
 
         #endregion Singleton Pattern
     }

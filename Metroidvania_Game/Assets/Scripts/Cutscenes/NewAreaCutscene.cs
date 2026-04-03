@@ -12,6 +12,7 @@ public class NewAreaCutscene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cutsceneCamera = GameObject.Find("CutsceneCamera").GetComponent<Camera>();
         cutsceneCamera.gameObject.SetActive(false);
         cutsceneCamera = GameObject.Find("CutsceneCamera").GetComponent<Camera>();
 
