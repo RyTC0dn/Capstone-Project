@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 62d0c258cc765a345b476ad34399d716
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8939051773919483170
+    second: NewKnightJump_0
+  - first:
+      213: 1956777209557620558
+    second: NewKnightJump_1
+  - first:
+      213: -6336237424771273891
+    second: NewKnightJump_2
+  - first:
+      213: -3973137236106774064
+    second: NewKnightJump_3
+  - first:
+      213: 8242148209641846308
+    second: NewKnightJump_4
+  - first:
+      213: 6660811628312400128
+    second: NewKnightJump_5
+  - first:
+      213: 2610665845965850571
+    second: NewKnightJump_6
+  - first:
+      213: -5544562915771007384
+    second: NewKnightJump_7
+  - first:
+      213: -7228662745030718589
+    second: NewKnightJump_8
+  - first:
+      213: 7969824307823261416
+    second: NewKnightJump_9
+  - first:
+      213: 4481566351534089429
+    second: NewKnightJump_10
+  - first:
+      213: -4892775739731973860
+    second: NewKnightJump_11
+  - first:
+      213: -810775477471470729
+    second: NewKnightJump_12
+  - first:
+      213: -809382735125225750
+    second: NewKnightJump_13
+  - first:
+      213: -7769523449473720655
+    second: NewKnightJump_14
+  - first:
+      213: 8098122122510811121
+    second: NewKnightJump_15
+  - first:
+      213: -3600193627661228946
+    second: NewKnightJump_16
+  - first:
+      213: 2072251560069731636
+    second: NewKnightJump_17
+  - first:
+      213: -6552760551206703967
+    second: NewKnightJump_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NewKnightJump_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1918
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda24b2d5cb12f380800000000000000
+      internalID: -8939051773919483170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1918
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e471340318ed72b10800000000000000
+      internalID: 1956777209557620558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_2
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1918
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5be8fb02a92118a0800000000000000
+      internalID: -6336237424771273891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1917
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d97afdfbb49cd8c0800000000000000
+      internalID: -3973137236106774064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_4
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1917
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426f2ddb02ef16270800000000000000
+      internalID: 8242148209641846308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_5
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1918
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0011a5da2e4ff6c50800000000000000
+      internalID: 6660811628312400128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_6
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1919
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc70a0841c2fa3420800000000000000
+      internalID: 2610665845965850571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_7
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 1920
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e3aaa8761cd03b0800000000000000
+      internalID: -5544562915771007384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1664
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b08515881aeab90800000000000000
+      internalID: -7228662745030718589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_9
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1665
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e634166bf08a9e60800000000000000
+      internalID: 7969824307823261416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_10
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1664
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d468843ad8b13e30800000000000000
+      internalID: 4481566351534089429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_11
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1664
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1960a3436e591cb0800000000000000
+      internalID: -4892775739731973860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_12
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1663
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b17b8bffb8fb4f0800000000000000
+      internalID: -810775477471470729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_13
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1662
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeed681d0be74c4f0800000000000000
+      internalID: -809382735125225750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_14
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1662
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be1d00669b1d2490800000000000000
+      internalID: -7769523449473720655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_15
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 1662
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff3dfb2a2f426070800000000000000
+      internalID: 8098122122510811121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1405
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64a0a468fa890ec0800000000000000
+      internalID: -3600193627661228946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_17
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1406
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435943b80dd12cc10800000000000000
+      internalID: 2072251560069731636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewKnightJump_18
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1406
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aca1272ffaef05a0800000000000000
+      internalID: -6552760551206703967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NewKnightJump_0: -8939051773919483170
+      NewKnightJump_1: 1956777209557620558
+      NewKnightJump_10: 4481566351534089429
+      NewKnightJump_11: -4892775739731973860
+      NewKnightJump_12: -810775477471470729
+      NewKnightJump_13: -809382735125225750
+      NewKnightJump_14: -7769523449473720655
+      NewKnightJump_15: 8098122122510811121
+      NewKnightJump_16: -3600193627661228946
+      NewKnightJump_17: 2072251560069731636
+      NewKnightJump_18: -6552760551206703967
+      NewKnightJump_2: -6336237424771273891
+      NewKnightJump_3: -3973137236106774064
+      NewKnightJump_4: 8242148209641846308
+      NewKnightJump_5: 6660811628312400128
+      NewKnightJump_6: 2610665845965850571
+      NewKnightJump_7: -5544562915771007384
+      NewKnightJump_8: -7228662745030718589
+      NewKnightJump_9: 7969824307823261416
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

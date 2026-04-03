@@ -30,6 +30,7 @@ public class PlayerJumps : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private Animator animator;
+    public AnimationClip jumpAnim;
 
     //Coyote time
     public float coyoteTime;
@@ -101,6 +102,7 @@ public class PlayerJumps : MonoBehaviour
         }
 
         OnJump();
+        JumpFreeze();
     }
 
     public void OnJump()
@@ -116,8 +118,7 @@ public class PlayerJumps : MonoBehaviour
             //Jump input
             if (isPressed && coyoteTime > 0)
             {
-                //Trigger animation before the jump executes
-                animator.SetTrigger("isJumping");
+                animator.SetTrigger("jump");
 
                 //Set the rigidbody's velocity to whatever its current velocity is on x
                 //and jump force on y
@@ -126,6 +127,20 @@ public class PlayerJumps : MonoBehaviour
                 coyoteTime = 0;
                 isGrounded = false;
             }
+        }
+    }
+
+    //Call this function in an animation event on the jump frame to freeze the animation
+    //and make it look more responsive
+    public void JumpFreeze()
+    {
+        if (!isGrounded)
+        {
+            animator.speed = 0;
+        }
+        else
+        {
+            animator.speed = 1;
         }
     }
 

@@ -358,7 +358,7 @@ MonoBehaviour:
   - rid: 7475483950855225665
   - rid: 7475483950855226003
   - rid: 7475483951314764362
-  m_VersionTimestamp: 639106945276668500
+  m_VersionTimestamp: 639107653146472166
   m_DebugInfo: {fileID: 7228582182468443654}
   m_RuntimeGraph: {fileID: 1651460872138142957}
   AssetID:
@@ -4371,7 +4371,7 @@ MonoBehaviour:
     - rid: 7375806021801345440
       type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
       data:
-        Position: {x: 1014.73895, y: 692.17523}
+        Position: {x: 1215.3926, y: 748.35815}
         ID:
           m_Value0: 13071834187899675506
           m_Value1: 4532875321781727692
@@ -5944,7 +5944,7 @@ MonoBehaviour:
     - rid: 7450366023115735712
       type: {class: SequenceNodeModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -243.45694, y: 738.16974}
+        Position: {x: -269.08606, y: 798.5809}
         ID:
           m_Value0: 7291625227683303740
           m_Value1: 8489137350572674273
@@ -5981,7 +5981,7 @@ MonoBehaviour:
     - rid: 7450366023115735980
       type: {class: StickyNoteModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -89.61004, y: 642.1165}
+        Position: {x: -97.112236, y: 694.6319}
         ID:
           m_Value0: 3606439902408978756
           m_Value1: 9425084811403187426
@@ -5991,7 +5991,7 @@ MonoBehaviour:
     - rid: 7450366023346946054
       type: {class: StickyNoteModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -241.10268, y: 653.5116}
+        Position: {x: -239.27216, y: 695.61633}
         ID:
           m_Value0: 16479203839557230984
           m_Value1: 17532788800004419565
@@ -7012,7 +7012,7 @@ MonoBehaviour:
     - rid: 7475483950697677234
       type: {class: SequenceNodeModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -899.011, y: 1252.4646}
+        Position: {x: -1085.2855, y: 1369.0535}
         ID:
           m_Value0: 16660082095409804381
           m_Value1: 1793426692927681731
@@ -7472,7 +7472,7 @@ MonoBehaviour:
         AuthoringAssetID:
           m_Value0: 7244844289160686920
           m_Value1: 8165986142644970155
-        m_DebugInfo: {fileID: 0}
+        m_DebugInfo: {fileID: 7228582182468443654}
         BlackboardReference:
           rid: 7475483951314764481
         BlackboardGroupReferences: []
@@ -7484,7 +7484,7 @@ MonoBehaviour:
           rid: 7475483951314764483
         m_EndedNodes:
           rid: 7475483951314764484
-        m_VersionTimestamp: 639106945276668500
+        m_VersionTimestamp: 639107653146472166
     - rid: 7475483951314764481
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:

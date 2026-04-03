@@ -3728,6 +3728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grab Vine
       objectReference: {fileID: 0}
+    - target: {fileID: 2282484918909229554, guid: 89b59a281492f9c4794b9400654894bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3132032576510287594, guid: 89b59a281492f9c4794b9400654894bc, type: 3}
       propertyPath: m_Name
       value: Plant_Boss
