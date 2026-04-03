@@ -10,11 +10,10 @@ public class NewAreaCutscene : MonoBehaviour
     public Camera cutsceneCamera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         cutsceneCamera = GameObject.Find("CutsceneCamera").GetComponent<Camera>();
         cutsceneCamera.gameObject.SetActive(false);
-        cutsceneCamera = GameObject.Find("CutsceneCamera").GetComponent<Camera>();
 
         if (cutsceneTimeline != null)
         {
@@ -27,7 +26,7 @@ public class NewAreaCutscene : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
     }
 
@@ -41,7 +40,7 @@ public class NewAreaCutscene : MonoBehaviour
         }
     }
 
-    IEnumerator Cutscene(int number)
+    private IEnumerator Cutscene(int number)
     {
         cutsceneCamera.gameObject.SetActive(true);
 

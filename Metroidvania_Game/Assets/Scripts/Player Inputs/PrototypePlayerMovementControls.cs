@@ -151,7 +151,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             SavePlayerPosition();
         }
-
     }
 
     private void Update()
@@ -270,6 +269,19 @@ public class PrototypePlayerMovementControls : MonoBehaviour
                 keyPrompt.SetActive(true);
             }
         }
+        if (collision.CompareTag("LevelEnter")
+            || collision.CompareTag("LevelExit"))
+        {
+            //Check for if the controller is connected
+            if (isController)
+            {
+                buttonPrompt.SetActive(true);
+            }
+            else
+            {
+                keyPrompt.SetActive(true);
+            }
+        }
         if (collision.CompareTag("Ladder"))
         {
             animator.SetBool("isClimbing", true);
@@ -286,7 +298,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         {
             animator.SetBool("isClimbing", true);
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -322,6 +333,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     {
         SaveSystem.SavePlayer(this);
     }
+
     public void LoadPlayerPosition()
     {
         PlayerControllerData data = SaveSystem.LoadPlayer();
