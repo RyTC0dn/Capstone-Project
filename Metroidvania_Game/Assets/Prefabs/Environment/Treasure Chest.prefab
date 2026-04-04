@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7540691360477943759}
   m_Layer: 0
   m_Name: Treasure Chest
-  m_TagString: Untagged
+  m_TagString: Currency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldAmount: 10
   treasureType: 0
+  coinCollection: {fileID: 2550114785997748830, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   treasure: {fileID: 140054830298566490, guid: 22b13f9989fd2a44ebe14f2f99b9b3c6, type: 3}
   buttonPrompt: {fileID: 2947436010056580724}
   waitTime: 1

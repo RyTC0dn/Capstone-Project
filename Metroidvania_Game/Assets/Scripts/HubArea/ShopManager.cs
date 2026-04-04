@@ -43,6 +43,9 @@ public class ShopManager : MonoBehaviour
     private AudioPlayer player;
     private bool firstVisit = false;
 
+    [Tooltip("Select to have audio clips overlap or not")]
+    public bool overlapAudio = false;
+
     [Tooltip("Toggle on if not using regular occurence element")]
     [SerializeField] private bool notUsed = false;
 
@@ -155,12 +158,12 @@ public class ShopManager : MonoBehaviour
             {
                 //Set the shop ui object to active when function is called
                 if (!firstOccurence)
-                    player.PlayAudio(firstOccurrenceElement, audioSource, false);
+                    player.PlayAudio(firstOccurrenceElement, audioSource, overlapAudio);
                 else
                 {
                     if (!notUsed)
                     {
-                        player.PlayAudio(regularOccurrenceElement, audioSource, false);
+                        player.PlayAudio(regularOccurrenceElement, audioSource, overlapAudio);
                         firstOccurence = true;
                     }
                 }
@@ -222,7 +225,7 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.TrySpendCoins(swordUpgradePrice))
         {
             //Play audio clip for purchasing
-            player.PlayAudio(purchaseElement, audioSource, false);
+            player.PlayAudio(purchaseElement, audioSource, overlapAudio);
 
             purchaseCount++;
             boughtUpgrade = true;
@@ -246,7 +249,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins");
-            player.PlayAudio(noMoneyElement, audioSource, false);
+            player.PlayAudio(noMoneyElement, audioSource, overlapAudio);
         }
     }
 
@@ -255,7 +258,7 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.TrySpendCoins(knockbackUpgradePrice))
         {
             //Play audio clip for purchasing
-            player.PlayAudio(purchaseElement, audioSource, false);
+            player.PlayAudio(purchaseElement, audioSource, overlapAudio);
 
             boughtUpgrade = true;
             GameManager.instance.firstUpgrade = true;
@@ -269,7 +272,7 @@ public class ShopManager : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins");
-            player.PlayAudio(noMoneyElement, audioSource, false);
+            player.PlayAudio(noMoneyElement, audioSource, overlapAudio);
         }
     }
 
@@ -279,7 +282,7 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.TrySpendCoins(axePrice))
         {
             //If purchased, play audio cue
-            player.PlayAudio(purchaseElement, audioSource, false);
+            player.PlayAudio(purchaseElement, audioSource, overlapAudio);
             //buyEvent.Raise(this, axePrice);
             boughtAxe = true;
             sceneInfo.isAxeBought = true;
@@ -292,7 +295,7 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            player.PlayAudio(noMoneyElement, audioSource, false);
+            player.PlayAudio(noMoneyElement, audioSource, overlapAudio);
         }
     }
 
@@ -309,14 +312,14 @@ public class ShopManager : MonoBehaviour
         int amount = GameManager.instance.currentCoin;
         if (amount >= healthPrice)
         {
-            player.PlayAudio(purchaseElement, audioSource, false);
+            player.PlayAudio(purchaseElement, audioSource, overlapAudio);
             //buyEvent.Raise(this, healthPrice);
 
             sceneInfo.isHPBought = true;
         }
         else if (amount <= 0)
         {
-            player.PlayAudio(noMoneyElement, audioSource, false);
+            player.PlayAudio(noMoneyElement, audioSource, overlapAudio);
         }
     }
 
@@ -336,12 +339,12 @@ public class ShopManager : MonoBehaviour
         if (!boughtAxe && !boughtUpgrade && shopType == ShopType.Blacksmith)
         {
             //Play audio clip if player hasn't bought anything from shop
-            player.PlayAudio(leaveWithoutPayElement, audioSource, false);
+            player.PlayAudio(leaveWithoutPayElement, audioSource, overlapAudio);
         }
         else if (!boughtHealth && shopType == ShopType.Alchemist)
         {
             //Play audio clip if player hasn't bought anything from shop
-            player.PlayAudio(leaveWithoutPayElement, audioSource, false);
+            player.PlayAudio(leaveWithoutPayElement, audioSource, overlapAudio);
         }
         else
         {

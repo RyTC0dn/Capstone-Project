@@ -32,7 +32,9 @@ public class ElevatorManager : MonoBehaviour
     private float transitionDuration;
 
     public Camera elevatorCam;
-    [HideInInspector] public bool transitionReady = false;
+
+    [HideInInspector]
+    public bool transitionReady = false;
 
     [Space(10)]
     [Header("Audio")]
@@ -42,6 +44,14 @@ public class ElevatorManager : MonoBehaviour
 
     [SerializeField]
     private int minAudioValue, maxAudioValue;
+
+    [Tooltip("Select to have the audio clips overlap " +
+        "when moving up or down in elevator")]
+    public bool overlapAudioDependent = false;
+
+    [Tooltip("Select to have the audio clips overlap as " +
+        "the camera transitions to the next elevator")]
+    public bool overlapAudioIndependent = false;
 
     public GameObject textPopup;
     public TextMeshProUGUI popupText;
@@ -143,7 +153,7 @@ public class ElevatorManager : MonoBehaviour
             currentElevator.transform.position.y,
             currentElevator.transform.position.z - 10);
 
-        //Grab the target position elevator and offset camera position 
+        //Grab the target position elevator and offset camera position
         Vector3 target = new Vector3(targetPos.x, targetPos.y, targetPos.z - 10);
 
         playerSp.enabled = false;
@@ -188,28 +198,28 @@ public class ElevatorManager : MonoBehaviour
 
     private void AudioTrigger(string destinationName)
     {
-        elevatorAudioPlayer.PlayAudio(8, elevatorAudioSource, true);
+        elevatorAudioPlayer.PlayAudio(8, elevatorAudioSource, overlapAudioIndependent);
 
         //Have each audio clip equal to different floor
         if (destinationName == "Ground Floor")
         {
-            elevatorAudioPlayer.PlayAudio(4, elevatorAudioSource, true);
+            elevatorAudioPlayer.PlayAudio(4, elevatorAudioSource, overlapAudioIndependent);
         }
         else if (destinationName == "Floor 1")
         {
-            elevatorAudioPlayer.PlayAudio(0, elevatorAudioSource, true);
+            elevatorAudioPlayer.PlayAudio(0, elevatorAudioSource, overlapAudioIndependent);
         }
         else if (destinationName == "Floor 2")
         {
-            elevatorAudioPlayer.PlayAudio(1, elevatorAudioSource, true);
+            elevatorAudioPlayer.PlayAudio(1, elevatorAudioSource, overlapAudioIndependent);
         }
         else if (destinationName == "Runup Floor")
         {
-            elevatorAudioPlayer.PlayAudio(2, elevatorAudioSource, true);
+            elevatorAudioPlayer.PlayAudio(2, elevatorAudioSource, overlapAudioIndependent);
         }
         else if (destinationName == "Boss Floor")
         {
-            elevatorAudioPlayer.PlayAudio(3, elevatorAudioSource, true);
+            elevatorAudioPlayer.PlayAudio(3, elevatorAudioSource, overlapAudioIndependent);
         }
     }
 
@@ -222,13 +232,13 @@ public class ElevatorManager : MonoBehaviour
         if (startPos.y < targetPos.y)
         {
             //Play the elevator going up audio clip
-            elevatorAudioPlayer.PlayAudio(7, elevatorAudioSource, false);
+            elevatorAudioPlayer.PlayAudio(7, elevatorAudioSource, overlapAudioDependent);
         }
         //If the start position is greater than the target position
         else if (startPos.y > targetPos.y)
         {
             //Play the elevator going down audio clip
-            elevatorAudioPlayer.PlayAudio(6, elevatorAudioSource, false);
+            elevatorAudioPlayer.PlayAudio(6, elevatorAudioSource, overlapAudioDependent);
         }
     }
 }

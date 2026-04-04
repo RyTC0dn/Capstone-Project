@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.016197205, y: 0.047100067}
+  m_AnchoredPosition: {x: 0.016197205, y: 0.04710388}
   m_SizeDelta: {x: -9.4276, y: -5.2943}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6898368832860041906
@@ -643,7 +643,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.699997, y: -2.6000004}
+  m_AnchoredPosition: {x: -1.699997, y: -2.600006}
   m_SizeDelta: {x: -12.86, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5929770029591690067
@@ -969,7 +969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.699997, y: -2.6000004}
+  m_AnchoredPosition: {x: -1.699997, y: -2.600006}
   m_SizeDelta: {x: -12.86, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6976063265762313273
@@ -1892,13 +1892,15 @@ MonoBehaviour:
   isActive: 0
   parentPanel: {fileID: 1368645902131436300}
   elevatorFirst: {fileID: 3660466363690864242}
-  cameraSpeed: 6
+  transitionDuration: 0
   elevatorCam: {fileID: 0}
   transitionReady: 0
   elevatorAudioPlayer: {fileID: 0}
   elevatorAudioSource: {fileID: 0}
   minAudioValue: 0
   maxAudioValue: 0
+  overlapAudioDependent: 0
+  overlapAudioIndependent: 1
   textPopup: {fileID: 0}
   popupText: {fileID: 0}
   message: Perhaps I need to find another elevator to activate

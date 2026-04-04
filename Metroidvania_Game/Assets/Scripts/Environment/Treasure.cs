@@ -15,30 +15,31 @@ public class Treasure : MonoBehaviour
 {
     [Header("Treasure Settings")]
     [SerializeField] private int goldAmount = 100;
+
     public TreasureType treasureType;
-    [SerializeField]private GameObject treasure;
+    public CoinCollection coinCollection;
+    [SerializeField] private GameObject treasure;
     [SerializeField] private GameObject buttonPrompt;
     private List<GameObject> spawnedTreasures = new List<GameObject>();
 
-    AudioPlayer audioPlayer;
+    private AudioPlayer audioPlayer;
 
     private Animator animator;
     [SerializeField] private float waitTime;
     private bool isOpened = false;
-    [SerializeField]private bool playerDetected = false;
-    [Space(20)]
+    [SerializeField] private bool playerDetected = false;
 
+    [Space(20)]
     [Header("Toss Force")]
     [SerializeField] private float timeInAir;
-    private float throwForce = 5f;
 
+    private float throwForce = 5f;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         audioPlayer = FindFirstObjectByType<AudioPlayer>();
         buttonPrompt.SetActive(false);
-        treasure.GetComponent<CoinCollection>().coinType = CoinType.Treasure;
     }
 
     private void Update()
@@ -57,9 +58,9 @@ public class Treasure : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if(isOpened) return;
+            if (isOpened) return;
             playerDetected = true;
-            buttonPrompt.SetActive(true);
+            //buttonPrompt.SetActive(true);
         }
     }
 
@@ -68,11 +69,12 @@ public class Treasure : MonoBehaviour
         if (collision.CompareTag("Player") && !isOpened)
         {
             playerDetected = false;
-            if(buttonPrompt != null) buttonPrompt.SetActive(false);
+            //if (buttonPrompt != null)
+            //    buttonPrompt.SetActive(false);
         }
     }
 
-    IEnumerator OpenChest()
+    private IEnumerator OpenChest()
     {
         isOpened = true; //Prevent other interactions while opening
 
@@ -88,11 +90,13 @@ public class Treasure : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9); //Play random chest opening sound effect
-
+        //We don't need to have audio play from this script since it'll be applied to the coins themselves,
+        //but this is here if we want to add a chest opening sound effect in the future
+        //audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9);
+        coinCollection.coinType = CoinType.Treasure; //Set the coin type to treasure for the coin collection script to know which sound effect to play
         if (treasure != null)
         {
-            for(int i = 0; i < goldAmount; i++)
+            for (int i = 0; i < goldAmount; i++)
             {
                 Vector2 spawnPos = (Vector2)transform.position + new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.5f, 1f));
 
@@ -107,7 +111,7 @@ public class Treasure : MonoBehaviour
         {
             Debug.LogWarning($"Treasure prefab was not assigned to {gameObject.name}");
         }
-        if(buttonPrompt != null) buttonPrompt.SetActive(false);
+        if (buttonPrompt != null) buttonPrompt.SetActive(false);
         playerDetected = false;
     }
 }

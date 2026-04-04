@@ -344,6 +344,7 @@ MonoBehaviour:
   noMoneyElement: 3
   purchaseElement: 2
   leaveWithoutPayElement: 4
+  overlapAudio: 0
   notUsed: 0
   audioSource: {fileID: 8820675921532823130}
   secondItemEvent: {fileID: 11400000, guid: c38366c6ae30e1945b89a55dabad712a, type: 2}

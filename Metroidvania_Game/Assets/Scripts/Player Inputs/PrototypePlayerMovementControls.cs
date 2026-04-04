@@ -282,6 +282,18 @@ public class PrototypePlayerMovementControls : MonoBehaviour
                 keyPrompt.SetActive(true);
             }
         }
+        if (collision.CompareTag("Currency"))
+        {
+            //Check for if the controller is connected
+            if (isController)
+            {
+                buttonPrompt.SetActive(true);
+            }
+            else
+            {
+                keyPrompt.SetActive(true);
+            }
+        }
         if (collision.CompareTag("Ladder"))
         {
             animator.SetBool("isClimbing", true);
@@ -303,6 +315,31 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Elevator"))
+        {
+            //Check for if the controller is connected
+            if (isController)
+            {
+                buttonPrompt.SetActive(false);
+            }
+            else
+            {
+                keyPrompt.SetActive(false);
+            }
+        }
+        if (collision.CompareTag("LevelEnter")
+            || collision.CompareTag("LevelExit"))
+        {
+            //Check for if the controller is connected
+            if (isController)
+            {
+                buttonPrompt.SetActive(false);
+            }
+            else
+            {
+                keyPrompt.SetActive(false);
+            }
+        }
+        if (collision.CompareTag("Currency"))
         {
             //Check for if the controller is connected
             if (isController)
