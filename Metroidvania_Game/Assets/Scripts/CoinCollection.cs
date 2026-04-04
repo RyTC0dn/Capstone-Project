@@ -172,8 +172,11 @@ public class CoinCollection : MonoBehaviour
         else if (collision.gameObject.CompareTag("Environment"))
         {
             AudioTrigger(CoinType.Treasure);
-            SetCoinType(CoinType.Level); // Change the coin type to Level after it hits the ground,
-                                         // allowing it to be collected by the player
+            SetCoinType(CoinType.Level); // Change the coin type to Level after it hits the ground
+
+            //Should also stop their movement once they hit the ground
+            Vector2 stopForce = Vector2.zero;
+            rb.AddForce(stopForce);
         }
     }
 }
