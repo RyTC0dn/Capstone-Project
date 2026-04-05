@@ -210,6 +210,7 @@ public class Elevator : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isNear = false;
+            ElevatorManager.instance.textPopup.SetActive(false);
             ElevatorManager.instance.SetElevator(null);
         }
     }

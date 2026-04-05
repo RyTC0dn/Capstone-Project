@@ -581,6 +581,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7310502876368392596}
+    - target: {fileID: 5192663909936552312, guid: 2cf630e2bea285b4088fde638e20286c, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192663909936552312, guid: 2cf630e2bea285b4088fde638e20286c, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192663909936552312, guid: 2cf630e2bea285b4088fde638e20286c, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192663909936552312, guid: 2cf630e2bea285b4088fde638e20286c, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 5773793489446478721, guid: 2cf630e2bea285b4088fde638e20286c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

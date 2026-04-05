@@ -39,7 +39,7 @@ public class DebrisCollision : MonoBehaviour
             collision.gameObject.CompareTag("FlyingEnemy"))
         {
             // Optionally, you can add logic to damage the enemy here if needed
-            damageEnemy.Raise(this, damage);
+            //damageEnemy.Raise(this, damage);
             Destroy(gameObject);
         }
 

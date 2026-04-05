@@ -102,7 +102,7 @@ public class PlayerJumps : MonoBehaviour
         }
 
         OnJump();
-        JumpFreeze();
+        //JumpFreeze();
     }
 
     public void OnJump()

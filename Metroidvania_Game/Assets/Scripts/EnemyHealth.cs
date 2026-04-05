@@ -180,6 +180,18 @@ public class EnemyHealth : MonoBehaviour
             //Have the enemy get knocked back but not damaged when colliding with shield
             GameObject shield = GameObject.FindGameObjectWithTag("AbilityPickup");
             Vector2 direction = (transform.position - shield.transform.position).normalized;
+            kb.CallKnockback(direction, Vector2.up, enemyControls.enemySpeed * sceneInfo.knockbackForce);
+            //StartCoroutine(Knockback(direction));
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "AbilityPickup")
+        {
+            //Have the enemy get knocked back but not damaged when colliding with shield
+            GameObject shield = GameObject.FindGameObjectWithTag("AbilityPickup");
+            Vector2 direction = (transform.position - shield.transform.position).normalized;
+            kb.CallKnockback(direction, Vector2.up, enemyControls.enemySpeed * sceneInfo.knockbackForce);
             //StartCoroutine(Knockback(direction));
         }
     }
