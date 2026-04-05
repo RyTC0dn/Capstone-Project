@@ -38,6 +38,10 @@ public class MovingPlatform : MonoBehaviour
         {
             collision.gameObject.transform.parent = transform;
         }
+        if (collision.gameObject.CompareTag("AbilityPickup"))
+        {
+            collision.gameObject.transform.parent = transform;
+        }
     }
 
 
@@ -46,6 +50,10 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.parent = null;
+        }
+        if (collision.gameObject.CompareTag("AbilityPickup"))
         {
             collision.gameObject.transform.parent = null;
         }
