@@ -10,7 +10,7 @@ public class StompHIt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("GroundEnemy") || collision.CompareTag("FlyingEnemy"))
+        if (collision.CompareTag("GroundEnemy"))
         {
             onPlayerStomp.Raise(this, new StompData(collision.gameObject, stompDamage));
 
