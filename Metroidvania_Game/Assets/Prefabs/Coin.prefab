@@ -154,7 +154,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3685999861622302905}
   coinCollider: {fileID: 5080595814474765553}
   player: {fileID: 6268506206149114221}
-  overlapAudio: 1
+  overlapAudio: 0
+  light: {fileID: 3151487663763553188}
 --- !u!95 &-1381410457892553643
 Animator:
   serializedVersion: 7
@@ -337,7 +338,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.715
   m_Pitch: 1
   Loop: 0
   Mute: 0

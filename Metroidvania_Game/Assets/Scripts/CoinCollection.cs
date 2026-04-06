@@ -35,6 +35,7 @@ public class CoinCollection : MonoBehaviour
     public Collider2D coinCollider;
     public AudioPlayer player;
     public bool overlapAudio = false;
+    public GameObject light;
 
     private void Start()
     {
@@ -150,6 +151,7 @@ public class CoinCollection : MonoBehaviour
 
             spriteRenderer.enabled = false; // Hide the coin's sprite immediately upon collection
             AudioTrigger(CoinType.Level); // Play the coin collection sound effect
+            light.SetActive(false); // Disable the coin's light immediately upon collection
             Destroy(gameObject, delayTillDelete);
         }
     }
@@ -167,6 +169,7 @@ public class CoinCollection : MonoBehaviour
 
             spriteRenderer.enabled = false; // Hide the coin's sprite immediately upon collection
             AudioTrigger(CoinType.Level); // Play the coin collection sound effect
+            light.SetActive(false);
             Destroy(gameObject, delayTillDelete);
         }
         else if (collision.gameObject.CompareTag("Environment"))

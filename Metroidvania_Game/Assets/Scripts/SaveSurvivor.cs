@@ -15,8 +15,8 @@ public class SaveSurvivor : MonoBehaviour
 
     [SerializeField] private bool playerIsNear = false;
     private bool hasBeenSaved = false;
-    private AudioSource source;
-    private AudioPlayer audioPlayer;
+    public AudioSource source;
+    public AudioPlayer audioPlayer;
 
     [Header("NPC State Data")]
     public Dialogue beforeSavingDialogue;
@@ -61,6 +61,10 @@ public class SaveSurvivor : MonoBehaviour
     private Rigidbody2D rb2D;
 
     public GameObject buttonPrompt;
+    private bool isController = false;
+    public SceneInfo scene;
+    public GameObject button;
+    public GameObject key;
 
     private bool isTyping = false;
     [SerializeField] private float typingSpeed = 0.05f;
@@ -74,8 +78,6 @@ public class SaveSurvivor : MonoBehaviour
         startPos = transform.position;
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
-        source = GetComponent<AudioSource>();
-        audioPlayer = GetComponentInChildren<AudioPlayer>();
         typewriterEffect = GetComponent<TypewriterEffect>();
 
         //Check if this NPC should be destroyed based on save data and current scene
@@ -93,6 +95,7 @@ public class SaveSurvivor : MonoBehaviour
 
         Color start = new Color(0, 255, 242, 0.5f);
         bubbleSp.color = start;
+        isController = scene.OnDeviceChange(Gamepad.current);
     }
 
     private void FloatingIdle()
@@ -105,6 +108,15 @@ public class SaveSurvivor : MonoBehaviour
     private void Saved()
     {
         buttonPrompt.SetActive(true);
+        //Check for if the controller is connected
+        if (isController)
+        {
+            button.SetActive(false);
+        }
+        else
+        {
+            key.SetActive(false);
+        }
         conversationActive = true;
         rb2D.position = Vector2.MoveTowards(rb2D.position, targetPos, fallingSpeed * Time.deltaTime);
         BeforeSavedDialogue();
