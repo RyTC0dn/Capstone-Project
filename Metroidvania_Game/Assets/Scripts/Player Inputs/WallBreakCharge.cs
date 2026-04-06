@@ -9,16 +9,17 @@ public class WallBreakCharge : MonoBehaviour
 {
     [Header("References")]
     private Animator animator;
+
     private SpriteRenderer characterSP;
     public float chargeTime = 0;
     public float maxCharge;
     private Rigidbody2D rb2D;
-    [SerializeField]private bool isCharging = false;
-    [SerializeField]private bool wallBreakSelected = false; //Checks if the wall break upgrade is picked up
+    [SerializeField] private bool isCharging = false;
+    [SerializeField] private bool wallBreakSelected = false; //Checks if the wall break upgrade is picked up
 
     private PrototypePlayerMovementControls playerMove;
 
-    [SerializeField]private float chargeDistance;
+    [SerializeField] private float chargeDistance;
     [SerializeField] private float chargeMultiplier;
     public SceneInfo sceneInfo;
 
@@ -29,33 +30,34 @@ public class WallBreakCharge : MonoBehaviour
     public GameObject dashTrail;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         #region References
+
         characterSP = GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         playerMove = GetComponent<PrototypePlayerMovementControls>();
         animator = GetComponent<Animator>();
         chargeFill.fillAmount = chargeTime / maxCharge;
-        #endregion
+
+        #endregion References
 
         chargeCanvas.enabled = false;
-        dashTrail.SetActive(false);        
+        dashTrail.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(sceneInfo.isWallBreakPickedUp/*sceneInfo.isWallBreakUsed*/)
+        if (sceneInfo.isWallBreakPickedUp/*sceneInfo.isWallBreakUsed*/)
         {
             ChargeMechanic();
         }
         chargeFill.fillAmount = chargeTime / maxCharge;
     }
 
-    void ChargeMechanic()
-    {       
-
+    private void ChargeMechanic()
+    {
         bool chargeKey = Keyboard.current.rKey.isPressed;
         bool chargeButton = Gamepad.current?.leftShoulder.isPressed ?? false;
         bool isPressed = chargeKey || chargeButton;
@@ -63,10 +65,10 @@ public class WallBreakCharge : MonoBehaviour
         if (isPressed)
         {
             chargeCanvas.enabled = true; //ReEnable charge fill bar
-            chargeTime += Time.deltaTime; //When inputs is held down 
+            chargeTime += Time.deltaTime; //When inputs is held down
             isCharging = true;
         }
-        if(!isPressed && chargeTime > maxCharge)
+        if (!isPressed && chargeTime > maxCharge)
         {
             chargeCanvas.enabled = false;
 
@@ -79,7 +81,7 @@ public class WallBreakCharge : MonoBehaviour
             dashTrail.SetActive(true);
 
             Vector2 direction = playerMove.isFacingRight ? Vector2.right : Vector2.left;
-            animator.Play("KnightCharge");
+            animator.SetTrigger("dash");
             StartCoroutine(ChargeDash(direction));
             //rb2D.linearVelocity = direction * chargeDistance * chargeMultiplier;
             chargeTime = 0;
@@ -87,7 +89,7 @@ public class WallBreakCharge : MonoBehaviour
 
             StartCoroutine(DisableDash());
         }
-        if(!isPressed && chargeTime < maxCharge)
+        if (!isPressed && chargeTime < maxCharge)
         {
             chargeCanvas.enabled = false;
             chargeTime = 0;
@@ -118,7 +120,7 @@ public class WallBreakCharge : MonoBehaviour
             elapsed += Time.deltaTime;
 
             //Lerp velocity for smooth acceleration
-            rb2D.linearVelocity = direction * Mathf.Lerp(0, chargeDistance * chargeMultiplier, elapsed/dashDuration);
+            rb2D.linearVelocity = direction * Mathf.Lerp(0, chargeDistance * chargeMultiplier, elapsed / dashDuration);
 
             yield return null;
         }

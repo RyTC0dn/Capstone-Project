@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
   isShieldPickedUp: 0
-  isWallBreakPickedUp: 0
+  isWallBreakPickedUp: 1
   isShieldUsed: 0
   isWallBreakUsed: 0
   isAxeBought: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
   combat: 0
   dashed: 0
   door: 0
-  isMiniBossKilled: 0
+  isMiniBossKilled: 1
   isBossKilled: 0
   isController: 0
   isKeyboard: 0

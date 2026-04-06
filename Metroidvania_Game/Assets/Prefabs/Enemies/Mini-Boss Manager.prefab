@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneInfo: {fileID: 11400000, guid: 6f7ef10177a66dd42a3f6d79bdb46235, type: 2}
-  miniBoss: {fileID: 2193246886641176500}
+  miniBoss: {fileID: 2323304690764747016}
 --- !u!1001 &3902129882534132476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,8 +256,8 @@ MonoBehaviour:
   flashTime: 0.7
   enemyAudioScorce: {fileID: 0}
   enemyHit: {fileID: 0}
-  enemySpiders: {fileID: 2902811957173728584, guid: b2891838183ea174dbdde5c6965039f5, type: 3}
-  spiderAmount: 3
+  enemySpiders: {fileID: 2285732072518674283, guid: 3fb5e6ae009e7714d8964875119b558f, type: 3}
+  spiderAmount: 4
   spawnTime: 0
 --- !u!114 &1391664864548496859
 MonoBehaviour:
