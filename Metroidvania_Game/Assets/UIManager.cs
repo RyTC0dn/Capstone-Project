@@ -49,6 +49,8 @@ public class UIManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(startMenuFirst);
         }
 
+        GameManager.instance.enabled = true;
+
         //Deactivate control menus on awake
         keyboardControlMenu.SetActive(false);
         gamepadControlMenu.SetActive(false);
