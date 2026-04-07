@@ -1,6 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Represents the persistent state and progress of a game scene, including player abilities, shop purchases, cutscene
+/// triggers, tutorial interactions, and enemy encounters.
+/// </summary>
+/// <remarks>Use this ScriptableObject to track and manage various gameplay elements and player interactions
+/// within a specific scene. SceneInfo enables saving and resetting scene-specific data, ensuring consistent game state
+/// management across play sessions. It is typically used to determine which events have occurred, which items have been
+/// acquired or used, and to control the flow of tutorials and cutscenes. This class is intended to be edited via the
+/// Unity Inspector or through game logic at runtime.</remarks>
 [CreateAssetMenu(fileName = "SceneInfo", menuName = "Scriptable Objects/SceneInfo")]
 public class SceneInfo : ScriptableObject
 {
