@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject pauseMenu;
     [HideInInspector] public CameraZones zones;
+    public AudioSource audioSource;
 
     [Header("SpawnPoint Settings")]
     public string nextSpawnPointName; //Storing the name of the different spawn points
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        EnableAudio();
     }
 
     //When player loses 2 hp
@@ -98,6 +100,16 @@ public class GameManager : MonoBehaviour
     private void SetCoin(int coin)
     {
         coinText.text = coin.ToString();
+    }
+
+    public void EnableAudio()
+    {
+        audioSource.enabled = true;
+    }
+
+    public void DisableAudio()
+    {
+        audioSource.enabled = false;
     }
 
     public void UpdateCoins(Component sender, object data)
