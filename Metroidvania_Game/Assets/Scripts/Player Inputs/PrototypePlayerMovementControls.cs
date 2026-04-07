@@ -155,6 +155,9 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
     private void Update()
     {
+        buttonPrompt.transform.rotation = Camera.main.transform.rotation;
+        keyPrompt.transform.rotation = Camera.main.transform.rotation;
+
         //Idle Audio
         if (moveInput.x == 0)
         {

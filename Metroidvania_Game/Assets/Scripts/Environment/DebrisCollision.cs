@@ -5,8 +5,8 @@ using UnityEngine.Rendering;
 public class DebrisCollision : MonoBehaviour
 {
     [SerializeField] private float debrisLifetime; // Lifetime of debris in seconds
-    [SerializeField]private int damage;
-    [SerializeField]private GameEvent damagePlayer;
+    [SerializeField] private int damage;
+    [SerializeField] private GameEvent damagePlayer;
     [SerializeField] private GameEvent damageEnemy;
     private ParticleSystem rockExplosion;
 

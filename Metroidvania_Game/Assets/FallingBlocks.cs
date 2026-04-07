@@ -41,7 +41,7 @@ public class FallingBlocks : MonoBehaviour
             {
                 wasPlayerDetected = false;
                 debrisAnim.SetBool("playerUnderRay", false);
-                reInitializeTime = 5f; // Reset the timer
+                reInitializeTime = 100f; // Reset the timer
             }
         }
     }
@@ -56,7 +56,7 @@ public class FallingBlocks : MonoBehaviour
 
         detectEnemy = Physics2D.Raycast(transform.position, Vector2.down, detectionRange, LayerMask.GetMask("Enemy"));
 
-        if (detectPlayer || detectEnemy)
+        if ((detectPlayer || detectEnemy) && hasDelayTimerStarted == false)
         {
             hasDelayTimerStarted = true;
             debrisAnim.SetBool("playerUnderRay", true);

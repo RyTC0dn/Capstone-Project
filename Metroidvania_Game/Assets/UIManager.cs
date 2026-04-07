@@ -105,7 +105,7 @@ public class UIManager : MonoBehaviour
     public void StartGame() //This will be called in the Start menu screen
     {
         EventSystem.current.SetSelectedGameObject(null);
-        SceneManager.LoadScene("Town");
+        SceneManager.LoadScene("IntroCutscene");
 
         NewGame();  //Call new game function to reset all player prefs and scriptable object values
     }
