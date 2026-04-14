@@ -94,22 +94,25 @@ public class Treasure : MonoBehaviour
         //but this is here if we want to add a chest opening sound effect in the future
         //audioPlayer.PlayRandomClip(audioPlayer.GetComponent<AudioSource>(), 7, 9);
         coinCollection.coinType = CoinType.Treasure; //Set the coin type to treasure for the coin collection script to know which sound effect to play
-        if (treasure != null)
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Open"))
         {
-            for (int i = 0; i < goldAmount; i++)
+            if (treasure != null)
             {
-                Vector2 spawnPos = (Vector2)transform.position + new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.5f, 1f));
+                for (int i = 0; i < goldAmount; i++)
+                {
+                    Vector2 spawnPos = (Vector2)transform.position + new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.5f, 1f));
 
-                GameObject spawned = Instantiate(treasure, spawnPos, Quaternion.identity);
+                    GameObject spawned = Instantiate(treasure, spawnPos, Quaternion.identity);
 
-                spawnedTreasures.Add(spawned);
+                    spawnedTreasures.Add(spawned);
 
-                spawned.name = "Coin" + i; //Name the spawned coins for easier debugging
+                    spawned.name = "Coin" + i; //Name the spawned coins for easier debugging
+                }
             }
-        }
-        else
-        {
-            Debug.LogWarning($"Treasure prefab was not assigned to {gameObject.name}");
+            else
+            {
+                Debug.LogWarning($"Treasure prefab was not assigned to {gameObject.name}");
+            }
         }
         if (buttonPrompt != null) buttonPrompt.SetActive(false);
         playerDetected = false;

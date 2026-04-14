@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca6247de39b5bb740adc8ecd3b94bb06, type: 2}
+  - {fileID: 2100000, guid: 5dda17d05c1044f49ae52e95d8315fd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -277,7 +277,3 @@ MonoBehaviour:
   damage: 1
   damagePlayer: {fileID: 11400000, guid: bff40629b257f3049b72c69b33e66c7f, type: 2}
   damageEnemy: {fileID: 11400000, guid: 0c33991b3d3b04543ac5441483caf83a, type: 2}
-  debrisSound: {fileID: 8300000, guid: fa9475d3eab32f9448271b6331530bad, type: 3}
-  hitLayer:
-    serializedVersion: 2
-    m_Bits: 64

@@ -62,7 +62,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        EnableAudio();
+
+        coinText = GameObject.Find("CoinText")?.GetComponent<TextMeshProUGUI>();
     }
 
     //When player loses 2 hp
@@ -100,16 +101,6 @@ public class GameManager : MonoBehaviour
     private void SetCoin(int coin)
     {
         coinText.text = coin.ToString();
-    }
-
-    public void EnableAudio()
-    {
-        audioSource.enabled = true;
-    }
-
-    public void DisableAudio()
-    {
-        audioSource.enabled = false;
     }
 
     public void UpdateCoins(Component sender, object data)
