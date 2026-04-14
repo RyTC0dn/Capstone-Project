@@ -127,8 +127,9 @@ public class EnemyHealth : MonoBehaviour
         if (player != null)
         {
             Vector2 direction = (transform.position - player.transform.position).normalized;
+            float knockbackForce = sceneInfo.knockbackForce;
 
-            kb.CallKnockback(direction, Vector2.up, enemyControls.enemySpeed * sceneInfo.knockbackForce);
+            kb.CallKnockback(direction * knockbackForce, Vector2.up, enemyControls.enemySpeed);
             StartCoroutine(FlashSprite());
         }
 
@@ -184,6 +185,7 @@ public class EnemyHealth : MonoBehaviour
             //StartCoroutine(Knockback(direction));
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "AbilityPickup")
