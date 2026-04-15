@@ -81,7 +81,12 @@ public class SaveSurvivor : MonoBehaviour
         typewriterEffect = GetComponent<TypewriterEffect>();
 
         //Check if this NPC should be destroyed based on save data and current scene
-        if (GameManager.instance.isBlackSmithSaved)
+        if (GameManager.instance.isBlackSmithSaved && gameObject.name == "Blacksmith")
+        {
+            Destroy(gameObject);
+            return;
+        }
+        if (GameManager.instance.isPotionMakerSaved && gameObject.name == "Alchemist")
         {
             Destroy(gameObject);
             return;

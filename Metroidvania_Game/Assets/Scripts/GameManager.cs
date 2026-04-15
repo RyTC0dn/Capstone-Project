@@ -78,8 +78,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Coin collection function will be moved over to player UI script
-
     public void StateSwitch(GameStates state)
     {
         switch (state)
