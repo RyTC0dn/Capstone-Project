@@ -98,7 +98,7 @@ public class SaveSurvivor : MonoBehaviour
         animator.enabled = false;
         npcName.text = beforeSavingDialogue.npcName;
 
-        Color start = new Color(0, 255, 242, 0.5f);
+        Color start = new Color(0, 1f, 1f, 0.5f);
         bubbleSp.color = start;
         isController = scene.OnDeviceChange(Gamepad.current);
     }
@@ -116,11 +116,13 @@ public class SaveSurvivor : MonoBehaviour
         //Check for if the controller is connected
         if (isController)
         {
-            button.SetActive(false);
+            key.SetActive(false);
+            button.SetActive(true);
         }
         else
         {
-            key.SetActive(false);
+            button.SetActive(false);
+            key.SetActive(true);
         }
         conversationActive = true;
         rb2D.position = Vector2.MoveTowards(rb2D.position, targetPos, fallingSpeed * Time.deltaTime);
@@ -280,12 +282,12 @@ public class SaveSurvivor : MonoBehaviour
 
         if (hitsLeft == 2)
         {
-            Color firstHit = new Color(255, 215, 0, 0.5f);
+            Color firstHit = new Color(1f, 215f / 255f, 0, 0.5f);
             bubbleSp.color = firstHit;
         }
         else if (hitsLeft == 1)
         {
-            Color secondHit = new Color(255, 25, 0, 0.5f);
+            Color secondHit = new Color(1f, 25f / 255f, 0, 0.5f);
             bubbleSp.color = secondHit;
         }
         else if (hitsLeft <= 0)
