@@ -23,12 +23,24 @@ public class CameraZones : MonoBehaviour
 
     private Vector2 spawnpointPos;
 
+    [Tooltip("List of objects to be culled when the camera zone is active")]
+    [Header("Occlusion Culling")]
+    public GameObject[] objectsToCull;
+
+    private bool zoneActive = false;
+
     private static List<CameraZones> zones = new List<CameraZones>();
 
     private void Awake()
     {
         //Register this zone in the list on awake
         zones.Add(this);
+
+        foreach (GameObject obj in objectsToCull)
+        {
+            if (obj != null)
+                obj.SetActive(false);
+        }
     }
 
     private void Start()
@@ -47,6 +59,14 @@ public class CameraZones : MonoBehaviour
 
         if (collision.gameObject == player)
         {
+            CameraControl.instance.SetZone(this);
+            Debug.Log($"Entered camera zone for {roomType}");
+            foreach (GameObject obj in objectsToCull)
+            {
+                if (obj != null)
+                    obj.SetActive(true);
+            }
+
             if (applyToAllCameras)
             {
                 // FindObjectsOfType returns all active CameraControl instances in the scene
@@ -113,6 +133,28 @@ public class CameraZones : MonoBehaviour
                 }
                 SetSpawnPoint();
                 ActivateThisSpawn();
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (ElevatorManager.instance.transitionReady) { return; }
+        if (collision.gameObject == player)
+        {
+            foreach (GameObject obj in objectsToCull)
+            {
+                if (obj != null)
+                    obj.SetActive(false);
+            }
+
+            // When exiting the zone, we could either reset to default bounds or set to the bounds of another active zone.
+            // For simplicity, let's just reset to default bounds here.
+            CameraControl.instance.SetZone(null);
+            foreach (GameObject obj in objectsToCull)
+            {
+                if (obj != null)
+                    obj.SetActive(false);
             }
         }
     }

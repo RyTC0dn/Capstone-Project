@@ -13,6 +13,8 @@ using System.Collections;
 ///This script is in need of revision
 public class UIManager : MonoBehaviour
 {
+    private const bool V = true;
+
     //Game Variables
     [SerializeField] private SceneInfo info;
 
@@ -49,7 +51,10 @@ public class UIManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(startMenuFirst);
         }
 
-        GameManager.instance.enabled = true;
+        if (GameManager.instance != null && !GameManager.instance.isActiveAndEnabled)
+        {
+            GameManager.instance.enabled = V;
+        }
 
         //Deactivate control menus on awake
         keyboardControlMenu.SetActive(false);

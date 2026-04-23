@@ -28,11 +28,25 @@ public enum Rooms
 
 public class CameraControl : MonoBehaviour
 {
+    public static CameraControl instance { get; private set; }
+
+    [HideInInspector] public CameraZones currentZone;
+
     public Transform playerPos;
     public float offsetY;
     public Rooms currentRoom;
 
     private float minX, maxX, minY, maxY;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        currentZone = GameObject.FindObjectOfType<CameraZones>();
+    }
 
     private void LateUpdate()
     {
@@ -54,5 +68,10 @@ public class CameraControl : MonoBehaviour
         this.maxY = maxY;
 
         currentRoom = room;
+    }
+
+    public void SetZone(CameraZones zone)
+    {
+        currentZone = zone;
     }
 }
