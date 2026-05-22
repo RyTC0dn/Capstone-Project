@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 public static class SaveSystem
 {
-    public static void SavePlayer (PrototypePlayerMovementControls player)
+    public static void SavePlayer (MonoBehaviour player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.save";

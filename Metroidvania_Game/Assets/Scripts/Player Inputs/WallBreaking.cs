@@ -20,7 +20,7 @@ public class WallBreaking : MonoBehaviour
         particle = GetComponentInChildren<ParticleSystem>();
         sr = GetComponent<SpriteRenderer>();
         bc = GetComponent<BoxCollider2D>();
-        player = GameObject.Find("Character 1");
+        player = GameObject.FindWithTag("Player");
 
         //Setting activity of objects/components
         icon.enabled = false;

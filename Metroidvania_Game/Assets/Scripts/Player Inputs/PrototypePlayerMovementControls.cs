@@ -12,8 +12,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("General input variables")]
     public GameEvent playerInteract;
 
-    public Character character;
-
     private Player_Controller playerController;
     [HideInInspector] public Vector2 moveInput;
 
@@ -122,30 +120,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
 
         Move(moveInput.x);
         InteractEvent();
-        //Depending on character state
-        switch (CharacterSelect.selectCharacter)
-        {
-            //Play character specific animations
-            //animation setup within character 1 animator
-            case Character.Knight:
-                animator.SetBool("isKnight", true);
-                break;
-
-            case Character.Cleric:
-                animator.SetBool("isKnight", false);
-                break;
-
-            case Character.Huntress:
-                //Will implement in future here
-                break;
-
-            case Character.Wizard:
-                //Will implement in future here
-                break;
-
-            default:
-                break;
-        }
 
         if ((keyInput || buttonInput) && canSave)
         {
