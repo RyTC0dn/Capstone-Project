@@ -100,7 +100,7 @@ public class ShopManager : MonoBehaviour
         playerAttack = FindFirstObjectByType<Player_Knight_Attack>();
         uiManager = FindAnyObjectByType<UIManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
-        playerAttackSlash = GameObject.Find("Character 1").GetComponent<AudioSource>();
+        playerAttackSlash = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         player = GetComponent<AudioPlayer>();
 
         //Setting UI components to false on start

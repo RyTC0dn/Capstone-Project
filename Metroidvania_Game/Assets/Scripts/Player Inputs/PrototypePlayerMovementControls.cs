@@ -12,8 +12,6 @@ public class PrototypePlayerMovementControls : MonoBehaviour
     [Header("General input variables")]
     public GameEvent playerInteract;
 
-    public Character character;
-
     private Player_Controller playerController;
     [HideInInspector] public Vector2 moveInput;
 
@@ -126,7 +124,7 @@ public class PrototypePlayerMovementControls : MonoBehaviour
         switch (CharacterSelect.selectCharacter)
         {
             //Play character specific animations
-            //animation setup within character 1 animator
+            //animation setup within player animator
             case Character.Knight:
                 animator.SetBool("isKnight", true);
                 break;
