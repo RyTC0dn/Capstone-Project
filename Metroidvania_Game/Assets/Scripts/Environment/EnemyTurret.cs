@@ -25,7 +25,6 @@ public class EnemyTurret : MonoBehaviour
     {
         firingRate = rateOfFire;
         player = GetComponentInChildren<AudioPlayer>();
-        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         source = GetComponent<AudioSource>();
     }
 
@@ -35,7 +34,7 @@ public class EnemyTurret : MonoBehaviour
         Shoot();
     }
 
-    private Transform playerTransform;
+    [SerializeField] private Transform playerTransform;
     [SerializeField] private float audioRadius = 10f;
     private void Shoot()
     {

@@ -45,7 +45,7 @@ public class CameraZones : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Character 1");
     }
 
     private void OnDestroy()

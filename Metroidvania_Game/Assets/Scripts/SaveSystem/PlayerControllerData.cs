@@ -7,7 +7,7 @@ public class PlayerControllerData
 {
     public float[] position;
 
-    public PlayerControllerData (MonoBehaviour controller) 
+    public PlayerControllerData (PrototypePlayerMovementControls controller) 
     {
         position = new float[2];
         position[0] = controller.transform.position.x;
