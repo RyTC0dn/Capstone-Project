@@ -6,8 +6,10 @@ public class BasicEnemyAttackState : MonoBehaviour
     private PrototypePlayerMovementControls playerControls;
     private Rigidbody2D rb2D;
     [SerializeField] private bool isGrounded;
-    private float raycastLength = 2;
+    [SerializeField] private LayerMask jumpableLayers;
+    [SerializeField] private float raycastLength = 0.6f;
     public int damage = 1;
+    [SerializeField] private float jumpForce = 5;
 
     private Animator animator;
     private Vector2 lastPosition;
@@ -37,6 +39,11 @@ public class BasicEnemyAttackState : MonoBehaviour
         kb = GetComponent<Knockback>();
 
         hp = FindFirstObjectByType<PlayerHealth>();
+
+        if (jumpableLayers.value == 0)
+        {
+            jumpableLayers = LayerMask.GetMask("Ground", "Grass");
+        }
     }
 
     private void Update()
@@ -81,18 +88,27 @@ public class BasicEnemyAttackState : MonoBehaviour
         }
     }
 
+    private void CheckGrounded()
+    {
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, jumpableLayers);
+    }
+
     public void GroundEnemy()
     {
+        CheckGrounded();
+
         //Move towards player
         float groundEnemySpeed = GetComponent<BasicEnemyControls>().enemySpeed;
 
         Vector2 playerPosX = new Vector2(playerPos.transform.position.x, rb2D.position.y);
         rb2D.position = Vector2.MoveTowards(rb2D.position, playerPosX, groundEnemySpeed * Time.deltaTime);
 
-        float jumpForce = 5;
-
-        ////Jump
-        //rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        // Jump when grounded and player is above the enemy
+        if (isGrounded && Mathf.Abs(rb2D.linearVelocity.y) < 0.1f &&
+            playerPos.transform.position.y > transform.position.y + 0.5f)
+        {
+            rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
     }
 
     public void FlyingEnemy()
@@ -142,5 +158,10 @@ public class BasicEnemyAttackState : MonoBehaviour
             //onAttackEvent.Raise(this, damage);
             hp.TakeDamage(damage, this);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Debug.DrawRay(transform.position, Vector2.down * raycastLength, isGrounded ? Color.green : Color.red);
     }
 }

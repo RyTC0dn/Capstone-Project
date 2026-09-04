@@ -252,6 +252,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7402571240219324013, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
+      propertyPath: jumpForce
+      value: 5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402571240219324013, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -269,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152913360889862364, guid: 9401b87a386e88d43b9f21bfec32c389, type: 3}
       propertyPath: m_BodyType

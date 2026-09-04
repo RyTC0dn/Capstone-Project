@@ -261,5 +261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+  jumpableLayers:
+    serializedVersion: 2
+    m_Bits: 1088
+  raycastLength: 0.6
   damage: 1
+  jumpForce: 5
   onAttackEvent: {fileID: 0}
